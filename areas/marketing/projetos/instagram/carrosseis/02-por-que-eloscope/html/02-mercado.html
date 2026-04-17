@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Eloscope — Slide 02 — Mercado</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    background: #080808;
+  }
+
+  .slide {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    background: #080808;
+    overflow: hidden;
+  }
+
+  /* ── SYMBOL WATERMARK — logo wireframe, fundo branco invertido ── */
+  .symbol-watermark {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    opacity: 0.04;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .symbol-watermark img {
+    width: 110%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── BG RING decorativo — estilo Algarys: branco neutro, atrás de tudo ── */
+  .bg-ring {
+    position: absolute;
+    width: 960px;
+    height: 960px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.10);
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .bg-ring-2 {
+    position: absolute;
+    width: 680px;
+    height: 680px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.04);
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* ── DOT GRID ── */
+  .dot-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0,212,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1;
+  }
+
+  /* ── VIGNETTE — escurece direita menos para a imagem respirar ── */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 90% 80% at 28% 50%, transparent 30%, rgba(0,0,0,0.72) 100%);
+    z-index: 2;
+  }
+
+  /* ── GLOW atrás da lente ── */
+  .glow-lens {
+    position: absolute;
+    top: 50%;
+    right: -60px;
+    transform: translateY(-50%);
+    width: 680px;
+    height: 680px;
+    background: radial-gradient(circle, rgba(0,212,255,0.09) 0%, rgba(217,70,239,0.04) 50%, transparent 70%);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  /* ── ACCENT LINES ── */
+  .line-top, .line-bottom {
+    position: absolute;
+    left: 0; right: 0;
+    height: 2px;
+    z-index: 20;
+  }
+  .line-top {
+    top: 0;
+    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.6) 40%, rgba(217,70,239,0.6) 60%, transparent 95%);
+  }
+  .line-bottom {
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.4) 40%, rgba(217,70,239,0.4) 60%, transparent 95%);
+  }
+
+  /* ── CORNER BRACKETS ── */
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 20; opacity: 0.35; }
+  .corner-tl { top: 34px; left: 34px; border-top: 1.5px solid #00D4FF; border-left: 1.5px solid #00D4FF; }
+  .corner-tr { top: 34px; right: 34px; border-top: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+  .corner-bl { bottom: 34px; left: 34px; border-bottom: 1.5px solid #00D4FF; border-left: 1.5px solid #00D4FF; }
+  .corner-br { bottom: 34px; right: 34px; border-bottom: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+
+  /* ── LENS — domina topo/direita, sangra em 3 lados ── */
+  .lens-wrap {
+    position: absolute;
+    right: -300px;
+    top: -180px;
+    width: 1140px;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.82;
+  }
+  .lens-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter:
+      drop-shadow(0 0 60px rgba(0,212,255,0.35))
+      drop-shadow(0 0 160px rgba(0,212,255,0.12));
+  }
+
+  /* ── GRADIENT — escurece a parte inferior da imagem ── */
+  .img-fade {
+    position: absolute;
+    left: 0; right: 0;
+    top: 0;
+    bottom: 0;
+    background:
+      linear-gradient(to bottom,
+        rgba(8,8,8,0.10) 0%,
+        rgba(8,8,8,0.15) 35%,
+        rgba(8,8,8,0.70) 60%,
+        rgba(8,8,8,0.95) 80%,
+        #080808 100%
+      );
+    z-index: 6;
+    pointer-events: none;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    position: absolute;
+    top: 52px;
+    left: 56px;
+    right: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+  }
+
+  .brand-mark { display: flex; align-items: center; gap: 10px; }
+
+  .brand-icon-img {
+    height: 24px;
+    width: auto;
+    
+  }
+
+  .brand-name {
+    font-family: 'Syne', 'Arial Black', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: 0.15em;
+    color: #00D4FF;
+  }
+
+  .handle {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 13px;
+    color: rgba(107,114,128,0.70);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── CONTENT — ancora no bottom-left ── */
+  .content {
+    position: absolute;
+    bottom: 72px;
+    left: 56px;
+    right: 56px;
+    display: flex;
+    flex-direction: column;
+    z-index: 15;
+  }
+
+  /* Eyebrow */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+
+  .eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00D4FF;
+    box-shadow: 0 0 8px rgba(0,212,255,0.9);
+    flex-shrink: 0;
+  }
+
+  .eyebrow-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: rgba(0,212,255,0.65);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* Headline */
+  .headline {
+    margin-bottom: 28px;
+    line-height: 1.0;
+  }
+
+  .hl-line {
+    font-family: 'Syne', 'Arial Black', sans-serif;
+    font-weight: 800;
+    display: block;
+  }
+
+  .hl-white {
+    font-size: 72px;
+    color: rgba(240,255,254,0.94);
+    letter-spacing: -0.01em;
+    margin-bottom: 0px;
+  }
+
+  .hl-cyan {
+    font-size: 80px;
+    color: #00D4FF;
+    letter-spacing: -0.01em;
+    text-shadow:
+      0 0 24px rgba(0,212,255,0.55),
+      0 0 80px rgba(0,212,255,0.15);
+  }
+
+  /* Body */
+  .body-text {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: rgba(240,255,254,0.50);
+    line-height: 1.65;
+    margin-bottom: 26px;
+  }
+
+  .body-text strong {
+    color: rgba(240,255,254,0.80);
+    font-weight: 600;
+  }
+
+  /* Pills — estilo Algarys */
+  .pills {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 30px;
+  }
+
+  .pill-item {
+    display: block;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 100px;
+    padding: 15px 28px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: rgba(255,255,255,0.86);
+    letter-spacing: 0.01em;
+  }
+
+  /* Closing */
+  .closing {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .closing-text {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 15px;
+    color: rgba(240,255,254,0.42);
+    line-height: 1.5;
+  }
+
+  .closing-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 50%;
+    color: rgba(255,255,255,0.45);
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  /* ── PAGE COUNT ── */
+  .page-count {
+    position: absolute;
+    bottom: 52px;
+    right: 56px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(0,212,255,0.25);
+    letter-spacing: 0.1em;
+    z-index: 20;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- Symbol watermark — logo wireframe, invertida + screen -->
+  <div class="symbol-watermark">
+    <img id="symbol-wm" src="../../../../../07-arquivos/logos/logolinha.png" alt="">
+  </div>
+
+  <div class="dot-grid"></div>
+  <div class="vignette"></div>
+  <div class="glow-lens"></div>
+  <div class="line-top"></div>
+  <div class="line-bottom"></div>
+
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <!-- Lente — domina topo/direita -->
+  <div class="lens-wrap">
+    <img id="lens-img" src="../assets/Por que a Eloscope.png" alt="">
+  </div>
+  <!-- Fade suave da imagem para o texto -->
+  <div class="img-fade"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand-mark">
+      <img id="brand-icon" class="brand-icon-img" src="../../../../../07-arquivos/logos/EloScope - Logo - transparente.png" alt="">
+      <span class="brand-name">eloscope</span>
+    </div>
+    <div class="handle">@eloscope.ai</div>
+  </div>
+
+  <!-- Conteúdo esquerdo -->
+  <div class="content">
+
+    <div class="eyebrow">
+      <div class="eyebrow-dot"></div>
+      <span class="eyebrow-text">o problema</span>
+    </div>
+
+    <div class="headline">
+      <span class="hl-line hl-white">O mercado</span>
+      <span class="hl-line hl-cyan">cresceu</span>
+      <span class="hl-line hl-white">mais rápido</span>
+      <span class="hl-line hl-white">do que entrega.</span>
+    </div>
+
+    <p class="body-text">
+      O que a maioria vende é automação empacotada —
+      <strong>construída sem entender como seu negócio funciona:</strong>
+    </p>
+
+    <div class="pills">
+      <span class="pill-item">Sem mapear o gargalo real</span>
+      <span class="pill-item">Sem testar com seus dados</span>
+      <span class="pill-item">Sem acompanhar depois da entrega</span>
+    </div>
+
+    <div class="closing">
+      <span class="closing-text">É exatamente aí que o investimento vira custo</span>
+      <span class="closing-arrow">→</span>
+    </div>
+
+  </div>
+
+  <div class="page-count">02 / 06</div>
+
+</div>
+</body>
+</html>

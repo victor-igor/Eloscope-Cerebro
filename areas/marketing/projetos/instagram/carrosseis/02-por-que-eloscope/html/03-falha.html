@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Eloscope — Slide 03 — Por que falha</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    background: #080808;
+  }
+
+  .slide {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    background: #080808;
+    overflow: hidden;
+  }
+
+  /* ── DOT GRID ── */
+  .dot-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0,212,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1;
+  }
+
+  /* ── HERO IMAGE — ocupa topo, centralizada no crossroads ── */
+  .hero-wrap {
+    position: absolute;
+    top: -40px;
+    left: -60px;
+    right: -60px;
+    height: 760px;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .hero-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    display: block;
+    filter:
+      saturate(1.15)
+      brightness(0.88);
+    
+  }
+
+  /* Fade suave da imagem para o fundo escuro */
+  .img-fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 760px;
+    background:
+      linear-gradient(to bottom,
+        rgba(8,8,8,0.30) 0%,
+        rgba(8,8,8,0.10) 25%,
+        rgba(8,8,8,0.35) 55%,
+        rgba(8,8,8,0.85) 78%,
+        #080808 100%
+      );
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* Overlay lateral esquerdo para o texto respirar */
+  .img-overlay-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 680px;
+    background: linear-gradient(to right, rgba(8,8,8,0.55) 0%, transparent 100%);
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  /* ── VIGNETTE lateral ── */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 110% 60% at 50% 0%, transparent 40%, rgba(0,0,0,0.50) 100%);
+    z-index: 6;
+  }
+
+  /* ── ACCENT LINES ── */
+  .line-top, .line-bottom {
+    position: absolute;
+    left: 0; right: 0;
+    height: 2px;
+    z-index: 20;
+  }
+  .line-top {
+    top: 0;
+    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.6) 40%, rgba(217,70,239,0.6) 60%, transparent 95%);
+  }
+  .line-bottom {
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.4) 40%, rgba(217,70,239,0.4) 60%, transparent 95%);
+  }
+
+  /* ── CORNER BRACKETS ── */
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 20; opacity: 0.35; }
+  .corner-tl { top: 34px; left: 34px; border-top: 1.5px solid #00D4FF; border-left: 1.5px solid #00D4FF; }
+  .corner-tr { top: 34px; right: 34px; border-top: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+  .corner-bl { bottom: 34px; left: 34px; border-bottom: 1.5px solid #00D4FF; border-left: 1.5px solid #00D4FF; }
+  .corner-br { bottom: 34px; right: 34px; border-bottom: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+
+  /* ── HEADER ── */
+  .header {
+    position: absolute;
+    top: 52px;
+    left: 56px;
+    right: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+  }
+
+  .brand-mark { display: flex; align-items: center; gap: 10px; }
+
+  .brand-icon-img {
+    height: 24px;
+    width: auto;
+    
+  }
+
+  .brand-name {
+    font-family: 'Syne', 'Arial Black', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: 0.15em;
+    color: #00D4FF;
+  }
+
+  .handle {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 13px;
+    color: rgba(107,114,128,0.70);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── CONTENT — ancorado no rodapé igual slide 02 ── */
+  .content {
+    position: absolute;
+    bottom: 68px;
+    left: 56px;
+    right: 56px;
+    display: flex;
+    flex-direction: column;
+    z-index: 15;
+  }
+
+  /* Eyebrow */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .eyebrow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D946EF;
+    box-shadow: 0 0 10px rgba(217,70,239,0.9);
+    flex-shrink: 0;
+  }
+
+  .eyebrow-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: rgba(217,70,239,0.65);
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+  }
+
+  /* Headline */
+  .headline {
+    margin-bottom: 22px;
+    line-height: 1.0;
+  }
+
+  .hl-line {
+    font-family: 'Syne', 'Arial Black', sans-serif;
+    font-weight: 800;
+    display: block;
+  }
+
+  .hl-white {
+    font-size: 68px;
+    color: rgba(240,255,254,0.94);
+    letter-spacing: -0.01em;
+  }
+
+  .hl-cyan {
+    color: #00D4FF;
+    text-shadow:
+      0 0 20px rgba(0,212,255,0.50),
+      0 0 60px rgba(0,212,255,0.15);
+  }
+
+  /* Body text — copy exato do copy.md */
+  .body-text {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: rgba(240,255,254,0.50);
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .body-text strong {
+    color: rgba(240,255,254,0.82);
+    font-weight: 600;
+  }
+
+  /* Pills */
+  .pills {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+
+  .pill-item {
+    display: block;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 100px;
+    padding: 15px 28px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: rgba(255,255,255,0.84);
+    letter-spacing: 0.01em;
+  }
+
+  /* Closing */
+  .closing {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .closing-text {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 15px;
+    color: rgba(240,255,254,0.40);
+    line-height: 1.5;
+  }
+
+  .closing-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 50%;
+    color: rgba(255,255,255,0.40);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* ── PAGE COUNT ── */
+  .page-count {
+    position: absolute;
+    bottom: 52px;
+    right: 56px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(0,212,255,0.25);
+    letter-spacing: 0.1em;
+    z-index: 20;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <div class="dot-grid"></div>
+
+  <!-- Hero image — substituir src pela imagem gerada -->
+  <div class="hero-wrap">
+    <img id="hero-img" src="../assets/image.png" alt="">
+  </div>
+  <div class="img-fade"></div>
+  <div class="img-overlay-left"></div>
+
+  <div class="vignette"></div>
+  <div class="line-top"></div>
+  <div class="line-bottom"></div>
+
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand-mark">
+      <img id="brand-icon" class="brand-icon-img" src="../../../../../07-arquivos/logos/EloScope - Logo - transparente.png" alt="">
+      <span class="brand-name">eloscope</span>
+    </div>
+    <div class="handle">@eloscope.ai</div>
+  </div>
+
+  <!-- Conteúdo rodapé -->
+  <div class="content">
+
+    <div class="eyebrow">
+      <div class="eyebrow-dot"></div>
+      <span class="eyebrow-text">por que falha</span>
+    </div>
+
+    <div class="headline">
+      <span class="hl-line hl-white">Por que isso não funciona</span>
+      <span class="hl-line hl-white">na sua <span class="hl-cyan">operação</span>?</span>
+    </div>
+
+    <p class="body-text">
+      Quando não existe <strong>diagnóstico</strong> antes da implementação,
+      o agente resolve o processo que o fornecedor imaginou —
+      <strong>não o que está custando mais no seu negócio.</strong>
+    </p>
+
+    <div class="pills">
+      <span class="pill-item">A maioria dos projetos falha por ignorar essa etapa</span>
+      <span class="pill-item">Automatizar o processo errado não resolve nada</span>
+    </div>
+
+    <div class="closing">
+      <span class="closing-text">Só acelera o problema.</span>
+      <span class="closing-arrow">→</span>
+    </div>
+
+  </div>
+
+  <div class="page-count">03 / 06</div>
+
+</div>
+</body>
+</html>

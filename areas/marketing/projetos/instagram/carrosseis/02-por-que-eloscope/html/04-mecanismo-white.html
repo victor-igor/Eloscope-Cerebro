@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Eloscope — Slide 04 — Mecanismo Único</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { width: 1080px; height: 1350px; overflow: hidden; background: #F4F5F7; }
+
+  .slide { position: relative; width: 1080px; height: 1350px; background: #F4F5F7; overflow: hidden; }
+
+  /* ── WATERMARK ── */
+  .watermark {
+    position: absolute; inset: 0; z-index: 0;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; pointer-events: none;
+  }
+  .watermark img {
+    width: 110%; height: auto;
+    opacity: 0.08;
+    filter: invert(1);
+  }
+
+  /* ── TOP BRAND LINE ── */
+  .line-top {
+    position: absolute; top: 0; left: 0; right: 0; height: 4px; z-index: 20;
+    background: linear-gradient(90deg, transparent 3%, #007FA3 30%, #00C4FF 52%, #007FA3 74%, transparent 97%);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    position: absolute; top: 48px; left: 60px; right: 60px;
+    display: flex; justify-content: space-between; align-items: center; z-index: 20;
+  }
+  .brand-mark { display: flex; align-items: center; gap: 10px; }
+  .brand-icon-img { height: 26px; width: auto; }
+  .brand-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.16em; color: #007FA3; }
+  .handle { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: rgba(0,0,0,0.30); }
+
+  /* ── EYEBROW ── */
+  .eyebrow {
+    position: absolute; top: 116px; left: 60px;
+    display: flex; align-items: center; gap: 10px; z-index: 15;
+  }
+  .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #007FA3; }
+  .eyebrow-text { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(0,127,163,0.70); letter-spacing: 0.22em; text-transform: uppercase; }
+
+  /* ── HEADLINE ── */
+  /* top:148 + 2×(44×1.08)=95 + 6 + 44×1.08=47 → ends ~296px */
+  .headline { position: absolute; top: 148px; left: 60px; right: 60px; z-index: 15; }
+  .hl-dark {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 44px; line-height: 1.08; letter-spacing: -0.015em;
+    color: #0A0A0A; display: block;
+  }
+  .hl-cyan {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 44px; line-height: 1.08; letter-spacing: -0.015em;
+    color: #007FA3; display: block; margin-top: 6px;
+  }
+
+  /* ── BODY PARAGRAPH ── */
+  /* top:316 + 3×(21×1.62)=102 → ends ~418px */
+  .body-text {
+    position: absolute; top: 316px; left: 60px; right: 60px;
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 21px; color: rgba(0,0,0,0.52); line-height: 1.62; letter-spacing: -0.008em;
+  }
+
+  /* ── CALLOUT BOX ── */
+  /* top:440 + 60pad + 1×(24×1.45)=35 + 60pad = 155px → ends ~595px */
+  .callout {
+    position: absolute; top: 440px; left: 60px; right: 60px;
+    background: rgba(0,127,163,0.09);
+    border-left: 3px solid #007FA3;
+    padding: 30px 36px;
+    font-family: 'Inter', sans-serif; font-weight: 600;
+    font-size: 24px; color: #004D73; line-height: 1.45; letter-spacing: -0.015em;
+  }
+
+  /* ── CARDS (processo) ── */
+  /* top:615 → bottom:60 = 675px / 4 cards + 3 gaps */
+  .cards {
+    position: absolute; top: 615px; left: 60px; right: 60px; bottom: 60px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .card {
+    flex: 1;
+    background: #0A0A0A;
+    border-radius: 8px;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 36px; gap: 6px;
+  }
+  .card-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: rgba(0,196,255,0.65);
+    letter-spacing: 0.22em; margin-bottom: 4px;
+  }
+  .card-title {
+    font-family: 'Inter', sans-serif; font-weight: 700;
+    font-size: 28px; color: rgba(255,255,255,0.95); line-height: 1.15; letter-spacing: -0.018em;
+  }
+  .card-sub {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 17px; color: rgba(255,255,255,0.50); line-height: 1.4; letter-spacing: -0.005em;
+  }
+
+  /* ── PILL ── */
+  .pill {
+    position: absolute; bottom: 20px; left: 60px;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    color: rgba(0,0,0,0.28); letter-spacing: 0.05em; z-index: 20;
+  }
+
+  /* ── PAGE COUNT ── */
+  .page-count {
+    position: absolute; bottom: 20px; right: 60px;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: rgba(0,0,0,0.25); letter-spacing: 0.10em; z-index: 20;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <div class="watermark">
+    <img src="../../../../../07-arquivos/logos/logolinha.png" alt="">
+  </div>
+
+  <div class="line-top"></div>
+
+  <div class="header">
+    <div class="brand-mark">
+      <img class="brand-icon-img" src="../../../../../07-arquivos/logos/EloScope - Logo - transparente.png" alt="">
+      <span class="brand-name">eloscope</span>
+    </div>
+    <span class="handle">@eloscope.ai</span>
+  </div>
+
+  <div class="eyebrow">
+    <div class="eyebrow-dot"></div>
+    <span class="eyebrow-text">mecanismo único</span>
+  </div>
+
+  <div class="headline">
+    <span class="hl-dark">A Eloscope não começa<br>pela tecnologia.</span>
+    <span class="hl-cyan">Começa pelo seu negócio.</span>
+  </div>
+
+  <p class="body-text">A maioria das empresas compra o agente antes de entender o problema. A Eloscope faz o inverso — mapeamos o gargalo, identificamos onde a automação gera retorno real e construímos para esse ponto.</p>
+
+  <div class="callout">
+    Só depois que o diagnóstico define o alvo — o agente certo entra em campo.
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span class="card-num">01</span>
+      <span class="card-title">Mapeamos</span>
+      <span class="card-sub">onde está o gargalo real da sua operação</span>
+    </div>
+    <div class="card">
+      <span class="card-num">02</span>
+      <span class="card-title">Identificamos</span>
+      <span class="card-sub">qual processo tem retorno real se automatizado</span>
+    </div>
+    <div class="card">
+      <span class="card-num">03</span>
+      <span class="card-title">Construímos</span>
+      <span class="card-sub">o agente para esse ponto específico</span>
+    </div>
+    <div class="card">
+      <span class="card-num">04</span>
+      <span class="card-title">Acompanhamos</span>
+      <span class="card-sub">em produção até o resultado aparecer</span>
+    </div>
+  </div>
+
+  <div class="pill">arraste para o lado →</div>
+  <div class="page-count">04 / 06</div>
+
+</div>
+</body>
+</html>

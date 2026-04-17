@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Eloscope — Capa 02</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    background: #080808;
+  }
+
+  .slide {
+    position: relative;
+    width: 1080px;
+    height: 1350px;
+    background: #080808;
+    overflow: hidden;
+  }
+
+  /* ── DOT GRID ── */
+  .dot-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0,212,255,0.055) 1px, transparent 1px);
+    background-size: 38px 38px;
+    z-index: 1;
+  }
+
+  /* ── VIGNETTE — suave nas bordas, não no centro ── */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 90% 70% at 50% 40%, transparent 40%, rgba(0,0,0,0.65) 100%);
+    z-index: 2;
+  }
+
+  /* ── GLOW ZONES ── */
+  .glow-icon {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 860px;
+    height: 860px;
+    background: radial-gradient(circle, rgba(0,212,255,0.13) 0%, rgba(0,212,255,0.04) 40%, transparent 70%);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .glow-text {
+    position: absolute;
+    top: 850px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(0,212,255,0.06) 0%, transparent 70%);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  /* ── ACCENT LINES ── */
+  .line-top, .line-bottom {
+    position: absolute;
+    left: 0; right: 0;
+    height: 2px;
+    z-index: 20;
+  }
+  .line-top {
+    top: 0;
+    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.6) 40%, rgba(217,70,239,0.6) 60%, transparent 95%);
+  }
+  .line-bottom {
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.4) 40%, rgba(217,70,239,0.4) 60%, transparent 95%);
+  }
+
+  /* ── CORNER BRACKETS ── */
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 20; opacity: 0.4; }
+  .corner-tl { top: 34px; left: 34px; border-top: 1.5px solid #00D4FF; border-left: 1.5px solid #00D4FF; }
+  .corner-tr { top: 34px; right: 34px; border-top: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+  .corner-bl { bottom: 34px; left: 34px; border-bottom: 1.5px solid #00D4FF; border-left: 1.5px solid #00D4FF; }
+  .corner-br { bottom: 34px; right: 34px; border-bottom: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+
+  /* ── BG PREVIEW CARDS ── */
+  .bg-cards { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+
+  .bg-card {
+    position: absolute;
+    background: linear-gradient(145deg, rgba(18,18,18,0.95), rgba(12,12,12,0.95));
+    border: 1px solid rgba(0,212,255,0.14);
+    border-radius: 14px;
+    padding: 20px 22px;
+    filter: blur(2px);
+  }
+
+  .bg-card-title {
+    font-family: 'Syne', 'Arial Black', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: #00D4FF;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+  }
+
+  .bg-card p {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 11px;
+    color: rgba(240,255,254,0.65);
+    line-height: 1.55;
+  }
+
+  .bg-card-tag {
+    display: inline-block;
+    border: 1px solid rgba(0,212,255,0.28);
+    border-radius: 20px;
+    padding: 3px 9px;
+    font-size: 9px;
+    color: rgba(240,255,254,0.6);
+    margin-top: 7px;
+    margin-right: 4px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Posições portrait — cards espalhados nas 4 zonas */
+  .bc1 { top: 80px;  left: -155px; width: 340px; height: 210px; opacity: 0.30; transform: rotate(-5deg); }
+  .bc2 { top: 100px; right: -135px; width: 310px; height: 190px; opacity: 0.24; transform: rotate(4deg); }
+  .bc3 { top: 680px; left: -130px; width: 320px; height: 185px; opacity: 0.26; transform: rotate(6deg); }
+  .bc4 { top: 700px; right: -145px; width: 300px; height: 175px; opacity: 0.22; transform: rotate(-4deg); }
+  .bc5 { bottom: 90px; left: -120px; width: 290px; height: 165px; opacity: 0.20; transform: rotate(3deg); }
+  .bc6 { bottom: 80px; right: -130px; width: 270px; height: 155px; opacity: 0.18; transform: rotate(-6deg); }
+
+  /* ── HEADER ── */
+  .header {
+    position: absolute;
+    top: 52px;
+    left: 56px;
+    right: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+  }
+
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-icon-img {
+    height: 24px;
+    width: auto;
+    
+  }
+
+  .brand-name {
+    font-family: 'Syne', 'Arial Black', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: 0.15em;
+    color: #00D4FF;
+  }
+
+  .handle {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 13px;
+    color: rgba(107,114,128,0.70);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── MAIN CONTENT BLOCK — centrado verticalmente ── */
+  .content {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+    gap: 0;
+    margin-top: -30px; /* pequeno offset visual para cima */
+  }
+
+  /* ── ICON ── */
+  .icon-wrap {
+    position: relative;
+    width: 580px;
+    height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+  }
+
+  /* Orbit ring decorativo */
+  .icon-wrap::before {
+    content: '';
+    position: absolute;
+    width: 620px;
+    height: 620px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,212,255,0.10);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .icon-wrap::after {
+    content: '';
+    position: absolute;
+    width: 560px;
+    height: 560px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,212,255,0.10) 0%, transparent 65%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(20px);
+  }
+
+  .icon-wrap img {
+    width: 560px;
+    height: 560px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    filter:
+      drop-shadow(0 0 18px rgba(0,212,255,0.90))
+      drop-shadow(0 0 55px rgba(0,212,255,0.55))
+      drop-shadow(0 0 120px rgba(0,212,255,0.25))
+      drop-shadow(0 16px 60px rgba(0,0,0,0.90));
+  }
+
+  /* ── CONECTOR ── */
+  .connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 32px;
+  }
+
+  .connector-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(0,212,255,0.5), rgba(0,212,255,0.15));
+  }
+
+  .connector-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #00D4FF;
+    box-shadow: 0 0 8px rgba(0,212,255,0.8);
+  }
+
+  /* ── HEADLINE ── */
+  .headline {
+    font-family: 'Syne', 'Arial Black', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.0;
+    margin-bottom: 36px;
+  }
+
+  .line-1 {
+    display: block;
+    font-size: 52px;
+    letter-spacing: 0.05em;
+    color: rgba(240,255,254,0.92);
+    margin-bottom: 6px;
+  }
+
+  .line-2 {
+    display: block;
+    font-size: 76px;
+    letter-spacing: 0.06em;
+    color: #00D4FF;
+    text-shadow:
+      0 0 18px rgba(0,212,255,0.60),
+      0 0 50px rgba(0,212,255,0.22);
+  }
+
+  /* ── SUBTITLE ── */
+  .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px; font-weight: 400;
+    color: rgba(240,255,254,0.48);
+    text-align: center; line-height: 1.5;
+    margin-bottom: 40px;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── PILL — texto mono simples ── */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: rgba(240,255,254,0.45);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── PAGE COUNT ── */
+  .page-count {
+    position: absolute;
+    bottom: 52px;
+    right: 56px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(0,212,255,0.25);
+    letter-spacing: 0.1em;
+    z-index: 20;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <div class="dot-grid"></div>
+  <div class="vignette"></div>
+  <div class="glow-icon"></div>
+  <div class="glow-text"></div>
+  <div class="line-top"></div>
+  <div class="line-bottom"></div>
+
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <!-- BG cards — 6 para cobrir o canvas portrait -->
+  <div class="bg-cards">
+    <div class="bg-card bc1">
+      <div class="bg-card-title">O Mercado Vende "IA"</div>
+      <p>O que a maioria entrega é automação empacotada — construída sem entender como seu negócio funciona.</p>
+      <span class="bg-card-tag">Sem mapear</span>
+      <span class="bg-card-tag">Sem validar</span>
+    </div>
+    <div class="bg-card bc2">
+      <div class="bg-card-title">Por que isso falha?</div>
+      <p>O agente resolve o processo que o fornecedor imaginou — não o seu.</p>
+    </div>
+    <div class="bg-card bc3">
+      <div class="bg-card-title">A Abordagem</div>
+      <p>Não começa pela tecnologia. Começa pelo seu negócio.</p>
+      <span class="bg-card-tag">1. Mapear</span>
+      <span class="bg-card-tag">2. Construir</span>
+    </div>
+    <div class="bg-card bc4">
+      <div class="bg-card-title">Diagnóstico Gratuito</div>
+      <p>30 minutos. Identificamos qual processo tem retorno real.</p>
+    </div>
+    <div class="bg-card bc5">
+      <div class="bg-card-title">Padrão</div>
+      <p>Todo diagnóstico revela um processo consumindo horas que ninguém estava medindo.</p>
+    </div>
+    <div class="bg-card bc6">
+      <div class="bg-card-title">CTA</div>
+      <p>A pergunta certa não é "quero IA". É "por onde começo".</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand-mark">
+      <img id="brand-icon" class="brand-icon-img" src="../../../../../07-arquivos/logos/EloScope - Logo - transparente.png" alt="">
+      <span class="brand-name">eloscope</span>
+    </div>
+    <div class="handle">@eloscope.ai</div>
+  </div>
+
+  <!-- Content centrado -->
+  <div class="content">
+    <div class="icon-wrap">
+      <img id="icon" src="../icones/3d.png" alt="Eloscope Icon">
+    </div>
+
+    <div class="connector">
+      <div class="connector-line"></div>
+      <div class="connector-dot"></div>
+    </div>
+
+    <div class="headline">
+      <span class="line-1">Por que a</span>
+      <span class="line-2">ELOSCOPE?</span>
+    </div>
+
+    <div class="pill">arraste para o lado →</div>
+  </div>
+
+  <div class="page-count">01 / 06</div>
+
+</div>
+</body>
+</html>

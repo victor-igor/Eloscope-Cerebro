@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Eloscope — Slide 05 — Padrão do Diagnóstico</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { width: 1080px; height: 1350px; overflow: hidden; background: #0A0A0A; }
+
+  .slide {
+    position: relative;
+    width: 1080px; height: 1350px;
+    background: #0A0A0A;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Círculo geométrico de fundo */
+  .bg-circle {
+    position: absolute;
+    top: 46%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px; height: 900px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,212,255,0.05);
+    z-index: 1; pointer-events: none;
+  }
+
+  /* Accent lines */
+  .line-top, .line-bottom { position: absolute; left: 0; right: 0; height: 2px; z-index: 20; }
+  .line-top    { top: 0;    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.6) 40%, rgba(217,70,239,0.5) 60%, transparent 95%); }
+  .line-bottom { bottom: 0; background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.4) 40%, rgba(217,70,239,0.3) 60%, transparent 95%); }
+
+  /* Header */
+  .header {
+    position: absolute; top: 52px; left: 56px; right: 56px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 20;
+  }
+  .brand-mark { display: flex; align-items: center; gap: 10px; }
+  .brand-icon-img { height: 24px; width: auto;  }
+  .brand-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.15em; color: #00D4FF; }
+  .handle { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: rgba(107,114,128,0.70); letter-spacing: 0.03em; }
+
+  /* Main content — flex column, fills from header to bottom */
+  .content {
+    position: absolute;
+    top: 118px; bottom: 64px;
+    left: 56px; right: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 15;
+  }
+
+  /* Eyebrow */
+  .eyebrow { display: flex; align-items: center; gap: 8px; }
+  .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #D946EF; box-shadow: 0 0 10px rgba(217,70,239,0.8); flex-shrink: 0; }
+  .eyebrow-text { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(217,70,239,0.60); letter-spacing: 0.20em; text-transform: uppercase; }
+
+  /* Headline — ALL CAPS, Syne 800, cyan como destaque */
+  .headline { line-height: 1.08; }
+  .hl-line { font-family: 'Syne', sans-serif; font-weight: 800; display: block; letter-spacing: 0.04em; text-transform: uppercase; }
+  .hl-white { font-size: 68px; color: #F0FFFE; }
+  .hl-dim   { font-size: 68px; color: rgba(240,255,254,0.40); }
+  .hl-cyan  {
+    font-size: 68px; color: #00D4FF;
+    text-shadow: 0 0 40px rgba(0,212,255,0.35);
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0,212,255,0.25), rgba(255,255,255,0.06), transparent);
+  }
+
+  /* Body paragraph */
+  .body-para {
+    font-family: 'Inter', sans-serif;
+    font-size: 19px; font-weight: 400;
+    color: rgba(240,255,254,0.52);
+    line-height: 1.65;
+  }
+  .body-para strong { color: rgba(240,255,254,0.86); font-weight: 600; }
+
+  /* Cards grid */
+  .cards-grid { display: flex; flex-direction: column; gap: 16px; }
+  .cards-row  { display: flex; gap: 24px; }
+
+  /* Card base — brandbook compliant */
+  .card {
+    background: #111111;
+    border: 1px solid #1E1E1E;
+    border-radius: 12px;
+    padding: 28px;
+    flex: 1;
+  }
+  .card-wide { width: 100%; flex: none; }
+
+  /* Card "não é" */
+  .card-nao-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    display: block; margin-bottom: 14px;
+  }
+  .card-nao-text {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 36px; color: rgba(240,255,254,0.65);
+    line-height: 1.1; letter-spacing: -0.01em;
+    display: block;
+  }
+
+  /* Card "É" — destaque em Cyan com borda topo */
+  .card-e {
+    border-top: 2px solid rgba(0,212,255,0.50);
+  }
+  .card-e-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(0,212,255,0.50);
+    display: block; margin-bottom: 14px;
+  }
+  .card-e-big {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 44px; color: #00D4FF;
+    line-height: 1.08; letter-spacing: -0.015em;
+    display: block; margin-bottom: 16px;
+    text-shadow: 0 0 30px rgba(0,212,255,0.25);
+  }
+  .card-e-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; font-weight: 400;
+    color: rgba(240,255,254,0.45);
+    line-height: 1.55; display: block;
+  }
+
+  /* Closing */
+  .closing {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .closing-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; color: rgba(240,255,254,0.35);
+    line-height: 1.55;
+  }
+  .closing-text strong { color: rgba(240,255,254,0.58); font-weight: 600; }
+  .closing-arrow {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px;
+    border: 1px solid rgba(0,212,255,0.22); border-radius: 50%;
+    color: rgba(0,212,255,0.45); font-size: 14px; flex-shrink: 0;
+  }
+
+  /* Page count */
+  .page-count {
+    position: absolute; bottom: 52px; right: 56px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: rgba(0,212,255,0.25); letter-spacing: 0.1em; z-index: 20;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <div class="bg-circle"></div>
+  <div class="line-top"></div>
+  <div class="line-bottom"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand-mark">
+      <img id="brand-icon" class="brand-icon-img" src="../../../../../07-arquivos/logos/EloScope - Logo - transparente.png" alt="">
+      <span class="brand-name">eloscope</span>
+    </div>
+    <div class="handle">@eloscope.ai</div>
+  </div>
+
+  <!-- Conteúdo principal via flexbox — sem overlaps -->
+  <div class="content">
+
+    <div class="eyebrow">
+      <div class="eyebrow-dot"></div>
+      <span class="eyebrow-text">padrão do diagnóstico</span>
+    </div>
+
+    <div class="headline">
+      <span class="hl-line hl-white">Todo diagnóstico</span>
+      <span class="hl-line hl-dim">que fazemos revela</span>
+      <span class="hl-line hl-cyan">a mesma coisa.</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="body-para">
+      Foi com esse processo que identificamos <strong>um gargalo específico no
+      fluxo operacional</strong> de cada empresa — consumindo horas toda semana
+      sem que ninguém estivesse medindo.
+    </p>
+
+    <div class="cards-grid">
+      <div class="cards-row">
+        <div class="card">
+          <span class="card-nao-label">não é</span>
+          <span class="card-nao-text">Falta de<br>tecnologia</span>
+        </div>
+        <div class="card">
+          <span class="card-nao-label">não é</span>
+          <span class="card-nao-text">Falta de<br>equipe</span>
+        </div>
+      </div>
+      <div class="card card-wide card-e">
+        <span class="card-e-label">é</span>
+        <span class="card-e-big">Um gargalo invisível<br>que virou rotina.</span>
+        <span class="card-e-sub">Quando o ponto específico é identificado e atacado —<br>o resultado aparece sem mudar nada no restante da operação.</span>
+      </div>
+    </div>
+
+    <div class="closing">
+      <span class="closing-text">Sem aumento de equipe e <strong>sem crescimento da estrutura.</strong><br>O ganho vem de eficiência aplicada no lugar certo.</span>
+      <span class="closing-arrow">→</span>
+    </div>
+
+  </div>
+
+  <div class="page-count">05 / 06</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Eloscope — Slide 06 — CTA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { width: 1080px; height: 1350px; overflow: hidden; background: #0A0A0A; }
+
+  .slide {
+    position: relative;
+    width: 1080px; height: 1350px;
+    background: #0A0A0A;
+    overflow: hidden;
+  }
+
+  /* ── BACKGROUND — símbolo da marca como watermark ── */
+  .bg-symbol {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -52%);
+    width: 1100px; height: 1100px;
+    z-index: 1; pointer-events: none;
+    opacity: 0.035;
+  }
+
+  /* Glow ambiente — cyan e magenta */
+  .glow-cyan {
+    position: absolute;
+    top: 30%; left: 20%;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,212,255,0.12) 0%, transparent 65%);
+    z-index: 2; pointer-events: none;
+  }
+  .glow-magenta {
+    position: absolute;
+    top: 55%; right: 10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(217,70,239,0.08) 0%, transparent 65%);
+    z-index: 2; pointer-events: none;
+  }
+
+  /* Accent lines */
+  .line-top, .line-bottom { position: absolute; left: 0; right: 0; height: 2px; z-index: 20; }
+  .line-top    { top: 0;    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.70) 40%, rgba(217,70,239,0.60) 60%, transparent 95%); }
+  .line-bottom { bottom: 0; background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.50) 40%, rgba(217,70,239,0.40) 60%, transparent 95%); }
+
+  /* Corners */
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 20; opacity: 0.30; }
+  .corner-tl { top: 34px; left: 34px;   border-top: 1.5px solid #00D4FF; border-left:  1.5px solid #00D4FF; }
+  .corner-tr { top: 34px; right: 34px;  border-top: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+  .corner-bl { bottom: 34px; left: 34px;  border-bottom: 1.5px solid #00D4FF; border-left:  1.5px solid #00D4FF; }
+  .corner-br { bottom: 34px; right: 34px; border-bottom: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+
+  /* Header */
+  .header {
+    position: absolute; top: 52px; left: 56px; right: 56px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 20;
+  }
+  .brand-mark { display: flex; align-items: center; gap: 10px; }
+  .brand-icon-img { height: 24px; width: auto;  }
+  .brand-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.15em; color: #00D4FF; }
+  .handle { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: rgba(107,114,128,0.70); letter-spacing: 0.03em; }
+
+  /* ── CONTEÚDO — centralizado verticalmente ── */
+  .content {
+    position: absolute;
+    top: 0; bottom: 0; left: 56px; right: 56px;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    z-index: 15;
+    padding-top: 60px; /* offset do header */
+  }
+
+  /* Eyebrow */
+  .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 52px; }
+  .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #00D4FF; box-shadow: 0 0 10px rgba(0,212,255,0.9); }
+  .eyebrow-text { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(0,212,255,0.65); letter-spacing: 0.20em; text-transform: uppercase; }
+
+  /* Headline — copy exata do copy.md */
+  .headline { margin-bottom: 36px; line-height: 1.06; }
+  .hl-line { font-family: 'Syne', sans-serif; font-weight: 800; display: block; letter-spacing: -0.015em; }
+  .hl-white { font-size: 66px; color: rgba(240,255,254,0.95); }
+  .hl-dim   { font-size: 66px; color: rgba(240,255,254,0.45); }
+
+  /* Pivot — "É por onde começo." — destaque máximo */
+  .pivot {
+    margin-bottom: 40px; line-height: 1.0;
+  }
+  .pivot-e {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 44px; color: rgba(240,255,254,0.40);
+    display: block; letter-spacing: -0.01em; margin-bottom: 2px;
+  }
+  .pivot-main {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 72px; color: #00D4FF; display: block;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 40px rgba(0,212,255,0.45), 0 0 100px rgba(0,212,255,0.12);
+  }
+
+  /* Diagnóstico sub */
+  .diag-block {
+    margin-bottom: 48px;
+  }
+  .diag-main {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px; font-weight: 600;
+    color: rgba(240,255,254,0.75);
+    display: block; margin-bottom: 4px;
+  }
+  .diag-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: rgba(0,212,255,0.50);
+    letter-spacing: 0.08em;
+  }
+
+  .hl-cyan { font-size: 70px; color: #00D4FF; text-shadow: 0 0 40px rgba(0,212,255,0.45); }
+
+  .divider { height: 1px; background: linear-gradient(90deg, rgba(0,212,255,0.20), rgba(255,255,255,0.05), transparent); margin-bottom: 40px; }
+
+  .body-text { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 400; color: rgba(240,255,254,0.50); line-height: 1.65; margin-bottom: 56px; }
+  .body-text strong { color: rgba(240,255,254,0.82); font-weight: 600; }
+
+  /* CTA Button — pill, Quantum Cyan sólido como Algarys */
+  .cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00D4FF;
+    border-radius: 100px;
+    padding: 30px 44px;
+    margin-bottom: 28px;
+  }
+  .cta-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; font-size: 24px;
+    color: #0A0A0A; letter-spacing: -0.01em;
+  }
+
+  /* Prova social */
+  .social-proof {
+    display: flex; align-items: center; justify-content: center; gap: 24px;
+  }
+  .proof-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: rgba(240,255,254,0.28);
+    letter-spacing: 0.05em;
+  }
+  .proof-sep { color: rgba(0,212,255,0.25); font-size: 10px; }
+
+  /* Page count */
+  .page-count {
+    position: absolute; bottom: 52px; right: 56px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: rgba(0,212,255,0.25); letter-spacing: 0.1em; z-index: 20;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- Background: símbolo da marca como watermark -->
+  <img class="bg-symbol" src="../logos/EloScope - Logo - transparente.png" alt="">
+
+  <div class="glow-cyan"></div>
+  <div class="glow-magenta"></div>
+  <div class="line-top"></div>
+  <div class="line-bottom"></div>
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand-mark">
+      <img id="brand-icon" class="brand-icon-img" src="../../../../../07-arquivos/logos/EloScope - Logo - transparente.png" alt="">
+      <span class="brand-name">eloscope</span>
+    </div>
+    <div class="handle">@eloscope.ai</div>
+  </div>
+
+  <div class="content">
+
+    <div class="eyebrow">
+      <div class="eyebrow-dot"></div>
+      <span class="eyebrow-text">próximo passo</span>
+    </div>
+
+    <div class="headline">
+      <span class="hl-line hl-white">Se você chegou</span>
+      <span class="hl-line hl-dim">até aqui, já sabe</span>
+      <span class="hl-line hl-cyan">por onde começar.</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="body-text">
+      O próximo passo não é implementar IA.<br>
+      É <strong>entender por onde começar com critério.</strong><br>
+      Diagnóstico de 30 minutos. Gratuito.
+    </p>
+
+    <div class="cta-btn">
+      <span class="cta-text">Clique no link da bio ↗</span>
+    </div>
+
+    <div class="social-proof">
+      <span class="proof-item">Gratuito</span>
+      <span class="proof-sep">·</span>
+      <span class="proof-item">30 minutos</span>
+      <span class="proof-sep">·</span>
+      <span class="proof-item">Sem compromisso</span>
+      <span class="proof-sep">·</span>
+      <span class="proof-item">Sem solução genérica</span>
+    </div>
+
+  </div>
+
+  <div class="page-count">06 / 06</div>
+
+</div>
+</body>
+</html>
