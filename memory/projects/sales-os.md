@@ -48,6 +48,46 @@ PME +R$80k/mês com demanda existente, base de contatos parada, problema real de
 | 02 Estrutura | Mês 1-2 | Playbook · Scripts e cadências · IA Copiloto · IA Assistida · Lead scoring · Análise base reativação · Dashboard inicial |
 | 03 Acompanhamento | Mensal | 1 reunião mensal · Dashboard atualizado · Ajuste de estratégia · Evolução contínua |
 
+## Dores → Analgésicos (mapeamento direto)
+
+| Dor | Analgésico |
+|-----|-----------|
+| Leads chegam mas não convertem — time aborda igual todo mundo, sem prioridade | IA Copiloto + Playbook — script por lead, alerta esfriamento, próximo passo automático |
+| Base de clientes parada — contatos que já compraram ou quase compraram sem follow-up | IA Assistida + Campanha de Reativação — análise, priorização automática, cadência configurada |
+| Time comercial sem processo nem dados — cada vendedor age do seu jeito | Playbook + Dashboard de Métricas — processo padronizado, gestor vê tudo em tempo real |
+| Follow-up manual e inconsistente — depende da memória do vendedor | Cadências Automatizadas — sistema dispara próximo contato, vendedor só executa |
+
+## Causa Raiz
+
+"Não é falta de produto. Não é falta de lead. É falta de **sistema** — processo, dados e IA trabalhando juntos para converter e reativar."
+
+## Ecossistema Eloscope (contexto maior)
+
+O Sales OS é o produto core. O ecossistema completo:
+
+| Camada | Produtos |
+|--------|---------|
+| **Educação** (atrai e qualifica leads) | Conteúdo (Instagram/LinkedIn) · Curso IA low ticket · Newsletter |
+| **Captura** (leads qualificados) | Diagnóstico gratuito · Landing Pages · Reativação de base |
+| **Produtos** | Treinamento (equipe com IA) · **⭐ Sales OS (foco agora)** · AI Squads (done-for-you) |
+
+## Glossário dos Termos
+
+| Termo | Definição |
+|-------|-----------|
+| **Sales OS** | Sistema operacional de vendas — o método proprietário da Eloscope |
+| **IA Copiloto** | IA que age junto com o vendedor em tempo real — sugestões, scripts, alertas |
+| **IA Assistida** | IA que processa dados e entrega insights — humano decide o que fazer |
+| **Lead Scoring** | Ranqueamento de leads por probabilidade de fechar — priorizar onde o time atua |
+| **Playbook** | Documento operacional com scripts, cadências e processos — o manual do vendedor |
+| **Reativação** | Trabalhar base parada — leads que não fecharam + clientes antigos |
+
+## Valores (como trabalhamos)
+
+- **Resultado:** Métricas antes de narrativas. O que mudou para o cliente? Se não tem número, não tem resultado.
+- **Clareza:** IA complexa explicada de forma simples. Sem hype. Sem promessa vazia. O cliente entende o que está comprando.
+- **Parceria:** Não somos fornecedores. Somos o time de AI do negócio do cliente. Ganhamos quando eles ganham.
+
 ## Gaps Críticos (a definir antes de fechar primeiro cliente)
 - [ ] Escopo exato — o que está incluso em cada fase (horas, reuniões, SLA)
 - [ ] Escopo negativo — o que NÃO está incluso
@@ -98,4 +138,4 @@ Meta: 2-3 clientes beta. Zero custo de aquisição.
 | Abr/2027 | Meta: R$15k MRR · 10 clientes |
 
 ---
-*Atualizado: 17/04/2026*
+*Atualizado: 18/04/2026*
