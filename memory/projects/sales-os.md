@@ -48,6 +48,77 @@ PME +R$80k/mês com demanda existente, base de contatos parada, problema real de
 | 02 Estrutura | Mês 1-2 | Playbook · Scripts e cadências · IA Copiloto · IA Assistida · Lead scoring · Análise base reativação · Dashboard inicial |
 | 03 Acompanhamento | Mensal | 1 reunião mensal · Dashboard atualizado · Ajuste de estratégia · Evolução contínua |
 
+## Operação Detalhada por Fase
+
+### Fase 01 — Diagnóstico
+
+**Fluxo:**
+1. **Formulário de onboarding** (cliente preenche antes da reunião)
+   - Nome, segmento, ticket médio do serviço
+   - Volume de leads/mês e canais de captação
+   - Tem CRM? Qual? (→ avaliar integração via Openclaw/Paperclip)
+   - Tem base de contatos histórica? Onde está?
+   - Quantos vendedores no time e como trabalham hoje
+   - Taxa de conversão estimada (se souber)
+   - Ciclo médio de venda
+
+2. **Reunião estratégica ao vivo** (aprofundamento)
+   - **Bloco 1 — Operação atual:** processo do lead até o fechamento · canais de comunicação com o lead (WhatsApp, e-mail, ligação)
+   - **Bloco 2 — CRM:** se tem → mapear funil, relatórios, histórico de leads. Se não tem → mapear operação manual (planilha, grupos WPP) → sugerir CRM; cliente pode optar por não adotar
+   - **Bloco 3 — Base e histórico:** leads que não fecharam (tem registro?), clientes antigos (tem contato?), potencial de reativação
+   - **Bloco 4 — Dores e gargalos:** onde perde mais (primeiro contato? follow-up? fechamento?), principais objeções, o que o time mais reclama
+   - **Bloco 5 — Captação:** de onde vêm os leads, tráfego pago (quanto investe)
+
+**Entregáveis:**
+- Relatório diagnóstico (documento estruturado)
+- Mapa de gargalos priorizados
+- Análise da base de contatos (potencial de reativação)
+- Plano de prioridades ranqueadas para Fase 2
+
+---
+
+### Fase 02 — Estrutura (Playbook + IA)
+
+**Playbook completo — foco PME prestadora de serviço:**
+- Scripts de primeiro contato (lead frio · lead quente · lead por indicação)
+- Cadências por tipo de lead (sequência de dias + canais)
+- Scripts de follow-up (1º, 2º, 3º, 4º contato)
+- Tratamento de objeções (preço · tempo · "vou pensar" · concorrente)
+- Script de reativação de base
+- Script de fechamento
+- Perguntas de qualificação (SPIN adaptado para serviço)
+
+**IA Copiloto (stack: Openclaw + Paperclip):**
+- Conecta ao WhatsApp do vendedor
+- Lê conversas em tempo real
+- Entrega: sugestão de próximo passo · alerta de esfriamento · análise por lead · relatório por vendedor
+
+**IA Assistida / Dashboard (stack: Openclaw + Paperclip):**
+- Dashboard da Eloscope com dados do cliente
+- Lead scoring — quem priorizar hoje
+- Análise da base para reativação
+- Relatório de performance comercial do time
+
+**Stack confirmado:** Openclaw · Paperclip · n8n (Hugo)
+
+---
+
+### Fase 03 — Acompanhamento Mensal
+
+⚠ A detalhar na reunião com Lucas e Hugo:
+- [ ] O que cobre a reunião mensal (só métricas ou também ajuste de playbook/scripts?)
+- [ ] Quem da Eloscope participa de cada reunião mensal
+- [ ] Como o dashboard é alimentado (automático via integração ou manual pelo cliente?)
+
+---
+
+### Pendências técnicas (reunião com Hugo)
+
+- [ ] **Openclaw e Paperclip:** Hugo já domina ou vai aprender durante os primeiros clientes?
+- [ ] **Conexão WhatsApp:** o vendedor do cliente precisa instalar algo ou conecta sem app adicional?
+- [ ] **Dashboard:** alimentado automaticamente via integração (Openclaw/Paperclip) ou cliente exporta dados?
+- [ ] **CRM com integração:** quais CRMs Hugo já sabe integrar via n8n?
+
 ## Dores → Analgésicos (mapeamento direto)
 
 | Dor | Analgésico |
