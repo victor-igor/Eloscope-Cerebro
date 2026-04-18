@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eloscope — Ecossistema Completo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #080808;
+    color: rgba(240,255,254,0.92);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 48px 40px 80px;
+    overflow-x: hidden;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 56px;
+  }
+  .header-left {}
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: rgba(0,212,255,0.6);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+  }
+  h1 span { color: #00D4FF; }
+  .subtitle {
+    font-size: 13px;
+    color: rgba(240,255,254,0.4);
+    margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── LEGEND ─── */
+  .legend {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(240,255,254,0.4);
+    letter-spacing: 0.1em;
+  }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* ─── LINE DECO ─── */
+  .line-deco {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(0,212,255,0.4) 35%, rgba(217,70,239,0.4) 65%, transparent 100%);
+    margin-bottom: 48px;
+  }
+
+  /* ─── MAIN LAYOUT ─── */
+  .ecosystem {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0;
+    position: relative;
+  }
+
+  /* ─── LAYER LABELS ─── */
+  .layer-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    left: -120px;
+    top: 0;
+    height: 100%;
+  }
+
+  /* ─── FUNIL OVERLAY ─── */
+  .funnel-overlay {
+    position: relative;
+  }
+
+  /* ─── COLUMNS ─── */
+  .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 8px;
+    position: relative;
+  }
+
+  /* ─── LAYER ROW ─── */
+  .layer {
+    display: contents;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(240,255,254,0.3);
+    text-align: center;
+    margin-bottom: 12px;
+    padding-top: 32px;
+  }
+
+  /* ─── CARDS ─── */
+  .card {
+    border-radius: 12px;
+    padding: 16px 18px;
+    width: 100%;
+    margin-bottom: 16px;
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-2px); }
+
+  .card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 5px;
+  }
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+  }
+  .card-desc {
+    font-size: 10.5px;
+    color: rgba(240,255,254,0.45);
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 100px;
+    margin-top: 7px;
+  }
+
+  /* Card types */
+  .card-edu {
+    background: rgba(240,255,254,0.03);
+    border: 1px solid rgba(240,255,254,0.1);
+  }
+  .card-edu .card-label { color: rgba(240,255,254,0.4); }
+
+  .card-capture {
+    background: rgba(217,70,239,0.06);
+    border: 1px solid rgba(217,70,239,0.2);
+  }
+  .card-capture .card-label { color: rgba(217,70,239,0.7); }
+
+  .card-low {
+    background: rgba(0,212,255,0.04);
+    border: 1px solid rgba(0,212,255,0.15);
+  }
+  .card-low .card-label { color: rgba(0,212,255,0.55); }
+
+  .card-mid {
+    background: rgba(0,212,255,0.07);
+    border: 1px solid rgba(0,212,255,0.25);
+  }
+  .card-mid .card-label { color: rgba(0,212,255,0.7); }
+
+  .card-high {
+    background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(217,70,239,0.08));
+    border: 1px solid rgba(0,212,255,0.4);
+    box-shadow: 0 0 24px rgba(0,212,255,0.08);
+  }
+  .card-high .card-label { color: #00D4FF; }
+  .card-high .card-title { color: rgba(240,255,254,0.95); }
+
+  .badge-ativo    { background: rgba(0,212,255,0.12); color: #00D4FF; border: 1px solid rgba(0,212,255,0.3); }
+  .badge-beta     { background: rgba(217,70,239,0.1); color: #D946EF; border: 1px solid rgba(217,70,239,0.3); }
+  .badge-futuro   { background: rgba(240,255,254,0.05); color: rgba(240,255,254,0.35); border: 1px solid rgba(240,255,254,0.12); }
+
+  /* ─── ARROWS BETWEEN LAYERS ─── */
+  .arrow-row {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 0;
+    gap: 4px;
+    color: rgba(0,212,255,0.4);
+    font-size: 18px;
+  }
+  .arrow-row span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: rgba(240,255,254,0.2);
+    text-transform: uppercase;
+  }
+
+  /* ─── ELOSCOPE CENTER NODE ─── */
+  .center-node {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(217,70,239,0.1));
+    border: 1.5px solid rgba(0,212,255,0.5);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 8px;
+    box-shadow: 0 0 48px rgba(0,212,255,0.12), 0 0 100px rgba(0,212,255,0.04);
+    text-align: center;
+  }
+  .center-node .node-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #00D4FF;
+    margin-bottom: 4px;
+  }
+  .center-node .node-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: rgba(240,255,254,0.35);
+    text-transform: uppercase;
+  }
+
+  /* ─── FULL LAYOUT ─── */
+  .full-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ─── ROW ─── */
+  .row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+    align-items: stretch;
+  }
+  .row-label {
+    width: 120px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .row-label-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(240,255,254,0.25);
+    text-align: right;
+    padding-right: 16px;
+    border-right: 1px solid rgba(240,255,254,0.08);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .row-label-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 100px;
+    text-align: center;
+    margin-top: 6px;
+  }
+  .row-cards {
+    flex: 1;
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+  }
+  .row-cards .card {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  /* ─── CONNECTOR ARROWS ─── */
+  .connector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0;
+    margin-left: 132px;
+  }
+  .connector-line {
+    width: 100%;
+    height: 28px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .connector svg {
+    width: 100%;
+    height: 28px;
+  }
+  .connector-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: rgba(240,255,254,0.2);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  /* ─── RESULTADO ROW ─── */
+  .resultado-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    margin-left: 132px;
+  }
+  .resultado-card {
+    flex: 1;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: rgba(0,212,255,0.03);
+    border: 1px dashed rgba(0,212,255,0.2);
+    text-align: center;
+  }
+  .resultado-card .r-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: rgba(0,212,255,0.45);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .resultado-card .r-value {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    color: rgba(240,255,254,0.75);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 60px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(240,255,254,0.15);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="eyebrow">Eloscope · Visão Estratégica</div>
+    <h1>Ecossistema <span>Completo</span></h1>
+    <div class="subtitle">Funil · Escada de Produtos · Educação · Serviços</div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#00D4FF"></div>Ativo</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#D946EF"></div>Beta / Em lançamento</div>
+    <div class="legend-item"><div class="legend-dot" style="background:rgba(240,255,254,0.2)"></div>Futuro / Em construção</div>
+  </div>
+</div>
+
+<div class="line-deco"></div>
+
+<div class="full-layout">
+
+  <!-- ── TOPO DE FUNIL — EDUCAÇÃO ── -->
+  <div class="row">
+    <div class="row-label">
+      <div class="row-label-text">Topo de Funil<br>Educação</div>
+    </div>
+    <div class="row-cards">
+      <div class="card card-edu">
+        <div class="card-label">Orgânico</div>
+        <div class="card-title">Carrosséis & Posts Instagram</div>
+        <div class="card-desc">Conteúdo educativo sobre IA para PMEs. Posicionamento e autoridade.</div>
+        <div class="badge badge-ativo">Ativo</div>
+      </div>
+      <div class="card card-edu">
+        <div class="card-label">Orgânico</div>
+        <div class="card-title">LinkedIn & Conteúdo Escrito</div>
+        <div class="card-desc">Artigos, cases e insights sobre IA aplicada a vendas e marketing.</div>
+        <div class="badge badge-futuro">Em construção</div>
+      </div>
+      <div class="card card-edu">
+        <div class="card-label">Educação</div>
+        <div class="card-title">Curso / Infoproduto IA</div>
+        <div class="card-desc">Low ticket — como usar IA no negócio. Porta de entrada escalável.</div>
+        <div class="badge badge-futuro">Futuro</div>
+      </div>
+      <div class="card card-edu">
+        <div class="card-label">Comunidade</div>
+        <div class="card-title">Newsletter & Comunidade</div>
+        <div class="card-desc">Base própria de donos de PME interessados em IA operacional.</div>
+        <div class="badge badge-futuro">Futuro</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECTOR -->
+  <div class="connector">
+    <div style="width:100%;">
+      <svg viewBox="0 0 800 20" preserveAspectRatio="none">
+        <line x1="400" y1="0" x2="400" y2="14" stroke="rgba(0,212,255,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+        <polygon points="396,14 404,14 400,20" fill="rgba(0,212,255,0.3)"/>
+      </svg>
+      <div class="connector-label">Qualifica e atrai leads</div>
+    </div>
+  </div>
+
+  <!-- ── CAPTURA ── -->
+  <div class="row">
+    <div class="row-label">
+      <div class="row-label-text">Captura</div>
+    </div>
+    <div class="row-cards">
+      <div class="card card-capture">
+        <div class="card-label">Lead Magnet</div>
+        <div class="card-title">Diagnóstico Gratuito</div>
+        <div class="card-desc">Conversa de 30 min — identifica gargalo comercial. CTA de todos os canais.</div>
+        <div class="badge badge-beta">Lançar agora</div>
+      </div>
+      <div class="card card-capture">
+        <div class="card-label">Presença Digital</div>
+        <div class="card-title">Landing Pages & Sites</div>
+        <div class="card-desc">Porta de entrada digital para novos leads. Serviço que a Eloscope também entrega.</div>
+        <div class="badge badge-ativo">Ativo</div>
+      </div>
+      <div class="card card-capture">
+        <div class="card-label">Reativação</div>
+        <div class="card-title">Base de Leads & Clientes</div>
+        <div class="card-desc">Leads que não fecharam + clientes ativos. Canal de aquisição zero custo.</div>
+        <div class="badge badge-beta">Go-to-market agora</div>
+      </div>
+      <div class="card card-capture">
+        <div class="card-label">Referral</div>
+        <div class="card-title">Indicação</div>
+        <div class="card-desc">Clientes satisfeitos indicam. Programa de indicação a estruturar.</div>
+        <div class="badge badge-futuro">Futuro</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECTOR -->
+  <div class="connector">
+    <div style="width:100%;">
+      <svg viewBox="0 0 800 20" preserveAspectRatio="none">
+        <line x1="400" y1="0" x2="400" y2="14" stroke="rgba(0,212,255,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+        <polygon points="396,14 404,14 400,20" fill="rgba(0,212,255,0.3)"/>
+      </svg>
+      <div class="connector-label">Leads qualificados entram no funil comercial</div>
+    </div>
+  </div>
+
+  <!-- ── ESCADA DE PRODUTOS ── -->
+  <div class="row">
+    <div class="row-label">
+      <div class="row-label-text">Escada de<br>Produtos</div>
+    </div>
+    <div class="row-cards">
+
+      <!-- Low ticket -->
+      <div class="card card-low">
+        <div class="card-label">Low Ticket</div>
+        <div class="card-title">Treinamento IA para Equipes</div>
+        <div class="card-desc">Capacitação do time do cliente para usar IA no dia a dia comercial.</div>
+        <div class="badge badge-futuro">Em definição</div>
+      </div>
+
+      <!-- Mid ticket -->
+      <div class="card card-mid">
+        <div class="card-label">Mid Ticket</div>
+        <div class="card-title">Landing Pages & Sites com IA</div>
+        <div class="card-desc">Presença digital otimizada. Copy com IA, design, conversão.</div>
+        <div class="badge badge-ativo">Ativo</div>
+      </div>
+
+      <!-- Core — Sales OS -->
+      <div class="card card-high" style="flex:1.4;">
+        <div class="card-label">Core · High Ticket</div>
+        <div class="card-title" style="font-size:16px;">Eloscope Sales OS</div>
+        <div class="card-desc">Assessoria recorrente — converte mais e reactiva base com IA. R$3.5–8k/mês.</div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:8px;">
+          <div class="badge badge-beta">Beta agora</div>
+          <div class="badge" style="background:rgba(0,212,255,0.08);color:rgba(0,212,255,0.7);border:1px solid rgba(0,212,255,0.2);">R$3.5–8k/mês</div>
+        </div>
+      </div>
+
+      <!-- AI Squads -->
+      <div class="card card-mid">
+        <div class="card-label">Alto Ticket</div>
+        <div class="card-title">AI Squads Done-For-You</div>
+        <div class="card-desc">Agentes de IA prontos para operar no negócio. Implementação completa.</div>
+        <div class="badge badge-futuro">Em construção</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CONNECTOR -->
+  <div class="connector">
+    <div style="width:100%;">
+      <svg viewBox="0 0 800 20" preserveAspectRatio="none">
+        <line x1="400" y1="0" x2="400" y2="14" stroke="rgba(0,212,255,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+        <polygon points="396,14 404,14 400,20" fill="rgba(0,212,255,0.3)"/>
+      </svg>
+      <div class="connector-label">Entrega → resultado mensurável no negócio do cliente</div>
+    </div>
+  </div>
+
+  <!-- ── RESULTADOS ── -->
+  <div class="resultado-row">
+    <div class="resultado-card">
+      <div class="r-label">Resultado 1</div>
+      <div class="r-value">+ Conversão</div>
+    </div>
+    <div class="resultado-card">
+      <div class="r-label">Resultado 2</div>
+      <div class="r-value">Base Reativada</div>
+    </div>
+    <div class="resultado-card">
+      <div class="r-label">Resultado 3</div>
+      <div class="r-value">Time com IA</div>
+    </div>
+    <div class="resultado-card">
+      <div class="r-label">Resultado 4</div>
+      <div class="r-value">+ Faturamento</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="line-deco" style="margin-top: 60px; margin-bottom: 0;"></div>
+
+<div class="footer">Eloscope · Ecossistema Completo v2 · Abril 2026</div>
+
+</body>
+</html>

@@ -19,7 +19,7 @@
 
 | Projeto | Status | Próximo Marco | Arquivo |
 |---------|--------|---------------|---------|
-| [Projeto 2] | 🔨 Em construção | [próximo marco] | [projeto-2.md] |
+| Eloscope Sales OS | 🔨 Em construção | Fechar 2-3 clientes beta (60 dias) | sales-os.md |
 
 ---
 

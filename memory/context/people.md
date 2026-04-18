@@ -9,8 +9,9 @@
 
 | Nome | Função | Contato | Notas |
 |------|--------|---------|-------|
-| Victor Igor | COO / Co-founder | eloscope.coo@gmail.com | Head of AI, arquitetura de agentes |
-| Lucas | Co-founder / Head of Delivery | — | Delivery e implementações para clientes |
+| Victor Igor | COO / Co-founder | eloscope.coo@gmail.com | Marketing, processos, desenvolvimento, estratégia |
+| Lucas | Co-founder / Sócio | — | Comercial, fechamento, relacionamento com cliente, desenvolvimento |
+| Hugo | Especialista Técnico (freelancer) | — | Automações n8n, implementação técnica de IA, fluxos e integrações |
 
 ---
 
