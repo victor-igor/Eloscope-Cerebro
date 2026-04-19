@@ -1,4 +1,4 @@
-# Eloscope Sales OS — Apresentação Interna v2
+# Eloscope Elo OS — Apresentação Interna v2
 
 > Roteiro completo de slides para apresentar para a equipe.
 > Montar no Canva usando o design system Eloscope.
@@ -8,7 +8,7 @@
 
 ## SLIDE 1 — CAPA
 
-**Headline:** Eloscope Sales OS
+**Headline:** Eloscope Elo OS
 **Subheadline:** O sistema operacional de vendas da sua empresa.
 **Rodapé:** Briefing interno — Abril 2026 · Victor, Lucas, Hugo
 
@@ -24,7 +24,7 @@ Muito desenvolvimento. Muita personalização. Entrega longa. Sem foco em result
 
 Cada cliente era um projeto diferente. A operação travou.
 
-O Sales OS é a correção de rota:
+O Elo OS é a correção de rota:
 **menos escopo. mais impacto. resultado mensurável.**
 
 **Destaque Cyan:** "resultado mensurável"
@@ -84,22 +84,25 @@ Não é falta de produto. Não é falta de lead.
 ## SLIDE 6 — A SOLUÇÃO
 
 **Eyebrow:** ELOSCOPE SALES OS
-**Headline:** Seu time perde venda todo dia por falta de processo e follow-up.
+**Headline:** O problema nunca foi o vendedor. Foi a falta de sistema.
 
-**Body:**
-O Sales OS instala o sistema comercial completo — processo, IA e acompanhamento mensal.
+**Sub-headline:**
+Não é consultoria de prateleira. É processo + IA + acompanhamento mensal rodando com o seu time — até a conversão, a previsibilidade e a recorrência virarem realidade no seu número.
 
-Não é consultoria que fala o que fazer.
-Se nada melhorar em 60 dias, devolvemos R$3.000.
+**Transição:**
+E aqui está tudo o que você recebe — processo, tecnologia, playbook e presença mensal — em um único sistema pronto para operar.
 
-**Destaque Cyan:** "devolvemos R$3.000"
+**Garantia:**
+Se em 60 dias você não ver melhora concreta nos indicadores, devolvemos o setup. Sem burocracia. Porque confiança se constrói com resultado — ou com honestidade quando ele não vem.
+
+**Destaque Cyan:** "O problema nunca foi o vendedor."
 
 ---
 
 ## SLIDE 7 — ECOSSISTEMA
 
 **Eyebrow:** O QUADRO COMPLETO
-**Headline:** O Sales OS é o core. O ecossistema é maior.
+**Headline:** O Elo OS é o core. O ecossistema é maior.
 
 **Visual:** usar o mapa de ecossistema (ecossistema.html como referência)
 
@@ -109,12 +112,12 @@ Se nada melhorar em 60 dias, devolvemos R$3.000.
 |--------|---------|
 | Educação | Conteúdo, curso, newsletter — atrai e qualifica |
 | Captura | Diagnóstico gratuito, landing pages, reativação |
-| Produtos | Landing pages · **Sales OS** · AI Squads |
+| Produtos | Landing pages · **Elo OS** · AI Squads |
 | Resultado | + Conversão · Base reativada · + Faturamento |
 
-**Nota:** Sales OS é onde focamos agora. O resto é visão de futuro.
+**Nota:** Elo OS é onde focamos agora. O resto é visão de futuro.
 
-**Destaque Cyan:** "Sales OS"
+**Destaque Cyan:** "Elo OS"
 
 ---
 
@@ -171,11 +174,11 @@ Se nada melhorar em 60 dias, devolvemos R$3.000.
 ## SLIDE 11 — GLOSSÁRIO
 
 **Eyebrow:** TERMOS QUE USAMOS
-**Headline:** O vocabulário do Sales OS.
+**Headline:** O vocabulário do Elo OS.
 
 | Termo | O que significa |
 |-------|----------------|
-| **Sales OS** | Sistema operacional de vendas — o método Eloscope |
+| **Elo OS** | Sistema operacional de vendas — o método Eloscope |
 | **IA Copiloto** | IA que age junto com o vendedor em tempo real |
 | **IA Assistida** | IA que processa dados e entrega insights para o gestor decidir |
 | **Lead Scoring** | IA que ranqueia leads por probabilidade de fechar |
@@ -200,7 +203,7 @@ Contrato mínimo 3 meses. Preço real após cases: até R$8k setup + R$8k/mês.
 
 **Body:**
 Para uma PME +R$80k/mês, 20% a mais em conversão = +R$16k/mês.
-O Sales OS se paga no primeiro mês.
+O Elo OS se paga no primeiro mês.
 
 **Destaque Cyan:** "se paga"
 
@@ -236,7 +239,7 @@ Comercial · Relacionamento com cliente · Desenvolvimento
 **Hugo**
 Automações n8n · Implementação técnica de IA
 
-*Nota: divisão de papéis na entrega do Sales OS a definir juntos nessa reunião.*
+*Nota: divisão de papéis na entrega do Elo OS a definir juntos nessa reunião.*
 
 ---
 
@@ -264,7 +267,7 @@ Não somos fornecedores. Somos o time de AI do negócio do cliente.
 **Headline:** Saímos dessa reunião com isso resolvido.
 
 **Lista:**
-- [ ] Papel de cada um na entrega do Sales OS
+- [ ] Papel de cada um na entrega do Elo OS
 - [ ] Quem lidera o diagnóstico com o cliente
 - [ ] Quem cuida da implementação técnica
 - [ ] Stack de IA — ferramentas que vamos usar
@@ -288,5 +291,5 @@ Não somos fornecedores. Somos o time de AI do negócio do cliente.
 
 ---
 
-*Eloscope Sales OS — Apresentação Interna v2 · Abril 2026*
+*Eloscope Elo OS — Apresentação Interna v2 · Abril 2026*
 *17 slides · Victor Igor · Lucas · Hugo*

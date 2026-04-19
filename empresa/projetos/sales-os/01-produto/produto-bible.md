@@ -1,4 +1,4 @@
-# Sales OS — Product Bible
+# Elo OS — Product Bible
 > Documento interno completo. Time operacional · Time comercial · Closers.
 > Versão: 18/04/2026 · Atualizar sempre que produto mudar.
 
@@ -6,7 +6,7 @@
 
 ## PARTE 1 — O PRODUTO
 
-### O que é o Sales OS
+### O que é o Elo OS
 
 Sistema operacional de vendas para PMEs. A Eloscope **implementa e opera** o processo comercial com IA — não orienta, não ensina, não vende ferramenta.
 
@@ -20,7 +20,7 @@ Sistema operacional de vendas para PMEs. A Eloscope **implementa e opera** o pro
 Equipe de resultado terceirizada — diagnostica, estrutura, implementa IA no time de vendas e acompanha resultado todo mês.
 
 **Frase de posicionamento:**
-> "Seu time perde venda todo dia por falta de processo e follow-up. O Sales OS instala o sistema comercial completo — processo, IA e acompanhamento mensal. Se nada melhorar em 60 dias, devolvemos R$3.000."
+> "Seu time perde venda todo dia por falta de processo e follow-up. O Elo OS instala o sistema comercial completo — processo, IA e acompanhamento mensal. Se nada melhorar em 60 dias, devolvemos o setup."
 
 ---
 
@@ -41,9 +41,9 @@ Equipe de resultado terceirizada — diagnostica, estrutura, implementa IA no ti
 
 ---
 
-### Por que o Sales OS (diferencial)
+### Por que o Elo OS (diferencial)
 
-| | Consultoria | Assessoria | Mentoria | **Sales OS** |
+| | Consultoria | Assessoria | Mentoria | **Elo OS** |
 |--|--|--|--|--|
 | Diagnóstico | ✅ | ✅ | ❌ | ✅ |
 | Implementa | ❌ | ❌ | ❌ | ✅ |
@@ -157,7 +157,7 @@ Skills avançadas (Growth + Scale):
 
 **Detalhe das sessões de treinamento:**
 
-**Sessão 1 — "Operação com o Sales OS"** (~90 min) · todos os planos
+**Sessão 1 — "Operação com o Elo OS"** (~90 min) · todos os planos
 > Para os **vendedores** (+ 1 gestor)
 
 | Bloco | Conteúdo | Tempo |
@@ -196,7 +196,7 @@ Skills avançadas (Growth + Scale):
 
 | Módulo | Conteúdo | Duração estimada |
 |--------|---------|-----------------|
-| 01 | O que é o Sales OS e como vai mudar sua rotina | ~10 min |
+| 01 | O que é o Elo OS e como vai mudar sua rotina | ~10 min |
 | 02 | Como usar o playbook no dia a dia | ~15 min |
 | 03 | IA Copiloto na prática — tutorial passo a passo | ~15 min |
 | 04 | Como fazer follow-up que converte | ~10 min |
@@ -232,7 +232,7 @@ Skills avançadas (Growth + Scale):
 
 ### Conceito
 
-Dashboard da Eloscope acessado pelo cliente (gestor e vendedores) para acompanhar relatórios e métricas do comercial em tempo real. **Não é uma ferramenta genérica** — é construído especificamente para o Sales OS, alimentado pelos dados da IA Copiloto e das cadências.
+Dashboard da Eloscope acessado pelo cliente (gestor e vendedores) para acompanhar relatórios e métricas do comercial em tempo real. **Não é uma ferramenta genérica** — é construído especificamente para o Elo OS, alimentado pelos dados da IA Copiloto e das cadências.
 
 ---
 
@@ -391,19 +391,19 @@ Dashboard da Eloscope acessado pelo cliente (gestor e vendedores) para acompanha
 - **Mensalidade:** cobrada mensalmente a partir do mês 1
 - **Mínimo:** 3 meses
 - **Renovação:** mensal após os 3 meses
-- **Condição beta:** menor preço que o Sales OS vai ter — em troca: abertura para ajustes + case público (com aprovação prévia)
+- **Condição beta:** menor preço que o Elo OS vai ter — em troca: abertura para ajustes + case público (com aprovação prévia)
 - **Acima de 10 vendedores:** proposta customizada
 
 ---
 
 ### Argumento de valor (para o closer)
 
-> "Se você tem 100 leads por mês e converte 10% = 10 clientes a R$2.000 ticket = R$20k/mês. Com o Sales OS melhorando 5 pontos percentuais, você passa para 15 clientes = R$30k/mês. São R$10k a mais por mês. O Starter beta custa R$1.500/mês. Você recupera em 5 dias de resultado."
+> "Se você tem 100 leads por mês e converte 10% = 10 clientes a R$2.000 ticket = R$20k/mês. Com o Elo OS melhorando 5 pontos percentuais, você passa para 15 clientes = R$30k/mês. São R$10k a mais por mês. O Starter beta custa R$1.500/mês. Você recupera em 5 dias de resultado."
 
 **Ancoragem de preço:**
 - Consultoria tradicional: R$5.000–15.000/mês sem implementação
 - Contratar 1 vendedor sênior: R$5.000–8.000/mês + encargos
-- Sales OS: implementa, opera com IA, acompanha — por R$1.500 beta
+- Elo OS: implementa, opera com IA, acompanha — por R$1.500 beta
 
 ---
 
@@ -429,7 +429,7 @@ Dono ou gestor comercial da PME. Sente a dor de não conseguir converter. Já te
 
 ### Script de abordagem (WhatsApp/DM)
 
-> "Oi [nome], tudo bem? Tô passando porque lançamos o Sales OS aqui na Eloscope — bem diferente do que fazíamos antes. A gente estrutura o comercial da empresa e implementa IA no dia a dia do time de vendas. Tenho [X] vagas de parceiro fundador com condição especial. Vale uma conversa rápida de 20 minutos?"
+> "Oi [nome], tudo bem? Tô passando porque lançamos o Elo OS aqui na Eloscope — bem diferente do que fazíamos antes. A gente estrutura o comercial da empresa e implementa IA no dia a dia do time de vendas. Tenho [X] vagas de parceiro fundador com condição especial. Vale uma conversa rápida de 20 minutos?"
 
 ### Perguntas na reunião de venda
 
@@ -506,7 +506,7 @@ Dono ou gestor comercial da PME. Sente a dor de não conseguir converter. Já te
 
 | Termo | Definição |
 |-------|-----------|
-| **Sales OS** | Sistema operacional de vendas — método proprietário da Eloscope |
+| **Elo OS** | Sistema operacional de vendas — método proprietário da Eloscope |
 | **IA Copiloto** | IA que age junto com o vendedor em tempo real — scripts, sugestões, alertas no WhatsApp |
 | **IA Assistida** | IA que processa dados e entrega insights para o gestor — humano decide o que fazer |
 | **Lead Scoring** | Ranqueamento de leads por probabilidade de fechar — define onde o time foca hoje |
@@ -514,7 +514,7 @@ Dono ou gestor comercial da PME. Sente a dor de não conseguir converter. Já te
 | **Reativação** | Trabalhar base parada — leads que não fecharam + clientes antigos sem contato |
 | **TCV** | Total Contract Value — valor total do contrato (setup + 3 meses), pago upfront |
 | **Cadência** | Sequência programada de contatos por canal e dia — follow-up sem depender da memória |
-| **Openclaw** | Ferramenta open source core da IA do Sales OS |
+| **Openclaw** | Ferramenta open source core da IA do Elo OS |
 | **Paperclip** | Ferramenta open source de integração e processamento de dados |
 | **n8n** | Plataforma de automação usada pelo Hugo para conectar sistemas |
 
@@ -522,13 +522,13 @@ Dono ou gestor comercial da PME. Sente a dor de não conseguir converter. Já te
 
 ## PARTE 8 — ECOSSISTEMA ELOSCOPE
 
-O Sales OS é o produto core. Contexto maior:
+O Elo OS é o produto core. Contexto maior:
 
 | Camada | Produtos |
 |--------|---------|
 | **Educação** | Conteúdo (Instagram/LinkedIn) · Curso IA · Newsletter |
 | **Captura** | Diagnóstico gratuito · Landing Pages · Reativação de base |
-| **Produtos** | Treinamento (equipe com IA) · ⭐ **Sales OS** · AI Squads (done-for-you) |
+| **Produtos** | Treinamento (equipe com IA) · ⭐ **Elo OS** · AI Squads (done-for-you) |
 
 **AI Squads** = agente de atendimento e outros escopos fora do comercial → produto separado, venda separada.
 

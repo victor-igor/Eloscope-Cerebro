@@ -1,4 +1,4 @@
-# Sales OS — Copy Squad Output
+# Elo OS — Copy Squad Output
 > Produzido por: Cyrus (Copy Chief) · Gary Halbert · Dan Kennedy · Russell Brunson · Dan Koe
 > Data: 19/04/2026
 > Status: **Aprovado — pendente implementar nos docs**
@@ -7,9 +7,9 @@
 
 ## Promessa Mãe (oficial)
 
-> "Seu time perde venda todo dia por falta de processo e follow-up. O Sales OS instala o sistema comercial completo — processo, IA e acompanhamento mensal. Se nada melhorar em 60 dias, devolvemos R$3.000."
+> "Seu time perde venda todo dia por falta de processo e follow-up. O Elo OS instala o sistema comercial completo — processo, IA e acompanhamento mensal. Se nada melhorar em 60 dias, devolvemos o setup. Sem burocracia."
 
-**Regra:** sem número específico de resultado até primeiros cases validados.
+**Regra:** sem número específico de resultado até primeiros cases validados. Garantia = devolução do setup, sem citar valor na copy.
 
 ---
 
@@ -22,21 +22,21 @@
 > O próximo nível da sua empresa não está em contratar mais vendedores — está em ter um sistema comercial funcionando, com processo, IA e acompanhamento, e não apenas mais leads entrando pela porta.
 
 **Promessa:**
-> Seu time perde venda todo dia por falta de processo e follow-up. O Sales OS instala o sistema comercial completo — processo, IA e acompanhamento mensal — direto na operação da sua PME. Se nada melhorar em 60 dias, devolvemos R$3.000.
+> Seu time perde venda todo dia por falta de processo e follow-up. O Elo OS instala o sistema comercial completo — processo, IA e acompanhamento mensal — direto na operação da sua PME. Se nada melhorar em 60 dias, devolvemos o setup integralmente. Sem formulário, sem burocracia, sem discussão.
 
 **CTA:**
-> Quero instalar o Sales OS na minha empresa →
+> Quero instalar o Elo OS na minha empresa →
 
 ---
 
 ## 2. Proposta Comercial (Dan Kennedy)
 
 **Abertura:**
-> Donos de PME com time comercial não perdem vendas por falta de leads — perdem por falta de sistema. Você já tem o fluxo. O que falta é o processo que faz cada vendedor converter mais, o gestor enxergar o que está travando, e a operação rodar com previsibilidade mês a mês. É exatamente isso que o Sales OS instala na sua empresa.
+> Donos de PME com time comercial não perdem vendas por falta de leads — perdem por falta de sistema. Você já tem o fluxo. O que falta é o processo que faz cada vendedor converter mais, o gestor enxergar o que está travando, e a operação rodar com previsibilidade mês a mês. É exatamente isso que o Elo OS instala na sua empresa.
 
 **Promessa + Garantia:**
 > Sistema comercial completo: processo, IA Copiloto no WhatsApp do vendedor, dashboard do gestor, playbook e acompanhamento mensal.
-> **Garantia direta:** se nada melhorar em 60 dias, devolvemos R$3.000 — sem questionamento.
+> **Garantia direta:** se nada melhorar em 60 dias, devolvemos o valor do setup — sem questionamento. Porque empresa séria não cobra por resultado que não entregou.
 
 **Urgência:**
 > As vagas deste ciclo são limitadas pelo modelo de acompanhamento mensal — quando enchem, enchem.
@@ -55,7 +55,7 @@
 > E aqui está tudo o que você recebe — processo, tecnologia, playbook e presença mensal — em um único sistema pronto para operar.
 
 **Slide garantia:**
-> Se em 60 dias você não ver melhora concreta nos indicadores, devolvemos R$3.000. Sem burocracia. Porque confiança se constrói com resultado — ou com honestidade quando ele não vem.
+> Se em 60 dias você não ver melhora concreta nos indicadores, devolvemos o setup. Sem burocracia. Porque confiança se constrói com resultado — ou com honestidade quando ele não vem.
 
 ---
 
@@ -70,7 +70,7 @@
 > O sistema de vendas que sua empresa deveria ter desde o início.
 
 **CTA link bio:**
-> → Entenda como o Sales OS funciona para a sua empresa
+> → Entenda como o Elo OS funciona para a sua empresa
 
 ---
 
@@ -81,5 +81,5 @@
 
 ---
 
-*Sales OS — Copy Squad Output v1 · 19/04/2026*
+*Elo OS — Copy Squad Output v1 · 19/04/2026*
 *Próximo passo: implementar nos docs (apresentacao-slides.md, proposta-cliente.md)*

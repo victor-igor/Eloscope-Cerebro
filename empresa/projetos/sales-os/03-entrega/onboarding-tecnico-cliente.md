@@ -1,4 +1,4 @@
-# Sales OS — Guia de Onboarding Técnico para o Cliente
+# Elo OS — Guia de Onboarding Técnico para o Cliente
 > Enviado ao cliente após assinatura. Hugo envia junto com a confirmação do setup.
 > Linguagem simples — cliente não precisa ser técnico.
 
@@ -6,7 +6,7 @@
 
 **Olá, [nome]!**
 
-Enquanto preparamos toda a infraestrutura do seu Sales OS, precisamos da sua ajuda com algumas configurações rápidas. São apenas **3 coisas** — e no máximo 30 minutos do seu tempo.
+Enquanto preparamos toda a infraestrutura do seu Elo OS, precisamos da sua ajuda com algumas configurações rápidas. São apenas **3 coisas** — e no máximo 30 minutos do seu tempo.
 
 ---
 
@@ -14,7 +14,7 @@ Enquanto preparamos toda a infraestrutura do seu Sales OS, precisamos da sua aju
 
 ### 1. WhatsApp Business ativo
 
-O Sales OS conecta ao WhatsApp dos seus vendedores para a IA Copiloto funcionar.
+O Elo OS conecta ao WhatsApp dos seus vendedores para a IA Copiloto funcionar.
 
 **Cada vendedor que vai usar precisa:**
 - Ter o **WhatsApp Business** instalado no celular (não o WhatsApp comum)
@@ -48,7 +48,7 @@ Para conectar, Hugo vai precisar que o vendedor escaneie um QR Code (como faz qu
 
 ### 3. Conta de IA (LLMs) — custo direto seu
 
-O Sales OS usa modelos de inteligência artificial (como o ChatGPT / Claude) para processar as conversas e gerar os scripts personalizados. **O custo desses modelos é por sua conta** — mas é baixo e você contrata diretamente.
+O Elo OS usa modelos de inteligência artificial (como o ChatGPT / Claude) para processar as conversas e gerar os scripts personalizados. **O custo desses modelos é por sua conta** — mas é baixo e você contrata diretamente.
 
 **Recomendação:** OpenAI (ChatGPT API)
 
@@ -104,4 +104,4 @@ Sim. O número não muda, os contatos não somem. A conexão é adicional — n�
 
 ---
 
-*Sales OS — Eloscope · Guia Técnico Cliente v1 · Abril 2026*
+*Elo OS — Eloscope · Guia Técnico Cliente v1 · Abril 2026*

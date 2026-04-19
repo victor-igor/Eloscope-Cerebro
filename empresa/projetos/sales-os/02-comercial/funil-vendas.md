@@ -1,4 +1,4 @@
-# Sales OS — Funil de Vendas
+# Elo OS — Funil de Vendas
 > Documento interno. Processo comercial da Eloscope.
 > Dono: Lucas (execução) · Victor (supervisão)
 
@@ -6,7 +6,7 @@
 
 ## Funis ativos
 
-O Sales OS opera com 3 funis em paralelo — cada lead entra pelo canal de origem.
+O Elo OS opera com 3 funis em paralelo — cada lead entra pelo canal de origem.
 
 | Funil | Canal | Responsável |
 |-------|-------|------------|
@@ -48,7 +48,7 @@ INDICADO → ABORDAGEM PERSONALIZADA → QUALIFICADO → REUNIÃO → PROPOSTA �
 **Diferença do Outbound:** lead indicado tem pré-disposição maior. Abordagem mais direta, menos aquecimento necessário.
 
 **Script de abordagem (indicação):**
-> "Oi [nome], tudo bem? Sou o Lucas da Eloscope. [Nome do indicador] me passou seu contato falando que você pode se interessar pelo Sales OS — a gente implementa IA no processo comercial de PMEs. Tenho 20 minutos para te mostrar?"
+> "Oi [nome], tudo bem? Sou o Lucas da Eloscope. [Nome do indicador] me passou seu contato falando que você pode se interessar pelo Elo OS — a gente implementa IA no processo comercial de PMEs. Tenho 20 minutos para te mostrar?"
 
 **SLA:** reunião agendada em até 48h após abordagem (lead quente, não deixar esfriar).
 
@@ -65,7 +65,7 @@ LEAD CHEGOU → RESPOSTA RÁPIDA (<30 min) → QUALIFICAÇÃO → REUNIÃO → P
 **Regra crítica:** lead inbound deve receber resposta em até **30 minutos**. Lead que chegou por conta própria esfria rápido se demorar.
 
 **Primeiro contato inbound:**
-> "Oi [nome]! Vi que você se interessou pelo Sales OS. Me conta: você tem um time de vendas? Quantos vendedores ativos? Quero entender se faz sentido para o seu momento."
+> "Oi [nome]! Vi que você se interessou pelo Elo OS. Me conta: você tem um time de vendas? Quantos vendedores ativos? Quero entender se faz sentido para o seu momento."
 
 ---
 
@@ -117,4 +117,4 @@ Victor deve ser avisado quando:
 
 ---
 
-*Sales OS — Eloscope · Funil de Vendas v1 · Abril 2026*
+*Elo OS — Eloscope · Funil de Vendas v1 · Abril 2026*

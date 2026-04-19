@@ -1,4 +1,4 @@
-# Sales OS — Papéis e Responsabilidades
+# Elo OS — Papéis e Responsabilidades
 > Documento interno. Time operacional: Victor, Lucas, Hugo.
 > Atualizar: sempre que papéis mudarem.
 

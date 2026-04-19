@@ -1,4 +1,4 @@
-# Eloscope Sales OS — Briefing Interno v1
+# Eloscope Elo OS — Briefing Interno v1
 
 **Data:** Abril 2026
 **Status:** Rascunho — validar com equipe
@@ -6,9 +6,9 @@
 
 ---
 
-## O que é o Eloscope Sales OS
+## O que é o Eloscope Elo OS
 
-O **Eloscope Sales OS** é o método proprietário da Eloscope para transformar o processo comercial de PMEs usando inteligência artificial.
+O **Eloscope Elo OS** é o método proprietário da Eloscope para transformar o processo comercial de PMEs usando inteligência artificial.
 
 Não é uma ferramenta. Não é uma consultoria tradicional. É um sistema de trabalho — implementado, acompanhado e evoluído pela Eloscope mês a mês.
 
@@ -83,7 +83,7 @@ PMEs com faturamento +R$80k/mês geralmente já têm demanda — leads chegando,
 
 ## Modelo de IA
 
-O Sales OS opera com dois tipos de IA:
+O Elo OS opera com dois tipos de IA:
 
 | Tipo | Função | Quem usa |
 |------|--------|----------|
@@ -151,4 +151,4 @@ O Sales OS opera com dois tipos de IA:
 
 ---
 
-*Eloscope Sales OS — v1 · Abril 2026*
+*Eloscope Elo OS — v1 · Abril 2026*

@@ -29,7 +29,13 @@
 
 ## ✅ Resolvidas
 
-- [18/04/2026] Criar slide "Por que o Sales OS" — slide 7 criado e inserido (21 slides total)
+- [19/04/2026] Copy Squad implementada nos docs — slide 6, proposta abertura, landing-page.md criado, bio instagram inclusa
+- [19/04/2026] Marcos 30/60 dias reinseridos — proposta-cliente.md e sop-entrega.md
+- [19/04/2026] Garantia sem número em toda copy — "devolvemos o setup" (sem citar R$3.000)
+- [19/04/2026] Produto renomeado de "Sales OS" → "Elo OS" — 18 arquivos atualizados
+- [19/04/2026] Pasta sales-os reorganizada em 4 subpastas — 01-produto / 02-comercial / 03-entrega / 04-apresentacao
+- [19/04/2026] Slides de call de vendas criados — `slides-call-vendas.md` (11 slides + guia de objeções)
+- [18/04/2026] Criar slide "Por que o Elo OS" — slide 7 criado e inserido (21 slides total)
 - [18/04/2026] Slide Meta atualizado — R$1M removido, nova meta R$15k MRR com 3 marcos
 - [18/04/2026] Slide Para Quem É atualizado — público ampliado (serviço ou produto, B2B/B2C, 1 vendedor conta)
 - [18/04/2026] Quadrante foco definido: Q2 — Serviço com time comercial (confirmado por unanimidade no sprint)
@@ -51,8 +57,10 @@
 - [18/04/2026] Funil de vendas criado — `funil-vendas.md` (outbound/indicação/inbound + métricas + pipeline)
 - [19/04/2026] Pricing definitivo definido — 3 planos (Starter/Growth/Scale), setup R$3k, promessa com garantia de devolução
 - [19/04/2026] Todos os documentos comerciais atualizados com pricing e promessa consistentes
-- [19/04/2026] Copy Squad produziu 4 versões de copy por canal — **pendente implementar nos docs** (landing page, slide 6, bio instagram, proposta abertura)
-- [19/04/2026] Sub-promessas operacionais (marcos 30/60 dias) — **pendente reinserir** na proposta e SOP
+- [19/04/2026] Landing page ainda não construída — copy pronta em `landing-page.md` (bio instagram inclusa)
 - [19/04/2026] Lista de leads Eloscope para reativação GTM beta — Victor precisa extrair
 
-*Atualizado: 18/04/2026*
+- [19/04/2026] **Slides call de vendas: montar no Canva** com design system Eloscope · arquivo base em `04-apresentacao/slides-call-vendas.md`
+- [19/04/2026] **Definir quem conduz a call de vendas** — Victor ou Lucas (impacta treinamento e preparação)
+
+*Atualizado: 19/04/2026*

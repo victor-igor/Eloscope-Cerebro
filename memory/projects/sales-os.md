@@ -1,4 +1,4 @@
-# Eloscope Sales OS
+# Eloscope Elo OS
 
 > Status: 🔨 Em construção — fase beta
 
@@ -29,7 +29,7 @@ Motivo: já tem time comercial, já investe em tráfego e mesmo assim não escal
 PME +R$80k/mês com demanda existente, base de contatos parada, problema real de conversão ou reativação. Vende serviço ou produto (B2B ou B2C), tem ao menos 1 vendedor ativo. **NÃO é** para quem precisa gerar tráfego do zero.
 
 ## Promessa Mãe (definida 18/04)
-"O Sales OS estrutura o processo comercial da sua empresa, implementa IA que opera junto com seu time no dia a dia e acompanha resultado mês a mês — para você converter mais dos leads que já chegam, sem depender de esforço manual."
+"O Elo OS estrutura o processo comercial da sua empresa, implementa IA que opera junto com seu time no dia a dia e acompanha resultado mês a mês — para você converter mais dos leads que já chegam, sem depender de esforço manual."
 
 ## Pricing Beta — DEFINIDO (19/04/2026)
 Ver seção "Precificação — Definitiva" abaixo.
@@ -127,19 +127,19 @@ Ver seção "Precificação — Definitiva" abaixo.
 
 ## Ecossistema Eloscope (contexto maior)
 
-O Sales OS é o produto core. O ecossistema completo:
+O Elo OS é o produto core. O ecossistema completo:
 
 | Camada | Produtos |
 |--------|---------|
 | **Educação** (atrai e qualifica leads) | Conteúdo (Instagram/LinkedIn) · Curso IA low ticket · Newsletter |
 | **Captura** (leads qualificados) | Diagnóstico gratuito · Landing Pages · Reativação de base |
-| **Produtos** | Treinamento (equipe com IA) · **⭐ Sales OS (foco agora)** · AI Squads (done-for-you) |
+| **Produtos** | Treinamento (equipe com IA) · **⭐ Elo OS (foco agora)** · AI Squads (done-for-you) |
 
 ## Glossário dos Termos
 
 | Termo | Definição |
 |-------|-----------|
-| **Sales OS** | Sistema operacional de vendas — o método proprietário da Eloscope |
+| **Elo OS** | Sistema operacional de vendas — o método proprietário da Eloscope |
 | **IA Copiloto** | IA que age junto com o vendedor em tempo real — sugestões, scripts, alertas |
 | **IA Assistida** | IA que processa dados e entrega insights — humano decide o que fazer |
 | **Lead Scoring** | Ranqueamento de leads por probabilidade de fechar — priorizar onde o time atua |
@@ -220,7 +220,7 @@ Meta: 2-3 clientes beta. Zero custo de aquisição.
 | Scale | R$8.000 | R$8.000/mês |
 
 ## Promessa Mãe (definitiva — 19/04/2026)
-> "Seu time perde venda todo dia por falta de processo e follow-up. O Sales OS instala o sistema comercial completo — processo, IA e acompanhamento mensal. Se nada melhorar em 60 dias, devolvemos R$3.000."
+> "Seu time perde venda todo dia por falta de processo e follow-up. O Elo OS instala o sistema comercial completo — processo, IA e acompanhamento mensal. Se nada melhorar em 60 dias, devolvemos R$3.000."
 
 **Decisão:** sem número específico — produto em primeira versão, sem validação ainda. Quando primeiros cases saírem, inserir número real.
 **Garantia:** devolução do setup (R$3.000) se nada melhorar em 60 dias.
@@ -234,7 +234,7 @@ Meta: 2-3 clientes beta. Zero custo de aquisição.
 |------|--------|
 | 17/04/2026 | Produto estruturado, briefing e slides criados (17 slides) |
 | 17/04/2026 | Slides reformulados: 20 slides, nova estrutura, pricing em discussão |
-| 18/04/2026 | Slide "Por que o Sales OS" criado (slide 7) · total 21 slides |
+| 18/04/2026 | Slide "Por que o Elo OS" criado (slide 7) · total 21 slides |
 | 18/04/2026 | Meta revisada: R$15k MRR (não R$1M) · Q2 escolhido · promessa mãe definida |
 | 18/04/2026 | Oferta híbrida C Q2 estruturada · Modelos A e B precificados |
 | 18/04/2026 | Funil de vendas criado — 3 funis (Outbound/Indicação/Inbound) com SLAs, métricas e alertas |

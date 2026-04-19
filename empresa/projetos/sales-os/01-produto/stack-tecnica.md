@@ -1,4 +1,4 @@
-# Sales OS — Stack Técnica
+# Elo OS — Stack Técnica
 > Documento interno. Referência para Hugo (implementar), Victor (entender e decidir), Lucas (explicar ao cliente).
 > Legenda: ✅ Confirmado · ⚠️ A confirmar com Hugo · ❓ Decisão pendente
 
@@ -38,7 +38,7 @@ CLIENTE (vendedor)
 
 **O que é:** plataforma open source para criação de agentes de IA conversacional. Core da IA Copiloto.
 
-**Função no Sales OS:**
+**Função no Elo OS:**
 - Conecta ao WhatsApp Business do vendedor
 - Lê conversas em tempo real
 - Processa contexto da conversa (histórico + perfil do lead)
@@ -65,7 +65,7 @@ CLIENTE (vendedor)
 
 **O que é:** plataforma open source de integração e processamento de dados. Core da IA Assistida.
 
-**Função no Sales OS:**
+**Função no Elo OS:**
 - Recebe dados brutos do Openclaw (conversas, interações, status de leads)
 - Agrega e estrutura os dados por cliente, vendedor, lead
 - Alimenta o dashboard com métricas processadas
@@ -87,7 +87,7 @@ CLIENTE (vendedor)
 
 **O que é:** plataforma open source de automação de workflows (tipo Zapier, mas self-hosted).
 
-**Função no Sales OS:**
+**Função no Elo OS:**
 - Cadências de follow-up — dispara lembretes/triggers para o vendedor nos dias corretos
 - Alertas de esfriamento — cron job que verifica leads sem contato há X dias
 - Triggers pós-conversa — aciona análise após conversa encerrada
@@ -121,7 +121,7 @@ CLIENTE (vendedor)
 
 **O que é:** servidor virtual privado onde toda a infraestrutura do cliente roda.
 
-**Função no Sales OS:**
+**Função no Elo OS:**
 - Hospeda Openclaw + Paperclip + n8n por cliente
 - Isolamento por cliente — cada cliente tem sua instância separada (dados não se misturam)
 - Acesso remoto para Hugo fazer manutenção
@@ -149,7 +149,7 @@ CLIENTE (vendedor)
 
 **O que são:** modelos de linguagem que processam as conversas e geram scripts, análises e relatórios.
 
-**Função no Sales OS:**
+**Função no Elo OS:**
 - Gerar script personalizado por lead (IA Copiloto)
 - Analisar conversas do WhatsApp
 - Analisar transcrições de calls
@@ -194,7 +194,7 @@ CLIENTE (vendedor)
 
 **O que é:** interface web onde gestor e vendedor acessam métricas e relatórios.
 
-**Função no Sales OS:**
+**Função no Elo OS:**
 - Visão do gestor: conversão, performance do time, lead scoring, alertas, reativação
 - Visão do vendedor: lista priorizada do dia, próximas ações, alertas pessoais
 - Visão Eloscope (admin): todos os clientes para monitoramento

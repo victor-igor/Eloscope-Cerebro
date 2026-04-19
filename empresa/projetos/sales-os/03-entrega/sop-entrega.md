@@ -1,4 +1,4 @@
-# Sales OS — SOP de Entrega
+# Elo OS — SOP de Entrega
 > Standard Operating Procedure. Time operacional interno.
 > Seguir exatamente. Desvios devem ser documentados e aprovados por Victor.
 
@@ -174,6 +174,37 @@
 
 ---
 
+## MARCOS DE RESULTADO (Acompanhar ativamente)
+
+### Marco Dia 30
+
+> Comunicar ao cliente antes da primeira reunião mensal.
+
+- [ ] IA Copiloto ativa e sendo usada diariamente pelo time
+- [ ] Cadências rodando — pelo menos 80% dos novos leads recebendo follow-up
+- [ ] Dashboard com dados reais (não fictícios) e acessível ao gestor
+- [ ] KPIs registrados como baseline: tempo de resposta, taxa de conversão, leads na base
+- [ ] Primeira reunião mensal realizada com relatório gerado
+- [ ] Lucas: coletar NPS informal (o time está usando? o gestor viu valor?)
+
+### Marco Dia 60
+
+> Gatilho da garantia. Avaliar antes da segunda reunião mensal.
+
+- [ ] Relatório comparativo Dia 0 → Dia 60 preparado por Victor
+- [ ] Pelo menos 1 indicador com melhora mensurável:
+  - Tempo de resposta: de X horas → menos de 30 minutos
+  - Taxa de follow-up: de X% → acima de 80%
+  - Taxa de conversão: qualquer melhora documentada
+  - Leads reativados: base parada gerou novas conversas
+- [ ] Segunda reunião mensal realizada com comparativo apresentado
+- [ ] Lucas: check de satisfação — cliente renova ou aciona garantia?
+- [ ] **Se zero melhora documentada:** Victor e Lucas alinham devolução do setup
+
+---
+
+---
+
 ## FASE 3 — ACOMPANHAMENTO MENSAL
 
 ### Preparação (até 3 dias antes da reunião)
@@ -216,8 +247,8 @@
 
 ## MÉTRICAS QUE O CLIENTE VAI ACOMPANHAR
 
-> Estas são as métricas que definimos como sucesso do Sales OS para o cliente.
-> "O Sales OS funcionou" quando esses números melhoram.
+> Estas são as métricas que definimos como sucesso do Elo OS para o cliente.
+> "O Elo OS funcionou" quando esses números melhoram.
 
 | Métrica | O que mede | Como capturar |
 |---------|-----------|--------------|

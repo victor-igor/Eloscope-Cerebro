@@ -1,4 +1,4 @@
-# Sales OS — Formulário de Onboarding
+# Elo OS — Formulário de Onboarding
 > Enviado ao cliente após assinatura do contrato. Preencher antes da reunião de diagnóstico.
 > Tempo estimado: 15–20 minutos.
 
@@ -6,7 +6,7 @@
 
 **Olá, [nome do cliente]!**
 
-Antes da nossa reunião de diagnóstico, precisamos entender o seu negócio. Quanto mais detalhado você for, mais personalizado será o seu Sales OS.
+Antes da nossa reunião de diagnóstico, precisamos entender o seu negócio. Quanto mais detalhado você for, mais personalizado será o seu Elo OS.
 
 Preencha com calma — não há respostas certas ou erradas.
 
@@ -133,7 +133,7 @@ Preencha com calma — não há respostas certas ou erradas.
 **O que você já tentou para melhorar a conversão do time?**
 *(ex: treinamentos, scripts, CRM, consultoria, nada)*
 
-**Qual resultado você espera do Sales OS nos primeiros 90 dias?**
+**Qual resultado você espera do Elo OS nos primeiros 90 dias?**
 
 **Tem alguma restrição ou contexto importante que devemos saber antes da reunião?**
 *(ex: time vai crescer em breve, vai lançar novo produto, período de alta temporada, etc.)*
@@ -147,4 +147,4 @@ Em breve receberá a confirmação da data e horário da reunião de diagnóstic
 
 ---
 
-*Sales OS — Eloscope · Formulário de Onboarding v1 · Abril 2026*
+*Elo OS — Eloscope · Formulário de Onboarding v1 · Abril 2026*

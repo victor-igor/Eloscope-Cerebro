@@ -1,4 +1,4 @@
-# Sales OS — Template de Coleta de Case
+# Elo OS — Template de Coleta de Case
 > Usado após Dia 60–90 com o cliente. Lucas conduz a coleta.
 > O case é o ativo comercial mais importante para fechar os próximos clientes.
 
@@ -17,36 +17,36 @@
 
 **Mensagem de abertura (WhatsApp):**
 
-> "Oi [nome], tudo bem? Estamos chegando no [Dia 60/90] do Sales OS e os resultados estão aparecendo. Gostaria muito de documentar a sua experiência para compartilhar com outros empresários que estão na mesma situação que você estava. Seria possível a gente bater um papo rápido de uns 20 minutos? Você me conta o que mudou, a gente documenta, e você aprova tudo antes de publicar qualquer coisa."
+> "Oi [nome], tudo bem? Estamos chegando no [Dia 60/90] do Elo OS e os resultados estão aparecendo. Gostaria muito de documentar a sua experiência para compartilhar com outros empresários que estão na mesma situação que você estava. Seria possível a gente bater um papo rápido de uns 20 minutos? Você me conta o que mudou, a gente documenta, e você aprova tudo antes de publicar qualquer coisa."
 
 ---
 
 ## Perguntas para a coleta (call ou WhatsApp)
 
-### Contexto antes do Sales OS
+### Contexto antes do Elo OS
 
 1. "Como estava o processo de vendas antes de a gente começar?"
 2. "Qual era o maior problema do seu time comercial?"
 3. "Quanto tempo o time perdia com leads que não fechavam?"
-4. "Por que você decidiu testar o Sales OS?"
+4. "Por que você decidiu testar o Elo OS?"
 
 ### O que mudou
 
 5. "O que foi diferente nos primeiros 30 dias?"
 6. "Como o time reagiu à IA Copiloto no WhatsApp?"
-7. "Qual parte do Sales OS você mais usa no dia a dia?"
+7. "Qual parte do Elo OS você mais usa no dia a dia?"
 8. "Você consegue estimar quanto melhorou a taxa de conversão?"
 9. "O follow-up ficou mais consistente? Perdeu menos lead por falta de contato?"
 
 ### Resultado concreto
 
 10. "Tem algum número que você pode compartilhar? (leads contatados, conversões, receita)"
-11. "Em reais, o que o Sales OS representou para o negócio até agora?"
+11. "Em reais, o que o Elo OS representou para o negócio até agora?"
 12. "O que surpreendeu você — algo que não esperava que acontecesse?"
 
 ### Recomendação
 
-13. "Para qual tipo de empresa você recomendaria o Sales OS?"
+13. "Para qual tipo de empresa você recomendaria o Elo OS?"
 14. "O que você diria para um empresário que está em dúvida se vale a pena?"
 
 ---
@@ -60,7 +60,7 @@ O problema: [dor principal em 1–2 frases diretas].
 "[Citação do cliente descrevendo a dor]"
 
 A SOLUÇÃO
-Implementamos o Sales OS com foco em [1–2 entregáveis principais usados].
+Implementamos o Elo OS com foco em [1–2 entregáveis principais usados].
 Em [X dias], o time estava operando com IA Copiloto e playbook personalizado.
 
 DEPOIS
@@ -109,4 +109,4 @@ Antes de publicar qualquer coisa:
 
 ---
 
-*Sales OS — Eloscope · Template Case v1 · Abril 2026*
+*Elo OS — Eloscope · Template Case v1 · Abril 2026*

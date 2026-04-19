@@ -1,12 +1,18 @@
-# Sales OS — Proposta Comercial
+# Elo OS — Proposta Comercial
 > Documento enviável ao cliente. Versão beta · Parceiro Fundador.
 > Atualizar: sempre que escopo ou precificação mudar.
 
 ---
 
-## O que é o Sales OS
+## O que é o Elo OS
 
-Seu time perde venda todo dia por falta de processo e follow-up. O **Sales OS** instala o sistema comercial completo — processo, IA e acompanhamento mensal. Se nada melhorar em 60 dias, devolvemos R$3.000.
+Donos de PME com time comercial não perdem vendas por falta de leads — perdem por falta de sistema. Você já tem o fluxo. O que falta é o processo que faz cada vendedor converter mais, o gestor enxergar o que está travando, e a operação rodar com previsibilidade mês a mês. É exatamente isso que o **Elo OS** instala na sua empresa.
+
+**Sistema comercial completo:** processo, IA Copiloto no WhatsApp do vendedor, dashboard do gestor, playbook e acompanhamento mensal.
+
+**Garantia direta:** se nada melhorar em 60 dias, devolvemos o setup — sem questionamento.
+
+> *As vagas deste ciclo são limitadas pelo modelo de acompanhamento mensal — quando enchem, enchem.*
 
 **Não é consultoria.** Não falamos o que fazer e vamos embora.
 **Não é ferramenta.** Não vendemos software para você operar sozinho.
@@ -71,7 +77,7 @@ Seu time perde venda todo dia por falta de processo e follow-up. O **Sales OS** 
 | **Mínimo** | 3 meses | 3 meses | 3 meses |
 | **Investimento mínimo** | R$ 7.500 | R$ 10.500 | R$ 13.500 |
 
-> **Condição Parceiro Fundador:** Este é o menor preço que o Sales OS vai ter. Em troca, pedimos abertura para ajustes durante a implementação e autorização para usar os resultados como case (com aprovação prévia do conteúdo).
+> **Condição Parceiro Fundador:** Este é o menor preço que o Elo OS vai ter. Em troca, pedimos abertura para ajustes durante a implementação e autorização para usar os resultados como case (com aprovação prévia do conteúdo).
 
 **Como funciona o pagamento:**
 - Setup pago na assinatura do contrato
@@ -80,18 +86,37 @@ Seu time perde venda todo dia por falta de processo e follow-up. O **Sales OS** 
 
 ---
 
+## O que acontece em 30 e 60 dias
+
+### Marco Dia 30
+
+- Sistema rodando: IA Copiloto ativa, cadências disparando, dashboard ao vivo
+- Time treinado e usando no dia a dia
+- Primeira reunião mensal realizada com dados reais
+- KPIs iniciais registrados: tempo de resposta, taxa de follow-up, leads contatados
+
+### Marco Dia 60
+
+- Resultado comparável: antes vs. agora em conversão, resposta e follow-up
+- Pelo menos um indicador comercial com melhora mensurável
+- Base de contatos trabalhada — leads reativados ou oportunidades identificadas
+- Segunda reunião mensal com relatório consolidado
+- **Se nada melhorou:** garantia acionada, setup devolvido sem burocracia
+
+---
+
 ## Nossa Promessa
 
-> Seu time perde venda todo dia por falta de processo e follow-up. O Sales OS instala o sistema comercial completo — processo, IA e acompanhamento mensal.
+> Seu time perde venda todo dia por falta de processo e follow-up. O Elo OS instala o sistema comercial completo — processo, IA e acompanhamento mensal.
 >
-> **Se nada melhorar em 60 dias, devolvemos R$3.000. Sem burocracia.**
+> **Se nada melhorar em 60 dias, devolvemos o setup. Sem burocracia.**
 
 ---
 
 ## Argumento de valor
 
 > Se você tem 100 leads por mês e converte 10% = 10 clientes a R$2.000 ticket = R$20k/mês.
-> Com o Sales OS melhorando 5 pontos percentuais → 15 clientes → R$30k/mês.
+> Com o Elo OS melhorando 5 pontos percentuais → 15 clientes → R$30k/mês.
 > São R$10k a mais por mês. O Starter custa R$1.500/mês.
 > **Você recupera o investimento em menos de 5 dias de resultado.**
 
@@ -120,4 +145,4 @@ Seu time perde venda todo dia por falta de processo e follow-up. O **Sales OS** 
 **Dúvidas?**
 Falar com Lucas: [contato]
 
-*Eloscope — Sales OS · Proposta Parceiro Fundador · Abril 2026*
+*Eloscope — Elo OS · Proposta Parceiro Fundador · Abril 2026*

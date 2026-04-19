@@ -105,7 +105,7 @@
 | Nome | Status | Métricas-chave |
 |------|--------|----------------|
 | Eloscope (estúdio) | Ativo | — |
-| Eloscope Sales OS | 🔨 Em construção | Meta: R$15k MRR · 10 clientes · Abr/2027 |
+| Eloscope Elo OS | 🔨 Em construção | Meta: R$15k MRR · 10 clientes · Abr/2027 |
 
 ---
 
@@ -121,7 +121,7 @@
 
 ## Foco Atual
 
-1. **Sales OS beta** — fechar 2-3 clientes beta em 60 dias (Fran já ativa, Morgana é o próximo)
+1. **Elo OS beta** — fechar 2-3 clientes beta em 60 dias (Fran já ativa, Morgana é o próximo)
 2. **Lucas executando funil** — abordagem Morgana (esta semana) · Denis e Matheus (próxima)
 3. **Hugo pendências técnicas** — confirmar Openclaw/Paperclip end-to-end antes do primeiro cliente
 

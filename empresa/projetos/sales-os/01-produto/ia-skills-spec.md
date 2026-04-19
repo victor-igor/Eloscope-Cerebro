@@ -1,4 +1,4 @@
-# Sales OS — Especificação das IAs e Skills
+# Elo OS — Especificação das IAs e Skills
 > Documento técnico + comercial. Serve para: Hugo (o que implementar), Victor (o que prometer), Lucas (o que vender).
 > Versão: Abril 2026
 
@@ -252,7 +252,7 @@ Gera automaticamente um relatório mensal consolidado para ser usado na reunião
 ### SKILL 6 — Alerta de Risco de Churn (cliente)
 
 **O que faz:**
-Monitora indicadores de que o cliente (empresa contratante do Sales OS) pode cancelar — queda de uso, time parando de usar a IA Copiloto, métricas caindo.
+Monitora indicadores de que o cliente (empresa contratante do Elo OS) pode cancelar — queda de uso, time parando de usar a IA Copiloto, métricas caindo.
 
 **O que entrega:**
 - Alerta interno para a Eloscope (não para o cliente)
