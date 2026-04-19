@@ -159,7 +159,7 @@ Nunca saia de uma reunião sem próximo passo definido com data.
 Após a reunião, enviar `proposta-cliente.md` em até 24h.
 
 **Mensagem de envio (WhatsApp):**
-> "Oi [nome]! Aqui está a proposta do Sales OS que conversamos. O plano que faz mais sentido para você é o [Starter/Growth/Scale] — [X vendedores], setup R$2k + R$1.500/mês, mínimo 3 meses. Me fala o que você achou — tenho disponibilidade amanhã às [horário] ou [horário] para tirar qualquer dúvida."
+> "Oi [nome]! Aqui está a proposta do Sales OS que conversamos. O plano que faz mais sentido para você é o [Starter/Growth/Scale] — [X vendedores], setup R$3k + R$[1.500/2.500/3.500]/mês, mínimo 3 meses. Me fala o que você achou — tenho disponibilidade amanhã às [horário] ou [horário] para tirar qualquer dúvida."
 
 ---
 
@@ -200,7 +200,10 @@ Após a reunião, enviar `proposta-cliente.md` em até 24h.
 > "Contratar 1 vendedor sênior: R$5k–8k/mês + encargos. O Sales OS implementa processo, opera com IA e acompanha todo mês por R$1.500. Não é comparável."
 
 **Urgência real:**
-> "Somos parceiros fundadores — 10 vagas com esse preço. Quando tiver cases, o preço sobe. Quem entra agora trava R$1.500 para sempre enquanto ativo."
+> "Somos parceiros fundadores — 10 vagas com esse preço. Quando tiver cases, o preço sobe para até R$8k setup + R$8k/mês. Quem entra agora trava R$1.500 para sempre enquanto ativo."
+
+**A promessa (use quando o lead pedir garantia):**
+> "Em 30 dias seu time vai responder lead em menos de 30 minutos e fazer follow-up em mais de 80% dos casos — a IA garante isso. Em 60 dias você vai ver melhora na conversão. Se nenhum dos 3 indicadores evoluir, a gente devolve o setup de R$3.000. Sem burocracia."
 
 ---
 

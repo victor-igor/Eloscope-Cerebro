@@ -22,8 +22,7 @@
 
 ## ⚪ Backlog (sem urgência imediata)
 
-- [17/04/2026] Definir promessa de resultado mensurável (aguardar primeiros cases)
-- [17/04/2026] Estruturar garantia / risco reverso para o cliente
+- [17/04/2026] Projeção financeira detalhada (quantos clientes para operação sustentável)
 - [17/04/2026] Projeção financeira detalhada (quantos clientes para operação sustentável)
 
 ---
@@ -50,5 +49,7 @@
 - [18/04/2026] Template de case criado — `template-case.md`
 - [18/04/2026] Guia comercial do Lucas criado — `guia-comercial-lucas.md` (scripts, SPIN, objeções, cadência)
 - [18/04/2026] Funil de vendas criado — `funil-vendas.md` (outbound/indicação/inbound + métricas + pipeline)
+- [19/04/2026] Pricing definitivo definido — 3 planos (Starter/Growth/Scale), setup R$3k, promessa com garantia de devolução
+- [19/04/2026] Todos os documentos comerciais atualizados com pricing e promessa consistentes
 
 *Atualizado: 18/04/2026*

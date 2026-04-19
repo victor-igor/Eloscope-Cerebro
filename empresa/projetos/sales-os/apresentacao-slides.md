@@ -190,10 +190,13 @@ Não é consultoria que fala o que fazer.
 **Eyebrow:** INVESTIMENTO
 **Headline:** Preço de fundador para os primeiros clientes.
 
-| Beta — 3 primeiros clientes | Padrão |
-|----------------------------|--------|
-| R$3.500/mês + R$2.000 setup | R$6.000–8.000/mês |
-| Contrato mínimo 3 meses | Contrato mínimo 3 meses |
+| Plano | Time | Setup | Mensal | Total 3 meses |
+|-------|------|-------|--------|----------------|
+| **Starter** | 1–2 vendedores | R$3.000 | R$1.500/mês | R$7.500 |
+| **Growth** | 3–5 vendedores | R$3.000 | R$2.500/mês | R$10.500 |
+| **Scale** | 6–10 vendedores | R$3.000 | R$3.500/mês | R$13.500 |
+
+Contrato mínimo 3 meses. Preço real após cases: até R$8k setup + R$8k/mês.
 
 **Body:**
 Para uma PME +R$80k/mês, 20% a mais em conversão = +R$16k/mês.

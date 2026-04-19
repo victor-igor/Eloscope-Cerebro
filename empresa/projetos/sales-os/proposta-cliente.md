@@ -66,10 +66,10 @@ O **Sales OS** estrutura o processo comercial da sua empresa, implementa IA que 
 | | **Starter** | **Growth** | **Scale** |
 |--|--|--|--|
 | **Time** | 1–2 vendedores | 3–5 vendedores | 6–10 vendedores |
-| **Setup** | R$ 2.000 | R$ 2.000 | R$ 2.000 |
+| **Setup** | R$ 3.000 | R$ 3.000 | R$ 3.000 |
 | **Mensalidade** | R$ 1.500/mês | R$ 2.500/mês | R$ 3.500/mês |
 | **Mínimo** | 3 meses | 3 meses | 3 meses |
-| **Investimento mínimo** | R$ 6.500 | R$ 9.500 | R$ 12.500 |
+| **Investimento mínimo** | R$ 7.500 | R$ 10.500 | R$ 13.500 |
 
 > **Condição Parceiro Fundador:** Este é o menor preço que o Sales OS vai ter. Em troca, pedimos abertura para ajustes durante a implementação e autorização para usar os resultados como case (com aprovação prévia do conteúdo).
 
@@ -77,6 +77,15 @@ O **Sales OS** estrutura o processo comercial da sua empresa, implementa IA que 
 - Setup pago na assinatura do contrato
 - Mensalidade cobrada mensalmente a partir do mês 1
 - Renovação mensal após os 3 meses mínimos
+
+---
+
+## Nossa Promessa
+
+> **30 dias:** tempo de resposta ao lead abaixo de 30 minutos e taxa de follow-up acima de 80%.
+> **60 dias:** melhora mensurável na taxa de conversão do time.
+>
+> Se nenhuma das 3 métricas evoluir em 60 dias, devolvemos o setup integralmente.
 
 ---
 

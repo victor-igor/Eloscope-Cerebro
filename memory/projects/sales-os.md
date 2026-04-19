@@ -31,15 +31,8 @@ PME +R$80k/mês com demanda existente, base de contatos parada, problema real de
 ## Promessa Mãe (definida 18/04)
 "O Sales OS estrutura o processo comercial da sua empresa, implementa IA que opera junto com seu time no dia a dia e acompanha resultado mês a mês — para você converter mais dos leads que já chegam, sem depender de esforço manual."
 
-## Pricing Beta — Em Discussão
-| Modelo | Valor | Formato | Vantagem |
-|--------|-------|---------|----------|
-| **A — Parceiro Fundador** | R$1.500/mês | Recorrente, congelado, 3 vagas | Fecha pela escassez |
-| **B — Sprint 30 dias** | R$2.500 único | Pontual → R$2.000/mês se converter | Menor atrito |
-| **C — Troca por Case** | R$1.200/mês | ~60% desconto | Compra autoridade |
-| Original (se perfil justificar) | R$3.500 + R$2k setup | Recorrente, 3 meses mínimo | Preço mais alto |
-
-**Meta futura:** R$6.000–8.000/mês após cases estabelecidos.
+## Pricing Beta — DEFINIDO (19/04/2026)
+Ver seção "Precificação — Definitiva" abaixo.
 
 ## Entregáveis por Fase
 | Fase | Período | Entregáveis |
@@ -210,14 +203,26 @@ Meta: 2-3 clientes beta. Zero custo de aquisição.
 - **Não inclui:** Operação diária, licenças, site, novos escopos pós-contrato
 - **Cliente precisa no dia 1:** lista de contatos, WhatsApp Business ativo, 1 vendedor dedicado, acesso a métricas
 
-## Precificação — Modelo A e B (beta vs real)
-| | Modelo A (Parceiro Fundador) | Modelo B (Sprint 30 dias) |
-|--|-----|------|
-| Beta setup | R$0 | R$2.500 único |
-| Beta mensal | R$1.500/mês congelado · 3 vagas | R$2.000/mês se funcionar |
-| Real setup | R$5.000–10.000 | R$5.000–10.000 |
-| Real mensal | R$3.000–5.000/mês | R$3.000–5.000/mês |
-| Fidelidade | 3 meses | Opcional na renovação |
+## Precificação — Definitiva (19/04/2026)
+
+### Beta (Parceiro Fundador)
+| Plano | Time | Setup | Mensal | Total 3 meses |
+|-------|------|-------|--------|----------------|
+| **Starter** | 1–2 vend. | R$3.000 | R$1.500/mês | R$7.500 |
+| **Growth** | 3–5 vend. | R$3.000 | R$2.500/mês | R$10.500 |
+| **Scale** | 6–10 vend. | R$3.000 | R$3.500/mês | R$13.500 |
+
+### Real (após 3 cases)
+| Plano | Setup | Mensal |
+|-------|-------|--------|
+| Starter | R$5.000 | R$3.000/mês |
+| Growth | R$5.000 | R$5.000/mês |
+| Scale | R$8.000 | R$8.000/mês |
+
+## Promessa Mensurável (definitiva)
+- **30 dias:** tempo de resposta ao lead <30 min + taxa de follow-up >80%
+- **60 dias:** melhora mensurável na taxa de conversão
+- **Garantia:** se nenhuma das 3 métricas evoluir em 60 dias → devolução do setup (R$3.000)
 
 ## Arquivos
 - `cerebro/empresa/projetos/sales-os/slides.html` — **21 slides** (atualizado 18/04)
