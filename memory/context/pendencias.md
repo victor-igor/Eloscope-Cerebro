@@ -43,5 +43,8 @@
 
 - [18/04/2026] **Detalhar Fase 3 (Acompanhamento Mensal)** — o que cobre a reunião, quem participa, como dashboard é alimentado
 - [18/04/2026] **Confirmar capacidade técnica Hugo** — Openclaw/Paperclip, conexão WhatsApp, quais CRMs integra via n8n
+- [18/04/2026] **Dashboard — implementação técnica** — ferramenta (Metabase/Grafana/custom?), integração WhatsApp→dashboard, autenticação do cliente
+- [18/04/2026] **Definir quem conduz treinamento** — Victor, Lucas ou Hugo (ou divide por sessão)
+- [18/04/2026] **Contratos e pagamento** — estrutura do contrato TCV, condições, responsável
 
 *Atualizado: 18/04/2026*
