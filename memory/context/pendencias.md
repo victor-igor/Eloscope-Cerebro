@@ -8,7 +8,7 @@
 
 ## 🔴 Críticas (bloqueiam progresso)
 
-*(nenhuma pendência crítica no momento)*
+- [19/04/2026] **Template de contrato** — sem isso o fechamento trava. Responsável: Victor. Criar antes do primeiro cliente.
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
@@ -51,5 +51,8 @@
 - [18/04/2026] Funil de vendas criado — `funil-vendas.md` (outbound/indicação/inbound + métricas + pipeline)
 - [19/04/2026] Pricing definitivo definido — 3 planos (Starter/Growth/Scale), setup R$3k, promessa com garantia de devolução
 - [19/04/2026] Todos os documentos comerciais atualizados com pricing e promessa consistentes
+- [19/04/2026] Copy Squad produziu 4 versões de copy por canal — **pendente implementar nos docs** (landing page, slide 6, bio instagram, proposta abertura)
+- [19/04/2026] Sub-promessas operacionais (marcos 30/60 dias) — **pendente reinserir** na proposta e SOP
+- [19/04/2026] Lista de leads Eloscope para reativação GTM beta — Victor precisa extrair
 
 *Atualizado: 18/04/2026*
