@@ -201,6 +201,70 @@ Equipe de resultado terceirizada — diagnostica, estrutura, implementa IA no ti
 
 ---
 
+## PARTE 2.5 — DASHBOARD (VISÃO DO PRODUTO)
+
+> ⚠ Implementação técnica a definir com Hugo. Esta seção documenta a **visão funcional** — o que o dashboard deve mostrar e para quem.
+
+### Conceito
+
+Dashboard da Eloscope acessado pelo cliente (gestor e vendedores) para acompanhar relatórios e métricas do comercial em tempo real. **Não é uma ferramenta genérica** — é construído especificamente para o Sales OS, alimentado pelos dados da IA Copiloto e das cadências.
+
+---
+
+### Níveis de acesso
+
+| Perfil | Acesso | O que vê |
+|--------|--------|---------|
+| **Gestor / Dono** | Completo | Todo o time, todas as métricas, relatórios |
+| **Vendedor** | Individual | Só seus leads, sua performance, próximos passos |
+| **Eloscope** | Administrativo | Todos os clientes — para monitoramento e suporte |
+
+---
+
+### O que o dashboard mostra
+
+**Visão do Gestor:**
+
+| Seção | Métricas |
+|-------|---------|
+| **Visão geral do mês** | Total de leads · Leads contatados · Em negociação · Fechados · Perdidos |
+| **Taxa de conversão** | % geral do time · Comparativo mês anterior |
+| **Performance do time** | Ranking de vendedores por conversão · Tempo médio de resposta · Leads por vendedor |
+| **Lead Scoring** | Distribuição de leads por temperatura (quente/morno/frio) · Quem priorizar hoje |
+| **Follow-up** | % de leads com follow-up feito · Leads sem contato há +X dias (alerta) |
+| **Reativação** | Tamanho da base parada · Contatos reativados · Resultado da campanha |
+| **Relatório mensal** | Resumo exportável do mês — para reunião com a Eloscope |
+
+**Visão do Vendedor:**
+
+| Seção | Métricas |
+|-------|---------|
+| **Meus leads hoje** | Lista priorizada pelo lead scoring — quem contatar primeiro |
+| **Próximas ações** | O que fazer com cada lead (ligação, mensagem, follow-up) |
+| **Minha performance** | Minha taxa de conversão · Leads em aberto · Fechados este mês |
+| **Alertas** | Leads esfriando (sem contato há +X dias) |
+
+---
+
+### O que alimenta o dashboard
+
+- **IA Copiloto** → dados das conversas do WhatsApp (leads, status, interações)
+- **Cadências (n8n)** → dados de follow-up executado
+- **Input manual do vendedor** → atualização de status (ganhou/perdeu/em negociação)
+- **CRM (se integrado)** → dados históricos e funil
+
+---
+
+### Pendências técnicas (Hugo)
+
+- [ ] Ferramenta do dashboard — qual tecnologia (Metabase, Grafana, custom, ou via Openclaw/Paperclip nativo?)
+- [ ] Como os dados do WhatsApp chegam ao dashboard (webhook, API, n8n?)
+- [ ] Frequência de atualização (tempo real, por hora, diário?)
+- [ ] CRM — quais integrar via n8n e quais ficam fora do escopo
+- [ ] Autenticação — como o cliente acessa (login próprio, link privado?)
+
+---
+
 ## PARTE 3 — STACK TÉCNICO
 
 | Ferramenta | Função | Quem opera |
