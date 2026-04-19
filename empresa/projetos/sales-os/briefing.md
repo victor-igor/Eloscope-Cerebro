@@ -134,9 +134,9 @@ O Sales OS opera com dois tipos de IA:
 
 - [ ] Stack de IA (ferramentas específicas por função)
 - [ ] Papel de Lucas e Hugo na entrega
-- [ ] Promessa de resultado mensurável (após primeiros cases)
+- [x] Promessa mãe definida (sem número — validar com primeiros cases)
 - [ ] Mecanismo único nomeado (após validação com clientes beta)
-- [ ] Garantia / risco reverso
+- [x] Garantia definida: devolução R$3.000 em 60 dias
 - [ ] Projeção financeira (quantos clientes para operação sustentável)
 
 ---

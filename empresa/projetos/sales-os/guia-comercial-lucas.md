@@ -203,7 +203,7 @@ Após a reunião, enviar `proposta-cliente.md` em até 24h.
 > "Somos parceiros fundadores — 10 vagas com esse preço. Quando tiver cases, o preço sobe para até R$8k setup + R$8k/mês. Quem entra agora trava R$1.500 para sempre enquanto ativo."
 
 **A promessa (use quando o lead pedir garantia):**
-> "Em 30 dias seu time vai responder lead em menos de 30 minutos e fazer follow-up em mais de 80% dos casos — a IA garante isso. Em 60 dias você vai ver melhora na conversão. Se nenhum dos 3 indicadores evoluir, a gente devolve o setup de R$3.000. Sem burocracia."
+> "Seu time perde venda todo dia por falta de processo e follow-up. A gente instala o sistema completo e acompanha todo mês. Se nada melhorar em 60 dias, devolvemos R$3.000. Sem burocracia."
 
 ---
 

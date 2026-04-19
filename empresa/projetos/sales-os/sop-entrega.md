@@ -231,7 +231,7 @@
 **Benchmark de sucesso para apresentar na primeira reunião mensal:**
 - Tempo de resposta: de X horas → menos de 30 minutos
 - Taxa de follow-up: de X% → acima de 80%
-- Taxa de conversão: melhora de pelo menos 2–3 pontos percentuais em 60 dias
+- Taxa de conversão: melhora mensurável em 60 dias
 
 ---
 

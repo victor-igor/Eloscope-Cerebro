@@ -82,10 +82,9 @@ Seu time perde venda todo dia por falta de processo e follow-up. O **Sales OS** 
 
 ## Nossa Promessa
 
-> **30 dias:** tempo de resposta ao lead abaixo de 30 minutos e taxa de follow-up acima de 80%.
-> **60 dias:** melhora mensurável na taxa de conversão do time.
+> Seu time perde venda todo dia por falta de processo e follow-up. O Sales OS instala o sistema comercial completo — processo, IA e acompanhamento mensal.
 >
-> Se nenhuma das 3 métricas evoluir em 60 dias, devolvemos o setup integralmente.
+> **Se nada melhorar em 60 dias, devolvemos R$3.000. Sem burocracia.**
 
 ---
 

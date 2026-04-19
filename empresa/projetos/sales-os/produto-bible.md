@@ -20,7 +20,7 @@ Sistema operacional de vendas para PMEs. A Eloscope **implementa e opera** o pro
 Equipe de resultado terceirizada — diagnostica, estrutura, implementa IA no time de vendas e acompanha resultado todo mês.
 
 **Frase de posicionamento:**
-> "O Sales OS estrutura o processo comercial da sua empresa, implementa IA que opera junto com seu time no dia a dia e acompanha resultado mês a mês — para você converter mais dos leads que já chegam, sem depender de esforço manual."
+> "Seu time perde venda todo dia por falta de processo e follow-up. O Sales OS instala o sistema comercial completo — processo, IA e acompanhamento mensal. Se nada melhorar em 60 dias, devolvemos R$3.000."
 
 ---
 
