@@ -105,6 +105,7 @@
 | Nome | Status | Métricas-chave |
 |------|--------|----------------|
 | Eloscope (estúdio) | Ativo | — |
+| Eloscope Sales OS | 🔨 Em construção | Meta: R$15k MRR · 10 clientes · Abr/2027 |
 
 ---
 
@@ -112,15 +113,17 @@
 
 | Nome | Função | Notas |
 |------|--------|-------|
-| Victor Igor | COO / Founder | eloscope.coo@gmail.com |
+| Victor Igor | COO / Founder | eloscope.coo@gmail.com — produto, marketing, processos |
+| Lucas | Comercial | Prospecção, fechamento, abordagem de leads |
+| Hugo | Tech | Implementações n8n, Openclaw, Paperclip, automações IA |
 
 ---
 
 ## Foco Atual
 
-1. [Prioridade 1 — preencher]
-2. [Prioridade 2 — preencher]
-3. [Prioridade 3 — preencher]
+1. **Sales OS beta** — fechar 2-3 clientes beta em 60 dias (Fran já ativa, Morgana é o próximo)
+2. **Lucas executando funil** — abordagem Morgana (esta semana) · Denis e Matheus (próxima)
+3. **Hugo pendências técnicas** — confirmar Openclaw/Paperclip end-to-end antes do primeiro cliente
 
 ---
 
@@ -147,4 +150,4 @@
 
 ---
 
-*Atualizado: 2026-04-17*
+*Atualizado: 2026-04-19*

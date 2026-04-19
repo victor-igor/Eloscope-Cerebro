@@ -119,19 +119,35 @@ Equipe de resultado terceirizada — diagnostica, estrutura, implementa IA no ti
 - Perguntas de qualificação (SPIN adaptado para serviço)
 
 **IA Copiloto (stack: Openclaw + Paperclip + n8n):**
-- Conecta ao WhatsApp do vendedor (sem app adicional no celular)
-- Lê conversas em tempo real
-- Entrega para o vendedor:
-  - Script personalizado para aquele lead
-  - Sugestão de próximo passo
-  - Alerta quando lead está esfriando
-  - Relatório de performance individual
+Conecta ao WhatsApp do vendedor. Opera em tempo real — lê conversas e entrega o que o vendedor precisa no momento certo. Quem escreve é sempre o vendedor.
+
+Skills core (todos os planos):
+- **Script personalizado por lead** — mensagem sugerida baseada no perfil do lead + estágio da conversa + playbook
+- **Próximo passo sugerido** — após cada conversa, define qual ação tomar e quando
+- **Alerta de esfriamento** — avisa o vendedor quando o lead está sem contato há X dias + entrega mensagem de reaquecimento
+
+Skills avançadas (Growth + Scale):
+- **Análise de conversa WhatsApp** — ao final da conversa: resumo, objeções identificadas, score da abordagem, sugestão para próxima interação
+- **Análise de call / reunião de vendas** — envia transcrição, recebe diagnóstico completo (objeções, momentos de interesse, score, sugestão de follow-up)
+- **Follow-up inteligente** — follow-up personalizado baseado na última conversa, no timing certo, no canal certo
+- **Relatório de performance individual** — semanal/mensal por vendedor: volume, conversão, velocidade de resposta, objeções recorrentes
+
+> Spec completo: `ia-skills-spec.md`
 
 **IA Assistida / Dashboard (stack: Openclaw + Paperclip):**
-- Dashboard da Eloscope com dados do cliente
-- Lead scoring — quem priorizar hoje
-- Análise da base para reativação
-- Relatório de performance do time inteiro (para o gestor)
+Processa dados agregados das conversas e entrega inteligência para o gestor tomar decisões. Vive no dashboard da Eloscope.
+
+Skills core (todos os planos):
+- **Lead scoring** — ranqueia todos os leads por probabilidade de fechar hoje (quente/morno/frio)
+- **Identificação de base para reativação** — analisa base parada e prioriza quem tem mais chance de voltar
+- **Relatório mensal executivo** — consolidado automático do mês para a reunião com a Eloscope
+
+Skills avançadas (Growth + Scale):
+- **Análise de performance do time** — comparativo entre vendedores: conversão, velocidade, follow-up, ranking
+- **Análise de padrões de objeção** — top objeções por frequência, em qual estágio aparecem, eficácia do tratamento
+- **Alerta de risco de churn** — uso interno Eloscope: detecta quando cliente pode cancelar antes de reclamar
+
+> Spec completo: `ia-skills-spec.md`
 
 **Treinamento do time:**
 - Sessão ao vivo com os vendedores
@@ -174,7 +190,7 @@ Equipe de resultado terceirizada — diagnostica, estrutura, implementa IA no ti
 
 **Formato:** videochamada (Google Meet/Zoom) ou presencial — definido conforme localização e preferência do cliente.
 
-**Quem conduz:** a definir na reunião com Lucas e Hugo.
+**Quem conduz:** Victor (todas as sessões). Lucas presente quando possível.
 
 **Trilha educacional pré-gravada** (todos os planos) — criada conforme as primeiras entregas:
 
@@ -193,11 +209,20 @@ Equipe de resultado terceirizada — diagnostica, estrutura, implementa IA no ti
 **Objetivo:** evoluir continuamente, garantir resultado mês a mês.
 
 **Entregáveis mensais:**
-- Reunião mensal estratégica (review de métricas + ajustes)
+- Reunião mensal estratégica (~60 min) — revisão de métricas, o que funcionou, ajustes, foco dos próximos 30 dias
 - Dashboard atualizado com performance do mês
-- Ajuste de scripts e cadências conforme resultado
-- Evolução contínua da IA (refinamento de prompts, alertas, scoring)
-- Workshop trimestral ao vivo (profundidade estratégica — Growth e Scale)
+- Ajuste de scripts e playbook conforme dados reais
+- Ajuste de prompts e cadências da IA (Hugo implementa em até 48h após reunião)
+- Suporte via WhatsApp para dúvidas operacionais (SLA: 24h dias úteis)
+
+**Pauta padrão da reunião mensal:**
+1. Métricas do mês (conversão, follow-up, reativação, receita)
+2. O que funcionou / o que não funcionou
+3. Ajustes aprovados (scripts, cadências, IA)
+4. Foco dos próximos 30 dias
+
+**Quem conduz:** Victor
+**Quem participa:** Cliente (gestor/dono) + Lucas (quando relevante)
 
 ---
 
@@ -287,6 +312,8 @@ Dashboard da Eloscope acessado pelo cliente (gestor e vendedores) para acompanha
 
 ### 3 Planos por tamanho de time
 
+> ⚠️ Modelo TCV abandonado em 18/04/2026 (sprint com Lucas e Hugo). Novo modelo: setup separado + mensalidade recorrente.
+
 ---
 
 #### PLANO STARTER — 1 a 2 vendedores
@@ -298,23 +325,24 @@ Dashboard da Eloscope acessado pelo cliente (gestor e vendedores) para acompanha
 - Playbook completo personalizado
 - IA Copiloto em até 2 WhatsApps
 - IA Assistida + Dashboard + Lead Scoring
+- Cadências automatizadas
 - 1 reunião mensal estratégica
-- Treinamento do time (1 sessão ao vivo)
+- Treinamento do time (1 sessão ao vivo — vendedores)
 - Trilha educacional pré-gravada
 
 **Não inclui:**
 - Agente de atendimento automático
 - Integração com sistemas fora do escopo comercial
 - Operação diária (quem digita é o vendedor)
-- Licenças de ferramentas externas
+- Licenças de LLMs (custo do cliente — ~R$100–300/mês)
 - Desenvolvimento de site ou landing page
 
-| | Beta | Real |
+| | **Beta (Parceiro Fundador)** | Real (futuro) |
 |--|--|--|
-| **TCV 3 meses** | **R$4.500** | **R$18.000** |
-| Setup | Incluso no TCV | R$3.000 |
-| Mensalidade | R$1.500/mês | R$5.000/mês |
-| Após mês 3 | R$1.500/mês | R$5.000/mês |
+| **Setup** | R$ 2.000 | R$ 3.000 |
+| **Mensalidade** | R$ 1.500/mês | R$ 5.000/mês |
+| **Mínimo** | 3 meses | 3 meses |
+| **Investimento mínimo** | R$ 6.500 | R$ 18.000 |
 
 ---
 
@@ -325,15 +353,15 @@ Dashboard da Eloscope acessado pelo cliente (gestor e vendedores) para acompanha
 **Inclui tudo do Starter +**
 - IA Copiloto em até 5 WhatsApps
 - Campanha de reativação de base estruturada
-- 1 reunião mensal + 1 revisão trimestral ao vivo
-- Treinamento do time (2 sessões ao vivo)
+- 1 reunião mensal + suporte adicional
+- Treinamento do time (2 sessões ao vivo — vendedores + gestor)
 
-| | Beta | Real |
+| | **Beta (Parceiro Fundador)** | Real (futuro) |
 |--|--|--|
-| **TCV 3 meses** | **R$7.500** | **R$26.000** |
-| Setup | Incluso no TCV | R$5.000 |
-| Mensalidade | R$2.500/mês | R$7.000/mês |
-| Após mês 3 | R$2.500/mês | R$7.000/mês |
+| **Setup** | R$ 2.000 | R$ 5.000 |
+| **Mensalidade** | R$ 2.500/mês | R$ 7.000/mês |
+| **Mínimo** | 3 meses | 3 meses |
+| **Investimento mínimo** | R$ 9.500 | R$ 26.000 |
 
 ---
 
@@ -345,24 +373,25 @@ Dashboard da Eloscope acessado pelo cliente (gestor e vendedores) para acompanha
 - IA Copiloto em até 10 WhatsApps
 - 2 reuniões mensais estratégicas
 - Relatórios avançados de performance por vendedor
-- Treinamento do time (3 sessões ao vivo)
+- Treinamento do time (3 sessões ao vivo — vendedores + gestor + revisão)
 - Revisão de playbook trimestral
 
-| | Beta | Real |
+| | **Beta (Parceiro Fundador)** | Real (futuro) |
 |--|--|--|
-| **TCV 3 meses** | **R$10.500** | **R$38.000** |
-| Setup | Incluso no TCV | R$8.000 |
-| Mensalidade | R$3.500/mês | R$10.000/mês |
-| Após mês 3 | R$3.500/mês | R$10.000/mês |
+| **Setup** | R$ 2.000 | R$ 8.000 |
+| **Mensalidade** | R$ 3.500/mês | R$ 10.000/mês |
+| **Mínimo** | 3 meses | 3 meses |
+| **Investimento mínimo** | R$ 12.500 | R$ 38.000 |
 
 ---
 
 ### Regras do contrato
 
-- **Mínimo:** 3 meses (TCV pago upfront antes de começar)
+- **Setup:** pago na assinatura — cobre diagnóstico + implementação
+- **Mensalidade:** cobrada mensalmente a partir do mês 1
+- **Mínimo:** 3 meses
 - **Renovação:** mensal após os 3 meses
-- **Beta:** sem setup, TCV cobre 3 meses de mensalidade
-- **Fidelidade beta:** 3 meses — aceitar o risco em troca do case público
+- **Condição beta:** menor preço que o Sales OS vai ter — em troca: abertura para ajustes + case público (com aprovação prévia)
 - **Acima de 10 vendedores:** proposta customizada
 
 ---

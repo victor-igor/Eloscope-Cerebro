@@ -173,6 +173,32 @@ O Sales OS é o produto core. O ecossistema completo:
 R$15k MRR até abril de 2027 — 10 clientes ativos a R$1.500/mês. Base para escala.
 Marcos: 60 dias → 2-3 beta · 6 meses → 5-6 clientes · 12 meses → 10 clientes.
 
+## Forecast Detalhado (funil-vendas.md)
+| Meta | Número | Receita |
+|------|--------|--------|
+| Clientes fechados (abril–junho) | 2 clientes | R$4k setup + R$3k/mês |
+| MRR ao final de junho | R$3.000 (2 × Starter) | — |
+| MRR ao final de setembro | R$7.500 (5 clientes) | — |
+| MRR alvo (12–18 meses) | R$78.000 (26 clientes × R$3k/real) | ~R$1M/ano |
+
+## Métricas do Funil (rastrear semanalmente — Lucas)
+| Métrica | Meta beta |
+|---------|----------|
+| Leads prospectados/semana | 10–15 |
+| Taxa de resposta (outbound) | >20% |
+| Taxa de qualificação | >60% |
+| Taxa de reunião | >70% |
+| Taxa de proposta→fechamento | >30% |
+| Tempo médio do ciclo (1º contato → fechamento) | <14 dias |
+
+## Deals em Risco — Quando Victor entra
+| Situação | Ação |
+|---------|------|
+| Deal >14 dias sem avanço de estágio | Lucas escalona para Victor |
+| Lead pediu proposta mas não respondeu em 7 dias | Victor entra na conversa |
+| Objeção que Lucas não sabe responder | Victor entra na call junto |
+| Lead quer negociar preço abaixo do mínimo | Victor decide (não cabe a Lucas) |
+
 ## Go-to-Market Beta (próximos 60 dias)
 1. Reativação de leads que não fecharam com a Eloscope
 2. Upsell para clientes Eloscope ativos
@@ -205,8 +231,9 @@ Meta: 2-3 clientes beta. Zero custo de aquisição.
 | 18/04/2026 | Slide "Por que o Sales OS" criado (slide 7) · total 21 slides |
 | 18/04/2026 | Meta revisada: R$15k MRR (não R$1M) · Q2 escolhido · promessa mãe definida |
 | 18/04/2026 | Oferta híbrida C Q2 estruturada · Modelos A e B precificados |
+| 18/04/2026 | Funil de vendas criado — 3 funis (Outbound/Indicação/Inbound) com SLAs, métricas e alertas |
 | Jun/2026 | Meta: 2-3 clientes beta fechados |
 | Abr/2027 | Meta: R$15k MRR · 10 clientes |
 
 ---
-*Atualizado: 18/04/2026*
+*Atualizado: 19/04/2026*
