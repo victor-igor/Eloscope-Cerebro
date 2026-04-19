@@ -25,18 +25,21 @@
 ### SLIDE 1 — ESPELHO (Frank Kern)
 
 > **Não abrir com logo. Abrir com a dor do perfil.**
+> **Protocolo Lucas:**
+> - Lead frio → ler o slide em voz alta, pausar, perguntar: *"Algum desses pontos faz sentido no seu negócio agora?"*
+> - Lead quente → pular leitura, ir direto para: *"Baseado no que você me contou há pouco..."*
 
 **Headline:**
-> Leads chegam. Alguns fecham. A maioria some — e ninguém sabe por quê.
+> Seu time vende. Os leads chegam. Mas no final do mês, o número não bate — e ninguém sabe exatamente onde perdeu.
 
 **Body — 4 dores universais do perfil Q2:**
-- O time aborda mas não tem processo definido — cada vendedor improvisa
-- Follow-up depende da memória do vendedor — lead esfria, ninguém percebe
-- Tem base de contatos parada que nunca foi trabalhada de verdade
-- O gestor não tem visibilidade do que está travando no funil
+- Cada vendedor tem seu jeito. Nenhum tem o mesmo processo.
+- Lead não responde — ninguém sabe se é hora de insistir ou soltar.
+- Tem gente na base que não é trabalhada faz meses.
+- O gestor descobre o problema depois que o mês fechou.
 
 **Linha de transição:**
-> Se algum desses pontos faz sentido para o que você me contou — o que vou mostrar agora foi construído exatamente para isso.
+> Isso não é falta de esforço. É falta de sistema.
 
 **Nota de condução:**
 > Pausar aqui. Deixar o lead confirmar ("é exatamente isso") antes de avançar.
@@ -71,15 +74,15 @@ LEAD CHEGA → [VAZIO] → ou fecha ou some
 **Eyebrow:** ELOSCOPE
 
 **Headline:**
-> Somos o estúdio de IA que instala sistemas comerciais em PMEs.
+> Implementamos e operamos o sistema comercial da sua empresa.
 
-**Body:**
-- Não vendemos software — **implementamos e operamos**
-- Não somos consultoria — **não falamos o que fazer e vamos embora**
-- Somos o time de IA do seu comercial — **estamos lá todo mês**
+**Body — 3 linhas de resultado:**
+- Sistema no ar em 3–10 dias úteis
+- Time treinado e usando no dia a dia
+- Reunião mensal de resultado — ajuste contínuo até funcionar
 
 **Prova social (inserir quando tiver):**
-> [X clientes ativos · Y% de melhora média em conversão · Z meses de operação]
+> [X clientes ativos · Y meses · Z% de melhora média — inserir após primeiros cases]
 
 ---
 
@@ -88,18 +91,22 @@ LEAD CHEGA → [VAZIO] → ou fecha ou some
 **Eyebrow:** ELOSCOPE ELO OS
 
 **Headline:**
-> O sistema operacional de vendas da sua empresa.
+> Um sistema. Três camadas. Se faltar uma, as outras não funcionam.
+
+**O mecanismo único:**
+> A maioria das ferramentas resolve uma coisa. O Elo OS é o único que junta processo + duas IAs + acompanhamento mensal **operando juntos**.
+> Porque o problema do comercial não é falta de ferramenta. É falta de sistema integrado.
 
 **3 camadas:**
 
-| | O que é | O que resolve |
-|--|---------|--------------|
-| **Processo** | Playbook personalizado + cadências | Time sem processo, cada vendedor no improviso |
-| **IA** | Copiloto no WhatsApp + Dashboard do gestor | Follow-up inconsistente, sem visibilidade |
-| **Acompanhamento** | Reunião mensal + ajuste contínuo | Resultado que some depois de 30 dias |
+| | O que entrega | O que elimina |
+|--|--------------|--------------|
+| **Processo** | Playbook personalizado · Cadências automatizadas de follow-up · Treinamento do time | Vendedor improvisando · lead esfriando sem ninguém perceber |
+| **IA** | **Copiloto ao lado do vendedor** — script por lead · análise de calls · follow-up no canal certo · alerta de esfriamento. **IA Assistida para o gestor** — lead scoring · base parada · dashboard de performance | Follow-up perdido · decisão sem dados · vendedor sem orientação |
+| **Acompanhamento** | Reunião mensal de resultado · ajuste contínuo de scripts e prompts | Resultado que some depois de 30 dias |
 
 **Destaque:**
-> Não é uma das três. É as três juntas — ou não funciona.
+> O vendedor continua sendo o vendedor. A IA opera *com* ele — não *no lugar* dele.
 
 ---
 
@@ -154,7 +161,7 @@ LEAD CHEGA → [VAZIO] → ou fecha ou some
 
 **Coluna 1 — Estrutura:**
 - ✅ Playbook personalizado (scripts, cadências, objeções)
-- ✅ IA Copiloto no WhatsApp dos vendedores
+- ✅ IA Copiloto ao lado do vendedor (WhatsApp, calls, follow-up multicanal)
 - ✅ Dashboard do gestor com lead scoring
 - ✅ Cadências automatizadas de follow-up
 - ✅ Treinamento do time (sessões ao vivo + trilha gravada)
@@ -196,15 +203,14 @@ LEAD CHEGA → [VAZIO] → ou fecha ou some
 **Eyebrow:** NOSSA GARANTIA
 
 **Headline:**
-> Empresa séria não cobra por resultado que não entregou.
+> Se nada melhorar em 60 dias — devolvemos o setup. Sem burocracia.
 
 **Body:**
-> Se em 60 dias você não ver melhora concreta em nenhum indicador comercial —
-> conversão, follow-up, tempo de resposta, reativação —
-> **devolvemos o setup integralmente. Sem burocracia. Sem questionamento.**
+> Conversão, follow-up, tempo de resposta, reativação — qualquer indicador.
+> Se nenhum mover: devolução integral. Simples assim.
 
-**Nota de condução:**
-> "Isso significa que o risco financeiro de começar está do nosso lado, não do seu."
+**Nota de condução (Lucas — falar, não mostrar):**
+> *"Isso significa que o risco financeiro de começar está do nosso lado — não do seu."*
 
 ---
 
@@ -212,8 +218,28 @@ LEAD CHEGA → [VAZIO] → ou fecha ou some
 
 **Eyebrow:** CONDIÇÃO PARCEIRO FUNDADOR
 
-**Headline:**
-> Preço de quem está construindo junto — não de quem chega depois.
+**Headline — abre com ROI:**
+> Para cada R$100k de faturamento, 5 pontos a mais em conversão = R$5.000 a mais por mês.
+> Quanto isso representa no *seu* negócio?
+
+**Nota de condução (Lucas — falar antes de abrir a tabela):**
+> *"Quanto você fatura hoje? [lead responde] → Então 5 pontos a mais em conversão significa R$[X] a mais por mês para você. O Starter custa R$1.500."*
+
+**Âncora — value stack (mostrar ANTES da tabela):**
+
+| O que você recebe | Valor |
+|-------------------|-------|
+| Diagnóstico completo do funil (relatório + mapa de gargalos) | R$ 2.000 |
+| Playbook personalizado (scripts, cadências, objeções) | R$ 3.000 |
+| IA Copiloto ao lado do vendedor (setup + configuração) | R$ 4.000 |
+| IA Assistida + Dashboard do gestor (setup + configuração) | R$ 3.000 |
+| Treinamento do time (sessões ao vivo) | R$ 2.000 |
+| Acompanhamento mensal (reunião + ajustes + relatório) | R$ 1.500/mês |
+| **Valor total** | **R$ 14.000 + R$ 1.500/mês** |
+
+> **Sua condição Parceiro Fundador:** 👇
+
+**Tabela Parceiro Fundador:**
 
 | | **Starter** | **Growth** | **Scale** |
 |--|--|--|--|
@@ -221,13 +247,14 @@ LEAD CHEGA → [VAZIO] → ou fecha ou some
 | **Setup** | R$ 3.000 | R$ 3.000 | R$ 3.000 |
 | **Mensal** | R$ 1.500/mês | R$ 2.500/mês | R$ 3.500/mês |
 | **Mínimo** | 3 meses | 3 meses | 3 meses |
+| **Total 3 meses** | R$ 7.500 | R$ 10.500 | R$ 13.500 |
 
-> **Condição Parceiro Fundador:** este é o menor preço que o Elo OS vai ter.
-> Após os primeiros cases: até R$5.000 setup + R$8.000/mês.
+**Formas de pagamento:**
+> Setup: à vista ou **em até 12x no cartão**
+> Mensalidade: boleto ou PIX mensal
 
-**Argumento de valor:**
-> Para uma PME com R$80k/mês, 5 pontos a mais em conversão = R$4–8k a mais por mês.
-> O Starter custa R$1.500. O ROI aparece no primeiro mês de resultado.
+**Linha de fechamento:**
+> O Starter custa R$1.500/mês. Se aparecer resultado no primeiro mês — o investimento já se pagou.
 
 ---
 
@@ -265,6 +292,7 @@ LEAD CHEGA → [VAZIO] → ou fecha ou some
 
 ---
 
-*Elo OS — Slides Call de Vendas v1 · 19/04/2026*
-*Copy Squad: Frank Kern (abertura/fechamento) · Russell Brunson (solução) · Dan Kennedy (oferta)*
+*Elo OS — Slides Call de Vendas v2 · 19/04/2026*
+*Copy Squad: Frank Kern (abertura/fechamento) · Russell Brunson (solução) · Dan Kennedy (oferta) · Todd Brown (quem somos)*
+*Condutor: Lucas · Dual-audience: frio + quente (protocolo verbal no Slide 1 e 3)*
 *Próximo passo: montar no Canva usando design system Eloscope*

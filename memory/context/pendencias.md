@@ -12,6 +12,8 @@
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
+- [19/04/2026] **Slides Elo OS — validação visual pendente** — HTML redesenhado com referências premium, Victor ainda não confirmou aprovação do resultado final · arquivo: `04-apresentacao/slides-elo-os.html`
+
 - [18/04/2026] **Hugo: Responder 7 perguntas técnicas** em `stack-tecnica.md` (VPS provider, LLM em uso, estabilidade QR, Openclaw→Paperclip, dashboard Fran, tempo de setup, CRMs testados)
 - [18/04/2026] **Lucas: Iniciar abordagem** — Morgana (esta semana), Denis e Matheus (semana que vem) · guia-comercial-lucas.md tem os scripts
 - [18/04/2026] **Lucas: Definir valor/hora de consultoria avulsa** — para quando cliente quer só consultoria sem pacote completo

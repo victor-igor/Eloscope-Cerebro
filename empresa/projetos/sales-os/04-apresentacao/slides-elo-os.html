@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eloscope — ELO OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0A0A0A;
+    --cyan: #00D4FF;
+    --magenta: #D946EF;
+    --white: #F0FFFE;
+    --muted: #4A5260;
+    --border: #1E1E1E;
+    --border-accent: rgba(0,212,255,0.28);
+    --dot: rgba(0,212,255,0.07);
+  }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--dot) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #deck {
+    position: fixed;
+    inset: 16px 16px 52px 16px;
+    z-index: 1;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    padding: 32px 52px 36px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 0 0 1.5px var(--border-accent);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+  }
+  .slide.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* HEADER */
+  .sh {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-shrink: 0;
+    margin-bottom: 22px;
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    line-height: 1;
+  }
+  .logo .c { color: var(--cyan); }
+  .slide-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.52rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  /* BODY */
+  .sb {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  /* TYPOGRAPHY */
+  .hl {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    color: var(--white);
+  }
+  .hl-xl  { font-size: clamp(1.9rem, 3.2vw, 2.6rem); }
+  .hl-lg  { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+  .hl-md  { font-size: clamp(1.3rem, 2vw, 1.75rem); }
+  .hl-sm  { font-size: clamp(1.1rem, 1.7vw, 1.5rem); }
+  .hl-cover { font-size: clamp(1.7rem, 3vw, 2.5rem); }
+
+  .body-text {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: rgba(240,255,254,0.65);
+    font-weight: 400;
+  }
+  .body-text strong { color: var(--white); font-weight: 600; }
+
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .mono-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* COLORS */
+  .tcyan { color: var(--cyan); }
+  .tmag  { color: var(--magenta); }
+  .tmut  { color: var(--muted); }
+
+  /* SEPARATORS */
+  .sep { border-top: 1px solid var(--border); }
+
+  /* GRIDS */
+  .g2 {
+    display: grid;
+    grid-template-columns: 54% 1fr;
+    gap: 0 36px;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .g2-eq {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 36px;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .g2-inv {
+    display: grid;
+    grid-template-columns: 46% 1fr;
+    gap: 0 36px;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .col { display: flex; flex-direction: column; }
+  .h100 { height: 100%; }
+  .jcsb { justify-content: space-between; }
+  .jcend { justify-content: flex-end; }
+  .jcstart { justify-content: flex-start; }
+  .jccenter { justify-content: center; }
+
+  .vborder {
+    border-left: 1px solid var(--border);
+    padding-left: 28px;
+  }
+
+  /* UTILS */
+  .mt4  { margin-top: 4px; }
+  .mt8  { margin-top: 8px; }
+  .mt10 { margin-top: 10px; }
+  .mt12 { margin-top: 12px; }
+  .mt14 { margin-top: 14px; }
+  .mt16 { margin-top: 16px; }
+  .mt20 { margin-top: 20px; }
+
+  /* PAIN ITEMS — S1 */
+  .pain-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+  .pain-item { padding: 7px 0; }
+  .pain-item:not(:first-child) { border-top: 1px solid var(--border); }
+  .pain-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .pain-body { font-size: 0.7rem; color: var(--muted); line-height: 1.4; }
+
+  /* STAT ROWS — S3 */
+  .stat-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+  .stat-row { padding: 8px 0; }
+  .stat-row:not(:first-child) { border-top: 1px solid var(--border); }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    line-height: 1;
+    color: var(--cyan);
+  }
+  .stat-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .stat-desc { font-size: 0.7rem; color: rgba(240,255,254,0.55); margin-top: 3px; }
+
+  /* TABLE — S4 */
+  .tbl { width: 100%; border-collapse: collapse; }
+  .tbl th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 5px 0 7px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 400;
+  }
+  .tbl td {
+    font-size: 0.71rem;
+    color: rgba(240,255,254,0.72);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.45;
+  }
+  .tbl td:first-child {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.66rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    width: 13%;
+    padding-right: 14px;
+  }
+  .tbl td:nth-child(2) { width: 50%; padding-right: 14px; }
+
+  /* PHASE ROWS — S5 */
+  .phase-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-around;
+    min-height: 0;
+  }
+  .phase-row {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 0 14px;
+    padding: 8px 0;
+    align-items: start;
+  }
+  .phase-row:not(:first-child) { border-top: 1px solid var(--border); }
+  .phase-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    line-height: 1.1;
+    color: var(--muted);
+  }
+  .phase-num.accent { color: var(--cyan); }
+  .phase-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .phase-when {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .phase-items { font-size: 0.7rem; color: rgba(240,255,254,0.58); line-height: 1.5; }
+
+  /* IA COLS — S6 */
+  .ia-col-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ia-item {
+    font-size: 0.71rem;
+    color: rgba(240,255,254,0.7);
+    line-height: 1.4;
+    padding: 5px 0;
+  }
+  .ia-item:not(:first-of-type) { border-top: 1px solid var(--border); }
+
+  /* CHECK ITEMS — S7 */
+  .col-hdr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--border);
+  }
+  .check-item {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 0.71rem;
+    color: rgba(240,255,254,0.72);
+    padding: 6px 0;
+    line-height: 1.4;
+  }
+  .check-item:not(:first-of-type) { border-top: 1px solid var(--border); }
+  .ck { color: var(--cyan); font-size: 0.62rem; margin-top: 2px; flex-shrink: 0; }
+
+  /* MILESTONE — S8 */
+  .milestone-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    line-height: 1;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+  }
+  .milestone-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+    margin-bottom: 10px;
+  }
+  .milestone-item {
+    font-size: 0.71rem;
+    color: rgba(240,255,254,0.7);
+    padding: 5px 0;
+    line-height: 1.4;
+  }
+  .milestone-item:not(:first-of-type) { border-top: 1px solid var(--border); }
+
+  /* STEP ROWS — S11 */
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-around;
+    min-height: 0;
+  }
+  .step-row {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 0 18px;
+    padding: 8px 0;
+    align-items: start;
+  }
+  .step-row:not(:first-child) { border-top: 1px solid var(--border); }
+  .step-when {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 2px;
+  }
+  .step-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .step-desc { font-size: 0.7rem; color: rgba(240,255,254,0.58); line-height: 1.4; }
+
+  /* PRICING — S10 */
+  .price-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.71rem;
+    gap: 10px;
+  }
+  .price-row:first-child { border-top: 1px solid var(--border); }
+  .price-row .pl { color: rgba(240,255,254,0.7); }
+  .price-row .pv { color: rgba(240,255,254,0.45); font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; text-align: right; }
+  .price-row.total .pl { color: var(--cyan); font-weight: 600; }
+  .price-row.total .pv { color: var(--cyan); font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+
+  .plan-row {
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .plan-row:first-child { border-top: 1px solid var(--border); }
+  .plan-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+  }
+  .plan-detail { font-size: 0.65rem; color: var(--muted); }
+  .plan-price { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: rgba(240,255,254,0.55); margin-top: 2px; }
+  .plan-row.hl .plan-name { color: var(--cyan); }
+  .plan-row.hl .plan-price { color: var(--cyan); }
+
+  /* GUARANTEE — S9 */
+  .guarantee-tag {
+    display: inline-block;
+    border: 1px solid var(--muted);
+    padding: 5px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.54rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 14px;
+  }
+
+  /* DIAGRAM — S2 */
+  .diagram {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 14px 0;
+    flex-wrap: nowrap;
+  }
+  .diag-node {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .diag-node.lead { border-color: var(--cyan); color: var(--cyan); }
+  .diag-node.result { border-color: var(--magenta); color: var(--magenta); }
+  .diag-arrow { font-size: 0.65rem; color: var(--muted); padding: 0 8px; }
+  .diag-inner {
+    padding: 7px 14px;
+    border: 1px solid var(--magenta);
+    text-align: center;
+  }
+  .diag-inner .di-main {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--magenta);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .diag-inner .di-sub {
+    font-size: 0.58rem;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  /* SLIDE FOOTER */
+  .slide-footer {
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+    margin-top: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--muted);
+    letter-spacing: 0.07em;
+    line-height: 1.5;
+    flex-shrink: 0;
+  }
+
+  /* NAV */
+  #nav {
+    position: fixed;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    z-index: 100;
+    background: linear-gradient(to top, rgba(10,10,10,0.98) 60%, transparent);
+  }
+  #nav button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 4px 8px;
+    transition: color 0.2s;
+  }
+  #nav button:hover { color: var(--white); }
+
+  #dots { display: flex; align-items: center; gap: 5px; }
+  .dot {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--muted);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 4px;
+  }
+  .dot.active { width: 16px; background: var(--cyan); }
+
+  #counter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    min-width: 40px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div id="deck">
+
+  <!-- S1: ESPELHO -->
+  <div class="slide active" id="s1">
+    <div class="sh">
+      <div class="logo">ELO<span class="c">SCOPE</span></div>
+      <div class="slide-label">A Realidade do Seu Comercial</div>
+    </div>
+    <div class="sb">
+      <div class="g2" style="align-items:stretch;">
+        <div class="col jcsb">
+          <div>
+            <div class="hl hl-cover">SEU TIME VENDE.<br>MAS O NÚMERO<br>NÃO BATE.</div>
+            <div class="body-text mt12">Isso não é falta de esforço.<br>É falta de sistema.</div>
+          </div>
+        </div>
+        <div class="vborder col h100">
+          <div class="pain-list">
+            <div class="pain-item">
+              <div class="pain-title">Processo sem padrão</div>
+              <div class="pain-body">Cada vendedor improvisa — sem playbook, sem cadência.</div>
+            </div>
+            <div class="pain-item">
+              <div class="pain-title">Follow-up esquecido</div>
+              <div class="pain-body">O lead para de responder e ninguém retoma.</div>
+            </div>
+            <div class="pain-item">
+              <div class="pain-title">Base parada</div>
+              <div class="pain-body">Contatos antigos nunca foram trabalhados.</div>
+            </div>
+            <div class="pain-item">
+              <div class="pain-title">Sem visibilidade</div>
+              <div class="pain-body">O gestor descobre o problema depois que o negócio foi.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2: CAUSA RAIZ -->
+  <div class="slide" id="s2">
+    <div class="sh">
+      <div class="logo">ELO<span class="c">SCOPE</span></div>
+      <div class="slide-label">O Que Está Travando</div>
+    </div>
+    <div class="sb">
+      <div class="hl hl-lg" style="max-width:680px;">O PROBLEMA NUNCA FOI O VENDEDOR.<br>FOI A FALTA DE SISTEMA.</div>
+      <div class="diagram mt20">
+        <div class="diag-node lead">LEAD CHEGA</div>
+        <div class="diag-arrow">→</div>
+        <div class="diag-inner">
+          <div class="di-main">VAZIO</div>
+          <div class="di-sub">sem processo · sem dados · sem IA</div>
+        </div>
+        <div class="diag-arrow">→</div>
+        <div class="diag-node result">FECHA OU SOME</div>
+      </div>
+      <div class="body-text mt16" style="max-width:580px;">
+        Não é falta de produto. Não é falta de lead.<br>
+        É falta de <strong>processo, dados e IA</strong> trabalhando juntos.
+      </div>
+    </div>
+  </div>
+
+  <!-- S3: QUEM SOMOS -->
+  <div class="slide" id="s3">
+    <div class="sh">
+      <div class="logo">ELO<span class="c">SCOPE</span></div>
+      <div class="slide-label">Eloscope</div>
+    </div>
+    <div class="sb">
+      <div class="g2" style="align-items:stretch;">
+        <div class="col jcsb">
+          <div>
+            <div class="hl hl-lg">IMPLEMENTAMOS E OPERAMOS<br>O SEU COMERCIAL.</div>
+            <div class="body-text mt12">Do diagnóstico ao acompanhamento mensal —<br>um sistema completo, rodando de verdade.</div>
+          </div>
+        </div>
+        <div class="vborder stat-list">
+          <div class="stat-row">
+            <div class="stat-num">3–10</div>
+            <div class="stat-sub">Dias úteis</div>
+            <div class="stat-desc">Sistema no ar desde o primeiro mês</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-num">100%</div>
+            <div class="stat-sub">Time treinado</div>
+            <div class="stat-desc">Usando no dia a dia</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-num">∞</div>
+            <div class="stat-sub">Acompanhamento</div>
+            <div class="stat-desc">Reunião mensal — ajuste até funcionar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4: A SOLUÇÃO -->
+  <div class="slide" id="s4">
+    <div class="sh">
+      <div class="logo">ELO<span class="c">SCOPE</span></div>
+      <div class="slide-label">Eloscope ELO OS</div>
+    </div>
+    <div class="sb">
+      <div class="hl hl-md">UM SISTEMA. TRÊS CAMADAS.<br>SE FALTAR UMA, AS OUTRAS NÃO FUNCIONAM.</div>
+      <div class="mt14" style="flex:1; overflow:hidden; min-height:0;">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>Camada</th>
+              <th>O que entrega</th>
+              <th>O que elimina</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Processo</td>
+              <td>Playbook personalizado · Cadências automatizadas · Treinamento do time</td>
+              <td>Vendedor improvisando</td>
+            </tr>
+            <tr>
+              <td>IA</td>
+              <td>Copiloto ao lado do vendedor (script, calls, follow-up) + IA Assistida para gestor (scoring, base, dashboard)</td>
+              <td>Follow-up perdido · decisão sem dados</td>
+            </tr>
+            <tr>
+              <td>Acomp.</td>
+              <td>Reunião mensal · ajuste de scripts e prompts · relatório executivo</td>
+              <td>Resultado que some em 30 dias</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- S5: 3 FASES -->
+  <div class="slide" id="s5">
+    <div class="sh">
+      <div class="logo">ELO<span class="c">SCOPE</span></div>
+      <div class="slide-label">O Método</div>
+    </div>
+    <div class="sb">
+      <div class="hl hl-lg">TRÊS FASES.<br>UM SISTEMA RODANDO.</div>
+      <div class="phase-list mt14">
+        <div class="phase-row">
+          <div class="phase-num">01</div>
+          <div>
+            <div class="phase-title">Diagnóstico</div>
+            <div class="phase-when">Semana 1–2</div>
+            <div class="phase-items">Mapeamento · Relatório de gargalos · Análise da base · Plano de prioridades</div>
+          </div>
+        </div>
+        <div class="phase-row">
+          <div class="phase-num accent">02</div>
+          <div>
+            <div class="phase-title tcyan">Estrutura</div>
+            <div class="phase-when">Semana 2–4</div>
+            <div class="phase-items">Playbook · IA Copiloto · IA Assistida + Dashboard · Cadências · Treinamento</div>
+          </div>
+        </div>
+        <div class="phase-row">
+          <div class="phase-num">03</div>
+          <div>
+            <div class="phase-title">Acompanhamento</div>
+            <div class="phase-when">Mensal</div>
+            <div class="phase-items">Reunião de resultado · Ajuste de scripts e IA · Relatório · Suporte contínuo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S6: IA NA PRÁTICA -->
+  <div class="slide" id="s6">
+    <div class="sh">
+      <div class="logo">ELO<span class="c">SCOPE</span></div>
+      <div class="slide-label">Inteligência Artificial</div>
+    </div>
+    <div class="sb">
+      <div class="hl hl-md">DOIS TIPOS DE IA.<br>UM PARA O VENDEDOR, UM PARA O GESTOR.</div>
+      <div class="g2-eq mt14" style="align-items:start;">
+        <div class="col h100">
+          <div class="ia-col-title tcyan">IA Copiloto — Vendedor</div>
+          <div class="ia-item">Script de abordagem dinâmico</div>
+          <div class="ia-item">Sugestão de resposta em tempo real</div>
+          <div class="ia-item">Análise de calls e objeções</div>
+          <div class="ia-item">Follow-up automático inteligente</div>
+          <div class="ia-item">Priorização de leads por comportamento</div>
+          <div class="ia-item">Orientação de próximo passo no CRM</div>
+        </div>
+        <div class="vborder col h100">
+          <div class="ia-col-title tmag">IA Assistida — Gestor</div>
+          <div class="ia-item">Scoring de oportunidades em aberto</div>
+          <div class="ia-item">Reativação de base parada</div>
+          <div class="ia-item">Dashboard de performance por vendedor</div>
+          <div class="ia-item">Alertas de pipeline em risco</div>
+          <div class="ia-item">Relatório executivo automático</div>
+          <div class="ia-item">Previsão de fechamento por ciclo</div>
+        </div>
+      </div>
+      <div class="slide-footer">O vendedor continua sendo o vendedor. A IA opera com ele — não no lugar dele.</div>
+    </div>
+  </div>
+
+  <!-- S7: ESCOPO -->
+  <div class="slide" id="s7">
+    <div class="sh">
+      <div class="logo">ELO<span class="c">SCOPE</span></div>
+      <div class="slide-label">Escopo Completo</div>
+    </div>
+    <div class="sb">
+      <div class="hl hl-md">TUDO QUE SEU COMERCIAL PRECISA<br>PARA OPERAR COM SISTEMA.</div>
+      <div class="g2-eq mt14" style="align-items:start;">
+        <div class="col h100">
+          <div class="col-hdr">Estrutura</div>
+          <div class="check-item"><span class="ck">✓</span> Diagnóstico completo do comercial</div>
+          <div class="check-item"><span class="ck">✓</span> Playbook personalizado por produto</div>
+          <div class="check-item"><span class="ck">✓</span> IA Copiloto para vendedores</div>
+          <div class="check-item"><span class="ck">✓</span> IA Assistida + Dashboard para gestores</div>
+          <div class="check-item"><span class="ck">✓</span> Treinamento do time completo</div>
+        </div>
+        <div class="vborder col h100">
+          <div class="col-hdr">Acompanhamento Mensal</div>
+          <div class="check-item"><span class="ck">✓</span> Reunião mensal de resultado</div>
+          <div class="check-item"><span class="ck">✓</span> Ajuste de scripts e prompts de IA</div>
+          <div class="check-item"><span class="ck">✓</span> Relatório executivo mensal</div>
+          <div class="check-item"><span class="ck">✓</span> Suporte via canal dedicado</div>
+        </div>
+      </div>
+      <div class="slide-footer">❌ Geração de tráfego &nbsp;·&nbsp; ❌ Licenças de IA (~R$100–200/mês) &nbsp;·&nbsp; ❌ Operação diária da equipe</div>
+    </div>
+  </div>
+
+  <!-- S8: MARCOS -->
+  <div class="slide" id="s8">
+    <div class="sh">
+      <div class="logo">ELO<span class="c">SCOPE</span></div>
+      <div class="slide-label">O Que Acontece</div>
+    </div>
+    <div class="sb">
+      <div class="hl hl-md">EM 30 DIAS RODANDO.<br>EM 60 DIAS VOCÊ TEM RESULTADO PARA COMPARAR.</div>
+      <div class="g2-eq mt14" style="align-items:start;">
+        <div class="col h100">
+          <div class="milestone-num tcyan">30</div>
+          <div class="milestone-sub">Sistema no ar</div>
+          <div class="milestone-item">Playbook validado e ativo</div>
+          <div class="milestone-item">IA Copiloto rodando nas calls</div>
+          <div class="milestone-item">IA Assistida com dashboard ao vivo</div>
+          <div class="milestone-item">Time treinado e operando</div>
+          <div class="milestone-item">Primeira reunião de ajuste realizada</div>
+        </div>
+        <div class="vborder col h100">
+          <div class="milestone-num tmag">60</div>
+          <div class="milestone-sub">Resultado mensurável</div>
+          <div class="milestone-item">Conversão medida e comparável</div>
+          <div class="milestone-item">Follow-up com taxa de retorno real</div>
+          <div class="milestone-item">Base reativada com dados</div>
+          <div class="milestone-item">Primeiro ciclo de melhoria concluído</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S9: GARANTIA -->
+  <div class="slide" id="s9">
+    <div class="sh">
+      <div class="logo">ELO<span class="c">SCOPE</span></div>
+      <div class="slide-label">Nossa Garantia</div>
+    </div>
+    <div class="sb jccenter">
+      <div>
+        <div class="mono-label" style="color:var(--magenta); font-size:0.58rem; letter-spacing:0.14em;">Garantia de Resultado — 60 Dias</div>
+        <div class="hl hl-xl mt12">SE NADA MELHORAR EM 60 DIAS —</div>
+        <div class="hl hl-xl tmag">DEVOLVEMOS O SETUP.</div>
+        <div class="body-text mt16" style="max-width:560px;">
+          Conversão · follow-up · tempo de resposta · reativação de base.<br>
+          Qualquer indicador. Se nenhum mover: <strong>devolução integral do setup.</strong>
+        </div>
+        <div class="guarantee-tag">O RISCO FINANCEIRO ESTÁ DO NOSSO LADO — NÃO DO SEU</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S10: INVESTIMENTO -->
+  <div class="slide" id="s10">
+    <div class="sh">
+      <div class="logo">ELO<span class="c">SCOPE</span></div>
+      <div class="slide-label">Condição Parceiro Fundador</div>
+    </div>
+    <div class="sb">
+      <div class="hl hl-sm">PARA CADA R$100K, 5 PONTOS A MAIS<br>= R$5.000 A MAIS POR MÊS.</div>
+      <div class="g2-inv mt14" style="align-items:start;">
+        <div class="col h100">
+          <div class="col-hdr">O Que Você Recebe</div>
+          <div class="price-row"><div class="pl">Diagnóstico</div><div class="pv">R$2.000</div></div>
+          <div class="price-row"><div class="pl">Playbook personalizado</div><div class="pv">R$3.000</div></div>
+          <div class="price-row"><div class="pl">IA Copiloto setup</div><div class="pv">R$4.000</div></div>
+          <div class="price-row"><div class="pl">IA Assistida + Dashboard</div><div class="pv">R$3.000</div></div>
+          <div class="price-row"><div class="pl">Treinamento do time</div><div class="pv">R$2.000</div></div>
+          <div class="price-row"><div class="pl">Acompanhamento mensal</div><div class="pv">R$1.500/mês</div></div>
+          <div class="price-row total"><div class="pl">Valor Total</div><div class="pv">R$14.000+</div></div>
+        </div>
+        <div class="vborder col h100">
+          <div class="col-hdr">Parceiro Fundador</div>
+          <div class="plan-row">
+            <div class="plan-name">Starter</div>
+            <div class="plan-detail">1–2 vendedores</div>
+            <div class="plan-price">Setup R$3k · R$1.500/mês</div>
+          </div>
+          <div class="plan-row hl">
+            <div class="plan-name">Growth ★</div>
+            <div class="plan-detail">3–5 vendedores</div>
+            <div class="plan-price">Setup R$3k · R$2.500/mês</div>
+          </div>
+          <div class="plan-row">
+            <div class="plan-name">Scale</div>
+            <div class="plan-detail">6–10 vendedores</div>
+            <div class="plan-price">Setup R$3k · R$3.500/mês</div>
+          </div>
+          <div class="body-text mt12" style="font-size:0.66rem;">Setup em até 12x no cartão · Mensalidade boleto ou PIX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S11: PRÓXIMOS PASSOS -->
+  <div class="slide" id="s11">
+    <div class="sh">
+      <div class="logo">ELO<span class="c">SCOPE</span></div>
+      <div class="slide-label">Se Fizer Sentido Para Você</div>
+    </div>
+    <div class="sb">
+      <div class="hl hl-lg">SÃO 4 PASSOS.<br>O PRIMEIRO É HOJE.</div>
+      <div class="step-list mt14">
+        <div class="step-row">
+          <div class="step-when">Hoje</div>
+          <div>
+            <div class="step-title">Confirmar interesse e plano</div>
+            <div class="step-desc">Escolher Starter, Growth ou Scale</div>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-when">Esta semana</div>
+          <div>
+            <div class="step-title">Contrato + setup</div>
+            <div class="step-desc">Assinatura e pagamento confirmado</div>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-when">Semana 1</div>
+          <div>
+            <div class="step-title">Onboarding</div>
+            <div class="step-desc">Formulário de diagnóstico + reunião de mapeamento</div>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-when">Dia 10</div>
+          <div>
+            <div class="step-title">Sistema no ar</div>
+            <div class="step-desc">IA ativa · time em treinamento · primeiras cadências rodando</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer" style="font-family:'Inter',sans-serif; font-style:italic; font-size:0.72rem; letter-spacing:0; text-transform:none; color:rgba(240,255,254,0.4);">
+        Faz sentido para o seu momento agora — ou tem alguma dúvida antes de avançar?
+      </div>
+    </div>
+  </div>
+
+</div><!-- /deck -->
+
+<!-- NAVIGATION -->
+<div id="nav">
+  <button id="btn-prev" aria-label="Anterior">&#8592;</button>
+  <div id="dots"></div>
+  <span id="counter">1 / 11</span>
+  <button id="btn-next" aria-label="Próximo">&#8594;</button>
+</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  const dotsEl = document.getElementById('dots');
+  const counter = document.getElementById('counter');
+  let current = 0;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dotsEl.children[current].classList.remove('active');
+    current = Math.max(0, Math.min(total - 1, n));
+    slides[current].classList.add('active');
+    dotsEl.children[current].classList.add('active');
+    counter.textContent = (current + 1) + ' / ' + total;
+  }
+
+  document.getElementById('btn-prev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('btn-next').addEventListener('click', () => goTo(current + 1));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goTo(current + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+  });
+</script>
+
+</body>
+</html>
