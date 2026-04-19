@@ -219,10 +219,11 @@ Meta: 2-3 clientes beta. Zero custo de aquisição.
 | Growth | R$5.000 | R$5.000/mês |
 | Scale | R$8.000 | R$8.000/mês |
 
-## Promessa Mensurável (definitiva)
-- **30 dias:** tempo de resposta ao lead <30 min + taxa de follow-up >80%
-- **60 dias:** melhora mensurável na taxa de conversão
-- **Garantia:** se nenhuma das 3 métricas evoluir em 60 dias → devolução do setup (R$3.000)
+## Promessa Mãe (definitiva — 19/04/2026)
+> "Seu time perde venda todo dia por falta de processo e follow-up. O Sales OS instala o sistema comercial completo — processo, IA e acompanhamento mensal. Se nada melhorar em 60 dias, devolvemos R$3.000."
+
+**Decisão:** sem número específico — produto em primeira versão, sem validação ainda. Quando primeiros cases saírem, inserir número real.
+**Garantia:** devolução do setup (R$3.000) se nada melhorar em 60 dias.
 
 ## Arquivos
 - `cerebro/empresa/projetos/sales-os/slides.html` — **21 slides** (atualizado 18/04)

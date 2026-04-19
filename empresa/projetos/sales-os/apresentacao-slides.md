@@ -84,15 +84,15 @@ Não é falta de produto. Não é falta de lead.
 ## SLIDE 6 — A SOLUÇÃO
 
 **Eyebrow:** ELOSCOPE SALES OS
-**Headline:** Nós estruturamos e acompanhamos o comercial da sua empresa com IA.
+**Headline:** Seu time perde venda todo dia por falta de processo e follow-up.
 
 **Body:**
-Diagnóstico → Playbook → IA implementada → Acompanhamento mensal
+O Sales OS instala o sistema comercial completo — processo, IA e acompanhamento mensal.
 
 Não é consultoria que fala o que fazer.
-É o método que faz funcionar.
+Se nada melhorar em 60 dias, devolvemos R$3.000.
 
-**Destaque Cyan:** "faz funcionar"
+**Destaque Cyan:** "devolvemos R$3.000"
 
 ---
 

@@ -6,7 +6,7 @@
 
 ## O que é o Sales OS
 
-O **Sales OS** estrutura o processo comercial da sua empresa, implementa IA que opera junto com seu time no dia a dia e acompanha resultado mês a mês — para você converter mais dos leads que já chegam, sem depender de esforço manual.
+Seu time perde venda todo dia por falta de processo e follow-up. O **Sales OS** instala o sistema comercial completo — processo, IA e acompanhamento mensal. Se nada melhorar em 60 dias, devolvemos R$3.000.
 
 **Não é consultoria.** Não falamos o que fazer e vamos embora.
 **Não é ferramenta.** Não vendemos software para você operar sozinho.

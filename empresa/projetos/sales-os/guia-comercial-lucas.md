@@ -6,7 +6,7 @@
 
 ## O que você está vendendo (em 30 segundos)
 
-> "A gente pega o time de vendas da empresa, implementa um processo estruturado com IA no WhatsApp dos vendedores, e acompanha resultado todo mês. O vendedor continua fazendo o trabalho — a IA opera ao lado dele entregando script, próximo passo e alertando quando o lead está esfriando. Em 10 dias está rodando."
+> "Seu time perde venda todo dia por falta de processo e follow-up. A gente instala o sistema comercial completo — processo, IA no lado do vendedor e acompanhamento todo mês. Se nada melhorar em 60 dias, devolvemos o setup. Sem burocracia."
 
 **Três perguntas que o produto responde:**
 1. "Por que meu time não converte?" → Sem processo + sem dados + sem IA = improviso
