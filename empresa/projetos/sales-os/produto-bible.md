@@ -137,7 +137,54 @@ Equipe de resultado terceirizada — diagnostica, estrutura, implementa IA no ti
 - Sessão ao vivo com os vendedores
 - Como usar a IA Copiloto no dia a dia
 - Como interpretar o dashboard
-- Trilha educacional pré-gravada (onboarding assíncrono)
+- Trilha educacional pré-gravada (onboarding assíncrono — criada conforme as primeiras entregas)
+
+**Detalhe das sessões de treinamento:**
+
+**Sessão 1 — "Operação com o Sales OS"** (~90 min) · todos os planos
+> Para os **vendedores** (+ 1 gestor)
+
+| Bloco | Conteúdo | Tempo |
+|-------|---------|-------|
+| 1 | Playbook na prática — scripts, cadências, objeções | 20 min |
+| 2 | IA Copiloto ao vivo — demonstração no WhatsApp | 25 min |
+| 3 | Como qualificar um lead (SPIN adaptado para serviço) | 15 min |
+| 4 | Follow-up sem depender da memória — como as cadências funcionam | 15 min |
+| 5 | Simulação ao vivo + dúvidas | 15 min |
+
+**Sessão 2 — "Dashboard e Gestão"** (~60 min) · Growth e Scale
+> Para o **gestor/dono**
+
+| Bloco | Conteúdo | Tempo |
+|-------|---------|-------|
+| 1 | Como ler o dashboard — o que cada métrica significa | 20 min |
+| 2 | Lead scoring — como priorizar o time com dados | 15 min |
+| 3 | Relatório mensal — como usar para tomar decisão | 15 min |
+| 4 | Como acionar campanha de reativação de base | 10 min |
+
+**Sessão 3 — "Revisão e Evolução"** (~60 min) · Scale · após 2 semanas de uso
+> Para **gestor + vendedores**
+
+| Bloco | Conteúdo | Tempo |
+|-------|---------|-------|
+| 1 | O que funcionou, o que não funcionou | 15 min |
+| 2 | Ajustes no playbook com base nos primeiros dados reais | 20 min |
+| 3 | Foco dos próximos 30 dias + métricas a acompanhar | 15 min |
+| 4 | Dúvidas | 10 min |
+
+**Formato:** videochamada (Google Meet/Zoom) ou presencial — definido conforme localização e preferência do cliente.
+
+**Quem conduz:** a definir na reunião com Lucas e Hugo.
+
+**Trilha educacional pré-gravada** (todos os planos) — criada conforme as primeiras entregas:
+
+| Módulo | Conteúdo | Duração estimada |
+|--------|---------|-----------------|
+| 01 | O que é o Sales OS e como vai mudar sua rotina | ~10 min |
+| 02 | Como usar o playbook no dia a dia | ~15 min |
+| 03 | IA Copiloto na prática — tutorial passo a passo | ~15 min |
+| 04 | Como fazer follow-up que converte | ~10 min |
+| 05 | Lendo o dashboard — guia para o gestor | ~10 min |
 
 ---
 
