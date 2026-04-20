@@ -134,6 +134,7 @@ Se encontrar inconsistência óbvia, corrigir antes de commitar.
 
 ```bash
 cd "$SECOND_BRAIN_PATH"
+git pull --rebase origin main
 git add .
 git commit -m "sessao: [resumo do que foi feito em 1 linha]"
 git push origin main
