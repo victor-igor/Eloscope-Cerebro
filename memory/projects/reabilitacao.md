@@ -26,30 +26,41 @@ Sistema veterinário fullstack (React + Supabase) com módulos de agendamentos, 
 ## Épicos em andamento
 | Epic | Título | Status |
 |------|--------|--------|
-| 27 | Transcrição de Consultas com Deepgram | Ready |
-| 28 | Agendamento Recorrente com Google Calendar | Ready — aguarda implementação |
+| 27 | Transcrição de Consultas com Deepgram | Done (27.1–27.5) — redesign UX aprovado mas não implementado |
+| 28 | Agendamento Recorrente com Google Calendar | Em andamento — 28.1 Done, 28.2 Done, 28.3 Done, 28.4–28.9 Ready |
 
 ## Epic 28 — Agendamento Recorrente
-- **Design Spec:** `docs/superpowers/specs/2026-04-20-agendamento-recorrente-design.md`
-- **Aprovado por:** Aria (Architect) + Dara (Data Engineer)
 - **Branch Git:** `feat/agendamento-recorrente`
 - **Branch Supabase:** `feat/ajuste-agendamento`
-- **Stories:** 28.1 → 28.9 (todas Ready)
-- **Próxima ação:** @dev implementar Story 28.1 (migration SQL)
+- **Stories Done:** 28.1, 28.2, 28.3
+- **Próxima story:** 28.4 — Webhook inbound google-calendar-webhook
+
+### Progresso por story
+| Story | Título | Status | Commits |
+|-------|--------|--------|---------|
+| 28.1 | Migration: campos + indexes + constraint + trigger | ✅ Done | `a02234d`, `759df79` |
+| 28.2 | RPCs: create/edit/delete_recurring_appointment | ✅ Done | `ee7077c` |
+| 28.3 | Edge Function google-auth: actions recorrência | ✅ Done | `aec6884` |
+| 28.4–28.9 | — | Ready | — |
+
+### Observações técnicas desta sessão
+- `recorrencia_regra` usa chave `frequencia` (legado) — constraint `NOT VALID` para não quebrar dados históricos
+- Supabase MCP troca de branch automaticamente — cuidado com cherry-pick sempre necessário após deploy
+- `feat/transcricao-consultas` tem commits extras (cherry-picks revertidos) — OK
 
 ## Decisões Tomadas
 - [20/04/2026] Banco local como fonte de verdade; Google Calendar como espelho
-- [20/04/2026] Google native recurrence (1 evento RRULE) — não expandir em eventos individuais
-- [20/04/2026] Eager expansion: série com fim → todas instâncias; infinita → 365 dias + cron semanal
-- [20/04/2026] Edição/exclusão: 3 scopes (THIS / THIS_AND_FOLLOWING / ALL) — igual Google Calendar
-- [20/04/2026] RRULE expansion no frontend (rrule.js) + Edge Function (webhook); não no banco
-- [20/04/2026] Cron: pg_cron + net.http_post (padrão confirmado no projeto)
-- [20/04/2026] `THIS_AND_FOLLOWING`: campo `recorrencia_data_corte` no pai (não cria novo pai)
-- [20/04/2026] `google_event_id` instâncias: usar `event.id` direto do Google (formato `{base}_{datetime}`)
+- [20/04/2026] Google native recurrence (1 evento RRULE)
+- [20/04/2026] Eager expansion: série com fim → instâncias; infinita → 365 dias + cron
+- [20/04/2026] 3 scopes: THIS / THIS_AND_FOLLOWING / ALL
+- [20/04/2026] RRULE expansion no frontend (rrule.js)
+- [20/04/2026] `THIS_AND_FOLLOWING` no Google: modifica UNTIL no RRULE do pai
+- [20/04/2026] Constraint `chk_recorrencia_regra_freq` com `NOT VALID` (dados históricos incompatíveis)
 
 ## Pendências
-- [ ] @dev implementar Story 28.1 (nova sessão — contexto esgotado na sessão 20/04)
-- [ ] Após 28.1: seguir sequência 28.2 → 28.3 → 28.4 → 28.5 → 28.6 → 28.7 → 28.8 → 28.9
+- [ ] QA gate Story 28.3 (não feito — contexto esgotado)
+- [ ] Revert do cherry-pick em `feat/transcricao-consultas` (Story 28.3)
+- [ ] Implementar Story 28.4 → 28.9 na próxima sessão
 
 ---
 *Criado: 20/04/2026*
