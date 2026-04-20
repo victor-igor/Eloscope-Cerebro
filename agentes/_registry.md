@@ -13,6 +13,28 @@
 
 ## Squads Disponíveis
 
+### 🔭 Eloscope OS (meta-orchestrator)
+**Path:** `squads/eloscope-os/` · **Agents ativos em:** `.claude/agents/eloscope-os/` (27 agents)
+**Foco:** Sistema operacional completo Aquisição → Execução → Pós-venda. Handoffs formais via artefato (nunca conversa livre). Nomes astronômicos/mitológicos alinhados com *Luna* e *Eloscope*.
+
+| Orchestrator | Ativação | Área | Agents |
+|--------------|----------|------|--------|
+| Regente | `@regente` | command (global) | 1 |
+| Órion | `@orion` | presales | 4 (orion, sirius, andromeda, halley) |
+| Hefesto | `@hefesto` | engineering | 10 (hefesto, dedalo, pigmento, argos, vesta, gaia, cerbero, ariadne, hermes, lyra) |
+| Minerva | `@minerva` | ai | 5 (minerva, mnemosine, logos, minos, pallas) |
+| Hélio | `@helio` | geo | 3 (helio, nova, cometa) |
+| Mentor | `@mentor` | delivery | 3 (mentor, temis, clio) |
+| Elo | `@elo` | success | 1 |
+
+**Invariantes (7 regras não-negociáveis):** handoff como artefato · 1 orchestrator por área · Regente tem visão global · evals antes de produção · LGPD via Pallas · contratos versionados · DoD por agent.
+
+**Gap analysis:** 27/53 agents implementados (~51%). Pendentes listados no `squads/eloscope-os/README.md`.
+
+**Contexto do cérebro:** `business-context`, `projetos/_index`, `memory/projects/sales-os.md`, `pendencias`, `deadlines`
+
+---
+
 ### 🏛️ C-Level Squad
 **Path:** `squads/c-level-squad/`
 **Foco:** Estratégia, operações, marketing, tecnologia, AI e receita comercial.
