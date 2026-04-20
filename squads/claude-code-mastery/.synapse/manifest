@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=claude-mastery-chief
+DOMAIN_RECALL=claude-code,mcp,hooks,automation,ai-agents,swarm,configuration,integration
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false

@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=movement-chief
+DOMAIN_RECALL=movement,community,social-impact,identity,manifesto,growth-cycles,phenomenology
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false

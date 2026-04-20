@@ -1,0 +1,35 @@
+name: prompt-engineer-squad
+version: "1.0.0"
+short-title: "Prompt Engineer Squad"
+description: "Squad especializado em engenharia de prompts para agentes n8n e arquiteturas de IA conversacional."
+author: "Eloscope"
+license: MIT
+slashPrefix: "prompt-engineer-squad"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - prompt-engineering
+  - ai-architecture
+  - n8n
+  - agents
+  - llm
+  - workflow
+
+components:
+  agents:
+    - prompt-architect.md
+    - prompt-engineer.md
+  tasks:
+    - create-agent-prompt.md
+    - optimize-prompt.md
+    - design-agent-architecture.md
+  templates:
+    - prompt-output-tmpl.md
+  checklists:
+    - prompt-quality-gate.md
+
+config:
+  extends: extend

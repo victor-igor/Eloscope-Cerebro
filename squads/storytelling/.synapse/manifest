@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=story-chief
+DOMAIN_RECALL=storytelling,narrative,content,engagement,story,structure,arc
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false

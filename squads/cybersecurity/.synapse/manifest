@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=cyber-chief
+DOMAIN_RECALL=security,cyber-defense,compliance,risk,cybersecurity,pentest
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false

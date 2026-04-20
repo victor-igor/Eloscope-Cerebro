@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=hormozi-chief
+DOMAIN_RECALL=hormozi,offers,leads,pricing,sales,scaling,content,hooks,business
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false

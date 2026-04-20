@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=prompt-architect
+DOMAIN_RECALL=prompt-engineering,ai-architecture,n8n,agents,llm,workflow
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false

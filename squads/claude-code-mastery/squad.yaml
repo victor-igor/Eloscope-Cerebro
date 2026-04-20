@@ -1,0 +1,37 @@
+name: claude-code-mastery
+version: "1.0.0"
+short-title: "Claude Code Mastery"
+description: "Squad de 8 especialistas em Claude Code — hooks, MCP servers, configuracao, integracao de projetos, swarms e automacao avancada."
+author: "Synkra AIOS"
+license: MIT
+slashPrefix: "claude-code-mastery"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - claude-code
+  - mcp
+  - hooks
+  - automation
+  - ai-agents
+  - swarm
+  - configuration
+  - integration
+
+components:
+  agents:
+    # Tier 0 — Orchestrators
+    - claude-mastery-chief.md
+    - swarm-orchestrator.md
+    # Tier 1 — Specialists
+    - mcp-integrator.md
+    - hooks-architect.md
+    - config-engineer.md
+    - project-integrator.md
+    - roadmap-sentinel.md
+    - skill-craftsman.md
+
+config:
+  extends: extend

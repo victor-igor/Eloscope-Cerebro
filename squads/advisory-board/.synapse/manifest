@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=board-chair
+DOMAIN_RECALL=strategy,advisory,executive,board,mentorship,decision,wisdom
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false

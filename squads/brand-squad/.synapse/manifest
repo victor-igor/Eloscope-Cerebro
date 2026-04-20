@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=brand-chief
+DOMAIN_RECALL=branding,identity,positioning,visual-identity,messaging,marca
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false

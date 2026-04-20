@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=traffic-chief
+DOMAIN_RECALL=traffic,marketing,acquisition,growth,ads,seo,social-media,funnel
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false

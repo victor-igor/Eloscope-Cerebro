@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=data-chief
+DOMAIN_RECALL=data-analytics,business-intelligence,reporting,dados,análise
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false

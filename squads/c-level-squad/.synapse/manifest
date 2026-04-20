@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=ceo-advisor
+DOMAIN_RECALL=executive,leadership,strategy,c-suite,ceo,cfo,cto,coo,cmo
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false

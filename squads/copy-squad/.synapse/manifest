@@ -1,0 +1,6 @@
+DOMAIN_STATE=active
+DOMAIN_ALWAYS_ON=false
+DOMAIN_AGENT_TRIGGER=copy-chief
+DOMAIN_RECALL=copywriting,sales,persuasion,direct-response,email,copy
+DOMAIN_NON_NEGOTIABLE=false
+DEVMODE=false
