@@ -110,7 +110,7 @@ Victor deve ser avisado quando:
 
 | Meta | Número | Receita |
 |------|--------|--------|
-| Clientes fechados (abril–junho) | 2 clientes | R$4k setup + R$3k/mês |
+| Clientes fechados (abril–junho) | 2 clientes | R$6k setup + R$3k/mês |
 | MRR ao final de junho | R$3.000 (2 × Starter) | — |
 | MRR ao final de setembro | R$7.500 (5 clientes) | — |
 | MRR alvo (12–18 meses) | R$78.000 (26 clientes) | ~R$1M/ano |

@@ -12,7 +12,6 @@
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
-- [20/04/2026] **Victor: Confirmar status do Plano Estratégico 04/04/2026** — doc propõe reorientação "Academia + Repositório + Implementação" (3 camadas). Validar se foi adotado (atualizar `business-context.md`) ou arquivar como referência · arquivo: `empresa/contexto/plano-estrategico.md`
 - [19/04/2026] **Slides Elo OS — validação visual pendente** — HTML redesenhado com referências premium, Victor ainda não confirmou aprovação do resultado final · arquivo: `04-apresentacao/slides-elo-os.html`
 
 - [18/04/2026] **Hugo: Responder 7 perguntas técnicas** em `stack-tecnica.md` (VPS provider, LLM em uso, estabilidade QR, Openclaw→Paperclip, dashboard Fran, tempo de setup, CRMs testados)
@@ -66,4 +65,6 @@
 - [19/04/2026] **Slides call de vendas: montar no Canva** com design system Eloscope · arquivo base em `04-apresentacao/slides-call-vendas.md`
 - [19/04/2026] **Definir quem conduz a call de vendas** — Victor ou Lucas (impacta treinamento e preparação)
 
-*Atualizado: 20/04/2026*
+*Atualizado: 19/04/2026*
+
+- [20/04/2026] **ReabilitaCao — Epic 28 Story 28.1** — @dev deve implementar migration SQL em nova sessão · branch `feat/agendamento-recorrente` · spec em `docs/superpowers/specs/2026-04-20-agendamento-recorrente-design.md`

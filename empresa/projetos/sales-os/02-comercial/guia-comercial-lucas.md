@@ -179,7 +179,7 @@ Após a reunião, enviar `proposta-cliente.md` em até 24h.
 
 | Objeção | Resposta |
 |---------|---------|
-| **"Tá caro"** | "Faz sentido olhar o investimento antes de ver o resultado. Me fala: quanto você fatura com um cliente a mais por mês? Se o Elo OS melhorar 5 pontos na conversão do seu time, em quanto tempo você recupera o setup de R$2k?" |
+| **"Tá caro"** | "Faz sentido olhar o investimento antes de ver o resultado. Me fala: quanto você fatura com um cliente a mais por mês? Se o Elo OS melhorar 5 pontos na conversão do seu time, em quanto tempo você recupera o setup de R$3k?" |
 | **"Preciso pensar"** | "Claro, faz sentido. O que falta para você decidir — é o valor, o escopo, ou tem alguma dúvida sobre como vai funcionar? Me fala que eu esclareço agora." |
 | **"Já tentei consultoria e não funcionou"** | "Faz total sentido a desconfiança. Consultoria fala o que fazer e vai embora. A gente implementa, configura a IA no WhatsApp do time e fica todo mês acompanhando resultado. É diferente. E o beta existe exatamente para você testar com o menor risco possível." |
 | **"Meu time não vai usar"** | "Essa é a preocupação mais comum — e é válida. Por isso o treinamento faz parte do setup. E a IA Copiloto fica no WhatsApp que o time já usa — não tem nova ferramenta para aprender, não tem login novo. É uma camada que aparece na ferramenta que eles já usam todo dia." |
@@ -210,7 +210,7 @@ Após a reunião, enviar `proposta-cliente.md` em até 24h.
 ## Checklist pós-fechamento (o que Lucas faz)
 
 - [ ] Contrato assinado e arquivado
-- [ ] Setup R$2.000 recebido
+- [ ] Setup R$3.000 recebido
 - [ ] Mensalidade configurada
 - [ ] Victor e Hugo avisados (nome do cliente, segmento, plano, data de início)
 - [ ] Formulário de onboarding enviado ao cliente (`onboarding-formulario.md`)

@@ -27,7 +27,7 @@
 
 | Projeto | Motivo | Retomar quando | Arquivo |
 |---------|--------|----------------|---------|
-| EloPoly | Foco no Elo OS beta (nicho vet é spin-off) | 2-3 clientes Elo OS fechados OU lead vet qualificado | elopoly.md |
+| [Projeto 3] | [motivo] | [condição] | [projeto-3.md] |
 
 ---
 
@@ -41,9 +41,11 @@
 
 ## Mudanças Recentes
 
-- [20/04] EloPoly — registrado como ⏸️ Pausado (nicho veterinário)
-- [20/04] lasted-entregas/ — distribuído: docs→sales-os/, clientes→areas/vendas/, planejamento→empresa/contexto/ + sales-os/01-produto/vpc/
+- [DD/MM] [Projeto] — [o que mudou]
+- [DD/MM] [Projeto] — [o que mudou]
 
 ---
 
-*Atualizado: 20/04/2026*
+*Atualizado: [DD/MM/YYYY]*
+
+| ReabilitaCao | 🟢 Ativo | Sistema veterinário — Epic 28 (agendamento recorrente) aguarda implementação | reabilitacao.md |
