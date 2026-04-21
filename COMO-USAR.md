@@ -103,7 +103,7 @@ Pessoa B: SECOND_BRAIN_PATH=~/projetos/Eloscope-Cerebro
 ### Antes de commitar
 ```bash
 cd $SECOND_BRAIN_PATH
-git pull origin main   # sempre puxar antes de commitar
+git pull --rebase origin main   # sempre puxar antes de commitar
 git add .
 git commit -m "sessao: [resumo]"
 git push origin main
@@ -127,6 +127,7 @@ Eloscope-Cerebro/
 ├── squads/          ← agentes e squads de IA
 ├── skills/          ← skills do Claude Code (/salve, /cerebro, /rotina...)
 ├── agentes/         ← registry e configuração dos agentes
+├── seguranca/       ← permissões por agente
 ├── CLAUDE.md        ← instruções para o Claude Code
 ├── PROPAGATION.md   ← protocolo de atualização dos arquivos
 └── MAPA.md          ← índice navegável
