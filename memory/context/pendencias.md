@@ -12,6 +12,10 @@
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
+- [21/04/2026] **Gustavo Bravo — enviar proposta** · arquivo: `areas/vendas/clientes/gustavo-bravo/proposta.md` · marcar call de 30 min com Rafael e Javi para alinhar
+- [21/04/2026] **Mentoria Agências — definir pricing final** · R$5.500 único ou R$1.500 + 3×R$1.300 parcelado · validar com Lucas antes de apresentar
+- [21/04/2026] **Gustavo Bravo — salvar transcrição original da reunião** · `areas/vendas/clientes/gustavo-bravo/meeting-notes/` · Victor precisa colar a transcrição bruta
+
 - [19/04/2026] **Slides Elo OS — validação visual pendente** — HTML redesenhado com referências premium, Victor ainda não confirmou aprovação do resultado final · arquivo: `04-apresentacao/slides-elo-os.html`
 
 - [18/04/2026] **Hugo: Responder 7 perguntas técnicas** em `stack-tecnica.md` (VPS provider, LLM em uso, estabilidade QR, Openclaw→Paperclip, dashboard Fran, tempo de setup, CRMs testados)

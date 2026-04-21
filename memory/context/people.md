@@ -35,7 +35,7 @@
 
 | Nome | Contexto | Status | Deadline |
 |------|----------|--------|----------|
-| [Nome] | [contexto] | [em negociação] | [prazo] |
+| Gustavo Bravo | Agência Bravo · 20 clientes · equipe Rafael (design) + Javi (generalista) · quer automatizar ciclo mensal de conteúdo | Em negociação — proposta Combo enviada | Call 30 min a agendar |
 
 ---
 

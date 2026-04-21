@@ -20,6 +20,7 @@
 | Projeto | Status | Próximo Marco | Arquivo |
 |---------|--------|---------------|---------|
 | Eloscope Elo OS | 🔨 Em construção | Fechar 2-3 clientes beta (60 dias) | sales-os.md |
+| Mentoria Agências | 🔨 Em construção | Enviar proposta Gustavo + validar pricing | mentoria-agencias.md |
 
 ---
 
@@ -41,8 +42,8 @@
 
 ## Mudanças Recentes
 
-- [DD/MM] [Projeto] — [o que mudou]
-- [DD/MM] [Projeto] — [o que mudou]
+- [21/04] Mentoria Agências — arquivos movidos para cerebro; lead Gustavo Bravo organizado em areas/vendas/clientes/gustavo-bravo/
+- [21/04] Mentoria Agências — proposta Combo revisada (co-construção + fluxo real + n8n)
 
 ---
 
