@@ -1,119 +1,99 @@
-# Proposta — Bravo Agency · Automação do Ciclo de Conteúdo
+# Proposta — Bravo Agency · Estrutura + Automação
 
-> Co-construção: Eloscope orienta, Rafael e Javi constroem. Equipe sai com propriedade total do sistema.
-
----
-
-## Por que faz sentido para a Bravo
-
-Com base na reunião de 20/04/2026, o Gustavo quer:
-1. **Ver funcionando rápido** — resultado em semanas, não meses
-2. **Equipe dona do sistema** — "a ideia é você criar e a gente operar"
-3. **Co-construção** — Rafael e Javi aprendem construindo, não só assistindo
-
-A proposta entrega os dois: nos primeiros passos Eloscope orienta ao vivo enquanto Rafael e Javi constroem — eles terminam o projeto sabendo expandir sozinhos para novos processos e novos clientes.
+> "Antes de automatizar, precisamos ter um processo. Senão a gente só acelera o caos."
+> — alinhado na reunião de 20/04/2026
 
 ---
 
-## O que será automatizado
+## O que a gente viu na reunião
 
-O ciclo mensal de conteúdo da Bravo para 20 clientes — do dia 1 ao aprovação final:
+O Gustavo quer escalar para mais clientes sem contratar mais pessoas. A visão está certa. Mas na nossa conversa ficou claro o problema real: **a Bravo ainda não tem processos definidos internamente** — cada cliente tem sua particularidade, cada entrega é feita de forma diferente.
 
-| Módulo | O que faz | Ferramenta |
-|--------|-----------|------------|
-| **1 — Análise** | IA analisa dados do mês anterior + ativos do cliente (site, branding) e gera relatório | OpenClaw + Segundo Cérebro |
-| **2 — Planejamento** | IA elabora plano de conteúdo baseado na análise para revisão interna | OpenClaw |
-| **3 — Aprovação + Envio ao cliente** | Plano aprovado é enviado ao cliente com lembretes automatizados | n8n (WhatsApp / email) |
-| **4 — Criação** | Plano aprovado dispara tarefas de design e copy com IA | OpenClaw |
-| **5 — Aprovação final** | Cliente aprova o criativo final antes da publicação | n8n |
+Colocar automação em cima de um processo indefinido não resolve. Vai criar mais confusão, gastar token, e no fim a equipe vai perder tempo configurando coisas que não se encaixam no jeito real de trabalhar da Bravo.
 
-**Por que n8n para comunicação com cliente:** o OpenClaw conecta a sistemas internos (Google Drive, banco de dados, Segundo Cérebro) — não é seguro expor isso ao cliente diretamente. O n8n fica na frente, como camada exclusiva de comunicação externa.
+**A ordem certa é:**
+1. Mapear e definir o processo
+2. Automatizar em cima do processo definido
 
 ---
 
-## Stack
+## O que a Eloscope vai fazer
 
-| Ferramenta | Função |
-|------------|--------|
-| **OpenClaw** | Plataforma central — IA analisa, planeja e cria de forma autônoma |
-| **n8n** | Comunicação com cliente — envio de planos, coleta de aprovações, lembretes |
-| **GitHub** | Versionamento — nada se perde, equipe colabora |
-| **Vercel** | Publicação web — landing pages e relatórios gerados automaticamente |
-| **Segundo Cérebro da Bravo** | Memória persistente — IA conhece cada cliente antes de qualquer sessão |
+### Fase 1 — Diagnóstico e Mapeamento de Processo (Semanas 1–3)
+*Eloscope conduz. Rafael e Javi participam e aprendem.*
 
----
+**Semana 1 — Diagnóstico**
+- Sessão de mapeamento do fluxo atual (2h com Gustavo + Rafael + Javi)
+- Documentar como a Bravo trabalha hoje: onboarding de cliente, planejamento, criação, aprovação, postagem
+- Identificar onde está o gargalo real e o que é ad-hoc vs. padronizado
 
-## Como funciona
+**Semana 2 — Redesenho do Processo**
+- Definir o processo ideal módulo a módulo:
+  - Módulo 1: Onboarding + análise do cliente (identidade, paleta, nicho)
+  - Módulo 2: Planejamento de conteúdo mensal
+  - Módulo 3: Comunicação e aprovação com o cliente
+  - Módulo 4: Criação (copy + design)
+  - Módulo 5: Aprovação final e postagem
+- Para cada módulo: quem faz, com qual ferramenta, qual o entregável esperado
 
-### Fase 1 — Fundação (semanas 1–3)
-*Eloscope orienta. Rafael e Javi constroem ao vivo.*
+**Semana 3 — Roadmap de Automação**
+- Definir quais módulos automatizar primeiro (começando pelos de maior impacto)
+- Escolher a stack certa para cada módulo (OpenCloud, n8n, Claude Code)
+- Criar um roteiro prático: o que Rafael e Javi vão implementar, em que ordem
 
-**Semana 1 — Infraestrutura + Segundo Cérebro**
-- Kick-off: mapeamento do ciclo real da Bravo + definição dos 3 clientes piloto (2h)
-- Rafael e Javi instalam e configuram: OpenClaw + GitHub + Vercel (com orientação ao vivo)
-- Rafael e Javi montam o Segundo Cérebro da Bravo: identidade da agência + perfil dos 3 clientes piloto
-
-**Semana 2 — Módulo 1: Análise**
-- Rafael e Javi constroem ao vivo a automação de análise de cliente (dados do mês + ativos → relatório)
-- Teste com 3 clientes reais da Bravo
-
-**Semana 3 — Módulo 2: Planejamento de conteúdo**
-- Rafael e Javi constroem a automação de planejamento integrada à análise
-- Teste com os mesmos 3 clientes
-
-**Resultado ao final da Fase 1:** Segundo Cérebro + análise + planejamento funcionando para 3 clientes reais
+**Entregável da Fase 1:**
+> Documento de processo + roadmap de automação com prioridades definidas.
+> Rafael e Javi saem sabendo exatamente o que construir e por onde começar.
 
 ---
 
-### Fase 2 — Ciclo Completo (semanas 4–8)
-*Rafael e Javi lideram. Eloscope acompanha e revisa.*
+### Fase 2 — Implantação Modular (Semanas 4–12)
+*Rafael e Javi constroem. Eloscope acompanha e desbrava o caminho.*
 
-| Semana | Módulo | Quem constrói |
-|--------|--------|---------------|
-| 4 | Módulo 3: Aprovação interna + envio ao cliente (n8n) | Javi + orientação |
-| 5 | Módulo 3: Lembretes automatizados + rastreamento de status | Javi |
-| 6 | Módulo 4: Criação — tarefas de design/copy disparadas pelo plano aprovado | Rafael + orientação |
-| 7 | Módulo 5: Aprovação final do cliente via n8n | Javi |
-| 8 | Integração ponta a ponta: ciclo completo rodando para 3 clientes piloto | Rafael + Javi |
+A automação acontece módulo a módulo — sem tentar automatizar tudo de uma vez.
 
----
+| Semana | Módulo | O que acontece |
+|--------|--------|----------------|
+| 4–5 | Módulo 1: Onboarding + análise do cliente | Rafael e Javi constroem a skill de análise com orientação ao vivo |
+| 6–7 | Módulo 2: Planejamento de conteúdo | Automação do planejamento integrada à análise |
+| 8–9 | Módulo 3: Aprovação + comunicação via n8n | Cliente recebe plano por WhatsApp, aprova ou dá apontamento |
+| 10–11 | Módulo 4: Criação de copy e design | Skill de copywriting + integração com ferramenta de imagem |
+| 12 | Revisão ponta a ponta | Ciclo completo testado com 3 clientes reais |
 
-### Fase 3 — Escala + Operação Autônoma (semanas 9–12)
-*Equipe opera sozinha. Eloscope disponível para dúvidas.*
-
-| Semana | Foco |
-|--------|------|
-| 9 | Agendamento no OpenClaw: ciclo roda sozinho no Dia 1 de cada mês |
-| 10 | Controle de custo de tokens + otimização do Segundo Cérebro |
-| 11 | Expansão: adicionar mais 3 clientes ao sistema |
-| 12 | Revisão final (1h): Eloscope aponta melhorias + handoff completo |
-
-**Resultado ao final da Fase 3:** ciclo mensal completo rodando de forma autônoma para todos os clientes da Bravo, com Rafael e Javi capazes de expandir para novos contextos sem ajuda externa.
+**Por que n8n para comunicação com cliente:** OpenCloud não é seguro para expor ao cliente final — tem acesso direto à infraestrutura interna. O n8n fica na frente como camada de comunicação externa, sem risco.
 
 ---
 
 ## O que o Gustavo não precisa fazer
 
-- Não precisa aprender a programar
-- Não precisa estar em todas as sessões
-- Rafael e Javi participam das sessões operacionais
+- Não precisa entender código
+- Não precisa estar em todas as sessões técnicas
+- Rafael e Javi são os construtores — Gustavo só entra no kick-off e nos check-ins de fase
 
-**Gustavo participa apenas:**
-- Kick-off (2h — semana 1)
-- Check-in ao final de cada fase (30 min)
+**Gustavo participa de:**
+- Kick-off (2h — Semana 1): mapeamento do processo real
+- Check-in ao final de cada fase (30 min): ver o que foi construído e validar
 
 ---
 
 ## Cronograma visual
 
 ```
-Sem 1       ████ Infraestrutura + Segundo Cérebro da Bravo
-Sem 2–3     ████ Módulos 1 e 2: Análise + Planejamento
-Sem 4–5     ████ Módulo 3: Aprovação interna + envio ao cliente (n8n)
-Sem 6–7     ████ Módulos 4 e 5: Criação + Aprovação final
-Sem 8       ████ Ciclo completo integrado e testado
-Sem 9–12    ████ Escala, otimização e operação autônoma
+Sem 1–3     ████ Diagnóstico + Redesenho de Processo + Roadmap
+Sem 4–5     ████ Módulo 1: Onboarding + análise do cliente
+Sem 6–7     ████ Módulo 2: Planejamento de conteúdo
+Sem 8–9     ████ Módulo 3: Comunicação e aprovação (n8n)
+Sem 10–11   ████ Módulo 4: Copy + Design
+Sem 12      ████ Ciclo completo integrado e testado
 ```
+
+---
+
+## Sobre a parte comercial
+
+Na reunião, o Gustavo mencionou que ainda está operacional demais e que precisa estruturar melhor o processo de venda da própria Bravo — cliente ideal, ticket, processo de fechamento.
+
+Isso fica fora desta proposta (é outro escopo), mas a gente pode conversar sobre isso em paralelo. Com o processo interno rodando melhor, fica mais fácil vender mais e melhor.
 
 ---
 
@@ -128,37 +108,47 @@ Parcelado:           R$1.500 entrada + R$1.300/mês × 3 meses  (= R$5.400)
 
 ## Garantia
 
-> "Se ao final da Semana 3 o Módulo de Análise não estiver funcionando com os 3 clientes piloto definidos no kick-off, continuamos as sessões sem custo adicional até entregar."
+> "Se ao final da Semana 3 o documento de processo e o roadmap não estiverem claros o suficiente para o Rafael e o Javi saberem por onde começar, continuamos as sessões sem custo adicional até chegar nesse ponto."
 
 ---
 
 ## Mensagem de WhatsApp para o Gustavo
 
 ```
-Gustavo, como combinamos — montei a proposta.
+Gustavo, montei a proposta.
 
-A ideia é exatamente o que você falou: a Eloscope orienta, 
-o Rafael e o Javi constroem. No final vocês são donos do sistema 
-e sabem expandir sozinhos.
+Como a gente alinhando — antes de automatizar, a gente precisa 
+ter o processo claro. Senão é só acelerar a confusão.
 
-O que vamos construir juntos:
+A lógica é essa:
 
-✅ Semana 1: infraestrutura completa + Segundo Cérebro da Bravo 
-   (Rafael e Javi instalam e montam com a gente do lado)
-✅ Semanas 2–3: análise de cliente + planejamento de conteúdo 
-   funcionando para 3 clientes reais
-✅ Semanas 4–8: ciclo completo — aprovação interna, envio ao cliente, 
-   criação, aprovação final — tudo automatizado
-✅ Semanas 9–12: sistema rodando sozinho, Rafael e Javi escalando 
-   para novos clientes sem precisar de ninguém
+Semanas 1–3: a gente mapeia o processo real da Bravo, redesenha 
+módulo a módulo e define o que o Rafael e o Javi vão construir, 
+em que ordem.
 
-Ao final: ciclo mensal de conteúdo para 20 clientes rodando no piloto automático.
+Semanas 4–12: eles constroem módulo por módulo, com a Eloscope 
+do lado. Começando pelo onboarding do cliente e indo até o ciclo 
+completo de aprovação e criação.
+
+Você entra no kick-off (2h) e nos check-ins de fase (30 min cada).
+O resto é com Rafael e Javi.
 
 Investimento: R$5.500 único (ou R$1.500 agora + R$1.300/mês por 3 meses).
 
-Quando você tem 30 minutos essa semana para alinhar com o Rafael e o Javi?
+Quando você tem 30 minutos essa semana para a gente alinhar com 
+o Rafael e o Javi?
 ```
 
 ---
 
-*Atualizado: 21/04/2026 — baseado na reunião de discovery de 20/04/2026*
+## Notas internas
+
+- Gustavo é Q1 (sem time comercial dedicado) — não é o ICP ideal do Elo OS, mas tem potencial de crescer para Q2
+- Ele está reformulando o produto da Bravo (método novo ~R$1.300-2.000/mês, clientes de R$25k+/mês)
+- Rafael e Javi já estão estudando OpenCloud/Claude Code — ponto positivo para a co-construção
+- Não expor OpenCloud/Claude Code diretamente para o cliente final da Bravo — sempre via n8n
+- Parte comercial (estruturar processo de venda da Bravo) pode virar uma segunda proposta futura
+
+---
+
+*Atualizado: 21/04/2026 — pivot para consultoria de processo após reunião de discovery 20/04 e alinhamento interno 21/04*
