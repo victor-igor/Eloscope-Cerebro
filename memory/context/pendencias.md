@@ -8,6 +8,7 @@
 
 ## 🔴 Críticas (bloqueiam progresso)
 
+- [22/04/2026] **Conectar ClickUp MCP e inserir tarefas** — ~54 tarefas consolidadas das reuniões (Fathom + Drive, semanas 13-17/04 a 20-22/04) prontas para inserção. ClickUp MCP indisponível nessa sessão. Próxima sessão: conectar MCP + rodar inserção em batch. Membros: Lucas (ID 2142005504), Victor (ID 156603223), Hugo (ID 170669569).
 - [19/04/2026] **Template de contrato** — sem isso o fechamento trava. Responsável: Victor. Criar antes do primeiro cliente.
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)

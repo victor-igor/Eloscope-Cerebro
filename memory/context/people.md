@@ -9,9 +9,9 @@
 
 | Nome | Função | Contato | Notas |
 |------|--------|---------|-------|
-| Victor Igor | COO / Co-founder | eloscope.coo@gmail.com | Marketing, processos, desenvolvimento, estratégia |
-| Lucas | Co-founder / Sócio | — | Comercial, fechamento, relacionamento com cliente, desenvolvimento |
-| Hugo | Especialista Técnico (freelancer) | — | Automações n8n, implementação técnica de IA, fluxos e integrações |
+| Victor Igor | COO / Co-founder | victor.igr10@gmail.com / eloscope.coo@gmail.com | Marketing, processos, desenvolvimento, estratégia · ClickUp ID: 156603223 |
+| Lucas | Co-founder / Sócio | lucas.ns63@gmail.com | Comercial, fechamento, relacionamento com cliente, desenvolvimento · ClickUp ID: 2142005504 |
+| Hugo | Especialista Técnico (freelancer) | hugo.deoliveira.legacy@gmail.com | Automações n8n, implementação técnica de IA, fluxos e integrações · ClickUp ID: 170669569 |
 
 ---
 
