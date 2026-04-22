@@ -89,11 +89,40 @@ Sem 12      ████ Ciclo completo integrado e testado
 
 ---
 
-## Sobre a parte comercial
+## Quanto vale essa infraestrutura
 
-Na reunião, o Gustavo mencionou que ainda está operacional demais e que precisa estruturar melhor o processo de venda da própria Bravo — cliente ideal, ticket, processo de fechamento.
+Na reunião, o Gustavo falou que quer chegar em mais clientes sem contratar mais pessoas e que o novo método vai cobrar em torno de R$1.300/mês por cliente.
 
-Isso fica fora desta proposta (é outro escopo), mas a gente pode conversar sobre isso em paralelo. Com o processo interno rodando melhor, fica mais fácil vender mais e melhor.
+A matemática é simples:
+
+| Cenário | Clientes | Receita mensal |
+|---------|----------|----------------|
+| Hoje (sem processo) | 20 | ~R$26.000 |
+| Com sistema rodando (+4 clientes) | 24 | ~R$31.200 |
+| Com sistema rodando (+8 clientes) | 28 | ~R$36.400 |
+
+Com o ciclo automatizado, o Rafael e o Javi conseguem absorver mais clientes sem aumentar o tempo operacional. **4 clientes a mais por mês cobrem o investimento inteiro em menos de um mês.**
+
+Mas além da escala, tem outro ativo que não aparece no número: **a Bravo vai ser dona de um sistema que não existe no mercado do jeito certo.** Qualquer concorrente que quiser replicar vai ter que começar do zero — ou pagar um freela para montar algo genérico que não reflete o processo deles.
+
+---
+
+## Por que não é a mesma coisa que contratar um freela
+
+Essa objeção vai aparecer. Vale já ter a resposta clara.
+
+**O freela de R$500 faz a ferramenta funcionar. Não faz o processo funcionar.**
+
+| | Freela genérico | Eloscope |
+|---|---|---|
+| O que entrega | Automação montada no padrão dele | Processo da Bravo mapeado + automação em cima |
+| Documentação | Nenhuma (ou um tutorial rápido) | Manual do processo + roadmap completo |
+| Suporte depois | Depende da disponibilidade dele | Rafael e Javi operam sozinhos — não precisa de ninguém |
+| O que acontece quando tem problema | Vai demorar (ele tem 15 outros clientes no mesmo preço) | Equipe treinada resolve internamente |
+| Onde fica o conhecimento | Na cabeça do freela | Na empresa |
+| E se sair um funcionário? | Sistema para | Processo documentado, qualquer um assume |
+
+O maior custo do freela barato não é o que você paga para ele — é o que você paga para consertar o que ele entregou, ou para reconstruir quando ele some.
 
 ---
 
@@ -104,11 +133,48 @@ Pagamento único:     R$5.500
 Parcelado:           R$1.500 entrada + R$1.300/mês × 3 meses  (= R$5.400)
 ```
 
+**Opção só Fase 1 (se quiser testar antes):**
+```
+Apenas diagnóstico + mapeamento + roadmap:   R$1.800
+(Semanas 1–3 — Gustavo sai com o processo desenhado e o roteiro na mão)
+(Se decidir continuar para a Fase 2, o R$1.800 abate no total)
+```
+
 ---
 
 ## Garantia
 
 > "Se ao final da Semana 3 o documento de processo e o roadmap não estiverem claros o suficiente para o Rafael e o Javi saberem por onde começar, continuamos as sessões sem custo adicional até chegar nesse ponto."
+
+---
+
+## Objeções comuns — como responder
+
+*(Seção interna — não enviar ao Gustavo)*
+
+**"R$5.500 é caro"**
+> "Para 1 cliente extra por mês no novo método, você recupera em 4 meses. Se fechar 4 clientes a mais no ano porque o processo ficou eficiente, o retorno é R$62.400 contra um investimento de R$5.500. E tem a opção de começar só com a Fase 1 por R$1.800."
+
+**"Tem freela que faz isso mais barato"**
+> "Freela faz a ferramenta funcionar. A gente mapeia como a Bravo trabalha, documenta, garante que o Rafael e o Javi operam e expandem sozinhos. Quando tem problema ou você quer adicionar um cliente novo, você não precisa chamar ninguém. O problema do freela barato não é o trabalho — é que o conhecimento vai embora com ele."
+
+**"Vou fazer sozinho / o Rafael vai aprender no YouTube"**
+> "Ele já está estudando — isso é ótimo. O que não está no YouTube é qual ferramenta usar para cada módulo sem gastar token demais, como estruturar a memória dos agentes, como fazer a comunicação com cliente de forma segura. Isso a gente aprendeu na prática. A gente acelera o caminho deles em meses."
+
+**"E se não funcionar / não tiver retorno?"**
+> "A garantia cobre a Fase 1. Se o documento de processo não estiver claro na Semana 3, a gente continua sem custo. Você não está pagando pela promessa de automação — está pagando pela clareza de processo primeiro. Sem processo claro, a gente não avança."
+
+**"E se o Rafael ou o Javi sair da empresa?"**
+> "Tudo documentado. O processo fica na empresa, não na cabeça de uma pessoa. Qualquer pessoa nova que entrar consegue assumir porque o sistema está mapeado e construído."
+
+**"Não tenho budget agora"**
+> "Por isso existe a opção de começar só com a Fase 1 por R$1.800. Você valida o método, vê o processo sendo desenhado ao vivo, e decide sobre a Fase 2 com mais clareza. O R$1.800 abate no total se continuar."
+
+---
+
+## Sobre a parte comercial
+
+Na reunião o Gustavo mencionou que precisa estruturar melhor o processo de venda da própria Bravo — cliente ideal, ticket, processo de fechamento. Isso fica fora desta proposta, mas pode ser uma segunda fase natural depois que o processo de entrega estiver rodando.
 
 ---
 
