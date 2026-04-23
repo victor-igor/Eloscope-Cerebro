@@ -1,0 +1,67 @@
+# ICP Eloscope — Ideal Customer Profile
+# Fonte única de verdade pra Polaris (e Órion quando Polaris não existir)
+# Alterações aqui afetam qualificação de todos os leads.
+
+version: 1.0.0
+last_updated: 2026-04-20
+
+faturamento:
+  min_mensal_brl: 80000
+  max_mensal_brl: 800000
+  nota: "Abaixo de R$ 80k ticket não fecha economia. Acima de R$ 800k exige processo enterprise que não rodamos."
+
+setores_validados:
+  - clinicas-multidisciplinares
+  - imobiliarias
+  - advocacia
+  - pet-shops
+  - e-commerce
+  - educacao
+  - fitness
+  - gastronomia
+  - automotivo
+  - juridico
+
+decisor:
+  requer_acesso: true
+  cargos_aceitos: [ceo, fundador, socio, diretor, gerente-comercial]
+  nota: "Se tomador de decisão não atende, score cai 30 pontos. Lead sem acesso vira nurture."
+
+dor:
+  tipos_validados:
+    - qualificacao-lead-manual          # WhatsApp entulhado de leads não qualificados
+    - lead-perdido-fora-do-horario      # Atendimento 9-18 perde noite/fim de semana
+    - ciclo-comercial-longo             # Follow-up inconsistente
+    - processo-repetitivo-manual        # Tarefas que IA pode automatizar
+    - onboarding-cliente-demorado
+  criterio: "Dor precisa ter custo financeiro estimável (R$/mês)"
+
+abertura_ia:
+  requer: true
+  sinais_positivos:
+    - usa-chatgpt-cotidiano
+    - ja-testou-automacao
+    - tem-process-doc
+  sinais_negativos:
+    - medo-automacao
+    - resistencia-explicita-ia
+    - processo-100-humano-por-principio
+
+scoring:
+  peso_faturamento: 25
+  peso_setor: 20
+  peso_decisor: 20
+  peso_dor: 25
+  peso_abertura_ia: 10
+
+  thresholds:
+    descartar: 0-49
+    nurture: 50-69
+    qualificado: 70-100
+
+anti_icp:
+  # Rejeitar explicitamente
+  - faturamento-abaixo-50k-mes
+  - faturamento-acima-2mi-mes      # Enterprise exige outro modelo
+  - setor-regulado-nao-mapeado     # Saúde hospitalar, bancos, governo — requer mais compliance que rodamos hoje
+  - mindset-terceirizar-100        # Cliente que não quer aprender não dá resultado

@@ -1,0 +1,152 @@
+name: eloscope-os
+version: 1.0.0
+short-title: Eloscope Operating System
+description: >
+  Squad completa da Eloscope — 27 agentes organizados em 6 áreas funcionais
+  (command, presales, engineering, ai, geo, delivery, success) cobrindo o ciclo
+  Aquisição → Execução → Pós-venda com handoffs formais por artefato.
+author: Eloscope
+license: UNLICENSED
+slashPrefix: elo
+
+aiox:
+  type: squad
+  minVersion: 2.1.0
+
+requires:
+  node: ">=18.0.0"
+  aiox: ">=2.1.0"
+
+tags:
+  - eloscope
+  - comercial
+  - engenharia
+  - ia
+  - geo
+  - delivery
+  - customer-success
+  - multi-agent
+  - orchestration
+
+components:
+  agents:
+    # command
+    - agents/command/regente.md
+    # presales
+    - agents/presales/orion.md
+    - agents/presales/sirius.md
+    - agents/presales/andromeda.md
+    - agents/presales/halley.md
+    # engineering
+    - agents/engineering/hefesto.md
+    - agents/engineering/dedalo.md
+    - agents/engineering/pigmento.md
+    - agents/engineering/argos.md
+    - agents/engineering/vesta.md
+    - agents/engineering/gaia.md
+    - agents/engineering/cerbero.md
+    - agents/engineering/ariadne.md
+    - agents/engineering/hermes.md
+    - agents/engineering/lyra.md
+    # ai
+    - agents/ai/minerva.md
+    - agents/ai/mnemosine.md
+    - agents/ai/logos.md
+    - agents/ai/minos.md
+    - agents/ai/pallas.md
+    # geo
+    - agents/geo/helio.md
+    - agents/geo/nova.md
+    - agents/geo/cometa.md
+    # delivery
+    - agents/delivery/mentor.md
+    - agents/delivery/temis.md
+    - agents/delivery/clio.md
+    # success
+    - agents/success/elo.md
+
+  tasks:
+    - tasks/handoff-create.md
+    - tasks/lead-qualification.md
+    - tasks/prospect-dossier.md
+    - tasks/proposal-architecture.md
+    - tasks/followup-cadence.md
+    - tasks/project-kickoff.md
+    - tasks/architecture-decision.md
+    - tasks/ai-architecture.md
+    - tasks/prompt-versioning.md
+    - tasks/eval-run.md
+    - tasks/guardrails-policy.md
+    - tasks/geo-playbook.md
+    - tasks/qa-gate.md
+    - tasks/client-docs-bundle.md
+    - tasks/cs-health-check.md
+
+  workflows:
+    - workflows/presales-to-kickoff.md
+    - workflows/engineering-delivery.md
+    - workflows/ai-feature-launch.md
+    - workflows/client-handover.md
+
+  templates:
+    - templates/handoff-template.md
+    - templates/adr-template.md
+    - templates/discovery-report-template.md
+    - templates/proposal-brief-template.md
+    - templates/ai-contract-template.md
+
+  checklists:
+    - checklists/definition-of-done-presales.md
+    - checklists/definition-of-done-engineering.md
+    - checklists/definition-of-done-ai.md
+    - checklists/definition-of-done-delivery.md
+    - checklists/lgpd-compliance.md
+
+config:
+  extends: extend
+  coding-standards: config/coding-standards.md
+  tech-stack: config/tech-stack.md
+  source-tree: config/source-tree.md
+
+dependencies:
+  squads: []
+
+areas:
+  command:
+    orchestrator: regente
+    purpose: PM central — única visão global, coordena handoffs inter-área
+    agents: [regente]
+  presales:
+    orchestrator: orion
+    purpose: Aquisição — prospecção, qualificação, proposta, follow-up
+    agents: [orion, sirius, andromeda, halley]
+  engineering:
+    orchestrator: hefesto
+    sub_orchestrators: [ariadne]
+    purpose: Execução técnica — arquitetura, frontend, backend, auth, automação
+    agents: [hefesto, dedalo, pigmento, argos, vesta, gaia, cerbero, ariadne, hermes, lyra]
+  ai:
+    orchestrator: minerva
+    purpose: Braço de IA — arquitetura, memória, prompts, evals, guardrails
+    agents: [minerva, mnemosine, logos, minos, pallas]
+  geo:
+    orchestrator: helio
+    purpose: Visibilidade — GEO (LLMs) + SEO tradicional + performance
+    agents: [helio, nova, cometa]
+  delivery:
+    orchestrator: mentor
+    purpose: Entrega — QA final, docs, go-live
+    agents: [mentor, temis, clio]
+  success:
+    orchestrator: elo
+    purpose: Pós-venda — onboarding, adoption, expansion, churn risk
+    agents: [elo]
+
+invariants:
+  - Handoffs são sempre artefato estruturado (handoff-{from}-{to}-{date}.md), nunca conversa livre
+  - Um orchestrator por área. Sub-agents só falam com seu orchestrator
+  - Regente é o único com visão global — coordenação inter-área passa por ele
+  - Todo agent cliente-facing passa por Minos (eval) antes de produção
+  - Qualquer fluxo com dado pessoal invoca Pallas (LGPD)
+  - Contratos de integração inter-área são versionados em ai/contracts/
+  - Nomenclatura astronômica/mitológica mantida (Luna, Eloscope)

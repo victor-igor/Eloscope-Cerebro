@@ -1,0 +1,17 @@
+{
+  "language": "portuguese",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${SECOND_BRAIN_PATH:-/Users/lucasnegreiro/Documents/Projetos/Eloscope-Cerebro}/scripts/auto-sync.sh\" 2>/dev/null || true",
+            "timeout": 30,
+            "statusMessage": "Sincronizando git..."
+          }
+        ]
+      }
+    ]
+  }
+}

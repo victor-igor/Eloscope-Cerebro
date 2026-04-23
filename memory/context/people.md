@@ -39,8 +39,8 @@
 
 | Nome | Contexto | Status | Deadline |
 |------|----------|--------|----------|
-| Gustavo Bravo | Agência Bravo · 20 clientes · equipe Rafael (design) + Javi (generalista) · quer automatizar ciclo mensal de conteúdo | Em negociação — proposta Combo enviada | Call 30 min a agendar |
+| Gustavo Bravo | Agência Bravo · 20 clientes · equipe Rafael (design) + Javi (generalista) · quer automatizar ciclo mensal de conteúdo | Proposta apresentada 23/04 (2 opções: A R$1.900 / B R$3.900) | Aguardar feedback e decisão do Gustavo |
 
 ---
 
-*Atualizado: 22/04/2026 (2ª sessão)*
+*Atualizado: 23/04/2026*
