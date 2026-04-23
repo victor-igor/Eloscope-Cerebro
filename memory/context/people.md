@@ -19,7 +19,11 @@
 
 | Nome | Projeto/Empresa | Status | Próxima Ação |
 |------|-----------------|--------|--------------|
-| [Nome] | [empresa] | [ativo/pausado] | [ação pendente] |
+| Franciele (Fran) | ReabilitaCão | Ativo — plataforma em produção | Demo das novas features: recorrente, dieta, gravação de consulta |
+| Samuel | Voltrucks (FURA) | Ativo — parcela R$6.000 pendente | Lucas cobrar |
+| Jean | Imobiliária Rodrigues | Ativo — pagamento pendente | Lucas cobrar |
+| Matheus | Campos Joia | Ativo | Hugo levantar dados do projeto |
+| Denis | Elite Maqlam | Ativo — primeiros testes | Reunião marcada, catálogo para disparo (prazo 24/04) |
 
 ---
 
@@ -39,4 +43,4 @@
 
 ---
 
-*Atualizado: [DD/MM/YYYY]*
+*Atualizado: 22/04/2026*

@@ -8,8 +8,9 @@
 
 ## 🔴 Críticas (bloqueiam progresso)
 
-- [22/04/2026] **Conectar ClickUp MCP e inserir tarefas** — ~54 tarefas consolidadas das reuniões (Fathom + Drive, semanas 13-17/04 a 20-22/04) prontas para inserção. ClickUp MCP indisponível nessa sessão. Próxima sessão: conectar MCP + rodar inserção em batch. Membros: Lucas (ID 2142005504), Victor (ID 156603223), Hugo (ID 170669569).
-- [19/04/2026] **Template de contrato** — sem isso o fechamento trava. Responsável: Victor. Criar antes do primeiro cliente.
+- [19/04/2026] **Template de contrato** — sem isso o fechamento trava. Responsável: Victor. Criar antes do primeiro cliente. ✅ Inserida no ClickUp (Comercial).
+- [22/04/2026] **SDR Morgana — Hugo** — ATRASADO (era 22/03). ✅ Inserida no ClickUp (Plataforma SaaS, urgente).
+- [22/04/2026] **Hugo: Confirmar capacidade técnica** — Openclaw/Paperclip end-to-end, WhatsApp QR, CRMs via n8n. ✅ Inserida no ClickUp (Plataforma SaaS, urgente).
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
@@ -35,6 +36,8 @@
 
 ## ✅ Resolvidas
 
+- [22/04/2026] **ClickUp setup completo** — 32 tarefas inseridas via Python script (ClickUp API direta). Nomes corrigidos: FURA→Samuel/Voltrucks, WTACON→Franciele/ReabilitaCão, Maquilão→Denis/Elite Maqlam. "Cobranças" separado de projetos (Gestão Interna > Cobranças). Projetos Internos recriado do zero (pasta deletada anteriormente). Script: `scripts/clickup_setup.py`
+- [20/04/2026] **ReabilitaCao — Epic 28 Story 28.1** — @dev deve implementar migration SQL em nova sessão · branch `feat/agendamento-recorrente` · spec em `docs/superpowers/specs/2026-04-20-agendamento-recorrente-design.md`
 - [19/04/2026] Copy Squad implementada nos docs — slide 6, proposta abertura, landing-page.md criado, bio instagram inclusa
 - [19/04/2026] Marcos 30/60 dias reinseridos — proposta-cliente.md e sop-entrega.md
 - [19/04/2026] Garantia sem número em toda copy — "devolvemos o setup" (sem citar R$3.000)
@@ -65,10 +68,7 @@
 - [19/04/2026] Todos os documentos comerciais atualizados com pricing e promessa consistentes
 - [19/04/2026] Landing page ainda não construída — copy pronta em `landing-page.md` (bio instagram inclusa)
 - [19/04/2026] Lista de leads Eloscope para reativação GTM beta — Victor precisa extrair
-
 - [19/04/2026] **Slides call de vendas: montar no Canva** com design system Eloscope · arquivo base em `04-apresentacao/slides-call-vendas.md`
 - [19/04/2026] **Definir quem conduz a call de vendas** — Victor ou Lucas (impacta treinamento e preparação)
 
-*Atualizado: 19/04/2026*
-
-- [20/04/2026] **ReabilitaCao — Epic 28 Story 28.1** — @dev deve implementar migration SQL em nova sessão · branch `feat/agendamento-recorrente` · spec em `docs/superpowers/specs/2026-04-20-agendamento-recorrente-design.md`
+*Atualizado: 22/04/2026*

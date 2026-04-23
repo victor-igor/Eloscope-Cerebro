@@ -7,17 +7,22 @@
 
 | Prazo | Entrega | Status | Nota |
 |-------|---------|--------|------|
-| 22/04/2026 | Confirmar demo WTACON c/ cliente | ⏳ Pendente | Victor — apresentar recurring/diet/scheduling |
-| 22/04/2026 | Cobrar Jean — Imobiliária Rodrigues | ⏳ Pendente | Lucas |
-| 22/04/2026 | Cobrar R$6.000 do FURA | ⏳ Pendente | Lucas |
-| 22/04/2026 | Reunião Maquilã — primeiros testes | ⏳ Pendente | Lucas — agendado para hoje |
-| 22/04/2026 | Finalizar SDR Morgana | 🔴 Atrasado | Hugo — estava previsto 22/03 na weekly |
-| 22/04/2026 | Cobrar Matheus Campos — dados novo produto | ⏳ Pendente | Victor |
-| 24/04/2026 | Criar catálogo Maquilã no sistema para disparo | ⏳ Pendente | Lucas |
-| 24/04/2026 | ReabilitaCão — construir CRM no sistema legado | ⏳ Pendente | Lucas |
-| 24/04/2026 | Colocar Clerk nos sistemas ReabilitaCão | ⏳ Pendente | Lucas |
-| 24/04/2026 | Inserir disparos campanha na tabela Stories n8n | ⏳ Pendente | Lucas |
-| 24/04/2026 | Organizar processo e materiais EloOS (comercial/marketing/ops) | ⏳ Pendente | Lucas + time |
+| 22/04/2026 | Confirmar demo Franciele — ReabilitaCão (era WTACON) | ✅ No ClickUp | Victor — 3 features: recorrente, dieta, gravação |
+| 22/04/2026 | Cobrar Jean — Imobiliária Rodrigues | ✅ No ClickUp | Lucas — lista Cobranças |
+| 22/04/2026 | Cobrar R$6.000 — Samuel/Voltrucks (era FURA) | ✅ No ClickUp | Lucas — lista Cobranças |
+| 22/04/2026 | Reunião Denis — Elite Maqlam (era Maquilã) | ✅ No ClickUp | Lucas |
+| 22/04/2026 | Finalizar SDR Morgana | ✅ No ClickUp | Hugo — Plataforma SaaS, urgente |
+| 22/04/2026 | Cobrar Matheus (Campos Joia) — dados novo produto | ✅ No ClickUp | Victor — Comercial |
+| 24/04/2026 | Criar catálogo Elite Maqlam para disparo | ✅ No ClickUp | Lucas |
+| 24/04/2026 | ReabilitaCão — construir CRM no sistema legado | ✅ No ClickUp | Lucas |
+| 24/04/2026 | Colocar Clerk nos sistemas ReabilitaCão | ✅ No ClickUp | Lucas |
+| 24/04/2026 | Inserir disparos campanha na tabela Stories n8n | ✅ No ClickUp | Lucas |
+| 24/04/2026 | Organizar processo e materiais Elo OS | ✅ No ClickUp | Lucas + time |
+| 25/04/2026 | Definir quem conduz call de vendas | ✅ No ClickUp | Victor + Lucas |
+| 28/04/2026 | Abordar Denis (Morgana) — prospecção Elo OS | ✅ No ClickUp | Lucas |
+| 28/04/2026 | Extrair lista leads Eloscope GTM beta | ✅ No ClickUp | Victor |
+| 30/04/2026 | Validar plano estratégico 04/04/2026 | ✅ No ClickUp | Victor |
+| 05/05/2026 | Abordar Matheus — prospecção Elo OS | ✅ No ClickUp | Lucas |
 
 ## Viagens / Eventos
 
@@ -32,4 +37,4 @@
 | DD/MM/YYYY | [descrição] | ✅ [resultado] |
 
 ---
-*Atualizado: [DD/MM/YYYY]*
+*Atualizado: 22/04/2026*
