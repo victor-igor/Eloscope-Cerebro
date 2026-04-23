@@ -164,6 +164,7 @@
 | 2026-04-18 | WhatsApp áudio | Lucas | Alex: Telles quer alimentar leads "daqui 2 anos" via follow-up automático. Lucas: "perfeito, vamos desenvolver" | — |
 | 2026-04-19 | — | Lucas | Dossiê consolidado neste arquivo pós-leitura do GDrive | Refazer proposta v1.1 |
 | 2026-04-19 | — | Lucas | PDF Black Scale lido. Concorrente cobra R$1.500+R$800 (4x mais barato). Narrativa boa ("Gigante Disfarçado"), execução tem 3 red flags (doorway, filtro reviews, preço incongruente). Análise em `concorrente-blackscale.md` | Atualizar seção 11 da proposta |
+| 2026-04-23 | WhatsApp | Lucas | Lucas ligou pro Alex. Intel novo: vendedor atual vai tirar férias, Telles colocou menina nova no comercial. Sem processo/CRM/script. Decisão: liderar pitch com 6OS, site como fase 2. Proposta `proposta-alex-review.md` criada com ângulo atualizado. | Alex revisar proposta → marcar call com Telles |
 
 ## Observações livres
 

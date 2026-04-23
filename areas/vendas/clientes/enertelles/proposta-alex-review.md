@@ -1,0 +1,146 @@
+# Proposta Enertelles — 6OS + Site (versão pra Alex revisar)
+
+> **Para:** Alex (revisar antes de enviar ao Telles)
+> **De:** Lucas — Eloscope
+> **Data:** 23/04/2026
+
+---
+
+Alex, montei a proposta pensando no que você me falou agora — a menina nova entrando no comercial, o vendedor anterior saindo de férias. Esse é o melhor momento pra entrar com o 6OS. Me diz o que acha, o que ajustar, e a gente manda pro Telles junto.
+
+---
+
+## O cenário do Telles hoje (como a gente enxerga)
+
+O Telles tem **demanda chegando** — 45 a 70 leads por mês via tráfego (que você gerencia), mais indicações orgânicas. O problema nunca foi gerar lead. O problema é **o que acontece depois que o lead chega:**
+
+- **70% dos leads não recebem resposta adequada** — a Rafaela filtra no WhatsApp mas não qualifica, não faz follow-up, não trabalha objeção
+- **17 leads por mês chegam no fim de semana** e esfriam até segunda
+- **500 clientes instalados em 5 anos** que nunca receberam um contato de pós-venda, indicação, nada
+- **Zero CRM** — controle em planilha implícita, sem pipeline, sem meta, sem comissão
+- **O Telles acumula** gestão + visita técnica + fechamento — ele é o gargalo
+
+Resultado: **7-8 vendas/mês** quando a estrutura aguenta 20. São **R$ 204.000/mês** ficando na mesa.
+
+---
+
+## O que mudou agora (e por que é o timing certo)
+
+Você me disse que:
+
+1. **O vendedor atual vai tirar férias**
+2. **O Telles colocou uma menina nova no comercial**
+
+Isso muda tudo. Se ela entra **sem processo, sem script, sem CRM, sem meta e sem comissão**, vai acontecer exatamente o que acontece hoje: lead chega, ninguém qualifica direito, Telles acumula, venda não fecha.
+
+**A menina nova precisa de infraestrutura pra performar:**
+- Script de qualificação (o que perguntar, como classificar)
+- CRM com pipeline visual (onde cada lead está)
+- Meta clara + comissão por performance (incentivo)
+- IA de apoio qualificando lead no WhatsApp antes de chegar nela
+
+Sem isso, ela vai virar uma Rafaela 2 — atendendo, não vendendo.
+
+---
+
+## A proposta: 6OS (Sales Operating System)
+
+**Em 10-12 semanas, a Enertelles sai do modo sobrevivência e passa a operar com processo comercial real.**
+
+### O que a gente entrega
+
+**Fase 1 — Diagnóstico (10 dias)**
+- Mapear o funil inteiro (de onde vem lead, onde trava, onde perde)
+- Auditar a base de 500 clientes (quem pode indicar, quem pode recomprar)
+- Calcular o CAC real (spoiler: a mídia dele custa R$250/cliente, os outros R$1.750 são custo de ineficiência)
+- Devolutiva em vídeo de 60 min com os números reais
+
+**Fase 2 — Estruturação (8 semanas)**
+- **Playbook comercial solar customizado** — scripts de qualificação, objeções, follow-up, pós-venda
+- **CRM próprio** com pipeline de 6 etapas (lead → qualificação → visita → proposta → negociação → fechamento)
+- **3 Agentes de IA operando no WhatsApp:**
+  1. **SDR de tráfego** — qualifica lead novo que chega do Meta/Google (responde em 2 min, inclusive fim de semana)
+  2. **Follow-up de lead frio** — nutre lead que disse "vou comprar daqui 1-2 anos" (o Telles pediu isso especificamente)
+  3. **Reativação da base 500** — campanha automática pros 500 clientes instalados pedindo indicação
+- **Dashboard** com métricas de vendas, performance da equipe e dados do tráfego (pra você e pro Telles)
+- **Treinamento** da equipe comercial (Rafaela + a menina nova + Telles visão gestor)
+
+**Fase 3 — Acompanhamento (mensal)**
+- Review mensal de 60 min (Lucas + Telles + Alex)
+- Relatório semanal automático
+- Tuning dos agentes e do playbook conforme o funil evolui
+
+### Resultado esperado em 90 dias
+
+| O que | Quanto |
+|-------|--------|
+| Reativação da base 500 (indicações) | 5-10 vendas extras no trimestre = **R$ 85-170k** |
+| SDR recuperando leads perdidos | 2-3 vendas extras/mês = **R$ 34-51k/mês** |
+| Menina nova vendendo com processo | Meta individual + comissão = performance real |
+| Telles livre pra ticket alto | Tempo pra network Atibaia (projetos R$100-500k) |
+
+---
+
+## Investimento
+
+| Item | Valor |
+|------|-------|
+| **Setup (implantação completa)** | **R$ 6.000** (único) |
+| **Mensalidade (agentes + CRM + acompanhamento)** | **R$ 3.500/mês** |
+| **Fidelidade mínima** | 3 meses |
+| **Total primeiros 3 meses** | **R$ 16.500** |
+
+**Payback:** com 1 venda extra por mês (R$17k), o investimento se paga no primeiro mês.
+
+**Custos de ferramentas (o que o Telles paga direto):**
+- WhatsApp API (Meta): R$300-1.500/mês
+- Servidor (Vercel + Supabase): R$300-400/mês
+- Autenticação (Clerk): R$125/mês
+- Mídia: **mantém os R$2.000/mês atuais** — não aumentamos
+
+---
+
+## E o site?
+
+O Telles quer site novo — e a gente faz. Mas **o site resolve topo de funil**. Se o topo melhora e o meio continua quebrado, a gente só está jogando mais lead num funil que não converte.
+
+**Proposta:** fazer o 6OS primeiro (ou em paralelo), e o site como contrato separado. O 6OS organiza o comercial pra quando o site novo começar a trazer mais lead, ter estrutura pra converter.
+
+Se o Telles quiser fechar os dois juntos, a gente monta um pacote com condição. Mas o 6OS é o que resolve a dor de agora — especialmente com a menina nova entrando.
+
+---
+
+## Sobre o concorrente (Black Scale)
+
+Se o Telles mencionar o cara que mandou aquela proposta de R$1.500 + R$800:
+
+- O diagnóstico deles é bom ("Gigante Disfarçado" é verdade)
+- Mas os **250 mini sites** são Doorway Pages — Google pune com rebaixamento ou banimento do domínio. O `enertelles.com.br` tem autoridade hoje, não vale arriscar
+- **"Blindagem de Reputação"** = filtrar reviews negativos — viola política do Google Business Profile, pode suspender o perfil
+- R$1.500 de setup não paga 1 dia de dev — ou é template, ou é IA gerando conteúdo em massa sem revisão
+
+A gente não precisa atacar eles. Só mostrar pro Telles o risco: *"se o domínio cair, você perde anos de ranking orgânico. Quanto vale isso?"*
+
+---
+
+## Próximos passos
+
+1. **Você (Alex) revisa essa proposta** — me diz o que ajustar, o que não faz sentido, o que o Telles vai questionar
+2. **A gente alinha o split** — se fechar, como funciona pra você (comissão/recorrente)
+3. **Marca a call** — você, eu e o Telles. 45 min. Eu apresento, você reforça a visão de tráfego
+4. **Na call:** começo pelo playbook/processo (não pela IA), ancorado nos R$170k da base de 500 clientes
+
+---
+
+## O que eu preciso saber de você
+
+- **Horário da menina nova** — ela trabalha horário comercial? Período integral?
+- **O vendedor que vai sair** — volta quando? Ou é saída definitiva?
+- **O Telles tá inclinado pro cara do site** ou tá aberto a ouvir?
+- **Melhor dia pra call** — quero marcar essa semana ou início da próxima
+- **Split:** qual modelo faz sentido pra você? Pensamos em 5-10% da mensalidade recorrente enquanto o Telles estiver ativo
+
+---
+
+*Lucas — Eloscope*
+*eloscope.coo@gmail.com · WhatsApp Lucas*

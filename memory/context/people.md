@@ -32,7 +32,7 @@
 
 | Nome | Empresa | O que faz pra mim | Contato |
 |------|---------|-------------------|---------|
-| [Nome] | [empresa] | [serviço] | [contato] |
+| Alex | Gestor de tráfego (independente) | Tráfego pago da Enertelles · ponte estratégica pro Telles · parceiro Eloscope | — |
 
 ---
 
@@ -40,8 +40,8 @@
 
 | Nome | Contexto | Status | Deadline |
 |------|----------|--------|----------|
-| *(vazio — todos convertidos ou descartados)* | | | |
+| Telles (Enertelles) | Energia solar, Catanduva + Atibaia · 500 clientes · 7-8 vendas/mês · quer 20 | Proposta 6OS atualizada, enviando pra Alex revisar | Alex revisa → call Telles+Alex+Lucas |
 
 ---
 
-*Atualizado: 23/04/2026 (flush)*
+*Atualizado: 23/04/2026*
