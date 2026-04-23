@@ -14,7 +14,7 @@
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
-- [21/04/2026] **Gustavo Bravo — Victor revisar proposta** · proposta reescrita com framing consultoria-primeiro (diagnóstico + processo antes de automação) · arquivo: `areas/vendas/clientes/gustavo-bravo/proposta.md` · após ok do Victor, enviar + marcar call com Rafael e Javi
+- [23/04/2026] **Gustavo Bravo — resultado da reunião das 10h** · proposta HTML pronta (`proposta.html`) com 2 opções (A R$1.900 / B R$3.900), escopo, limites e custo de ferramentas · Lucas apresentou hoje · aguardar feedback e decisão do Gustavo
 - [21/04/2026] **Mentoria Agências — definir pricing final** · R$5.500 único ou R$1.500 + 3×R$1.300 parcelado · validar com Lucas antes de apresentar
 
 - [19/04/2026] **Slides Elo OS — validação visual pendente** — HTML redesenhado com referências premium, Victor ainda não confirmou aprovação do resultado final · arquivo: `04-apresentacao/slides-elo-os.html`
