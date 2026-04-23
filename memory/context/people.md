@@ -9,9 +9,9 @@
 
 | Nome | Função | Contato | Notas |
 |------|--------|---------|-------|
-| Victor Igor | COO / Co-founder | victor.igr10@gmail.com / eloscope.coo@gmail.com | Marketing, processos, desenvolvimento, estratégia · ClickUp ID: 156603223 |
-| Lucas | Co-founder / Sócio | lucas.ns63@gmail.com | Comercial, fechamento, relacionamento com cliente, desenvolvimento · ClickUp ID: 2142005504 |
-| Hugo | Especialista Técnico (freelancer) | hugo.deoliveira.legacy@gmail.com | Automações n8n, implementação técnica de IA, fluxos e integrações · ClickUp ID: 170669569 |
+| Victor Igor | Produto / Elo OS / IA | victor.igr10@gmail.com / eloscope.coo@gmail.com | Criação e gestão do Elo OS, reuniões com clientes, estratégia de produto e IA · ClickUp ID: 101163658 (workspace 90171169593) |
+| Lucas | Comercial / Financeiro | lucas.ns63@gmail.com | Fechamento de vendas, prospecção, relacionamento com clientes, financeiro · ClickUp ID: 82167120 (workspace 90171169593) |
+| Hugo | Operacional / Entrega Técnica | hugo.deoliveira.legacy@gmail.com | Automações n8n, implementação técnica, entrega de projetos de clientes · ClickUp ID: 170669569 |
 
 ---
 
@@ -43,4 +43,4 @@
 
 ---
 
-*Atualizado: 22/04/2026*
+*Atualizado: 22/04/2026 (2ª sessão)*
