@@ -24,7 +24,7 @@ load_dotenv()
 
 API_KEY    = os.getenv("CLICKUP_API_KEY")
 BASE_URL   = "https://api.clickup.com/api/v2"
-WORKSPACE  = "9011283157"
+WORKSPACE  = "90171169593"
 DRY_RUN    = "--dry-run" in sys.argv
 LIMPAR     = "--limpar" in sys.argv
 
@@ -35,22 +35,22 @@ HEADERS = {
 
 # ─── Membros ──────────────────────────────────────────────────────────────────
 
-LUCAS  = "2142005504"
-VICTOR = "156603223"
+LUCAS  = "82167120"
+VICTOR = "101163658"
 HUGO   = "170669569"
 
 # ─── Listas (ID) ──────────────────────────────────────────────────────────────
 
 L = {
-    "comercial":       "901112183493",  # Team Space > Comercial
-    "gestao":          "901113646042",  # Team Space > Gestão Interna > Geral
-    "cobranças":       "901113648528",  # Team Space > Gestão Interna > Cobranças
-    "saas":            "901113648583",  # Team Space > Projetos Internos > Plataforma SaaS (recriado 22/04)
-    "maqlam":          "901113645567",  # Projetos > Elite Maqlam > Tarefas
-    "reabilita":       "901113645568",  # Projetos > ReabilitaCão > Tarefas
-    "imobiliaria":     "901113645570",  # Projetos > Imobiliária Rodrigues > Tarefas
-    "campos_joia":     "901113645585",  # Projetos > Campos Joia > Tarefas
-    "voltrucks":       "901113645566",  # Projetos > Voltrucks > Tarefas
+    "comercial":       "901713180050",  # Space > Comercial > Pipeline
+    "gestao":          "901713180052",  # Space > Gestão Interna > Geral
+    "cobranças":       "901713180053",  # Space > Gestão Interna > Cobranças
+    "saas":            "901713180056",  # Space > Plataforma SaaS > Tarefas
+    "voltrucks":       "901713180060",  # Clientes > Voltrucks — Samuel > Tarefas
+    "maqlam":          "901713180067",  # Clientes > Elite Maqlam — Denis > Tarefas
+    "reabilita":       "901713180071",  # Clientes > ReabilitaCão — Franciele > Tarefas
+    "imobiliaria":     "901713180076",  # Clientes > Imobiliária Rodrigues — Jean > Tarefas
+    "campos_joia":     "901713180081",  # Clientes > Campos Joia — Matheus > Tarefas
 }
 
 PRIORITY = {"urgent": 1, "high": 2, "normal": 3, "low": 4}
