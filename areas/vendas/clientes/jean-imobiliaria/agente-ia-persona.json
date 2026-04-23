@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "cliente": "Imobiliaria Rodrigues SJRP",
+    "criado_em": "2026-04-23",
+    "versao": "2.0",
+    "status": "nome_aprovado",
+    "proximo_passo": "gerar_imagens_nano_banana"
+  },
+
+  "nome": {
+    "escolhido": "Stella Rodrigues",
+    "nome_curto": "Stella",
+    "justificativa": "Stella Maris ('Estrela do Mar') e titulo de Nossa Senhora — conexao direta com a fe catolica do Jean. 'Stella' significa estrela-guia, que ilumina o caminho ate o imovel certo. Tom premium e exclusivo. Sobrenome 'Rodrigues' vincula a agente como membro da equipe.",
+    "narrativa_para_cliente": "Nossa assistente se chama Stella, como a estrela que guia voce ate o imovel ideal.",
+    "conexao_catolica": "Stella Maris — titulo mariano reverenciado. Estrela que guia navegantes = estrela que guia clientes.",
+    "conexao_ia": "Estrela = luz, brilho, destaque. Os olhos azuis brilham como estrelas.",
+    "alternativas_descartadas": [
+      {
+        "nome": "Yara",
+        "motivo": "Lenda indigena/paga (sereia). Incompativel com perfil catolico do cliente."
+      },
+      {
+        "nome": "Lucia",
+        "motivo": "Santa Lucia = padroeira dos olhos. Forte conexao, mas cliente preferiu Stella."
+      },
+      {
+        "nome": "Maya",
+        "motivo": "Nome generico usado no contrato original. Cliente pediu nome exclusivo/particular."
+      }
+    ]
+  },
+
+  "identidade_marca_ia": {
+    "marca_registrada": "Olho azul como assinatura de IA",
+    "conceito": "Ultra-realista, parecendo humano. A unica pista de que e IA sao os olhos azuis intensos — um azul levemente luminescente que nao existe naturalmente, mas e sutil o suficiente para parecer real em primeira vista.",
+    "tom_visual": "Profissional imobiliario + acessivel + confiavel"
+  },
+
+  "caracteristicas_fisicas": {
+    "genero": "Feminino",
+    "idade_aparente": "26-28 anos",
+    "etnia_aparente": "Brasileira morena / parda",
+    "justificativa_etnia": "Reflete a demografia de Sao Jose do Rio Preto e interior paulista. Gera identificacao imediata com o publico-alvo.",
+
+    "rosto": {
+      "formato": "Oval, harmonioso",
+      "pele": "Morena clara / tom caramelo, pele impecavel com textura realista (poros visiveis, sem filtro excessivo)",
+      "olhos": {
+        "cor": "Azul intenso (#1E90FF para referencia) — com leve brilho iriscente que e a unica 'pista' de IA",
+        "formato": "Amendoado, expressivos",
+        "cilios": "Naturais, volumosos mas nao exagerados",
+        "sobrancelhas": "Definidas, naturais, tom castanho escuro"
+      },
+      "nariz": "Proporcional, levemente arrebitado",
+      "boca": "Labios medios, sorriso acolhedor e confiante",
+      "expressao_padrao": "Sorriso sutil e atencioso — quem esta pronta para ajudar",
+      "maquiagem": "Leve e natural — base suave, labios nude/rosa claro, sem exagero"
+    },
+
+    "cabelo": {
+      "cor": "Castanho escuro com reflexos naturais acobreados/mel",
+      "comprimento": "Medio-longo (abaixo dos ombros)",
+      "textura": "Ondulado natural, bem cuidado",
+      "estilo": "Solto com leve ondulacao ou preso em coque baixo profissional (2 variacoes)"
+    },
+
+    "corpo": {
+      "biotipo": "Medio, atletico natural",
+      "altura_aparente": "1.65m - 1.70m",
+      "postura": "Ereta, confiante, profissional"
+    }
+  },
+
+  "vestimenta": {
+    "estilo": "Business casual imobiliario",
+    "look_principal": {
+      "descricao": "Blazer estruturado preto + blusa/camisa em tom laranja queimado (referencia a cor da marca) + calca social preta",
+      "justificativa": "Incorpora as cores da marca (laranja + preto) de forma elegante e profissional"
+    },
+    "look_alternativo": {
+      "descricao": "Camisa social branca com detalhes em laranja (colarinho, botoes ou broche) + saia midi preta",
+      "justificativa": "Variacao mais leve, mantendo identidade visual"
+    },
+    "acessorios": [
+      "Cracha/broche discreto com logo Imobiliaria Rodrigues",
+      "Relogio classico prata — transmite pontualidade e organizacao",
+      "Brincos pequenos discretos",
+      "Possivel colar delicado com pingente de casa/chave (simbolismo imobiliario)"
+    ],
+    "cores_predominantes": {
+      "primaria": "#F7941D (laranja da marca)",
+      "secundaria": "#000000 (preto)",
+      "apoio": "#FFFFFF (branco)",
+      "pele": "#C68642 (tom caramelo referencia)"
+    }
+  },
+
+  "expressoes_e_poses": {
+    "avatar_principal": "Busto, levemente inclinada para frente (engajamento), sorriso sutil, olhos azuis em destaque, fundo neutro ou com elemento imobiliario desfocado",
+    "avatar_whatsapp": "Closeup rosto, sorriso acolhedor, olhos azuis protagonistas, fundo clean",
+    "avatar_corpo_inteiro": "Em pe ao lado de uma porta/entrada de imovel, postura profissional com tablet/clipboard na mao",
+    "variacoes_expressao": [
+      "Sorrindo acolhedora (padrao de atendimento)",
+      "Atenta/ouvindo (para momentos de qualificacao)",
+      "Confiante/assertiva (para follow-up e negociacao)",
+      "Celebrando (para confirmacao de agendamento)"
+    ]
+  },
+
+  "referencia_logo_cliente": {
+    "urls": {
+      "logo_colorida": "https://imobiliariarodriguessjrp.com.br/img/logo.png",
+      "logo_branca": "https://imobiliariarodriguessjrp.com.br/img/logo-branca.png",
+      "logo_footer": "https://imobiliariarodriguessjrp.com.br/img/logo-white.webp"
+    },
+    "descricao_visual": "Icone de telhado/casa estilizado em laranja (#F7941D) no topo. Abaixo, texto bold 'IMOBILIARIA RODRIGUES' em preto (#000000). Ao lado do icone, 'CRECI 29830 J - SJRP' em fonte menor. Estilo profissional e direto.",
+    "paleta_marca": {
+      "laranja": "#F7941D",
+      "preto": "#000000",
+      "branco": "#FFFFFF"
+    }
+  },
+
+  "prompt_geracao_imagem": {
+    "estilo": "Photorealistic portrait, ultra-detailed, 8K",
+    "prompt_base_en": "Photorealistic portrait of a Brazilian woman named Stella, age 27, medium-brown caramel skin tone, striking bright blue eyes with subtle iridescent glow like starlight, dark brown hair with natural honey highlights, medium-length wavy hair below shoulders, wearing a black structured blazer over a burnt orange blouse, subtle natural makeup, warm confident smile, professional real estate agent look, soft studio lighting, clean neutral background, ultra-realistic skin texture with visible pores, no AI artifacts, shot on Canon EOS R5 85mm f/1.4",
+    "prompt_closeup_en": "Extreme closeup photorealistic portrait of a Brazilian woman named Stella, age 27, caramel skin, mesmerizing bright blue eyes as focal point with subtle starlight iridescent glow in iris, dark brown wavy hair framing face, natural makeup, warm inviting smile, real estate professional, studio lighting emphasizing blue eyes, 8K ultra-detailed, shot on Sony A7R IV 135mm f/1.8",
+    "prompt_corpo_inteiro_en": "Full body photorealistic photo of a Brazilian woman named Stella, age 27, caramel skin, bright blue eyes with starlight glow, dark brown wavy hair, wearing black blazer over burnt orange blouse with black dress pants, holding a tablet, standing next to a modern apartment entrance, professional real estate agent, natural daylight, ultra-realistic, editorial photography style, Canon EOS R5 35mm f/2.0",
+    "negative_prompt": "cartoon, anime, illustration, painting, oversaturated, plastic skin, doll-like, uncanny valley, extra fingers, deformed, blurry eyes, unrealistic lighting"
+  },
+
+  "dados_operacionais": {
+    "site_cliente": "https://imobiliariarodriguessjrp.com.br/",
+    "gdrive_cliente": "https://drive.google.com/drive/folders/1nOR-qCJDs-avvQDVXPd9WAJhtnbMOAes",
+    "gdrive_orcamento": "https://drive.google.com/drive/folders/12SHnFOPuYTNUHzEJKzhLqvLnjQGQvtbW",
+    "email_ia": "imobiliariarodrigues.ai@gmail.com",
+    "localizacao": "Rua Tenente Francisco Vieira de Azevedo, 180 - Ana Celia, Sao Jose do Rio Preto - SP",
+    "creci": "29830 J",
+    "contato_principal": "Jean Francis Rodrigues Santos",
+    "telefone": "+55 17 99121-0563"
+  }
+}

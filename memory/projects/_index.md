@@ -20,7 +20,8 @@
 | Projeto | Status | Próximo Marco | Arquivo |
 |---------|--------|---------------|---------|
 | Eloscope Elo OS | 🔨 Em construção | Fechar 2-3 clientes beta (60 dias) | sales-os.md |
-| Mentoria Agências | 🔨 Em construção | Enviar proposta Gustavo + validar pricing | mentoria-agencias.md |
+| Bravo Agency — Sistema Completo | 🟢 Ativo | Discovery 26/04, entrega ~09/05 | — |
+| Mentoria Agências | 🔨 Em construção | Validar pricing para próximos leads | mentoria-agencias.md |
 
 ---
 
@@ -42,6 +43,7 @@
 
 ## Mudanças Recentes
 
+- [23/04] **Bravo Agency fechou** — Opção B (R$3.900), discovery sábado 26/04, pasta de projeto criada
 - [21/04] Mentoria Agências — arquivos movidos para cerebro; lead Gustavo Bravo organizado em areas/vendas/clientes/gustavo-bravo/
 - [21/04] Mentoria Agências — proposta Combo revisada (co-construção + fluxo real + n8n)
 

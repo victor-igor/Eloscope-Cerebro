@@ -23,6 +23,7 @@
 | Samuel | Voltrucks (FURA) | Ativo — parcela R$6.000 pendente | Lucas cobrar |
 | Jean | Imobiliária Rodrigues | Ativo — pagamento pendente | Lucas cobrar |
 | Matheus | Campos Joia | Ativo | Hugo levantar dados do projeto |
+| Gustavo Bravo | Agência Bravo — Sistema Completo (Opção B, R$3.900) | Fechou 23/04 — discovery 26/04 | Assinar contrato, confirmar horário discovery |
 | Denis | Elite Maqlam | Ativo — primeiros testes | Reunião marcada, catálogo para disparo (prazo 24/04) |
 
 ---
@@ -39,8 +40,8 @@
 
 | Nome | Contexto | Status | Deadline |
 |------|----------|--------|----------|
-| Gustavo Bravo | Agência Bravo · 20 clientes · equipe Rafael (design) + Javi (generalista) · quer automatizar ciclo mensal de conteúdo | Proposta apresentada 23/04 (2 opções: A R$1.900 / B R$3.900) | Aguardar feedback e decisão do Gustavo |
+| *(vazio — todos convertidos ou descartados)* | | | |
 
 ---
 
-*Atualizado: 23/04/2026*
+*Atualizado: 23/04/2026 (flush)*

@@ -22,6 +22,11 @@
 | 28/04/2026 | Abordar Denis (Morgana) — prospecção Elo OS | ✅ No ClickUp | Lucas |
 | 28/04/2026 | Extrair lista leads Eloscope GTM beta | ✅ No ClickUp | Victor |
 | 30/04/2026 | Validar plano estratégico 04/04/2026 | ✅ No ClickUp | Victor |
+| 25/04/2026 | Bravo — contrato assinado (antes do discovery) | Pendente | Lucas |
+| 26/04/2026 | Bravo — discovery de mapeamento (sábado) | Pendente | Lucas + Gustavo + Rafael + Javi |
+| 02/05/2026 | Bravo — documento de processo + infra pronta | Pendente | Lucas |
+| 09/05/2026 | Bravo — skills finalizadas + treinamento | Pendente | Lucas |
+| 08/06/2026 | Bravo — fim do suporte pós-entrega (30 dias) | Pendente | Lucas |
 | 05/05/2026 | Abordar Matheus — prospecção Elo OS | ✅ No ClickUp | Lucas |
 
 ## Viagens / Eventos

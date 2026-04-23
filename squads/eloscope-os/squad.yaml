@@ -2,8 +2,8 @@ name: eloscope-os
 version: 1.0.0
 short-title: Eloscope Operating System
 description: >
-  Squad completa da Eloscope — 27 agentes organizados em 6 áreas funcionais
-  (command, presales, engineering, ai, geo, delivery, success) cobrindo o ciclo
+  Squad completa da Eloscope — 30 agentes organizados em 8 áreas funcionais
+  (command, presales, engineering, ai, geo, delivery, success, legal) cobrindo o ciclo
   Aquisição → Execução → Pós-venda com handoffs formais por artefato.
 author: Eloscope
 license: UNLICENSED
@@ -25,6 +25,9 @@ tags:
   - geo
   - delivery
   - customer-success
+  - legal
+  - contratos
+  - compliance
   - multi-agent
   - orchestration
 
@@ -64,6 +67,10 @@ components:
     - agents/delivery/clio.md
     # success
     - agents/success/elo.md
+    # legal
+    - agents/legal/themis.md
+    - agents/legal/solon.md
+    - agents/legal/hermes-legal.md
 
   tasks:
     - tasks/handoff-create.md
@@ -81,12 +88,17 @@ components:
     - tasks/qa-gate.md
     - tasks/client-docs-bundle.md
     - tasks/cs-health-check.md
+    - tasks/analyze-contract.md
+    - tasks/check-compliance.md
+    - tasks/secure-payment.md
+    - tasks/closing-review.md
 
   workflows:
     - workflows/presales-to-kickoff.md
     - workflows/engineering-delivery.md
     - workflows/ai-feature-launch.md
     - workflows/client-handover.md
+    - workflows/contract-review.md
 
   templates:
     - templates/handoff-template.md
@@ -94,6 +106,7 @@ components:
     - templates/discovery-report-template.md
     - templates/proposal-brief-template.md
     - templates/ai-contract-template.md
+    - templates/service-contract-tmpl.md
 
   checklists:
     - checklists/definition-of-done-presales.md
@@ -101,6 +114,8 @@ components:
     - checklists/definition-of-done-ai.md
     - checklists/definition-of-done-delivery.md
     - checklists/lgpd-compliance.md
+    - checklists/pre-signature.md
+    - checklists/contract-formatting.md
 
 config:
   extends: extend
@@ -141,6 +156,10 @@ areas:
     orchestrator: elo
     purpose: Pós-venda — onboarding, adoption, expansion, churn risk
     agents: [elo]
+  legal:
+    orchestrator: themis
+    purpose: Contratos — análise jurídica, compliance regulatório, garantia de pagamento, fechamento
+    agents: [themis, solon, hermes-legal]
 
 invariants:
   - Handoffs são sempre artefato estruturado (handoff-{from}-{to}-{date}.md), nunca conversa livre
@@ -150,3 +169,4 @@ invariants:
   - Qualquer fluxo com dado pessoal invoca Pallas (LGPD)
   - Contratos de integração inter-área são versionados em ai/contracts/
   - Nomenclatura astronômica/mitológica mantida (Luna, Eloscope)
+  - Contratos comerciais passam por Thêmis (análise) → Sólon (compliance) → Hermes-Legal (pagamento) antes de assinar
