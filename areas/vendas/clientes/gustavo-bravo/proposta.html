@@ -11,11 +11,13 @@
     --cyan: #00D4D4;
     --magenta: #E040FB;
     --dark: #0A0A0F;
+    --dark-2: #13131C;
     --text: #1A1A2E;
     --muted: #6B7280;
     --border: #E5E7EB;
     --bg: #FFFFFF;
     --bg-soft: #F9FAFB;
+    --warn: #F59E0B;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -30,7 +32,7 @@
 
   /* ── COVER ─────────────────────────────────────────── */
   .cover {
-    background: var(--dark);
+    background-color: var(--dark);
     color: white;
     min-height: 100vh;
     display: flex;
@@ -38,7 +40,17 @@
     justify-content: space-between;
     padding: 48px 56px;
     page-break-after: always;
+    position: relative;
+    overflow: hidden;
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(0,212,212,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 20%, rgba(224,64,251,0.06) 0%, transparent 35%),
+      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
   }
+
+  .cover > * { position: relative; z-index: 1; }
 
   .cover-header {
     display: flex;
@@ -145,7 +157,56 @@
     display: flex;
     flex-direction: column;
     page-break-after: always;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(to right, rgba(10,10,15,0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(10,10,15,0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
   }
+
+  /* Numeral gigante decorativo */
+  .page::before {
+    content: attr(data-num);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22rem;
+    color: rgba(10,10,15,0.03);
+    position: absolute;
+    right: -40px;
+    top: -80px;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .page > * { position: relative; z-index: 1; }
+
+  /* Dark page variant */
+  .page.dark {
+    background-color: var(--dark);
+    color: white;
+    background-image:
+      linear-gradient(to right, rgba(0,212,212,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,212,212,0.04) 1px, transparent 1px);
+  }
+
+  .page.dark::before {
+    color: rgba(0,212,212,0.04);
+  }
+
+  .page.dark .page-num,
+  .page.dark h2,
+  .page.dark h3,
+  .page.dark p { color: white; }
+
+  .page.dark .page-header {
+    border-bottom-color: #2A2A38;
+  }
+
+  .page.dark .page-num { color: #9CA3AF; }
 
   .page-header {
     display: flex;
@@ -206,6 +267,66 @@
 
   p:last-child { margin-bottom: 0; }
 
+  /* ── QUOTE SLIDE ────────────────────────────────────── */
+  .quote-slide {
+    background-color: var(--dark);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 96px;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background-image:
+      radial-gradient(circle at 50% 50%, rgba(0,212,212,0.05) 0%, transparent 60%),
+      linear-gradient(to right, rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 100% 100%, 60px 60px, 60px 60px;
+  }
+
+  .quote-mark {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 12rem;
+    color: var(--cyan);
+    line-height: 0.5;
+    margin-bottom: 24px;
+    opacity: 0.85;
+  }
+
+  .quote-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2.6rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: white;
+    max-width: 900px;
+    margin-bottom: 32px;
+  }
+
+  .quote-text em {
+    font-style: normal;
+    color: var(--cyan);
+  }
+
+  .quote-attr {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #9CA3AF;
+  }
+
+  .quote-attr::before {
+    content: '— ';
+    color: var(--cyan);
+  }
+
   /* ── CALLOUT ───────────────────────────────────────── */
   .callout {
     border-left: 2px solid var(--cyan);
@@ -219,6 +340,71 @@
     color: #0F4F4F;
     font-size: 0.95rem;
     margin: 0;
+  }
+
+  /* ── INACTION BLOCK ────────────────────────────────── */
+  .inaction-block {
+    border-left: 3px solid var(--magenta);
+    padding: 18px 22px;
+    background: linear-gradient(90deg, rgba(224,64,251,0.06) 0%, rgba(224,64,251,0.02) 100%);
+    margin: 20px 0 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .inaction-block p {
+    color: #6B1A7E;
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  .inaction-block strong {
+    color: var(--magenta);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── CREDENTIAL STRIP ──────────────────────────────── */
+  .credential-strip {
+    background: var(--dark);
+    color: white;
+    padding: 18px 22px;
+    margin-top: 32px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .credential-strip::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--cyan);
+  }
+
+  .credential-strip .badge {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    padding: 4px 10px;
+    flex-shrink: 0;
+  }
+
+  .credential-strip p {
+    color: #E5E7EB;
+    font-size: 0.88rem;
+    margin: 0;
+    line-height: 1.6;
   }
 
   /* ── STEPS ─────────────────────────────────────────── */
@@ -262,6 +448,60 @@
     font-size: 0.85rem;
     color: var(--muted);
     margin: 0;
+  }
+
+  /* ── ROI BAR ───────────────────────────────────────── */
+  .roi-bar {
+    background: linear-gradient(135deg, #0D1F1F 0%, #0A0A0F 100%);
+    color: white;
+    border-radius: 6px;
+    padding: 22px 26px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border: 1px solid var(--cyan);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .roi-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 90% 50%, rgba(0,212,212,0.12) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .roi-bar-label {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .roi-bar-content { flex: 1; position: relative; }
+
+  .roi-bar-headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .roi-bar-sub {
+    font-size: 0.82rem;
+    color: #9CA3AF;
+    line-height: 1.5;
   }
 
   /* ── OPTION CARDS GRID ─────────────────────────────── */
@@ -361,6 +601,10 @@
     color: var(--muted);
   }
 
+  .option-card.featured .option-price-label {
+    color: #9CA3AF;
+  }
+
   /* corpo do card */
   .option-card-body {
     padding: 20px 24px 24px;
@@ -424,10 +668,23 @@
     font-size: 0.84rem;
   }
 
+  .option-card.featured .option-items li .item-text strong {
+    color: white;
+  }
+
+  .option-card.featured .option-items li {
+    color: #D1D5DB;
+    border-bottom-color: rgba(255,255,255,0.08);
+  }
+
   .option-items li .item-text span {
     font-size: 0.78rem;
     color: var(--muted);
     line-height: 1.4;
+  }
+
+  .option-card.featured .option-items li .item-text span {
+    color: #9CA3AF;
   }
 
   .option-note {
@@ -439,6 +696,38 @@
     font-style: italic;
     border-left: 2px solid var(--border);
     margin-top: auto;
+  }
+
+  .option-card.featured .option-note {
+    background: #1E1E2E;
+    border-left-color: var(--cyan);
+    color: #9CA3AF;
+  }
+
+  /* why-bravo block */
+  .why-bravo {
+    background: rgba(0,212,212,0.08);
+    border-left: 2px solid var(--cyan);
+    padding: 10px 12px;
+    border-radius: 3px;
+    font-size: 0.78rem;
+    color: #374151;
+    margin-bottom: 12px;
+  }
+
+  .option-card.featured .why-bravo {
+    color: #A7F3F3;
+  }
+
+  .why-bravo strong {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 3px;
+    color: var(--cyan);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
   /* abatimento note */
@@ -497,6 +786,57 @@
     color: var(--text);
   }
 
+  /* ── COST HIGHLIGHT ────────────────────────────────── */
+  .cost-highlight {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .cost-highlight-num {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+    color: white;
+    padding: 24px;
+    border-radius: 4px;
+    border-left: 3px solid var(--cyan);
+  }
+
+  .cost-highlight-num .num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--cyan);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .cost-highlight-num .num span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9CA3AF;
+  }
+
+  .cost-highlight-num .label {
+    font-size: 0.78rem;
+    color: #D1D5DB;
+    margin-top: 8px;
+  }
+
+  .cost-highlight-text {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 24px;
+    font-size: 0.9rem;
+    color: #374151;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+  }
+
+  .cost-highlight-text strong { color: var(--text); }
+
   /* ── GUARANTEE ─────────────────────────────────────── */
   .guarantee {
     background: var(--dark);
@@ -505,6 +845,7 @@
     padding: 32px;
     margin: 32px 0;
     position: relative;
+    overflow: hidden;
   }
 
   .guarantee::before {
@@ -519,6 +860,14 @@
     line-height: 1;
   }
 
+  .guarantee::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 80% 0%, rgba(0,212,212,0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
   .guarantee p {
     color: #E5E7EB;
     font-size: 1rem;
@@ -529,24 +878,31 @@
 
   /* ── NEXT STEPS ────────────────────────────────────── */
   .next-steps {
-    display: flex;
-    gap: 16px;
-    margin: 32px 0;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 24px 0;
   }
 
   .next-step {
-    flex: 1;
-    min-width: 180px;
     border: 1px solid var(--border);
     border-radius: 4px;
     padding: 20px;
-    text-align: center;
+    text-align: left;
+    position: relative;
+  }
+
+  .next-step.active {
+    border-color: var(--cyan);
+    background: #F0FDFD;
   }
 
   .next-step-icon {
     font-size: 1.5rem;
     margin-bottom: 8px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    color: var(--cyan);
   }
 
   .next-step h4 {
@@ -554,72 +910,429 @@
     font-weight: 700;
     font-size: 0.85rem;
     margin-bottom: 6px;
+    color: var(--text);
   }
 
   .next-step p {
     font-size: 0.78rem;
     color: var(--muted);
     margin: 0;
+    line-height: 1.5;
   }
 
-  /* ── LAST PAGE ─────────────────────────────────────── */
+  .next-step .timing {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    font-weight: 800;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,212,212,0.2);
+    width: 100%;
+  }
+
+  /* ── CTA BLOCK ─────────────────────────────────────── */
+  .cta-block {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .cta-block-text { flex: 1; }
+
+  .cta-block-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .cta-block-headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .cta-block-sub {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .cta-button {
+    background: var(--cyan);
+    color: var(--dark);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 16px 28px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* ── URGENCY BAR ───────────────────────────────────── */
+  .urgency-bar {
+    background: linear-gradient(90deg, rgba(224,64,251,0.08) 0%, rgba(224,64,251,0.02) 100%);
+    border: 1px solid var(--magenta);
+    border-left-width: 3px;
+    padding: 16px 22px;
+    margin-top: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .urgency-bar-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--magenta);
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 12px rgba(224,64,251,0.6);
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .urgency-bar-dot { animation: none; }
+  }
+
+  .urgency-bar p {
+    color: #4B5563;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .urgency-bar strong { color: var(--magenta); }
+
+  /* ── CONTACT BLOCK ─────────────────────────────────── */
+  .contact-block {
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--bg-soft);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+
+  .contact-block p { color: #374151; margin: 0 0 6px; }
+  .contact-block p:last-child { margin: 0; color: var(--muted); font-size: 0.85rem; }
+  .contact-block strong { color: var(--text); }
+
+  /* ── CLOSING PAGE ──────────────────────────────────── */
   .closing-page {
-    background: var(--dark);
+    background-color: var(--dark);
     color: white;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 64px;
+    justify-content: space-between;
+    padding: 48px 56px;
     page-break-after: avoid;
+    position: relative;
+    overflow: hidden;
+    background-image:
+      radial-gradient(circle at 80% 80%, rgba(0,212,212,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 20% 20%, rgba(224,64,251,0.06) 0%, transparent 35%),
+      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
   }
 
-  .closing-logo {
+  .closing-page > * { position: relative; z-index: 1; }
+
+  .closing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .closing-tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid #2D2D3A;
+    padding: 6px 14px;
+    border-radius: 2px;
+  }
+
+  .closing-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 40px;
+  }
+
+  .closing-eyebrow {
     font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.2rem;
-    letter-spacing: 0.15em;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--cyan);
-    margin-bottom: 48px;
+    margin-bottom: 20px;
   }
 
   .closing-title {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
+    line-height: 1.15;
     letter-spacing: -0.02em;
-    margin-bottom: 16px;
-    line-height: 1.2;
+    color: white;
+    max-width: 640px;
+    margin-bottom: 24px;
   }
+
+  .closing-title span { color: var(--cyan); }
 
   .closing-subtitle {
     color: #9CA3AF;
     font-size: 1rem;
-    margin-bottom: 48px;
-    max-width: 380px;
+    max-width: 520px;
+    line-height: 1.7;
   }
 
-  .contact-items {
+  .closing-divider {
+    width: 48px;
+    height: 1.5px;
+    background: var(--cyan);
+    margin: 24px 0;
+  }
+
+  .closing-footer {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    color: #9CA3AF;
-    font-size: 0.9rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid #1E1E2E;
+    padding-top: 24px;
   }
 
-  .contact-items a {
+  .closing-contact { font-size: 0.85rem; color: #9CA3AF; }
+
+  .closing-contact strong {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2px;
+  }
+
+  .closing-contact a { color: var(--cyan); text-decoration: none; }
+
+  .closing-cta {
+    font-size: 0.75rem;
+    color: #6B7280;
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  /* ── DARK PAGE OVERRIDES ─────────────────────────── */
+  .page.dark p { color: #D1D5DB; }
+
+  /* Option cards on dark pages */
+  .page.dark .option-card {
+    border-color: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.02);
+  }
+  .page.dark .option-card.featured {
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 1px rgba(0,212,212,0.2);
+  }
+  .page.dark .option-card-head {
+    background: rgba(255,255,255,0.04);
+    border-bottom-color: rgba(255,255,255,0.08);
+  }
+  .page.dark .option-card.featured .option-card-head {
+    background: linear-gradient(135deg, rgba(0,212,212,0.12) 0%, rgba(0,212,212,0.04) 100%);
+    border-bottom-color: rgba(0,212,212,0.3);
+  }
+  .page.dark .option-letter { color: #9CA3AF; }
+  .page.dark .option-name { color: white; }
+  .page.dark .option-price { color: white; }
+  .page.dark .option-price-label { color: #9CA3AF; }
+  .page.dark .option-items li {
+    color: #D1D5DB;
+    border-bottom-color: rgba(255,255,255,0.08);
+  }
+  .page.dark .option-items li .item-text strong { color: white; }
+  .page.dark .option-items li .item-text span { color: #9CA3AF; }
+  .page.dark .option-note {
+    background: rgba(255,255,255,0.03);
+    border-left-color: rgba(255,255,255,0.1);
+    color: #9CA3AF;
+  }
+  .page.dark .option-card.featured .option-note {
+    background: rgba(0,212,212,0.06);
+    border-left-color: var(--cyan);
+    color: #A7F3F3;
+  }
+  .page.dark .abatimento-note { color: #9CA3AF; }
+  .page.dark .abatimento-note strong { color: white; }
+
+  /* Next steps on dark pages */
+  .page.dark .next-step {
+    border-color: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.02);
+  }
+  .page.dark .next-step.active {
+    border-color: var(--cyan);
+    background: rgba(0,212,212,0.06);
+  }
+  .page.dark .next-step h4 { color: white; }
+  .page.dark .next-step p { color: #9CA3AF; }
+
+  /* CTA on dark pages */
+  .page.dark .cta-block {
+    background: linear-gradient(135deg, rgba(0,212,212,0.15) 0%, rgba(0,212,212,0.02) 100%);
+    border-color: var(--cyan);
+    position: relative;
+    overflow: hidden;
+  }
+  .page.dark .cta-block-headline { color: white; }
+  .page.dark .cta-block-sub { color: #9CA3AF; }
+  .page.dark .cta-button {
+    box-shadow: 0 0 0 1px rgba(0,212,212,0.3), 0 4px 20px rgba(0,212,212,0.25);
+  }
+
+  /* Urgency on dark pages */
+  .page.dark .urgency-bar {
+    background: linear-gradient(90deg, rgba(224,64,251,0.12) 0%, rgba(224,64,251,0.02) 100%);
+  }
+  .page.dark .urgency-bar p { color: #E5E7EB; }
+
+  /* Contact on dark pages */
+  .page.dark .contact-block {
+    background: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.1);
+  }
+  .page.dark .contact-block p { color: #D1D5DB; }
+  .page.dark .contact-block p:last-child { color: #9CA3AF; }
+  .page.dark .contact-block strong { color: white; }
+
+  /* ── TRAINING GRID ──────────────────────────────── */
+  .training-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .training-card {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .training-card.featured {
+    border-color: var(--cyan);
+    background: rgba(0,212,212,0.06);
+  }
+
+  .training-card .tnum {
+    width: 32px;
+    height: 32px;
+    background: var(--dark-2);
     color: var(--cyan);
-    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,212,212,0.3);
+  }
+
+  .training-card.featured .tnum {
+    background: var(--cyan);
+    color: var(--dark);
+    border-color: var(--cyan);
+  }
+
+  .training-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: white;
+    margin: 0;
+  }
+
+  .training-card p {
+    font-size: 0.78rem;
+    color: #9CA3AF;
+    margin: 4px 0 0;
+    line-height: 1.5;
+  }
+
+  .training-card .duration {
+    font-size: 0.7rem;
+    color: var(--cyan);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .training-result {
+    margin-top: 14px;
+    background: rgba(0,212,212,0.08);
+    border: 1px solid var(--cyan);
+    padding: 14px 18px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .training-result .rbadge {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    padding: 3px 8px;
+    flex-shrink: 0;
+  }
+
+  .training-result p {
+    color: #E5E7EB;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.5;
   }
 
   /* ── PRINT ─────────────────────────────────────────── */
   @media print {
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
-    .cover, .page, .closing-page {
+    .cover, .page, .closing-page, .quote-slide {
       page-break-after: always;
     }
 
@@ -656,7 +1369,7 @@
 <!-- ═══════════════════════════════════════════════
      1. O PROBLEMA (DIAGNÓSTICO)
 ═══════════════════════════════════════════════ -->
-<div class="page">
+<div class="page" data-num="01">
   <div class="page-header">
     <div class="page-logo">Eloscope</div>
     <div class="page-num">01 / 08</div>
@@ -669,8 +1382,11 @@
 
   <p>Colocar automação em cima de um processo indefinido não resolve. Vai criar mais confusão, e no fim o time perde tempo com coisas que não se encaixam no jeito real de trabalhar da Bravo.</p>
 
-  <div class="callout">
-    <p>"Antes de automatizar, precisamos ter um processo. Senão a gente só acelera o caos." — alinhado na reunião de 20/04</p>
+  <div class="inaction-block">
+    <p>
+      <strong>O CUSTO DE FICAR COMO ESTÁ</strong><br>
+      Cada cliente novo entra no caos — processo diferente, entrega diferente, stress diferente. Escalar sem resolver isso significa trabalhar mais, não ganhar mais. E quando o Rafael ou o Javi saem de férias, a operação trava.
+    </p>
   </div>
 
   <div style="margin-top:32px;">
@@ -699,20 +1415,48 @@
       </div>
     </div>
   </div>
+
+  <div class="credential-strip">
+    <div class="badge">Eloscope</div>
+    <p>
+      Somos um estúdio de AI que implanta squads de agentes de IA em PMEs brasileiras. Não vendemos tecnologia — vendemos resultado operacional. Cada processo da Bravo vira uma skill testada e documentada, que o Rafael e o Javi operam sem depender de ninguém.
+    </p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     QUOTE SLIDE — pausa dramática
+═══════════════════════════════════════════════ -->
+<div class="quote-slide">
+  <div class="quote-mark">"</div>
+  <p class="quote-text">
+    Antes de automatizar, precisamos ter <em>um processo</em>.<br>
+    Senão a gente só acelera o caos.
+  </p>
+  <div class="quote-attr">Gustavo Bravo · Reunião de 20/04/2026</div>
 </div>
 
 
 <!-- ═══════════════════════════════════════════════
      2. AS OPÇÕES (O QUE FAZEMOS)
 ═══════════════════════════════════════════════ -->
-<div class="page">
+<div class="page dark" data-num="02">
   <div class="page-header">
     <div class="page-logo">Eloscope</div>
     <div class="page-num">02 / 08</div>
   </div>
 
-  <div class="section-label">O que fazemos</div>
+  <div class="section-label">Proposta</div>
   <h2>Duas opções.<br>A mesma lógica.</h2>
+
+  <div class="roi-bar">
+    <div class="roi-bar-label">Retorno</div>
+    <div class="roi-bar-content">
+      <div class="roi-bar-headline">4 clientes a mais cobrem o investimento em menos de 1 mês.</div>
+      <div class="roi-bar-sub">Com o novo método da Bravo (~R$1.300/mês por cliente), ambas as opções se pagam antes do fim do ciclo — Opção A em 15 dias · Opção B em 30 dias.</div>
+    </div>
+  </div>
 
   <div class="options-grid">
     <!-- Opção A -->
@@ -720,6 +1464,10 @@
       <div class="option-card-head">
         <div class="option-letter">Opção A</div>
         <div class="option-name">Mapeamento<br>+ Treinamento</div>
+        <div class="option-price-block">
+          <div class="option-price">R$1.900</div>
+          <div class="option-price-label">investimento único</div>
+        </div>
       </div>
       <div class="option-card-body">
         <div class="deliverables-label">Entregáveis</div>
@@ -753,11 +1501,19 @@
     <!-- Opção B -->
     <div class="option-card featured">
       <div class="option-card-head">
-        <div class="option-badge">Recomendado</div>
+        <div class="option-badge">Recomendado para a Bravo</div>
         <div class="option-letter">Opção B</div>
         <div class="option-name">Sistema<br>Completo</div>
+        <div class="option-price-block">
+          <div class="option-price">R$3.900</div>
+          <div class="option-price-label">investimento único</div>
+        </div>
       </div>
       <div class="option-card-body">
+        <div class="why-bravo">
+          <strong>Por que para a Bravo</strong>
+          Rafael e Javi saem operando sem gastar semanas na configuração. O foco deles continua sendo cliente, não infraestrutura.
+        </div>
         <div class="deliverables-label">Entregáveis</div>
         <ul class="option-items">
           <li>
@@ -789,8 +1545,70 @@
             </div>
           </li>
         </ul>
-        <div class="option-note" style="background:#1E1E2E; border-left-color:#00D4D4; color:#9CA3AF;">O time da Bravo entra só no treinamento — não precisa saber como foi montado.</div>
+        <div class="option-note">O time da Bravo entra só no treinamento — não precisa saber como foi montado.</div>
       </div>
+    </div>
+  </div>
+
+  <div class="abatimento-note">
+    <strong>O valor da Opção A abate integralmente no B</strong> se decidirem avançar para o sistema completo.
+  </div>
+
+  <!-- TREINAMENTO -->
+  <div style="margin-top:36px;">
+    <div class="section-label">Treinamento de operação · incluído nas duas opções</div>
+    <h3 style="color:white; margin-bottom:6px;">O que Rafael e Javi vão saber fazer depois.</h3>
+    <p style="font-size:0.82rem; color:#9CA3AF; margin-bottom:16px;">Calls ao vivo, gravadas, com material escrito de referência. Total de 5 horas distribuídas em 4 módulos.</p>
+
+    <div class="training-grid">
+      <div class="training-card">
+        <div class="tnum">01</div>
+        <div style="flex:1;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+            <h4>Fundamentos do sistema</h4>
+            <span class="duration">1H</span>
+          </div>
+          <p>Como o sistema está montado, fluxo end-to-end, quando a IA atua e quando o time decide.</p>
+        </div>
+      </div>
+
+      <div class="training-card featured">
+        <div class="tnum">02</div>
+        <div style="flex:1;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+            <h4>Operando as skills</h4>
+            <span class="duration" style="color:var(--cyan);">2H</span>
+          </div>
+          <p>Cada skill do discovery: como chamar, o que passar de input, como validar output, erros comuns e correção.</p>
+        </div>
+      </div>
+
+      <div class="training-card">
+        <div class="tnum">03</div>
+        <div style="flex:1;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+            <h4>Uso no dia a dia</h4>
+            <span class="duration">1H</span>
+          </div>
+          <p>Integração com WhatsApp, acesso a arquivos, como consultar memória persistente, dicas práticas.</p>
+        </div>
+      </div>
+
+      <div class="training-card">
+        <div class="tnum">04</div>
+        <div style="flex:1;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+            <h4>Quando algo muda</h4>
+            <span class="duration">1H</span>
+          </div>
+          <p>Ajustar uma skill existente, documentar novo processo para automação futura, quando chamar suporte vs. resolver interno.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="training-result">
+      <div class="rbadge">Resultado</div>
+      <p>Rafael e Javi saem operando o sistema de ponta sem precisar de ninguém — executam, validam, ajustam pequenas coisas e documentam o que muda.</p>
     </div>
   </div>
 </div>
@@ -799,7 +1617,7 @@
 <!-- ═══════════════════════════════════════════════
      3. COMO FUNCIONA / CRONOGRAMA
 ═══════════════════════════════════════════════ -->
-<div class="page">
+<div class="page" data-num="03">
   <div class="page-header">
     <div class="page-logo">Eloscope</div>
     <div class="page-num">03 / 08</div>
@@ -878,7 +1696,7 @@
 <!-- ═══════════════════════════════════════════════
      4. ESCOPO E LIMITES
 ═══════════════════════════════════════════════ -->
-<div class="page">
+<div class="page" data-num="04">
   <div class="page-header">
     <div class="page-logo">Eloscope</div>
     <div class="page-num">04 / 08</div>
@@ -933,7 +1751,7 @@
 <!-- ═══════════════════════════════════════════════
      5. INVESTIMENTO (PREÇO)
 ═══════════════════════════════════════════════ -->
-<div class="page">
+<div class="page" data-num="05">
   <div class="page-header">
     <div class="page-logo">Eloscope</div>
     <div class="page-num">05 / 08</div>
@@ -999,7 +1817,7 @@
 <!-- ═══════════════════════════════════════════════
      6. ROI E CUSTO DE FERRAMENTAS
 ═══════════════════════════════════════════════ -->
-<div class="page">
+<div class="page" data-num="06">
   <div class="page-header">
     <div class="page-logo">Eloscope</div>
     <div class="page-num">06 / 08</div>
@@ -1063,12 +1881,12 @@
     </tbody>
   </table>
 
-  <div style="display:flex; gap:12px; margin-top:12px;">
-    <div style="flex:1; background:#F0FDFD; border:1px solid var(--cyan); border-radius:4px; padding:14px 16px;">
-      <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:1.1rem; color:var(--dark);">~R$130–280<span style="font-size:0.75rem; font-weight:400; color:var(--muted);">/mês</span></div>
-      <div style="font-size:0.78rem; color:#374151; margin-top:3px;">Custo estimado total de ferramentas</div>
+  <div class="cost-highlight">
+    <div class="cost-highlight-num">
+      <div class="num">~R$130–280<span>/mês</span></div>
+      <div class="label">Custo estimado total de ferramentas</div>
     </div>
-    <div style="flex:2; background:var(--bg-soft); border:1px solid var(--border); border-radius:4px; padding:14px 16px; font-size:0.82rem; color:#374151;">
+    <div class="cost-highlight-text">
       Com o novo método da Bravo cobrando <strong>R$1.300/mês por cliente</strong>, o custo de ferramentas representa <strong>menos de 10% da receita de 1 cliente</strong>. O sistema se paga sozinho.
     </div>
   </div>
@@ -1078,7 +1896,7 @@
 <!-- ═══════════════════════════════════════════════
      7. GARANTIA
 ═══════════════════════════════════════════════ -->
-<div class="page">
+<div class="page" data-num="07">
   <div class="page-header">
     <div class="page-logo">Eloscope</div>
     <div class="page-num">07 / 08</div>
@@ -1123,7 +1941,7 @@
 <!-- ═══════════════════════════════════════════════
      8. PRÓXIMOS PASSOS
 ═══════════════════════════════════════════════ -->
-<div class="page" style="page-break-after:avoid;">
+<div class="page dark" data-num="08" style="page-break-after:avoid;">
   <div class="page-header">
     <div class="page-logo">Eloscope</div>
     <div class="page-num">08 / 08</div>
@@ -1137,42 +1955,81 @@
       <div class="next-step-icon">01</div>
       <h4>Escolher a opção</h4>
       <p>A ou B — com base no quanto a Bravo quer envolver o time na configuração</p>
+      <span class="timing">Esta semana</span>
     </div>
     <div class="next-step">
       <div class="next-step-icon">02</div>
       <h4>Agendar o discovery</h4>
       <p>1h com Gustavo + Rafael + Javi. Pode ser essa semana.</p>
+      <span class="timing">Até 7 dias</span>
     </div>
     <div class="next-step">
       <div class="next-step-icon">03</div>
       <h4>Processo mapeado</h4>
       <p>Em até 1 semana: documento + prioridades + o que automatizar</p>
+      <span class="timing">1 semana após discovery</span>
     </div>
-    <div class="next-step" style="border-color:var(--cyan); background:#F0FDFD;">
+    <div class="next-step active">
       <div class="next-step-icon">04</div>
       <h4>Sistema no ar</h4>
       <p>Opção B: infra + skills prontas em ~3 semanas. Bravo operando.</p>
+      <span class="timing">2–3 semanas depois</span>
     </div>
   </div>
 
-  <div style="margin-top:48px; padding:28px; background:var(--bg-soft); border-radius:4px; border:1px solid var(--border);">
+  <div class="cta-block">
+    <div class="cta-block-text">
+      <div class="cta-block-label">Próximo passo</div>
+      <div class="cta-block-headline">Responda no WhatsApp do Lucas com "Vamos começar"</div>
+      <div class="cta-block-sub">A gente agenda o discovery de 1h nesta semana e envia o link do calendário.</div>
+    </div>
+    <div class="cta-button">WhatsApp →</div>
+  </div>
+
+  <div class="urgency-bar">
+    <div class="urgency-bar-dot"></div>
+    <p>
+      <strong>PROPOSTA VÁLIDA ATÉ 30/04/2026.</strong> Temos capacidade para 2 novos projetos este mês — 1 slot já está reservado para a Bravo até essa data.
+    </p>
+  </div>
+
+  <div class="contact-block">
     <div class="section-label">Contato</div>
-    <p style="margin-bottom:8px;"><strong>Lucas Negreiro</strong> — lucas.ns63@gmail.com</p>
-    <p style="font-size:0.85rem; color:var(--muted); margin:0;">eloscope.com.br</p>
+    <p><strong>Lucas Negreiro</strong> — lucas.ns63@gmail.com</p>
+    <p>eloscope.com.br</p>
   </div>
 </div>
 
 
 <!-- ═══════════════════════════════════════════════
-     PÁGINA FINAL
+     PÁGINA FINAL — espelho da capa
 ═══════════════════════════════════════════════ -->
 <div class="closing-page">
-  <div class="closing-logo">Eloscope</div>
-  <h2 class="closing-title">Pronto para começar?</h2>
-  <p class="closing-subtitle">A gente mapeia o processo, define o que faz sentido automatizar — e monta, se precisar.</p>
-  <div class="contact-items">
-    <span>lucas.ns63@gmail.com</span>
-    <span>eloscope.com.br</span>
+  <div class="closing-header">
+    <div class="logo">Eloscope</div>
+    <div class="closing-tag">Encerramento</div>
+  </div>
+  <div class="closing-body">
+    <div class="closing-eyebrow">Para · Bravo Agency</div>
+    <h1 class="closing-title">
+      O processo certo.<br>
+      O sistema funcionando.<br>
+      <span>A Bravo escalando.</span>
+    </h1>
+    <div class="closing-divider"></div>
+    <p class="closing-subtitle">
+      Em 3 a 4 semanas, a Bravo passa de operação artesanal para sistema documentado e rodando — com o Rafael e o Javi no comando, sem depender de ninguém.
+    </p>
+  </div>
+  <div class="closing-footer">
+    <div class="closing-contact">
+      <strong>Lucas Negreiro</strong>
+      <a href="mailto:lucas.ns63@gmail.com">lucas.ns63@gmail.com</a> · eloscope.com.br
+    </div>
+    <div class="closing-cta">
+      Responda "Vamos começar"<br>
+      no WhatsApp para agendar
+    </div>
   </div>
 </div>
 

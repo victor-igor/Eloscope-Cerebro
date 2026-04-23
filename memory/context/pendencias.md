@@ -15,7 +15,7 @@
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
 - [23/04/2026] **Gustavo Bravo — resultado da reunião das 10h** · proposta HTML pronta (`proposta.html`) com 2 opções (A R$1.900 / B R$3.900), escopo, limites e custo de ferramentas · Lucas apresentou hoje · aguardar feedback e decisão do Gustavo
-- [23/04/2026] **Gustavo Bravo — decidir se envia proposta-revisada.html** · versão alternativa criada com ajustes de @dan-kennedy (urgência, CTA WhatsApp, credencial, ROI no slide de opções, personalização "Por que para a Bravo"), @blake-snyder (custo da inação, espelho da capa) e @design-chief (ritmo dark/light, numerais gigantes, grid, magenta p/ urgência, quote slide, editorial data page, bloco de treinamento detalhado em 4 módulos) · decidir se substitui a atual ou fica como v2 para iteração
+- [23/04/2026] **Gustavo Bravo — decidir se envia proposta-revisada.html** · ✅ RESOLVIDO: melhorias da revisada mergeadas na `proposta.html` principal (dark pages 02/08, training grid 4 módulos, badge "Recomendado para a Bravo", CTA dark com glow)
 - [21/04/2026] **Mentoria Agências — definir pricing final** · R$5.500 único ou R$1.500 + 3×R$1.300 parcelado · validar com Lucas antes de apresentar
 
 - [19/04/2026] **Slides Elo OS — validação visual pendente** — HTML redesenhado com referências premium, Victor ainda não confirmou aprovação do resultado final · arquivo: `04-apresentacao/slides-elo-os.html`
@@ -72,4 +72,4 @@
 - [19/04/2026] **Slides call de vendas: montar no Canva** com design system Eloscope · arquivo base em `04-apresentacao/slides-call-vendas.md`
 - [19/04/2026] **Definir quem conduz a call de vendas** — Victor ou Lucas (impacta treinamento e preparação)
 
-*Atualizado: 22/04/2026*
+*Atualizado: 23/04/2026*
