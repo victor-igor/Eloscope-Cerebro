@@ -14,11 +14,13 @@
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
-- [23/04/2026] **Gustavo Bravo — contrato pendente** · cliente fechou Opção B (R$3.900) em 23/04 · contrato criado em `areas/vendas/clientes/gustavo-bravo/projeto/contrato.md` · precisa: preencher CNPJ/CPF, definir forma de pagamento, cidade do foro, assinar antes do discovery (26/04)
-- [23/04/2026] **Gustavo Bravo — confirmar discovery sábado 26/04** · agendar horário exato com Gustavo + Rafael + Javi · preparar roteiro de mapeamento
-- [23/04/2026] **Enertelles — enviar proposta pro Alex** · `proposta-enertelles.html` (11 pgs, SPIN Selling) + `proposta-alex-review.md` · pricing: R$4.497 setup + R$997/mês · IA como upgrade futuro · Alex revisa → call Telles+Alex+Lucas
+- [23/04/2026] **Gustavo Bravo — enviar contrato para assinatura** · Gustavo já enviou dados (CNPJ/CPF) · preencher contrato, enviar pra assinar, lançar pagamento · antes de sábado 25/04
+- [23/04/2026] **Gustavo Bravo — preparar sessão presencial 25/04** · sábado na agência · criar cronograma geral + roteiro da primeira sessão · participantes: Lucas + Gustavo + Rafael + Javi
+- [23/04/2026] 🔥 **Enertelles — enviar proposta pro Alex URGENTE** · `proposta-enertelles.html` + `proposta-alex-review.md` · lead esfriando, precisa sair hoje · Alex revisa → call Telles+Alex+Lucas
 - [23/04/2026] **Enertelles — alinhar split com Alex** · comissão/recorrente se fechar (5-10% mensalidade?) · alinhar antes da call com Telles
 - [23/04/2026] **Enertelles — marcar call** Telles + Alex + Lucas · 45 min · Alex agenda
+- [23/04/2026] **Elite Maqlam — reunião 24/04 às 15h** · apresentar alterações de cashback · falta: testar geração de leads (bug cursor), salvar leads em remessa
+- [23/04/2026] **Morgana — inserir primeira lista do Matheus** · começar prospecções com os contatos recebidos
 - [21/04/2026] **Mentoria Agências — definir pricing final** · R$5.500 único ou R$1.500 + 3×R$1.300 parcelado · validar com Lucas antes de apresentar
 
 - [19/04/2026] **Slides Elo OS — validação visual pendente** — HTML redesenhado com referências premium, Victor ainda não confirmou aprovação do resultado final · arquivo: `04-apresentacao/slides-elo-os.html`
@@ -75,4 +77,4 @@
 - [19/04/2026] **Slides call de vendas: montar no Canva** com design system Eloscope · arquivo base em `04-apresentacao/slides-call-vendas.md`
 - [19/04/2026] **Definir quem conduz a call de vendas** — Victor ou Lucas (impacta treinamento e preparação)
 
-*Atualizado: 23/04/2026*
+*Atualizado: 24/04/2026*
