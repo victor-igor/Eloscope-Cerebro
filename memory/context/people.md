@@ -40,8 +40,8 @@
 
 | Nome | Contexto | Status | Deadline |
 |------|----------|--------|----------|
-| Telles (Enertelles) | Energia solar, Catanduva + Atibaia · 500 clientes · 7-8 vendas/mês · quer 20 | Proposta 6OS atualizada, enviando pra Alex revisar | Alex revisa → call Telles+Alex+Lucas |
+| Telles (Enertelles) | Energia solar, Catanduva + Atibaia · 500 clientes · 7-8 vendas/mês · quer 20 | Proposta HTML criada (R$4.497 setup + R$997/mês), enviando pra Alex revisar | Alex revisa → call Telles+Alex+Lucas |
 
 ---
 
-*Atualizado: 23/04/2026*
+*Atualizado: 24/04/2026*

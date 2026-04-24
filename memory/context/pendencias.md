@@ -16,7 +16,7 @@
 
 - [23/04/2026] **Gustavo Bravo — contrato pendente** · cliente fechou Opção B (R$3.900) em 23/04 · contrato criado em `areas/vendas/clientes/gustavo-bravo/projeto/contrato.md` · precisa: preencher CNPJ/CPF, definir forma de pagamento, cidade do foro, assinar antes do discovery (26/04)
 - [23/04/2026] **Gustavo Bravo — confirmar discovery sábado 26/04** · agendar horário exato com Gustavo + Rafael + Javi · preparar roteiro de mapeamento
-- [23/04/2026] **Enertelles — enviar proposta pro Alex** · `proposta-alex-review.md` criada com ângulo vendedora nova · Alex revisa → depois manda pro Telles · pitch 6OS primeiro, site como fase 2
+- [23/04/2026] **Enertelles — enviar proposta pro Alex** · `proposta-enertelles.html` (11 pgs, SPIN Selling) + `proposta-alex-review.md` · pricing: R$4.497 setup + R$997/mês · IA como upgrade futuro · Alex revisa → call Telles+Alex+Lucas
 - [23/04/2026] **Enertelles — alinhar split com Alex** · comissão/recorrente se fechar (5-10% mensalidade?) · alinhar antes da call com Telles
 - [23/04/2026] **Enertelles — marcar call** Telles + Alex + Lucas · 45 min · Alex agenda
 - [21/04/2026] **Mentoria Agências — definir pricing final** · R$5.500 único ou R$1.500 + 3×R$1.300 parcelado · validar com Lucas antes de apresentar
