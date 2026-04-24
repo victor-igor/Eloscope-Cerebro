@@ -22,8 +22,8 @@
 | 28/04/2026 | Abordar Denis (Morgana) — prospecção Elo OS | ✅ No ClickUp | Lucas |
 | 28/04/2026 | Extrair lista leads Eloscope GTM beta | ✅ No ClickUp | Victor |
 | 30/04/2026 | Validar plano estratégico 04/04/2026 | ✅ No ClickUp | Victor |
-| 25/04/2026 | Bravo — contrato assinado (antes do discovery) | Pendente | Lucas |
-| 25/04/2026 | Bravo — sessão presencial na agência (sábado) | Pendente | Lucas + Gustavo + Rafael + Javi |
+| 26/04/2026 | Bravo — contrato assinado + 1ª parcela R$975 | Pendente | Lucas |
+| 26/04/2026 | Bravo — discovery presencial na agência (sábado) | Pendente | Lucas + Gustavo + Rafael + Javi |
 | 24/04/2026 | Elite Maqlam — reunião 15h (apresentar cashback) | Pendente | Lucas + Denis |
 | 02/05/2026 | Bravo — documento de processo + infra pronta | Pendente | Lucas |
 | 09/05/2026 | Bravo — skills finalizadas + treinamento | Pendente | Lucas |
@@ -43,4 +43,4 @@
 | DD/MM/YYYY | [descrição] | ✅ [resultado] |
 
 ---
-*Atualizado: 22/04/2026*
+*Atualizado: 24/04/2026*

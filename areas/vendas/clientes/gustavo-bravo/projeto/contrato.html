@@ -17,38 +17,34 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  @page { size: A4; margin: 0; }
+  @page { size: A4; margin: 20mm 20mm 25mm 30mm; }
 
   /* ── COVER ─────────────────────────────────────── */
   .cover {
     background-color: var(--dark);
     color: white;
     width: 210mm;
-    min-height: 297mm;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 48px 56px;
+    padding: 32px 40px;
     page-break-after: always;
     position: relative;
     overflow: hidden;
     font-family: 'Inter', sans-serif;
     background-image:
       radial-gradient(circle at 20% 80%, rgba(0,212,212,0.08) 0%, transparent 40%),
-      radial-gradient(circle at 80% 20%, rgba(0,212,212,0.04) 0%, transparent 35%),
-      linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+      radial-gradient(circle at 80% 20%, rgba(0,212,212,0.04) 0%, transparent 35%);
   }
   .cover > * { position: relative; z-index: 1; }
   .cover-header { display: flex; justify-content: space-between; align-items: flex-start; }
   .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); }
   .cover-tag { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7280; border: 1px solid #2D2D3A; padding: 6px 14px; border-radius: 2px; }
-  .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 80px 0 40px; }
+  .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 40px 0 20px; }
   .cover-eyebrow { font-family: 'Syne', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 20px; }
-  .cover-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 3rem; line-height: 1.1; letter-spacing: -0.02em; color: white; max-width: 600px; margin-bottom: 24px; }
+  .cover-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.2rem; line-height: 1.15; letter-spacing: -0.02em; color: white; max-width: 600px; margin-bottom: 16px; }
   .cover-title span { color: var(--cyan); }
-  .cover-divider { width: 48px; height: 1.5px; background: var(--cyan); margin: 24px 0; }
+  .cover-divider { width: 48px; height: 1.5px; background: var(--cyan); margin: 14px 0; }
   .cover-subtitle { color: #9CA3AF; font-size: 1rem; max-width: 480px; line-height: 1.7; }
   .cover-footer { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #1E1E2E; padding-top: 24px; }
   .cover-parties { display: flex; gap: 48px; }
@@ -64,17 +60,16 @@
     color: var(--text);
     background: var(--bg);
     width: 210mm;
-    min-height: 297mm;
-    padding: 30mm 20mm 20mm 30mm;
+    padding: 0;
     text-align: justify;
-    page-break-after: always;
     position: relative;
   }
-  .page:last-child { page-break-after: avoid; }
+  .page:first-of-type { padding-top: 10mm; }
+  .page + .page { border: none; }
 
-  .page-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 8pt; border-bottom: 0.5pt solid #999; margin-bottom: 20pt; font-size: 8pt; color: #999; }
-  .page-header-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 8pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); }
-  .page-footer { position: absolute; bottom: 20mm; left: 30mm; right: 20mm; border-top: 0.5pt solid #CCC; padding-top: 6pt; font-size: 8pt; color: #999; display: flex; justify-content: space-between; }
+  .page-header { display: none; }
+  .page-header-logo { display: none; }
+  .page-footer { display: none; }
 
   .contract-title { text-align: center; font-size: 14pt; font-weight: bold; text-transform: uppercase; margin-bottom: 24pt; letter-spacing: 0.5pt; }
 
@@ -106,8 +101,11 @@
   @media print {
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     body { margin: 0; padding: 0; }
-    .page { page-break-after: always; width: auto; min-height: auto; padding: 30mm 20mm 20mm 30mm; }
-    .page:last-child { page-break-after: avoid; }
+    .cover { width: auto; height: 100vh; }
+    .page { width: auto; }
+    .contract-table { page-break-inside: avoid; }
+    .clausula { page-break-inside: avoid; }
+    .sig-grid { page-break-inside: avoid; }
   }
 </style>
 </head>
@@ -150,9 +148,9 @@
   <div class="clausula">
     <div class="clausula-title">Cláusula Primeira — Das Partes</div>
 
-    <p><strong>CONTRATADA:</strong> Eloscope Ltda., representada neste ato por Lucas Negreiro, brasileiro, empresário, e-mail: lucas.ns63@gmail.com, doravante denominada simplesmente "CONTRATADA".</p>
+    <p><strong>CONTRATADA:</strong> Eloscope Ltda., inscrita no CNPJ nº 41.684.837/0001-84, com sede na Av. Independência, 546, Sala 93, 9º andar, Cidade Alta, Piracicaba/SP, CEP 13.419-160, representada neste ato por Lucas Negreiro, brasileiro, empresário, e-mail: eloscope.coo@gmail.com, doravante denominada simplesmente "CONTRATADA".</p>
 
-    <p><strong>CONTRATANTE:</strong> Bravo Agency, representada neste ato por Gustavo Bravo, inscrita no CNPJ/CPF nº <span class="fill-field short">&nbsp;</span>, com endereço em <span class="fill-field">&nbsp;</span>, e-mail: <span class="fill-field short">&nbsp;</span>, doravante denominada simplesmente "CONTRATANTE".</p>
+    <p><strong>CONTRATANTE:</strong> Bravo Agency, inscrita no CNPJ nº 19.523.019/0001-40, representada neste ato por Gustavo Bravo, CPF nº 316.245.148-55, com endereço na Rua Santos Dumont, 206, sala 10, Vila Ercília, São José do Rio Preto/SP, e-mail: Adm.bsconunicacao@gmail.com, doravante denominada simplesmente "CONTRATANTE".</p>
 
     <p class="no-indent" style="text-indent:1.25cm">As partes resolvem celebrar o presente Contrato de Prestação de Serviços, que se regerá pelas cláusulas e condições seguintes:</p>
   </div>
@@ -492,7 +490,7 @@
   <div class="clausula">
     <div class="clausula-title">Cláusula Décima Nona — Do Foro e Legislação Aplicável</div>
 
-    <p>Fica eleito o foro da Comarca de <span class="fill-field short">&nbsp;</span>, Estado de <span class="fill-field short">&nbsp;</span>, com exclusão de qualquer outro, por mais privilegiado que seja, para dirimir quaisquer controvérsias decorrentes deste contrato.</p>
+    <p>Fica eleito o foro da Comarca de São José do Rio Preto, Estado de São Paulo, com exclusão de qualquer outro, por mais privilegiado que seja, para dirimir quaisquer controvérsias decorrentes deste contrato.</p>
 
     <p class="paragrafo">Parágrafo único. Aplica-se integralmente a legislação brasileira, em especial o Código Civil. Considerando que ambas as partes são pessoas jurídicas atuando em suas atividades empresariais, este contrato caracteriza-se como relação B2B (business to business), não se aplicando o Código de Defesa do Consumidor.</p>
   </div>
@@ -511,7 +509,7 @@
   </div>
 
   <!-- LOCAL E DATA -->
-  <p class="local-data"><span class="fill-field short">&nbsp;</span>, <span class="fill-field short">&nbsp;</span> de <span class="fill-field short">&nbsp;</span> de 2026.</p>
+  <p class="local-data">São José do Rio Preto/SP, 24 de abril de 2026.</p>
 
   <!-- ASSINATURAS -->
   <div class="sig-grid">

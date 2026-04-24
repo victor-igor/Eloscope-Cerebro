@@ -71,6 +71,7 @@ components:
     - agents/legal/themis.md
     - agents/legal/solon.md
     - agents/legal/hermes-legal.md
+    - agents/legal/notario.md
 
   tasks:
     - tasks/handoff-create.md
@@ -92,6 +93,8 @@ components:
     - tasks/check-compliance.md
     - tasks/secure-payment.md
     - tasks/closing-review.md
+    - tasks/send-contract-autentique.md
+    - tasks/check-signature-status.md
 
   workflows:
     - workflows/presales-to-kickoff.md
@@ -159,7 +162,7 @@ areas:
   legal:
     orchestrator: themis
     purpose: Contratos — análise jurídica, compliance regulatório, garantia de pagamento, fechamento
-    agents: [themis, solon, hermes-legal]
+    agents: [themis, solon, hermes-legal, notario]
 
 invariants:
   - Handoffs são sempre artefato estruturado (handoff-{from}-{to}-{date}.md), nunca conversa livre
@@ -169,4 +172,5 @@ invariants:
   - Qualquer fluxo com dado pessoal invoca Pallas (LGPD)
   - Contratos de integração inter-área são versionados em ai/contracts/
   - Nomenclatura astronômica/mitológica mantida (Luna, Eloscope)
-  - Contratos comerciais passam por Thêmis (análise) → Sólon (compliance) → Hermes-Legal (pagamento) antes de assinar
+  - Contratos comerciais passam por Thêmis (análise) → Sólon (compliance) → Hermes-Legal (pagamento) → Notário (envio) antes de assinar
+  - Notário nunca envia sem GO de Thêmis e confirmação humana do resumo de envio

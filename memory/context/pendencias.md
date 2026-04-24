@@ -14,8 +14,8 @@
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
-- [23/04/2026] **Gustavo Bravo — enviar contrato para assinatura** · Gustavo já enviou dados (CNPJ/CPF) · preencher contrato, enviar pra assinar, lançar pagamento · antes de sábado 25/04
-- [23/04/2026] **Gustavo Bravo — preparar sessão presencial 25/04** · sábado na agência · criar cronograma geral + roteiro da primeira sessão · participantes: Lucas + Gustavo + Rafael + Javi
+- [23/04/2026] **Gustavo Bravo — enviar contrato para assinatura** · Gustavo já enviou dados (CNPJ/CPF) · preencher contrato, enviar pra assinar, lançar pagamento · antes de sábado 26/04
+- [24/04/2026] **Gustavo Bravo — confirmar horário sábado 26/04** · sessão presencial discovery · participantes: Lucas + Gustavo + Rafael + Javi
 - [23/04/2026] 🔥 **Enertelles — enviar proposta pro Alex URGENTE** · `proposta-enertelles.html` + `proposta-alex-review.md` · lead esfriando, precisa sair hoje · Alex revisa → call Telles+Alex+Lucas
 - [23/04/2026] **Enertelles — alinhar split com Alex** · comissão/recorrente se fechar (5-10% mensalidade?) · alinhar antes da call com Telles
 - [23/04/2026] **Enertelles — marcar call** Telles + Alex + Lucas · 45 min · Alex agenda
@@ -76,5 +76,7 @@
 - [19/04/2026] Lista de leads Eloscope para reativação GTM beta — Victor precisa extrair
 - [19/04/2026] **Slides call de vendas: montar no Canva** com design system Eloscope · arquivo base em `04-apresentacao/slides-call-vendas.md`
 - [19/04/2026] **Definir quem conduz a call de vendas** — Victor ou Lucas (impacta treinamento e preparação)
+
+- [24/04/2026] **Bravo — ClickUp estruturado** · pasta "Bravo Agency" criada com 6 listas e 33 tarefas · workspace 90171169593 / Espaço da equipe
 
 *Atualizado: 24/04/2026*
