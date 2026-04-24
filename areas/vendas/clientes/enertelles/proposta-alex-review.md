@@ -37,7 +37,7 @@ Isso muda tudo. Se ela entra **sem processo, sem script, sem CRM, sem meta e sem
 - Script de qualificação (o que perguntar, como classificar)
 - CRM com pipeline visual (onde cada lead está)
 - Meta clara + comissão por performance (incentivo)
-- IA de apoio qualificando lead no WhatsApp antes de chegar nela
+- Site profissional que transmita credibilidade antes do contato
 
 Sem isso, ela vai virar uma Rafaela 2 — atendendo, não vendendo.
 
@@ -58,26 +58,31 @@ Sem isso, ela vai virar uma Rafaela 2 — atendendo, não vendendo.
 **Fase 2 — Estruturação (8 semanas)**
 - **Playbook comercial solar customizado** — scripts de qualificação, objeções, follow-up, pós-venda
 - **CRM próprio** com pipeline de 6 etapas (lead → qualificação → visita → proposta → negociação → fechamento)
-- **3 Agentes de IA operando no WhatsApp:**
-  1. **SDR de tráfego** — qualifica lead novo que chega do Meta/Google (responde em 2 min, inclusive fim de semana)
-  2. **Follow-up de lead frio** — nutre lead que disse "vou comprar daqui 1-2 anos" (o Telles pediu isso especificamente)
-  3. **Reativação da base 500** — campanha automática pros 500 clientes instalados pedindo indicação
+- **Site profissional novo** (5-8 páginas, responsivo, integrado ao CRM)
+- **Páginas SEO/GEO** por cidade e serviço — conteúdo otimizado pra Google e buscas por IA (ChatGPT, Perplexity)
 - **Dashboard** com métricas de vendas, performance da equipe e dados do tráfego (pra você e pro Telles)
 - **Treinamento** da equipe comercial (Rafaela + a menina nova + Telles visão gestor)
 
 **Fase 3 — Acompanhamento (mensal)**
 - Review mensal de 60 min (Lucas + Telles + Alex)
 - Relatório semanal automático
-- Tuning dos agentes e do playbook conforme o funil evolui
+- Publicação contínua de páginas SEO/GEO
+- Tuning do playbook conforme o funil evolui
+
+**Upgrade futuro — IA de Atendimento (quando o processo estiver rodando)**
+- SDR automático no WhatsApp (qualifica lead 24/7)
+- Follow-up inteligente de lead frio (1-2 anos)
+- Reativação da base 500 (campanha automática de indicação)
+- Mensalidade sobe com o upgrade — Telles já vai estar vendo resultado antes de decidir
 
 ### Resultado esperado em 90 dias
 
 | O que | Quanto |
 |-------|--------|
-| Reativação da base 500 (indicações) | 5-10 vendas extras no trimestre = **R$ 85-170k** |
-| SDR recuperando leads perdidos | 2-3 vendas extras/mês = **R$ 34-51k/mês** |
-| Menina nova vendendo com processo | Meta individual + comissão = performance real |
+| Processo comercial rodando | Menina nova vendendo com script, CRM e meta — não improvisando |
+| Site gerando tráfego orgânico | Presença em buscas Google + IA (SEO/GEO) — reduz dependência de mídia |
 | Telles livre pra ticket alto | Tempo pra network Atibaia (projetos R$100-500k) |
+| Base pronta pra reativação | 500 clientes segmentados e prontos pra campanha (fase 2 com IA) |
 
 ---
 
@@ -85,41 +90,28 @@ Sem isso, ela vai virar uma Rafaela 2 — atendendo, não vendendo.
 
 | Item | Valor |
 |------|-------|
-| **Setup (implantação completa)** | **R$ 6.000** (único) |
-| **Mensalidade (agentes + CRM + acompanhamento)** | **R$ 3.500/mês** |
+| **Setup (consultoria + implantação)** | **R$ 3.500** |
+| **Site profissional** | **R$ 997** |
+| **Total setup** | **R$ 4.497** (único) |
+| **Mensalidade (acompanhamento + CRM + dashboard + páginas SEO/GEO)** | **R$ 997/mês** |
 | **Fidelidade mínima** | 3 meses |
-| **Total primeiros 3 meses** | **R$ 16.500** |
+| **Total primeiros 3 meses** | **R$ 7.488** |
 
 **Payback:** com 1 venda extra por mês (R$17k), o investimento se paga no primeiro mês.
 
-**Custos de ferramentas (o que o Telles paga direto):**
-- WhatsApp API (Meta): R$300-1.500/mês
-- Servidor (Vercel + Supabase): R$300-400/mês
-- Autenticação (Clerk): R$125/mês
+**Custos que o Telles paga direto (servidor + ferramentas):**
+- Hosting do site + servidor: R$80-200/mês
+- Domínio (se trocar): R$40-80/ano
+- WhatsApp API (só quando ativar IA — fase 2): R$300-1.500/mês
 - Mídia: **mantém os R$2.000/mês atuais** — não aumentamos
 
 ---
 
 ## E o site?
 
-O Telles quer site novo — e a gente faz. Mas **o site resolve topo de funil**. Se o topo melhora e o meio continua quebrado, a gente só está jogando mais lead num funil que não converte.
+Tá incluso. O site novo entra no setup junto com o processo comercial — R$997 dentro do total. Páginas de conteúdo SEO/GEO (por cidade e serviço) são publicadas continuamente dentro da mensalidade.
 
-**Proposta:** fazer o 6OS primeiro (ou em paralelo), e o site como contrato separado. O 6OS organiza o comercial pra quando o site novo começar a trazer mais lead, ter estrutura pra converter.
-
-Se o Telles quiser fechar os dois juntos, a gente monta um pacote com condição. Mas o 6OS é o que resolve a dor de agora — especialmente com a menina nova entrando.
-
----
-
-## Sobre o concorrente (Black Scale)
-
-Se o Telles mencionar o cara que mandou aquela proposta de R$1.500 + R$800:
-
-- O diagnóstico deles é bom ("Gigante Disfarçado" é verdade)
-- Mas os **250 mini sites** são Doorway Pages — Google pune com rebaixamento ou banimento do domínio. O `enertelles.com.br` tem autoridade hoje, não vale arriscar
-- **"Blindagem de Reputação"** = filtrar reviews negativos — viola política do Google Business Profile, pode suspender o perfil
-- R$1.500 de setup não paga 1 dia de dev — ou é template, ou é IA gerando conteúdo em massa sem revisão
-
-A gente não precisa atacar eles. Só mostrar pro Telles o risco: *"se o domínio cair, você perde anos de ranking orgânico. Quanto vale isso?"*
+**A diferença:** a gente não entrega só site. Entrega processo + site + acompanhamento. O site sozinho não resolve — sem processo, mais lead é mais lead perdido. Juntos, o site traz e o processo converte.
 
 ---
 
