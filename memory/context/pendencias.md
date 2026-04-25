@@ -14,6 +14,15 @@
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
+- [25/04/2026] **Enertelles — refinar apresentação** · slides + narrativa de valor + cases + próximos passos · validar com Victor antes de enviar pro Alex
+- [25/04/2026] **Bravo — refinar script de treinamento Thiago** · objetivos, tópicos principais, CTAs ao final
+- [25/04/2026] **Bravo — confirmar reunião presencial 13h45** com Thiago · endereço, pauta, duração
+- [25/04/2026] **Bravo — alinhar envio de contrato + forma de pagamento** com Thiago · prazo + responsável
+- [25/04/2026] **Maqlam — iniciar campanha de cashback** desenhada na reunião · registrar métricas a monitorar
+- [25/04/2026] **Morgana — desbloquear ou substituir número** (bloqueado nos testes de disparo de imagem) · registrar novo fluxo de testes
+- [25/04/2026] **Maqlam — Victor liberar IA BDR** para o time da Maqlam · acompanhar primeiros testes/feedbacks
+- [25/04/2026] **Revisar definição de ticket por produto + ICP** (insight palestra Verhaw/ACIRP) · possível espelho do modelo Verhaw
+
 - [23/04/2026] **Gustavo Bravo — enviar contrato para assinatura** · Gustavo já enviou dados (CNPJ/CPF) · preencher contrato, enviar pra assinar, lançar pagamento · antes de sábado 26/04
 - [24/04/2026] **Gustavo Bravo — confirmar horário sábado 26/04** · sessão presencial discovery · participantes: Lucas + Gustavo + Rafael + Javi
 - [23/04/2026] 🔥 **Enertelles — enviar proposta pro Alex URGENTE** · `proposta-enertelles.html` + `proposta-alex-review.md` · lead esfriando, precisa sair hoje · Alex revisa → call Telles+Alex+Lucas
@@ -79,4 +88,4 @@
 
 - [24/04/2026] **Bravo — ClickUp estruturado** · pasta "Bravo Agency" criada com 6 listas e 33 tarefas · workspace 90171169593 / Espaço da equipe
 
-*Atualizado: 24/04/2026*
+*Atualizado: 25/04/2026*
