@@ -14,7 +14,8 @@
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
-- [25/04/2026] **Enertelles — refinar apresentação** · slides + narrativa de valor + cases + próximos passos · validar com Victor antes de enviar pro Alex
+- [25/04/2026] ✅ **Enertelles — proposta v4 reestruturada** · setup modular (A=processo+IA R$3.500, B=site+marca R$3.000), CRM externo, blog automatizado R$487/mês, parcelamento 12×R$650
+- [25/04/2026] **Enertelles — atualizar proposta HTML** · `proposta-enertelles.html` está na v3, precisa refletir v4
 - [25/04/2026] **Bravo — refinar script de treinamento Thiago** · objetivos, tópicos principais, CTAs ao final
 - [25/04/2026] **Bravo — confirmar reunião presencial 13h45** com Thiago · endereço, pauta, duração
 - [25/04/2026] **Bravo — alinhar envio de contrato + forma de pagamento** com Thiago · prazo + responsável
@@ -25,8 +26,8 @@
 
 - [23/04/2026] **Gustavo Bravo — enviar contrato para assinatura** · Gustavo já enviou dados (CNPJ/CPF) · preencher contrato, enviar pra assinar, lançar pagamento · antes de sábado 26/04
 - [24/04/2026] **Gustavo Bravo — confirmar horário sábado 26/04** · sessão presencial discovery · participantes: Lucas + Gustavo + Rafael + Javi
-- [23/04/2026] 🔥 **Enertelles — enviar proposta pro Alex URGENTE** · `proposta-enertelles.html` + `proposta-alex-review.md` · lead esfriando, precisa sair hoje · Alex revisa → call Telles+Alex+Lucas
-- [23/04/2026] **Enertelles — alinhar split com Alex** · comissão/recorrente se fechar (5-10% mensalidade?) · alinhar antes da call com Telles
+- [25/04/2026] 🔥 **Enertelles — enviar proposta v4 pro Alex** · `proposta-alex-review.md` + `proposta-enertelles.md` · pricing reestruturado (modular R$3.500+R$3.000, 12×R$650, blog R$487/mês) · Alex revisa → call Telles+Alex+Lucas
+- [25/04/2026] **Enertelles — alinhar split com Alex** · comissão/recorrente se fechar (5-10% mensalidade?) · alinhar antes da call com Telles
 - [23/04/2026] **Enertelles — marcar call** Telles + Alex + Lucas · 45 min · Alex agenda
 - [23/04/2026] **Elite Maqlam — reunião 24/04 às 15h** · apresentar alterações de cashback · falta: testar geração de leads (bug cursor), salvar leads em remessa
 - [23/04/2026] **Morgana — inserir primeira lista do Matheus** · começar prospecções com os contatos recebidos

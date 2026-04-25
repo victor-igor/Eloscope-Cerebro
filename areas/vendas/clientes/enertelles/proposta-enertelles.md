@@ -1,6 +1,6 @@
 # Proposta Comercial — Enertelles · Eloscope
 
-> **Versão final consolidada (v3)** — para validação conjunta de Victor (Eloscope) e Alex (parceiro de tráfego da Enertelles)
+> **Versão v4** — pricing reestruturado, CRM externo, blog automatizado, IA como upgrade
 > **Para:** Telles · Enertelles (Catanduva)
 > **De:** Lucas Negreiro · Eloscope
 > **Data:** 25/04/2026
@@ -45,6 +45,10 @@ A Enertelles opera energia solar há 5 anos em Catanduva e Atibaia. Equipe técn
 - Estrutura aguenta 20 vendas/mês, mas Telles tem teto pessoal
 - Tempo dele preso em projetos pequenos sufoca network de R$ 100–500k
 
+**🔻 Zero presença orgânica:**
+- Sem blog, sem conteúdo, sem SEO — 100% dependente de mídia paga
+- Concorrentes locais também não fazem conteúdo = oportunidade de dominar Catanduva no Google e em buscas por IA (Perplexity, ChatGPT Search)
+
 ---
 
 ## 3. Tese da proposta
@@ -52,61 +56,123 @@ A Enertelles opera energia solar há 5 anos em Catanduva e Atibaia. Equipe técn
 **Não vendemos marketing. Vendemos infraestrutura de confiança comercial.**
 
 Confiança não se improvisa. Vem de 3 vetores:
-1. **Marca** — credibilidade transmitida antes do contato
-2. **Script de venda** — como o vendedor conduz a conversa
-3. **Relacionamento** — pós-contato, follow-up, presença consistente
+1. **Marca** — credibilidade transmitida antes do contato (site, identidade visual, presença digital)
+2. **Processo** — como o vendedor conduz a conversa (script, CRM, follow-up)
+3. **Autoridade local** — ser a referência em energia solar na região (conteúdo, SEO, presença em buscas por IA)
 
-**Primeira entrega da Eloscope:** descobrir qual desses 3 vetores puxa fechamento na Enertelles via IA preditiva analisando conversas reais. Depois reforçamos esse vetor com processo, ferramenta e treinamento.
+**Primeira entrega da Eloscope:** estruturar processo comercial + presença digital. Depois, IA Copiloto e Assistida entram como upgrade quando o processo estiver rodando com dados reais.
 
 ---
 
 ## 4. O que entregamos
 
-### Setup — 4 semanas (1 mês)
+### Bloco A — Implantação Comercial + IA (setup)
 
 | Semana | Entregas |
-|--------|----------|
-| **1** | Mapeamento completo do funil + audit base 500 clientes + decisão de escopo do site/marca + acesso a conversas históricas |
-| **2** | Site novo (5 páginas core) + atualização visual da marca + setup CRM básico + playbook comercial v1 |
-| **3** | **IA preditiva ativa** (Openclaw + n8n + ChatGPT API) lendo conversas + dashboard de métricas + páginas SEO/GEO iniciais |
-| **4** | Treinamento da equipe comercial + handoff completo + relatório do fator confiança identificado |
+| ------ | -------- |
+| **1** | Mapeamento completo do funil + audit base 500 clientes + acesso a conversas históricas |
+| **2** | Playbook comercial solar customizado (scripts, objeções, follow-up, cadências) + setup CRM |
+| **3** | Configuração dos agentes IA (Copiloto + Assistida) + integração WhatsApp + dashboard de métricas |
+| **4** | Treinamento da equipe (processo + IA) + handoff completo + relatório diagnóstico |
 
-**Stack incluído no setup:**
-- Site profissional novo (5–8 páginas, responsivo, integrado ao CRM)
-- Atualização de marca (alinhar identidade visual ao público-alvo de ticket alto)
-- CRM próprio (versão básica) — pipeline 6 etapas
+**O que inclui:**
+- Diagnóstico completo do funil e base de 500 clientes
 - Playbook comercial solar customizado (scripts, objeções, follow-up, pós-venda)
-- IA preditiva (Openclaw + n8n + ChatGPT API) lendo conversas e gerando insight
-- Dashboard de métricas (Lucas, Telles e Alex)
-- Treinamento da equipe (vendedor + Telles visão gestor)
+- Configuração de pipeline em CRM externo (HubSpot Free, Pipedrive ou similar — Telles escolhe)
+- IA Copiloto (5 skills no WhatsApp do vendedor) + IA Assistida (4 skills no dashboard do gestor)
+- Treinamento da equipe comercial (vendedora nova + Telles visão gestor + uso da IA)
+- Relatório diagnóstico com gargalos priorizados e plano de ação
 
-### Mensalidade — a partir do mês 2
+**CRM — por que externo e não próprio:**
+A Eloscope foca em **estratégia e resultado**, não em manutenção de ferramenta. CRMs como HubSpot (gratuito), Pipedrive ou RD Station já resolvem o pipeline. A gente configura, treina e acompanha — o Telles fica dono da ferramenta e dos dados.
 
-- Acompanhamento mensal (review 60 min Lucas + Telles + Alex)
-- Tuning contínuo do playbook e do CRM
-- Publicação contínua de páginas SEO/GEO (cidade × serviço)
-- Suporte técnico
-- Análise mensal das conversas via IA preditiva
-- **Inclui até 5 horas/mês de escopo extra** (consultoria, ajustes fora do roadmap, demandas pontuais)
-- **Cancelável com 30 dias de aviso prévio** — sem fidelidade na mensalidade
+### Bloco B — Site + Rebranding Básico (setup)
 
-### IA de atendimento (SDR no WhatsApp) — Fase futura
+| Semana | Entregas |
+| ------ | -------- |
+| **1-2** | Briefing visual + decisão de escopo do site/marca |
+| **2-3** | Site profissional novo (5–8 páginas, responsivo, otimizado SEO) |
+| **3-4** | Atualização visual da marca (alinhar identidade ao público de ticket alto) + publicação |
 
-Não está incluída agora. Só entra como upgrade após **60–90 dias com processo rodando** — para que a IA opere em cima de dados reais, não hipóteses. Mensalidade sobe quando ativar (Telles já vai estar vendo resultado antes de decidir).
+**O que inclui:**
+- Site profissional novo (5–8 páginas, responsivo, rápido)
+- Rebranding básico (identidade visual alinhada ao posicionamento de confiança)
+- SEO on-page (estrutura, meta tags, schema markup para energia solar)
+- Integração com CRM (formulários de contato → pipeline)
+
+### Mensalidade — Blog Diário SEO/GEO Regional (a partir do mês 2)
+
+**Produção automatizada de conteúdo diário** focado em Catanduva e região, posicionando a Enertelles como autoridade local em energia solar.
+
+**O que inclui:**
+- **~20-22 posts/mês** (1 por dia útil) — conteúdo otimizado para SEO + GEO (buscas por IA)
+- **Pesquisa automatizada de keywords regionais** — Catanduva, Olímpia, São José do Rio Preto, cidades vizinhas
+- **Contexto do mercado solar** correlacionado com Enertelles (legislação, economia, cases locais)
+- **Análise SEO básica regional** — tracking de posicionamento nas keywords-alvo
+- **Relatório mensal** de performance do conteúdo (posições, tráfego orgânico, keywords conquistadas)
+
+**Como funciona a automação:**
+1. Workflow pesquisa keyword trending regional + cruza com contexto solar
+2. LLM gera post otimizado SEO/GEO com referência à Enertelles
+3. Revisão semanal de qualidade (10 min)
+4. Publicação automática no blog do site
+
+**Por que isso importa:**
+- Nenhum concorrente solar em Catanduva faz conteúdo — quem começar primeiro domina
+- Blog diário = volume que constrói autoridade no Google em semanas, não meses
+- GEO (Generative Engine Optimization) = aparecer quando alguém pergunta "melhor empresa de energia solar em Catanduva" no ChatGPT, Perplexity ou Google AI
+- Reduz dependência de mídia paga a médio prazo
+
+### IA Copiloto + IA Assistida (incluída no Bloco A)
+
+Implantada no mesmo onboarding do processo comercial. Os agentes são configurados nas semanas 3-4 e começam a operar quando houver dados reais de conversas (~60-90 dias de pipeline ativo).
+
+**IA Copiloto (no WhatsApp do vendedor):**
+- Script personalizado por lead — mensagem sugerida baseada no perfil + estágio + playbook
+- Próximo passo sugerido — após cada conversa, define ação + timing
+- Alerta de esfriamento — avisa quando lead está sem contato há X dias + mensagem de reaquecimento
+- Análise de conversa — resumo, objeções, score, sugestão de melhoria
+- Follow-up inteligente — personalizado, no timing certo, no canal certo
+
+**IA Assistida (dashboard do gestor):**
+- Lead Scoring — ranqueia leads por probabilidade de fechar hoje
+- Reativação de base — analisa os 500 clientes e prioriza quem reativar
+- Relatório mensal executivo — métricas consolidadas para reunião de resultado
+- Análise de padrões de objeção — top objeções, em qual estágio, eficácia do tratamento
+
+**Cronograma da IA dentro do Bloco A:**
+- Semana 1-2: processo + playbook + CRM (IA precisa disso primeiro)
+- Semana 3: configuração dos agentes IA (prompts, skills, integração WhatsApp)
+- Semana 4: treinamento + handoff + IA em staging
+- Mês 2-3: IA começa a operar com dados reais acumulados
 
 ---
 
 ## 5. Modelo comercial
 
+### Blocos de setup (escolha modular)
+
+| Bloco | O que inclui | À vista | 12× com juros |
+| ----- | ------------ | ------- | ------------- |
+| **A — Implantação Comercial + IA** | Diagnóstico + playbook + CRM + treinamento + IA Copiloto + IA Assistida (tudo no mesmo onboarding) | **R$ 3.500** | **12× R$ 350** (total R$ 4.200) |
+| **B — Site + Rebranding** | Site 5-8 páginas + identidade visual + SEO on-page | **R$ 3.000** | **12× R$ 300** (total R$ 3.600) |
+| **A + B (completo)** | Tudo junto — implementação única | **R$ 6.500** | **12× R$ 650** (total R$ 7.800) |
+
+**Como funciona:**
+- O Telles escolhe **A**, **B**, ou **A + B**
+- Bloco A inclui a IA (Copiloto + Assistida) no mesmo onboarding — processo e agentes são implantados juntos, a IA começa a rodar quando tiver dados reais (~60-90 dias)
+- Bloco B é independente — pode contratar junto com A ou separado, antes ou depois
+- Parcelamento em até 12× com juros (parcela fixa)
+
+### Recorrência
+
 | Item | Valor |
-|------|-------|
-| **Setup único** (mapeamento + IA preditiva + site + marca + CRM + playbook + treinamento) | **R$ 4.497** |
-| **Mensalidade** (mês 2+, cancelável com 30 dias, inclui 5h/mês de escopo extra) | **R$ 997/mês** |
-| **Hora avulsa** (acima das 5h/mês incluídas, ou para escopo fora do contrato) | **R$ 180/hora** |
+| ---- | ----- |
+| **Mensalidade — Blog diário SEO/GEO regional** (~20-22 posts/mês + análise keywords + relatório) | **R$ 487/mês** |
+| **Hora avulsa** (escopo fora do contrato) | **R$ 180/hora** |
 | **Comissão Eloscope** (mês 2+, sobre venda atribuída via CRM) | 0% até R$30k · 3% R$30–60k · 4% acima |
-| **Infra paga direto pelo Telles** | ~R$ 200/mês |
-| **Exclusividade mútua e geográfica** | 12 meses |
-| **Implementação** | 4 semanas (1 mês) |
+
+**Mensalidade do blog** inicia após o site estar no ar (Bloco B contratado). Se contratar só Bloco A, mensalidade não se aplica até ter site.
 
 ### Comissão escalonada — detalhe
 
@@ -120,16 +186,19 @@ Não está incluída agora. Só entra como upgrade após **60–90 dias com proc
 
 ### Custos que o Telles paga direto a fornecedores
 
-| Item | Valor estimado |
-|------|----------------|
-| Hosting site + servidor | R$ 80/mês |
-| Openclaw (IA de análise) | R$ 80/mês |
-| ChatGPT API (consumo via Openclaw + n8n) | R$ 50–150/mês conforme volume |
-| Domínio (se trocar) | R$ 40–80/ano |
-| WhatsApp API (só se ativar IA SDR — fase futura) | R$ 300–1.500/mês |
-| Mídia (Alex) | mantém R$ 2.000/mês atuais — não aumentamos |
+| Item | Valor estimado | Quando |
+| ---- | -------------- | ------ |
+| Hosting site + servidor | R$ 80–200/mês | Se contratar Bloco B |
+| CRM (HubSpot Free = R$0 · Pipedrive = ~R$60/mês) | R$ 0–100/mês | Bloco A |
+| Domínio (se trocar) | R$ 40–80/ano | Bloco B |
+| API de IA — agentes Copiloto + Assistida (LLM) | R$ 50–200/mês conforme volume | Bloco A (mês 2+) |
+| API de IA — blog automatizado (LLM) | ~R$ 30–50/mês | Mensalidade |
+| WhatsApp Business API (Meta) | R$ 50–300/mês | Bloco A (IA Copiloto) |
+| Mídia (Alex) | mantém R$ 2.000/mês atuais — não aumentamos | — |
 
-**Total infra Eloscope-stack:** ~R$ 200/mês direto a fornecedores.
+**Total infra estimado:**
+- Só Bloco A: ~R$ 100–600/mês
+- A + B + mensalidade blog: ~R$ 250–930/mês
 
 ---
 
@@ -168,16 +237,16 @@ Confiança não é genérica. Pode ser marca / script / relacionamento. **Primei
 
 ## 8. Resposta à régua dos 5% CAC do Telles
 
-> **"Investimento em marketing tem que ser 5% da venda."** Concordamos. E a v3 cabe em qualquer cenário:
+> **"Investimento em marketing tem que ser 5% da venda."** Concordamos. E a v4 cabe em qualquer cenário:
 
 | Venda atribuída/mês | Mensalidade | Comissão | Total Eloscope | 5% teto Telles | Folga |
 |---------------------|-------------|----------|----------------|----------------|-------|
-| R$ 30k | R$ 997 | R$ 0 | R$ 997 | R$ 1.500 | R$ 503 ✅ |
-| R$ 50k | R$ 997 | R$ 600 | R$ 1.597 | R$ 2.500 | R$ 903 ✅ |
-| R$ 80k | R$ 997 | R$ 1.300 | R$ 2.297 | R$ 4.000 | R$ 1.703 ✅ |
-| R$ 200k | R$ 997 | R$ 6.100 | R$ 7.097 | R$ 10.000 | R$ 2.903 ✅ |
+| R$ 30k | R$ 487 | R$ 0 | R$ 487 | R$ 1.500 | R$ 1.013 ✅ |
+| R$ 50k | R$ 487 | R$ 600 | R$ 1.087 | R$ 2.500 | R$ 1.413 ✅ |
+| R$ 80k | R$ 487 | R$ 1.300 | R$ 1.787 | R$ 4.000 | R$ 2.213 ✅ |
+| R$ 200k | R$ 487 | R$ 6.100 | R$ 6.587 | R$ 10.000 | R$ 3.413 ✅ |
 
-**Sempre dentro dos 5%. Sempre alinhado com o crescimento dele.** Se ele não vender, a Eloscope ganha menos. Se ele vender mais, ganha proporcionalmente — mas nunca ultrapassa a régua.
+**Sempre dentro dos 5%. Folga ainda maior que na versão anterior.** Se ele não vender, a Eloscope ganha menos. Se ele vender mais, ganha proporcionalmente — mas nunca ultrapassa a régua.
 
 **Teste do projeto:** se em 12 meses não destravarmos +15 vendas incrementais, a Eloscope não justifica os 5%. **É esse o teste que oferecemos.**
 
@@ -187,25 +256,28 @@ Confiança não é genérica. Pode ser marca / script / relacionamento. **Primei
 
 | O que | Resultado |
 |-------|-----------|
-| Processo comercial rodando | Vendedor com script + CRM + meta progressiva — não improvisando |
-| Site gerando tráfego orgânico | Presença em buscas Google + IA (SEO/GEO) — reduz dependência de mídia |
+| Processo comercial rodando | Vendedora com script + CRM + meta progressiva — não improvisando |
+| Site novo + marca atualizada | Presença profissional que transmite confiança antes do contato |
+| ~60-66 posts publicados | Autoridade local em energia solar — domínio nas buscas regionais |
+| SEO/GEO ativo | Aparecer em "energia solar Catanduva" no Google, ChatGPT Search, Perplexity |
 | Telles livre pra ticket alto | Tempo pra network e projetos R$ 100–500k |
-| Vetor de confiança identificado | Sabemos se é marca / script / relacionamento que fecha venda |
-| Base pronta pra reativação | 500 clientes segmentados — pronta pra campanha (fase IA) |
+| Base mapeada pra reativação | 500 clientes segmentados — pronta pra campanha (fase IA) |
+| Decisão sobre IA | Dados reais de 60-90 dias pra decidir se ativa Copiloto + Assistida |
 
 ---
 
 ## 10. Próximos passos
 
-1. **Victor (Eloscope) e Alex revisam essa proposta** — modelo comercial, exclusividade mútua, comissão escalonada, hora avulsa
+1. **Victor (Eloscope) e Alex revisam essa proposta** — modelo modular, blog automatizado, CRM externo, comissão escalonada
 2. **Call Lucas + Victor + Alex (30 min)** — alinhar narrativa antes do Telles
 3. **Definir split com Alex** — sobre mensalidade (5–10%?) e/ou sobre comissão (% do que Eloscope receber)
-4. **Call Lucas + Alex + Telles (45 min)** — pitch ancorado em VGV/confiança/exclusividade
+4. **Call Lucas + Alex + Telles (45 min)** — pitch ancorado em VGV/confiança/exclusividade + demo do blog automatizado
 5. **Contrato amarrado** com:
    - 4 pré-requisitos contratuais como cláusula
    - Tabela de comissão escalonada
    - Cláusula de exclusividade mútua geográfica (12 meses)
-   - Política de hora avulsa (R$ 180/h, 5h/mês incluídas)
+   - Política de hora avulsa (R$ 180/h)
+   - Blocos A e B discriminados separadamente
 
 ---
 
@@ -222,11 +294,11 @@ Confiança não é genérica. Pode ser marca / script / relacionamento. **Primei
 
 ### Sobre a régua de 5% (resposta direta ao seu áudio)
 
-A versão que você viu era a antiga (R$16k setup). Mesmo a versão intermediária com fidelidade não resolvia — a objeção do Telles não é nominal, é estrutural. Refiz o modelo inteiro. **Sem fidelidade**, **comissão escalonada começando em 0%**, **exclusividade mútua geográfica** (a Eloscope também não atende outro solar em Catanduva — assumimos risco junto), **implementação em 1 mês** com IA preditiva analisando conversas reais já no setup.
+A versão que você viu era a antiga (R$16k setup). Refiz o modelo inteiro na v4: **setup modular** (processo separado de site), **CRM externo** (sem manutenção pra nós), **blog automatizado por R$487/mês** (nenhuma agência entrega 20+ posts/mês nesse preço), **comissão escalonada começando em 0%**, **exclusividade mútua geográfica**, **IA como upgrade futuro** (não no setup).
 
-Régua dos 5%? **Cabe em todos cenários.** Se ele não vender mais que R$30k/mês de venda atribuída, paga só os R$997. Acima disso, escala — mas sempre dentro dos 5%.
+Régua dos 5%? **Cabe com folga em todos cenários.** Mensalidade de R$487 = muito abaixo do teto. Comissão só se ele vender acima de R$30k/mês. **Total Eloscope nunca ultrapassa 3% mesmo nos cenários mais altos.**
 
-Game over na objeção. Mas precisa narrativa correta na call.
+O setup de R$6.500 é investimento único que se paga com 1 venda extra. Depois, R$487/mês por blog diário SEO/GEO que nenhum concorrente em Catanduva faz.
 
 ---
 
