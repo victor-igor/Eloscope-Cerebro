@@ -1,86 +1,101 @@
 # Proposta Enertelles — versão pra Alex revisar
 
-> **Para:** Alex (revisar antes de enviar ao Telles)
+> **Para:** Alex (revisar antes da call com Lucas+Victor+Alex e da call com o Telles)
 > **De:** Lucas — Eloscope
-> **Atualizado:** 25/04/2026
-> **Versão completa:** `proposta-enertelles-v2.md` (Victor está revisando)
+> **Atualizado:** 25/04/2026 (v3)
+> **Versão completa:** `proposta-enertelles-v3.md` (Victor está revisando)
 
 ---
 
-## Resposta ao seu áudio (transcrição mental — pra mandar como áudio)
+## Resposta direta ao seu áudio (mandar como áudio pro Alex)
 
-Alex, entendi 100% o ponto do Telles — e na real **ele tá certo na lógica dele**. A versão que você viu era a antiga, com setup de R$16k. A versão atual baixou pra **R$4.497 de setup + R$997/mês**, então o recorrente já encaixa nos 5% dele se a operação faturar acima de R$20k/mês — e ele já fatura R$42k. Então **R$997/mês não é alto**.
+Alex, entendi 100% o ponto do Telles e, na real, **ele tá certo na lógica dele**. A versão que você viu era a antiga (R$16k setup), e mesmo a versão intermediária com fidelidade de 3 meses não resolvia — porque **a objeção dele não é nominal, é estrutural**: ele só aceita marketing dentro dos 5% da venda.
 
-Mas o ponto é outro: **a gente não tá vendendo marketing. Tá vendendo destravamento de VGV.**
+Refiz o modelo comercial inteiro. Versão final tem 4 mudanças que matam a objeção dele:
 
-Segmento dele tem ticket alto, base de 500 clientes, vendedor saindo de férias e menina nova entrando sem processo. O que a gente entrega não é lead — é o **processo, CRM e treinamento que faz a venda acontecer com a equipe que ele já tem**. Concorrente do carinha-com-moto não tem isso.
+**1. Sem fidelidade na mensalidade.** R$997/mês pode ser cancelado com 30 dias de aviso. Ele não fica preso.
 
-Antes de mandar pro Telles eu queria fazer uma **call rápida com você e o Victor — 30 min** — pra alinhar a narrativa. Se a gente entrar com a régua de CAC unitário errada, ele rejeita na primeira página. Se a gente entrar com VGV anual + confiança, vira conversa diferente.
+**2. Comissão escalonada — abaixo de R$30k/mês ele não paga comissão nenhuma.** Acima disso, 3% até R$60k e 4% acima. Sempre cabe nos 5% de CAC dele.
 
-Topa marcar amanhã ou segunda?
+**3. Exclusividade mútua e geográfica.** Ele compromete não contratar outra agência. **A Eloscope compromete não atender outra empresa solar em Catanduva.** Reciprocidade real — a gente assume risco junto.
+
+**4. Implementação em 1 mês.** Setup R$4.497 entrega tudo em 4 semanas: mapeamento, IA preditiva analisando as conversas dele, site novo, atualização de marca, CRM, playbook, treinamento.
+
+A IA preditiva é o pulo do gato — ela lê as conversas históricas e atuais e identifica qual é o vetor que faz a Enertelles fechar venda: **marca, script ou relacionamento.** Depois a gente reforça esse vetor. Não é IA atendendo cliente — é IA gerando inteligência pro vendedor humano. Isso entra já no setup.
+
+Antes de mandar pro Telles eu preciso de uma **call rápida com você e o Victor — 30 min** — pra alinhar narrativa. Topa amanhã ou segunda?
 
 ---
 
-## O que mudou da versão antiga (resumo pra você)
+## Resumo do modelo comercial (v3)
 
-| Item | Versão Antiga (que você viu) | Versão Atual |
-|------|------------------------------|--------------|
+| Item | Valor |
+|------|-------|
+| **Setup único** (mapeamento + IA preditiva + site + marca + CRM + playbook + treinamento) | **R$ 4.497** |
+| **Mensalidade** (mês 2+, cancelável com 30 dias) | **R$ 997/mês** |
+| **Comissão Eloscope** (mês 2+, sobre venda atribuída) | 0% até R$30k · 3% R$30–60k · 4% acima |
+| **Infra paga direto pelo Telles** | ~R$ 200/mês |
+| **Exclusividade mútua geográfica** | 12 meses (sem outra solar em Catanduva atendida pela Eloscope) |
+| **Implementação** | 4 semanas |
+
+---
+
+## Como a v3 cabe na régua dos 5% (em todos os cenários)
+
+| Venda atribuída/mês | Total Eloscope | 5% teto Telles | Folga |
+|---------------------|---------------|----------------|-------|
+| R$ 30k | R$ 997 | R$ 1.500 | R$ 503 ✅ |
+| R$ 50k | R$ 1.597 | R$ 2.500 | R$ 903 ✅ |
+| R$ 80k | R$ 2.297 | R$ 4.000 | R$ 1.703 ✅ |
+| R$ 200k | R$ 7.097 | R$ 10.000 | R$ 2.903 ✅ |
+
+**Sempre dentro dos 5%.** É o pitch de fechamento — Telles testa o número dele e vê que cabe.
+
+---
+
+## O que mudou da versão anterior (resumo pra você)
+
+| Item | Versão Antiga (você viu) | v3 (atual) |
+|------|--------------------------|-----------|
 | Setup | R$16k | **R$4.497** |
-| Mensalidade | — | **R$997/mês** (3 meses mín.) |
-| Tese | "implementamos IA pra atendimento" | "destravamos VGV via infraestrutura de confiança" |
-| IA | Junto com setup | **Fase 2** — só depois de 60-90 dias de processo rodando |
-| Pré-requisitos | Sem destaque | 4 cláusulas contratuais (vendedor dedicado, metas progressivas, mapeamento antes de IA, vetor de confiança) |
+| Fidelidade | Sim (3 meses) | **Não** — cancelável com 30d |
+| Comissão | Não tinha | **Escalonada 0/3/4%** |
+| Exclusividade | Não tinha | **Mútua e geográfica (12 meses)** |
+| IA | Junto com setup, atendendo | **Preditiva no setup** (lê conversas, gera insight) — IA de atendimento só fase futura |
+| Implementação | 10–12 semanas | **4 semanas** |
 
 ---
 
-## Como responder à régua dos 5% (a parte importante)
+## Tese da call com o Telles
 
-**O Telles está medindo errado** — mistura mensal com unitário. Refazendo a conta dele com VGV anual:
+**Não vendemos marketing. Vendemos infraestrutura de confiança comercial.**
 
-- R$997/mês × 12 = R$11.964/ano de mensalidade
-- Setup R$4.497 (único, amortiza no ano 1)
-- Investimento total ano 1: **R$16.461**
-- VGV atual Enertelles: ~R$42k/mês × 12 = **R$504k/ano**
-- 5% disso = **R$25.200/ano** de teto aceitável
+Em Catanduva, o instalador-com-moto compete por preço. Enertelles não compete com isso por preço — compete por **confiança.** Confiança vem de 3 vetores: marca, script de venda, relacionamento. A IA preditiva descobre qual desses 3 puxa fechamento e a gente reforça.
 
-**O serviço já cabe na régua dele.** Faltam dados de atribuição — daí o CRM rodando antes da IA.
-
-**Teste do projeto:** se em 12 meses não gerarmos +15 vendas incrementais, a Eloscope não justifica os 5%. **É esse o teste que oferecemos pra ele.**
-
----
-
-## A narrativa anti-concorrência desleal (pra a call)
-
-Em Catanduva tem muito instalador-com-moto. Custo baixo, sem estrutura. Compete por preço. **A Enertelles não compete com isso por preço — compete por confiança.**
-
-Confiança não se improvisa. Vem de 3 vetores:
-1. **Marca** — credibilidade antes do contato
-2. **Script de venda** — como o vendedor conduz
-3. **Relacionamento** — pós-contato, follow-up consistente
-
-**Primeira entrega da Eloscope: descobrir qual desses 3 puxa fechamento na Enertelles. Depois reforçamos.**
-
-Esse é o pitch.
+Concorrente do carinha-com-moto não tem isso. Não tem CRM, processo, marca, treinamento, atribuição. **Esse é o moat real do Telles** — e a gente entrega a infraestrutura pra ele explorar.
 
 ---
 
 ## Os 4 pré-requisitos contratuais (não-negociáveis)
 
-Pra você saber antes da call — sem isso a gente não entra no projeto:
+Pra você saber antes da call — sem isso a Eloscope não entra no projeto:
 
-1. **Vendedor dedicado, exclusivo a vendas** (não pode acumular entrega de outras áreas — rotina comercial é dinâmica, deadline de outras áreas paralisa o vendedor)
-2. **Metas progressivas: 1% → 3% → 5%** (vendedor precisa de estímulo crescente, não meta fixa)
-3. **Mapeamento de processo antes de qualquer IA** (60-90 dias com CRM básico rodando, depois integramos IA com base em dados)
-4. **Investigação ativa do fator confiança** (primeira entrega é identificar marca/script/relacionamento)
+1. **Vendedor dedicado, exclusivo a vendas** (não acumula entrega de outras áreas)
+2. **Metas progressivas internas: 1% → 3% → 5%** para o vendedor da Enertelles (separado da comissão Eloscope)
+3. **Mapeamento de processo antes de qualquer IA de atendimento** (IA preditiva entra no setup, IA SDR só fase futura)
+4. **Investigação ativa do fator confiança** (primeira entrega via IA preditiva)
 
 ---
 
 ## O que eu preciso de você
 
-- **Topa a call de 30 min Lucas+Victor+Alex?** Manhã ou tarde?
+- **Topa a call de 30 min Lucas+Victor+Alex?** Manhã ou tarde? Amanhã ou segunda?
 - **Horário da menina nova** — período integral?
 - **Vendedor que vai sair** — volta ou saída definitiva?
-- **Split:** 5-10% da mensalidade recorrente faz sentido pra você enquanto o Telles estiver ativo?
+- **Split:** como faz sentido pra você?
+  - Sobre mensalidade: 5–10%?
+  - Sobre comissão: % do que a Eloscope receber?
+  - Combinação?
 
 ---
 
