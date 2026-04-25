@@ -36,7 +36,7 @@
 
 - [18/04/2026] **Hugo: Responder 7 perguntas técnicas** em `stack-tecnica.md` (VPS provider, LLM em uso, estabilidade QR, Openclaw→Paperclip, dashboard Fran, tempo de setup, CRMs testados)
 - [18/04/2026] **Lucas: Iniciar abordagem** — Morgana (esta semana), Denis e Matheus (semana que vem) · guia-comercial-lucas.md tem os scripts
-- [18/04/2026] **Lucas: Definir valor/hora de consultoria avulsa** — para quando cliente quer só consultoria sem pacote completo
+- [25/04/2026] ✅ **Valor/hora consultoria avulsa definido: R$ 180/hora** — pacote mensal inclui 5h, acima disso cobra. "Vista grossa" na prática mas mantido no contrato. (resolvia pendência de 18/04)
 - [17/04/2026] **Contratos e pagamento** — definir responsável e estrutura (condições, prazo, renovação) · template a criar
 - [18/04/2026] **Hugo: Confirmar capacidade técnica** — Openclaw/Paperclip end-to-end, conexão WhatsApp (QR code funciona?), quais CRMs integra via n8n · bloqueante para primeira entrega
 - [18/04/2026] **Hugo: Decidir ferramenta do dashboard** — Metabase, Grafana, custom ou nativo Openclaw/Paperclip · definir antes do Dia 8 do primeiro cliente

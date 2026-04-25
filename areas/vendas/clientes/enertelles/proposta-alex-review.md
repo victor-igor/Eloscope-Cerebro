@@ -32,7 +32,8 @@ Antes de mandar pro Telles eu preciso de uma **call rápida com você e o Victor
 | Item | Valor |
 |------|-------|
 | **Setup único** (mapeamento + IA preditiva + site + marca + CRM + playbook + treinamento) | **R$ 4.497** |
-| **Mensalidade** (mês 2+, cancelável com 30 dias) | **R$ 997/mês** |
+| **Mensalidade** (mês 2+, cancelável com 30 dias, inclui 5h/mês de escopo extra) | **R$ 997/mês** |
+| **Hora avulsa** (acima das 5h/mês incluídas) | **R$ 180/hora** |
 | **Comissão Eloscope** (mês 2+, sobre venda atribuída) | 0% até R$30k · 3% R$30–60k · 4% acima |
 | **Infra paga direto pelo Telles** | ~R$ 200/mês |
 | **Exclusividade mútua geográfica** | 12 meses (sem outra solar em Catanduva atendida pela Eloscope) |

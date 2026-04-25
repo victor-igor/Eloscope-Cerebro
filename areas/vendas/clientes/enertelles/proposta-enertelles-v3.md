@@ -26,7 +26,11 @@ Entregue em **4 semanas (1 mês)**:
 - Publicação contínua de páginas SEO/GEO (cidade × serviço)
 - Suporte técnico
 - Análise mensal das conversas via IA preditiva
+- **Inclui até 5 horas/mês de escopo extra** (consultoria, ajustes fora do roadmap, demandas pontuais)
 - **Cancelável com 30 dias de aviso prévio** — sem fidelidade na mensalidade
+
+### Hora avulsa — R$ 180/hora
+Acima das 5h/mês incluídas na mensalidade, ou para clientes em modelo só-projeto sem mensalidade ativa. Valor mantido no contrato — Eloscope pode flexibilizar caso a caso na prática.
 
 ### Comissão escalonada — sobre venda atribuída via CRM (a partir do mês 2)
 
@@ -127,7 +131,8 @@ E confiança vem de 3 vetores: **marca, script de venda, relacionamento.** A IA 
 | Item | Valor |
 |------|-------|
 | **Setup único** (mapeamento + IA preditiva + site + marca + CRM + playbook + treinamento) | **R$ 4.497** |
-| **Mensalidade** (mês 2+, cancelável com 30 dias) | **R$ 997/mês** |
+| **Mensalidade** (mês 2+, cancelável com 30 dias, inclui 5h/mês de escopo extra) | **R$ 997/mês** |
+| **Hora avulsa** (acima das 5h/mês incluídas) | **R$ 180/hora** |
 | **Comissão Eloscope** (mês 2+, sobre venda atribuída via CRM) | 0% até R$30k · 3% R$30–60k · 4% acima |
 | **Infra paga direto pelo Telles** | ~R$ 200/mês |
 | **Exclusividade mútua e geográfica** | 12 meses (Eloscope não atende outro solar em Catanduva) |
