@@ -1,136 +1,86 @@
-# Proposta Enertelles — 6OS + Site (versão pra Alex revisar)
+# Proposta Enertelles — versão pra Alex revisar
 
 > **Para:** Alex (revisar antes de enviar ao Telles)
 > **De:** Lucas — Eloscope
-> **Data:** 23/04/2026
+> **Atualizado:** 25/04/2026
+> **Versão completa:** `proposta-enertelles-v2.md` (Victor está revisando)
 
 ---
 
-Alex, montei a proposta pensando no que você me falou agora — a menina nova entrando no comercial, o vendedor anterior saindo de férias. Esse é o melhor momento pra entrar com o 6OS. Me diz o que acha, o que ajustar, e a gente manda pro Telles junto.
+## Resposta ao seu áudio (transcrição mental — pra mandar como áudio)
+
+Alex, entendi 100% o ponto do Telles — e na real **ele tá certo na lógica dele**. A versão que você viu era a antiga, com setup de R$16k. A versão atual baixou pra **R$4.497 de setup + R$997/mês**, então o recorrente já encaixa nos 5% dele se a operação faturar acima de R$20k/mês — e ele já fatura R$42k. Então **R$997/mês não é alto**.
+
+Mas o ponto é outro: **a gente não tá vendendo marketing. Tá vendendo destravamento de VGV.**
+
+Segmento dele tem ticket alto, base de 500 clientes, vendedor saindo de férias e menina nova entrando sem processo. O que a gente entrega não é lead — é o **processo, CRM e treinamento que faz a venda acontecer com a equipe que ele já tem**. Concorrente do carinha-com-moto não tem isso.
+
+Antes de mandar pro Telles eu queria fazer uma **call rápida com você e o Victor — 30 min** — pra alinhar a narrativa. Se a gente entrar com a régua de CAC unitário errada, ele rejeita na primeira página. Se a gente entrar com VGV anual + confiança, vira conversa diferente.
+
+Topa marcar amanhã ou segunda?
 
 ---
 
-## O cenário do Telles hoje (como a gente enxerga)
+## O que mudou da versão antiga (resumo pra você)
 
-O Telles tem **demanda chegando** — 45 a 70 leads por mês via tráfego (que você gerencia), mais indicações orgânicas. O problema nunca foi gerar lead. O problema é **o que acontece depois que o lead chega:**
-
-- **70% dos leads não recebem resposta adequada** — a Rafaela filtra no WhatsApp mas não qualifica, não faz follow-up, não trabalha objeção
-- **17 leads por mês chegam no fim de semana** e esfriam até segunda
-- **500 clientes instalados em 5 anos** que nunca receberam um contato de pós-venda, indicação, nada
-- **Zero CRM** — controle em planilha implícita, sem pipeline, sem meta, sem comissão
-- **O Telles acumula** gestão + visita técnica + fechamento — ele é o gargalo
-
-Resultado: **7-8 vendas/mês** quando a estrutura aguenta 20. São **R$ 204.000/mês** ficando na mesa.
+| Item | Versão Antiga (que você viu) | Versão Atual |
+|------|------------------------------|--------------|
+| Setup | R$16k | **R$4.497** |
+| Mensalidade | — | **R$997/mês** (3 meses mín.) |
+| Tese | "implementamos IA pra atendimento" | "destravamos VGV via infraestrutura de confiança" |
+| IA | Junto com setup | **Fase 2** — só depois de 60-90 dias de processo rodando |
+| Pré-requisitos | Sem destaque | 4 cláusulas contratuais (vendedor dedicado, metas progressivas, mapeamento antes de IA, vetor de confiança) |
 
 ---
 
-## O que mudou agora (e por que é o timing certo)
+## Como responder à régua dos 5% (a parte importante)
 
-Você me disse que:
+**O Telles está medindo errado** — mistura mensal com unitário. Refazendo a conta dele com VGV anual:
 
-1. **O vendedor atual vai tirar férias**
-2. **O Telles colocou uma menina nova no comercial**
+- R$997/mês × 12 = R$11.964/ano de mensalidade
+- Setup R$4.497 (único, amortiza no ano 1)
+- Investimento total ano 1: **R$16.461**
+- VGV atual Enertelles: ~R$42k/mês × 12 = **R$504k/ano**
+- 5% disso = **R$25.200/ano** de teto aceitável
 
-Isso muda tudo. Se ela entra **sem processo, sem script, sem CRM, sem meta e sem comissão**, vai acontecer exatamente o que acontece hoje: lead chega, ninguém qualifica direito, Telles acumula, venda não fecha.
+**O serviço já cabe na régua dele.** Faltam dados de atribuição — daí o CRM rodando antes da IA.
 
-**A menina nova precisa de infraestrutura pra performar:**
-- Script de qualificação (o que perguntar, como classificar)
-- CRM com pipeline visual (onde cada lead está)
-- Meta clara + comissão por performance (incentivo)
-- Site profissional que transmita credibilidade antes do contato
-
-Sem isso, ela vai virar uma Rafaela 2 — atendendo, não vendendo.
+**Teste do projeto:** se em 12 meses não gerarmos +15 vendas incrementais, a Eloscope não justifica os 5%. **É esse o teste que oferecemos pra ele.**
 
 ---
 
-## A proposta: 6OS (Sales Operating System)
+## A narrativa anti-concorrência desleal (pra a call)
 
-**Em 10-12 semanas, a Enertelles sai do modo sobrevivência e passa a operar com processo comercial real.**
+Em Catanduva tem muito instalador-com-moto. Custo baixo, sem estrutura. Compete por preço. **A Enertelles não compete com isso por preço — compete por confiança.**
 
-### O que a gente entrega
+Confiança não se improvisa. Vem de 3 vetores:
+1. **Marca** — credibilidade antes do contato
+2. **Script de venda** — como o vendedor conduz
+3. **Relacionamento** — pós-contato, follow-up consistente
 
-**Fase 1 — Diagnóstico (10 dias)**
-- Mapear o funil inteiro (de onde vem lead, onde trava, onde perde)
-- Auditar a base de 500 clientes (quem pode indicar, quem pode recomprar)
-- Calcular o CAC real (spoiler: a mídia dele custa R$250/cliente, os outros R$1.750 são custo de ineficiência)
-- Devolutiva em vídeo de 60 min com os números reais
+**Primeira entrega da Eloscope: descobrir qual desses 3 puxa fechamento na Enertelles. Depois reforçamos.**
 
-**Fase 2 — Estruturação (8 semanas)**
-- **Playbook comercial solar customizado** — scripts de qualificação, objeções, follow-up, pós-venda
-- **CRM próprio** com pipeline de 6 etapas (lead → qualificação → visita → proposta → negociação → fechamento)
-- **Site profissional novo** (5-8 páginas, responsivo, integrado ao CRM)
-- **Páginas SEO/GEO** por cidade e serviço — conteúdo otimizado pra Google e buscas por IA (ChatGPT, Perplexity)
-- **Dashboard** com métricas de vendas, performance da equipe e dados do tráfego (pra você e pro Telles)
-- **Treinamento** da equipe comercial (Rafaela + a menina nova + Telles visão gestor)
-
-**Fase 3 — Acompanhamento (mensal)**
-- Review mensal de 60 min (Lucas + Telles + Alex)
-- Relatório semanal automático
-- Publicação contínua de páginas SEO/GEO
-- Tuning do playbook conforme o funil evolui
-
-**Upgrade futuro — IA de Atendimento (quando o processo estiver rodando)**
-- SDR automático no WhatsApp (qualifica lead 24/7)
-- Follow-up inteligente de lead frio (1-2 anos)
-- Reativação da base 500 (campanha automática de indicação)
-- Mensalidade sobe com o upgrade — Telles já vai estar vendo resultado antes de decidir
-
-### Resultado esperado em 90 dias
-
-| O que | Quanto |
-|-------|--------|
-| Processo comercial rodando | Menina nova vendendo com script, CRM e meta — não improvisando |
-| Site gerando tráfego orgânico | Presença em buscas Google + IA (SEO/GEO) — reduz dependência de mídia |
-| Telles livre pra ticket alto | Tempo pra network Atibaia (projetos R$100-500k) |
-| Base pronta pra reativação | 500 clientes segmentados e prontos pra campanha (fase 2 com IA) |
+Esse é o pitch.
 
 ---
 
-## Investimento
+## Os 4 pré-requisitos contratuais (não-negociáveis)
 
-| Item | Valor |
-|------|-------|
-| **Setup (consultoria + implantação)** | **R$ 3.500** |
-| **Site profissional** | **R$ 997** |
-| **Total setup** | **R$ 4.497** (único) |
-| **Mensalidade (acompanhamento + CRM + dashboard + páginas SEO/GEO)** | **R$ 997/mês** |
-| **Fidelidade mínima** | 3 meses |
-| **Total primeiros 3 meses** | **R$ 7.488** |
+Pra você saber antes da call — sem isso a gente não entra no projeto:
 
-**Payback:** com 1 venda extra por mês (R$17k), o investimento se paga no primeiro mês.
-
-**Custos que o Telles paga direto (servidor + ferramentas):**
-- Hosting do site + servidor: R$80-200/mês
-- Domínio (se trocar): R$40-80/ano
-- WhatsApp API (só quando ativar IA — fase 2): R$300-1.500/mês
-- Mídia: **mantém os R$2.000/mês atuais** — não aumentamos
+1. **Vendedor dedicado, exclusivo a vendas** (não pode acumular entrega de outras áreas — rotina comercial é dinâmica, deadline de outras áreas paralisa o vendedor)
+2. **Metas progressivas: 1% → 3% → 5%** (vendedor precisa de estímulo crescente, não meta fixa)
+3. **Mapeamento de processo antes de qualquer IA** (60-90 dias com CRM básico rodando, depois integramos IA com base em dados)
+4. **Investigação ativa do fator confiança** (primeira entrega é identificar marca/script/relacionamento)
 
 ---
 
-## E o site?
+## O que eu preciso de você
 
-Tá incluso. O site novo entra no setup junto com o processo comercial — R$997 dentro do total. Páginas de conteúdo SEO/GEO (por cidade e serviço) são publicadas continuamente dentro da mensalidade.
-
-**A diferença:** a gente não entrega só site. Entrega processo + site + acompanhamento. O site sozinho não resolve — sem processo, mais lead é mais lead perdido. Juntos, o site traz e o processo converte.
-
----
-
-## Próximos passos
-
-1. **Você (Alex) revisa essa proposta** — me diz o que ajustar, o que não faz sentido, o que o Telles vai questionar
-2. **A gente alinha o split** — se fechar, como funciona pra você (comissão/recorrente)
-3. **Marca a call** — você, eu e o Telles. 45 min. Eu apresento, você reforça a visão de tráfego
-4. **Na call:** começo pelo playbook/processo (não pela IA), ancorado nos R$170k da base de 500 clientes
-
----
-
-## O que eu preciso saber de você
-
-- **Horário da menina nova** — ela trabalha horário comercial? Período integral?
-- **O vendedor que vai sair** — volta quando? Ou é saída definitiva?
-- **O Telles tá inclinado pro cara do site** ou tá aberto a ouvir?
-- **Melhor dia pra call** — quero marcar essa semana ou início da próxima
-- **Split:** qual modelo faz sentido pra você? Pensamos em 5-10% da mensalidade recorrente enquanto o Telles estiver ativo
+- **Topa a call de 30 min Lucas+Victor+Alex?** Manhã ou tarde?
+- **Horário da menina nova** — período integral?
+- **Vendedor que vai sair** — volta ou saída definitiva?
+- **Split:** 5-10% da mensalidade recorrente faz sentido pra você enquanto o Telles estiver ativo?
 
 ---
 
