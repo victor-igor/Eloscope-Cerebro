@@ -9,15 +9,15 @@
 
 ## Timeline
 
-| Fase | Período | Entrega | Status |
-|------|---------|---------|--------|
-| Discovery | 26/04 (sáb) | Sessão 1h — mapear fluxo atual | [ ] |
-| Setup infra | 26/04–02/05 | VPS + OpenClaw + GitHub em paralelo | [ ] |
-| Documento | 28/04–02/05 | Processo módulo a módulo + prioridades | [ ] |
-| Skills v1 | 28/04–02/05 | Primeiras skills no Claude Code | [ ] |
-| Skills final | 05/05–09/05 | Até 3 skills testadas e documentadas | [ ] |
-| Treinamento | 05/05–09/05 | 4 módulos (5h total) | [ ] |
-| Suporte | 10/05–08/06 | 30 dias pós-entrega | [ ] |
+| Fase         | Período     | Entrega                                | Status |
+| ------------ | ----------- | -------------------------------------- | ------ |
+| Discovery    | 26/04 (sáb) | Sessão 1h — mapear fluxo atual         | [ ]    |
+| Setup infra  | 26/04–02/05 | VPS + OpenClaw + GitHub em paralelo    | [ ]    |
+| Documento    | 28/04–02/05 | Processo módulo a módulo + prioridades | [ ]    |
+| Skills v1    | 28/04–02/05 | Primeiras skills no Claude Code        | [ ]    |
+| Skills final | 05/05–09/05 | Até 3 skills testadas e documentadas   | [ ]    |
+| Treinamento  | 05/05–09/05 | 4 módulos (5h total)                   | [ ]    |
+| Suporte      | 10/05–08/06 | 30 dias pós-entrega                    | [ ]    |
 
 ---
 

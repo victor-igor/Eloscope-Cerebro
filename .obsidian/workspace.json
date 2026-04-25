@@ -1,0 +1,226 @@
+{
+  "main": {
+    "id": "0c85e8d965444a55",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea5d9567d819e932",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "de837dc89d77be22",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "areas/vendas/clientes/gustavo-bravo/projeto/analise-custo-processo.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "analise-custo-processo"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "01c1329da60f9107",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b364a89df824720",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "06c537f47b3de311",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          },
+          {
+            "id": "fa715ac874c80d94",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Procurar"
+            }
+          },
+          {
+            "id": "61458c88eca98e05",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f428b08ad691ecb8",
+    "type": "split",
+    "children": [
+      {
+        "id": "24e8ba31e222ae16",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c7cb1593deb43bc2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "areas/vendas/clientes/gustavo-bravo/projeto/analise-custo-processo.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Links inversos para analise-custo-processo"
+            }
+          },
+          {
+            "id": "c008a86d72dd0e57",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "areas/vendas/clientes/gustavo-bravo/projeto/analise-custo-processo.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída para analise-custo-processo"
+            }
+          },
+          {
+            "id": "e14241199e756246",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "1c9f4220178c7ba0",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas as propriedades"
+            }
+          },
+          {
+            "id": "cbc771e21f301400",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "areas/vendas/clientes/gustavo-bravo/projeto/analise-custo-processo.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Sumário de analise-custo-processo"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Criar nova base": false
+    }
+  },
+  "active": "de837dc89d77be22",
+  "lastOpenFiles": [
+    "skills/buscar-memoria/SKILL.md",
+    "skills/buscar-memoria",
+    "lasted-entregas/autentique-api-research.md",
+    "lasted-entregas",
+    "areas/vendas/clientes/gustavo-bravo/projeto/proposta-pos-discovery.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/levantamento-discovery.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/causa-efeito.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/bpmn-basico.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/Transcricao.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/01-apresentacao-alinhamento.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/00-sequencia-aplicacao.md",
+    "OBSIDIAN.md",
+    "Formalização Voltruck v1.pdf",
+    "areas/vendas/clientes/gustavo-bravo/projeto/contrato.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/discovery-script.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/cronograma.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/contrato.pdf",
+    "areas/vendas/clientes/gustavo-bravo/projeto/analise-custo-processo.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/plano-execucao.md",
+    "areas/vendas/clientes/gustavo-bravo/lead-profile.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/framework-processo.md",
+    "areas/vendas/clientes/enertelles/entregavel-tecnico.md",
+    "areas/vendas/clientes/enertelles/proposta-enertelles.md",
+    "areas/vendas/clientes/enertelles/proposta-alex-review.md",
+    "areas/vendas/clientes/enertelles/cronograma.md",
+    "areas/vendas/clientes/enertelles/proposta.md",
+    "areas/vendas/clientes/enertelles/proposta-enertelles-v3.md",
+    "areas/vendas/clientes/enertelles/proposta-enertelles-v2.md",
+    "memory/sessions/2026-04-25.md",
+    "areas/design/assets/tipografia/image.png",
+    "areas/design/assets/logos/monocromatico.png",
+    "areas/design/assets/logos/monocro.png",
+    "areas/design/assets/logos/logolinha.png",
+    "areas/design/assets/logos/Logotipo - EloScope - completo.png",
+    "areas/design/assets/logos/EloScope - Logotipo.png",
+    "areas/design/assets/logos/EloScope - Logo - transparente.png",
+    "areas/design/assets/cores/image.png"
+  ]
+}

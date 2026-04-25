@@ -100,32 +100,67 @@
 
 ---
 
+## Produtos
+
+| Produto | Modelo | Pricing | Status |
+|---------|--------|---------|--------|
+| Elo OS | SaaS + serviço (done-for-you) | Setup R$2k + R$1.5k/mês (3 meses mín.) | 🔨 Beta |
+| Mentoria Agências | Done-for-you + treinamento | R$1.900–R$3.900 (único) | 🟢 1º cliente fechado |
+
+---
+
 ## Projetos / Negócios
 
 | Nome | Status | Métricas-chave |
 |------|--------|----------------|
 | Eloscope (estúdio) | Ativo | — |
-| Eloscope Elo OS | 🔨 Em construção | Meta: R$15k MRR · 10 clientes · Abr/2027 |
+| Elo OS | 🔨 Beta | Meta: R$15k MRR · 10 clientes · Abr/2027 |
 | Bravo Agency — Sistema Completo | 🟢 Ativo | R$3.900 único · discovery 26/04 · entrega ~09/05 |
+| Enertelles (prospect) | 🟡 Proposta enviada | R$4.497 setup + R$997/mês · aguardando Alex → call |
+
+---
+
+## Clientes e Pipeline
+
+### Clientes ativos
+
+| Cliente | Produto | Receita | Status |
+|---------|---------|---------|--------|
+| ReabilitaCão (Francielly) | Elo OS pilot | R$1.887/mês | 🟢 Pagamento confirmado 24/04 |
+| Elite Maqlam (Denis) | Custom | R$1.490/mês | 🟡 Cobrança vence 25/04 |
+| Campos Joia (Matheus) | Custom | R$1.197/mês | 🔴 Vencida desde 10/04 |
+| Voltrucks (Samuel) | Custom | R$6.000 (pontual) | 🟡 Cobrança pendente |
+| Imobiliária Rodrigues (Jean) | Custom | — | 🟡 Cobrança pendente |
+| Bravo Agency (Gustavo) | Mentoria Agências | R$3.900 (único, 4×R$975) | 🟢 Fechado, discovery 26/04 |
+
+### Pipeline
+
+| Lead | Produto | Valor | Estágio |
+|------|---------|-------|---------|
+| Enertelles (Telles) | Consultoria + site + CRM | R$4.497 + R$997/mês | Proposta com Alex para review |
+| Morgana | Elo OS | Setup R$2k + R$1.5k/mês | SDR ativo (Hugo atrasado) |
+| Denis (Elo OS) | Elo OS | A definir | Prospecção via Morgana (28/04) |
+| Matheus | Elo OS | A definir | Prospecção (05/05) |
 
 ---
 
 ## Equipe
 
-| Nome | Função | Notas |
-|------|--------|-------|
-| Victor Igor | COO / Founder | eloscope.coo@gmail.com — produto, marketing, processos |
-| Lucas | Comercial | Prospecção, fechamento, abordagem de leads |
-| Hugo | Tech | Implementações n8n, Openclaw, Paperclip, automações IA |
+| Nome | Função | Foco atual |
+|------|--------|------------|
+| Victor Igor | COO / Founder | Produto Elo OS, marketing, reuniões com clientes |
+| Lucas Negreiro | Comercial / Financeiro | Prospecção, fechamento, cobranças, Bravo delivery |
+| Hugo de Oliveira | Tech | Implementações n8n, Openclaw/Paperclip, SDR Morgana |
 
 ---
 
 ## Foco Atual
 
-1. **Bravo Agency — primeiro cliente Mentoria Agências** — fechou Opção B (R$3.900) em 23/04 · discovery sábado 26/04 · entrega ~09/05
-2. **Elo OS beta** — fechar 2-3 clientes beta em 60 dias (Fran já ativa, Morgana é o próximo)
-3. **Lucas executando funil** — abordagem Morgana (esta semana) · Denis e Matheus (próxima)
-4. **Hugo pendências técnicas** — confirmar Openclaw/Paperclip end-to-end antes do primeiro cliente
+1. **Bravo Agency — delivery** — discovery presencial sábado 26/04 · plano, frameworks e script prontos · contrato + 1ª parcela antes do discovery · entrega ~09/05
+2. **Cobranças urgentes** — Denis R$1.490 vence 25/04 · Matheus R$1.197 vencida · Samuel R$6k · Jean
+3. **Enertelles** — proposta com Alex para review · marcar call Telles+Alex+Lucas · lead esfriando
+4. **Elo OS beta** — Fran ativa · Morgana é o próximo (SDR atrasado, Hugo) · deploy Vercel falhando
+5. **Hugo pendências técnicas** — Openclaw/Paperclip end-to-end · SDR Morgana · 7 perguntas técnicas
 
 ---
 
@@ -152,4 +187,4 @@
 
 ---
 
-*Atualizado: 2026-04-23*
+*Atualizado: 2026-04-24*

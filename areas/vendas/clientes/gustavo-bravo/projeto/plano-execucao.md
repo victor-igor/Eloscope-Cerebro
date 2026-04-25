@@ -52,6 +52,7 @@ A Bravo quer escalar de 20 para 30-40 clientes sem contratar. O sistema que vamo
    - Módulo 4: Geração de criativos (design)
    - Módulo 5: Aprovação do cliente
    - Módulo 6: Postagem/agendamento
+	   - 
 
 3. **Identificar gargalos reais (15min)**
    - Onde o time gasta mais horas?

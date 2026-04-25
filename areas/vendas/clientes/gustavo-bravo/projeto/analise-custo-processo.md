@@ -12,42 +12,42 @@
 
 Levantar com o Gustavo TUDO que ele paga por mês para a operação rodar:
 
-| Categoria | Item | Custo/mês |
-|-----------|------|-----------|
-| **Pessoas** | Gustavo (pró-labore) | R$ ___ |
-| | Rafael (design) | R$ ___ |
-| | Javi (multifunção) | R$ ___ |
-| | Rafael Editor (vídeo) | R$ ___ |
-| | Lilian (se ainda ativa) | R$ ___ |
-| **Subtotal Pessoas** | | **R$ ___** |
-| **Ferramentas** | ChatGPT (assinatura) | R$ ___ |
-| | Claude (plano Pro) | R$ ~92 |
-| | Canva (se pago) | R$ ___ |
-| | ClickUp (se pago) | R$ ___ |
-| | Gemini (se pago) | R$ ___ |
-| | mLabs / agendador | R$ ___ |
-| | Lovable / Vercel | R$ ___ |
-| | IOX/Squads (comprou R$66) | R$ ___ (único) |
-| | Outras ferramentas | R$ ___ |
-| **Subtotal Ferramentas** | | **R$ ___** |
-| **Infraestrutura** | Escritório / coworking / home | R$ ___ |
-| | Internet | R$ ___ |
-| | Energia | R$ ___ |
-| | Contador | R$ ___ |
-| | Impostos (DAS/simples) | R$ ___ |
-| **Subtotal Infra** | | **R$ ___** |
-| | | |
-| **CUSTO FIXO TOTAL** | | **R$ ___** |
+| Categoria                | Item                          | Custo/mês      |
+| ------------------------ | ----------------------------- | -------------- |
+| **Pessoas**              | Gustavo (pró-labore)          | R$ ___         |
+|                          | Rafael (design)               | R$ ___         |
+|                          | Javi (multifunção)            | R$ ___         |
+|                          | Rafael Editor (vídeo)         | R$ ___         |
+|                          | Lilian (se ainda ativa)       | R$ ___         |
+| **Subtotal Pessoas**     |                               | **R$ ___**     |
+| **Ferramentas**          | ChatGPT (assinatura)          | R$ ___         |
+|                          | Claude (plano Pro)            | R$ ~92         |
+|                          | Canva (se pago)               | R$ ___         |
+|                          | ClickUp (se pago)             | R$ ___         |
+|                          | Gemini (se pago)              | R$ ___         |
+|                          | mLabs / agendador             | R$ ___         |
+|                          | Lovable / Vercel              | R$ ___         |
+|                          | IOX/Squads (comprou R$66)     | R$ ___ (único) |
+|                          | Outras ferramentas            | R$ ___         |
+| **Subtotal Ferramentas** |                               | **R$ ___**     |
+| **Infraestrutura**       | Escritório / coworking / home | R$ ___         |
+|                          | Internet                      | R$ ___         |
+|                          | Energia                       | R$ ___         |
+|                          | Contador                      | R$ ___         |
+|                          | Impostos (DAS/simples)        | R$ ___         |
+| **Subtotal Infra**       |                               | **R$ ___**     |
+|                          |                               |                |
+| **CUSTO FIXO TOTAL**     |                               | **R$ ___**     |
 
 ### Passo 2: Horas disponíveis por mês
 
-| Pessoa | Horas/dia | Dias/mês | Horas/mês | % operacional* | Horas produtivas |
-|--------|-----------|----------|-----------|----------------|-----------------|
-| Gustavo | ___ h | ___ d | ___ h | ___% | ___ h |
-| Rafael | ___ h | ___ d | ___ h | ___% | ___ h |
-| Javi | ___ h | ___ d | ___ h | ___% | ___ h |
-| Rafael Editor | ___ h | ___ d | ___ h | ___% | ___ h |
-| **TOTAL** | | | | | **___ h** |
+| Pessoa        | Horas/dia | Dias/mês | Horas/mês | % operacional* | Horas produtivas |     |
+| ------------- | --------- | -------- | --------- | -------------- | ---------------- | --- |
+| Gustavo       | ___ h     | ___ d    | ___ h     | ___%           | ___ h            |     |
+| Rafael        | ___ h     | ___ d    | ___ h     | ___%           | ___ h            |     |
+| Javi          | ___ h     | ___ d    | ___ h     | ___%           | ___ h            |     |
+| Rafael Editor | ___ h     | ___ d    | ___ h     | ___%           | ___ h            |     |
+| **TOTAL**     |           |          |           |                | **___ h**        |     |
 
 *\* % operacional = tempo efetivo trabalhando para clientes (descontar reuniões internas, almoço, deslocamento, admin, etc.)*
 
@@ -84,21 +84,21 @@ CUSTO-HORA REAL = Custo Fixo Total ÷ Total Horas Produtivas
 
 Perguntar pro time: **"Para 1 cliente, quanto tempo vocês gastam em cada etapa por mês?"**
 
-| # | Processo | Quem faz | Tempo/cliente/mês | ×20 clientes | Custo-hora | Custo total/mês |
-|---|----------|----------|-------------------|-------------|-----------|----------------|
-| 1 | Análise/relatório do mês anterior | | ___min | ___h | R$___ | R$___ |
-| 2 | Planejamento de conteúdo | | ___min | ___h | R$___ | R$___ |
-| 3 | Geração de copy (textos) | | ___min | ___h | R$___ | R$___ |
-| 4 | Criação de design/criativos | | ___min | ___h | R$___ | R$___ |
-| 5 | Edição de vídeo (se aplicável) | | ___min | ___h | R$___ | R$___ |
-| 6 | Enviar para aprovação do cliente | | ___min | ___h | R$___ | R$___ |
-| 7 | Follow-up / cobrar aprovação | | ___min | ___h | R$___ | R$___ |
-| 8 | Ajustes pós-feedback do cliente | | ___min | ___h | R$___ | R$___ |
-| 9 | Postagem / agendamento | | ___min | ___h | R$___ | R$___ |
-| 10 | Onboarding (cliente novo) | | ___min | ___h | R$___ | R$___ |
-| 11 | Comunicação geral (WhatsApp, email) | | ___min | ___h | R$___ | R$___ |
-| 12 | Reuniões internas | | ___min | ___h | R$___ | R$___ |
-| | **TOTAL** | | | **___h** | | **R$___** |
+| #   | Processo                            | Quem faz | Tempo/cliente/mês | ×20 clientes | Custo-hora | Custo total/mês |
+| --- | ----------------------------------- | -------- | ----------------- | ------------ | ---------- | --------------- |
+| 1   | Análise/relatório do mês anterior   |          | ___min            | ___h         | R$___      | R$___           |
+| 2   | Planejamento de conteúdo            |          | ___min            | ___h         | R$___      | R$___           |
+| 3   | Geração de copy (textos)            |          | ___min            | ___h         | R$___      | R$___           |
+| 4   | Criação de design/criativos         |          | ___min            | ___h         | R$___      | R$___           |
+| 5   | Edição de vídeo (se aplicável)      |          | ___min            | ___h         | R$___      | R$___           |
+| 6   | Enviar para aprovação do cliente    |          | ___min            | ___h         | R$___      | R$___           |
+| 7   | Follow-up / cobrar aprovação        |          | ___min            | ___h         | R$___      | R$___           |
+| 8   | Ajustes pós-feedback do cliente     |          | ___min            | ___h         | R$___      | R$___           |
+| 9   | Postagem / agendamento              |          | ___min            | ___h         | R$___      | R$___           |
+| 10  | Onboarding (cliente novo)           |          | ___min            | ___h         | R$___      | R$___           |
+| 11  | Comunicação geral (WhatsApp, email) |          | ___min            | ___h         | R$___      | R$___           |
+| 12  | Reuniões internas                   |          | ___min            | ___h         | R$___      | R$___           |
+|     | **TOTAL**                           |          |                   | **___h**     |            | **R$___**       |
 
 ### Passo 6: Custo por cliente
 

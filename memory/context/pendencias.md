@@ -16,6 +16,11 @@
 
 - [25/04/2026] ✅ **Enertelles — proposta v4 reestruturada** · setup modular (A=processo+IA R$3.500, B=site+marca R$3.000), CRM externo, blog automatizado R$487/mês, parcelamento 12×R$650
 - [25/04/2026] **Enertelles — atualizar proposta HTML** · `proposta-enertelles.html` está na v3, precisa refletir v4
+- [25/04/2026] 🔥 **Bravo — validar reframe pós-discovery com Gustavo** · trocar 3 skills (Análise/Planejamento/Copy) por (Aprovação/Agendamento/Análise mensal) · `proposta-pos-discovery.md` · Content Machine já cobre copy/criativo
+- [25/04/2026] **Bravo — redigir aditivo de SLA contratual** · Lucas modela (48h ou 72h?), Gustavo manda pro advogado · base da Skill 1 (Aprovação automatizada)
+- [25/04/2026] **Bravo — confirmar Javi no treinamento** · pendência levantada no discovery de 25/04
+- [25/04/2026] **Bravo — Etapa 4 (1:1 Gustavo)** · bloco custos/pró-labore/salários — não tocado na sessão de 25/04
+- [25/04/2026] **Bravo — atualizar `framework-processo.md` + `bpmn-basico.md` + `plano-execucao.md`** · refletir 3 skills novas após validação Gustavo
 - [25/04/2026] **Bravo — refinar script de treinamento Thiago** · objetivos, tópicos principais, CTAs ao final
 - [25/04/2026] **Bravo — confirmar reunião presencial 13h45** com Thiago · endereço, pauta, duração
 - [25/04/2026] **Bravo — alinhar envio de contrato + forma de pagamento** com Thiago · prazo + responsável

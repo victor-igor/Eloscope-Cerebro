@@ -26,15 +26,17 @@ Se não estiver configurada, ver `COMO-USAR.md`.
 
 ## Skills (comandos principais)
 
-Três skills definem o fluxo de trabalho. Vivem em `skills/` e são copiadas para `~/.claude/skills/` no setup.
+Skills principais. Vivem em `skills/` e são copiadas para `~/.claude/skills/` no setup.
 
 | Comando | Arquivo | Quando usar |
 |---------|---------|-------------|
 | `/cerebro` | `skills/cerebro/SKILL.md` | Início de sessão — carrega briefing compacto (pendências, deadlines, decisões recentes, últimas sessões). Tem **Modo Setup** (primeira vez) e **Modo Briefing** (já configurado). |
 | `/salve` | `skills/salve/SKILL.md` | Fim de sessão — flush completo. Percorre PROPAGATION.md, atualiza o que mudou, cria log em `memory/sessions/YYYY-MM-DD.md`, faz `git pull --rebase` + commit + push. |
 | `/rotina` | `skills/rotina/SKILL.md` | Cockpit matinal — emails + agenda + pendências + deadlines + Top 3 + bloqueio opcional de calendar. |
+| `/buscar-memoria` | `skills/buscar-memoria/SKILL.md` | Busca semântica no vault (decisões, sessões, projetos) com filtros por tipo/tag/cliente/data. Alternativa leve a sistemas tipo claude-mem. |
+| `/sync` | `skills/sync/SKILL.md` | Sincronização rápida com git (sem flush completo). |
 
-Existe também `skills/carrossel-eloscope/` para criação de carrosséis.
+Existem também `skills/carrossel-eloscope/` e `skills/assinar/`.
 
 ---
 
@@ -120,4 +122,13 @@ Este repo também inclui `.aiox-core/` — o framework Synkra AIOX de agentes. R
 | Squads disponíveis | `agentes/_registry.md` |
 | Setup do repo | `COMO-USAR.md` |
 | O que atualizar quando algo muda | `PROPAGATION.md` |
+| Convenções Obsidian (frontmatter, wikilinks, tags, callouts) | `OBSIDIAN.md` |
 | Índice navegável | `MAPA.md` |
+
+---
+
+## Padrão Obsidian
+
+Este vault está aberto no Obsidian (graph, backlinks, tags, properties, bases habilitados). **Arquivos novos devem seguir `OBSIDIAN.md`** — frontmatter com `tipo`/`status`/`tags`, wikilinks `[[arquivo]]` em vez de paths, callouts `> [!type]` para destaques, tags hierárquicas (`#cliente/bravo`).
+
+Retrofit de arquivos antigos é opcional — só quando o ganho justifica.
