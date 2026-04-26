@@ -127,14 +127,14 @@ Score = (Tempo + Volume + Repetitividade + Impacto + Viabilidade + Custo Atual) 
 | 3 | Setup IA do cliente (jogar dados na IA) | onboarding | Javi | ~60min? | ~2? | Claude/ChatGPT | 3 | 2 | 4 | 4 | 5 | 3 | **3.5** | AUTOMATIZAR DEPOIS |
 | 4 | Análise do mês anterior (métricas, posts, engajamento) | estratégia | Gustavo | ~45min? | 20 (1×cliente) | ChatGPT/Claude | 3 | 5 | 4 | 4 | 5 | 4 | **4.2** | AUTOMATIZAR 1o |
 | 5 | Planejamento mensal (calendário de posts) | planejamento | Gustavo+IA | ~30min? | 20 (1×cliente) | ChatGPT/Claude | 2 | 5 | 4 | 5 | 5 | 4 | **4.2** | AUTOMATIZAR 1o |
-| 6 | Envio do plano + cobrança de aprovação | aprovação | Gustavo/Javi | ~10min + espera | 20 + follow-ups | WhatsApp | 2 | 5 | 5 | 4 | 5 | 3 | **4.0** | AUTOMATIZAR 1o |
+| 6 | Envio do plano + cobrança de aprovação | aprovação | Gustavo/Ravi | ~10min + espera | 20 + follow-ups | WhatsApp | 2 | 5 | 5 | 4 | 5 | 3 | **4.0** | AUTOMATIZAR 1o |
 | 7 | Geração de copy (textos carrossel, posts) | copy | Javi+IA | ~20min? | 20×~8posts = 160? | ChatGPT/Claude | 2 | 5 | 4 | 4 | 5 | 4 | **4.0** | AUTOMATIZAR 1o |
 | 8 | Geração de imagens/criativos | design | Rafael | ~30min? | 20×~8 = 160? | Canva + IA | 3 | 5 | 3 | 4 | 4 | 4 | **3.8** | AUTOMATIZAR DEPOIS |
 | 9 | Ajuste fino de criativos (paleta, identidade) | design | Rafael | ~15min? | 20×~8 = 160? | Canva | 2 | 5 | 3 | 3 | 3 | 3 | **3.2** | ASSISTIR |
-| 10 | Aprovação de criativos pelo cliente | aprovação | Gustavo/Javi | ~10min + espera | 20 + follow-ups | WhatsApp | 2 | 5 | 5 | 3 | 5 | 3 | **3.8** | AUTOMATIZAR DEPOIS |
+| 10 | Aprovação de criativos pelo cliente | aprovação | Gustavo/Ravi | ~10min + espera | 20 + follow-ups | WhatsApp | 2 | 5 | 5 | 3 | 5 | 3 | **3.8** | AUTOMATIZAR DEPOIS |
 | 11 | Postagem/agendamento | postagem | Javi? | ~10min? | 20×~8 = 160? | Manual? | 1 | 5 | 5 | 3 | 5 | 3 | **3.7** | AUTOMATIZAR DEPOIS |
 | 12 | Relatório mensal (prestação de serviço) | relatório | Gustavo? | ~30min? | 20 (1×cliente) | Manual? | 2 | 5 | 4 | 3 | 5 | 3 | **3.7** | AUTOMATIZAR DEPOIS |
-| 13 | Edição de vídeo | design | Rafael Editor | ~60min? | variável | Software edição | 3 | 3 | 2 | 3 | 2 | 3 | **2.7** | ASSISTIR |
+| 13 | Edição de vídeo | design | Rafael Gobi | ~60min? | variável | Software edição | 3 | 3 | 2 | 3 | 2 | 3 | **2.7** | ASSISTIR |
 | 14 | Gestão de tráfego (Meta+Google) | tráfego | Gustavo? | ~30min? | 20? | Meta Ads/Google | 2 | 5 | 3 | 4 | 3 | 4 | **3.5** | AUTOMATIZAR DEPOIS |
 | 15 | Criação de Landing Page | LP | Javi/Rafael? | ~3h? | ~2? | Lovable | 4 | 1 | 3 | 3 | 4 | 3 | **3.0** | ASSISTIR |
 
@@ -177,8 +177,8 @@ Score = (Tempo + Volume + Repetitividade + Impacto + Viabilidade + Custo Atual) 
 |--------|-------------------|------------|---------|
 | Gustavo (sócio) | R$80-120/h | Pró-labore + custo de oportunidade — comercial vale mais | Quanto tira de pró-labore? |
 | Rafael (design) | R$40-60/h | Salário estimado ~R$3k-4k + encargos | Salário real? CLT/PJ? |
-| Javi (multifunção) | R$40-60/h | Salário estimado ~R$3k-4k + encargos | Salário real? CLT/PJ? |
-| Rafael Editor (vídeo) | R$30-50/h | Dedicação parcial, provavelmente freelancer | Fixo ou por job? |
+| Ravi (multifunção) | R$40-60/h | Salário estimado ~R$3k-4k + encargos | Salário real? CLT/PJ? |
+| Rafael Gobi (vídeo) | R$30-50/h | Dedicação parcial, provavelmente freelancer | Fixo ou por job? |
 
 ### Custos fixos mensais (estimar no discovery)
 

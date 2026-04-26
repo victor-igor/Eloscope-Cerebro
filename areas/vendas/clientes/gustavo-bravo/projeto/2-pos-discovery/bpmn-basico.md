@@ -119,13 +119,13 @@ graph LR
 |-------|-----------|-------------|---------------|-----------|
 | 1 | Análise métricas mês anterior | Gustavo | ~45min | **SKILL 1** |
 | 2 | Planejamento calendário posts | Gustavo + IA | ~30min | **SKILL 2** |
-| 3 | Geração de copy (8 posts) | Javi + IA | ~20min × 8 | **SKILL 3** |
+| 3 | Geração de copy (8 posts) | Ravi + IA | ~20min × 8 | **SKILL 3** |
 | 4 | Geração de design/criativos | Rafael | ~30min × 8 | Fase 2 |
-| 5 | Montagem criativo final | Rafael + Javi | ~10min × 8 | Fase 2 |
-| 6 | Envio para aprovação cliente | Gustavo/Javi | ~10min | **n8n** |
+| 5 | Montagem criativo final | Rafael + Ravi | ~10min × 8 | Fase 2 |
+| 6 | Envio para aprovação cliente | Gustavo/Ravi | ~10min | **n8n** |
 | 7 | Follow-up (cobrar resposta) | Gustavo | ~5min × N | **n8n** |
-| 8 | Ajustes pós-feedback | Rafael/Javi | variável | Manual |
-| 9 | Postagem/agendamento | Javi | ~10min × 8 | Fase 2 |
+| 8 | Ajustes pós-feedback | Rafael/Ravi | variável | Manual |
+| 9 | Postagem/agendamento | Ravi | ~10min × 8 | Fase 2 |
 | 10 | Relatório mensal | Gustavo | ~30min | Fase 2 |
 
 **Tempo total estimado por cliente/mês:** ~8-10h (validar no discovery)
@@ -179,7 +179,7 @@ FLUXO COM SKILLS (pós-projeto):
   │ ~5min   │      │ ~5min     │      │ ~2min×8  │
   │ Validar │      │ Validar   │      │ Validar  │
   └─────────┘      └───────────┘      └──────────┘
-   Gustavo OK       Gustavo OK         Javi OK
+   Gustavo OK       Gustavo OK         Ravi OK
    (5min)            (5min)             (16min)
 
                     ┌──────────────────┐
@@ -190,7 +190,7 @@ FLUXO COM SKILLS (pós-projeto):
   n8n Auto          n8n Auto
   ┌─────────┐      ┌───────────┐
   │ Envio   │ ───→ │Follow-up  │ ───→ Postagem
-  │ Aprovação│      │Automático │      (Javi)
+  │ Aprovação│      │Automático │      (Ravi)
   │ WhatsApp│      │ 12h/24h   │
   └─────────┘      └───────────┘
 
@@ -198,7 +198,7 @@ FLUXO COM SKILLS (pós-projeto):
 
 RESULTADO:
   Gustavo: 75min → 10min por cliente (validar outputs)
-  Javi: Copy manual → Revisão de copy gerado
+  Ravi: Copy manual → Revisão de copy gerado
   Aprovação: Manual → Automática com lembretes
   
   Capacidade: 20 → 30+ clientes sem contratar

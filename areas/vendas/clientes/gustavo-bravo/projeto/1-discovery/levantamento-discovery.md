@@ -4,8 +4,8 @@ status: ativo
 tags: [cliente/bravo, area/vendas, tipo/discovery, tipo/levantamento]
 cliente: bravo
 data: 2026-04-25
-fonte: [Seaac Rio Preto.m4a, Seaac Rio Preto 2.m4a]
-participantes: [Lucas, Gustavo, Rafael (design)]
+fonte: [Seaac Rio Preto.m4a, Seaac Rio Preto 2.m4a, Transcricao.md]
+participantes: [Lucas, Gustavo, Rafael (Rafa, design), Ravi]
 relacionados: ["[[00-sequencia-aplicacao]]", "[[framework-processo]]", "[[bpmn-basico]]", "[[causa-efeito]]", "[[analise-custo-processo]]"]
 ---
 
@@ -15,7 +15,9 @@ relacionados: ["[[00-sequencia-aplicacao]]", "[[framework-processo]]", "[[bpmn-b
 > Dados reais extraídos das duas transcrições do discovery presencial (Seaac Rio Preto). **Fonte de verdade pós-discovery** — substitui as estimativas pré-discovery do `framework-processo.md`.
 
 > [!warning] Quem estava na sala
-> Lucas + Gustavo + Rafael (design). **Javi não aparece nas transcrições** — confirmar se participou e ficou calado, ou se foi dispensado.
+> Lucas + Gustavo + **Rafael (Rafa, design)** + **Ravi** (multifunção, presente e falando bastante).
+> **Rafael Gobi** (editor de vídeo, transcrito como "Gabi") **não estava** — só citado em terceira pessoa como gargalo da edição.
+> Transcript não atribui falas por pessoa: quando uma fala não bate com o estilo do Gustavo (comercial/dono) nem do Rafa (design/Content Machine), provavelmente é Ravi. O "Cunha" mencionado em 04:30 é apelido/erro de transcrição de um dos presentes (provavelmente Ravi).
 
 ---
 
@@ -43,16 +45,19 @@ relacionados: ["[[00-sequencia-aplicacao]]", "[[framework-processo]]", "[[bpmn-b
 | Pessoa | Função real | Modalidade | Status / observação |
 |--------|-------------|-----------|---------------------|
 | **Gustavo** | Comercial inteiro + gestão + 100% operacional | Sócio | Quer sair do op pra comercial digital |
-| **Rafael (Rafa)** | Design + planejamento de conteúdo + Content Machine | **Remoto** ("ele está longe, não tenho controle") | Tem CapCut Pro / Premiere / Gemini / ChatGPT / Canva Pro |
-| **Javi** | Multifunção / "Severino" | A confirmar | **Não apareceu na transcrição** |
-| **Gabi** (= "Rafael Editor" nos docs antigos) | Edição de vídeo | A confirmar (parece presencial — usa headset físico do escritório) | **Gargalo crítico** |
+| **Rafael (Rafa)** | Design + planejamento de conteúdo + Content Machine | Presencial | Estava no discovery |
+| **Ravi** | Multifunção / socorre edição de vídeo quando Gobi atrasa | Presencial | Estava no discovery, falava bastante. Já editou vídeo junto com Gustavo na crise da semana |
+| **Rafael Gobi** (transcrito como "Gabi" / "Rafael Editor" nos docs antigos) | Edição de vídeo (core) | **Remoto** ("ele está longe, não tenho controle") — usa Adobe craqueado, escondido | **Gargalo crítico — entrega 1-2 vídeos/dia, meta é 3+** |
 | **Vendedora interna** | Comercial | A definir | Mencionada — sem comissão, ideia de 5% se bater 10 |
-| **Júnior** (ex) | Operacional | **Ex-funcionário** | Não foi substituído (ferramenta dele = Gabi/Rafa absorvem) |
-| **Ravi** | A confirmar | Interno? | Citado: "Eu, o Ravi e o Gustavo precisamos pegar pra editar vídeo ontem" |
+| **Júnior** (ex) | Operacional | **Ex-funcionário** | Não foi substituído (Rafa/Ravi absorvem) |
 | **Alexandre** | Gestor de Google Ads pro cliente "Bauba" | A confirmar (interno? freela? parceiro?) | "É mais o Alexandre que está fazendo" |
 
-> [!warning] Padronizar nomes
-> Documentos antigos (`framework-processo.md`) chamam de "Rafael Editor". Transcrição confirma **Gabi** como apelido. **Substituir Rafael Editor → Gabi** em todos os arquivos.
+> [!warning] Padronizar nomes (corrigido 26/04)
+> Existem **dois Rafael** na agência:
+> - **Rafa** — designer, presencial, estava no discovery
+> - **Rafael Gobi** — editor de vídeo, remoto, ausente do discovery, aparece na transcrição como "Gabi" (erro de Whisper)
+>
+> Documentos antigos (`framework-processo.md`) chamam de "Rafael Editor" = **Rafael Gobi**. Substituir em todos os arquivos.
 
 **Histórico:** equipe encolheu de 7 para 4 pessoas. Não foi reposto operacional do Júnior.
 
@@ -153,7 +158,7 @@ Briefing pronto
      ↓ (espera 2-3 dias)
 [D] Aprovado? → captação de vídeo (Reels)
      ↓
-[E] Edição (Gabi)
+[E] Edição (Rafael Gobi)
      ↓
 [F] Agendamento manual no Meta Business
      ↓
@@ -175,7 +180,7 @@ Briefing pronto
 | **Captação de vídeo total** | **~3 SEMANAS** (do agendamento à edição final) | — | Cliente que tem processo = 1 semana |
 | Gravação no local | 1h | — | "Fala frase, cliente repete, faz cortes" |
 | Foto banco de imagem | 1h | — | — |
-| Edição de vídeo (Gabi) | 1-2 vídeos/dia | — | Ideal: 3/dia |
+| Edição de vídeo (Rafael Gobi) | 1-2 vídeos/dia | — | Ideal: 3/dia |
 | **Agendamento manual Meta Business** | **20-30min/cliente** | — | "Programa o mês inteiro do cliente, mês todo na unha" |
 
 ### 5.3 Volumes reais (validados)
@@ -213,7 +218,7 @@ Briefing pronto
 
 ### 6.1 Diagnóstico
 
-- **Output atual**: 1-2 vídeos/dia (Gabi)
+- **Output atual**: 1-2 vídeos/dia (Rafael Gobi)
 - **Output ideal**: 3/dia (= 60-90/mês para os 20 clientes)
 - **Backlog em abril**: "finalizamos segunda-feira passada, só falta os vídeos"
 - **Operação de emergência**: Lucas + Ravi + Gustavo editando manualmente para tirar atraso ("ontem fiz 6 vídeos")
@@ -222,7 +227,7 @@ Briefing pronto
 
 | Sintoma | Detalhe da transcrição |
 |---------|------------------------|
-| Erro grosseiro | Vídeo com IA falando "feriado de Tiradentes"; cliente queria só "feriado". Gabi tirou texto, **manteve áudio com Tiradentes** |
+| Erro grosseiro | Vídeo com IA falando "feriado de Tiradentes"; cliente queria só "feriado". Rafael Gobi tirou texto, **manteve áudio com Tiradentes** |
 | Falta de proatividade | "Não estou achando" — sem ter procurado. Gustavo achava. |
 | Adobe craqueado | Mesmo Gustavo pagando Adobe extra (R$1k/mês × 6 meses = ~R$6k desperdiçado) |
 | Headset "quebrado" | 1 ano dizendo que estava quebrado. Não estava — só não plugou na entrada certa. |
@@ -240,9 +245,9 @@ Briefing pronto
 > O gargalo do vídeo é **humano**: editor não rende + sem métrica diária visível + remoto sem controle. Automação ajuda quem é bom — não substitui quem não entrega.
 
 > [!todo] Vídeo — gaps
-> - [ ] Decisão Gustavo: trocar Gabi, treinar, ou reposicionar?
+> - [ ] Decisão Gustavo: trocar Rafael Gobi, treinar, ou reposicionar?
 > - [ ] Antônio (mencionado: "consegue fazer isso") — é candidato? freela? interno?
-> - [ ] Custo do Gabi (CLT/PJ/freela?) — entra na análise de custo
+> - [ ] Custo do Rafael Gobi (CLT/PJ/freela?) — entra na análise de custo
 > - [ ] Prioridade do POC Premiere+Claude Code: dentro do escopo Eloscope ou bônus?
 
 ---
@@ -485,7 +490,7 @@ SOLUÇÃO: SLA no contrato + n8n cobrando aprovação + Daily + agenda compartil
 
 ### Fora do escopo (reforçar com Gustavo)
 
-- Substituir Gabi (problema humano)
+- Substituir Rafael Gobi (problema humano)
 - Construir CRM completo
 - Construir agência inteira em IA Avatar (futuro)
 - Criação de marca / Lovable LPs (já fluem)
@@ -497,12 +502,12 @@ SOLUÇÃO: SLA no contrato + n8n cobrando aprovação + Daily + agenda compartil
 ### 17.1 🔴 Gaps críticos (antes da proposta final)
 
 > [!todo] Pra Lucas resolver em até 48h
-> - [ ] **Confirmar Javi**: participou? está alinhado com mudança? qual o papel real dele?
-> - [ ] **Padronizar Gabi** (não Rafael Editor) em todos os arquivos
+> - [x] ~~**Confirmar Javi**~~ → resolvido 26/04: Ravi (não Javi) estava no discovery, multifunção, falava bastante.
+> - [x] ~~**Padronizar Gabi** (não Rafael Editor)~~ → resolvido 26/04: nome real é **Rafael Gobi** (transcrito como "Gabi" pelo Whisper). Padronizado em todos os arquivos.
 > - [ ] **Cronometrar análise mensal** real — não foi cronometrado na sala (Gustavo abre ChatGPT/Claude e mostra)
 > - [ ] **Etapa 4 — bloco custos (1:1 Gustavo)**:
 >     - Pró-labore Gustavo
->     - Salário/regime Rafa, Javi, Gabi (CLT/PJ/freela)
+>     - Salário/regime Rafa, Ravi, Rafael Gobi (CLT/PJ/freela)
 >     - Custos fixos: aluguel, ferramentas, impostos, folha, encargos
 >     - Custo Adobe pago + craqueado descoberto (R$6k já perdido)
 > - [ ] **Validar mudança de escopo** (aprovação + agendador + análise) vs. proposta original (análise/planejamento/copy)
@@ -514,20 +519,20 @@ SOLUÇÃO: SLA no contrato + n8n cobrando aprovação + Daily + agenda compartil
 > [!todo] Perguntar em call rápida
 > - [ ] **Volume de clientes novos/mês** (impacta dimensionamento do agendador)
 > - [ ] **Volume de LPs/mês** (Lovable)
-> - [ ] **Quem efetivamente posta** hoje (Javi? Rafa? Gustavo?)
+> - [ ] **Quem efetivamente posta** hoje (Ravi? Rafa? Gustavo?)
 > - [ ] **Quem faz relatório mensal** hoje (mencionou Reportei solto)
 > - [ ] **Plataformas de postagem**: só Meta ou também TikTok/YouTube/LinkedIn?
 > - [ ] **Tempo médio de fechamento comercial** (primeiro contato → contrato)
 > - [ ] **Tem CRM ou pipeline está na cabeça do Gustavo?**
 > - [ ] **Verba média de Meta Ads gerenciada** (impacta posicionamento)
 > - [ ] **Quem é Antônio?** (mencionado como possível solução pra edição) — interno? freela?
-> - [ ] **Quem é Ravi?** (citado editando vídeo na emergência)
+> - [x] ~~**Quem é Ravi?**~~ → resolvido 26/04: estava no discovery, multifunção, ajuda em tudo (inclusive socorre edição).
 > - [ ] **Alexandre** — interno, freela, ou parceiro?
 
 ### 17.3 🟢 Backlog (depois da proposta)
 
 > [!todo] Fora do escopo Eloscope, mas merece registro
-> - [ ] Decisão Gustavo sobre Gabi (trocar / treinar / reposicionar)
+> - [ ] Decisão Gustavo sobre Rafael Gobi (trocar / treinar / reposicionar)
 > - [ ] Pacote "Método Bravo" (ICP R$25-30k) — desenho posterior
 > - [ ] Vendedora interna + comissão 5% — gestão de pessoas, não Eloscope
 > - [ ] IA Avatar pra cliente que não grava (futuro distante)
@@ -541,6 +546,104 @@ SOLUÇÃO: SLA no contrato + n8n cobrando aprovação + Daily + agenda compartil
 - **Sazonalidade** (Black Friday, dezembro, IR março/abril como o Diego)
 - **Concorrência local** em SJRP — quem mais?
 - **Histórico de churn** — quantos clientes perderam nos últimos 6 meses?
+
+---
+
+## 17.5 Complementos extraídos da Transcricao.md (passe de 26/04)
+
+> [!info] Origem
+> Transcrição completa do discovery (`Transcricao.md`, 466 linhas) processada em 26/04. Os pontos abaixo **não estavam** no levantamento original (que foi feito a partir das gravações Seaac Rio Preto). Acrescentam detalhes operacionais, não mudam a tese.
+
+### Captação e fluxo de venda atual (mais detalhe)
+
+- **Tudo no Gustavo**: networking + indicação + prospecção + fechamento. "Não consigo enxergar [comercial sem mim]."
+- **2 pacotes iniciais** com quantidades de entrega diferentes; reunião → "teu melhor cenário é X".
+- **Casos atípicos** (institucional, gravação fora de SJRP): reunião pré-orçamento pra estimar equipe + tempo + freela. Exemplo: Bálsamo, 2 conteúdos institucionais.
+- **Ticket-alvo do "Método Bravo"**: cliente que fatura **R$25-30k/mês**, com 1 vendedor mínimo no comercial. Estratégia: cercar Google + Meta + orgânico (barreira completa).
+- **Diagnóstico de cliente prospect** (caso real citado): cliente queria site + LP, mas o gargalo dele era **qualificação**: gerava 60-70 leads/mês, convertia 2 (vendedor sem remarketing, sem script). "Marketing fez a parte dele — gerar mais 70 não vai vender 4."
+- **Visão estratégica do Gustavo**: sair do operacional → focar comercial digital nacional ("hoje tenho cliente em SP e Flórida") → IA gera conteúdo de vídeo (avatar) sem precisar gravar.
+
+### Fluxo de onboarding (cliente novo entrando)
+
+| Etapa | Atual | Tempo real | Observação |
+|-------|-------|------------|------------|
+| Cria grupo WhatsApp | manual | minutos | feito pelo Gustavo |
+| Envia formulários | 3 forms (briefing conteúdo + acessos + dados contrato) | — | Briefing **muda por tipo de serviço** (conteúdo, site, marca) |
+| Cliente preenche briefing | sozinho, sem dúvida (deixa em branco) | 2-3 dias | Rápido na média |
+| Configurações Meta/Google/e-mail | manual | 1 semana se cliente colabora | Cliente que "não tem nada" (rede social, senha) → "gasta tempo danado", cliente acha que não tá trabalhando |
+| **Ciclo total fechamento → primeiro post** | **~3 semanas (média)** | hoje | Meta: **1 semana** |
+
+> [!note] Idea de "produto onboarding"
+> Gustavo quer criar produto extra para cliente sem rede social/conta de anúncio: cobra ~1 salário mínimo para criar tudo do zero (logo, manual de marca, contas, configurações). "Hoje não cobro e dá aborrecimento porque o cara acha que não tô trabalhando."
+
+### Comunicação interna × externa (canais)
+
+| Canal | Uso |
+|-------|-----|
+| **WhatsApp** | 100% comunicação cliente — briefing, planejamento, criativos, alteração, aprovação |
+| **Drive** | 100% comunicação interna — pasta por cliente (ID, acessos, planejamento por mês) |
+| **Drive ↔ cliente** | Excecional — só links pontuais (ex.: cliente Tonega manda banco de produtos) |
+
+### Content Machine (Bridge Codec) — automação que está rodando bem
+
+- **Plugin Figma feito pela Bridge Codec** ("uns players que estão no digital"). Hoje já tem **automação direto no Cloud** — pode rodar fora do Figma.
+- Fluxo: Docs estruturado (lista de posts mensais por cliente) → IA organiza textos → exporta `.md` → cola no Figma → plugin substitui textos → Rafa só seleciona imagem e ajusta.
+- **Validação de qualidade**: cliente "chato" Diego (contador, gosta de conteúdo trabalhado) **aprovou de primeira**. Cliente "chucrão" aprova qualquer coisa. Sem perda de contexto em carrossel.
+- **Insight do Lucas**: "Já dá pra deixar [Content Machine] dentro do Open Cloud, depois a gente pode criar um agente só dele."
+
+### Mecanismo de pressão de aprovação (proposta de campo do Gustavo)
+
+> Citação direta de Gustavo no discovery (10:04 e 12:35 da transcrição):
+
+- **WhatsApp + e-mail "estilo Asaas"**: lembretes recorrentes ("a cada 2-3-4 horas") + escalação visual.
+- **Cláusula contratual**: "Se você não preencher dentro dos prazos estipulados, você vai ter que me pagar independente se eu te entreguei o conteúdo ou não". Cliente que atrasa **vai pro fim da fila** — não bloqueia operação.
+- **Pitch ao cliente**: "Estou implementando um processo de IA que vai acelerar — você tá comigo?". Conversão da frustração em alinhamento.
+- **Ritual NPS dia 1°** (já desenhado): Typeform com "3 negativos + 3 positivos" do mês anterior. Bonus: pode usar áudio ("desce a lenha no Gustavo ou elogia o Gustavo").
+
+### Agendamento de postagem (gargalo confirmado, ferramentas já avaliadas)
+
+- **Hoje**: Meta Business "na unha" — 20-30min × 20 clientes = ~10h/mês.
+- **Ferramentas que Gustavo já testou ou descartou**:
+  | Ferramenta | Veredicto |
+  |-----------|-----------|
+  | M-Labs | Multi-plataforma (TikTok/YouTube/LinkedIn), porém preço por conta inviável (~R$2k para 20 clientes) |
+  | Reportei | Tem recurso de postar, mas custo idem |
+  | Canva | Tem agendamento agora, mas exige **conta separada por cliente** |
+- **Agenda interna de captação**: hoje **planilha impressa**. Gustavo topou ideia de **Google Calendar compartilhado** com link de auto-agendamento (cliente reserva slot direto, slot some quando outro reserva). Inclui também agenda pessoal do Gustavo (live de sexta, etc.).
+
+### Edição de vídeo (Rafael Gobi) — diagnóstico expandido
+
+- **Volume real**: 60-80 vídeos/mês (não 60).
+- **Output Gobi**: 1-2/dia. Meta: 3+/dia.
+- **Problemas confirmados na transcrição**:
+  - Adobe craqueado: Gustavo pagou pacote extra **6 meses (~R$1k/mês = R$6k)** e Gobi usou pirata. Headset "quebrado" 1 ano (não estava — só ligou na entrada errada).
+  - **3 freelas testados**: pagos, "não ficou bom" — Lucas e Gustavo entraram pra dar ajustes finos.
+  - Erro grosseiro: vídeo IA "feriado de Tiradentes" → cliente pediu só "feriado" → Gobi tirou texto **mas manteve áudio dizendo Tiradentes**.
+- **Ferramentas avaliadas**:
+  | Ferramenta | Veredicto |
+  |-----------|-----------|
+  | CapCut Pro modo "tirar silêncio" | Falha — não distingue voz entrevistador × cliente repetindo |
+  | Premiere | Identifica voz 1 vs voz 2 → solução técnica |
+  | **Premiere + Claude Code** | Gustavo viu vídeo de cara editando 100% via Claude Code; Lucas tem ambos → POC dentro do escopo |
+- **Mencionado como possível substituto/reforço**: **Antônio** (sem detalhe sobre vínculo).
+
+### Briefing por tipo de serviço
+
+- Briefing **muda por entrega**: conteúdo mensal, site, marca, criação de logo, vídeo institucional.
+- Quando cliente é "geralzão" (conteúdo mensal), 3 forms padronizados (briefing conteúdo + acessos + dados contrato).
+- **Insight do Lucas**: usar **Typeform** com estimativa visual ("você vai gastar 7 minutos") aumenta taxa de preenchimento.
+
+### Estratégia de produto futura (mencionada na transcrição)
+
+- **AV Bravo** (sub-marca dentro da MKT Bravo): aluguel de estúdio + produção pontual (vídeo institucional, live, captação avulsa).
+- **TikTok Shop / Instagram Shop**: Gustavo no 4º/5º ano de incubadora digital do Sebrae, vê isso como onda do próximo ciclo.
+- **Tese central**: "Cliente que tem loja física + tá no digital sobrevive. Cliente que só tem loja física tá fadado a fechar." (com nuance: depende do segmento — food trabalha margem baixa, local importa.)
+
+### Cultura/processo interno
+
+- **Sem daily**: "a gente vai conversando conforme vai trabalhando — apaga fogo".
+- **Sem dados de processo**: "o que tá faltando é processo. Com processo definido, sabemos onde atrasou (Gobi? edição?)."
+- Gustavo quer **dados pra decisão**: cobrar Gobi com base em métrica diária visível, não em sensação.
 
 ---
 

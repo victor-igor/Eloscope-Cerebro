@@ -18,8 +18,8 @@
 - [25/04/2026] **Enertelles — atualizar proposta HTML** · `proposta-enertelles.html` está na v3, precisa refletir v4
 - [25/04/2026] 🔥 **Bravo — validar reframe pós-discovery com Gustavo** · trocar 3 skills (Análise/Planejamento/Copy) por (Aprovação/Agendamento/Análise mensal) · `proposta-pos-discovery.md` · Content Machine já cobre copy/criativo
 - [25/04/2026] **Bravo — redigir aditivo de SLA contratual** · Lucas modela (48h ou 72h?), Gustavo manda pro advogado · base da Skill 1 (Aprovação automatizada)
-- [25/04/2026] **Bravo — confirmar Javi no treinamento** · pendência levantada no discovery de 25/04
-- [25/04/2026] **Bravo — Etapa 4 (1:1 Gustavo)** · bloco custos/pró-labore/salários — não tocado na sessão de 25/04
+- [25/04/2026] ✅ **Bravo — Javi era Ravi** (resolvido 26/04) · Ravi (multifunção, presencial no discovery) confirmado. "Javi" foi erro de transcrição Whisper. Há **dois Rafael**: Rafa (designer, presencial) e Rafael Gobi (editor vídeo, remoto, transcrito como "Gabi")
+- [25/04/2026] ⚠️ **Bravo — Etapa 4 custos parcial** (26/04) · Gustavo passou: Rafa R$2.200, Ravi R$2.000, Gobi R$1.700, ferramentas R$1.265,50, infra R$2.200 = **R$ 9.365,50/mês** (sem Gustavo). Pró-labore Gustavo **não divulgado** (atua como bombeiro, sem tarefa fixa). Custo-hora: ~R$ 26/h. Custo/cliente: ~R$ 468 (margem ~53%)
 - [25/04/2026] **Bravo — atualizar `framework-processo.md` + `bpmn-basico.md` + `plano-execucao.md`** · refletir 3 skills novas após validação Gustavo
 - [25/04/2026] **Bravo — refinar script de treinamento Thiago** · objetivos, tópicos principais, CTAs ao final
 - [25/04/2026] **Bravo — confirmar reunião presencial 13h45** com Thiago · endereço, pauta, duração

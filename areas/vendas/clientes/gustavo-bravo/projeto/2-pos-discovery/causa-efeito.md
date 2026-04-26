@@ -322,7 +322,7 @@ SOLUÇÃO: SLA no contrato + n8n cobrando aprovação + Daily + agenda compartil
 **Causa-raiz:** Falta de cláusula contratual + falta de canal estruturado.
 **Solução validada com Gustavo:** Cláusula no novo contrato ("se não responder, paga independente") + n8n + lembrete WhatsApp em 24h/48h.
 
-### 9.3 Processo: Edição de vídeo (Gabi)
+### 9.3 Processo: Edição de vídeo (Rafael Gobi)
 
 **Efeito:** 1-2 vídeos/dia entregues quando o ideal é 3. Erros graves (texto removido, áudio "Tiradentes" mantido). Gustavo já contratou 3 freelas, nenhum entregou bom.
 

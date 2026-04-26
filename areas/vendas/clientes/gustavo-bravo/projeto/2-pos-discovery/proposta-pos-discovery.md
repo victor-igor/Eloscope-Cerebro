@@ -27,7 +27,7 @@ Premissa: copy/criativo eram gargalos.
 - **Os gargalos reais são outros**:
   1. **Aprovação do cliente** — 2-3 dias de espera, sem SLA, sem lembrete automatizado. Trava todo o ciclo.
   2. **Agendamento manual** — Meta Business 20-30min × 20 clientes = ~10h/mês manuais que ninguém quer fazer.
-  3. **Edição de vídeo** — Gabi entrega 1-2 vídeos/dia quando o ideal são 3+. Backlog crônico. (Problema humano + ferramenta — endereçar como POC, não como skill core.)
+  3. **Edição de vídeo** — Rafael Gobi entrega 1-2 vídeos/dia quando o ideal são 3+. Backlog crônico. (Problema humano + ferramenta — endereçar como POC, não como skill core.)
   4. **Análise mensal** — sem ritual estruturado, decisões de planejamento partem de "achismo".
 
 ### Tese pós-discovery (proposta revisada)
@@ -88,7 +88,7 @@ Modelo de aditivo contratual entregue junto com a Skill 1. Inclui texto de Whats
 ### Bônus C — POC Premiere + Claude Code (edição de vídeo)
 - Não é entregável de produção. É **prova de conceito** para destravar a frente de vídeo.
 - Lucas monta exemplo de skill que assiste vídeo bruto, sugere cortes, gera roteiro de edição.
-- Output: vídeo de 1 cliente real editado em parceria com Gabi para validar viabilidade.
+- Output: vídeo de 1 cliente real editado em parceria com Rafael Gobi para validar viabilidade.
 - Se POC for positivo, vira Skill 4 em projeto seguinte (fora do escopo atual).
 
 ---
@@ -97,7 +97,7 @@ Modelo de aditivo contratual entregue junto com a Skill 1. Inclui texto de Whats
 
 | Item descartado | Razão |
 |-----------------|-------|
-| Substituir o Gabi (editor de vídeo) | Problema humano + capacitação, não automação. Mitigar com POC Premiere. |
+| Substituir o Rafael Gobi (editor de vídeo) | Problema humano + capacitação, não automação. Mitigar com POC Premiere. |
 | Landing pages em Lovable/Vercel | Bravo não priorizou — agendamento + aprovação têm maior ROI. |
 | IA Avatar / clones de voz | Fora do bottleneck atual. |
 | Skill de copy independente | Content Machine já cobre. |
@@ -113,7 +113,7 @@ Modelo de aditivo contratual entregue junto com a Skill 1. Inclui texto de Whats
 | **1** (28/04 → 02/05) | Setup + processo | VPS + OpenClaw + Claude Code + GitHub · Documento de processo aprovado · Cláusula de SLA redigida |
 | **2** (05/05 → 09/05) | Skill 1 (Aprovação) | n8n + WhatsApp + lembretes funcionando com 1 cliente-piloto · Typeform de onboarding entregue |
 | **3** (12/05 → 16/05) | Skill 2 (Agendador) + Skill 3 (Análise) | Agendador testado com 2 clientes · Skill de análise rodada com 1 cliente real · NPS Day-1 ativo |
-| **4** (19/05 → 23/05) | Treinamento + POC | 4 módulos de treinamento (5h) · POC Premiere+Claude Code com Gabi · Documentação final |
+| **4** (19/05 → 23/05) | Treinamento + POC | 4 módulos de treinamento (5h) · POC Premiere+Claude Code com Rafael Gobi · Documentação final |
 | **Suporte** | 24/05 → 23/06 | Ajustes, dúvidas, refinamentos via WhatsApp |
 
 ---
@@ -137,7 +137,7 @@ Justificativa para manter preço apesar da troca de skills:
 | Horas mensais em agendamento manual | ~10h | < 1h (apenas exceções) |
 | Frequência de análise mensal estruturada | Ad-hoc | 100% dos clientes ativos no dia 1-3 do mês |
 | NPS dia 1 medido | Não existe | Coleta ativa em 100% dos novos clientes |
-| Vídeos/dia entregues pela Gabi | 1-2 | 3+ (após POC validar) |
+| Vídeos/dia entregues pela Rafael Gobi | 1-2 | 3+ (após POC validar) |
 
 Medição: dashboard simples no Notion/ClickUp atualizado pela própria n8n na entrega de cada job.
 
@@ -160,7 +160,7 @@ Medição: dashboard simples no Notion/ClickUp atualizado pela própria n8n na e
 - [ ] Gustavo aceita troca das 3 skills core?
 - [ ] Cliente-piloto da Skill 1 (Aprovação) — qual será?
 - [ ] Cláusula de SLA — qual o prazo padrão (48h? 72h?)
-- [ ] POC de vídeo — Gabi topa participar dentro das 4 semanas?
+- [ ] POC de vídeo — Rafael Gobi topa participar dentro das 4 semanas?
 - [ ] Mantém preço R$3.900 mesmo com troca de skills?
 
 ---

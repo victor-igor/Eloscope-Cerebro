@@ -12,42 +12,47 @@
 
 Levantar com o Gustavo TUDO que ele paga por mês para a operação rodar:
 
-| Categoria                | Item                          | Custo/mês      |
-| ------------------------ | ----------------------------- | -------------- |
-| **Pessoas**              | Gustavo (pró-labore)          | R$ ___         |
-|                          | Rafael (design)               | R$ ___         |
-|                          | Javi (multifunção)            | R$ ___         |
-|                          | Rafael Editor (vídeo)         | R$ ___         |
-|                          | Lilian (se ainda ativa)       | R$ ___         |
-| **Subtotal Pessoas**     |                               | **R$ ___**     |
-| **Ferramentas**          | ChatGPT (assinatura)          | R$ ___         |
-|                          | Claude (plano Pro)            | R$ ~92         |
-|                          | Canva (se pago)               | R$ ___         |
-|                          | ClickUp (se pago)             | R$ ___         |
-|                          | Gemini (se pago)              | R$ ___         |
-|                          | mLabs / agendador             | R$ ___         |
-|                          | Lovable / Vercel              | R$ ___         |
-|                          | IOX/Squads (comprou R$66)     | R$ ___ (único) |
-|                          | Outras ferramentas            | R$ ___         |
-| **Subtotal Ferramentas** |                               | **R$ ___**     |
-| **Infraestrutura**       | Escritório / coworking / home | R$ ___         |
-|                          | Internet                      | R$ ___         |
-|                          | Energia                       | R$ ___         |
-|                          | Contador                      | R$ ___         |
-|                          | Impostos (DAS/simples)        | R$ ___         |
-| **Subtotal Infra**       |                               | **R$ ___**     |
-|                          |                               |                |
-| **CUSTO FIXO TOTAL**     |                               | **R$ ___**     |
+| Categoria                | Item                          | Custo/mês        |
+| ------------------------ | ----------------------------- | ---------------- |
+| **Pessoas**              | Gustavo (pró-labore)          | R$ ___ (a confirmar) |
+|                          | Rafael (design)               | R$ 2.200         |
+|                          | Ravi (multifunção)            | R$ 2.000         |
+|                          | Rafael Gobi (vídeo)           | R$ 1.700         |
+| **Subtotal Pessoas**     | (sem Gustavo)                 | **R$ 5.900**     |
+| **Ferramentas**          | ChatGPT                       | R$ 110           |
+|                          | Claude (Pro)                  | R$ 110           |
+|                          | Internet (estúdio?)           | R$ 110           |
+|                          | Adobe (assinatura craqueada)  | R$ 161           |
+|                          | Email                         | R$ 25,80         |
+|                          | Google Drive                  | R$ 49,90         |
+|                          | Google Workspace              | R$ 99,90         |
+|                          | Celular + Internet            | R$ 89            |
+|                          | CapCut                        | R$ 32,90         |
+|                          | Canva                         | R$ 38,10         |
+|                          | ClickUp                       | R$ 0 (free)      |
+|                          | Reportei                      | R$ 209,90        |
+|                          | Govip (Freepik)               | R$ 45            |
+|                          | Procfy (sistema)              | R$ 39            |
+|                          | Lovable                       | R$ 145           |
+|                          | Asaas (% transação)           | variável         |
+|                          | IOX/Squads                    | R$ 66 (único)    |
+| **Subtotal Ferramentas** |                               | **R$ 1.265,50**  |
+| **Infraestrutura**       | Estúdio + utilidades          | R$ 2.200         |
+| **Subtotal Infra**       |                               | **R$ 2.200**     |
+|                          |                               |                  |
+| **CUSTO FIXO TOTAL**     | (sem Gustavo)                 | **R$ 9.365,50**  |
+
+> **Nota sobre Gustavo:** pró-labore não divulgado. Ele atua como "bombeiro" — entra onde precisa salvar (comercial, operação, edição, aprovação). Tarefas não bem definidas; tempo não rastreado. Para fim de simulação, tratamos custo Bravo sem ele e tratamos tempo dele como capacidade variável (não somada às 355h produtivas).
 
 ### Passo 2: Horas disponíveis por mês
 
-| Pessoa        | Horas/dia | Dias/mês | Horas/mês | % operacional* | Horas produtivas |     |
-| ------------- | --------- | -------- | --------- | -------------- | ---------------- | --- |
-| Gustavo       | ___ h     | ___ d    | ___ h     | ___%           | ___ h            |     |
-| Rafael        | ___ h     | ___ d    | ___ h     | ___%           | ___ h            |     |
-| Javi          | ___ h     | ___ d    | ___ h     | ___%           | ___ h            |     |
-| Rafael Editor | ___ h     | ___ d    | ___ h     | ___%           | ___ h            |     |
-| **TOTAL**     |           |          |           |                | **___ h**        |     |
+| Pessoa        | Horas/dia | Dias/mês | Horas/mês | % operacional* | Horas produtivas |
+| ------------- | --------- | -------- | --------- | -------------- | ---------------- |
+| Gustavo       | variável  | ~22 d    | variável  | n/d            | n/d (bombeiro — entra onde precisa) |
+| Rafael        | 7 h       | ~22 d    | 154 h     | ~70%           | ~108 h           |
+| Ravi          | 7 h       | ~22 d    | 154 h     | ~70%           | ~108 h           |
+| Rafael Gobi   | 9 h       | ~22 d    | 198 h     | ~70%           | ~139 h           |
+| **TOTAL**     |           |          | **506 h** |                | **~355 h** (sem Gustavo) |
 
 *\* % operacional = tempo efetivo trabalhando para clientes (descontar reuniões internas, almoço, deslocamento, admin, etc.)*
 
@@ -59,20 +64,24 @@ Levantar com o Gustavo TUDO que ele paga por mês para a operação rodar:
 CUSTO-HORA REAL = Custo Fixo Total ÷ Total Horas Produtivas
 ```
 
-| Métrica | Cálculo | Valor |
-|---------|---------|-------|
-| Custo fixo total/mês | (Pessoas + Ferramentas + Infra) | R$ ___ |
-| Horas produtivas totais/mês | (soma de todas as pessoas) | ___ h |
-| **Custo-hora real da Bravo** | total ÷ horas | **R$ ___/h** |
+| Métrica                       | Cálculo                         | Valor             |
+| ----------------------------- | ------------------------------- | ----------------- |
+| Custo fixo total/mês          | (Pessoas + Ferramentas + Infra) | R$ 9.365,50       |
+| Horas produtivas totais/mês   | (Rafael + Ravi + Rafael Gobi)   | ~355 h            |
+| **Custo-hora real da Bravo**  | total ÷ horas                   | **~R$ 26,38/h**   |
+
+> ⚠️ Não inclui Gustavo (pró-labore a confirmar). Incluindo Gustavo, custo-hora sobe.
 
 ### Passo 4: Custo-hora por pessoa (opcional, mais preciso)
 
-| Pessoa | Custo individual/mês* | Horas produtivas | Custo-hora |
-|--------|----------------------|-------------------|-----------|
-| Gustavo | R$ ___ | ___ h | R$ ___/h |
-| Rafael | R$ ___ | ___ h | R$ ___/h |
-| Javi | R$ ___ | ___ h | R$ ___/h |
-| Rafael Editor | R$ ___ | ___ h | R$ ___/h |
+| Pessoa      | Custo individual/mês*       | Horas produtivas | Custo-hora    |
+| ----------- | --------------------------- | ---------------- | ------------- |
+| Gustavo     | n/d (não divulgado)         | variável         | n/d           |
+| Rafael      | R$ 3.355 (2.200 + R$1.155 rateio) | ~108 h     | **~R$ 31/h**  |
+| Ravi        | R$ 3.155 (2.000 + R$1.155 rateio) | ~108 h     | **~R$ 29/h**  |
+| Rafael Gobi | R$ 2.855 (1.700 + R$1.155 rateio) | ~139 h     | **~R$ 21/h**  |
+
+*Rateio de R$ 3.465,50 (ferramentas + infra) ÷ 3 = R$ 1.155 por pessoa.*
 
 *\* Custo individual = salário + encargos + rateio proporcional de ferramentas e infra*
 
@@ -84,21 +93,25 @@ CUSTO-HORA REAL = Custo Fixo Total ÷ Total Horas Produtivas
 
 Perguntar pro time: **"Para 1 cliente, quanto tempo vocês gastam em cada etapa por mês?"**
 
-| #   | Processo                            | Quem faz | Tempo/cliente/mês | ×20 clientes | Custo-hora | Custo total/mês |
-| --- | ----------------------------------- | -------- | ----------------- | ------------ | ---------- | --------------- |
-| 1   | Análise/relatório do mês anterior   |          | ___min            | ___h         | R$___      | R$___           |
-| 2   | Planejamento de conteúdo            |          | ___min            | ___h         | R$___      | R$___           |
-| 3   | Geração de copy (textos)            |          | ___min            | ___h         | R$___      | R$___           |
-| 4   | Criação de design/criativos         |          | ___min            | ___h         | R$___      | R$___           |
-| 5   | Edição de vídeo (se aplicável)      |          | ___min            | ___h         | R$___      | R$___           |
-| 6   | Enviar para aprovação do cliente    |          | ___min            | ___h         | R$___      | R$___           |
-| 7   | Follow-up / cobrar aprovação        |          | ___min            | ___h         | R$___      | R$___           |
-| 8   | Ajustes pós-feedback do cliente     |          | ___min            | ___h         | R$___      | R$___           |
-| 9   | Postagem / agendamento              |          | ___min            | ___h         | R$___      | R$___           |
-| 10  | Onboarding (cliente novo)           |          | ___min            | ___h         | R$___      | R$___           |
-| 11  | Comunicação geral (WhatsApp, email) |          | ___min            | ___h         | R$___      | R$___           |
-| 12  | Reuniões internas                   |          | ___min            | ___h         | R$___      | R$___           |
-|     | **TOTAL**                           |          |                   | **___h**     |            | **R$___**       |
+> Dados extraídos do `[[levantamento-discovery]]` §5.2 + 5.3. Tempos por **cliente médio (8 estáticos + 2 vídeos)**.
+
+| #   | Processo                                | Quem faz             | Tempo/cliente/mês | ×20 clientes | Custo-hora    | Custo total/mês |
+| --- | --------------------------------------- | -------------------- | ----------------- | ------------ | ------------- | --------------- |
+| 1   | Análise mensal do cliente               | Gustavo              | n/d (a cronometrar) | n/d        | n/d           | n/d             |
+| 2   | Planejamento + copy (Docs+IA → .md)     | Rafa                 | ~30 min           | ~10h         | R$ 31         | R$ 310          |
+| 3   | Geração de criativos estáticos (8/cli)  | Rafa (Content Machine) | ~3,5 h          | ~70h         | R$ 31         | R$ 2.170        |
+| 4   | Captação de vídeo (gravação + foto)     | Gustavo + Ravi       | ~2 h (presencial) | ~40h         | R$ 26 (méd)   | R$ 1.040        |
+| 5   | Edição de vídeo (~2 reels/cliente)      | Rafael Gobi          | ~3 h (1-2 vid/dia) | ~60h        | R$ 21         | R$ 1.260        |
+| 6   | Envio pro cliente aprovar (WhatsApp)    | Rafa / Gustavo       | ~10 min           | ~3,3h        | R$ 30         | R$ 100          |
+| 7   | Follow-up / cobrar aprovação manual     | Gustavo (segunda "carteirando") | ~30 min | ~10h        | R$ 26         | R$ 260          |
+| 8   | Ajustes pós-feedback do cliente         | Rafa / Gobi          | ~30 min           | ~10h         | R$ 26         | R$ 260          |
+| 9   | Agendamento Meta Business (manual)      | Ravi / Rafa          | 20-30 min         | ~8-10h       | R$ 30         | R$ 270          |
+| 10  | Onboarding (cliente novo, não mensal)   | Gustavo              | ~3 sem ciclo      | ~5h amortiz. | R$ 26         | R$ 130          |
+| 11  | Comunicação geral (WhatsApp interno)    | Todos                | n/d               | n/d          | n/d           | n/d             |
+| 12  | Reuniões internas                       | n/a (sem daily)      | 0 min             | 0h           | —             | R$ 0            |
+|     | **TOTAL (parcial, sem n/d)**            |                      |                   | **~216h**    |               | **~R$ 5.800**   |
+
+> ⚠️ Total ≠ custo fixo (R$ 9.365). A diferença (~R$ 3.500) está em: análise mensal não cronometrada, comunicação difusa, retrabalho, capacidade ociosa de Gobi (output abaixo da meta).
 
 ### Passo 6: Custo por cliente
 
@@ -106,26 +119,40 @@ Perguntar pro time: **"Para 1 cliente, quanto tempo vocês gastam em cada etapa 
 CUSTO POR CLIENTE = Custo Total Mensal Operação ÷ 20 clientes
 ```
 
-| Métrica | Valor |
-|---------|-------|
-| Custo operacional total/mês | R$ ___ |
-| Número de clientes | 20 |
-| **Custo por cliente/mês** | **R$ ___** |
-| Ticket médio cobrado/cliente | ~R$ 1.200 |
-| **Margem por cliente** | **R$ ___** |
-| **Margem %** | **____%** |
+| Métrica                       | Valor                                |
+| ----------------------------- | ------------------------------------ |
+| Custo operacional total/mês   | R$ 9.365,50 (sem Gustavo)            |
+| Número de clientes            | ~20                                  |
+| **Custo por cliente/mês**     | **~R$ 468**                          |
+| Ticket médio (R$ 20k ÷ 20)    | ~R$ 1.000                            |
+| **Margem por cliente**        | **~R$ 532** (antes pró-labore Gustavo) |
+| **Margem % bruta**            | **~53%**                             |
+| **Faturamento atual**         | R$ 20k (meta R$ 30k)                 |
+| **Margem total/mês**          | ~R$ 10.634 (antes Gustavo + impostos) |
 
 ### Passo 7: Ranking de processos por custo (do mais caro ao mais barato)
 
-| Rank | Processo | Custo/mês (×20 clientes) | % do custo total |
-|------|----------|------------------------|-----------------|
-| 1 | | R$ ___ | ___% |
-| 2 | | R$ ___ | ___% |
-| 3 | | R$ ___ | ___% |
-| 4 | | R$ ___ | ___% |
-| 5 | | R$ ___ | ___% |
+| Rank | Processo                                  | Custo/mês (×20) | % do custo mapeado | Automação? |
+| ---- | ----------------------------------------- | --------------- | ------------------ | ---------- |
+| 1    | Geração de criativos estáticos (Rafa)     | R$ 2.170        | ~37%               | ✅ Já automatizado (Content Machine) — manter |
+| 2    | Edição de vídeo (Rafael Gobi)             | R$ 1.260        | ~22%               | ⚠️ POC Premiere+Claude (problema é humano) |
+| 3    | Captação presencial (gravação + foto)     | R$ 1.040        | ~18%               | ❌ Físico — não automatiza |
+| 4    | Planejamento + copy (Docs+IA)             | R$ 310          | ~5%                | ✅ Já automatizado (Content Machine) |
+| 5    | Agendamento Meta Business manual          | R$ 270          | ~5%                | 🎯 **Skill Eloscope** (Agendador multi-cliente) |
+| 6    | Follow-up aprovação manual ("carteirar")  | R$ 260          | ~4%                | 🎯 **Skill Eloscope** (Aprovação SLA) |
+| 7    | Ajustes pós-feedback                      | R$ 260          | ~4%                | parcial |
+| 8    | Onboarding (amortizado)                   | R$ 130          | ~2%                | parcial (Typeform) |
+| 9    | Envio cliente                             | R$ 100          | ~2%                | dentro do bloco aprovação |
 
-**Os 3 processos mais caros são os candidatos naturais para as 3 skills.**
+### Insight do ranking
+
+> [!tip] Os 3 processos mais caros **não são** os candidatos naturais — são processos físicos ou já automatizados.
+>
+> **Onde está o ouro real:**
+> - **Custo direto baixo** (Agendamento R$270 + Aprovação R$260 = R$530/mês)
+> - **Custo indireto altíssimo**: cada hora "carteirando" cliente é hora que Gustavo não vende. Meta de R$ 30k (vs. R$ 20k atual) trava porque comercial não escala.
+>
+> A automação de aprovação + agendador libera **~20h/mês do Gustavo** (8h agendamento + 10h follow-up + 2h captação extra) → tempo que vira **comercial digital** → diferença entre R$ 20k e R$ 30k de faturamento.
 
 ---
 
@@ -203,17 +230,19 @@ SOLUÇÃO PROPOSTA: ______________________________________
 
 ## Parte 4 — Simulação: Com IA vs. Sem IA
 
-### Cenário Atual (20 clientes, sem automação)
+### Cenário Atual (~20 clientes, sem automação)
 
-| Métrica | Valor |
-|---------|-------|
-| Faturamento mensal | ~R$24.000 (20 × ~R$1.200) |
-| Custo operacional mensal | R$ ___ |
-| **Margem operacional** | **R$ ___** |
-| **Margem %** | **____%** |
-| Horas produtivas totais/mês | ___ h |
-| Horas por cliente/mês | ___ h |
-| **Capacidade máxima** | **___ clientes** |
+| Métrica                        | Valor                                      |
+| ------------------------------ | ------------------------------------------ |
+| Faturamento mensal médio       | ~R$ 20.000 (meta: R$ 30.000)               |
+| Modelo de receita              | 99% mensalista                             |
+| Mix por cliente típico         | 8 estáticos + 2 vídeos / mês               |
+| Volume total mensal            | ~300 estáticos + ~60 vídeos                |
+| Custo operacional (sem Gustavo)| R$ 9.365,50                                |
+| **Margem antes do pró-labore** | **~R$ 10.634**                             |
+| Horas produtivas totais/mês    | ~355 h (sem Gustavo)                       |
+| Horas por cliente/mês (média)  | ~17,7 h (355h ÷ 20 clientes)               |
+| **Capacidade máxima atual**    | **limitada por gargalo de edição/aprovação** |
 
 ### Cenário com IA (redução de tempo por processo)
 
