@@ -8,6 +8,10 @@
 
 ## 🔴 Críticas (bloqueiam progresso)
 
+- [27/04/2026] 🔥 **Maqlam — risco regulatório API oficial Meta** · atualização pode remover número do lead, matando fluxo híbrido WhatsApp · sem fallback definido · origem: Sprint 17/04 · Victor + Hugo precisam mapear plano B
+- [27/04/2026] **Painel financeiro Supabase com RLS quebrado** · dados 2025 incompletos · origem: Trimestral 02/04 · Victor
+- [27/04/2026] **Validar Cloud Code recebe WhatsApp** (não só envia) · pré-requisito técnico do pivot · origem: Trimestral 02/04 · Victor
+- [27/04/2026] **Base de outcome inexistente** · sem baseline antes/depois nos clientes · difícil vender resultado sem evidência · origem: Sprint 17/04 · Lucas + Victor precisam estruturar coleta
 - [19/04/2026] **Template de contrato** — sem isso o fechamento trava. Responsável: Victor. Criar antes do primeiro cliente. ✅ Inserida no ClickUp (Comercial).
 - [22/04/2026] **SDR Morgana — Hugo** — ATRASADO (era 22/03). ✅ Inserida no ClickUp (Plataforma SaaS, urgente).
 - [22/04/2026] **Hugo: Confirmar capacidade técnica** — Openclaw/Paperclip end-to-end, WhatsApp QR, CRMs via n8n. ✅ Inserida no ClickUp (Plataforma SaaS, urgente).
@@ -49,6 +53,12 @@
 - [18/04/2026] **Hugo: Confirmar capacidade técnica** — Openclaw/Paperclip end-to-end, conexão WhatsApp (QR code funciona?), quais CRMs integra via n8n · bloqueante para primeira entrega
 - [18/04/2026] **Hugo: Decidir ferramenta do dashboard** — Metabase, Grafana, custom ou nativo Openclaw/Paperclip · definir antes do Dia 8 do primeiro cliente
 - [18/04/2026] **Hugo/Victor: Definir LLM recomendado** — OpenAI API ou outro · custo estimado por cliente · como cliente contrata
+
+- [27/04/2026] **ReabilitaCão — bug Maia** · pede CPF/CEP a cada novo pet do mesmo tutor (UX cliente final) · Victor
+- [27/04/2026] **ReabilitaCão — bug Maia regressão** · parou de direcionar contatos novos via WhatsApp · Victor
+- [27/04/2026] **ReabilitaCão — bug ERP** · 3 pacotes da bolsa não excluem · Victor
+- [27/04/2026] **Conteúdo Instagram parado** · frequência insuficiente para novo posicionamento (modelo dia-a-dia) · origem: Trimestral 02/04 · Lucas
+- [27/04/2026] **Voltrucks 2 pausado sem horizonte** · origem: Sprint 17/04
 
 ## ⚪ Backlog (sem urgência imediata)
 
@@ -96,4 +106,4 @@
 
 - [24/04/2026] **Bravo — ClickUp estruturado** · pasta "Bravo Agency" criada com 6 listas e 33 tarefas · workspace 90171169593 / Espaço da equipe
 
-*Atualizado: 25/04/2026*
+*Atualizado: 27/04/2026*
