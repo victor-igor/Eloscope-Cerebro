@@ -1,211 +1,196 @@
+---
+tipo: doc
+status: ativo
+tags: [cliente/bravo, area/vendas, tipo/bpmn, tipo/processo]
+cliente: bravo
+data: 2026-04-27
+relacionados: ["[[processo-detalhado]]", "[[proposta-pos-discovery]]", "[[levantamento-discovery]]"]
+---
+
 # BPMN Básico — Bravo Agency
 
-> **Projeto:** Bravo Agency — Sistema Completo
-> **Objetivo:** Mapear o ciclo mensal por cliente com notação BPMN simplificada
-> **Baseado em:** framework-processo.md (15 processos mapeados)
-> **Uso:** Apresentar no discovery 26/04 para validar fluxo com Gustavo
+> [!info] O que é
+> Fluxo end-to-end da operação Bravo em **raias (swimlanes)**: o que é responsabilidade do **time interno** e o que depende do **cliente final**. Sem detalhamento de cada processo (esse vive em `[[processo-detalhado]]`) — aqui é só o esqueleto pra apresentação.
+
+> [!warning] Reframe — leitura essencial
+> Este documento foi reescrito após o discovery 25/04. Substitui versão anterior (que ainda usava skills antigas Análise/Planejamento/Copy e n8n no escopo). Skills validadas agora: **Aprovação SLA / Agendador multi-cliente / Análise mensal**. Camada técnica de automação interna: **OpenClaw + agentes + skills internas usadas pelo time da Bravo**. Não há n8n no escopo de entrega.
 
 ---
 
-## 1. Ciclo Mensal por Cliente (BPMN)
+## 1. Ciclo de vida do cliente — visão de raias
 
 ```mermaid
-graph TD
-    subgraph CAPTAÇÃO ["1. CAPTAÇÃO (evento único)"]
-        START((Início)) --> A1[Prospecção e<br>Fechamento]
-        A1 --> A2[Onboarding +<br>Briefing Inicial]
-        A2 --> A3[Setup IA do<br>Cliente]
+flowchart LR
+    %% RAIA 1 — CLIENTE FINAL
+    subgraph CLIENTE [" CLIENTE FINAL "]
+        direction LR
+        C1([Fecha contrato]) --> C2[Preenche briefing<br>nos forms]
+        C2 --> C3[Envia material<br>complementar]
+        C3 -.-> C4{Aprova<br>peças?}
+        C4 -->|Sim| C5([Posts no ar])
+        C4 -->|Pede ajuste| C6[Devolve feedback]
+        C6 -.-> C4
+        C5 --> C7[Recebe relatório<br>mensal]
     end
 
-    subgraph CICLO_MENSAL ["2. CICLO MENSAL (repete todo mês)"]
-        A3 --> B1
-
-        B1[Análise do Mês<br>Anterior] --> B2[Planejamento<br>Mensal]
-        B2 --> B3[Geração de<br>Copy]
-        B2 --> B4[Geração de<br>Design/Criativos]
-        B3 --> B5[Montagem do<br>Criativo Final]
-        B4 --> B5
-        B5 --> B6{Envio para<br>Aprovação}
-        B6 -->|Aprovado| B8[Postagem /<br>Agendamento]
-        B6 -->|Ajustes| B7[Ajustes pós<br>Feedback]
-        B7 --> B5
-        B6 -->|Sem resposta<br>12h| B6F[Follow-up<br>Automático]
-        B6F --> B6
-        B8 --> B9[Relatório<br>Mensal]
-        B9 -->|Próximo mês| B1
+    %% RAIA 2 — TIME BRAVO
+    subgraph BRAVO [" TIME BRAVO "]
+        direction LR
+        B1[Onboarding<br>e acessos] --> B2[Setup<br>operacional]
+        B2 --> B3[Captação<br>presencial]
+        B3 --> B4[Planejamento<br>+ copy]
+        B4 --> B5[Geração de<br>criativos]
+        B5 --> B6[Edição<br>de vídeo]
+        B6 --> B7[Envio para<br>aprovação]
+        B7 -.-> B8[Follow-up<br>de aprovação]
+        B8 -.-> B7
+        B7 --> B9[Ajustes pós<br>feedback]
+        B9 --> B10[Agendamento<br>Meta Business]
+        B10 --> B11[Análise<br>mensal]
+        B11 --> B4
     end
 
-    subgraph SUPORTE ["3. ATIVIDADES CONTÍNUAS"]
-        S1[Comunicação<br>WhatsApp/Email]
-        S2[Reuniões<br>Internas]
-        S3[Gestão de<br>Tráfego]
-        S4[Edição de<br>Vídeo]
-        S5[Landing<br>Pages]
-    end
+    %% Conexões cliente ↔ Bravo
+    C1 --> B1
+    C2 --> B2
+    C3 --> B3
+    B7 --> C4
+    C6 --> B9
+    B10 --> C5
+    B11 --> C7
 
-    style B1 fill:#22c55e,color:#fff,stroke:#16a34a
-    style B2 fill:#22c55e,color:#fff,stroke:#16a34a
-    style B3 fill:#22c55e,color:#fff,stroke:#16a34a
-    style B6F fill:#22c55e,color:#fff,stroke:#16a34a
-    style A1 fill:#ef4444,color:#fff,stroke:#dc2626
-    style A2 fill:#eab308,color:#000,stroke:#ca8a04
-    style A3 fill:#eab308,color:#000,stroke:#ca8a04
-    style B4 fill:#eab308,color:#000,stroke:#ca8a04
-    style B8 fill:#eab308,color:#000,stroke:#ca8a04
-    style B9 fill:#eab308,color:#000,stroke:#ca8a04
+    style B8 fill:#ef4444,color:#fff
+    style B11 fill:#ef4444,color:#fff
+    style B10 fill:#eab308
+    style B7 fill:#eab308
 ```
 
-### Legenda
+### Legenda de cores
 
-| Cor | Significado | Ação no projeto |
-|-----|-------------|-----------------|
-| **Verde** | Automatizar neste projeto (Skills 1-3) | Semanas 2-3 |
-| **Amarelo** | Assistido com IA — fase 2 | Proposta futura |
-| **Vermelho** | Manual (requer Gustavo) | Fora do escopo |
-| **Branco** | Atividades de suporte contínuas | Paralelas ao ciclo |
+| Cor | Significado |
+|-----|-------------|
+| 🔴 Vermelho | Gargalo crítico (consome o sócio comercial) |
+| 🟡 Amarelo | Atrito/atraso recorrente |
+| ⚪ Branco | Processo fluindo |
+
+### Pontos de atenção
+
+- **Linhas pontilhadas** entre cliente e Bravo = handoffs onde o fluxo geralmente trava (espera de resposta, follow-up)
+- **B8 (Follow-up)** e **B11 (Análise mensal)** estão em vermelho — são os processos que mais consomem o Gustavo
+- **B10 (Agendamento)** e **B7 (Envio)** em amarelo — atrito repetitivo que Bravo resolve no esforço bruto
 
 ---
 
-## 2. Raias por Responsável (Swimlane)
+## 2. Onde a automação interna entra
+
+> [!info] Camada técnica
+> Automação **interna** via **OpenClaw + agentes + skills**. Usada pelo time da Bravo dentro do OpenClaw deles — não é integração externa com n8n. **Única exceção** que toca o cliente final: disparo de lembrete de cobrança de aprovação (mensagem programada).
 
 ```mermaid
-graph LR
-    subgraph GUSTAVO ["GUSTAVO (Sócio)"]
-        G1[Prospecção] --> G2[Briefing]
-        G3[Análise Mês] --> G4[Planejamento]
-        G5[Aprovação + Follow-up]
-        G6[Tráfego Meta/Google]
+flowchart LR
+    subgraph CLIENTE [" CLIENTE FINAL "]
+        direction LR
+        C1([Fecha contrato]) --> C2[Briefing]
+        C2 --> C3[Material]
+        C3 -.-> C4{Aprova?}
+        C4 -->|Sim| C5([Posts no ar])
+        C4 -->|Ajuste| C6[Feedback]
+        C6 -.-> C4
+        C5 --> C7[Recebe relatório]
     end
 
-    subgraph JAVI ["JAVI (Multifunção)"]
-        J1[Setup IA Cliente]
-        J2[Geração de Copy]
-        J3[Postagem/Agendamento]
-        J4[Comunicação Cliente]
+    subgraph BRAVO [" TIME BRAVO "]
+        direction LR
+        B1[Onboarding] --> B2[Setup]
+        B2 --> B3[Captação]
+        B3 --> B4[Planejamento + copy]
+        B4 --> B5[Criativos]
+        B5 --> B6[Edição]
+        B6 --> B7[Envio aprovação]
+        B7 -.-> B8[Follow-up]
+        B8 -.-> B7
+        B7 --> B9[Ajustes]
+        B9 --> B10[Agendamento Meta]
+        B10 --> B11[Análise mensal]
+        B11 --> B4
     end
 
-    subgraph RAFAEL_D ["RAFAEL (Design)"]
-        R1[Criativos/Design]
-        R2[Ajustes pós-feedback]
+    subgraph OPENCLAW [" OPENCLAW (interno Bravo) "]
+        direction LR
+        O1[Skill 1<br>Aprovação SLA]
+        O2[Skill 2<br>Agendador<br>multi-cliente]
+        O3[Skill 3<br>Análise mensal]
     end
 
-    subgraph RAFAEL_E ["RAFAEL (Editor)"]
-        RE1[Edição de Vídeo]
-    end
+    %% Conexões cliente ↔ Bravo
+    C1 --> B1
+    C2 --> B2
+    C3 --> B3
+    B7 --> C4
+    C6 --> B9
+    B10 --> C5
+    B11 --> C7
 
-    subgraph IA ["IA (Pós-Projeto)"]
-        IA1[Skill 1: Análise]
-        IA2[Skill 2: Planejamento]
-        IA3[Skill 3: Copy]
-        IA4[n8n: Follow-up Auto]
-    end
+    %% OpenClaw substitui/assiste
+    B7 -.assiste.-> O1
+    B8 -.substitui.-> O1
+    B10 -.substitui.-> O2
+    B11 -.substitui.-> O3
 
-    G3 -.->|substituído por| IA1
-    G4 -.->|substituído por| IA2
-    J2 -.->|substituído por| IA3
-    G5 -.->|assistido por| IA4
+    %% Único toque ao cliente final
+    O1 -.lembrete cobrança.-> C4
 
-    style IA1 fill:#22c55e,color:#fff
-    style IA2 fill:#22c55e,color:#fff
-    style IA3 fill:#22c55e,color:#fff
-    style IA4 fill:#22c55e,color:#fff
+    style O1 fill:#22c55e,color:#fff
+    style O2 fill:#22c55e,color:#fff
+    style O3 fill:#22c55e,color:#fff
+    style B8 fill:#ef4444,color:#fff
+    style B11 fill:#ef4444,color:#fff
+    style B10 fill:#eab308
 ```
+
+### Como ler
+
+| Linha | Significado |
+|-------|-------------|
+| `B7 -.assiste.-> O1` | OpenClaw apoia a etapa, time continua no controle |
+| `B8 -.substitui.-> O1` | OpenClaw assume — time só valida |
+| `O1 -.lembrete cobrança.-> C4` | Único ponto onde OpenClaw fala com cliente final (mensagem programada) |
+
+### O que **não está** no escopo
+
+- ❌ n8n / integrações externas
+- ❌ Conectores diretos com Meta Business (agendamento real fica como roteiro/preparação, time executa)
+- ❌ Bots de WhatsApp respondendo cliente
+- ❌ Qualquer coisa que exija servidor/infra de produção pra o cliente final
+
+> [!tip] Filosofia da entrega
+> **Eloscope monta agentes e skills no OpenClaw da Bravo.** Time da Bravo opera essas skills no dia a dia. Quando algum dia a Bravo decidir vender skill pro cliente final dela, o caminho é "exportar" — mas isso **não é deste projeto**.
 
 ---
 
-## 3. Sequência Detalhada com Tempos (preencher no discovery)
+## 3. Tabela de raias resumida
 
-| Passo | Atividade | Responsável | Tempo/cliente | Automação |
-|-------|-----------|-------------|---------------|-----------|
-| 1 | Análise métricas mês anterior | Gustavo | ~45min | **SKILL 1** |
-| 2 | Planejamento calendário posts | Gustavo + IA | ~30min | **SKILL 2** |
-| 3 | Geração de copy (8 posts) | Ravi + IA | ~20min × 8 | **SKILL 3** |
-| 4 | Geração de design/criativos | Rafael | ~30min × 8 | Fase 2 |
-| 5 | Montagem criativo final | Rafael + Ravi | ~10min × 8 | Fase 2 |
-| 6 | Envio para aprovação cliente | Gustavo/Ravi | ~10min | **n8n** |
-| 7 | Follow-up (cobrar resposta) | Gustavo | ~5min × N | **n8n** |
-| 8 | Ajustes pós-feedback | Rafael/Ravi | variável | Manual |
-| 9 | Postagem/agendamento | Ravi | ~10min × 8 | Fase 2 |
-| 10 | Relatório mensal | Gustavo | ~30min | Fase 2 |
-
-**Tempo total estimado por cliente/mês:** ~8-10h (validar no discovery)
-**Tempo com automação (Skills 1-3):** ~4-6h (-40 a -50%)
+| Etapa do ciclo | Quem inicia | Quem executa | Onde OpenClaw entra |
+|----------------|-------------|--------------|----------------------|
+| Onboarding | Cliente | Bravo | bônus de processo (Typeform unificado) |
+| Captação | Bravo | Bravo (Gustavo + Ravi) | — |
+| Planejamento + copy | Bravo | Bravo (Rafa + Content Machine) | — |
+| Criativos | Bravo | Bravo (Rafa + Content Machine) | — |
+| Edição | Bravo | Bravo (Editor) | — |
+| Envio aprovação | Bravo | Bravo (Rafa) | apoio (Skill 1) |
+| Follow-up aprovação | Bravo | Bravo (Gustavo) | **substitui (Skill 1)** + lembrete pro cliente |
+| Ajustes | Cliente | Bravo (Designer/Editor) | — |
+| Agendamento Meta | Bravo | Bravo (Ravi/Rafa) | **substitui (Skill 2)** |
+| Análise mensal | Bravo | Bravo (Gustavo) | **substitui (Skill 3)** |
 
 ---
 
-## 4. Gargalos Visuais
+## 4. Próximos passos
 
-```
-FLUXO ATUAL (sem automação):
-══════════════════════════════════════════════════════════
-
-Análise ──────── Planejamento ──────── Copy ────────────
- 45min/cliente    30min/cliente    20min × 8 = 160min
- GUSTAVO          GUSTAVO           JAVI
- ████████████     ██████████        ████████████████████
-
-                                    Design ─────────────
-                                    30min × 8 = 240min
-                                    RAFAEL
-                                    ██████████████████████████████
-
-Aprovação ──── Follow-up ──── Ajustes ──── Postagem ────
- 10min + ESPERA   5min × N      variável    10min × 8
- GUSTAVO/JAVI    GUSTAVO        RAFAEL      JAVI
- ██░░░░░░░░░░    ██░░░██░░░██   ████        ████████████
-
-══════════════════════════════════════════════════════════
-
-GARGALOS:
-  1. Gustavo concentra Análise + Planejamento + Aprovação
-     → ~75min/cliente + follow-ups = ~25-35h/mês nos 20
-  2. Espera do cliente na aprovação (6-12h média)
-     → Bloqueia postagem, gera retrabalho
-  3. Copy e Design são paralelos mas sem coordenação
-     → Copy pronto mas design atrasa (ou vice-versa)
-```
+1. **Apresentar pro time da Bravo** — material está em `[[fluxos-miro]]` pronto pra importar
+2. **Validar reframe** das 3 skills com Gustavo
+3. **Cronometrar análise mensal** real (input crítico pra Skill 3)
 
 ---
 
-## 5. Fluxo Pós-Automação (visão futura)
-
-```
-FLUXO COM SKILLS (pós-projeto):
-══════════════════════════════════════════════════════════
-
-  IA Skill 1        IA Skill 2        IA Skill 3
-  ┌─────────┐      ┌───────────┐      ┌──────────┐
-  │ Análise │ ───→ │Planejam.  │ ───→ │  Copy    │
-  │ ~5min   │      │ ~5min     │      │ ~2min×8  │
-  │ Validar │      │ Validar   │      │ Validar  │
-  └─────────┘      └───────────┘      └──────────┘
-   Gustavo OK       Gustavo OK         Ravi OK
-   (5min)            (5min)             (16min)
-
-                    ┌──────────────────┐
-                    │Design (Rafael)   │  ← Paralelo
-                    │~30min × 8 = 240m │
-                    └──────────────────┘
-
-  n8n Auto          n8n Auto
-  ┌─────────┐      ┌───────────┐
-  │ Envio   │ ───→ │Follow-up  │ ───→ Postagem
-  │ Aprovação│      │Automático │      (Ravi)
-  │ WhatsApp│      │ 12h/24h   │
-  └─────────┘      └───────────┘
-
-══════════════════════════════════════════════════════════
-
-RESULTADO:
-  Gustavo: 75min → 10min por cliente (validar outputs)
-  Ravi: Copy manual → Revisão de copy gerado
-  Aprovação: Manual → Automática com lembretes
-  
-  Capacidade: 20 → 30+ clientes sem contratar
-```
-
----
-
-*Criado: 24/04/2026*
-*Baseado em: framework-processo.md + dados reunião 20/04/2026*
-*Notação: BPMN simplificado com Mermaid (renderizável em qualquer viewer markdown)*
+*Criado: 24/04/2026 · Reescrito: 27/04/2026 (reframe pós-discovery + ajuste OpenClaw como camada técnica)*

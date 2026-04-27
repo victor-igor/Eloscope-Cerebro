@@ -24,9 +24,11 @@
 - [25/04/2026] **Bravo — refinar script de treinamento Thiago** · objetivos, tópicos principais, CTAs ao final
 - [25/04/2026] **Bravo — confirmar reunião presencial 13h45** com Thiago · endereço, pauta, duração
 - [25/04/2026] **Bravo — alinhar envio de contrato + forma de pagamento** com Thiago · prazo + responsável
-- [25/04/2026] **Maqlam — iniciar campanha de cashback** desenhada na reunião · registrar métricas a monitorar
-- [25/04/2026] **Morgana — desbloquear ou substituir número** (bloqueado nos testes de disparo de imagem) · registrar novo fluxo de testes
-- [25/04/2026] **Maqlam — Victor liberar IA BDR** para o time da Maqlam · acompanhar primeiros testes/feedbacks
+- [25/04/2026] ✅ **Maqlam — campanha cashback pós-feira estruturada** (27/04) · regras 5%/3×/30d, vigência 02/05–02/06 definidas com Denis · task `86e13a626` no ClickUp pra importar planilha em 02/05
+- [25/04/2026] **Morgana — desbloquear ou substituir número** (bloqueado nos testes de disparo de imagem) · task `86e13a62g` no ClickUp (urgent)
+- [25/04/2026] ✅ **Maqlam — IA BDR (Bumble) ativação cadastrada** (27/04) · task `86e13a62b` urgent · Victor cadastra script Bumble + ativa MAC1 · Denis confirmou multi-persona
+- [27/04/2026] **Maqlam — pedir autorização ao Denis** pra usar cortes 4 e 6 da call de 24/04 como conteúdo público · cortes 1, 2, 5, 7 podem rodar sem identificação · ver `areas/marketing/cortes-conteudo/2026-04-24-maqlam-checklist-review.md`
+- [27/04/2026] **Maqlam — agendar call de follow-up** ~08-09/05 (sexta 01/05 é feriado, Marcella viaja na seguinte) · task `86e13a64a`
 - [25/04/2026] **Revisar definição de ticket por produto + ICP** (insight palestra Verhaw/ACIRP) · possível espelho do modelo Verhaw
 
 - [23/04/2026] **Gustavo Bravo — enviar contrato para assinatura** · Gustavo já enviou dados (CNPJ/CPF) · preencher contrato, enviar pra assinar, lançar pagamento · antes de sábado 26/04

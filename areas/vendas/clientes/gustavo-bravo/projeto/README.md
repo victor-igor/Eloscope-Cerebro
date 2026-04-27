@@ -34,7 +34,9 @@ Ordem de aplicação no dia + transcrição + consolidado.
 Ishikawa dos 5 processos + fluxo BPMN + proposta revisada das 3 skills.
 
 - [[causa-efeito]] — Ishikawa de aprovação, agendamento, edição, análise, planejamento
-- [[bpmn-basico]] — fluxo mensal proposto + 3 skills marcadas
+- [[bpmn-basico]] — fluxo end-to-end em raias (cliente × time Bravo) + camada OpenClaw
+- [[processo-detalhado]] — detalhamento processo a processo com tempo + custo agregado (apresentar pro time)
+- [[fluxos-miro]] — 4 boards Mermaid prontos pra importar no Miro + roteiro de apresentação
 - [[proposta-pos-discovery]] — **reframe das 3 skills** (Aprovação SLA / Agendador multi-cliente / Análise mensal) substituindo Análise/Planejamento/Copy
 
 ### [[3-contrato]] — Contratação
