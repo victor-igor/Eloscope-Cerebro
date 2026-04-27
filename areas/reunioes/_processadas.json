@@ -126,6 +126,36 @@
       "tasks_criadas": [],
       "modo": "summary-only"
     },
+    "manual:semanal-2026-04-20-retro": {
+      "arquivo": "areas/reunioes/semanais/2026-04-20-semanal-retro.md",
+      "url": null,
+      "titulo": "Semanal 20/04 — Retro Semana 3 Abril",
+      "data": "2026-04-20",
+      "duracao_min": 0,
+      "participantes": ["Lucas", "Victor", "Hugo"],
+      "subtipo": "semanal",
+      "cliente": null,
+      "processado_em": "2026-04-27",
+      "tokens_aprox": 1200,
+      "cortes_arquivo": null,
+      "tasks_criadas": [],
+      "modo": "manual-retro"
+    },
+    "manual:semanal-2026-04-27-retro": {
+      "arquivo": "areas/reunioes/semanais/2026-04-27-semanal-retro.md",
+      "url": null,
+      "titulo": "Semanal 27/04 — Retro Semana 4 Abril",
+      "data": "2026-04-27",
+      "duracao_min": 0,
+      "participantes": ["Lucas", "Victor", "Hugo"],
+      "subtipo": "semanal",
+      "cliente": null,
+      "processado_em": "2026-04-27",
+      "tokens_aprox": 1400,
+      "cortes_arquivo": null,
+      "tasks_criadas": [],
+      "modo": "manual-retro"
+    },
     "manual:bravo-2026-04-23-adiada": {
       "arquivo": "areas/reunioes/vendas/bravo/2026-04-23-adiada.md",
       "url": null,
