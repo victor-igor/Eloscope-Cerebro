@@ -1,7 +1,7 @@
 ---
 tipo: reuniao
 subtipo: semanal
-data: 2026-04-20
+data: 2026-04-17
 semana: 3
 duracao_min: 0
 participantes: [Lucas, Victor, Hugo]
@@ -10,9 +10,9 @@ tags: [reuniao, semanal, interno, planejamento, retro]
 status: processada
 ---
 
-# Semanal — 20/04/2026 (Semana 3 de Abril)
+# Semanal — 17/04/2026 (Sexta · Semana 3 de Abril)
 
-> Retrospectiva original rotulada como "03 Abril de 2026" (semana 3).
+> Retrospectiva da semana encerrada em 17/04, com planejamento da semana 20-24/04.
 
 ## O que funcionou / não funcionou?
 

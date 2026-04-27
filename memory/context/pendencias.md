@@ -60,6 +60,15 @@
 - [27/04/2026] **Conteúdo Instagram parado** · frequência insuficiente para novo posicionamento (modelo dia-a-dia) · origem: Trimestral 02/04 · Lucas
 - [27/04/2026] **Voltrucks 2 pausado sem horizonte** · origem: Sprint 17/04
 
+- [27/04/2026] **WhatsApp — playbook de aquecimento documentado** · bloqueios recorrentes: Maqlam (2 números 5h), Morgana (24h só com testes), Jean (2 números só configurando WhatsApp Web) · Lucas + Hugo
+- [27/04/2026] **Maqlam — cliente exemplo para monitorar** · aguardando envio do Denis (alinhamento 24/04) · Lucas
+- [27/04/2026] **Estrutura comercial inteira pendente** · apresentação vendas, playbook, funil (in/out/indicação), LP, lista leads, papéis → todas com link ClickUp criado, prazo próxima semana · Lucas + Victor
+- [27/04/2026] **Conteúdo Instagram não estruturado** · pessoal + Eloscope · Victor
+- [27/04/2026] **Pagamento Jean — 2ª parcela** · 1+2 finais, segunda pendente · prazo 01/05 · Lucas (task `86e13dg5n`)
+- [27/04/2026] **Pagamento Maqlam vence 25/04** · pendente · Lucas
+- [27/04/2026] **Gustavo Bravo — pagamento 4× boleto** · acompanhar parcelas
+- [27/04/2026] **Financeiro — extratos pendentes** · subir últimos extratos antes de fechar 100% · prazo 28/04 · Victor (task `86e13dfum`)
+
 ## ⚪ Backlog (sem urgência imediata)
 
 - [17/04/2026] Projeção financeira detalhada (quantos clientes para operação sustentável)
@@ -106,4 +115,4 @@
 
 - [24/04/2026] **Bravo — ClickUp estruturado** · pasta "Bravo Agency" criada com 6 listas e 33 tarefas · workspace 90171169593 / Espaço da equipe
 
-*Atualizado: 27/04/2026*
+*Atualizado: 27/04/2026 (noite — retro semanal)*

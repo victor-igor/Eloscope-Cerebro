@@ -126,11 +126,11 @@
       "tasks_criadas": [],
       "modo": "summary-only"
     },
-    "manual:semanal-2026-04-20-retro": {
-      "arquivo": "areas/reunioes/semanais/2026-04-20-semanal-retro.md",
+    "manual:semanal-2026-04-17-retro": {
+      "arquivo": "areas/reunioes/semanais/2026-04-17-semanal-retro.md",
       "url": null,
-      "titulo": "Semanal 20/04 — Retro Semana 3 Abril",
-      "data": "2026-04-20",
+      "titulo": "Semanal 17/04 — Retro Semana 3 Abril",
+      "data": "2026-04-17",
       "duracao_min": 0,
       "participantes": ["Lucas", "Victor", "Hugo"],
       "subtipo": "semanal",

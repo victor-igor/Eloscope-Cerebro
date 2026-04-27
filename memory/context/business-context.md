@@ -148,9 +148,11 @@
 
 | Nome | Função | Foco atual |
 |------|--------|------------|
-| Victor Igor | COO / Founder | Produto Elo OS, marketing, reuniões com clientes |
-| Lucas Negreiro | Comercial / Financeiro | Prospecção, fechamento, cobranças, Bravo delivery |
+| Victor Igor | COO / Founder | Marketing (execução + estratégico), Financeiro (execução + estratégico), Comercial estratégico, Produto estratégico |
+| Lucas Negreiro | Comercial + Produto Operacional | Comercial execução (prospecção/reunião/proposta/follow-up/fechamento), Produto execução (features/automações/suporte/bugs/onboarding/CS), Produto estratégico (roadmap/priorização) |
 | Hugo de Oliveira | Tech | Implementações n8n, Openclaw/Paperclip, SDR Morgana |
+
+> Matriz de responsabilidades formal Execução×Estratégico em `decisoes/2026-04.md` [27/04/2026]
 
 ---
 
@@ -187,4 +189,4 @@
 
 ---
 
-*Atualizado: 2026-04-24*
+*Atualizado: 2026-04-27*

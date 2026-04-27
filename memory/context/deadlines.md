@@ -29,6 +29,20 @@
 | 09/05/2026 | Bravo — skills finalizadas + treinamento | Pendente | Lucas |
 | 08/06/2026 | Bravo — fim do suporte pós-entrega (30 dias) | Pendente | Lucas |
 | 05/05/2026 | Abordar Matheus — prospecção Elo OS | ✅ No ClickUp | Lucas |
+| 27/04/2026 | Atualizar n8n Maqlam | ✅ No ClickUp `86e13dfkz` | Lucas |
+| 27/04/2026 | Definir escopo projeto Bravo | ✅ No ClickUp `86e13dfng` | Lucas |
+| 27/04/2026 | Comprar 2 chips Maqlam | ✅ No ClickUp `86e13dfqc` | Lucas |
+| 27/04/2026 | Liberar BDR Maqlam (script Bumble + MAC1) | ✅ No ClickUp `86e13dfr4` | Lucas |
+| 27/04/2026 | Créditos números Eloscope | ✅ No ClickUp `86e13dftk` | Lucas |
+| 28/04/2026 | Finalizar organização do financeiro | ✅ No ClickUp `86e13dfum` | Victor |
+| 28/04/2026 | Definir estratégias de marketing (conteúdos/canais) | ✅ No ClickUp `86e13dfvb` | Victor |
+| 28/04/2026 | Morgana em produção | ✅ No ClickUp `86e13dfwx` | Lucas |
+| 30/04/2026 | Desenhar processo operacional | ✅ No ClickUp `86e13dfy3` | Lucas |
+| 30/04/2026 | Mapear funil lead → pós-venda | ✅ No ClickUp `86e13dfzx` | Lucas |
+| 30/04/2026 | Criar Landing Page | ✅ No ClickUp `86e13dg16` | Victor |
+| 30/04/2026 | Definir metas comercial | ✅ No ClickUp `86e13dg2t` | Victor |
+| 30/04/2026 | Criar campanhas Maqlam | ✅ No ClickUp `86e13dg45` | Lucas |
+| 01/05/2026 | Cobrar Jean — 2ª parcela | ✅ No ClickUp `86e13dg5n` | Lucas |
 
 ## Viagens / Eventos
 
@@ -43,4 +57,4 @@
 | DD/MM/YYYY | [descrição] | ✅ [resultado] |
 
 ---
-*Atualizado: 24/04/2026*
+*Atualizado: 27/04/2026*
