@@ -30,6 +30,12 @@
 | | `memory/context/business-context.md` | SE é métrica-chave |
 | **Deadline novo ou concluído** | `memory/context/deadlines.md` | Adicionar ou mover pra concluídos |
 | **Ideia registrada** | arquivo de ideias (crie onde fizer sentido) | Adicionar com data |
+| **Reunião processada** | `areas/reunioes/{tipo}/[cliente/]YYYY-MM-DD-slug.md` | Arquivo completo via skill `/reuniao` |
+| | `areas/reunioes/_processadas.json` | Manifest com fonte+ID+hash (anti-refetch) |
+| | `areas/marketing/cortes-conteudo/YYYY-MM-DD-slug.md` | SE houver cortes shareáveis (com link de origem) |
+| | `memory/context/decisoes/YYYY-MM.md` | SE reunião gerou decisão estratégica |
+| | `memory/context/pendencias.md` | SE reunião gerou bloqueio crítico |
+| | ClickUp | Tasks dos action items (com confirmação do usuário) |
 
 ---
 
