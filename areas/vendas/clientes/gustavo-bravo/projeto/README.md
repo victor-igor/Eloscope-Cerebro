@@ -28,6 +28,7 @@ Ordem de aplicação no dia + transcrição + consolidado.
 - [[01-apresentacao-alinhamento]] — slide de abertura
 - [[Transcricao]] — transcrição completa do áudio (Ravi presente como "Cunha"; Rafael Gobi citado como "Gabi")
 - [[levantamento-discovery]] — **consolidado pós-discovery** (fonte de verdade)
+- [[formularios-bravo]] — mapeamento dos 5 Google Forms de briefing/onboarding (2 mapeados, 3 com acesso restrito)
 
 ### [[2-pos-discovery]] — Análise + Reframe (25-26/04)
 Ishikawa dos 5 processos + fluxo BPMN + proposta revisada das 3 skills.
