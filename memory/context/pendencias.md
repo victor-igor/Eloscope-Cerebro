@@ -66,7 +66,10 @@
 - [27/04/2026] **Conteúdo Instagram não estruturado** · pessoal + Eloscope · Victor
 - [27/04/2026] **Pagamento Jean — 2ª parcela** · 1+2 finais, segunda pendente · prazo 01/05 · Lucas (task `86e13dg5n`)
 - [27/04/2026] **Pagamento Maqlam vence 25/04** · pendente · Lucas
-- [27/04/2026] **Gustavo Bravo — pagamento 4× boleto** · acompanhar parcelas
+- [29/04/2026] ✅ **Bravo — 1ª parcela R$975 paga** (assinatura) · próximas: 15/05, 15/06, 15/07 (4× R$975 = R$3.900) · 3 cobranças futuras criadas no ClickUp
+- [29/04/2026] **Enertelles — call 30/04 com Telles + Alex confirmada** · último check da proposta v4 hoje (29/04) + atualizar `proposta-enertelles.html` v3→v4 antes da call
+- [29/04/2026] **Morgana — cadastrar lista do Matheus + ativar IA de ativação** · 2 chips novos já recebidos · script da IA + modelo de incentivo coletivo documentado no sistema · ClickUp tasks `86e150f6z`, `86e150f7n`, `86e150f7z`
+- [27/04/2026] **Gustavo Bravo — pagamento 4× boleto** · 1ª paga 29/04 ✅ · acompanhar 15/05, 15/06, 15/07
 - [27/04/2026] **Financeiro — extratos pendentes** · subir últimos extratos antes de fechar 100% · prazo 28/04 · Victor (task `86e13dfum`)
 
 ## ⚪ Backlog (sem urgência imediata)
@@ -115,4 +118,4 @@
 
 - [24/04/2026] **Bravo — ClickUp estruturado** · pasta "Bravo Agency" criada com 6 listas e 33 tarefas · workspace 90171169593 / Espaço da equipe
 
-*Atualizado: 27/04/2026 (noite — retro semanal)*
+*Atualizado: 29/04/2026*

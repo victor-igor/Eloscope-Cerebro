@@ -25,6 +25,12 @@
 | 26/04/2026 | Bravo — contrato assinado + 1ª parcela R$975 | Pendente | Lucas |
 | 26/04/2026 | Bravo — discovery presencial na agência (sábado) | Pendente | Lucas + Gustavo + Rafael + Javi |
 | 24/04/2026 | Elite Maqlam — reunião 15h (apresentar cashback) | Pendente | Lucas + Denis |
+| 30/04/2026 | Enertelles — call Telles + Alex (apresentar proposta v4) | Pendente | Lucas |
+| 30/04/2026 | Bravo — validar reframe das 3 skills com Gustavo | Pendente | Lucas |
+| 02/05/2026 | Bravo — redigir aditivo SLA contratual | Pendente | Lucas |
+| 15/05/2026 | Bravo — 2ª parcela R$975 | Pendente | Lucas |
+| 15/06/2026 | Bravo — 3ª parcela R$975 | Pendente | Lucas |
+| 15/07/2026 | Bravo — 4ª parcela R$975 (final) | Pendente | Lucas |
 | 02/05/2026 | Bravo — documento de processo + infra pronta | Pendente | Lucas |
 | 09/05/2026 | Bravo — skills finalizadas + treinamento | Pendente | Lucas |
 | 08/06/2026 | Bravo — fim do suporte pós-entrega (30 dias) | Pendente | Lucas |
@@ -57,4 +63,4 @@
 | DD/MM/YYYY | [descrição] | ✅ [resultado] |
 
 ---
-*Atualizado: 27/04/2026*
+*Atualizado: 29/04/2026*

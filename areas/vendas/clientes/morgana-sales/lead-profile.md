@@ -6,18 +6,19 @@
 
 - **Nome fantasia:** Morgana Sales Estética
 - **Vertical Q2:** Clínica estética
+- **Sistema próprio:** elo.morgana.com.br (instância Elo OS dedicada)
 - **Porte (fat. mensal estimado):** {TODO}
-- **Time comercial:** {TODO — recepcionista + profissionais + Morgana}
+- **Time comercial:** equipe sem comissão individual — meta coletiva (decisão deles)
 - **Cidade:** {TODO}
 - **Site / Instagram:** {TODO}
 
 ## Decisor
 
-- **Nome:** Morgana
-- **Cargo:** Dona / profissional
+- **Nome:** Dra. Morgana Sales
+- **Cargo:** Dona / proprietária
 - **WhatsApp:** {TODO}
 - **Perfil:** Operacional / vendedora (estética é venda consultiva)
-- **Decisor-2:** {TODO}
+- **Decisor-2:** **Matheus Campos** — marido da Dra. Morgana, sócio da Morgana Sales **e** dono da Campos Joia. Foi a ponte que trouxe a Eloscope pra dentro do negócio. Em 28/04/2026 forneceu 1 celular + 2 chips para projeto.
 
 ## Origem e timing
 
@@ -56,8 +57,15 @@
 - [ ] Fechar escopo case oficial — Lucas — 2026-04-26
 - [ ] Preparar playbook finalizado — Lucas — 2026-05-01
 
+## Decisões / observações
+
+- **Chatwoot fora do uso definitivo (28/04/2026)** — apresentado no treinamento, time vai usar só pontual. Sistema principal = `elo.morgana.com.br`.
+- **Sem comissão individual / sem meta por vendedor** — meta da equipe. Estrutura de incentivo coletiva (decisão da Dra. Morgana e Matheus).
+- **IA de ativação de base como entrada** — IA chama e conversa com leads existentes. Modelo de prospecção ativa por IA, não SDR humano. Material: 2 chips novos do Matheus já alocados.
+
 ## Log
 
 | Data | Canal | Quem | Resumo | Próxima |
 |---|---|---|---|---|
 | 2026-04-19 | — | Lucas | Pasta criada | Confirmar WABA |
+| 2026-04-28 | Presencial | Lucas | Treinamento na Morgana — apresentou Chatwoot + sistema `elo.morgana.com.br`. Confirmado: chatwoot fora do uso definitivo, sem comissão individual, IA fará ativação de base. Recebeu celular+2 chips do Matheus. | Cadastrar lista de leads do Matheus, ativar IA de ativação |

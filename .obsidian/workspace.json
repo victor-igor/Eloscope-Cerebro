@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "areas/vendas/clientes/gustavo-bravo/projeto/2-pos-discovery/bpmn-basico.md",
+                "file": "areas/vendas/clientes/gustavo-bravo/projeto/2-pos-discovery/causa-efeito.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "bpmn-basico"
+              "title": "causa-efeito"
             }
           }
         ]
@@ -185,6 +185,8 @@
   },
   "active": "de837dc89d77be22",
   "lastOpenFiles": [
+    "memory/sessions/2026-04-29.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/2-pos-discovery/bpmn-basico.md",
     "memory/context/organograma.md",
     "areas/reunioes/semanais/2026-04-17-semanal-retro.md",
     "areas/reunioes/semanais/2026-04-27-semanal-retro.md",
@@ -212,8 +214,6 @@
     "skills/reuniao/templates/venda.md",
     "skills/reuniao/templates/interna.md",
     "skills/reuniao/templates/semanal.md",
-    "skills/reuniao/templates/daily.md",
-    "skills/reuniao/templates/_base.md",
     "skills/reuniao/templates",
     "skills/reuniao",
     "areas/reunioes/vendas",
