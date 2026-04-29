@@ -68,6 +68,8 @@
 - [27/04/2026] **Pagamento Maqlam vence 25/04** · pendente · Lucas
 - [29/04/2026] ✅ **Bravo — 1ª parcela R$975 paga** (assinatura) · próximas: 15/05, 15/06, 15/07 (4× R$975 = R$3.900) · 3 cobranças futuras criadas no ClickUp
 - [29/04/2026] **Enertelles — call 30/04 com Telles + Alex confirmada** · último check da proposta v4 hoje (29/04) + atualizar `proposta-enertelles.html` v3→v4 antes da call
+- [29/04/2026] 🔥 **Daniel Queiroz — validar pricing OpenClaw com Victor antes da call de hoje** · setup R$1.800 + mensal R$690 + adicionais (vendedor R$150, canal R$400+R$250) · todos marcados `[VALIDAR]` em `proposta-comercial.md` v2 · também: confirmar caso real OpenClaw pra demo + garantia 30 dias devolução setup
+- [29/04/2026] **Daniel Queiroz — registrar resultado da call** · fechou / pediu prazo / não / puxou outro produto · se fechou: criar `memory/projects/openclaw-daniel.md` · se não: follow-up 06/05
 - [29/04/2026] **Morgana — cadastrar lista do Matheus + ativar IA de ativação** · 2 chips novos já recebidos · script da IA + modelo de incentivo coletivo documentado no sistema · ClickUp tasks `86e150f6z`, `86e150f7n`, `86e150f7z`
 - [27/04/2026] **Gustavo Bravo — pagamento 4× boleto** · 1ª paga 29/04 ✅ · acompanhar 15/05, 15/06, 15/07
 - [27/04/2026] **Financeiro — extratos pendentes** · subir últimos extratos antes de fechar 100% · prazo 28/04 · Victor (task `86e13dfum`)
