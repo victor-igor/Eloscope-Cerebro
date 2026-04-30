@@ -23,19 +23,19 @@ relacionados: ["[[bpmn-basico]]", "[[analise-custo-processo]]", "[[levantamento-
 |---|----------|------------|-------------------|--------------|--------------------|
 | 1 | Onboarding (cliente novo) | evento único | ~3 sem ciclo (latência) | ~5h amortiz. | ~R$ 130 |
 | 2 | Briefing inicial (5 forms) | evento único | ~2-4h cliente solo | — | — (custo cliente) |
-| 3 | Captação presencial | mensal | ~2h | ~40h | ~R$ 1.040 |
-| 4 | Planejamento + copy | mensal | ~30 min | ~10h | ~R$ 310 |
-| 5 | Geração de criativos estáticos | mensal | ~3,5h (8 peças) | ~70h | ~R$ 2.170 |
-| 6 | Edição de vídeo | mensal | ~3h (2 vídeos) | ~60h | ~R$ 1.260 |
+| 3 | Captação presencial | mensal | ~3,3h (banco+gravação+upload) | ~66h | ~R$ 1.716 |
+| 4 | Planejamento + copy | mensal | ~1h (work) | ~20h | ~R$ 620 |
+| 5 | Revisão criativos estáticos | mensal | ~1,5h (8 peças, Content Machine) | ~30h | ~R$ 930 |
+| 6 | Edição de vídeo | mensal | ~4,6h (2 reels, 2,3h/reel real) | ~92h | ~R$ 1.932 |
 | 7 | Envio para aprovação | mensal | ~10 min | ~3,3h | ~R$ 100 |
 | 8 | Follow-up de aprovação | mensal | ~30 min | ~10h | ~R$ 260 |
 | 9 | Ajustes pós-feedback | mensal | ~30 min | ~10h | ~R$ 260 |
-| 10 | Agendamento Meta Business | mensal | ~25 min | ~8-10h | ~R$ 270 |
+| 10 | Agendamento Meta Business | mensal | ~25 min | ~8h | ~R$ 240 |
 | 11 | Análise mensal + relatório | mensal | n/d (a cronometrar) | n/d | n/d |
-| | **Total parcial mapeado** | | | **~216h** | **~R$ 5.800** |
+| | **Total parcial mapeado** | | | **~244h** | **~R$ 6.188** |
 
 > [!tip] Como ler
-> Os 3 processos mais caros (criativos, edição, captação) **não são candidatos naturais a automação** — são físicos ou já automatizados (Content Machine). Os candidatos reais (aprovação + agendamento) custam pouco em horas-Bravo, **mas consomem o sócio comercial** — que é o gargalo pra escalar receita.
+> Os 3 processos mais caros agora são **edição de vídeo, captação presencial e revisão de estáticos**. Edição e captação são físicas/criativas (não automatizam fácil); estático já está com Content Machine — só sobra revisão. Os candidatos reais a Skill Eloscope (aprovação + agendamento) custam pouco em horas-Bravo, **mas consomem o sócio comercial** — que é o gargalo pra escalar receita.
 
 ---
 
@@ -113,10 +113,10 @@ graph LR
 
 | Métrica | Valor |
 |---------|-------|
-| Tempo Bravo por cliente/mês | ~2h |
+| Tempo Bravo por cliente/mês | ~3,3h (1h banco imagem + 2h gravação 4 vídeos + 0,3h upload) |
 | Frequência | mensal (varia por cliente) |
-| ×20 clientes | ~40h/mês |
-| Custo agregado | ~R$ 1.040/mês |
+| ×20 clientes | ~66h/mês |
+| Custo agregado | ~R$ 1.716/mês |
 
 ### Característica
 - **Físico, não automatizável** — entra no documento como custo conhecido, não como alvo de skill
@@ -151,9 +151,9 @@ graph LR
 
 | Métrica | Valor |
 |---------|-------|
-| Tempo por cliente/mês | ~30 min |
-| ×20 clientes | ~10h/mês |
-| Custo agregado | ~R$ 310/mês |
+| Tempo por cliente/mês | ~1h (work Bravo; 3 dias review do cliente não contam) |
+| ×20 clientes | ~20h/mês |
+| Custo agregado | ~R$ 620/mês |
 | Status | **Já automatizado** (Content Machine — plugin Figma) |
 
 ### Característica
@@ -180,21 +180,21 @@ graph LR
 
 | Passo | Atividade | Quem | Tempo |
 |-------|-----------|------|-------|
-| 1 | Geração automática (Content Machine) | Rafa (operando) | ~1h |
-| 2 | Ajuste fino + identidade visual | Rafa | ~2h |
-| 3 | Exportação e organização | Rafa | ~30 min |
+| 1 | Geração automática (Content Machine) | Rafa (operando) | ~30 min |
+| 2 | Revisão + ajuste fino de identidade visual | Rafa | ~45 min |
+| 3 | Exportação e organização | Rafa | ~15 min |
 
 ### Métricas
 
 | Métrica | Valor |
 |---------|-------|
-| Tempo por cliente/mês | ~3,5h (8 peças) |
-| ×20 clientes | ~70h/mês |
-| Custo agregado | ~R$ 2.170/mês |
+| Tempo por cliente/mês | ~1,5h (8 peças, revisão+ajuste+envio) |
+| ×20 clientes | ~30h/mês |
+| Custo agregado | ~R$ 930/mês |
 | Status | **Já automatizado** (Content Machine) |
 
 ### Característica
-- **Maior custo do operacional** — mas já automatizado
+- Já automatizado — só sobra revisão e ajuste de identidade
 - Não é dor da Bravo, é o motor que funciona
 
 ---
@@ -219,19 +219,19 @@ graph LR
 
 | Passo | Atividade | Quem | Tempo |
 |-------|-----------|------|-------|
-| 1 | Triagem do material captado | Editor | ~20 min |
-| 2 | Corte e edição (1-2 vídeos/dia produção) | Editor | ~2h |
-| 3 | Trilha, legenda, tratamento | Editor | ~30 min |
-| 4 | Exportação + entrega | Editor | ~10 min |
+| 1 | Triagem do material captado | Editor | ~20 min/vídeo |
+| 2 | Corte e edição | Editor | ~1h20/vídeo |
+| 3 | Trilha, legenda, tratamento | Editor | ~30 min/vídeo |
+| 4 | Exportação + entrega | Editor | ~20 min/vídeo |
 
 ### Métricas
 
 | Métrica | Valor |
 |---------|-------|
-| Tempo por cliente/mês | ~3h (2 vídeos) |
-| ×20 clientes | ~60h/mês |
-| Custo agregado | ~R$ 1.260/mês |
-| Output | abaixo da meta (capacidade subutilizada) |
+| Tempo por cliente/mês | ~4,6h (2 reels × 2,3h/reel real) |
+| ×20 clientes | ~92h/mês |
+| Custo agregado | ~R$ 1.932/mês |
+| Capacidade Gobi | ~139h produtivas ÷ 60 vídeos/mês = 2,3h/vídeo média realizada |
 
 ### Gargalo
 - **Não é problema técnico** — é capacidade humana e ritmo
@@ -388,8 +388,8 @@ graph LR
 | Métrica | Valor |
 |---------|-------|
 | Tempo por cliente/mês | ~25 min (8 posts × 2 redes) |
-| ×20 clientes | ~8-10h/mês |
-| Custo agregado | ~R$ 270/mês |
+| ×20 clientes | ~8h/mês |
+| Custo agregado | ~R$ 240/mês |
 | Característica | **repetitivo + login-troca-login** |
 
 ### Gargalo

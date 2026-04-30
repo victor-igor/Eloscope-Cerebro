@@ -145,15 +145,15 @@ flowchart LR
 flowchart TB
     subgraph TOPO [" Onde o tempo do time vai (×20 clientes) "]
         direction LR
-        T1[Criativos<br>~70h<br>~R$ 2.170]
-        T2[Edição<br>~60h<br>~R$ 1.260]
-        T3[Captação<br>~40h<br>~R$ 1.040]
-        T4[Planejamento+copy<br>~10h<br>~R$ 310]
+        T1[Edição<br>~92h<br>~R$ 1.932]
+        T2[Captação<br>~66h<br>~R$ 1.716]
+        T3[Revisão estáticos<br>~30h<br>~R$ 930]
+        T4[Planejamento+copy<br>~20h<br>~R$ 620]
     end
 
     subgraph CARO [" Onde DÓI (consome o sócio comercial) "]
         direction LR
-        D1[Agendamento Meta<br>~10h/mês<br>~R$ 270]
+        D1[Agendamento Meta<br>~8h/mês<br>~R$ 240]
         D2[Follow-up aprovação<br>~10h/mês<br>~R$ 260]
         D3[Análise mensal<br>~30-40h/mês<br>a confirmar]
     end

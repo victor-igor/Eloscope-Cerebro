@@ -373,7 +373,7 @@ SOLUÇÃO: SLA no contrato + n8n cobrando aprovação + Daily + agenda compartil
 
 ### 9.6 Processo: Geração de copy + criativo estático (REVISADO — não é mais top)
 
-**Efeito real:** **Não é mais gargalo.** Content Machine (plugin Figma da Bridge Codec) + Docs ChatGPT estruturado já entrega 8-12 criativos em 3-4h (era 8h+ no Photoshop). Cliente "chato" Diego aprovou de primeira.
+**Efeito real:** **Não é mais gargalo.** Content Machine (plugin Figma da Bridge Codec) + Docs ChatGPT estruturado já entrega 8-12 criativos por cliente — Bravo só revisa, ajusta identidade e envia em ~1,5h/cliente (era 8h+ no Photoshop, manual). Cliente "chato" Diego aprovou de primeira.
 
 | Categoria | Causa real |
 |-----------|-----------|

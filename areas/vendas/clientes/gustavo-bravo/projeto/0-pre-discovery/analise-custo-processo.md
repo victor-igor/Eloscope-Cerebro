@@ -98,18 +98,24 @@ Perguntar pro time: **"Para 1 cliente, quanto tempo vocês gastam em cada etapa 
 | #   | Processo                                | Quem faz             | Tempo/cliente/mês | ×20 clientes | Custo-hora    | Custo total/mês |
 | --- | --------------------------------------- | -------------------- | ----------------- | ------------ | ------------- | --------------- |
 | 1   | Análise mensal do cliente               | Gustavo              | n/d (a cronometrar) | n/d        | n/d           | n/d             |
-| 2   | Planejamento + copy (Docs+IA → .md)     | Rafa                 | ~30 min           | ~10h         | R$ 31         | R$ 310          |
-| 3   | Geração de criativos estáticos (8/cli)  | Rafa (Content Machine) | ~3,5 h          | ~70h         | R$ 31         | R$ 2.170        |
-| 4   | Captação de vídeo (gravação + foto)     | Gustavo + Ravi       | ~2 h (presencial) | ~40h         | R$ 26 (méd)   | R$ 1.040        |
-| 5   | Edição de vídeo (~2 reels/cliente)      | Rafael Gobi          | ~3 h (1-2 vid/dia) | ~60h        | R$ 21         | R$ 1.260        |
+| 2   | Planejamento + copy (Docs+IA → .md)     | Rafa                 | ~1 h (work)       | ~20h         | R$ 31         | R$ 620          |
+| 3   | Revisão criativos estáticos (8/cli, Content Machine)  | Rafa | ~1,5 h (revisão+ajuste+envio) | ~30h | R$ 31     | R$ 930          |
+| 4   | Captação de vídeo (banco + 4 vídeos + upload) | Gustavo + Ravi | ~3,3 h (1h banco + 2h gravação + 0,3h upload) | ~66h | R$ 26 (méd) | R$ 1.716 |
+| 5   | Edição de vídeo (~2 reels/cliente)      | Rafael Gobi          | ~4,6 h (2,3h/reel real) | ~92h    | R$ 21         | R$ 1.932        |
 | 6   | Envio pro cliente aprovar (WhatsApp)    | Rafa / Gustavo       | ~10 min           | ~3,3h        | R$ 30         | R$ 100          |
 | 7   | Follow-up / cobrar aprovação manual     | Gustavo (segunda "carteirando") | ~30 min | ~10h        | R$ 26         | R$ 260          |
 | 8   | Ajustes pós-feedback do cliente         | Rafa / Gobi          | ~30 min           | ~10h         | R$ 26         | R$ 260          |
-| 9   | Agendamento Meta Business (manual)      | Ravi / Rafa          | 20-30 min         | ~8-10h       | R$ 30         | R$ 270          |
+| 9   | Agendamento Meta Business (manual)      | Ravi / Rafa          | 20-30 min         | ~8h          | R$ 30         | R$ 240          |
 | 10  | Onboarding (cliente novo, não mensal)   | Gustavo              | ~3 sem ciclo      | ~5h amortiz. | R$ 26         | R$ 130          |
 | 11  | Comunicação geral (WhatsApp interno)    | Todos                | n/d               | n/d          | n/d           | n/d             |
 | 12  | Reuniões internas                       | n/a (sem daily)      | 0 min             | 0h           | —             | R$ 0            |
-|     | **TOTAL (parcial, sem n/d)**            |                      |                   | **~216h**    |               | **~R$ 5.800**   |
+|     | **TOTAL (parcial, sem n/d)**            |                      |                   | **~244h**    |               | **~R$ 6.188**   |
+
+> **Nota da revisão (30/04):** valores anteriores subestimavam vídeo e superestimavam estático. Premissas atualizadas com base nos dados do Miro:
+> - **Estático:** Content Machine automatiza geração — Rafa só revisa/ajusta/envia (~1,5h/cliente, era 3,5h)
+> - **Edição vídeo:** Gobi tem ~139h produtivas/mês ÷ 60 vídeos = 2,3h/vídeo real (era 1,5h/vídeo)
+> - **Captação vídeo:** 1h banco imagem + 4 vídeos × 30min + 15-20min upload = 3,3h/cliente (era 2h)
+> - **Copy:** 1h de trabalho da Bravo (3 dias de review do cliente não contam no custo Bravo)
 
 > ⚠️ Total ≠ custo fixo (R$ 9.365). A diferença (~R$ 3.500) está em: análise mensal não cronometrada, comunicação difusa, retrabalho, capacidade ociosa de Gobi (output abaixo da meta).
 
@@ -134,13 +140,13 @@ CUSTO POR CLIENTE = Custo Total Mensal Operação ÷ 20 clientes
 
 | Rank | Processo                                  | Custo/mês (×20) | % do custo mapeado | Automação? |
 | ---- | ----------------------------------------- | --------------- | ------------------ | ---------- |
-| 1    | Geração de criativos estáticos (Rafa)     | R$ 2.170        | ~37%               | ✅ Já automatizado (Content Machine) — manter |
-| 2    | Edição de vídeo (Rafael Gobi)             | R$ 1.260        | ~22%               | ⚠️ POC Premiere+Claude (problema é humano) |
-| 3    | Captação presencial (gravação + foto)     | R$ 1.040        | ~18%               | ❌ Físico — não automatiza |
-| 4    | Planejamento + copy (Docs+IA)             | R$ 310          | ~5%                | ✅ Já automatizado (Content Machine) |
-| 5    | Agendamento Meta Business manual          | R$ 270          | ~5%                | 🎯 **Skill Eloscope** (Agendador multi-cliente) |
-| 6    | Follow-up aprovação manual ("carteirar")  | R$ 260          | ~4%                | 🎯 **Skill Eloscope** (Aprovação SLA) |
-| 7    | Ajustes pós-feedback                      | R$ 260          | ~4%                | parcial |
+| 1    | Edição de vídeo (Rafael Gobi)             | R$ 1.932        | ~31%               | ⚠️ POC Premiere+Claude (problema é humano) |
+| 2    | Captação presencial (gravação + foto)     | R$ 1.716        | ~28%               | ❌ Físico — não automatiza |
+| 3    | Revisão criativos estáticos (Rafa)        | R$ 930          | ~15%               | ✅ Já automatizado (Content Machine) — manter |
+| 4    | Planejamento + copy (Docs+IA)             | R$ 620          | ~10%               | ✅ Já automatizado (Content Machine) |
+| 5    | Follow-up aprovação manual ("carteirar")  | R$ 260          | ~4%                | 🎯 **Skill Eloscope** (Aprovação SLA) |
+| 6    | Ajustes pós-feedback                      | R$ 260          | ~4%                | parcial |
+| 7    | Agendamento Meta Business manual          | R$ 240          | ~4%                | 🎯 **Skill Eloscope** (Agendador multi-cliente) |
 | 8    | Onboarding (amortizado)                   | R$ 130          | ~2%                | parcial (Typeform) |
 | 9    | Envio cliente                             | R$ 100          | ~2%                | dentro do bloco aprovação |
 
@@ -149,7 +155,7 @@ CUSTO POR CLIENTE = Custo Total Mensal Operação ÷ 20 clientes
 > [!tip] Os 3 processos mais caros **não são** os candidatos naturais — são processos físicos ou já automatizados.
 >
 > **Onde está o ouro real:**
-> - **Custo direto baixo** (Agendamento R$270 + Aprovação R$260 = R$530/mês)
+> - **Custo direto baixo** (Agendamento R$240 + Aprovação R$260 = R$500/mês)
 > - **Custo indireto altíssimo**: cada hora "carteirando" cliente é hora que Gustavo não vende. Meta de R$ 30k (vs. R$ 20k atual) trava porque comercial não escala.
 >
 > A automação de aprovação + agendador libera **~20h/mês do Gustavo** (8h agendamento + 10h follow-up + 2h captação extra) → tempo que vira **comercial digital** → diferença entre R$ 20k e R$ 30k de faturamento.
