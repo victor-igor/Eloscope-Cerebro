@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Bravo × Eloscope — Pós-Discovery</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js"></script>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  html, body { background: #0a0a0a; color: #f5f5f5; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+  .slide {
+    width: 1280px; height: 720px;
+    padding: 56px 72px;
+    page-break-after: always;
+    break-after: page;
+    position: relative;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border-bottom: 1px solid #222;
+  }
+  .slide:last-child { page-break-after: auto; }
+  .slide-num {
+    position: absolute; bottom: 24px; right: 32px;
+    font-size: 11px; color: #555; letter-spacing: 0.1em;
+  }
+  .slide-brand {
+    position: absolute; bottom: 24px; left: 72px;
+    font-size: 11px; color: #555; letter-spacing: 0.15em; text-transform: uppercase;
+  }
+  .accent { color: #f59e0b; }
+  .accent-bg { background: #f59e0b; color: #0a0a0a; }
+  .red { color: #ef4444; }
+  .green { color: #22c55e; }
+  .yellow { color: #eab308; }
+  .muted { color: #888; }
+  h1.title { font-size: 56px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+  h2.title { font-size: 40px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+  .kicker { font-size: 12px; color: #f59e0b; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
+  .mermaid { background: #fff; border-radius: 12px; padding: 16px; }
+  .card {
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .card-red { border-color: #7f1d1d; background: #1a0a0a; }
+  .card-yellow { border-color: #854d0e; background: #1a1408; }
+  .card-green { border-color: #14532d; background: #0a1a10; }
+  .card-blue { border-color: #1e3a5f; background: #0a1018; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; padding: 8px 12px; background: #1a1a1a; color: #f59e0b; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid #333; }
+  td { padding: 8px 12px; border-bottom: 1px solid #222; }
+  tr:hover td { background: #141414; }
+  .pill {
+    display: inline-block; padding: 2px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.05em;
+  }
+  .pill-red { background: #7f1d1d; color: #fecaca; }
+  .pill-yellow { background: #854d0e; color: #fef3c7; }
+  .pill-green { background: #14532d; color: #bbf7d0; }
+  .pill-blue { background: #1e3a5f; color: #bfdbfe; }
+  .pill-gray { background: #2a2a2a; color: #ccc; }
+  .stat-big { font-size: 64px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+  .stat-label { font-size: 13px; color: #888; margin-top: 4px; }
+  ul.bullets li { padding-left: 28px; position: relative; margin-bottom: 12px; line-height: 1.5; }
+  ul.bullets li:before { content: "→"; position: absolute; left: 0; color: #f59e0b; font-weight: 700; }
+  .quote { border-left: 3px solid #f59e0b; padding: 8px 20px; font-style: italic; color: #ddd; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 — CAPA -->
+<div class="slide" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a0a05 100%); justify-content: center;">
+  <div class="kicker mb-6">Bravo Agency × Eloscope · 30 de abril de 2026</div>
+  <h1 class="title mb-8">Pós-Discovery —<br><span class="accent">o que mapeamos</span><br>e o que vamos automatizar.</h1>
+  <div class="text-xl muted max-w-3xl">Dos 10 processos da operação Bravo, identificamos onde dói, quanto custa e onde a automação realmente libera receita. Esta é a base da decisão.</div>
+  <div class="absolute bottom-12 right-16 flex gap-12 items-end">
+    <div>
+      <div class="text-xs muted uppercase tracking-widest">Apresentado por</div>
+      <div class="text-lg font-semibold">Lucas Negreiro · Eloscope</div>
+    </div>
+    <div>
+      <div class="text-xs muted uppercase tracking-widest">Para</div>
+      <div class="text-lg font-semibold">Gustavo · Bravo Agency</div>
+    </div>
+  </div>
+  <div class="slide-num">01 / 15</div>
+</div>
+
+<!-- SLIDE 2 — O QUE FIZEMOS NO DISCOVERY -->
+<div class="slide">
+  <div class="kicker">01 · Discovery</div>
+  <h2 class="title mb-2">O que fizemos pra chegar até aqui.</h2>
+  <div class="muted text-lg mb-8">Não é achismo. É escuta + medição + cruzamento de causa-raiz.</div>
+
+  <div class="grid-2 mb-6">
+    <div class="card">
+      <div class="kicker mb-3">Método aplicado</div>
+      <ul class="bullets text-sm">
+        <li><b>Levantamento de processos</b> — lista de 10+ processos cronometrados em tempo médio por cliente e por mês</li>
+        <li><b>Ishikawa (espinha de peixe)</b> — 6 categorias de causa por processo crítico</li>
+        <li><b>5 Whys</b> — pra chegar na causa-raiz, não no sintoma</li>
+        <li><b>BPMN swimlanes</b> — mapa cliente × time pra ver onde trava o handoff</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="kicker mb-3">Fontes</div>
+      <ul class="bullets text-sm">
+        <li><b>2 sessões de discovery presencial</b> — Seaac Rio Preto · ~3h de gravação</li>
+        <li><b>Entrevistas com Gustavo + Rafael</b> (design + planejamento)</li>
+        <li><b>Os 5 forms de onboarding</b> da Bravo analisados em detalhe</li>
+        <li><b>Observação direta</b> de Content Machine + Docs ChatGPT em uso</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card-yellow card">
+    <div class="kicker mb-2" style="color: #fbbf24">Reframe importante</div>
+    <div class="text-base">A tese pré-discovery era automatizar <span class="muted">copy + criativo + planejamento</span>. Descobrimos que <b>copy e criativo já estão automatizados</b> via Content Machine. A dor real está em outro lugar — e é o que esta apresentação vai mostrar.</div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">02 / 15</div>
+</div>
+
+<!-- SLIDE 3 — MAPA DA OPERAÇÃO -->
+<div class="slide">
+  <div class="kicker">02 · Mapa da operação</div>
+  <h2 class="title mb-2">Como a Bravo entrega hoje — fluxo end-to-end.</h2>
+  <div class="muted text-sm mb-4">Raia de cima: cliente final · Raia de baixo: time Bravo · Linhas pontilhadas = handoffs onde trava.</div>
+
+  <div class="mermaid flex-1 flex items-center justify-center">
+flowchart LR
+    subgraph CLIENTE [" CLIENTE FINAL "]
+        direction LR
+        C1([Fecha contrato]) --> C2[Briefing<br>5 forms]
+        C2 --> C3[Material]
+        C3 -.-> C4{Aprova?}
+        C4 -->|Sim| C5([Posts no ar])
+        C4 -->|Ajuste| C6[Feedback]
+        C6 -.-> C4
+        C5 --> C7[Recebe relatório]
+    end
+
+    subgraph BRAVO [" TIME BRAVO "]
+        direction LR
+        B1[Onboarding] --> B2[Setup]
+        B2 --> B3[Captação]
+        B3 --> B4[Plan + copy]
+        B4 --> B5[Criativos]
+        B5 --> B6[Edição]
+        B6 --> B7[Envio aprov]
+        B7 -.-> B8[Follow-up]
+        B8 -.-> B7
+        B7 --> B9[Ajustes]
+        B9 --> B10[Agendamento]
+        B10 --> B11[Análise mensal]
+        B11 --> B4
+    end
+
+    C1 --> B1
+    C2 --> B2
+    C3 --> B3
+    B7 --> C4
+    C6 --> B9
+    B10 --> C5
+    B11 --> C7
+
+    style B8 fill:#ef4444,color:#fff,stroke:#991b1b,stroke-width:3px
+    style B11 fill:#ef4444,color:#fff,stroke:#991b1b,stroke-width:3px
+    style B10 fill:#eab308,color:#000,stroke:#854d0e,stroke-width:3px
+    style B7 fill:#eab308,color:#000,stroke:#854d0e,stroke-width:3px
+  </div>
+
+  <div class="flex gap-6 mt-4 text-sm">
+    <span><span class="pill pill-red">VERMELHO</span> &nbsp;Gargalo crítico — consome o sócio comercial</span>
+    <span><span class="pill pill-yellow">AMARELO</span> &nbsp;Atrito repetitivo</span>
+    <span><span class="pill pill-gray">BRANCO</span> &nbsp;Fluindo</span>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">03 / 15</div>
+</div>
+
+<!-- SLIDE 4 — RESUMO EXECUTIVO DE CUSTO -->
+<div class="slide">
+  <div class="kicker">03 · Custo da operação</div>
+  <h2 class="title mb-2">Resumo executivo — onde o tempo evapora.</h2>
+  <div class="muted text-sm mb-4">Custo-hora médio ponderado do time produtor: <b>~R$ 26/h</b> (já inclui rateio de ferramentas e infra).</div>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Processo</th><th>Frequência</th><th>×20 clientes</th><th>Custo/mês</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Onboarding (cliente novo)</td><td>evento único</td><td>~5h amortiz.</td><td>~R$ 130</td><td><span class="pill pill-gray">amortizado</span></td></tr>
+      <tr><td>2</td><td>Captação presencial</td><td>mensal</td><td>~40h</td><td>~R$ 1.040</td><td><span class="pill pill-gray">físico</span></td></tr>
+      <tr><td>3</td><td>Planejamento + copy</td><td>mensal</td><td>~10h</td><td>~R$ 310</td><td><span class="pill pill-green">automatizado</span></td></tr>
+      <tr><td>4</td><td><b>Geração de criativos estáticos</b></td><td>mensal</td><td><b>~70h</b></td><td><b>~R$ 2.170</b></td><td><span class="pill pill-green">automatizado</span></td></tr>
+      <tr><td>5</td><td>Edição de vídeo</td><td>mensal</td><td>~60h</td><td>~R$ 1.260</td><td><span class="pill pill-yellow">humano</span></td></tr>
+      <tr><td>6</td><td>Envio para aprovação</td><td>mensal</td><td>~3,3h</td><td>~R$ 100</td><td><span class="pill pill-yellow">manual</span></td></tr>
+      <tr><td>7</td><td>Follow-up de aprovação</td><td>mensal</td><td>~10h</td><td>~R$ 260</td><td><span class="pill pill-red">consome Gustavo</span></td></tr>
+      <tr><td>8</td><td>Ajustes pós-feedback</td><td>mensal</td><td>~10h</td><td>~R$ 260</td><td><span class="pill pill-yellow">manual</span></td></tr>
+      <tr><td>9</td><td>Agendamento Meta Business</td><td>mensal</td><td>~10h</td><td>~R$ 270</td><td><span class="pill pill-yellow">manual</span></td></tr>
+      <tr><td>10</td><td>Análise mensal + relatório</td><td>mensal</td><td>~30-40h</td><td>a confirmar</td><td><span class="pill pill-red">consome Gustavo</span></td></tr>
+      <tr style="background: #1a1408;"><td colspan="3"><b>TOTAL PARCIAL MAPEADO</b></td><td><b>~216h/mês</b></td><td><b>~R$ 5.800/mês</b></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">04 / 15</div>
+</div>
+
+<!-- SLIDE 5 — TOP 3 MAIS CAROS -->
+<div class="slide">
+  <div class="kicker">04 · Os 3 mais caros</div>
+  <h2 class="title mb-2">E por que <span class="accent">não</span> são candidatos a automação.</h2>
+  <div class="muted text-base mb-8">Custo direto não é o critério certo. Olha cada um:</div>
+
+  <div class="grid-3 flex-1">
+    <div class="card">
+      <div class="kicker mb-2">#1</div>
+      <div class="stat-big accent">R$ 2.170</div>
+      <div class="stat-label">Criativos estáticos · ~70h/mês</div>
+      <div class="mt-4 text-sm">Maior custo do operacional — <b>mas já está automatizado</b> via Content Machine (Figma + Bridge Codec). Cliente "chato" Diego aprovou de primeira.</div>
+      <div class="mt-4"><span class="pill pill-green">NÃO MEXER</span></div>
+    </div>
+    <div class="card">
+      <div class="kicker mb-2">#2</div>
+      <div class="stat-big accent">R$ 1.260</div>
+      <div class="stat-label">Edição de vídeo · ~60h/mês</div>
+      <div class="mt-4 text-sm">Não é problema de ferramenta — é capacidade humana. Premiere/CapCut disponíveis, briefs OK. <b>POC Premiere+Claude Code</b> entra como bônus, não como skill core.</div>
+      <div class="mt-4"><span class="pill pill-yellow">FORA DO ESCOPO</span></div>
+    </div>
+    <div class="card">
+      <div class="kicker mb-2">#3</div>
+      <div class="stat-big accent">R$ 1.040</div>
+      <div class="stat-label">Captação presencial · ~40h/mês</div>
+      <div class="mt-4 text-sm">Físico — gravação no local do cliente. <b>Não automatizável.</b> Entra como custo conhecido. Concentra Gustavo num dia inteiro fora.</div>
+      <div class="mt-4"><span class="pill pill-gray">FÍSICO</span></div>
+    </div>
+  </div>
+
+  <div class="card mt-6 card-blue">
+    <div class="quote">"O criativo é o mais caro, mas já roda sozinho. A dor real está em coisas que custam pouco em horas-Bravo, mas custam <b class="accent">o sócio comercial inteiro.</b>"</div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">05 / 15</div>
+</div>
+
+<!-- SLIDE 6 — REFRAME -->
+<div class="slide">
+  <div class="kicker">05 · Reframe do critério</div>
+  <h2 class="title mb-2">O critério não é custo —<br>é <span class="accent">"consome o Gustavo"</span>.</h2>
+  <div class="muted text-base mb-6">Mapa de calor reorganizado pelo critério certo:</div>
+
+  <table>
+    <thead>
+      <tr><th>Processo</th><th>Custo direto</th><th>Consome o sócio comercial?</th><th>Já automatizado?</th><th>Candidato?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Captação</td><td class="red">alto</td><td>sim</td><td>não automatizável</td><td>não</td></tr>
+      <tr><td>Criativos</td><td class="red">muito alto</td><td>não</td><td class="green">sim (Content Machine)</td><td>não</td></tr>
+      <tr><td>Edição de vídeo</td><td class="red">alto</td><td>não</td><td>parcial (POC fase 2)</td><td>não</td></tr>
+      <tr><td>Plan + copy</td><td class="muted">baixo</td><td>não</td><td class="green">sim (Content Machine)</td><td>não</td></tr>
+      <tr style="background: #1a0a0a;"><td><b>Follow-up aprovação</b></td><td class="muted">médio</td><td class="red"><b>SIM, 100%</b></td><td>não</td><td class="green"><b>SIM — Skill 1</b></td></tr>
+      <tr style="background: #1a1408;"><td><b>Agendamento Meta</b></td><td class="muted">médio</td><td class="yellow">parcial</td><td>não</td><td class="green"><b>SIM — Skill 2</b></td></tr>
+      <tr style="background: #1a0a0a;"><td><b>Análise mensal</b></td><td class="muted">a confirmar</td><td class="red"><b>SIM, 100%</b></td><td>não</td><td class="green"><b>SIM — Skill 3</b></td></tr>
+    </tbody>
+  </table>
+
+  <div class="card-yellow card mt-6">
+    <div class="text-base"><b class="accent">Por que esse critério?</b> Você é o único comercial. Cada hora "carteirando aprovação" ou "fazendo análise mensal" é uma hora não vendendo. O teto de receita da Bravo está nas suas horas livres — não no orçamento operacional.</div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">06 / 15</div>
+</div>
+
+<!-- SLIDE 7 — GARGALO 1: APROVAÇÃO + FOLLOW-UP -->
+<div class="slide">
+  <div class="kicker">06 · Gargalo crítico #1</div>
+  <h2 class="title mb-2">Aprovação + Follow-up — <span class="red">2 a 3 dias parados</span>.</h2>
+  <div class="muted text-sm mb-4">Fluxo atual:</div>
+
+  <div class="grid-2 flex-1">
+    <div>
+      <div class="mermaid">
+flowchart TB
+    A[Time envia<br>peças WhatsApp] --> B{Cliente<br>responde?}
+    B -->|Não| C[Gustavo abre<br>WhatsApp 2ª-feira]
+    C --> D[Cobra manualmente]
+    D --> E{Resp?}
+    E -->|Não| F[Tenta de novo<br>quarta]
+    F --> E
+    E -->|Sim, ok| G[Posta]
+    E -->|Ajuste| H[Time refaz]
+    style C fill:#ef4444,color:#fff
+    style D fill:#ef4444,color:#fff
+    style F fill:#ef4444,color:#fff
+      </div>
+    </div>
+    <div class="space-y-3">
+      <div class="card-red card">
+        <div class="kicker mb-2" style="color:#fca5a5">Causa-raiz (5 Whys)</div>
+        <div class="text-sm">1. Cliente recebe no WhatsApp, mistura com vida pessoal, esquece<br>
+        2. Não tem canal dedicado nem prazo combinado<br>
+        3. Contrato não obriga, não pesa pro cliente atrasar<br>
+        4. Bravo nunca formalizou — "a gente é ser humano, esquece"<br>
+        5. <b class="accent">Operação cresceu sem SLA contratual nem ritual de medição</b></div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="stat-big red">10h</div>
+          <div class="stat-label">/mês carteirando<br>(100% Gustavo)</div>
+        </div>
+        <div class="card">
+          <div class="stat-big red">2-3d</div>
+          <div class="stat-label">latência média<br>de aprovação</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">07 / 15</div>
+</div>
+
+<!-- SLIDE 8 — GARGALO 2: AGENDAMENTO -->
+<div class="slide">
+  <div class="kicker">07 · Gargalo crítico #2</div>
+  <h2 class="title mb-2">Agendamento Meta Business — <span class="yellow">login-troca-login 20×</span>.</h2>
+  <div class="muted text-sm mb-4">Fluxo atual:</div>
+
+  <div class="grid-2 flex-1">
+    <div>
+      <div class="mermaid">
+flowchart TB
+    A[Peça aprovada] --> B[Login Meta]
+    B --> C[Trocar conta<br>do cliente]
+    C --> D[Upload + legenda<br>+ hashtags]
+    D --> E[Definir data/hora]
+    E --> F{Próxima peça?}
+    F -->|Sim| C
+    F -->|Não| G[Próximo cliente]
+    G --> C
+    style B fill:#eab308,color:#000
+    style C fill:#ef4444,color:#fff
+      </div>
+    </div>
+    <div class="space-y-3">
+      <div class="card-yellow card">
+        <div class="kicker mb-2" style="color:#fbbf24">Por que dói</div>
+        <div class="text-sm">Trocar conta no Meta Business <b>20× por mês</b> é o pesadelo da operação. Esquecimento = post fora do calendário. <br><br>SaaS de agendamento multi-cliente avaliados (M-Labs R$ 2k, Reportei, Canva) — <b>caros demais pra agência pequena</b>.</div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="stat-big yellow">~10h</div>
+          <div class="stat-label">/mês manual<br>(Javi/Ravi/Rafa)</div>
+        </div>
+        <div class="card">
+          <div class="stat-big yellow">25min</div>
+          <div class="stat-label">por cliente<br>(8 posts × 2 redes)</div>
+        </div>
+      </div>
+      <div class="card-blue card text-sm">
+        <b>Causa-raiz:</b> mercado de SaaS de agendamento multi-cliente é caro pra agência pequena. <b>Skill própria + Meta API resolve.</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">08 / 15</div>
+</div>
+
+<!-- SLIDE 9 — GARGALO 3: ANÁLISE MENSAL -->
+<div class="slide">
+  <div class="kicker">08 · Gargalo crítico #3</div>
+  <h2 class="title mb-2">Análise mensal — <span class="red">virada do mês inteira do Gustavo</span>.</h2>
+  <div class="muted text-sm mb-4">Fluxo atual (ainda a cronometrar oficialmente):</div>
+
+  <div class="grid-2 flex-1">
+    <div>
+      <div class="mermaid">
+flowchart TB
+    A[Fim do mês] --> B[Puxar Meta + Analytics<br>+ Reportei manual]
+    B --> C[Cruzar com<br>objetivo do mês]
+    C --> D[Escrever narrativa<br>do relatório]
+    D --> E[Definir sugestões<br>próximo mês]
+    E --> F[Apresentar<br>ao cliente]
+    style C fill:#ef4444,color:#fff
+    style D fill:#ef4444,color:#fff
+      </div>
+    </div>
+    <div class="space-y-3">
+      <div class="card-red card">
+        <div class="kicker mb-2" style="color:#fca5a5">Causa-raiz</div>
+        <div class="text-sm">• Coleta manual de dados em 3+ plataformas<br>
+        • Prompt não-estruturado em ChatGPT/Claude<br>
+        • Sem template padrão entre clientes<br>
+        • Sem definição clara de "mês bom" vs "mês ruim"<br>
+        • <b class="accent">Trabalho artesanal por cliente — 100% no Gustavo</b></div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="stat-big red">~30-40h</div>
+          <div class="stat-label">/mês estimadas<br>(20 clientes)</div>
+        </div>
+        <div class="card">
+          <div class="stat-big red">100%</div>
+          <div class="stat-label">concentrado<br>no Gustavo</div>
+        </div>
+      </div>
+      <div class="text-sm muted">Pendência: cronometrar uma análise real na próxima virada de mês pra calibrar Skill 3.</div>
+    </div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">09 / 15</div>
+</div>
+
+<!-- SLIDE 10 — CAUSA-RAIZ COMUM -->
+<div class="slide">
+  <div class="kicker">09 · O padrão por trás dos 3 gargalos</div>
+  <h2 class="title mb-2">A mesma causa-raiz aparece 3 vezes.</h2>
+
+  <div class="card-red card mb-6 mt-4">
+    <div class="text-2xl font-bold accent mb-2">Ausência de SLA contratual + ritual de medição diária.</div>
+    <div class="muted text-sm">Os 3 gargalos críticos têm causa-raiz comum. Resolver a raiz desbloqueia tudo.</div>
+  </div>
+
+  <div class="grid-2 flex-1">
+    <div class="card">
+      <div class="kicker mb-3">5 Whys completo (aprovação)</div>
+      <ol class="text-sm space-y-2 list-decimal list-inside">
+        <li><b>Por que aprovação demora 2-3 dias?</b><br><span class="muted ml-5">→ Cliente recebe no WhatsApp, mistura, esquece.</span></li>
+        <li><b>Por que mistura?</b><br><span class="muted ml-5">→ Não tem canal dedicado nem prazo.</span></li>
+        <li><b>Por que sem prazo?</b><br><span class="muted ml-5">→ Contrato não obriga.</span></li>
+        <li><b>Por que contrato não obriga?</b><br><span class="muted ml-5">→ Bravo nunca formalizou.</span></li>
+        <li><b>Por que nunca formalizou?</b><br><span class="muted ml-5">→ Cresceu sem processo (de 7 → 4 pessoas), virou pessoal.</span></li>
+      </ol>
+    </div>
+    <div class="space-y-3">
+      <div class="card-green card">
+        <div class="kicker mb-2" style="color:#86efac">A solução é em 2 camadas</div>
+        <div class="text-sm">
+          <b class="green">1. Camada contratual (humana)</b><br>
+          Cláusula de SLA — "se não responder em X dias, considera-se aprovado por decurso". Lucas redige modelo, Gustavo valida com advogado.<br><br>
+          <b class="green">2. Camada técnica (automação)</b><br>
+          OpenClaw + skills cobrando, agendando e analisando — time da Bravo opera as skills no dia a dia.
+        </div>
+      </div>
+      <div class="card-blue card">
+        <div class="quote text-sm">"Sem causa-raiz, automação só anestesia o sintoma e o problema volta em outro lugar."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">10 / 15</div>
+</div>
+
+<!-- SLIDE 11 — O QUE JÁ FUNCIONA -->
+<div class="slide">
+  <div class="kicker">10 · Honestidade · não vamos vender o que vocês já têm</div>
+  <h2 class="title mb-2">O que <span class="green">JÁ funciona</span> — e não vamos mexer.</h2>
+
+  <div class="grid-2 flex-1 mt-6">
+    <div class="card-green card">
+      <div class="kicker mb-3" style="color:#86efac">Content Machine (Figma + Bridge Codec)</div>
+      <div class="stat-big green mb-2">8-12</div>
+      <div class="stat-label mb-4">criativos por cliente em 3-4h<br>(antes: 8h+ no Photoshop)</div>
+      <ul class="bullets text-sm">
+        <li>Plugin Figma alimentado por Docs ChatGPT estruturado</li>
+        <li>Cliente "xarope" Diego <b>aprovou de primeira</b></li>
+        <li>Rafa conduz, briefing já entrou no fluxo</li>
+        <li>É o motor que funciona — <b>nossa proposta consome o output dele, não substitui</b></li>
+      </ul>
+    </div>
+    <div class="card-green card">
+      <div class="kicker mb-3" style="color:#86efac">Docs ChatGPT estruturado</div>
+      <div class="stat-big green mb-2">~30 min</div>
+      <div class="stat-label mb-4">planejamento + copy<br>por cliente/mês</div>
+      <ul class="bullets text-sm">
+        <li>Estrutura mensal definida em Docs interno por cliente</li>
+        <li>IA gera copy + ideias em arquivo .md</li>
+        <li>Time revisa e ajusta — fluxo enxuto</li>
+        <li><b>Skill 3 (análise mensal) alimenta esse fluxo</b> — não substitui</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt-6 card-blue">
+    <div class="text-base"><b class="accent">Princípio:</b> não cobrar pra refazer o que já está pronto. A proposta original previa "skill de copy" — descartada porque vocês já resolveram. <b>Onde vocês já resolveram, a gente conecta. Onde dói, a gente automatiza.</b></div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">11 / 15</div>
+</div>
+
+<!-- SLIDE 12 — DECISÃO: 3 SKILLS -->
+<div class="slide">
+  <div class="kicker">11 · Decisão proposta</div>
+  <h2 class="title mb-2">As 3 skills que vão entrar no escopo.</h2>
+  <div class="muted text-base mb-6">Cada uma ataca um gargalo crítico, dentro do OpenClaw da Bravo.</div>
+
+  <div class="grid-3 flex-1">
+    <div class="card-green card">
+      <div class="kicker mb-2" style="color:#86efac">SKILL 1</div>
+      <div class="text-2xl font-bold mb-3">Aprovação<br>com SLA</div>
+      <div class="text-sm space-y-2">
+        <p><b>O que faz:</b> envia pacote pro cliente via WhatsApp (n8n), monitora resposta, dispara lembretes 24h e 48h, escala pro Gustavo em 72h.</p>
+        <p><b>Stack:</b> n8n + WhatsApp Business API + handoff JSON do Content Machine</p>
+        <p><b>Ganho:</b> 2-3 dias → <b class="green">&lt;24h em 70% dos casos</b></p>
+        <p><b>Bônus contratual:</b> aditivo de SLA (Lucas redige).</p>
+      </div>
+    </div>
+    <div class="card-green card">
+      <div class="kicker mb-2" style="color:#86efac">SKILL 2</div>
+      <div class="text-2xl font-bold mb-3">Agendador<br>multi-cliente</div>
+      <div class="text-sm space-y-2">
+        <p><b>O que faz:</b> recebe pacote aprovado + cronograma, agenda automaticamente em Meta/Instagram (futuro: TikTok/LinkedIn).</p>
+        <p><b>Stack:</b> Meta Graph API + n8n + fila de jobs</p>
+        <p><b>Ganho:</b> ~10h/mês manuais → <b class="green">&lt;1h (só exceções)</b></p>
+        <p><b>Substitui:</b> M-Labs / Reportei / Canva agendador.</p>
+      </div>
+    </div>
+    <div class="card-green card">
+      <div class="kicker mb-2" style="color:#86efac">SKILL 3</div>
+      <div class="text-2xl font-bold mb-3">Análise<br>mensal</div>
+      <div class="text-sm space-y-2">
+        <p><b>O que faz:</b> dia 1-3 do mês roda análise: métricas Instagram + Analytics + benchmarks. Gera dossiê + recomendações.</p>
+        <p><b>Stack:</b> Claude Code skill + handoff JSON pro Content Machine</p>
+        <p><b>Ganho:</b> dado em vez de achismo + <b class="green">~1h/cliente/mês economizada</b></p>
+        <p><b>Pendência:</b> cronometrar análise real pra calibrar.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-6 card-yellow">
+    <div class="text-base"><b class="accent">Onde os agentes ficam:</b> dentro do OpenClaw da Bravo. Time abre, chama a skill, valida, segue. <b>Não conversam com cliente final</b> — única exceção: lembrete de cobrança automático na Skill 1.</div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">12 / 15</div>
+</div>
+
+<!-- SLIDE 13 — BÔNUS DE PROCESSO -->
+<div class="slide">
+  <div class="kicker">12 · Bônus dentro do escopo</div>
+  <h2 class="title mb-2">3 bônus de processo — sem custo extra.</h2>
+  <div class="muted text-base mb-6">Entram dentro das 4 semanas, não alteram o pricing.</div>
+
+  <div class="grid-3 flex-1">
+    <div class="card">
+      <div class="kicker mb-2">BÔNUS A</div>
+      <div class="text-xl font-bold mb-3">Cláusula de SLA<br>+ lembretes</div>
+      <div class="text-sm space-y-2">
+        <p>Modelo de aditivo contratual entregue junto com Skill 1.</p>
+        <p>Inclui textos de WhatsApp de lembrete (24h, 48h, 72h).</p>
+        <p class="muted">Resolve a camada humana da causa-raiz.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="kicker mb-2">BÔNUS B</div>
+      <div class="text-xl font-bold mb-3">Onboarding<br>Typeform + NPS</div>
+      <div class="text-sm space-y-2">
+        <p>Typeform unificado — substitui 5 forms separados (20-30 dias → 5-10 dias).</p>
+        <p>NPS Day-1 automatizado: pergunta de satisfação 30 dias após onboarding.</p>
+        <p class="muted">Mede impacto antes do churn.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="kicker mb-2">BÔNUS C</div>
+      <div class="text-xl font-bold mb-3">POC<br>Premiere + Claude</div>
+      <div class="text-sm space-y-2">
+        <p>Prova de conceito (não produção) pra destravar frente de vídeo.</p>
+        <p>Skill assiste vídeo bruto, sugere cortes, gera roteiro.</p>
+        <p class="muted">Output: 1 vídeo real editado em parceria com Rafael Gobi. Se POC validar, vira Skill 4 em projeto seguinte.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-6 card-red">
+    <div class="kicker mb-2" style="color:#fca5a5">O que SAI do escopo (explicitado)</div>
+    <div class="text-sm grid grid-cols-2 gap-x-8 gap-y-1">
+      <div>✗ Substituir Rafael Gobi (problema humano, não automação)</div>
+      <div>✗ Landing pages Lovable/Vercel (não priorizado)</div>
+      <div>✗ IA Avatar / clones de voz (fora do bottleneck)</div>
+      <div>✗ Skill de copy independente (Content Machine cobre)</div>
+      <div>✗ Skill de planejamento independente (estratégica humana)</div>
+      <div>✗ Reportei / M-Labs / Canva agendador (substituídos)</div>
+    </div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">13 / 15</div>
+</div>
+
+<!-- SLIDE 14 — CRONOGRAMA E PRICING -->
+<div class="slide">
+  <div class="kicker">13 · Cronograma e investimento</div>
+  <h2 class="title mb-2">4 semanas + 30 dias de suporte · <span class="accent">R$ 3.900</span>.</h2>
+  <div class="muted text-base mb-6">Pricing mantido da proposta original — apesar da troca de skills, complexidade equivalente.</div>
+
+  <table class="mb-6">
+    <thead>
+      <tr><th>Semana</th><th>Janela</th><th>Foco</th><th>Entregáveis</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>1</b></td><td>28/04 → 02/05</td><td>Setup + processo</td><td>VPS + OpenClaw + Claude Code + GitHub · Documento de processo · Cláusula de SLA redigida</td></tr>
+      <tr><td><b>2</b></td><td>05/05 → 09/05</td><td>Skill 1 (Aprovação)</td><td>n8n + WhatsApp + lembretes funcionando com 1 cliente-piloto · Typeform de onboarding</td></tr>
+      <tr><td><b>3</b></td><td>12/05 → 16/05</td><td>Skill 2 + Skill 3</td><td>Agendador testado com 2 clientes · Análise rodada com 1 cliente real · NPS Day-1 ativo</td></tr>
+      <tr><td><b>4</b></td><td>19/05 → 23/05</td><td>Treinamento + POC</td><td>4 módulos de treinamento (5h) · POC Premiere+Claude com Rafael Gobi · Documentação final</td></tr>
+      <tr style="background: #1a1408;"><td><b>Suporte</b></td><td>24/05 → 23/06</td><td>30 dias</td><td>Ajustes, dúvidas, refinamentos via WhatsApp</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid-3 flex-1">
+    <div class="card-green card">
+      <div class="kicker mb-2" style="color:#86efac">Pagamento</div>
+      <div class="text-3xl font-bold accent mb-2">R$ 3.900</div>
+      <div class="text-sm">3× R$ 1.300<br>ou Pix à vista com 5% de desconto</div>
+    </div>
+    <div class="card">
+      <div class="kicker mb-2">KPI #1</div>
+      <div class="text-2xl font-bold green mb-2">&lt;24h</div>
+      <div class="text-sm">aprovação em 70% dos casos<br><span class="muted">(baseline: 2-3 dias)</span></div>
+    </div>
+    <div class="card">
+      <div class="kicker mb-2">KPI #2</div>
+      <div class="text-2xl font-bold green mb-2">~20h/mês</div>
+      <div class="text-sm">liberadas do Gustavo<br><span class="muted">(reinvestidas em comercial)</span></div>
+    </div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo</div>
+  <div class="slide-num">14 / 15</div>
+</div>
+
+<!-- SLIDE 15 — PRÓXIMOS PASSOS -->
+<div class="slide" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a0a05 100%);">
+  <div class="kicker">14 · Próximos passos</div>
+  <h2 class="title mb-2">Decisões que precisam de OK do Gustavo.</h2>
+  <div class="muted text-base mb-6">Trocas de skill não são automáticas — precisamos de validação formal antes de virar adendo do contrato.</div>
+
+  <div class="grid-2 flex-1">
+    <div class="card-yellow card">
+      <div class="kicker mb-3" style="color:#fbbf24">Decisões pendentes (precisam confirmação)</div>
+      <ul class="bullets text-sm">
+        <li><b>Aceita a troca das 3 skills core?</b> (Aprovação · Agendador · Análise mensal)</li>
+        <li><b>Cliente-piloto da Skill 1</b> — qual será?</li>
+        <li><b>Cláusula de SLA</b> — qual prazo padrão? (48h ou 72h)</li>
+        <li><b>POC de vídeo</b> — Rafael Gobi topa participar dentro das 4 semanas?</li>
+        <li><b>Mantém preço R$ 3.900</b> mesmo com troca de skills?</li>
+      </ul>
+    </div>
+    <div class="card-green card">
+      <div class="kicker mb-3" style="color:#86efac">Próximas ações (assim que aprovado)</div>
+      <ul class="bullets text-sm">
+        <li><b>Cronometrar análise mensal real</b> com Gustavo (1 cliente, próxima virada de mês)</li>
+        <li><b>Redigir aditivo de SLA</b> — Lucas escreve modelo, Gustavo manda pro advogado</li>
+        <li><b>Confirmar Javi no treinamento</b> (pendência aberta do discovery)</li>
+        <li><b>Etapa 4 do discovery</b> — bloco de custos/pró-labore (não tocado na 1ª reunião)</li>
+        <li><b>Kickoff técnico</b> — setup VPS + OpenClaw + Claude Code (semana 1)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt-6" style="background: #1a0a05; border-color: #f59e0b;">
+    <div class="text-xl font-bold mb-2 accent">A pergunta central pra hoje:</div>
+    <div class="text-lg">As 3 skills propostas — Aprovação SLA, Agendador, Análise mensal — atacam os gargalos certos pra você liberar tempo comercial?</div>
+    <div class="muted text-sm mt-3">Se sim, partimos pro contrato. Se não, refinamos antes do kickoff.</div>
+  </div>
+
+  <div class="slide-brand">Eloscope · Pós-Discovery Bravo · Lucas Negreiro · 30/04/2026</div>
+  <div class="slide-num">15 / 15</div>
+</div>
+
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#f5f5f5',
+      primaryTextColor: '#1a1a1a',
+      primaryBorderColor: '#888',
+      lineColor: '#666',
+      fontFamily: 'Inter, sans-serif',
+      fontSize: '13px'
+    },
+    flowchart: { curve: 'basis', padding: 12 }
+  });
+</script>
+
+</body>
+</html>
