@@ -1,6 +1,6 @@
 # Eloscope Landing Page
 
-> Status: 🔨 Em construção — seções 4 e 5 redesenhadas, aguarda seções restantes + deploy
+> Status: 🔨 Em construção — HowItWorks com Framer Motion + split layout aprovado, aguarda FAQ/Footer + deploy
 
 ## O que é
 Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulário de diagnóstico gratuito. Stack aprovada, copy aprovada, implementação parcial feita.
@@ -16,7 +16,8 @@ Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulári
 ## Stack
 - Next.js 14 (App Router) + TypeScript
 - Tailwind CSS v3
-- GSAP + ScrollTrigger
+- Framer Motion v12 (useScroll + useTransform — substituiu GSAP no HowItWorks)
+- GSAP v3 (presente mas não usado no HowItWorks — StrictMode incompatível)
 - Google Fonts: Syne + Inter + JetBrains Mono
 - Deploy: Vercel (pendente)
 
@@ -40,6 +41,9 @@ Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulári
 | 30/04/2026 | HowItWorks: múltiplas iterações sticky stacking — em andamento (bug body card) |
 | 30/04/2026 | WhatYouGet (S4): reescrito — terminal cards + bezier SVG connections + animateMotion + responsividade corrigida |
 | 30/04/2026 | HowItWorks (S5): reescrito — GSAP sticky stacking, terminal header bars, progress dots, accent único cyan |
+| 30/04/2026 | HowItWorks: substituído GSAP por Framer Motion useScroll+useTransform — sticky funcionando |
+| 30/04/2026 | Bug crítico: overflow-x-hidden em main quebrava position:sticky — removido |
+| 30/04/2026 | HowItWorks redesign Apple-style: split layout (headline esquerda + cards direita), copy benefit-first |
 
 ## Pendências
 - [ ] Revisar seções FAQ e Footer (não auditadas)
