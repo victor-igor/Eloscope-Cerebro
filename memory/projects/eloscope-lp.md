@@ -34,16 +34,19 @@ Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulári
 | — | Redesign radical pendente + deploy Vercel |
 
 ## Pendências
-- [ ] Redesign completo: seções com backgrounds distintos, texturas, elementos 3D
-- [ ] Form.tsx: 2-colunas (pitch esquerda + form direita)
+- [ ] Form: py-32→py-40, card p-8→p-10
+- [ ] Repositioning: space-y-8→space-y-10
+- [ ] Hero: mt-8→mt-10, CTAs mt-10→mt-12
 - [ ] Deploy Vercel (Task 16)
 - [ ] Testar mobile responsivo
 
 ## Notas de design
-- Hero: split assimétrico, mockup de operações ao vivo no lado direito
-- Bento: 12-col assimétrico 8+4 / 4+8 / 6+6
-- Problema atual: todas as seções têm o mesmo fundo, sem diferenciação visual
-- Próxima sessão: seções alternando texturas/backgrounds, elementos 3D CSS, variação radical
+- Hero: centralizado sem mockup, textura matrix chars, headline 3 linhas curtas com cyan glow
+- Bento: 12-col assimétrico 8+4 / 4+8 / 6+6, cards flutuantes gap-4
+- H2 todas seções: clamp(2.2rem, 3.2–3.5vw, 3.5–3.8rem)
+- Repositioning: título statement 7.5rem, glow magenta forte
+- "PMEs" removido da copy em todos os arquivos
+- Logos: bg #0D0D12 diferenciado, py-28
 
 ---
 *Criado: 29/04/2026*
