@@ -1154,38 +1154,82 @@
   <div class="page-number">10 / 12</div>
 </div>
 
-<!-- PAGE 10 — RÉGUA DOS 5% CAC -->
-<div class="page" style="background: var(--bg);">
-  <div class="section-label">10 &mdash; R&eacute;gua dos 5% CAC</div>
-  <h2>Investimento em marketing = 5% da venda.<br>Concordamos. A v4 cabe com folga.</h2>
+<!-- PAGE 10 — ROI -->
+<div class="page dark-page">
+  <div class="section-label">10 &mdash; Retorno sobre o Investimento</div>
+  <h2>Quanto custa. Quanto volta.<br>Baseado nos seus n&uacute;meros reais.</h2>
 
-  <table style="margin: 20px 0;">
-    <thead>
-      <tr><th>Venda atribu&iacute;da/m&ecirc;s</th><th>Mensalidade blog</th><th>Comiss&atilde;o Eloscope</th><th>Total Eloscope</th><th>5% teto Telles</th><th>Folga</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>R$ 30.000</td><td>R$ 487</td><td>R$ 0</td><td><strong>R$ 487</strong></td><td>R$ 1.500</td><td style="color: var(--green); font-weight: 600;">R$ 1.013 ✓</td></tr>
-      <tr><td>R$ 50.000</td><td>R$ 487</td><td>R$ 600</td><td><strong>R$ 1.087</strong></td><td>R$ 2.500</td><td style="color: var(--green); font-weight: 600;">R$ 1.413 ✓</td></tr>
-      <tr><td>R$ 80.000</td><td>R$ 487</td><td>R$ 1.300</td><td><strong>R$ 1.787</strong></td><td>R$ 4.000</td><td style="color: var(--green); font-weight: 600;">R$ 2.213 ✓</td></tr>
-      <tr><td>R$ 200.000</td><td>R$ 487</td><td>R$ 6.100</td><td><strong>R$ 6.587</strong></td><td>R$ 10.000</td><td style="color: var(--green); font-weight: 600;">R$ 3.413 ✓</td></tr>
-    </tbody>
-  </table>
+  <!-- 3 cenários -->
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0 14px;">
 
-  <p><strong>Sempre dentro dos 5%. Com folga.</strong> Se n&atilde;o vender, a Eloscope ganha menos. Se vender mais, ganha proporcionalmente &mdash; mas nunca ultrapassa a r&eacute;gua.</p>
+    <!-- Conservador -->
+    <div style="background: var(--dark-2); border: 1px solid #2D2D3A; border-radius: 10px; padding: 20px;">
+      <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; color: #6B7280; text-transform: uppercase; margin-bottom: 10px;">Conservador</div>
+      <div style="font-size: 0.8rem; color: #9CA3AF; line-height: 1.7;">13% &rarr; 18% fechamento<br>+2,8 vendas/m&ecirc;s<br>Sem reativar base</div>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.6rem; color: var(--green); margin: 12px 0 2px;">R$ 142.800</div>
+      <div style="font-size: 0.73rem; color: #6B7280; margin-bottom: 12px;">receita incremental em 3 meses</div>
+      <div style="background: var(--dark); border-radius: 6px; padding: 10px 14px;">
+        <div style="font-size: 0.7rem; color: #9CA3AF;">Payback</div>
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem; color: white;">5 dias</div>
+      </div>
+    </div>
 
-  <table style="margin-top: 16px; font-size: 0.82rem;">
-    <thead><tr><th>Custos que voc&ecirc; paga direto</th><th>Estimativa</th><th>Quando</th></tr></thead>
-    <tbody>
-      <tr><td>Hosting site + servidor</td><td>R$ 80&ndash;200/m&ecirc;s</td><td>Bloco B</td></tr>
-      <tr><td>CRM (HubSpot Free = R$0 · Pipedrive ~R$60/m&ecirc;s)</td><td>R$ 0&ndash;100/m&ecirc;s</td><td>Bloco A</td></tr>
-      <tr><td>API de IA &mdash; agentes Copiloto + Assistida</td><td>R$ 50&ndash;200/m&ecirc;s (ap&oacute;s m&ecirc;s 2)</td><td>Bloco A</td></tr>
-      <tr><td>M&iacute;dia (Alex)</td><td><strong>Mant&eacute;m R$ 2.000/m&ecirc;s atuais</strong></td><td>&mdash;</td></tr>
-    </tbody>
-  </table>
+    <!-- Realista -->
+    <div style="background: var(--dark-2); border: 2px solid var(--cyan); border-radius: 10px; padding: 20px; position: relative;">
+      <div style="position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--cyan); color: var(--dark); font-size: 0.62rem; font-weight: 700; padding: 3px 10px; border-radius: 0 0 6px 6px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;">Mais prov&aacute;vel</div>
+      <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; color: #6B7280; text-transform: uppercase; margin-bottom: 10px;">Realista</div>
+      <div style="font-size: 0.8rem; color: #9CA3AF; line-height: 1.7;">13% &rarr; 20% fechamento<br>+3,9 vendas/m&ecirc;s<br>+5 vendas da base (m&ecirc;s 2)</div>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.6rem; color: var(--cyan); margin: 12px 0 2px;">R$ 283.600</div>
+      <div style="font-size: 0.73rem; color: #6B7280; margin-bottom: 12px;">receita incremental em 3 meses</div>
+      <div style="background: var(--dark); border-radius: 6px; padding: 10px 14px;">
+        <div style="font-size: 0.7rem; color: #9CA3AF;">Payback</div>
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem; color: white;">3 dias</div>
+      </div>
+    </div>
 
-  <div class="urgency-bar" style="margin-top: 16px;">
-    <span class="icon">&#127919;</span>
-    <p><strong>Teste do projeto:</strong> se em 12 meses n&atilde;o destravarmos +15 vendas incrementais, a Eloscope n&atilde;o justifica os 5%. &Eacute; esse o teste que oferecemos.</p>
+    <!-- Otimista -->
+    <div style="background: var(--dark-2); border: 1px solid #2D2D3A; border-radius: 10px; padding: 20px;">
+      <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; color: #6B7280; text-transform: uppercase; margin-bottom: 10px;">Otimista</div>
+      <div style="font-size: 0.8rem; color: #9CA3AF; line-height: 1.7;">13% &rarr; 25% fechamento<br>+6,8 vendas/m&ecirc;s<br>+10 vendas da base (2% de 500)</div>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.6rem; color: var(--magenta); margin: 12px 0 2px;">R$ 399.500</div>
+      <div style="font-size: 0.73rem; color: #6B7280; margin-bottom: 12px;">receita incremental em 3 meses</div>
+      <div style="background: var(--dark); border-radius: 6px; padding: 10px 14px;">
+        <div style="font-size: 0.7rem; color: #9CA3AF;">Payback</div>
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem; color: white;">2 dias</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Investment summary bar -->
+  <div style="background: var(--dark-2); border: 1px solid #2D2D3A; border-radius: 10px; padding: 18px 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; align-items: center; margin-bottom: 14px;">
+    <div>
+      <div style="font-size: 0.7rem; color: #6B7280; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px;">Investimento total &mdash; 3 meses</div>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.7rem; color: white;">R$ 8.000</div>
+      <div style="font-size: 0.76rem; color: #9CA3AF;">R$ 3.500 setup + 3&times; R$ 1.500/m&ecirc;s</div>
+    </div>
+    <div style="text-align: center; border-left: 1px solid #2D2D3A; border-right: 1px solid #2D2D3A; padding: 0 16px;">
+      <div style="font-size: 0.7rem; color: #6B7280; margin-bottom: 4px;">Equivale a</div>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--amber);">0,47 venda</div>
+      <div style="font-size: 0.76rem; color: #9CA3AF;">do seu ticket atual</div>
+    </div>
+    <div style="text-align: right;">
+      <div style="font-size: 0.7rem; color: #6B7280; margin-bottom: 4px;">R$ 1 investido retorna (conservador)</div>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--green);">R$ 17,85</div>
+      <div style="font-size: 0.76rem; color: #9CA3AF;">em 3 meses</div>
+    </div>
+  </div>
+
+  <!-- Base de 500 clientes -->
+  <div style="background: rgba(0,212,212,0.06); border: 1px solid rgba(0,212,212,0.2); border-left: 3px solid var(--cyan); border-radius: 6px; padding: 14px 20px; margin-bottom: 14px;">
+    <div style="font-size: 0.7rem; font-weight: 600; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;">Alavanca que ainda n&atilde;o foi tocada</div>
+    <div style="font-size: 0.9rem; color: white; font-weight: 600; margin-bottom: 4px;">500 clientes instalados. Zero contato de p&oacute;s-venda em 5 anos.</div>
+    <div style="font-size: 0.8rem; color: #9CA3AF;">Uma campanha de reativa&ccedil;&atilde;o no onboarding pode gerar 5&ndash;10 vendas por indica&ccedil;&atilde;o antes mesmo do tr&aacute;fego ciclar &mdash; R$ 85.000 a R$ 170.000 com CAC zero.</div>
+  </div>
+
+  <!-- Footer / régua como nota -->
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #2D2D3A; padding-top: 10px; font-size: 0.7rem; color: #4B5563; gap: 20px;">
+    <div>Cen&aacute;rios baseados nos dados reais: 57 leads/m&ecirc;s, ticket R$ 17.000, 7,5 vendas atuais. Reativa&ccedil;&atilde;o calculada sobre 500 clientes com taxa de 1&ndash;2%.</div>
+    <div style="text-align: right; white-space: nowrap;">Custo Eloscope no cen&aacute;rio realista: &lt; 3% da receita gerada &mdash; dentro da r&eacute;gua de 5% com folga.</div>
   </div>
 
   <div class="page-number">11 / 12</div>
