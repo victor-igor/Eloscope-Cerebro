@@ -1,6 +1,6 @@
 # Eloscope Landing Page
 
-> Status: 🔨 Em construção — aguarda redesign visual + deploy
+> Status: 🔨 Em construção — seções 4 e 5 redesenhadas, aguarda seções restantes + deploy
 
 ## O que é
 Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulário de diagnóstico gratuito. Stack aprovada, copy aprovada, implementação parcial feita.
@@ -24,6 +24,10 @@ Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulári
 - Deep Space `#0A0A0A` · Surface `#111111` · Neural White `#F0FFFE`
 - Quantum Cyan `#00D4FF` · Fusion Magenta `#D946EF`
 
+## Stack (atualizado)
+- hls.js v1.6.16 adicionado (vídeo HLS Mux)
+- Framer Motion v12.38.0 (useScroll + useTransform para HowItWorks)
+
 ## Timeline
 | Data | Evento |
 |------|--------|
@@ -31,14 +35,23 @@ Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulári
 | 29/04/2026 | Projeto inicializado, Tasks 1–15 implementadas |
 | 29/04/2026 | Bug GSAP corrigido (StrictMode) |
 | 29/04/2026 | Hero e Bento redesenhados (assimétrico) |
-| — | Redesign radical pendente + deploy Vercel |
+| 30/04/2026 | Hero reescrito: HLS video + nav integrada + marquee + GSAP entrance |
+| 30/04/2026 | Nav.tsx: threshold 80% hero height |
+| 30/04/2026 | HowItWorks: múltiplas iterações sticky stacking — em andamento (bug body card) |
+| 30/04/2026 | WhatYouGet (S4): reescrito — terminal cards + bezier SVG connections + animateMotion + responsividade corrigida |
+| 30/04/2026 | HowItWorks (S5): reescrito — GSAP sticky stacking, terminal header bars, progress dots, accent único cyan |
 
 ## Pendências
-- [ ] Form: py-32→py-40, card p-8→p-10
-- [ ] Repositioning: space-y-8→space-y-10
-- [ ] Hero: mt-8→mt-10, CTAs mt-10→mt-12
+- [ ] Revisar seções FAQ e Footer (não auditadas)
+- [ ] Testar mobile responsivo em todas as seções
 - [ ] Deploy Vercel (Task 16)
-- [ ] Testar mobile responsivo
+- [ ] Gradient no headline do Hero
+- [ ] Magnetic hover no CTA principal
+- ~~HowItWorks sticky stacking~~ ✅ resolvido 30/04 (reescrito com GSAP ScrollTrigger)
+- ~~WhatYouGet redesign~~ ✅ resolvido 30/04 (terminal cards + SVG bezier connections)
+- ~~Form: py-32→py-40, card p-8→p-10~~ ✅ aplicado 30/04
+- ~~Repositioning: space-y-8→space-y-10~~ ✅ aplicado 30/04
+- ~~Hero: mt-8→mt-10, CTAs mt-10→mt-12~~ ✅ aplicado 30/04
 
 ## Notas de design
 - Hero: centralizado sem mockup, textura matrix chars, headline 3 linhas curtas com cyan glow
