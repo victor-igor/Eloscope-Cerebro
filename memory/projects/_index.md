@@ -20,6 +20,7 @@
 | Projeto | Status | Próximo Marco | Arquivo |
 |---------|--------|---------------|---------|
 | Eloscope Elo OS | 🔨 Em construção | Fechar 2-3 clientes beta (60 dias) | sales-os.md |
+| Eloscope Landing Page | 🔨 Em construção | Redesign radical + deploy Vercel | eloscope-lp.md |
 | Bravo Agency — Sistema Completo | 🟢 Ativo | Discovery 26/04, entrega ~09/05 | bravo-agency.md |
 | Mentoria Agências | 🔨 Em construção | Validar pricing para próximos leads | mentoria-agencias.md |
 | Morgana Sales | 🟢 Ativo (treinamento feito 28/04) | Cadastrar lista do Matheus + ativar IA de ativação | morgana-sales.md |
