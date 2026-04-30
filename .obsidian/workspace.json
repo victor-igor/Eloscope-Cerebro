@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ea5d9567d819e932",
+        "id": "395071ed3f15335c",
         "type": "tabs",
         "children": [
           {
-            "id": "de837dc89d77be22",
+            "id": "6978c8a9e1029234",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "areas/vendas/clientes/gustavo-bravo/projeto/2-pos-discovery/causa-efeito.md",
+                "file": "empresa/projetos/sales-os/03-entrega/onboarding-formulario.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "causa-efeito"
+              "title": "onboarding-formulario"
             }
           }
         ]
@@ -183,8 +183,27 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "de837dc89d77be22",
+  "active": "6978c8a9e1029234",
   "lastOpenFiles": [
+    "empresa/projetos/sales-os/02-comercial/script-primeira-call-v1.md",
+    "empresa/projetos/sales-os/04-apresentacao/slides-elo-os-v4.html",
+    "empresa/projetos/sales-os/04-apresentacao/slides-call-vendas.md",
+    "empresa/projetos/sales-os/04-apresentacao/apresentacao-slides.md",
+    "empresa/projetos/sales-os/templates/comercial/Lead_Profile_Template.md",
+    "areas/design/skills/taste-skills.md",
+    "areas/design/skills",
+    "empresa/projetos/sales-os/05-auto-uso/cronograma.md",
+    "empresa/projetos/sales-os/03-entrega/papeis-responsabilidades.md",
+    "empresa/projetos/sales-os/03-entrega/onboarding-tecnico-cliente.md",
+    "empresa/projetos/sales-os/02-comercial/proposta-cliente.md",
+    "empresa/projetos/sales-os/02-comercial/pipeline.md",
+    "empresa/projetos/sales-os/02-comercial/pacote-6os-q2.md",
+    "empresa/projetos/sales-os/02-comercial/oferta-padrao.md",
+    "empresa/projetos/sales-os/02-comercial/guia-comercial-lucas.md",
+    "empresa/projetos/sales-os/02-comercial/funil-vendas.md",
+    "empresa/projetos/sales-os/02-comercial/copy-squad-output.md",
+    "areas/vendas/clientes/gustavo-bravo/projeto/2-pos-discovery/causa-efeito.md",
+    "memory/projects/eloscope-lp.md",
     "memory/sessions/2026-04-30.md",
     "areas/vendas/clientes/gustavo-bravo/projeto/2-pos-discovery/apresentacao-bravo-pos-discovery.html",
     "areas/vendas/clientes/morgana-sales/agente-morg-mensagens-ativacao.md",
@@ -195,32 +214,13 @@
     "areas/vendas/clientes/daniel-queiroz/empresas/fullfunnel.md",
     "areas/vendas/clientes/daniel-queiroz/empresas/fac-maestria.md",
     "areas/vendas/clientes/daniel-queiroz/empresas/academy.md",
-    "areas/vendas/clientes/daniel-queiroz/apresentacao-sales-os/roteiro-apresentacao.md",
-    "areas/vendas/clientes/daniel-queiroz/apresentacao-sales-os/proposta-comercial.md",
-    "areas/vendas/clientes/daniel-queiroz/apresentacao-sales-os/escopo-entrega.md",
-    "areas/vendas/clientes/daniel-queiroz/apresentacao-sales-os/contexto-pra-apresentacao.md",
-    "areas/vendas/clientes/daniel-queiroz/apresentacao-sales-os/_v1-roteiro-apresentacao-descartado.md",
-    "areas/vendas/clientes/daniel-queiroz/apresentacao-sales-os/_v1-proposta-comercial-descartada.md",
-    "areas/vendas/clientes/daniel-queiroz/apresentacao-sales-os/_v1-escopo-entrega-descartado.md",
-    "areas/vendas/clientes/daniel-queiroz/lead-profile.md",
     "areas/vendas/clientes/daniel-queiroz/historico",
     "areas/vendas/clientes/daniel-queiroz/empresas",
     "areas/vendas/clientes/daniel-queiroz/apresentacao-sales-os",
     "areas/vendas/clientes/daniel-queiroz",
-    "areas/reunioes/clientes/voltrucks/_index.md",
     "areas/reunioes/clientes/voltrucks",
-    "areas/reunioes/clientes/tripode/_index.md",
     "areas/reunioes/clientes/tripode",
-    "areas/reunioes/clientes/sertaozinho/_index.md",
     "areas/reunioes/clientes/sertaozinho",
-    "areas/reunioes/clientes/reabilitacao/_index.md",
-    "areas/reunioes/clientes/maqlam/_index.md",
-    "areas/reunioes/clientes/magazine-borela/_index.md",
-    "areas/reunioes/clientes/magazine-borela",
-    "areas/reunioes/clientes/lavinte/_index.md",
-    "areas/reunioes/clientes/lavinte",
-    "areas/reunioes/clientes/jean-imobiliaria/_index.md",
-    "areas/reunioes/clientes/guilherme-xp/_index.md",
     "areas/design/assets/tipografia/image.png",
     "areas/design/assets/logos/monocromatico.png",
     "areas/design/assets/logos/monocro.png",

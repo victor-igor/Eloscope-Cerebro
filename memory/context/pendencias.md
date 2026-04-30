@@ -19,7 +19,7 @@
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
 - [25/04/2026] ✅ **Enertelles — proposta v4 reestruturada** · setup modular (A=processo+IA R$3.500, B=site+marca R$3.000), CRM externo, blog automatizado R$487/mês, parcelamento 12×R$650
-- [25/04/2026] **Enertelles — atualizar proposta HTML** · `proposta-enertelles.html` está na v3, precisa refletir v4
+- [25/04/2026] ✅ **Enertelles — proposta HTML v4 finalizada** (30/04) · Bloco A alinhado com Sales OS Starter (R$1.500/mês mín 3 meses) · Asaas calc correto (12×R$376/R$322/R$699) · 12 páginas com PAGE 08 escopo + PAGE 09 investimento + PAGE 10 ROI 3 cenários (substituiu régua 5% CAC)
 - [25/04/2026] 🔥 **Bravo — validar reframe pós-discovery com Gustavo** · trocar 3 skills (Análise/Planejamento/Copy) por (Aprovação/Agendamento/Análise mensal) · `proposta-pos-discovery.md` · Content Machine já cobre copy/criativo
 - [25/04/2026] **Bravo — redigir aditivo de SLA contratual** · Lucas modela (48h ou 72h?), Gustavo manda pro advogado · base da Skill 1 (Aprovação automatizada)
 - [25/04/2026] ✅ **Bravo — Javi era Ravi** (resolvido 26/04) · Ravi (multifunção, presencial no discovery) confirmado. "Javi" foi erro de transcrição Whisper. Há **dois Rafael**: Rafa (designer, presencial) e Rafael Gobi (editor vídeo, remoto, transcrito como "Gabi")
@@ -70,6 +70,7 @@
 - [29/04/2026] **Enertelles — call 30/04 com Telles + Alex confirmada** · último check da proposta v4 hoje (29/04) + atualizar `proposta-enertelles.html` v3→v4 antes da call
 - [29/04/2026] 🔥 **Daniel Queiroz — validar pricing OpenClaw com Victor antes da call de hoje** · setup R$1.800 + mensal R$690 + adicionais (vendedor R$150, canal R$400+R$250) · todos marcados `[VALIDAR]` em `proposta-comercial.md` v2 · também: confirmar caso real OpenClaw pra demo + garantia 30 dias devolução setup
 - [29/04/2026] **Daniel Queiroz — registrar resultado da call** · fechou / pediu prazo / não / puxou outro produto · se fechou: criar `memory/projects/openclaw-daniel.md` · se não: follow-up 06/05
+- [30/04/2026] **Bravo — recalcular horas estáticos vs vídeo no deck** · equipe questionou R$2.170 criativo vs R$1.260 edição · Lucas suspeita vídeo > estático · ler `analise-custo-processo.md` + seção do HTML · novos dados Miro: briefing 3d, copy 1h+3d review, captação 1h+4×30min+upload, volume 300 estáticos + 60 vídeos/mês × 20 clientes
 - [29/04/2026] **Morgana — cadastrar lista do Matheus + ativar IA de ativação** · 2 chips novos já recebidos · script da IA + modelo de incentivo coletivo documentado no sistema · ClickUp tasks `86e150f6z`, `86e150f7n`, `86e150f7z`
 - [27/04/2026] **Gustavo Bravo — pagamento 4× boleto** · 1ª paga 29/04 ✅ · acompanhar 15/05, 15/06, 15/07
 - [27/04/2026] **Financeiro — extratos pendentes** · subir últimos extratos antes de fechar 100% · prazo 28/04 · Victor (task `86e13dfum`)
@@ -120,4 +121,4 @@
 
 - [24/04/2026] **Bravo — ClickUp estruturado** · pasta "Bravo Agency" criada com 6 listas e 33 tarefas · workspace 90171169593 / Espaço da equipe
 
-*Atualizado: 29/04/2026*
+*Atualizado: 30/04/2026*
