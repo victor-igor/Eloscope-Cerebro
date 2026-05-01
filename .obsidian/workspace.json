@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "395071ed3f15335c",
+        "id": "3e3efe78122cab94",
         "type": "tabs",
         "children": [
           {
-            "id": "6978c8a9e1029234",
+            "id": "9002d1d17c3bfc89",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "empresa/projetos/sales-os/03-entrega/onboarding-formulario.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "onboarding-formulario"
+              "title": "Nova aba"
             }
           }
         ]
@@ -183,8 +179,9 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "6978c8a9e1029234",
+  "active": "9002d1d17c3bfc89",
   "lastOpenFiles": [
+    "empresa/projetos/sales-os/03-entrega/onboarding-formulario.md",
     "empresa/projetos/sales-os/02-comercial/script-primeira-call-v1.md",
     "empresa/projetos/sales-os/04-apresentacao/slides-elo-os-v4.html",
     "empresa/projetos/sales-os/04-apresentacao/slides-call-vendas.md",
@@ -213,7 +210,6 @@
     "areas/vendas/clientes/daniel-queiroz/empresas/lavinte.md",
     "areas/vendas/clientes/daniel-queiroz/empresas/fullfunnel.md",
     "areas/vendas/clientes/daniel-queiroz/empresas/fac-maestria.md",
-    "areas/vendas/clientes/daniel-queiroz/empresas/academy.md",
     "areas/vendas/clientes/daniel-queiroz/historico",
     "areas/vendas/clientes/daniel-queiroz/empresas",
     "areas/vendas/clientes/daniel-queiroz/apresentacao-sales-os",

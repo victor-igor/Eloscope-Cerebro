@@ -11,7 +11,7 @@
 | Projeto | Status | Métrica-chave | Arquivo |
 |---------|--------|---------------|---------|
 | Eloscope (estúdio) | 🟢 Ativo | — | — |
-| Cerebro / Segundo Cérebro | 🟢 Ativo | estrutura montada | — |
+| Cerebro / Segundo Cérebro | 🟢 Ativo | rituais operacionais + 3 agentes remotos (cockpit, prep weekly, revisão maio) | — |
 
 ---
 
@@ -46,6 +46,7 @@
 
 ## Mudanças Recentes
 
+- [01/05] **Cerebro** — rituais operacionais Semana 1 colados (filtro 3 perguntas + weekly review template + spec /triagem); SessionStart hook ativado; 3 routines remotas Anthropic Cloud com saída via WhatsApp uazapi (cockpit diário, prep weekly, revisão mensal)
 - [29/04] **Bravo Agency** — 1ª parcela R$975 paga; ClickUp Skills renomeadas para reframe pós-discovery; aditivo SLA + framework docs entram no escopo até 02/05
 - [29/04] **Enertelles** — call 30/04 com Telles + Alex confirmada; vínculo Bloco A ↔ Elo OS reforçado como diferencial
 - [28/04] **Morgana Sales** — treinamento presencial; chatwoot fora do uso definitivo; sistema próprio `elo.morgana.com.br`; meta coletiva sem comissão individual; IA de ativação de base como modelo principal; Matheus Campos formalizado como ponte (sócio + marido Dra. Morgana + dono Campos Joia)

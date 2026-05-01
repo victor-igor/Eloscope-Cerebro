@@ -42,4 +42,44 @@ for f in $(ls "$BRAIN_PATH/memory/sessions/"*.md 2>/dev/null | sort -r | head -3
   echo ""
 done
 
+echo "### SKILLS DISPONÍVEIS"
+echo ""
+if [ -d "$BRAIN_PATH/skills" ]; then
+  for skill_dir in "$BRAIN_PATH/skills"/*/; do
+    skill_name=$(basename "$skill_dir")
+    skill_md="$skill_dir/SKILL.md"
+    if [ -f "$skill_md" ]; then
+      desc=$(grep -m1 '^description:' "$skill_md" 2>/dev/null | sed 's/^description: *//' | sed 's/^"//' | sed 's/"$//' | cut -c1-110)
+      [ -z "$desc" ] && desc="(sem descrição)"
+      echo "- /${skill_name} — ${desc}"
+    fi
+  done
+fi
+
+echo ""
+echo "### SUGESTÃO DE SKILL (baseado em hora/dia)"
+HOUR=$(date '+%H')
+DOW=$(date '+%u')
+HOJE=$(date '+%Y-%m-%d')
+SESSAO_HOJE="$BRAIN_PATH/memory/sessions/${HOJE}.md"
+
+if [ "$HOUR" -ge 8 ] && [ "$HOUR" -lt 12 ]; then
+  echo "🌅 Manhã — sugiro **/rotina** (cockpit do dia: emails + agenda + Top 3)"
+elif [ "$DOW" = "5" ] && [ "$HOUR" -ge 16 ]; then
+  echo "🌙 Sexta tarde — sugiro **/salve** (flush de fim de semana, atualiza cérebro)"
+elif [ ! -f "$SESSAO_HOJE" ]; then
+  echo "📋 Sessão de hoje ainda não iniciada — sugiro **/cerebro** (briefing compacto)"
+else
+  echo "💡 Continuação — use **/buscar-memoria** se procura algo específico, ou **/cerebro** pra revisar contexto"
+fi
+
+echo ""
+echo "### INSTRUÇÃO DE APRESENTAÇÃO"
+echo "Após ler tudo acima, mostre ao usuário (em 5-8 linhas no MÁXIMO):"
+echo "1. Top 3 pendências 🔴 críticas (1 linha cada)"
+echo "2. Deadlines da semana atual"
+echo "3. Lista compacta de skills disponíveis (formato: /nome — descrição curta)"
+echo "4. Sugestão de skill destacada"
+echo "Não despeje todo o conteúdo — apenas o resumo. Aguarde comando do usuário."
+
 echo "</segundo-cerebro>"

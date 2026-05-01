@@ -82,6 +82,19 @@
 
 ---
 
+## 🟡 Operação interna — rituais e agentes (criadas 01/05)
+
+- [01/05/2026] **Validar routine #3 (Prep Weekly Review)** disparada às 15:18 — confirmar se chegou WhatsApp + se agente conseguiu clonar repo privado · Lucas
+- [01/05/2026] 🔥 **Repo privado pode bloquear agentes Anthropic Cloud** · se #3 falhar, autorizar GitHub em https://claude.ai/settings/integrations · Lucas
+- [01/05/2026] **Confirmar com Victor:** ClickUp = source of truth operacional / pendencias.md = camada cognitiva · não duplicar · Lucas + Victor
+- [01/05/2026] **Aprovar SPEC `/triagem`** antes de 16/05 (Semana 3) · `skills/triagem/SPEC.md` · Lucas + Victor
+- [01/05/2026] **Bloquear sextas 16h-17h no Calendar** dos 3 (Lucas, Victor, Hugo) — Weekly Review 60min · primeiro: 08/05 · Lucas
+- [01/05/2026] **Aplicar filtro 3 perguntas em todas as 🔴/🟡 atuais** durante primeiro Weekly Review (08/05) · `areas/operacoes/rituais/filtro-priorizacao.md` · time todo
+- [01/05/2026] ⚪ **Revisar descrição da skill `assinar`** (estava como só "Skill" — atualizou na 2ª leitura mas vale revisar SKILL.md frontmatter) · Lucas
+- [01/05/2026] ⚪ **WhatsApp uazapi vive em domínio de cliente** — risco se ReabilitaCão trocar instância · planejar instância própria Eloscope · Hugo
+
+---
+
 ## ✅ Resolvidas
 
 - [22/04/2026] **ClickUp setup completo** — 32 tarefas inseridas via Python script (ClickUp API direta). Nomes corrigidos: FURA→Samuel/Voltrucks, WTACON→Franciele/ReabilitaCão, Maquilão→Denis/Elite Maqlam. "Cobranças" separado de projetos (Gestão Interna > Cobranças). Projetos Internos recriado do zero (pasta deletada anteriormente). Script: `scripts/clickup_setup.py`

@@ -1,6 +1,18 @@
 {
   "language": "portuguese",
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${SECOND_BRAIN_PATH:-/Users/lucasnegreiro/Documents/Projetos/Eloscope-Cerebro}/scripts/brain-boot.sh\" 2>/dev/null || true",
+            "timeout": 15,
+            "statusMessage": "Carregando segundo cérebro..."
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
