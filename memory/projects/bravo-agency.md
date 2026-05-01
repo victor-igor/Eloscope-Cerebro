@@ -36,6 +36,7 @@ Primeiro cliente do modelo Mentoria Agências. Mapeamento de processos + infraes
 | 25/04/2026 | Discovery presencial (sábado) |
 | 26/04/2026 | Reframe + retrofit nomes + reorganização pasta + custos preenchidos |
 | 30/04/2026 | Deck pós-discovery gerado (HTML→PDF, 15 slides) — apresentação pro Gustavo |
+| 01/05/2026 | Pricing removido do deck (slide 14); `metodologia-custo-hora.html` criado (doc interno) |
 | 02/05/2026 | Documento de processo + infra prontos |
 | 09/05/2026 | Skills finalizadas + treinamento concluído |
 | 08/06/2026 | Fim do suporte pós-entrega |
@@ -59,6 +60,8 @@ Primeiro cliente do modelo Mentoria Agências. Mapeamento de processos + infraes
 - [26/04] **Pasta reorganizada** em fases: 0-pre-discovery / 1-discovery / 2-pos-discovery / 3-contrato + README índice
 - [26/04] **Custo operacional levantado** (sem Gustavo): R$ 9.365,50/mês
 - [30/04] **Deck pós-discovery em formato HTML→PDF** (não Pandoc/.md) — 15 slides, tom "espelho honesto", inclui o que sai do escopo
+- [01/05] **Pricing removido do deck** — R$ 3.900 não aparece mais na apresentação (slide 14); pricing fica para discussão verbal
+- [01/05] **Metodologia de custo** — `metodologia-custo-hora.html` criado como doc interno: fórmula custo-hora, custo processo a processo, precisão de cada medição, pendências abertas
 
 ## Insight de negócio (descoberto 26/04)
 Os 3 processos mais caros (criativo R$ 2.170, edição R$ 1.260, captação R$ 1.040) **não são automatizáveis** ou já estão (Content Machine). Os candidatos a skill (Aprovação R$ 260 + Agendador R$ 270) custam pouco em horas-Bravo, **mas consomem o Gustavo**, que é o único comercial. Liberar ~20h/mês do Gustavo = caminho pra fechar a meta R$ 20k → R$ 30k.
@@ -77,7 +80,9 @@ projeto/
 ├── README.md (índice navegável)
 ├── 0-pre-discovery/  → plano-execucao, cronograma, discovery-script, framework-processo, analise-custo-processo
 ├── 1-discovery/      → 00-sequencia, 01-apresentacao, Transcricao, levantamento-discovery
-├── 2-pos-discovery/  → causa-efeito, bpmn-basico, proposta-pos-discovery
+├── 2-pos-discovery/  → causa-efeito, bpmn-basico, proposta-pos-discovery, processo-detalhado
+│                        apresentacao-bravo-pos-discovery.html (deck 15 slides, sem pricing)
+│                        metodologia-custo-hora.html (doc interno — fórmula + custo processo a processo)
 └── 3-contrato/       → contrato (md/html/pdf)
 ```
 

@@ -70,7 +70,7 @@
 - [29/04/2026] **Enertelles — call 30/04 com Telles + Alex confirmada** · último check da proposta v4 hoje (29/04) + atualizar `proposta-enertelles.html` v3→v4 antes da call
 - [29/04/2026] 🔥 **Daniel Queiroz — validar pricing OpenClaw com Victor antes da call de hoje** · setup R$1.800 + mensal R$690 + adicionais (vendedor R$150, canal R$400+R$250) · todos marcados `[VALIDAR]` em `proposta-comercial.md` v2 · também: confirmar caso real OpenClaw pra demo + garantia 30 dias devolução setup
 - [29/04/2026] **Daniel Queiroz — registrar resultado da call** · fechou / pediu prazo / não / puxou outro produto · se fechou: criar `memory/projects/openclaw-daniel.md` · se não: follow-up 06/05
-- [30/04/2026] **Bravo — recalcular horas estáticos vs vídeo no deck** · equipe questionou R$2.170 criativo vs R$1.260 edição · Lucas suspeita vídeo > estático · ler `analise-custo-processo.md` + seção do HTML · novos dados Miro: briefing 3d, copy 1h+3d review, captação 1h+4×30min+upload, volume 300 estáticos + 60 vídeos/mês × 20 clientes
+- [30/04/2026] ✅ **Bravo — recalcular horas estáticos vs vídeo no deck** · vídeo confirmado maior (R$1.932 vs R$930 estáticos) · top 3 reordenado: vídeo>captação>estático · deck atualizado (commit d5c8dac)
 - [29/04/2026] **Morgana — cadastrar lista do Matheus + ativar IA de ativação** · 2 chips novos já recebidos · script da IA + modelo de incentivo coletivo documentado no sistema · ClickUp tasks `86e150f6z`, `86e150f7n`, `86e150f7z`
 - [27/04/2026] **Gustavo Bravo — pagamento 4× boleto** · 1ª paga 29/04 ✅ · acompanhar 15/05, 15/06, 15/07
 - [27/04/2026] **Financeiro — extratos pendentes** · subir últimos extratos antes de fechar 100% · prazo 28/04 · Victor (task `86e13dfum`)
@@ -121,4 +121,4 @@
 
 - [24/04/2026] **Bravo — ClickUp estruturado** · pasta "Bravo Agency" criada com 6 listas e 33 tarefas · workspace 90171169593 / Espaço da equipe
 
-*Atualizado: 30/04/2026*
+*Atualizado: 01/05/2026*

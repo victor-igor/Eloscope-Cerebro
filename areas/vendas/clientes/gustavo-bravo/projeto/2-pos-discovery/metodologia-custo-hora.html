@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Metodologia de Custo — Bravo Agency × Eloscope</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html, body {
+    background: #0a0a0a;
+    color: #f5f5f5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0; padding: 0;
+  }
+  .page { max-width: 1040px; margin: 0 auto; padding: 64px 48px; }
+  .accent { color: #f59e0b; }
+  .red { color: #ef4444; }
+  .green { color: #22c55e; }
+  .yellow { color: #eab308; }
+  .muted { color: #888; }
+  .kicker {
+    font-size: 11px; color: #f59e0b; letter-spacing: 0.2em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .section-title {
+    font-size: 28px; font-weight: 700; line-height: 1.15;
+    letter-spacing: -0.01em; margin-bottom: 6px;
+  }
+  .card {
+    background: #141414; border: 1px solid #2a2a2a;
+    border-radius: 12px; padding: 24px 28px;
+  }
+  .card-yellow { border-color: #854d0e; background: #1a1408; }
+  .card-green  { border-color: #14532d; background: #0a1a10; }
+  .card-red    { border-color: #7f1d1d; background: #1a0a0a; }
+  .card-blue   { border-color: #1e3a5f; background: #0a1018; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th {
+    text-align: left; padding: 9px 14px;
+    background: #1a1a1a; color: #f59e0b;
+    font-weight: 600; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    border-bottom: 1px solid #333;
+  }
+  td { padding: 9px 14px; border-bottom: 1px solid #1f1f1f; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #161616; }
+  .pill {
+    display: inline-block; padding: 2px 10px; border-radius: 999px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.05em;
+  }
+  .pill-green  { background: #14532d; color: #bbf7d0; }
+  .pill-yellow { background: #854d0e; color: #fef3c7; }
+  .pill-red    { background: #7f1d1d; color: #fecaca; }
+  .pill-gray   { background: #2a2a2a; color: #ccc; }
+  .pill-blue   { background: #1e3a5f; color: #bfdbfe; }
+  .divider { border: none; border-top: 1px solid #222; margin: 48px 0; }
+  .formula-box {
+    background: #111; border: 1px solid #333; border-radius: 10px;
+    padding: 20px 24px; font-family: 'Courier New', monospace; font-size: 14px;
+    color: #e5e5e5; line-height: 1.8;
+  }
+  .formula-box .hl { color: #f59e0b; font-weight: bold; }
+  .formula-box .dim { color: #666; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .stat-big { font-size: 48px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+  .stat-label { font-size: 12px; color: #888; margin-top: 4px; }
+  .note { font-size: 12px; color: #666; padding: 10px 16px; background: #111; border-left: 3px solid #333; border-radius: 0 6px 6px 0; }
+  .tag-pending { font-size: 11px; color: #fbbf24; background: #292108; border: 1px solid #854d0e; border-radius: 4px; padding: 2px 8px; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- CABEÇALHO -->
+  <div style="border-bottom: 1px solid #222; padding-bottom: 32px; margin-bottom: 40px;">
+    <div class="kicker mb-3">Bravo Agency × Eloscope · Metodologia de custo</div>
+    <h1 style="font-size: 44px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em;">
+      Como calculamos o <span class="accent">custo por hora</span><br>e o custo total de cada processo.
+    </h1>
+    <p class="muted mt-4" style="font-size: 16px; max-width: 680px;">
+      Este documento detalha a metodologia por trás dos números do Pós-Discovery. Cada linha da tabela de processos tem origem aqui.
+    </p>
+    <div class="note mt-6" style="max-width: 640px;">
+      <b style="color: #f59e0b;">Aviso importante:</b> os valores de custo neste documento usam o <b>custo-hora médio ponderado do time produtor</b>. Esse número <b>não representa o salário individual de ninguém</b> — é a "hora-máquina" da operação: quanto custa pra Bravo fazer 1 hora de trabalho acontecer, considerando pessoal + ferramentas + infra.
+    </div>
+  </div>
+
+  <!-- SEÇÃO 1: O QUE É O CUSTO-HORA -->
+  <div class="mb-12">
+    <div class="kicker mb-2">01 · Definição</div>
+    <div class="section-title">O que é o custo-hora de <span class="accent">R$ 26/h</span>?</div>
+    <p class="muted mb-6" style="font-size: 14px;">Um número médio que resume o custo total da operação numa unidade de tempo.</p>
+
+    <div class="grid-3 mb-6">
+      <div class="card">
+        <div class="stat-big accent">R$ 26</div>
+        <div class="stat-label">Custo-hora médio ponderado<br>do time produtor</div>
+      </div>
+      <div class="card">
+        <div class="stat-big" style="color:#888; font-size: 38px;">R$21–31</div>
+        <div class="stat-label">Faixa real por perfil<br>(varia por quem executa)</div>
+      </div>
+      <div class="card">
+        <div class="stat-big green">R$ 6.188</div>
+        <div class="stat-label">Custo mensal estimado<br>dos processos mapeados</div>
+      </div>
+    </div>
+
+    <div class="card-blue card">
+      <p style="font-size: 14px; line-height: 1.7;">
+        O valor de <b class="accent">R$ 26/h</b> é o resultado de dividir o <b>custo mensal total da operação</b> (pessoal + ferramentas + infra) pelas <b>horas produtivas disponíveis por mês</b>. É uma média ponderada — quem executa mais tarefas operacionais puxa pra baixo (R$21/h), quem executa trabalho estratégico puxa pra cima (R$31/h).
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SEÇÃO 2: A FÓRMULA -->
+  <div class="mb-12">
+    <div class="kicker mb-2">02 · Fórmula</div>
+    <div class="section-title">Como o custo-hora é calculado.</div>
+    <p class="muted mb-6" style="font-size: 14px;">Dois passos: montar o custo mensal total, depois dividir pelo tempo disponível.</p>
+
+    <div class="formula-box mb-6">
+<span class="hl">Custo-hora</span> = ( Custo pessoal/mês  +  Custo ferramentas/mês  +  Custo infra/mês )
+              ÷  <span class="hl">Horas produtivas disponíveis por mês</span>
+
+<span class="dim">─────────────────────────────────────────────────────────────────────────</span>
+
+<span class="hl">Custo de cada processo</span> = Horas do processo/mês  ×  Custo-hora (R$ 26/h)
+
+<span class="dim">─────────────────────────────────────────────────────────────────────────</span>
+
+<span class="dim">Exemplo (Edição de vídeo):  ~92h/mês  ×  R$26/h  =  ~R$ 1.932/mês</span>
+    </div>
+
+    <div class="grid-2 gap-5">
+      <div>
+        <div class="kicker mb-3" style="color:#888;">Numerador — o que entra no custo mensal</div>
+        <table>
+          <thead><tr><th>Componente</th><th>O que inclui</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>Custo de pessoal</b></td>
+              <td class="muted">Pró-labore dos sócios + remuneração dos colaboradores (bruto, com encargos)</td>
+            </tr>
+            <tr>
+              <td><b>Ferramentas</b></td>
+              <td class="muted">Content Machine, ChatGPT Plus, Adobe Creative, Reportei, ClickUp, WhatsApp Business API, etc.</td>
+            </tr>
+            <tr>
+              <td><b>Infra</b></td>
+              <td class="muted">Internet, espaço de trabalho, armazenamento (Drive/nuvem), equipamentos depreciados</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tag-pending mt-3">Etapa 4 do discovery pendente — custos exatos de pessoal a confirmar com Gustavo (bloco pró-labore)</div>
+      </div>
+      <div>
+        <div class="kicker mb-3" style="color:#888;">Denominador — horas produtivas disponíveis</div>
+        <table>
+          <thead><tr><th>Perfil</th><th>Horas/mês</th><th>Custo-hora estimado</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Operacional<br><span class="muted" style="font-size:11px">(Ravi, Javi)</span></td>
+              <td>~160h</td>
+              <td><span class="green">~R$21/h</span></td>
+            </tr>
+            <tr>
+              <td>Design/Criativo<br><span class="muted" style="font-size:11px">(Rafael)</span></td>
+              <td>~160h</td>
+              <td><span class="yellow">~R$26/h</span></td>
+            </tr>
+            <tr>
+              <td>Estratégico/Comercial<br><span class="muted" style="font-size:11px">(Gustavo)</span></td>
+              <td>~160h</td>
+              <td><span class="red">~R$31/h</span></td>
+            </tr>
+            <tr style="background:#1a1408;">
+              <td><b>Média ponderada</b></td>
+              <td>—</td>
+              <td><b class="accent">~R$26/h</b></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note mt-3">A média ponderada reflete o mix de quem executa cada processo — não todos executam tudo.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SEÇÃO 3: CUSTO POR PROCESSO -->
+  <div class="mb-12">
+    <div class="kicker mb-2">03 · Cálculo processo a processo</div>
+    <div class="section-title">Como chegamos no custo de cada processo.</div>
+    <p class="muted mb-6" style="font-size: 14px;">
+      Cada processo foi cronometrado (ou estimado com base no relato do time) e multiplicado pelo custo-hora correspondente.
+      O custo reflete ×20 clientes ativos — é o custo mensal total da operação, não por cliente.
+    </p>
+
+    <table class="mb-4">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Processo</th>
+          <th>Como medimos o tempo</th>
+          <th>Tempo/cliente</th>
+          <th>×20 clientes</th>
+          <th>Custo-hora aplicado</th>
+          <th>Custo/mês</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="muted">1</td>
+          <td><b>Onboarding</b><br><span class="muted" style="font-size:11px">evento único</span></td>
+          <td class="muted" style="font-size:12px">Relato Gustavo + observação: 3h de setup × custo amortizado em 6 meses de contrato médio</td>
+          <td>~3h amortiz.</td>
+          <td>~5h/mês</td>
+          <td>R$26/h</td>
+          <td><b>~R$130</b></td>
+          <td><span class="pill pill-gray">amortizado</span></td>
+        </tr>
+        <tr>
+          <td class="muted">2</td>
+          <td><b>Captação presencial</b></td>
+          <td class="muted" style="font-size:12px">Cronometrado no relato: 1h banco imagens + 2h gravação 4 vídeos + 0,3h upload = 3,3h/cliente</td>
+          <td>~3,3h</td>
+          <td>~66h</td>
+          <td>R$26/h (mix Gustavo+Ravi)</td>
+          <td><b>~R$1.716</b></td>
+          <td><span class="pill pill-gray">físico</span></td>
+        </tr>
+        <tr>
+          <td class="muted">3</td>
+          <td><b>Planejamento + copy</b></td>
+          <td class="muted" style="font-size:12px">Observado em uso: 5min abrir doc + 10min rodar prompt + 15min revisar = ~30min. Arredondado pra 1h com contexto</td>
+          <td>~1h</td>
+          <td>~20h</td>
+          <td>R$26/h (Rafael)</td>
+          <td><b>~R$620</b></td>
+          <td><span class="pill pill-green">automatizado</span></td>
+        </tr>
+        <tr>
+          <td class="muted">4</td>
+          <td><b>Revisão criativos estáticos</b></td>
+          <td class="muted" style="font-size:12px">Content Machine gera 8 peças; Rafa revisa+ajusta+exporta = ~1,5h. Confirmado via observação do workflow no Figma</td>
+          <td>~1,5h</td>
+          <td>~30h</td>
+          <td>R$26/h (Rafael)</td>
+          <td><b>~R$930</b></td>
+          <td><span class="pill pill-green">automatizado</span></td>
+        </tr>
+        <tr>
+          <td class="muted">5</td>
+          <td><b>Edição de vídeo</b></td>
+          <td class="muted" style="font-size:12px">Rafael Gobi produz ~60 vídeos/mês em ~139h produtivas → 2,3h/vídeo real. 2 reels/cliente = 4,6h. Validado por backlog atual</td>
+          <td>~4,6h<br><span class="muted" style="font-size:11px">(2 reels × 2,3h)</span></td>
+          <td>~92h</td>
+          <td>R$26/h (editor)</td>
+          <td><b>~R$1.932</b></td>
+          <td><span class="pill pill-yellow">humano</span></td>
+        </tr>
+        <tr>
+          <td class="muted">6</td>
+          <td><b>Envio para aprovação</b></td>
+          <td class="muted" style="font-size:12px">Passo-a-passo medido: ~10min preparar mensagem + 2min enviar = ~12min. Arredondado pra 10min no resumo</td>
+          <td>~10min</td>
+          <td>~3,3h</td>
+          <td>R$26/h (Rafa/Gustavo)</td>
+          <td><b>~R$100</b></td>
+          <td><span class="pill pill-yellow">manual</span></td>
+        </tr>
+        <tr>
+          <td class="muted">7</td>
+          <td><b>Follow-up de aprovação</b><br><span style="font-size:11px; color:#ef4444;">"carteirar"</span></td>
+          <td class="muted" style="font-size:12px">Relato Gustavo: ~5min identificar quem não respondeu × 2 dias + ~10min cobrar × N clientes. Estimativa conservadora: 30min/cliente</td>
+          <td>~30min</td>
+          <td>~10h</td>
+          <td><b class="red">R$31/h (Gustavo)</b></td>
+          <td><b>~R$260</b><br><span class="muted" style="font-size:11px">+ custo de oportunidade</span></td>
+          <td><span class="pill pill-red">consome Gustavo</span></td>
+        </tr>
+        <tr>
+          <td class="muted">8</td>
+          <td><b>Ajustes pós-feedback</b></td>
+          <td class="muted" style="font-size:12px">Passo-a-passo: 5min ler feedback + 20min ajustar + 5min reenviar = 30min. Alta variância — depende do cliente</td>
+          <td>~30min</td>
+          <td>~10h</td>
+          <td>R$26/h (Rafa/editor)</td>
+          <td><b>~R$260</b></td>
+          <td><span class="pill pill-yellow">manual</span></td>
+        </tr>
+        <tr>
+          <td class="muted">9</td>
+          <td><b>Agendamento Meta Business</b></td>
+          <td class="muted" style="font-size:12px">Cronometrado por passo: 3min login/troca × N + 5min upload × 8 posts + 10min legenda/hashtag × 8 + 3min configurar × 8 = ~25min/cliente</td>
+          <td>~25min<br><span class="muted" style="font-size:11px">(8 posts × 2 redes)</span></td>
+          <td>~8h</td>
+          <td>R$21/h (Ravi/Rafa)</td>
+          <td><b>~R$240</b></td>
+          <td><span class="pill pill-yellow">manual</span></td>
+        </tr>
+        <tr style="background:#1a0a0a;">
+          <td class="muted">10</td>
+          <td><b>Análise mensal + relatório</b></td>
+          <td class="muted" style="font-size:12px">Estimativa: ~20min coleta + 30min cruzar dados + 30min escrever narrativa + 30min sugestões = ~1,5-2h. <b>Não cronometrado oficialmente.</b></td>
+          <td>~1,5-2h<br><span class="tag-pending">a confirmar</span></td>
+          <td>~30-40h</td>
+          <td><b class="red">R$31/h (Gustavo)</b></td>
+          <td><b>a confirmar</b></td>
+          <td><span class="pill pill-red">consome Gustavo</span></td>
+        </tr>
+        <tr style="background:#1a1408; font-size:13px;">
+          <td colspan="4"><b>TOTAL PARCIAL MAPEADO</b> (sem análise mensal)</td>
+          <td><b>~239h/mês</b></td>
+          <td></td>
+          <td><b>~R$6.188/mês</b></td>
+          <td></td>
+        </tr>
+        <tr style="background:#0f1a10; font-size:13px;">
+          <td colspan="4"><b>TOTAL ESTIMADO COM ANÁLISE MENSAL</b></td>
+          <td><b>~274h/mês</b></td>
+          <td></td>
+          <td><b>~R$7.118–7.428/mês</b></td>
+          <td><span class="tag-pending">quando cronometrar</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="note">
+      <b>Como usar a faixa de custo de oportunidade do Gustavo:</b> os processos que marcamos com "consome Gustavo" usam R$31/h, mas o custo real é mais alto — cada hora de Gustavo em operação é uma hora não dedicada ao comercial. Se Gustavo fecha contratos de R$3.000/mês em média, e usa 40h/mês em operação, o custo de oportunidade real é de até R$120.000/mês em receita potencial não gerada.
+    </p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SEÇÃO 4: RESUMO VISUAL -->
+  <div class="mb-12">
+    <div class="kicker mb-2">04 · Resumo visual</div>
+    <div class="section-title">Onde o custo está concentrado.</div>
+    <p class="muted mb-6" style="font-size: 14px;">Os 3 processos mais caros em horas e o critério de priorização para automação.</p>
+
+    <div class="grid-2 mb-6">
+      <div>
+        <div class="kicker mb-3" style="color:#888;">Por custo direto (R$/mês)</div>
+        <table>
+          <thead><tr><th>Processo</th><th>Custo/mês</th><th>% do total</th></tr></thead>
+          <tbody>
+            <tr><td>Edição de vídeo</td><td class="red"><b>~R$1.932</b></td><td class="muted">31%</td></tr>
+            <tr><td>Captação presencial</td><td class="red"><b>~R$1.716</b></td><td class="muted">28%</td></tr>
+            <tr><td>Revisão criativos</td><td class="yellow"><b>~R$930</b></td><td class="muted">15%</td></tr>
+            <tr><td>Planejamento + copy</td><td class="muted"><b>~R$620</b></td><td class="muted">10%</td></tr>
+            <tr><td>Follow-up aprovação</td><td class="muted"><b>~R$260</b></td><td class="muted">4%</td></tr>
+            <tr><td>Ajustes feedback</td><td class="muted"><b>~R$260</b></td><td class="muted">4%</td></tr>
+            <tr><td>Agendamento Meta</td><td class="muted"><b>~R$240</b></td><td class="muted">4%</td></tr>
+            <tr><td>Envio aprovação</td><td class="muted"><b>~R$100</b></td><td class="muted">2%</td></tr>
+            <tr><td>Onboarding</td><td class="muted"><b>~R$130</b></td><td class="muted">2%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="kicker mb-3" style="color:#888;">Por critério de priorização (automação)</div>
+        <table>
+          <thead><tr><th>Processo</th><th>Custo direto</th><th>Consome Gustavo?</th><th>Automatizável?</th></tr></thead>
+          <tbody>
+            <tr><td>Edição de vídeo</td><td class="red">R$1.932</td><td>não</td><td class="muted">parcial (POC)</td></tr>
+            <tr><td>Captação</td><td class="red">R$1.716</td><td>sim</td><td class="muted">não (físico)</td></tr>
+            <tr><td>Criativos</td><td class="yellow">R$930</td><td>não</td><td class="green">já automatizado</td></tr>
+            <tr><td>Planejamento/copy</td><td class="muted">R$620</td><td>não</td><td class="green">já automatizado</td></tr>
+            <tr style="background:#0a1a10;"><td><b>Follow-up aprovação</b></td><td class="muted">R$260</td><td class="green"><b>sim, 100%</b></td><td class="green"><b>SIM — Skill 1</b></td></tr>
+            <tr style="background:#0a1a10;"><td><b>Agendamento Meta</b></td><td class="muted">R$240</td><td class="yellow">parcial</td><td class="green"><b>SIM — Skill 2</b></td></tr>
+            <tr style="background:#0a1a10;"><td><b>Análise mensal</b></td><td class="muted">a confirmar</td><td class="green"><b>sim, 100%</b></td><td class="green"><b>SIM — Skill 3</b></td></tr>
+          </tbody>
+        </table>
+        <p class="note mt-3">
+          O critério de automação <b>não é custo direto</b>. É "consome o Gustavo" — que é o único comercial da Bravo. Processos com maior custo direto (vídeo, captação) são físicos ou já resolvidos.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SEÇÃO 5: PENDÊNCIAS -->
+  <div class="mb-12">
+    <div class="kicker mb-2">05 · Pendências e limitações do cálculo</div>
+    <div class="section-title">O que ainda falta para fechar os números.</div>
+    <p class="muted mb-6" style="font-size: 14px;">Este cálculo é uma estimativa com dados do discovery. Dois pontos precisam de confirmação.</p>
+
+    <div class="grid-2">
+      <div class="card-yellow card">
+        <div class="kicker mb-2" style="color:#fbbf24;">Pendência 1 — Análise mensal</div>
+        <p style="font-size:14px; line-height:1.6;">O tempo real da análise mensal <b>não foi cronometrado</b> durante o discovery (processo 10). A estimativa de 1,5-2h por cliente é baseada em relato verbal de Gustavo.</p>
+        <div class="mt-3">
+          <b style="font-size:13px;">Ação:</b> <span class="muted" style="font-size:13px;">cronometrar uma análise real com 1 cliente na próxima virada de mês. Isso calibra a Skill 3 e fecha o total.</span>
+        </div>
+        <div class="mt-3">
+          <b style="font-size:13px;">Impacto no total:</b><br>
+          <span class="muted" style="font-size:12px;">• Se 1h/cliente → +~R$620/mês → total ~R$6.808</span><br>
+          <span class="muted" style="font-size:12px;">• Se 1,5h/cliente → +~R$930/mês → total ~R$7.118</span><br>
+          <span class="muted" style="font-size:12px;">• Se 2h/cliente → +~R$1.240/mês → total ~R$7.428</span>
+        </div>
+      </div>
+      <div class="card-red card">
+        <div class="kicker mb-2" style="color:#fca5a5;">Pendência 2 — Custo de pessoal (Etapa 4)</div>
+        <p style="font-size:14px; line-height:1.6;">O custo exato de pró-labore dos sócios e remuneração dos colaboradores <b>não foi levantado</b> na sessão de discovery (bloco de custos foi reservado para 1:1 Gustavo — Etapa 4).</p>
+        <div class="mt-3">
+          <b style="font-size:13px;">Impacto:</b> <span class="muted" style="font-size:13px;">o custo-hora R$26/h é uma estimativa ponderada pelo relato do time. O número real pode variar ±20% dependendo dos custos reais de pessoal.</span>
+        </div>
+        <div class="mt-3">
+          <b style="font-size:13px;">Ação:</b> <span class="muted" style="font-size:13px;">reunião 1:1 com Gustavo para levantar pró-labore + salários + ferramentas e recalcular custo-hora real.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SEÇÃO 6: MÉTODO DE LEVANTAMENTO -->
+  <div class="mb-12">
+    <div class="kicker mb-2">06 · Como levantamos os dados</div>
+    <div class="section-title">Fontes e métodos de medição.</div>
+    <p class="muted mb-6" style="font-size:14px;">Os números não saíram de estimativa desktop — foram coletados em sessões presenciais com o time.</p>
+
+    <div class="grid-2">
+      <table>
+        <thead><tr><th>Fonte</th><th>O que extraímos</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>2 sessões presenciais<br><span class="muted" style="font-size:11px">Seaac Rio Preto · ~3h gravadas</span></td>
+            <td class="muted" style="font-size:12px">Relatos de tempo por processo, observação direta do workflow, identificação dos gargalos pelo próprio time</td>
+          </tr>
+          <tr>
+            <td>Entrevista Gustavo + Rafael<br><span class="muted" style="font-size:11px">design + planejamento</span></td>
+            <td class="muted" style="font-size:12px">Tempo de edição de vídeo (Rafael Gobi), fluxo de criativos (Rafael), custo de ferramentas avaliadas</td>
+          </tr>
+          <tr>
+            <td>5 forms de onboarding<br><span class="muted" style="font-size:11px">analisados em detalhe</span></td>
+            <td class="muted" style="font-size:12px">Estrutura do processo de briefing, tempo estimado de preenchimento, gargalo de latência</td>
+          </tr>
+          <tr>
+            <td>Observação do Content Machine<br><span class="muted" style="font-size:11px">Figma + Bridge Codec em uso</span></td>
+            <td class="muted" style="font-size:12px">Validação do fluxo automatizado, medição do tempo de revisão do Rafael, taxa de aprovação do cliente Diego</td>
+          </tr>
+          <tr>
+            <td>Ishikawa + 5 Whys<br><span class="muted" style="font-size:11px">com time presente</span></td>
+            <td class="muted" style="font-size:12px">Causa-raiz de cada gargalo (não estimativa do Lucas — levantamento com quem vive o processo)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <div class="kicker mb-3" style="color:#888;">Critério de precisão por processo</div>
+        <table>
+          <thead><tr><th>Processo</th><th>Precisão</th><th>Método</th></tr></thead>
+          <tbody>
+            <tr><td>Edição de vídeo</td><td><span class="pill pill-green">alta</span></td><td class="muted" style="font-size:11px">calculado de backlog real (60 vídeos ÷ 139h)</td></tr>
+            <tr><td>Captação presencial</td><td><span class="pill pill-green">alta</span></td><td class="muted" style="font-size:11px">cronometrado passo a passo no relato</td></tr>
+            <tr><td>Agendamento Meta</td><td><span class="pill pill-green">alta</span></td><td class="muted" style="font-size:11px">cronometrado por passo (login, upload, legenda)</td></tr>
+            <tr><td>Criativos estáticos</td><td><span class="pill pill-green">alta</span></td><td class="muted" style="font-size:11px">observado em uso real no Figma</td></tr>
+            <tr><td>Follow-up aprovação</td><td><span class="pill pill-yellow">média</span></td><td class="muted" style="font-size:11px">relato Gustavo ("leva uns 30min por cliente")</td></tr>
+            <tr><td>Planejamento + copy</td><td><span class="pill pill-yellow">média</span></td><td class="muted" style="font-size:11px">observado + relato Rafael</td></tr>
+            <tr><td>Análise mensal</td><td><span class="pill pill-red">baixa</span></td><td class="muted" style="font-size:11px">estimativa — não cronometrado. Pendente Etapa 4</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <hr class="divider" style="margin-top: 32px;">
+  <div style="display:flex; justify-content:space-between; align-items:center; color:#555; font-size:12px;">
+    <div>Bravo Agency × Eloscope · Metodologia de custo · Pós-Discovery 2026-04-30</div>
+    <div>Produzido por Lucas Negreiro · Eloscope</div>
+  </div>
+
+</div>
+</body>
+</html>
