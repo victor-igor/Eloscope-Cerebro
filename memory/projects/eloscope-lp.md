@@ -1,6 +1,6 @@
 # Eloscope Landing Page
 
-> Status: 🔨 Em construção — HowItWorks com Framer Motion + split layout aprovado, aguarda FAQ/Footer + deploy
+> Status: 🔨 Em construção — páginas legais + obrigado criadas, form → core_module_assets, aguarda deploy Vercel
 
 ## O que é
 Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulário de diagnóstico gratuito. Stack aprovada, copy aprovada, implementação parcial feita.
@@ -46,11 +46,16 @@ Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulári
 | 30/04/2026 | HowItWorks redesign Apple-style: split layout (headline esquerda + cards direita), copy benefit-first |
 
 ## Pendências
-- [ ] Revisar seções FAQ e Footer (não auditadas)
-- [ ] Testar mobile responsivo em todas as seções
 - [ ] Deploy Vercel (Task 16)
+- [ ] Testar mobile responsivo em todas as seções
+- [ ] Atualizar número WhatsApp em `/obrigado/page.tsx` (está como 5511999999999)
 - [ ] Gradient no headline do Hero
 - [ ] Magnetic hover no CTA principal
+- ~~Páginas legais /privacidade e /termos~~ ✅ criadas 30/04 (glass design)
+- ~~Página /obrigado~~ ✅ criada 30/04 (glass + 3 steps + WhatsApp CTA)
+- ~~Form redireciona para /obrigado~~ ✅ 30/04 (router.push)
+- ~~submitLead grava em core_module_assets~~ ✅ 30/04 (module:contacts, asset_type:person)
+- ~~TS error lib/motion.ts (ease string)~~ ✅ corrigido 30/04
 - ~~HowItWorks sticky stacking~~ ✅ resolvido 30/04 (reescrito com GSAP ScrollTrigger)
 - ~~WhatYouGet redesign~~ ✅ resolvido 30/04 (terminal cards + SVG bezier connections)
 - ~~Form: py-32→py-40, card p-8→p-10~~ ✅ aplicado 30/04
