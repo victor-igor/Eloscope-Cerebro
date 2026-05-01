@@ -1,6 +1,6 @@
 # Eloscope Landing Page
 
-> Status: 🔨 Em construção — páginas legais + obrigado criadas, form → core_module_assets, aguarda deploy Vercel
+> Status: 🟡 Pronta para deploy — git commitado, GitHub + Vercel pendentes
 
 ## O que é
 Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulário de diagnóstico gratuito. Stack aprovada, copy aprovada, implementação parcial feita.
@@ -46,9 +46,10 @@ Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulári
 | 30/04/2026 | HowItWorks redesign Apple-style: split layout (headline esquerda + cards direita), copy benefit-first |
 
 ## Pendências
-- [ ] Deploy Vercel (Task 16)
+- [ ] `gh auth login` → criar repo GitHub → push → conectar Vercel
+- [ ] Adicionar env vars no Vercel: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `ORG_ID`
 - [ ] Testar mobile responsivo em todas as seções
-- [ ] Atualizar número WhatsApp em `/obrigado/page.tsx` (está como 5511999999999)
+- [ ] ~~Atualizar número WhatsApp em `/obrigado/page.tsx`~~ ✅ 01/05 (5517920003580)
 - [ ] Gradient no headline do Hero
 - [ ] Magnetic hover no CTA principal
 - ~~Páginas legais /privacidade e /termos~~ ✅ criadas 30/04 (glass design)
