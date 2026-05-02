@@ -31,6 +31,8 @@
 | 15/05/2026 | Bravo — 2ª parcela R$975 | Pendente | Lucas |
 | 15/06/2026 | Bravo — 3ª parcela R$975 | Pendente | Lucas |
 | 15/07/2026 | Bravo — 4ª parcela R$975 (final) | Pendente | Lucas |
+| 08/05/2026 | Enertelles — follow-up site (Bloco B) · Telles decide sobre concorrentes | Pendente | Lucas · evento no Calendar |
+| 02/06/2026 | Enertelles — follow-up Bloco A (processo + IA) · equipe de volta | Pendente | Lucas · evento no Calendar |
 | 02/05/2026 | Bravo — documento de processo + infra pronta | Pendente | Lucas |
 | 09/05/2026 | Bravo — skills finalizadas + treinamento | Pendente | Lucas |
 | 08/06/2026 | Bravo — fim do suporte pós-entrega (30 dias) | Pendente | Lucas |

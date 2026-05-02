@@ -87,10 +87,10 @@
 - [02/05/2026] **Confirmar status oportunidade vs cliente: Marcos Consultrain** · oportunidade ou cliente? · Lucas
 - [02/05/2026] **Confirmar status oportunidade vs cliente: Jean Imobiliária** · proposta atual: manter em clientes mesmo com cobrança 2ª parcela pendente (fronteira) · Lucas
 - [02/05/2026] **Mover pastas para `oportunidades/`** após confirmação · Enertelles, Daniel Queiroz, Marcos Consultrain · `git mv` pra preservar histórico · Claude na próxima sessão
-- [02/05/2026] **Atualizar Enertelles com resultado da call 01/05** · não está no Fathom (presencial? telefone? remarcada?) · Lucas confirma status real e registra
-- [02/05/2026] 🔥 **Invocar @aiox-master** com `spin-playbook-v0.2.md` · ranquear agentes existentes pra consumir + desenhar squad sales-call-analyzer · próxima sessão
-- [02/05/2026] **Invocar @sm** após @aiox-master · gerar 4 stories: squad config, agentes (spin-coach/objection-curator/seller-profiler/call-orchestrator), workflow analyze-call.yaml, skill `/analisar-call` · próxima sessão
-- [02/05/2026] **Implementar squad sales-call-analyzer** · 4 agentes + workflow + skill · após stories
+- [02/05/2026] ✅ **Enertelles — call 01/05 transcrita e analisada** · Fireflies `01KQN35F64MHZ63N5KET1PY0A3` · resultado: não fechou · follow-up site 08/05 + Bloco A 1ª semana junho · meeting notes em `areas/vendas/oportunidades/enertelles/meeting-notes/call-2026-05-01.md`
+- [02/05/2026] 🔥 **Enertelles — follow-up site (Bloco B)** · Telles decide sobre concorrentes · evento no Calendar 08/05 10h · Lucas
+- [02/05/2026] **Enertelles — follow-up Bloco A** · equipe volta de férias/licença · evento no Calendar 02/06 10h · Lucas
+- [02/05/2026] ⚪ **[DÉBITO TÉCNICO] Skill `/analisar-call`** · squad sales-call-analyzer (spin-coach/objection-curator/seller-profiler/call-orchestrator) + workflow + skill · invocar @aiox-master → @sm → @dev · baixa prioridade, desbloqueado após N≥10 calls reais
 - [02/05/2026] **Consolidar `objecoes-biblioteca.md`** · 8 objeções Enertelles + objeções Reabilita/Bravo espalhadas · categorizadas (preço/timing/autoridade/concorrência/risco-tech/ceticismo-IA)
 - [02/05/2026] **Coaching loop** · tabela "se eixo X < target → ação Y" pra coaching pós-call
 - [02/05/2026] **Validar SPIN playbook contra N≥10 calls reais** · calibrar pesos por correlação real, não por benchmark Huthwaite/Gong
