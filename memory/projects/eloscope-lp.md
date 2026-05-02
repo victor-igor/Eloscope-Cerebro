@@ -1,6 +1,6 @@
 # Eloscope Landing Page
 
-> Status: 🟡 Pronta para deploy — git commitado, GitHub + Vercel pendentes
+> Status: 🟢 Live em www.eloscope.com — SEO em progresso (Epic 6)
 
 ## O que é
 Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulário de diagnóstico gratuito. Stack aprovada, copy aprovada, implementação parcial feita.
@@ -45,9 +45,21 @@ Landing page da Eloscope em Next.js 14 + Tailwind + GSAP. CTA único: formulári
 | 30/04/2026 | Bug crítico: overflow-x-hidden em main quebrava position:sticky — removido |
 | 30/04/2026 | HowItWorks redesign Apple-style: split layout (headline esquerda + cards direita), copy benefit-first |
 
+## SEO — Epic 6 (iniciado 02/05/2026)
+
+| Story | Status | Descrição |
+|-------|--------|-----------|
+| 6.1 | ✅ Done | Infraestrutura blog (rotas, nav, sitemap) |
+| 6.2 | ✅ Done | 4 artigos SEO publicados em /blog |
+| 6.3 | ✅ Done | Correções críticas: 301 redirect, canonical, og:url |
+| 6.4 | ✅ Done | Schema markup — JSON-LD Organization+WebSite+Article+FAQPage+BreadcrumbList |
+| 6.5 | ✅ Done | OG images via ImageResponse (1200×630) + security headers + metadataBase |
+| 6.6 | ✅ Done | llms.txt + seção "Leia também" com cross-links entre artigos |
+
 ## Pendências
-- [ ] `gh auth login` → criar repo GitHub → push → conectar Vercel
-- [ ] Adicionar env vars no Vercel: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `ORG_ID`
+- [x] `gh auth login` + push para `victor-igor/lp-eloscope` ✅ 01/05
+- [x] Conectar Vercel ao repo + deploy ✅ (live em www.eloscope.com)
+- [ ] Travessões em `layout.tsx` (meta/título) e páginas `termos` e `privacidade`
 - [ ] Testar mobile responsivo em todas as seções
 - [ ] ~~Atualizar número WhatsApp em `/obrigado/page.tsx`~~ ✅ 01/05 (5517920003580)
 - [ ] Gradient no headline do Hero
