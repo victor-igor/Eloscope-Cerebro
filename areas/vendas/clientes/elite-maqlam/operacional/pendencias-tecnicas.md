@@ -15,7 +15,7 @@ tags: [cliente/maqlam, tecnico, backlog]
 
 | Item | Detalhe | Responsável | ClickUp |
 |------|---------|-------------|---------|
-| Risco API oficial Meta | Atualização pode remover número do lead, matando fluxo híbrido WhatsApp. Sem fallback definido. | Victor + Hugo | — |
+| Risco API oficial Meta | Atualização pode remover número do lead, matando fluxo híbrido WhatsApp. Sem fallback definido. | Victor + Hugo | `86e16u6du` |
 
 ---
 
@@ -23,12 +23,12 @@ tags: [cliente/maqlam, tecnico, backlog]
 
 | Item | Detalhe | Responsável | ClickUp |
 |------|---------|-------------|---------|
-| API Olist quebrada | Story 1.6 do repo bloqueada (B-1.5-A) — Denis precisa fornecer credenciais Olist/Tiny/Bling | Denis → Hugo | — |
-| Botão "Chatútil" | Adicionar na tela de contato 360° (pedido na call 24/04) | Hugo | — |
-| Refresh do Kanban | Atualização automática do board de tarefas | Hugo | — |
-| Mensagens de erro no exportador | Melhorar feedback de erro na exportação de leads | Hugo | — |
-| Filtros geográficos no Gerador de Leads | Filtros por região/cidade mais granulares | Victor | — |
-| Admin Marcella/Juliano na Knowledge Base | Acesso confirmado na call 24/04 — validar se foi configurado | Hugo | — |
+| API Olist quebrada | Story 1.6 do repo bloqueada (B-1.5-A) — Denis precisa fornecer credenciais Olist/Tiny/Bling | Denis → Hugo | `86e16u6cg` |
+| Botão "Chatútil" | Adicionar na tela de contato 360° (pedido na call 24/04) | Hugo | `86e16u6cn` |
+| Refresh do Kanban | Atualização automática do board de tarefas | Hugo | `86e16u6cv` |
+| Mensagens de erro no exportador | Melhorar feedback de erro na exportação de leads | Hugo | `86e16u6d3` |
+| Filtros geográficos no Gerador de Leads | Filtros por região/cidade mais granulares | Victor | `86e16u6db` |
+| Admin Marcella/Juliano na Knowledge Base | Acesso confirmado na call 24/04 — validar se foi configurado | Hugo | `86e16u6dj` |
 
 ---
 
@@ -50,6 +50,25 @@ tags: [cliente/maqlam, tecnico, backlog]
 | Asaas fatura ajustada para R$1.197 | 24/04/2026 | Lucas ajustou manualmente |
 | Acesso admin Marcella + Juliano | 24/04/2026 | Denis solicitou, confirmado na reunião |
 | Script Bumble (MAC1) cadastrado | abr/2026 | Victor cadastrou + ativou |
+
+---
+
+---
+
+## ClickUp — Tasks criadas (semana 04–08/05)
+
+| Task | ID | Responsável |
+|------|----|-------------|
+| CS meeting Victor + equipe Maqlam | `86e16u6bb` | Victor |
+| Criar e enviar Loom cashback report | `86e16u6bj` | Lucas |
+| Mandar BDR Bumble para Denis testar | `86e16u6br` | Lucas |
+| Validar mensagens cashback com Denis | `86e16u6bz` | Lucas |
+| Disparo campanha cashback 12h | `86e16u6c7` | Denis |
+| Chips Day 1 (04/05) — aquecimento | `86e16u6ef` | Lucas |
+| Chips Day 2 (05/05) — aquecimento | `86e16u6en` | Lucas |
+| Chips Day 3 (06/05) — aquecimento | `86e16u6ev` | Lucas |
+| Chips Day 4 (07/05) — aquecimento | `86e16u6f3` | Lucas |
+| Chips Day 5 (08/05) — aquecimento | `86e16u6fb` | Lucas |
 
 ---
 

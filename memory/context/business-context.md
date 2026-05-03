@@ -127,7 +127,7 @@
 | Cliente | Produto | Receita | Status |
 |---------|---------|---------|--------|
 | ReabilitaCão (Francielly) | Elo OS pilot | R$1.887/mês | 🟢 Pagamento confirmado 24/04 |
-| Elite Maqlam (Denis) | Custom | R$1.490/mês | 🟡 Cobrança vence 25/04 |
+| Elite Maqlam (Denis) | Elo OS custom | R$1.197/mês trial (3 meses) → R$2.197 | 🟢 Cashback rodando 04/05 · BDR Bumble ativo · 2 chips aquecendo |
 | Campos Joia (Matheus) | Custom | R$1.197/mês | 🔴 Vencida desde 10/04 |
 | Voltrucks (Samuel) | Custom | R$6.000 (pontual) | 🟡 Cobrança pendente |
 | Imobiliária Rodrigues (Jean) | Custom | — | 🟡 Cobrança pendente |

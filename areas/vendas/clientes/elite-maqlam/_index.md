@@ -54,7 +54,8 @@ tags: [cliente/maqlam, ativo, elo-os]
 | [[comercial/historico]] | Linha do tempo out/2025 → hoje |
 | [[comercial/cashback-mensagens]] | 3 variações de mensagem cashback a validar |
 | [[operacional/chips-aquecimento]] | Protocolo e status dos 2 chips BDR |
-| [[operacional/pendencias-tecnicas]] | Backlog técnico (Hugo) |
+| [[operacional/pendencias-tecnicas]] | Backlog técnico (Hugo) — IDs ClickUp incluídos |
+| [[operacional/handoff-lancamento-04-05]] | Guia de execução do dia 04/05 — checklist completo |
 | [[meeting-notes/_index]] | Índice de todas as reuniões |
 | [[memory/projects/maqlam]] | Arquitetura completa do sistema (módulos, edge functions) |
 
