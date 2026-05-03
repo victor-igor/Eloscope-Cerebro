@@ -5,118 +5,158 @@ data: 2026-05-04
 tags: [cliente/maqlam, handoff, cashback, bdr, chips]
 ---
 
-# Handoff — Lançamento 04/05/2026
+# Handoff — Lançamento 04/05/2026 (segunda-feira)
 
 > Campanha começa **04/05 às 12h**.
-> Prazos revisados em 03/05 após análise de dependências.
+> Sequência revisada com dependências e URLs técnicas.
 
 ---
 
-## HOJE À NOITE (03/05) — elimina risco antes de dormir
+## Sistema — referências rápidas
 
-- [ ] **Victor: testar SDR agora** (`86e16ubnu`)
-  - Simular cliente, testar OI/INFO/QUERO, confirmar transferência, validar hybrid search
-  - ✅ OK → avisa Lucas → lançamento confirmado
-  - ❌ Bug → Hugo corrige à noite (tem tempo antes do 04/05)
-  - **Se não der hoje:** limite máximo 09h de 04/05
+| O quê | URL / dado |
+|-------|-----------|
+| Sistema (produção) | https://elo.elitemaqlam.com.br |
+| Tela de contatos (cashback) | https://elo.elitemaqlam.com.br/contacts |
+| Tela de campanhas | https://elo.elitemaqlam.com.br/campaigns |
+| Tela de cashback | https://elo.elitemaqlam.com.br/cashback |
+| Repo | `git@github.com:victor-igor/Maqlam.git` |
+| Módulo agente AI | `src/features/ai` |
+| Módulo campanhas | `src/features/campaigns` |
+| Edge Function disparo | `campaign-executor` (Supabase) |
+| Edge Function agente | `ai-agent-respond` (Supabase) |
+| WhatsApp oficial | Meta Cloud API (credenciais em Settings → Integrations) |
+| Chips prospecção | +55 11 9 2700-9804 · +55 17 9 2004-2308 |
 
 ---
 
-## 04/05 — Sequência realista
+## Sequência do dia — 04/05 (segunda-feira)
 
-### 8h30 (Lucas)
+### 8h — Victor (primeiro da manhã)
 
-- [ ] **Enviar 3 variações de mensagem para Denis aprovar** (`86e16ub51`)
-  - Mensagem no WhatsApp: "Denis, 3 opções para o disparo das 12h. Pode escolher 1 ou rotacionar as 3."
-  - Denis responde até ~10h30
+- [ ] **Testar SDR/BDR Bumble end-to-end** (`86e16ubnu`)
+  - Acessar o sistema como cliente: https://elo.elitemaqlam.com.br
+  - Mandar mensagem para o chip BDR (+55 11 9 2700-9804 ou +55 17 9 2004-2308)
+  - Testar as entradas: `OI` → `INFO` → `QUERO` → `PREÇO`
+  - Confirmar transferência para humano quando solicitado
+  - Validar hybrid search: pergunta sobre produto → agente busca em `search-knowledge`
+  - Confirmar sincronização do Reg (FAQ + memória)
+  - **Avisa Lucas até 8h30:** ✅ OK ou ❌ bug (descrever)
+
+- [ ] **Se bug:** Hugo corrige no módulo `src/features/ai` + redeploy Vercel + retestar
+  - Prazo máximo para correção: **10h** (antes de Lucas configurar campanha)
+
+---
+
+### 8h30 — Lucas
+
+- [ ] **Enviar 3 variações de mensagem para Denis validar** (`86e16ub51`)
+  - WhatsApp Denis: *"Denis, segue as 3 opções de mensagem para o disparo das 12h. Pode escolher 1 ou a gente rotaciona as 3."*
+  - Variações completas em: [[comercial/cashback-mensagens]]
+  - **Denis responde até 10h30**
 
 - [ ] **Enviar BDR Bumble para Denis testar** (`86e16ub5t`)
-  - Mensagem separada: número do chip + instrução de teste simples
-  - Denis responde até ~10h30
+  - Mensagem separada (não misturar com a de cashback)
+  - Passar o número do chip + instrução simples: *"Denis, manda 'OI' para esse número pra você ver como funciona o BDR"*
+  - **Denis dá feedback até 10h30**
 
 - [ ] **Chips — Day 1 do aquecimento**
-  - +55 11 9 2700-9804: 10–15 mensagens manuais
-  - +55 17 9 2004-2308: 10–15 mensagens manuais
-  - Protocolo: [[operacional/chips-aquecimento]]
+  - +55 11 9 2700-9804: 10–15 mensagens manuais (grupos ativos, conhecidos)
+  - +55 17 9 2004-2308: 10–15 mensagens manuais (grupos ativos, conhecidos)
+  - Protocolo completo: [[operacional/chips-aquecimento]]
 
-### 10h30 (Lucas)
+---
 
-- [ ] **Configurar campanha no sistema** (draft pronto, não dispara ainda)
-  - Criar campanha com a variação que Denis aprovou
-  - Associar chips, configurar rotação
-  - Deixar tudo pronto — só falta apertar o botão às 12h
+### 10h30 — Lucas (após ok de Denis)
 
-### 11h30 — Go / No-Go
+- [ ] **Configurar campanha no sistema** (salvar como draft, não disparar ainda)
+  - Acessar: https://elo.elitemaqlam.com.br/campaigns → Nova campanha
+  - Nome: `Cashback Pós-Feira — 04/05`
+  - Audiência: todos os contatos com WhatsApp ativo
+  - Mensagens: inserir a(s) variação(ões) aprovadas por Denis com rotação
+  - Personalização: `[NOME]` = campo nome do contato
+  - Canal: chips aquecidos (não-oficial) ou WhatsApp oficial Meta se disponível
+  - Horário agendado: **04/05 às 12h00**
+  - Salvar draft — não apertar disparar ainda
+
+---
+
+### 11h30 — Go / No-Go (Lucas + Victor)
 
 | Checklist | Status |
 |-----------|--------|
-| SDR testado (Victor OK ou bug resolvido) | ⬜ |
-| Denis aprovou mensagens | ⬜ |
+| SDR testado e ok (Victor confirmou) | ⬜ |
+| Denis aprovou as mensagens | ⬜ |
 | Denis confirmou BDR funcionando | ⬜ |
 | Campanha configurada no sistema (draft) | ⬜ |
 
-Se algum item estiver ❌ às 11h30 → decidir se atrasa ou lança assim mesmo.
+**Todos ✅ → disparo às 12h.**
 
-### 12h (Lucas)
+Se algum ❌ → decidir juntos: atrasar disparo ou lançar sem o item bloqueado.
+
+---
+
+### 12h — Lucas
 
 - [ ] **Disparar campanha** (`86e16ub4p`)
-  - Apertar o botão no sistema
-  - Monitorar primeiros envios por 15–20min
-
-### Tarde (13h–15h)
-
-- [ ] **Loom para Marcella e Juliano** (`86e16u6bj`) — *movido para depois do lançamento*
-  - Acessar `/contacts` → mostrar filtro cashback → demonstrar como dar baixa
-  - Gravar + enviar para Denis, Marcella, Juliano
-  - Não é bloqueante pro disparo — é para gestão contínua da equipe
-
-- [ ] **Checar primeiros retornos** — clientes respondendo? BDR respondendo certo?
-
-### 04/05 — qualquer hora (Victor)
-
-- [ ] **Agendar CS meeting com Denis** (`86e16u6bb`) — 08 ou 09/05
+  - Abrir https://elo.elitemaqlam.com.br/campaigns
+  - Abrir draft `Cashback Pós-Feira — 04/05` → confirmar configurações → **Disparar**
+  - Monitorar primeiros envios por 15–20 min
+  - Verificar se `campaign-executor` (Edge Function) está processando sem erros
 
 ---
 
-## Quem faz o quê (atualizado)
+### Tarde (13h–15h) — Lucas
 
-| Quem | O quê | Prazo | ClickUp |
-|------|-------|-------|---------|
-| ~~Lucas~~ | ~~Importar leads~~ | ✅ 03/05 | `86e16ubkn` |
-| Victor | **Testar SDR** | **HOJE 22h** | `86e16ubnu` |
-| Lucas | Enviar mensagens para Denis | 04/05 — 8h30 | `86e16ub51` |
-| Lucas | BDR Bumble → Denis testar | 04/05 — 8h30 | `86e16ub5t` |
-| Denis | Aprovar mensagens + testar BDR | 04/05 — até 10h30 | — |
-| Lucas | Configurar campanha (draft) | 04/05 — 10h30 | — |
-| Lucas | **Go/no-go** | 04/05 — 11h30 | — |
-| Lucas | **Disparar campanha** | 04/05 — **12h** | `86e16ub4p` |
-| Lucas | Loom para equipe de vendas | 04/05 — tarde | `86e16u6bj` |
-| Lucas | Chips Day 1 | 04/05 — durante o dia | — |
-| Victor | Agendar CS meeting 08-09/05 | 04/05 | `86e16u6bb` |
+- [ ] **Loom para Marcella e Juliano** (`86e16u6bj`)
+  - Abrir: https://elo.elitemaqlam.com.br/contacts
+  - Gravar mostrando: filtro cashback acumulado → saldo por cliente → como dar baixa na hora da compra
+  - Exemplo no vídeo: cliente com R$50 acumulado → compra R$150 → cashback entra como desconto
+  - Enviar para Denis, Marcella e Juliano (WhatsApp ou link Loom)
+  - *Não é bloqueante pro disparo — é para gestão contínua da equipe*
+
+- [ ] **Monitoramento pós-disparo**
+  - Primeiras respostas chegando? BDR Bumble respondendo via `ai-agent-respond`?
+  - Clientes com dúvidas → avaliar se SDR está tratando corretamente
 
 ---
 
-## Contexto da campanha
+### Qualquer hora do dia — Victor
+
+- [ ] **Agendar CS meeting com Denis** (`86e16u6bb`)
+  - Data: 08 ou 09/05
+  - Pauta: resultados cashback + BDR + resistência equipe + expansão contrato
+
+---
+
+## Resumo — quem faz o quê
+
+| Quem | O quê | Prazo |
+|------|-------|-------|
+| ~~Lucas~~ | ~~Importar leads~~ | ✅ 03/05 |
+| **Victor** | **Testar SDR → avisa Lucas** | **8h** |
+| Hugo (se bug) | Corrigir SDR → redeploy | até 10h |
+| Lucas | Enviar msgs + BDR → Denis | 8h30 |
+| Denis | Aprovar msgs + testar BDR | até 10h30 |
+| Lucas | Configurar campanha (draft) | 10h30 |
+| Lucas + Victor | Go/no-go | 11h30 |
+| **Lucas** | **Disparar campanha** | **12h** |
+| Lucas | Loom equipe de vendas | tarde |
+| Lucas | Chips Day 1 | ao longo do dia |
+| Victor | Agendar CS meeting 08-09/05 | ao longo do dia |
+
+---
+
+## Regras da campanha
 
 | Regra | Detalhe |
 |-------|---------|
-| Cashback | 5% por compra |
-| Resgate | Comprar 3× o acumulado (ex: R$50 → compra R$150) |
+| Cashback | 5% sobre valor de cada compra |
+| Resgate | Cliente compra 3× o acumulado (ex: R$50 → R$150) |
 | Validade | 30 dias por transação |
-| Vigência | 04/05 a 02/06/2026 |
-| Audiência | Base com WhatsApp ativo |
+| Vigência | 04/05/2026 a 02/06/2026 |
+| Audiência | Base completa com WhatsApp ativo |
 
 ---
 
-## Links
-
-| O quê | Onde |
-|-------|------|
-| Mensagens cashback | [[comercial/cashback-mensagens]] |
-| Protocolo chips | [[operacional/chips-aquecimento]] |
-| Sistema | https://elo.elitemaqlam.com.br |
-| Tela contatos | https://elo.elitemaqlam.com.br/contacts |
-
----
-
-*Criado: 2026-05-03 · Revisado: 2026-05-03 (prazos ajustados)*
+*Criado: 2026-05-03 · Revisado: 2026-05-03 (domingo → segunda, URLs técnicas adicionadas)*
