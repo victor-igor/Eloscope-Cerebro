@@ -16,13 +16,12 @@ tags: [cliente/maqlam, handoff, cashback, bdr, chips]
 
 ### Manhã — até 10h (Lucas + Hugo em paralelo)
 
-- [ ] **Lucas mostra para Hugo: importar leads + criar campanha** (`86e16ubkn`)
-  - Acessar módulo de campanhas → importar lista → configurar variações → associar chips
-  - Hugo executa após treinamento rápido (call ou screenshare de 10–15min)
+- [x] **Importar leads** — concluído por Lucas em 03/05 (`86e16ubkn`)
 
-- [ ] **Hugo: testar agente SDR** (`86e16ubnu`)
+- [ ] **Victor: testar agente SDR e passar resultado para Lucas** (`86e16ubnu`)
   - Simular cliente, testar OI/INFO/QUERO, confirmar transferência para humano
-  - Se encontrar bug: corrigir antes das 12h ou avisar Lucas/Victor
+  - ✅ OK → avisa Lucas → Lucas libera disparo às 12h
+  - ❌ Bug → descreve erro → Hugo corrige antes das 12h
 
 - [ ] **Enviar 3 variações de mensagem cashback para Denis validar**
   - Arquivo: [[comercial/cashback-mensagens]]
@@ -85,9 +84,8 @@ tags: [cliente/maqlam, handoff, cashback, bdr, chips]
 
 | Quem | O quê | Prazo | ClickUp |
 |------|-------|-------|---------|
-| Lucas | Mostrar para Hugo: importar leads + criar campanha | Até 10h | `86e16ubkn` |
-| Hugo | Importar leads + criar campanha cashback | Após treinamento Lucas | `86e16ubkn` |
-| Hugo | Testar agente SDR end-to-end | Até 11h | `86e16ubnu` |
+| ~~Lucas~~ | ~~Importar leads~~ | ✅ Feito 03/05 | `86e16ubkn` |
+| Victor | Testar agente SDR + passar resultado para Lucas | Até 11h | `86e16ubnu` |
 | Lucas | Enviar mensagens para Denis validar | Até 10h | `86e16ub51` |
 | Lucas | BDR Bumble para Denis testar | Até 10h | `86e16ub5t` |
 | Lucas | Chips — Day 1 aquecimento | Durante o dia | — |
