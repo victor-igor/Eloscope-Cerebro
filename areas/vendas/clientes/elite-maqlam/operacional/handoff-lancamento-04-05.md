@@ -14,7 +14,15 @@ tags: [cliente/maqlam, handoff, cashback, bdr, chips]
 
 ## Sequência do dia
 
-### Manhã — até 10h (Lucas)
+### Manhã — até 10h (Lucas + Hugo em paralelo)
+
+- [ ] **Lucas mostra para Hugo: importar leads + criar campanha** (`86e16ubkn`)
+  - Acessar módulo de campanhas → importar lista → configurar variações → associar chips
+  - Hugo executa após treinamento rápido (call ou screenshare de 10–15min)
+
+- [ ] **Hugo: testar agente SDR** (`86e16ubnu`)
+  - Simular cliente, testar OI/INFO/QUERO, confirmar transferência para humano
+  - Se encontrar bug: corrigir antes das 12h ou avisar Lucas/Victor
 
 - [ ] **Enviar 3 variações de mensagem cashback para Denis validar**
   - Arquivo: [[comercial/cashback-mensagens]]
@@ -75,17 +83,19 @@ tags: [cliente/maqlam, handoff, cashback, bdr, chips]
 
 ## Quem faz o quê
 
-| Quem | O quê | Prazo |
-|------|-------|-------|
-| Lucas | Enviar mensagens para Denis validar | Até 10h |
-| Lucas | BDR Bumble para Denis testar | Até 10h |
-| Lucas | Chips — Day 1 aquecimento | Durante o dia |
-| Lucas | Loom cashback report (se tela existente) | Até 11h30 |
-| Victor | Agendar CS meeting 08-09/05 | Até 10h |
-| Victor | Confirmar script Bumble ativo | Até 10h |
-| Denis | Validar mensagens cashback | Até 11h30 |
-| Denis | Disparar campanha | 12h |
-| Hugo | Relatório cashback (se feature nova) | URGENTE |
+| Quem | O quê | Prazo | ClickUp |
+|------|-------|-------|---------|
+| Lucas | Mostrar para Hugo: importar leads + criar campanha | Até 10h | `86e16ubkn` |
+| Hugo | Importar leads + criar campanha cashback | Após treinamento Lucas | `86e16ubkn` |
+| Hugo | Testar agente SDR end-to-end | Até 11h | `86e16ubnu` |
+| Lucas | Enviar mensagens para Denis validar | Até 10h | `86e16ub51` |
+| Lucas | BDR Bumble para Denis testar | Até 10h | `86e16ub5t` |
+| Lucas | Chips — Day 1 aquecimento | Durante o dia | — |
+| Lucas | Loom cashback report (se tela existente) | Até 11h30 | `86e16u6bj` |
+| Victor | Confirmar script Bumble ativo | Até 10h | — |
+| Victor | Agendar CS meeting 08-09/05 | Até 10h | `86e16u6bb` |
+| Denis | Validar mensagens cashback | Até 11h30 | `86e16ub51` |
+| Denis | Disparar campanha | 12h | `86e16ub4p` |
 
 ---
 
