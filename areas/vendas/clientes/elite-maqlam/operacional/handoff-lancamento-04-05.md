@@ -7,114 +7,116 @@ tags: [cliente/maqlam, handoff, cashback, bdr, chips]
 
 # Handoff — Lançamento 04/05/2026
 
-> Guia de execução para o dia de lançamento da campanha cashback.
-> Campanha começa **04/05 às 12h** — tudo antes disso é preparação.
+> Campanha começa **04/05 às 12h**.
+> Prazos revisados em 03/05 após análise de dependências.
 
 ---
 
-## Sequência do dia
+## HOJE À NOITE (03/05) — elimina risco antes de dormir
 
-### Manhã — até 10h (Lucas + Hugo em paralelo)
+- [ ] **Victor: testar SDR agora** (`86e16ubnu`)
+  - Simular cliente, testar OI/INFO/QUERO, confirmar transferência, validar hybrid search
+  - ✅ OK → avisa Lucas → lançamento confirmado
+  - ❌ Bug → Hugo corrige à noite (tem tempo antes do 04/05)
+  - **Se não der hoje:** limite máximo 09h de 04/05
 
-- [x] **Importar leads** — concluído por Lucas em 03/05 (`86e16ubkn`)
+---
 
-- [ ] **Victor: testar agente SDR e passar resultado para Lucas** (`86e16ubnu`)
-  - Simular cliente, testar OI/INFO/QUERO, confirmar transferência para humano
-  - ✅ OK → avisa Lucas → Lucas libera disparo às 12h
-  - ❌ Bug → descreve erro → Hugo corrige antes das 12h
+## 04/05 — Sequência realista
 
-- [ ] **Enviar 3 variações de mensagem cashback para Denis validar**
-  - Arquivo: [[comercial/cashback-mensagens]]
-  - Enviar no WhatsApp do Denis com o contexto: "Denis, segue as 3 opções de mensagem para o disparo de hoje às 12h. Pode escolher 1 ou a gente usa as 3 em rotação."
-  - Denis precisa responder ANTES das 12h
+### 8h30 (Lucas)
 
-- [ ] **Mandar BDR Bumble para Denis testar**
-  - Confirmar com Victor que o script do MAC1/Bumble está ativo
-  - Enviar mensagem para Denis testar a jornada completa (trigger → resposta do Bumble)
-  - Denis deve confirmar que o fluxo está funcionando
+- [ ] **Enviar 3 variações de mensagem para Denis aprovar** (`86e16ub51`)
+  - Mensagem no WhatsApp: "Denis, 3 opções para o disparo das 12h. Pode escolher 1 ou rotacionar as 3."
+  - Denis responde até ~10h30
+
+- [ ] **Enviar BDR Bumble para Denis testar** (`86e16ub5t`)
+  - Mensagem separada: número do chip + instrução de teste simples
+  - Denis responde até ~10h30
 
 - [ ] **Chips — Day 1 do aquecimento**
-  - +55 11 9 2700-9804: 10–15 mensagens manuais (conhecidos/grupos ativos)
-  - +55 17 9 2004-2308: 10–15 mensagens manuais (conhecidos/grupos ativos)
-  - Protocolo completo: [[operacional/chips-aquecimento]]
-  - Criar task avulsa no ClickUp para o dia
+  - +55 11 9 2700-9804: 10–15 mensagens manuais
+  - +55 17 9 2004-2308: 10–15 mensagens manuais
+  - Protocolo: [[operacional/chips-aquecimento]]
 
-### Manhã — até 11h30 (Lucas + Victor)
+### 10h30 (Lucas)
 
-- [ ] **Relatório de cashback para equipe de vendas**
-  - Confirmar se é tela existente (filtro em `/contacts`) ou feature nova a criar
-  - Se tela existente: gravar Loom mostrando o filtro + como usar no dia a dia
-  - Se feature nova: Hugo implementa — prazo urgente antes do disparo ou logo depois
-  - Destinatários do Loom: Denis, Marcella, Juliano
+- [ ] **Configurar campanha no sistema** (draft pronto, não dispara ainda)
+  - Criar campanha com a variação que Denis aprovou
+  - Associar chips, configurar rotação
+  - Deixar tudo pronto — só falta apertar o botão às 12h
 
-- [ ] **Victor: agendar CS meeting**
-  - Marcar com Denis, Marcella e Juliano para semana de 08-09/05
-  - Pauta: review do sistema, cashback, BDR Bumble, próximos passos
-  - Task ClickUp: `86e16u6bb`
+### 11h30 — Go / No-Go
 
-### 12h em ponto (Denis)
+| Checklist | Status |
+|-----------|--------|
+| SDR testado (Victor OK ou bug resolvido) | ⬜ |
+| Denis aprovou mensagens | ⬜ |
+| Denis confirmou BDR funcionando | ⬜ |
+| Campanha configurada no sistema (draft) | ⬜ |
 
-- [ ] **Lançamento da campanha cashback**
-  - Denis dispara para a base de contatos com WhatsApp ativo
-  - Usar variações aprovadas em rotação (reduz spam detection)
-  - Personalizar `[NOME]` com nome do contato no sistema
+Se algum item estiver ❌ às 11h30 → decidir se atrasa ou lança assim mesmo.
 
-### Tarde (monitoramento — Lucas)
+### 12h (Lucas)
 
-- [ ] Confirmar que Denis recebeu e disparou as mensagens
-- [ ] Verificar primeiros retornos / respostas dos clientes da Maqlam
-- [ ] Checar se Bumble está respondendo corretamente
+- [ ] **Disparar campanha** (`86e16ub4p`)
+  - Apertar o botão no sistema
+  - Monitorar primeiros envios por 15–20min
 
----
+### Tarde (13h–15h)
 
-## Contexto rápido — campanha cashback
+- [ ] **Loom para Marcella e Juliano** (`86e16u6bj`) — *movido para depois do lançamento*
+  - Acessar `/contacts` → mostrar filtro cashback → demonstrar como dar baixa
+  - Gravar + enviar para Denis, Marcella, Juliano
+  - Não é bloqueante pro disparo — é para gestão contínua da equipe
 
-| Regra | Detalhe |
-|-------|---------|
-| Cashback | 5% sobre valor de cada compra |
-| Resgate | Cliente precisa comprar 3× o acumulado (ex: R$50 → compra R$150) |
-| Validade | 30 dias por transação |
-| Vigência | 04/05/2026 a 02/06/2026 |
-| Audiência | Toda a base com WhatsApp ativo |
-| Canal | WhatsApp (chips aquecidos ou oficial se disponível) |
+- [ ] **Checar primeiros retornos** — clientes respondendo? BDR respondendo certo?
+
+### 04/05 — qualquer hora (Victor)
+
+- [ ] **Agendar CS meeting com Denis** (`86e16u6bb`) — 08 ou 09/05
 
 ---
 
-## Quem faz o quê
+## Quem faz o quê (atualizado)
 
 | Quem | O quê | Prazo | ClickUp |
 |------|-------|-------|---------|
-| ~~Lucas~~ | ~~Importar leads~~ | ✅ Feito 03/05 | `86e16ubkn` |
-| Victor | Testar agente SDR + passar resultado para Lucas | Até 11h | `86e16ubnu` |
-| Lucas | Enviar mensagens para Denis validar | Até 10h | `86e16ub51` |
-| Lucas | BDR Bumble para Denis testar | Até 10h | `86e16ub5t` |
-| Lucas | Chips — Day 1 aquecimento | Durante o dia | — |
-| Lucas | Loom cashback report (se tela existente) | Até 11h30 | `86e16u6bj` |
-| Victor | Confirmar script Bumble ativo | Até 10h | — |
-| Victor | Agendar CS meeting 08-09/05 | Até 10h | `86e16u6bb` |
-| Denis | Validar mensagens cashback | Até 11h30 | `86e16ub51` |
-| Denis | Disparar campanha | 12h | `86e16ub4p` |
+| ~~Lucas~~ | ~~Importar leads~~ | ✅ 03/05 | `86e16ubkn` |
+| Victor | **Testar SDR** | **HOJE 22h** | `86e16ubnu` |
+| Lucas | Enviar mensagens para Denis | 04/05 — 8h30 | `86e16ub51` |
+| Lucas | BDR Bumble → Denis testar | 04/05 — 8h30 | `86e16ub5t` |
+| Denis | Aprovar mensagens + testar BDR | 04/05 — até 10h30 | — |
+| Lucas | Configurar campanha (draft) | 04/05 — 10h30 | — |
+| Lucas | **Go/no-go** | 04/05 — 11h30 | — |
+| Lucas | **Disparar campanha** | 04/05 — **12h** | `86e16ub4p` |
+| Lucas | Loom para equipe de vendas | 04/05 — tarde | `86e16u6bj` |
+| Lucas | Chips Day 1 | 04/05 — durante o dia | — |
+| Victor | Agendar CS meeting 08-09/05 | 04/05 | `86e16u6bb` |
 
 ---
 
-## Dependências críticas
+## Contexto da campanha
 
-1. **Denis aprova mensagens** → campanha pode disparar às 12h
-2. **Victor confirma Bumble** → Denis pode testar antes do envio para a base
-3. **Definir se relatório é feature nova ou tela existente** → determina se Hugo precisa agir hoje
+| Regra | Detalhe |
+|-------|---------|
+| Cashback | 5% por compra |
+| Resgate | Comprar 3× o acumulado (ex: R$50 → compra R$150) |
+| Validade | 30 dias por transação |
+| Vigência | 04/05 a 02/06/2026 |
+| Audiência | Base com WhatsApp ativo |
 
 ---
 
-## Links e referências
+## Links
 
 | O quê | Onde |
 |-------|------|
 | Mensagens cashback | [[comercial/cashback-mensagens]] |
 | Protocolo chips | [[operacional/chips-aquecimento]] |
-| Sistema (produção) | https://elo.elitemaqlam.com.br |
-| Tela de contatos | https://elo.elitemaqlam.com.br/contacts |
-| ClickUp lista Maqlam | ID `901713180067` |
+| Sistema | https://elo.elitemaqlam.com.br |
+| Tela contatos | https://elo.elitemaqlam.com.br/contacts |
 
 ---
 
-*Criado: 2026-05-03*
+*Criado: 2026-05-03 · Revisado: 2026-05-03 (prazos ajustados)*
