@@ -59,16 +59,16 @@ tags: [cliente/maqlam, tecnico, backlog]
 
 | Task | ID | Responsável |
 |------|----|-------------|
-| CS meeting Victor + equipe Maqlam | `86e16u6bb` | Victor |
-| Criar e enviar Loom cashback report | `86e16u6bj` | Lucas |
-| Mandar BDR Bumble para Denis testar | `86e16u6br` | Lucas |
-| Validar mensagens cashback com Denis | `86e16u6bz` | Lucas |
-| Disparo campanha cashback 12h | `86e16u6c7` | Denis |
-| Chips Day 1 (04/05) — aquecimento | `86e16u6ef` | Lucas |
-| Chips Day 2 (05/05) — aquecimento | `86e16u6en` | Lucas |
-| Chips Day 3 (06/05) — aquecimento | `86e16u6ev` | Lucas |
-| Chips Day 4 (07/05) — aquecimento | `86e16u6f3` | Lucas |
-| Chips Day 5 (08/05) — aquecimento | `86e16u6fb` | Lucas |
+| CS meeting Victor + equipe Maqlam (08-09/05) | `86e16u6bb` | Victor |
+| Loom cashback report para equipe vendas | `86e16u6bj` | Lucas |
+| Testar BDR Bumble + enviar para Denis testar | `86e16ub5t` | Victor + Lucas |
+| Validar mensagens cashback com Denis | `86e16ub51` | Lucas |
+| Disparo campanha cashback — 04/05 12h | `86e16ub4p` | Denis |
+| Tag de atenção equipe de vendas | `86e16uawt` | Victor |
+| Update resultados → Denis | `86e16uawy` | Lucas |
+| Documentar projeto (código, fluxos, integrações) | `86e16uaxc` | Lucas |
+
+> Chips Day 1–5 (04–08/05): criar tasks avulsas diárias no início de cada dia.
 
 ---
 

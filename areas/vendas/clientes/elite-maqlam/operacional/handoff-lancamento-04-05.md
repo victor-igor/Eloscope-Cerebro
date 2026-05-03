@@ -30,7 +30,7 @@ tags: [cliente/maqlam, handoff, cashback, bdr, chips]
   - +55 11 9 2700-9804: 10–15 mensagens manuais (conhecidos/grupos ativos)
   - +55 17 9 2004-2308: 10–15 mensagens manuais (conhecidos/grupos ativos)
   - Protocolo completo: [[operacional/chips-aquecimento]]
-  - Task ClickUp: `86e16u6ef` (Day 1)
+  - Criar task avulsa no ClickUp para o dia
 
 ### Manhã — até 11h30 (Lucas + Victor)
 
