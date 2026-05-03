@@ -127,6 +127,17 @@ Plataforma SaaS customizada hospedada em `https://elo.elitemaqlam.com.br`.
 
 ---
 
+## CRM — Pipelines
+
+| Pipeline | Stages | Status |
+|----------|--------|--------|
+| Funil de Vendas | Leads (Entrada) → Qualificação → Proposta Enviada → Negociação → Fechado | ativo |
+| Retenção de Clientes | Ativo → Atenção → Risco de Churn → Engajando → Recuperado → Churn Confirmado | criado 02/05 — popular na CS meeting 08-09/05 |
+
+**Checkpoint anti-churn:** pipeline "Retenção de Clientes" criado via migration `add_retencao_churn_pipeline` em 02/05/2026. Pauta para Victor na CS meeting: mostrar o pipeline ao Denis e treinar equipe a mover clientes conforme atividade de recompra.
+
+---
+
 ## Campanhas (personas de IA)
 
 | Persona | Script | Uso |
