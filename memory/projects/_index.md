@@ -12,6 +12,7 @@
 |---------|--------|---------------|---------|
 | Eloscope (estúdio) | 🟢 Ativo | — | — |
 | Cerebro / Segundo Cérebro | 🟢 Ativo | rituais operacionais + 3 agentes remotos (cockpit, prep weekly, revisão maio) | — |
+| Elite Maqlam | 🟢 Ativo | R$1.197/mês trial (3 meses) · cashback rodando 04/05 · BDR Bumble ativado · 2 chips aquecendo | maqlam.md |
 
 ---
 
@@ -46,6 +47,7 @@
 
 ## Mudanças Recentes
 
+- [03/05] **Elite Maqlam** — projeto documentado em `maqlam.md` (estrutura sistema, módulos, edge functions, chips); 11 tasks criadas no ClickUp (cashback, BDR, CS, aquecimento chips 04-08/05)
 - [02/05] **Vendas** — convenção CRM definida (oportunidades/ vs clientes/) + SPIN Playbook Eloscope v0.2 criado em `areas/vendas/metodologia/` (553 linhas) + plano do squad sales-call-analyzer (4 agentes + skill `/analisar-call`)
 - [01/05] **Cerebro** — rituais operacionais Semana 1 colados (filtro 3 perguntas + weekly review template + spec /triagem); SessionStart hook ativado; 3 routines remotas Anthropic Cloud com saída via WhatsApp uazapi (cockpit diário, prep weekly, revisão mensal)
 - [29/04] **Bravo Agency** — 1ª parcela R$975 paga; ClickUp Skills renomeadas para reframe pós-discovery; aditivo SLA + framework docs entram no escopo até 02/05

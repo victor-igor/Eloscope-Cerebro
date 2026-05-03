@@ -95,7 +95,7 @@ status: processada | rascunho
 | clientes/guilherme-xp | 3 |
 | clientes/tripode | 3 |
 | clientes/ali-sebrae | 3 |
-| clientes/maqlam | 3 |
+| clientes/elite-maqlam | 3 |
 | clientes/jean-imobiliaria | 3 |
 | clientes/bravo | 3 |
 | clientes/deolane | 2 |
