@@ -35,8 +35,11 @@ Skills principais. Vivem em `skills/` e são copiadas para `~/.claude/skills/` n
 | `/rotina` | `skills/rotina/SKILL.md` | Cockpit matinal — emails + agenda + pendências + deadlines + Top 3 + bloqueio opcional de calendar. |
 | `/buscar-memoria` | `skills/buscar-memoria/SKILL.md` | Busca semântica no vault (decisões, sessões, projetos) com filtros por tipo/tag/cliente/data. Alternativa leve a sistemas tipo claude-mem. |
 | `/sync` | `skills/sync/SKILL.md` | Sincronização rápida com git (sem flush completo). |
+| `/reuniao` | `skills/reuniao/SKILL.md` | Captura/transcreve/processa reuniões (Fathom, Fireflies ou manual) — classifica tipo, extrai resumo + decisões + action items, propaga pra ClickUp/pendências. |
 
-Existem também `skills/carrossel-eloscope/` e `skills/assinar/`.
+Skills auxiliares: `skills/carrossel-eloscope/` (carrosséis Instagram) e `skills/assinar/` (envio de contrato via Autentique).
+
+Skills em desenvolvimento: `skills/triagem/` ainda é stub (`SPEC.md` apenas, sem `SKILL.md` — não invocável).
 
 ---
 

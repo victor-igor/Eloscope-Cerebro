@@ -262,3 +262,12 @@
 | Configurar Claude Code | Claude Code Mastery |
 | Construir movimento/comunidade | Movement Squad |
 | Prompts para n8n / IA | Prompt Engineer Squad |
+
+---
+
+## Meta — arquivos auxiliares em `squads/`
+
+- `squads/_example/` — template para criar novo squad.
+- `squads/xquads-README.md` — README original da coleção xquads (origem de boa parte dos squads).
+- `squads/convert-to-aiox.ts` — script utilitário (`npx tsx`) que converte agents do formato xquads para o formato AIOX (adiciona `activation-instructions` e `commands`).
+- `squads/copy-squad/outputs/` — pasta de outputs gerados pelo Copy Squad (ex.: variações de hero, headlines). Antes vivia em `squads/copy/outputs/` — consolidado em 2026-05-06.
