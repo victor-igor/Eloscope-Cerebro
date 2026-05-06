@@ -18,6 +18,10 @@
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
+- [06/05/2026] **Carrossel 01 — corrigir fonte Outfit → Syne nos 6 slides** · todos os slides foram construídos com `Outfit` mas o design system real da Eloscope usa `Syne 800` para headlines · screenshots bloqueados no Paper Pro (reset em 2 dias) · fazer numa nova sessão com update_styles em cada nó de headline
+- [06/05/2026] **Carrossel 01 — gerar imagens placeholder** · Slide 01: neural network circuit abstrato dark `#0A0A0A` com traços cyan · Slide 04: mockup dark de interface de processo · Slide 05: foto real de dono de PME em operação · substituir placeholders no Paper após geração
+- [06/05/2026] **Atualizar skill `carrossel-eloscope`** · alinhar com guia v2 após carrossel 01 finalizado · fontes (Syne/Inter/JetBrains Mono), cores (#0A0A0A, #00D4FF), padrões A–K
+
 - [25/04/2026] ✅ **Enertelles — proposta v4 reestruturada** · setup modular (A=processo+IA R$3.500, B=site+marca R$3.000), CRM externo, blog automatizado R$487/mês, parcelamento 12×R$650
 - [25/04/2026] ✅ **Enertelles — proposta HTML v4 finalizada** (30/04) · Bloco A alinhado com Sales OS Starter (R$1.500/mês mín 3 meses) · Asaas calc correto (12×R$376/R$322/R$699) · 12 páginas com PAGE 08 escopo + PAGE 09 investimento + PAGE 10 ROI 3 cenários (substituiu régua 5% CAC)
 - [25/04/2026] 🔥 **Bravo — validar reframe pós-discovery com Gustavo** · trocar 3 skills (Análise/Planejamento/Copy) por (Aprovação/Agendamento/Análise mensal) · `proposta-pos-discovery.md` · Content Machine já cobre copy/criativo
