@@ -8,6 +8,9 @@
 
 ## 🔴 Críticas (bloqueiam progresso)
 
+- [06/05/2026] 🔥 **Bravo — 4 bloqueantes vermelhos travam Sprint 2** · Gustavo precisa responder até 08/05: (1) acesso Hostinger, (2) nome assistente IA, (3) cliente-piloto Skill 1, (4) prazo SLA 48h ou 72h. Lucas dispara mensagem-modelo HOJE (vide `areas/vendas/clientes/bravo-agencia/operacional/apis-credenciais.md` §4). Critério NO-GO: 12/05 sem resposta = pausar e renegociar.
+- [06/05/2026] **Bravo — Hugo submete templates WhatsApp + App Review Meta dia 1 do Sprint 2** · 24-48h aprovação template + 3-7 dias App Review = se atrasar, Sprint 3 desliza
+- ✅ [06/05/2026] **Bravo — sync ClickUp ↔ Notion Sprint Board** · concluído: 55 tasks antigas renomeadas [ARQUIVADO], 6 tasks pai + 29 subtasks criadas com descrição executável completa (passos, inputs, DoD, dependências)
 - [27/04/2026] 🔥 **Maqlam — risco regulatório API oficial Meta** · atualização pode remover número do lead, matando fluxo híbrido WhatsApp · sem fallback definido · origem: Sprint 17/04 · Victor + Hugo precisam mapear plano B
 - [27/04/2026] **Painel financeiro Supabase com RLS quebrado** · dados 2025 incompletos · origem: Trimestral 02/04 · Victor
 - [27/04/2026] **Validar Cloud Code recebe WhatsApp** (não só envia) · pré-requisito técnico do pivot · origem: Trimestral 02/04 · Victor
