@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Eloscope — Carrossel 03 — Slide 03</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { width: 1080px; height: 1350px; overflow: hidden; background: #080808; }
+
+  .slide {
+    position: relative;
+    width: 1080px; height: 1350px;
+    background: #080808;
+    overflow: hidden;
+  }
+
+  .dot-grid {
+    position: absolute; inset: 0; z-index: 1;
+    background-image: radial-gradient(circle, rgba(0,212,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .glow-left {
+    position: absolute; top: 30%; left: -120px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,212,255,0.07) 0%, transparent 65%);
+    z-index: 2; pointer-events: none;
+  }
+
+  .line-top, .line-bottom {
+    position: absolute; left: 0; right: 0; height: 2px; z-index: 20;
+  }
+  .line-top    { top: 0;    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.65) 40%, rgba(217,70,239,0.55) 60%, transparent 95%); }
+  .line-bottom { bottom: 0; background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.45) 40%, rgba(217,70,239,0.35) 60%, transparent 95%); }
+
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 20; opacity: 0.35; }
+  .corner-tl { top: 34px; left: 34px;   border-top: 1.5px solid #00D4FF; border-left:  1.5px solid #00D4FF; }
+  .corner-tr { top: 34px; right: 34px;  border-top: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+  .corner-bl { bottom: 34px; left: 34px;  border-bottom: 1.5px solid #00D4FF; border-left:  1.5px solid #00D4FF; }
+  .corner-br { bottom: 34px; right: 34px; border-bottom: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+
+  .header {
+    position: absolute; top: 52px; left: 56px; right: 56px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 20;
+  }
+  .brand-mark { display: flex; align-items: center; gap: 10px; }
+  .brand-icon-img { height: 24px; width: auto; }
+  .brand-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.15em; color: #00D4FF; }
+  .handle { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: rgba(107,114,128,0.70); letter-spacing: 0.03em; }
+
+  .content {
+    position: absolute;
+    top: 140px; bottom: 72px;
+    left: 56px; right: 56px;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    z-index: 15;
+  }
+
+  .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 36px; }
+  .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #00D4FF; box-shadow: 0 0 10px rgba(0,212,255,0.9); flex-shrink: 0; }
+  .eyebrow-text { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(0,212,255,0.65); letter-spacing: 0.20em; text-transform: uppercase; }
+
+  .headline { margin-bottom: 48px; line-height: 1.04; }
+  .hl-line { font-family: 'Syne', sans-serif; font-weight: 800; display: block; }
+  .hl-white { font-size: 64px; color: rgba(240,255,254,0.94); letter-spacing: -0.01em; }
+  .hl-dim   { font-size: 64px; color: rgba(240,255,254,0.40); letter-spacing: -0.01em; }
+
+  .body-text {
+    font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 400;
+    color: rgba(240,255,254,0.50); line-height: 1.70;
+    margin-bottom: 32px;
+  }
+  .body-text strong { color: rgba(240,255,254,0.82); font-weight: 600; }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0,212,255,0.25), rgba(255,255,255,0.04), transparent);
+    margin-bottom: 32px;
+  }
+
+  /* Stat highlight inline */
+  .stat-inline {
+    display: inline-flex; align-items: baseline; gap: 10px;
+  }
+  .stat-num {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 52px; color: #00D4FF;
+    text-shadow: 0 0 20px rgba(0,212,255,0.50);
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 400;
+    color: rgba(240,255,254,0.50);
+  }
+
+  .arraste {
+    display: flex; justify-content: flex-end;
+  }
+  .arraste-pill {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    color: rgba(240,255,254,0.38); letter-spacing: 0.06em;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 100px; padding: 10px 20px;
+    display: inline-block;
+  }
+
+  .page-count {
+    position: absolute; bottom: 52px; right: 56px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: rgba(0,212,255,0.25); letter-spacing: 0.1em; z-index: 20;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <div class="dot-grid"></div>
+  <div class="glow-left"></div>
+  <div class="line-top"></div>
+  <div class="line-bottom"></div>
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <div class="header">
+    <div class="brand-mark">
+      <img class="brand-icon-img" src="../../../../../07-arquivos/logos/EloScope - Logo - transparente.png" alt="">
+      <span class="brand-name">eloscope</span>
+    </div>
+    <div class="handle">@eloscope.ai</div>
+  </div>
+
+  <div class="content">
+    <div>
+      <div class="eyebrow">
+        <div class="eyebrow-dot"></div>
+        <span class="eyebrow-text">O que o Duolingo fez</span>
+      </div>
+
+      <div class="headline">
+        <span class="hl-line hl-white">Não demitiu ninguém.</span>
+        <span class="hl-line hl-dim">Multiplicou o que</span>
+        <span class="hl-line hl-white">cada pessoa entrega.</span>
+      </div>
+
+      <p class="body-text">
+        Em abril de 2025, o CEO Luis von Ahn declarou o Duolingo AI-first. Não como slogan. Como política operacional. Cada processo que a IA consegue fazer, a IA faz. O time humano dirige, revisa e escala.
+      </p>
+
+      <div class="divider"></div>
+
+      <p class="body-text" style="margin-bottom: 36px;">
+        Resultado: a mesma equipe que produzia 1 unidade de conteúdo passou a produzir <strong>4 a 5</strong>. O custo por resultado caiu. O volume disparou.
+      </p>
+
+      <div class="stat-inline">
+        <span class="stat-num">4 a 5×</span>
+        <span class="stat-label">mais conteúdo. Mesmo time.</span>
+      </div>
+    </div>
+
+    <div class="arraste">
+      <span class="arraste-pill">arraste para o lado →</span>
+    </div>
+  </div>
+
+  <div class="page-count">03 / 06</div>
+
+</div>
+</body>
+</html>

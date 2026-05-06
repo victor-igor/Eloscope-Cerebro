@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Eloscope — Carrossel 03 — Slide 05</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1350px; overflow: hidden; background: #080808; }
+  .slide { position: relative; width: 1080px; height: 1350px; overflow: hidden; }
+
+  /* ZONA DARK — topo */
+  .zone-dark {
+    position: absolute; top: 0; left: 0; right: 0; height: 620px;
+    background: #080808; overflow: hidden;
+  }
+  .zone-dark-grid {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(0,212,255,0.045) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .zone-dark-glow {
+    position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 500px;
+    background: radial-gradient(ellipse at top, rgba(0,212,255,0.10) 0%, transparent 65%);
+  }
+
+  /* Processo visual — 3 steps com conectores */
+  .process-wrap {
+    position: absolute; bottom: 60px; left: 56px; right: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 0;
+  }
+  .process-step {
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    flex: 1;
+  }
+  .step-icon {
+    width: 72px; height: 72px; border-radius: 16px;
+    background: rgba(0,212,255,0.08);
+    border: 1px solid rgba(0,212,255,0.22);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+  }
+  .step-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: rgba(0,212,255,0.60); letter-spacing: 0.14em;
+    text-transform: uppercase; text-align: center;
+  }
+  .step-connector {
+    height: 1px; flex: 0 0 60px;
+    background: linear-gradient(90deg, rgba(0,212,255,0.30), rgba(0,212,255,0.10));
+    margin-bottom: 42px;
+  }
+
+  /* Fade da zona dark para a light */
+  .zone-fade {
+    position: absolute; top: 560px; left: 0; right: 0; height: 100px;
+    background: linear-gradient(to bottom, transparent, #F7F8FA);
+    z-index: 5; pointer-events: none;
+  }
+
+  /* ZONA LIGHT — baixo */
+  .zone-light {
+    position: absolute; top: 620px; left: 0; right: 0; bottom: 0;
+    background: #F7F8FA;
+    overflow: hidden;
+  }
+  .zone-light-watermark {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 800px; height: 800px; opacity: 0.04; pointer-events: none;
+  }
+  .zone-light-watermark svg { width: 100%; height: 100%; }
+
+  .light-content {
+    position: absolute; top: 40px; bottom: 40px; left: 56px; right: 56px;
+    display: flex; flex-direction: column;
+  }
+
+  .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+  .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #00D4FF; flex-shrink: 0; }
+  .eyebrow-text { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(0,212,255,0.75); letter-spacing: 0.18em; text-transform: uppercase; }
+
+  .headline { margin-bottom: 20px; line-height: 1.06; }
+  .hl-line { font-family: 'Syne', sans-serif; font-weight: 800; display: block; }
+  .hl-dark { font-size: 52px; color: #0B1420; letter-spacing: -0.01em; }
+  .hl-dim-dark { font-size: 52px; color: rgba(11,20,32,0.45); letter-spacing: -0.01em; }
+
+  .body-text {
+    font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 400;
+    color: rgba(11,20,32,0.58); line-height: 1.65;
+    margin-bottom: 22px;
+  }
+  .body-text strong { color: #0B1420; font-weight: 600; }
+
+  .divider-light { height: 1px; background: rgba(0,212,255,0.25); margin-bottom: 20px; }
+
+  .card-destaque-light {
+    background: #0B1420;
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 20px;
+  }
+  .card-destaque-light p {
+    font-family: 'Inter', sans-serif; font-weight: 600;
+    font-size: 17px; color: rgba(240,255,254,0.88); line-height: 1.55;
+  }
+
+  .arraste {
+    display: flex; justify-content: flex-end; margin-top: auto;
+  }
+  .arraste-pill {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    color: rgba(11,20,32,0.38); letter-spacing: 0.06em;
+    border: 1px solid rgba(11,20,32,0.18);
+    border-radius: 100px; padding: 10px 20px;
+    display: inline-block;
+  }
+
+  /* Frame */
+  .line-top, .line-bottom { position: absolute; left: 0; right: 0; height: 2px; z-index: 20; }
+  .line-top    { top: 0;    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.65) 40%, rgba(217,70,239,0.55) 60%, transparent 95%); }
+  .line-bottom { bottom: 0; background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.45) 40%, rgba(217,70,239,0.35) 60%, transparent 95%); }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 20; opacity: 0.35; }
+  .corner-tl { top: 34px; left: 34px;   border-top: 1.5px solid #00D4FF; border-left:  1.5px solid #00D4FF; }
+  .corner-tr { top: 34px; right: 34px;  border-top: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+  .corner-bl { bottom: 34px; left: 34px;  border-bottom: 1.5px solid #00D4FF; border-left:  1.5px solid #00D4FF; }
+  .corner-br { bottom: 34px; right: 34px; border-bottom: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
+
+  .header { position: absolute; top: 52px; left: 56px; right: 56px; display: flex; justify-content: space-between; align-items: center; z-index: 20; }
+  .brand-mark { display: flex; align-items: center; gap: 10px; }
+  .brand-icon-img { height: 24px; width: auto; }
+  .brand-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.15em; color: #00D4FF; }
+  .handle { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: rgba(107,114,128,0.70); letter-spacing: 0.03em; }
+
+  .page-count { position: absolute; bottom: 52px; right: 56px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(0,212,255,0.25); letter-spacing: 0.1em; z-index: 20; }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <div class="line-top"></div>
+  <div class="line-bottom"></div>
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <!-- ZONA DARK -->
+  <div class="zone-dark">
+    <div class="zone-dark-grid"></div>
+    <div class="zone-dark-glow"></div>
+    <div class="process-wrap">
+      <div class="process-step">
+        <div class="step-icon">🗺️</div>
+        <span class="step-label">Mapear</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="process-step">
+        <div class="step-icon">✓</div>
+        <span class="step-label">Validar</span>
+      </div>
+      <div class="step-connector"></div>
+      <div class="process-step">
+        <div class="step-icon">⚡</div>
+        <span class="step-label">Implementar</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="zone-fade"></div>
+
+  <!-- ZONA LIGHT -->
+  <div class="zone-light">
+    <div class="light-content">
+      <div class="eyebrow">
+        <div class="eyebrow-dot"></div>
+        <span class="eyebrow-text">O que fazer hoje</span>
+      </div>
+
+      <div class="headline">
+        <span class="hl-line hl-dim-dark">A pergunta não é</span>
+        <span class="hl-line hl-dark">"devo usar IA?"</span>
+      </div>
+
+      <p class="body-text">
+        É: quais processos da sua empresa consomem tempo humano que a IA já pode fazer?
+      </p>
+
+      <div class="divider-light"></div>
+
+      <p class="body-text">
+        O Duolingo começou mapeando onde humanos faziam trabalho repetitivo. A Eloscope faz exatamente isso <strong>antes de qualquer implementação.</strong>
+      </p>
+
+      <div class="card-destaque-light">
+        <p>Chamamos de diagnóstico. Dura menos de 40 minutos. E muda o que você vai implementar.</p>
+      </div>
+
+      <div class="arraste">
+        <span class="arraste-pill">arraste para o lado →</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="brand-mark">
+      <img class="brand-icon-img" src="../../../../../07-arquivos/logos/EloScope - Logo - transparente.png" alt="">
+      <span class="brand-name">eloscope</span>
+    </div>
+    <div class="handle">@eloscope.ai</div>
+  </div>
+
+  <div class="page-count">05 / 06</div>
+
+</div>
+</body>
+</html>
