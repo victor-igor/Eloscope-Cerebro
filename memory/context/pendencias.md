@@ -21,6 +21,9 @@
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
+- [07/05/2026] **Campos Joias — implementar módulo RAG** · nova sessão: rodar migrations (pgvector + 6 tabelas/funções) → deploy 4 Edge Functions → lib frontend `src/lib/rag/` → página `/base-conhecimento` · spec completa em `RAG_MODULO_EXPORTACAO.md` · Victor
+- [07/05/2026] **Campos Joias — habilitar RLS** em `documents` e `n8n_chat_histories` com policies adequadas antes de produção · Victor
+
 - [06/05/2026] **Carrossel 01 — corrigir fonte Outfit → Syne nos 6 slides** · todos os slides foram construídos com `Outfit` mas o design system real da Eloscope usa `Syne 800` para headlines · screenshots bloqueados no Paper Pro (reset em 2 dias) · fazer numa nova sessão com update_styles em cada nó de headline
 - [06/05/2026] **Carrossel 01 — gerar imagens placeholder** · Slide 01: neural network circuit abstrato dark `#0A0A0A` com traços cyan · Slide 04: mockup dark de interface de processo · Slide 05: foto real de dono de PME em operação · substituir placeholders no Paper após geração
 - [06/05/2026] **Atualizar skill `carrossel-eloscope`** · alinhar com guia v2 após carrossel 01 finalizado · fontes (Syne/Inter/JetBrains Mono), cores (#0A0A0A, #00D4FF), padrões A–K

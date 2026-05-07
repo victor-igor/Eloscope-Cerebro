@@ -21,6 +21,7 @@
 | Projeto | Status | Próximo Marco | Arquivo |
 |---------|--------|---------------|---------|
 | Eloscope Elo OS | 🔨 Em construção | Fechar 2-3 clientes beta (60 dias) | sales-os.md |
+| Campos Joias — AI Dashboard | 🔨 Em construção | Implementar módulo RAG (nova sessão) | campos-joias.md |
 | Eloscope Landing Page | 🔨 Em construção | Redesign radical + deploy Vercel | eloscope-lp.md |
 | Bravo Agency — Sistema Completo | 🟢 Ativo | Discovery 26/04, entrega ~09/05 | bravo-agency.md |
 | Mentoria Agências | 🔨 Em construção | Validar pricing para próximos leads | mentoria-agencias.md |
@@ -58,6 +59,7 @@
 - [21/04] Mentoria Agências — arquivos movidos para cerebro; lead Gustavo Bravo organizado em areas/vendas/clientes/gustavo-bravo/
 - [21/04] Mentoria Agências — proposta Combo revisada (co-construção + fluxo real + n8n)
 - [07/05] **Elo OS** — playbook comercial copiado para cerebro (`02-comercial/playbook.md`); slide ROI redesenhado (lógica LP: leads não atendidos × recuperação); pesquisa de mercado completa criada (`operacao-eloscope/pesquisa-mercado.md`)
+- [07/05] **Campos Joias** — projeto documentado; planejamento do módulo RAG iniciado (Opção A: implementação completa); próxima sessão: implementar
 
 ---
 
