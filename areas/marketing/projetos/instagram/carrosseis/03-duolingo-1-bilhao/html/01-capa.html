@@ -7,161 +7,184 @@
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body { width: 1080px; height: 1350px; overflow: hidden; background: #080808; }
+  html, body {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+  }
 
   .slide {
     position: relative;
-    width: 1080px; height: 1350px;
-    background: #080808;
+    width: 1080px;
+    height: 1350px;
+    background: #050505;
     overflow: hidden;
+    flex-shrink: 0;
   }
 
+  /* ── CAMADA 1: dot-grid ── */
   .dot-grid {
     position: absolute; inset: 0; z-index: 1;
-    background-image: radial-gradient(circle, rgba(0,212,255,0.045) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(0,212,255,0.022) 1px, transparent 1px);
     background-size: 38px 38px;
   }
 
-  .vignette {
-    position: absolute; inset: 0; z-index: 2;
-    background: radial-gradient(ellipse 90% 80% at 50% 40%, transparent 30%, rgba(0,0,0,0.75) 100%);
+  /* ── CAMADA 2: aurora cyan atmosférica (Eloscope brand) ── */
+  .aurora {
+    position: absolute;
+    top: -80px; left: 50%; transform: translateX(-50%);
+    width: 1100px; height: 950px;
+    background:
+      radial-gradient(ellipse at 38% 45%, rgba(0,212,255,0.14) 0%, transparent 48%),
+      radial-gradient(ellipse at 65% 55%, rgba(0,212,255,0.08) 0%, transparent 42%),
+      radial-gradient(ellipse at 50% 20%, rgba(217,70,239,0.06) 0%, transparent 55%);
+    filter: blur(48px);
+    z-index: 2; pointer-events: none;
   }
 
+  /* ── CAMADA 3: glow ring cyan atrás da coruja ── */
+  .hero-glow {
+    position: absolute;
+    top: 60px; left: 50%; transform: translateX(-50%);
+    width: 680px; height: 680px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,212,255,0.18) 0%, rgba(0,212,255,0.05) 45%, transparent 68%);
+    filter: blur(32px);
+    z-index: 3; pointer-events: none;
+  }
+
+  /* ── CAMADA 4: imagem da coruja cyan (blend: screen remove o preto) ── */
+  .hero-img {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 820px;
+    z-index: 4;
+    overflow: hidden;
+    mix-blend-mode: screen;
+  }
+  .hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    filter: brightness(1.0) contrast(1.05);
+  }
+
+  /* ── CAMADA 5: chão glow cyan sob a coruja ── */
+  .floor-glow {
+    position: absolute;
+    top: 680px; left: 50%; transform: translateX(-50%);
+    width: 560px; height: 100px;
+    background: radial-gradient(ellipse, rgba(0,212,255,0.22) 0%, transparent 70%);
+    filter: blur(22px);
+    z-index: 5; pointer-events: none;
+  }
+
+  /* ── CAMADA 6: gradiente fade hero → dark ── */
+  .hero-fade {
+    position: absolute;
+    top: 500px; left: 0; right: 0;
+    height: 460px;
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(5,5,5,0.50) 28%,
+      rgba(5,5,5,0.85) 55%,
+      #050505 72%
+    );
+    z-index: 6; pointer-events: none;
+  }
+
+  /* Cyan glow sutil na zona de texto */
+  .text-glow {
+    position: absolute;
+    bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 900px; height: 500px;
+    background: radial-gradient(ellipse at bottom, rgba(0,212,255,0.07) 0%, transparent 60%);
+    z-index: 7; pointer-events: none;
+  }
+
+  /* ── FRAME ── */
   .line-top, .line-bottom {
     position: absolute; left: 0; right: 0; height: 2px; z-index: 20;
   }
-  .line-top    { top: 0;    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.65) 40%, rgba(217,70,239,0.55) 60%, transparent 95%); }
-  .line-bottom { bottom: 0; background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.45) 40%, rgba(217,70,239,0.35) 60%, transparent 95%); }
+  .line-top    { top: 0;    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.70) 40%, rgba(217,70,239,0.60) 60%, transparent 95%); }
+  .line-bottom { bottom: 0; background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.50) 40%, rgba(217,70,239,0.40) 60%, transparent 95%); }
 
-  .corner { position: absolute; width: 26px; height: 26px; z-index: 20; opacity: 0.35; }
+  .corner { position: absolute; width: 26px; height: 26px; z-index: 20; opacity: 0.40; }
   .corner-tl { top: 34px; left: 34px;   border-top: 1.5px solid #00D4FF; border-left:  1.5px solid #00D4FF; }
   .corner-tr { top: 34px; right: 34px;  border-top: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
   .corner-bl { bottom: 34px; left: 34px;  border-bottom: 1.5px solid #00D4FF; border-left:  1.5px solid #00D4FF; }
   .corner-br { bottom: 34px; right: 34px; border-bottom: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
 
+  /* ── HEADER ── */
   .header {
     position: absolute; top: 52px; left: 56px; right: 56px;
     display: flex; justify-content: space-between; align-items: center;
-    z-index: 20;
+    z-index: 20; isolation: isolate;
   }
   .brand-mark { display: flex; align-items: center; gap: 10px; }
   .brand-icon-img { height: 24px; width: auto; }
-  .brand-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.15em; color: #00D4FF; }
+  .brand-name {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 17px; letter-spacing: 0.15em; color: #00D4FF;
+    text-shadow: 0 0 20px rgba(0,212,255,0.50);
+  }
   .handle { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: rgba(107,114,128,0.70); letter-spacing: 0.03em; }
 
-  /* HERO ZONE — coruja Duolingo (placeholder até imagem real ser gerada) */
-  .hero-zone {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 780px;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Substituir por: <img src="../assets/duolingo-owl-3d.png"> quando disponível */
-  .owl-placeholder {
-    position: relative;
-    width: 420px; height: 420px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .owl-glow-outer {
-    position: absolute;
-    width: 520px; height: 520px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(88,204,2,0.18) 0%, rgba(88,204,2,0.06) 45%, transparent 70%);
-    filter: blur(30px);
-  }
-
-  .owl-glow-inner {
-    position: absolute;
-    width: 320px; height: 320px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(88,204,2,0.25) 0%, rgba(88,204,2,0.08) 50%, transparent 75%);
-    filter: blur(12px);
-  }
-
-  .owl-letter {
-    position: relative; z-index: 2;
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 260px;
-    color: #58CC02;
-    line-height: 1;
-    filter:
-      drop-shadow(0 0 24px rgba(88,204,2,0.90))
-      drop-shadow(0 0 70px rgba(88,204,2,0.45))
-      drop-shadow(0 0 140px rgba(88,204,2,0.18));
-    opacity: 0.92;
-  }
-
-  /* Fade da hero zone para o texto */
-  .hero-fade {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 480px;
-    background: linear-gradient(to bottom, transparent 0%, rgba(8,8,8,0.60) 40%, #080808 75%);
-    z-index: 6;
-    pointer-events: none;
-  }
-
-  /* TEXT ZONE */
+  /* ── TEXTO CENTRALIZADO ── */
   .text-zone {
     position: absolute;
-    bottom: 72px; left: 56px; right: 56px;
+    bottom: 76px; left: 56px; right: 56px;
     z-index: 15;
     display: flex;
     flex-direction: column;
-    gap: 0;
+    align-items: center;
+    text-align: center;
   }
 
-  .pills-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 28px;
-  }
-
-  .pill-cat {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: rgba(0,212,255,0.70);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    border: 1px solid rgba(0,212,255,0.28);
-    border-radius: 100px;
-    padding: 7px 16px;
-  }
-
-  .headline { margin-bottom: 22px; line-height: 1.04; }
+  .headline { margin-bottom: 20px; line-height: 1.04; }
   .hl-line { font-family: 'Syne', sans-serif; font-weight: 800; display: block; }
-  .hl-white { font-size: 62px; color: rgba(240,255,254,0.94); letter-spacing: -0.01em; }
-  .hl-cyan  { font-size: 74px; color: #00D4FF; letter-spacing: -0.02em;
-    text-shadow: 0 0 24px rgba(0,212,255,0.60), 0 0 80px rgba(0,212,255,0.18); }
+  .hl-white {
+    font-size: 54px; color: rgba(240,255,254,0.92); letter-spacing: -0.01em;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.8);
+  }
+  .hl-cyan {
+    font-size: 92px; color: #00D4FF; letter-spacing: -0.02em;
+    text-shadow:
+      0 0 24px rgba(0,212,255,0.80),
+      0 0 60px rgba(0,212,255,0.40),
+      0 0 120px rgba(0,212,255,0.15),
+      0 4px 40px rgba(0,0,0,0.60);
+  }
 
   .sub {
-    font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 400;
-    color: rgba(240,255,254,0.48); line-height: 1.55;
-    margin-bottom: 32px;
+    font-family: 'Inter', sans-serif; font-size: 23px; font-weight: 400;
+    color: rgba(240,255,254,0.48); line-height: 1.5; margin-bottom: 44px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
   }
 
   .arraste-pill {
-    font-family: 'JetBrains Mono', monospace; font-size: 13px;
-    color: rgba(240,255,254,0.40); letter-spacing: 0.06em;
-    border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 100px;
-    padding: 10px 20px;
-    display: inline-block;
-    align-self: flex-end;
+    font-family: 'JetBrains Mono', monospace; font-size: 14px;
+    color: rgba(240,255,254,0.46); letter-spacing: 0.04em;
+    border: 1px solid rgba(255,255,255,0.16); border-radius: 100px;
+    padding: 12px 16px 12px 24px;
+    display: inline-flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.03);
+  }
+  .arraste-arrow {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.16);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0;
   }
 
   .page-count {
     position: absolute; bottom: 52px; right: 56px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; color: rgba(0,212,255,0.25); letter-spacing: 0.1em; z-index: 20;
+    font-size: 11px; color: rgba(0,212,255,0.22); letter-spacing: 0.1em; z-index: 20;
   }
 </style>
 </head>
@@ -169,7 +192,17 @@
 <div class="slide">
 
   <div class="dot-grid"></div>
-  <div class="vignette"></div>
+  <div class="aurora"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-img">
+    <img src="../assets/duolingo-owl-3d.png" alt="Duolingo owl">
+  </div>
+
+  <div class="floor-glow"></div>
+  <div class="hero-fade"></div>
+  <div class="text-glow"></div>
+
   <div class="line-top"></div>
   <div class="line-bottom"></div>
   <div class="corner corner-tl"></div>
@@ -177,39 +210,26 @@
   <div class="corner corner-bl"></div>
   <div class="corner corner-br"></div>
 
-  <!-- HERO: substituir .owl-placeholder por <img src="../assets/duolingo-owl-3d.png"> quando disponível -->
-  <div class="hero-zone">
-    <div class="owl-placeholder">
-      <div class="owl-glow-outer"></div>
-      <div class="owl-glow-inner"></div>
-      <span class="owl-letter">D</span>
-    </div>
-  </div>
-  <div class="hero-fade"></div>
-
   <div class="header">
     <div class="brand-mark">
-      <img class="brand-icon-img" src="../../../../../07-arquivos/logos/EloScope - Logo - transparente.png" alt="">
+      <img class="brand-icon-img" src="../../../../../../design/assets/logos/EloScope - Logo - transparente.png" alt="">
       <span class="brand-name">eloscope</span>
     </div>
     <div class="handle">@eloscope.ai</div>
   </div>
 
   <div class="text-zone">
-    <div class="pills-row">
-      <span class="pill-cat">Radar Eloscope</span>
-      <span class="pill-cat">Case Internacional</span>
-    </div>
-
     <div class="headline">
       <span class="hl-line hl-white">Como o Duolingo bateu</span>
       <span class="hl-line hl-cyan">US$ 1 bilhão</span>
-      <span class="hl-line hl-white">sem contratar ninguém.</span>
     </div>
 
-    <p class="sub">Com IA, produzem 4x mais. Com o mesmo time.</p>
+    <p class="sub">sem contratar ninguém.</p>
 
-    <span class="arraste-pill">arraste para o lado →</span>
+    <span class="arraste-pill">
+      arraste para o lado
+      <span class="arraste-arrow">→</span>
+    </span>
   </div>
 
   <div class="page-count">01 / 06</div>

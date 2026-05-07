@@ -22,8 +22,7 @@ tags: [marketing, aquisicao, trafego, conteudo, inbound, outbound, funil, playbo
 | Indicação (rede) | ✅ Principal fonte de clientes até hoje | Manter + sistematizar |
 | Outbound eventos | ✅ Funciona — ACIRP, Verhaw etc. | Manter + protocolo pós-evento |
 | Meta Ads | 🔴 Não iniciado — planejamento em curso | Próxima fase (quando financeiro organizado) |
-| Conteúdo orgânico Instagram | 🔴 Parado — sem estratégia definida | Urgente — base para os outros canais |
-| LinkedIn | ⚪ Inexistente | Iniciar junto com conteúdo |
+| Conteúdo orgânico Instagram | 🔴 Parado — 30 seguidores no perfil Eloscope | Urgente — base para os outros canais. Priorizar Reels (descoberta via algoritmo) antes de iscas digitais |
 | SEO / Blog | 🟡 Em andamento (4 artigos publicados) | Longo prazo |
 
 **Conclusão estratégica:** o tráfego pago ainda não está rodando. Isso é correto — não faz sentido escalar o topo do funil sem processo comercial validado. A sequência certa é:
@@ -44,7 +43,7 @@ tags: [marketing, aquisicao, trafego, conteudo, inbound, outbound, funil, playbo
 |-------|------|-------------|-----|
 | **Indicação sistematizada** | Script de pedido de indicação ativado após cada entrega / CS meeting | Lucas | Pedir em toda reunião de cliente ativo |
 | **Outbound eventos** | Protocolo pós-evento (mensagem em 24h + sequência 3 toques) | Lucas | Próximo evento: ACIRP ou similar |
-| **Conteúdo Instagram** | Mínimo 3 posts/semana — formato definido abaixo | Victor / Lucas | Calendário semanal |
+| **Conteúdo Instagram** | Mínimo 3 posts/semana — prioridade Reels nas primeiras 4 semanas (crescimento via algoritmo, não via audiência). Carrosséis e iscas digitais a partir de ~300 seguidores | Victor / Lucas | Calendário semanal |
 | **LP captura de lead** | Formulário otimizado (ver seção 4) — já construída | Victor | Já no ar |
 
 ---
@@ -62,7 +61,7 @@ tags: [marketing, aquisicao, trafego, conteudo, inbound, outbound, funil, playbo
 
 ---
 
-## 3. Estratégia de Conteúdo — Instagram / LinkedIn
+## 3. Estratégia de Conteúdo — Instagram
 
 > **Documento completo em:** `areas/marketing/estrategia-social-media-branding.md`
 > Esta seção é um resumo executivo. Para pilares detalhados, formatos, calendário de 4 semanas, iscas digitais e plano de crescimento, ver o documento de Social Media.

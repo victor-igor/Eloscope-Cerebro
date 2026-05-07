@@ -57,9 +57,10 @@
 - [23/04] **Bravo Agency fechou** — Opção B (R$3.900), discovery sábado 26/04, pasta de projeto criada
 - [21/04] Mentoria Agências — arquivos movidos para cerebro; lead Gustavo Bravo organizado em areas/vendas/clientes/gustavo-bravo/
 - [21/04] Mentoria Agências — proposta Combo revisada (co-construção + fluxo real + n8n)
+- [07/05] **Elo OS** — playbook comercial copiado para cerebro (`02-comercial/playbook.md`); slide ROI redesenhado (lógica LP: leads não atendidos × recuperação); pesquisa de mercado completa criada (`operacao-eloscope/pesquisa-mercado.md`)
 
 ---
 
-*Atualizado: [DD/MM/YYYY]*
+*Atualizado: 07/05/2026*
 
 | ReabilitaCao | 🟢 Ativo | Sistema veterinário — Epic 28 (agendamento recorrente) aguarda implementação | reabilitacao.md |

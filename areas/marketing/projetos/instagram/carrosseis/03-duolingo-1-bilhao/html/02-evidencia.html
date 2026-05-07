@@ -2,148 +2,169 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Eloscope — Carrossel 03 — Slide 02 Evidência</title>
+<title>Eloscope — Carrossel 03 — Slide 02</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body { width: 1080px; height: 1350px; overflow: hidden; background: #080808; }
-
-  .slide {
-    position: relative;
-    width: 1080px; height: 1350px;
-    background: #080808;
-    overflow: hidden;
-  }
+  html, body { background: #111; display: flex; justify-content: center; align-items: flex-start; padding: 20px; }
+  .slide { position: relative; width: 1080px; height: 1350px; background: #080808; overflow: hidden; flex-shrink: 0; }
 
   .dot-grid {
     position: absolute; inset: 0; z-index: 1;
-    background-image: radial-gradient(circle, rgba(0,212,255,0.04) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(0,212,255,0.03) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
-  .glow-top {
-    position: absolute; top: -100px; left: 50%;
-    transform: translateX(-50%);
-    width: 800px; height: 600px;
-    background: radial-gradient(ellipse at center top, rgba(88,204,2,0.08) 0%, transparent 65%);
+  /* Glow central forte — o número flutua sobre ele */
+  .hero-glow {
+    position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%);
+    width: 900px; height: 700px;
+    background: radial-gradient(ellipse, rgba(0,212,255,0.14) 0%, rgba(0,212,255,0.04) 45%, transparent 68%);
     z-index: 2; pointer-events: none;
   }
 
-  .line-top, .line-bottom {
-    position: absolute; left: 0; right: 0; height: 2px; z-index: 20;
+  .glow-magenta {
+    position: absolute; bottom: 15%; right: -60px;
+    width: 450px; height: 450px;
+    background: radial-gradient(circle, rgba(217,70,239,0.08) 0%, transparent 65%);
+    z-index: 2; pointer-events: none;
   }
+
+  /* Coin 3D hero — preenche o espaço abaixo do callout */
+  .coin-wrap {
+    position: absolute; bottom: -100px; left: 50%; transform: translateX(-50%);
+    width: 680px; height: 680px;
+    z-index: 6; pointer-events: none;
+    mix-blend-mode: screen;
+  }
+  .coin-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+  /* Fade suave no topo da moeda */
+  .coin-fade {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 580px;
+    background: linear-gradient(to bottom, #080808 0%, transparent 22%);
+    z-index: 7; pointer-events: none;
+  }
+
+  /* Frame */
+  .line-top, .line-bottom { position: absolute; left: 0; right: 0; height: 2px; z-index: 20; }
   .line-top    { top: 0;    background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.65) 40%, rgba(217,70,239,0.55) 60%, transparent 95%); }
   .line-bottom { bottom: 0; background: linear-gradient(90deg, transparent 5%, rgba(0,212,255,0.45) 40%, rgba(217,70,239,0.35) 60%, transparent 95%); }
-
   .corner { position: absolute; width: 26px; height: 26px; z-index: 20; opacity: 0.35; }
   .corner-tl { top: 34px; left: 34px;   border-top: 1.5px solid #00D4FF; border-left:  1.5px solid #00D4FF; }
   .corner-tr { top: 34px; right: 34px;  border-top: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
   .corner-bl { bottom: 34px; left: 34px;  border-bottom: 1.5px solid #00D4FF; border-left:  1.5px solid #00D4FF; }
   .corner-br { bottom: 34px; right: 34px; border-bottom: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
 
-  .header {
-    position: absolute; top: 52px; left: 56px; right: 56px;
-    display: flex; justify-content: space-between; align-items: center;
-    z-index: 20;
-  }
+  /* Header */
+  .header { position: absolute; top: 52px; left: 56px; right: 56px; display: flex; justify-content: space-between; align-items: center; z-index: 20; }
   .brand-mark { display: flex; align-items: center; gap: 10px; }
   .brand-icon-img { height: 24px; width: auto; }
   .brand-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.15em; color: #00D4FF; }
   .handle { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: rgba(107,114,128,0.70); letter-spacing: 0.03em; }
 
-  .content {
-    position: absolute;
-    top: 140px; bottom: 72px;
-    left: 56px; right: 56px;
-    display: flex; flex-direction: column;
-    justify-content: space-between;
+  /* Source tag */
+  .source-tag {
+    position: absolute; top: 140px; left: 56px; right: 56px; z-index: 15;
+    display: flex; align-items: center; gap: 12px;
+    border-left: 3px solid rgba(0,212,255,0.40);
+    padding-left: 16px;
+  }
+  .source-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: rgba(0,212,255,0.55); letter-spacing: 0.16em; text-transform: uppercase;
+  }
+  .source-sep { color: rgba(0,212,255,0.20); }
+  .source-doc {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: rgba(240,255,254,0.30); letter-spacing: 0.06em;
+  }
+
+  /* Hero number */
+  .hero-number-wrap {
+    position: absolute; top: 220px; left: 56px; right: 56px;
+    z-index: 15; text-align: center;
+  }
+  .hero-prefix {
+    font-family: 'JetBrains Mono', monospace; font-size: 15px;
+    color: rgba(0,212,255,0.50); letter-spacing: 0.22em; text-transform: uppercase;
+    display: block; margin-bottom: 8px;
+  }
+  .hero-number {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 168px; color: #00D4FF; letter-spacing: -0.04em; line-height: 1;
+    text-shadow:
+      0 0 40px rgba(0,212,255,0.80),
+      0 0 100px rgba(0,212,255,0.35),
+      0 0 200px rgba(0,212,255,0.12);
+    display: block;
+  }
+  .hero-suffix {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 38px; color: rgba(240,255,254,0.45); letter-spacing: -0.01em;
+    display: block; margin-top: 4px;
+  }
+
+  /* Divider */
+  .divider {
+    position: absolute; top: 490px; left: 56px; right: 56px;
+    height: 1px; background: linear-gradient(90deg, transparent, rgba(0,212,255,0.25) 30%, rgba(0,212,255,0.25) 70%, transparent);
     z-index: 15;
   }
 
-  .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 32px; }
-  .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #00D4FF; box-shadow: 0 0 10px rgba(0,212,255,0.9); flex-shrink: 0; }
-  .eyebrow-text { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(0,212,255,0.65); letter-spacing: 0.20em; text-transform: uppercase; }
-
-  /* Card de notícia */
-  .news-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.10);
-    border-left: 3px solid rgba(88,204,2,0.70);
-    border-radius: 12px;
-    padding: 22px 26px;
-    margin-bottom: 44px;
+  /* 3-column stats */
+  .stats-row {
+    position: absolute; top: 520px; left: 56px; right: 56px;
+    display: flex; gap: 0; z-index: 15;
   }
-  .news-source {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; color: rgba(88,204,2,0.65);
-    letter-spacing: 0.12em; text-transform: uppercase;
-    margin-bottom: 10px;
+  .stat-col {
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    padding: 24px 12px;
   }
-  .news-headline {
-    font-family: 'Inter', sans-serif; font-weight: 600;
-    font-size: 17px; color: rgba(240,255,254,0.78);
-    line-height: 1.5;
-  }
-
-  /* Stat grande */
-  .stat-block { margin-bottom: 32px; }
-  .stat-number {
+  .stat-col + .stat-col { border-left: 1px solid rgba(0,212,255,0.10); }
+  .stat-col-num {
     font-family: 'Syne', sans-serif; font-weight: 800;
-    font-size: 72px; color: rgba(240,255,254,0.96);
-    letter-spacing: -0.02em; display: block; line-height: 1.0;
-    margin-bottom: 8px;
+    font-size: 46px; color: rgba(240,255,254,0.92); letter-spacing: -0.02em;
+    line-height: 1; margin-bottom: 8px;
   }
-  .stat-sub {
-    font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 400;
-    color: rgba(240,255,254,0.50); line-height: 1.5;
+  .stat-col-num.cyan { color: #00D4FF; text-shadow: 0 0 20px rgba(0,212,255,0.50); }
+  .stat-col-label {
+    font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 400;
+    color: rgba(240,255,254,0.38); text-align: center; line-height: 1.4;
   }
 
-  .body-text {
-    font-family: 'Inter', sans-serif; font-size: 19px; font-weight: 400;
-    color: rgba(240,255,254,0.50); line-height: 1.65;
-    margin-bottom: 40px;
+  /* Bottom callout */
+  .callout {
+    position: absolute; top: 690px; left: 56px; right: 56px; z-index: 15;
+    border: 1px solid rgba(0,212,255,0.18);
+    border-radius: 16px;
+    padding: 28px 32px;
+    background: rgba(0,212,255,0.04);
   }
-  .body-text strong { color: rgba(240,255,254,0.80); font-weight: 600; }
+  .callout p {
+    font-family: 'Inter', sans-serif; font-weight: 400;
+    font-size: 20px; color: rgba(240,255,254,0.60); line-height: 1.60;
+    text-align: center;
+  }
+  .callout strong { color: rgba(240,255,254,0.92); font-weight: 700; }
 
-  /* Card destaque */
-  .card-destaque {
-    background: rgba(0,212,255,0.07);
-    border: 1px solid rgba(0,212,255,0.20);
-    border-radius: 14px;
-    padding: 24px 28px;
-    margin-bottom: 36px;
-  }
-  .card-destaque p {
-    font-family: 'Inter', sans-serif; font-weight: 600;
-    font-size: 19px; color: rgba(240,255,254,0.88);
-    line-height: 1.55;
-  }
-  .card-destaque strong { color: #00D4FF; }
-
-  .arraste {
-    display: flex; justify-content: flex-end;
-  }
+  .arraste { position: absolute; bottom: 56px; left: 56px; z-index: 20; }
   .arraste-pill {
     font-family: 'JetBrains Mono', monospace; font-size: 13px;
     color: rgba(240,255,254,0.38); letter-spacing: 0.06em;
     border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 100px; padding: 10px 20px;
-    display: inline-block;
+    border-radius: 100px; padding: 10px 20px; display: inline-block;
   }
 
-  .page-count {
-    position: absolute; bottom: 52px; right: 56px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; color: rgba(0,212,255,0.25); letter-spacing: 0.1em; z-index: 20;
-  }
+  .page-count { position: absolute; bottom: 52px; right: 56px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(0,212,255,0.25); letter-spacing: 0.1em; z-index: 20; }
 </style>
 </head>
 <body>
 <div class="slide">
 
   <div class="dot-grid"></div>
-  <div class="glow-top"></div>
+  <div class="hero-glow"></div>
+  <div class="glow-magenta"></div>
   <div class="line-top"></div>
   <div class="line-bottom"></div>
   <div class="corner corner-tl"></div>
@@ -153,41 +174,52 @@
 
   <div class="header">
     <div class="brand-mark">
-      <img class="brand-icon-img" src="../../../../../07-arquivos/logos/EloScope - Logo - transparente.png" alt="">
+      <img class="brand-icon-img" src="../../../../../../design/assets/logos/EloScope - Logo - transparente.png" alt="">
       <span class="brand-name">eloscope</span>
     </div>
     <div class="handle">@eloscope.ai</div>
   </div>
 
-  <div class="content">
-    <div>
-      <div class="eyebrow">
-        <div class="eyebrow-dot"></div>
-        <span class="eyebrow-text">Radar Eloscope</span>
-      </div>
+  <div class="source-tag">
+    <span class="source-label">Radar Eloscope</span>
+    <span class="source-sep">·</span>
+    <span class="source-doc">Shareholder Letter · Q4 / FY 2025 · Duolingo Inc.</span>
+  </div>
 
-      <div class="news-card">
-        <div class="news-source">Shareholder Letter · Q4 / FY 2025 · Duolingo Inc.</div>
-        <div class="news-headline">Duolingo ultrapassa US$ 1 bilhão em receita pela primeira vez — sem demitir um único funcionário fixo desde sua fundação.</div>
-      </div>
+  <div class="hero-number-wrap">
+    <span class="hero-prefix">receita anual · 2025</span>
+    <span class="hero-number">$1,03B</span>
+    <span class="hero-suffix">sem contratar um único funcionário fixo</span>
+  </div>
 
-      <div class="stat-block">
-        <span class="stat-number">US$ 1,03 bilhão</span>
-        <span class="stat-sub">em receita em 2025 · +33% de crescimento</span>
-      </div>
+  <div class="divider"></div>
 
-      <p class="body-text">
-        Um ano depois de declarar a empresa AI-first, o Duolingo quebrou pela primeira vez a barreira do bilhão. Sem contratar um novo funcionário fixo.
-      </p>
-
-      <div class="card-destaque">
-        <p>Mesmo time. <strong>Quatro vezes mais</strong> conteúdo produzido. É isso que IA bem implementada faz.</p>
-      </div>
+  <div class="stats-row">
+    <div class="stat-col">
+      <span class="stat-col-num cyan">+33%</span>
+      <span class="stat-col-label">crescimento<br>de receita</span>
     </div>
-
-    <div class="arraste">
-      <span class="arraste-pill">arraste para o lado →</span>
+    <div class="stat-col">
+      <span class="stat-col-num">4–5×</span>
+      <span class="stat-col-label">mais conteúdo<br>mesmo time</span>
     </div>
+    <div class="stat-col">
+      <span class="stat-col-num cyan">AI-first</span>
+      <span class="stat-col-label">política operacional<br>desde 2024</span>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>Mesmo time. <strong>Quatro vezes mais</strong> entrega.<br>É isso que IA bem implementada faz.</p>
+  </div>
+
+  <div class="coin-fade"></div>
+  <div class="coin-wrap">
+    <img src="../assets/coin-crystal-cyan.png" alt="">
+  </div>
+
+  <div class="arraste">
+    <span class="arraste-pill">arraste para o lado →</span>
   </div>
 
   <div class="page-count">02 / 06</div>

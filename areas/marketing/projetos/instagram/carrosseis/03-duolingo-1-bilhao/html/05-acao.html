@@ -6,13 +6,21 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1080px; height: 1350px; overflow: hidden; background: #080808; }
+  html, body { background: #111; display: flex; justify-content: center; align-items: flex-start; padding: 20px; }
   .slide { position: relative; width: 1080px; height: 1350px; overflow: hidden; }
 
-  /* ZONA DARK — topo */
+  /* ZONA DARK — topo com fade natural embutido */
   .zone-dark {
-    position: absolute; top: 0; left: 0; right: 0; height: 620px;
-    background: #080808; overflow: hidden;
+    position: absolute; top: 0; left: 0; right: 0; height: 680px;
+    background: linear-gradient(to bottom,
+      #080808 0%,
+      #080808 62%,
+      rgba(12,14,18,0.92) 72%,
+      rgba(28,34,44,0.60) 82%,
+      rgba(247,248,250,0.85) 93%,
+      #F7F8FA 100%
+    );
+    overflow: hidden;
   }
   .zone-dark-grid {
     position: absolute; inset: 0;
@@ -27,7 +35,9 @@
 
   /* Processo visual — 3 steps com conectores */
   .process-wrap {
-    position: absolute; bottom: 60px; left: 56px; right: 56px;
+    position: absolute;
+    top: 50%; left: 56px; right: 56px;
+    transform: translateY(-50%);
     display: flex; align-items: center; justify-content: space-between;
     gap: 0;
   }
@@ -36,11 +46,16 @@
     flex: 1;
   }
   .step-icon {
-    width: 72px; height: 72px; border-radius: 16px;
-    background: rgba(0,212,255,0.08);
-    border: 1px solid rgba(0,212,255,0.22);
+    width: 80px; height: 80px; border-radius: 20px;
+    background: rgba(0,212,255,0.07);
+    border: 1px solid rgba(0,212,255,0.28);
     display: flex; align-items: center; justify-content: center;
-    font-size: 28px;
+    box-shadow: 0 0 24px rgba(0,212,255,0.10);
+  }
+  .step-num {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 28px; color: #00D4FF; letter-spacing: -0.02em;
+    text-shadow: 0 0 16px rgba(0,212,255,0.70);
   }
   .step-label {
     font-family: 'JetBrains Mono', monospace; font-size: 11px;
@@ -53,16 +68,11 @@
     margin-bottom: 42px;
   }
 
-  /* Fade da zona dark para a light */
-  .zone-fade {
-    position: absolute; top: 560px; left: 0; right: 0; height: 100px;
-    background: linear-gradient(to bottom, transparent, #F7F8FA);
-    z-index: 5; pointer-events: none;
-  }
+  .zone-fade { display: none; }
 
-  /* ZONA LIGHT — baixo */
+  /* ZONA LIGHT — começa onde zone-dark termina */
   .zone-light {
-    position: absolute; top: 620px; left: 0; right: 0; bottom: 0;
+    position: absolute; top: 680px; left: 0; right: 0; bottom: 0;
     background: #F7F8FA;
     overflow: hidden;
   }
@@ -152,17 +162,17 @@
     <div class="zone-dark-glow"></div>
     <div class="process-wrap">
       <div class="process-step">
-        <div class="step-icon">🗺️</div>
+        <div class="step-icon"><span class="step-num">01</span></div>
         <span class="step-label">Mapear</span>
       </div>
       <div class="step-connector"></div>
       <div class="process-step">
-        <div class="step-icon">✓</div>
+        <div class="step-icon"><span class="step-num">02</span></div>
         <span class="step-label">Validar</span>
       </div>
       <div class="step-connector"></div>
       <div class="process-step">
-        <div class="step-icon">⚡</div>
+        <div class="step-icon"><span class="step-num">03</span></div>
         <span class="step-label">Implementar</span>
       </div>
     </div>
@@ -205,7 +215,7 @@
 
   <div class="header">
     <div class="brand-mark">
-      <img class="brand-icon-img" src="../../../../../07-arquivos/logos/EloScope - Logo - transparente.png" alt="">
+      <img class="brand-icon-img" src="../../../../../../design/assets/logos/EloScope - Logo - transparente.png" alt="">
       <span class="brand-name">eloscope</span>
     </div>
     <div class="handle">@eloscope.ai</div>

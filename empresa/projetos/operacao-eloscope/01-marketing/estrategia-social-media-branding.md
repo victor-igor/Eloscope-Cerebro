@@ -224,7 +224,7 @@ A distribuição de conteúdo opera em 3 vias simultâneas, cada uma com objetiv
 
 | Via | Objetivo | Canais Principais | Métrica de Sucesso |
 |-----|----------|-------------------|--------------------|
-| **Via 1 — Institucional** | Construir autoridade e posicionamento de marca a longo prazo | Feed (carrosséis + estáticos), LinkedIn | Salvamentos, compartilhamentos, novos seguidores qualificados |
+| **Via 1 — Institucional** | Construir autoridade e posicionamento de marca a longo prazo | Feed (carrosséis + estáticos) | Salvamentos, compartilhamentos, novos seguidores qualificados |
 | **Via 2 — Audiência** | Crescer alcance e gerar descoberta orgânica | Reels, hashtags, collabs, newsjacking | Impressões, alcance, novos seguidores, visualizações |
 | **Via 3 — Performance** | Converter interesse em lead e lead em cliente | Stories (nurturing), Direct (DM), iscas digitais | DMs qualificadas, taxa de conversão comentário→DM, leads gerados |
 
@@ -272,6 +272,8 @@ A distribuição de conteúdo opera em 3 vias simultâneas, cada uma com objetiv
 | Diagnóstico gratuito | "DIAGNÓSTICO" | Formulário de qualificação | Lucas agenda call |
 
 > **Como executar:** criar resposta automática via DM (n8n + Instagram API) que entrega o material e abre a conversa. Responsável: Hugo (automação) + Lucas (resposta humana na sequência).
+>
+> **Quando ativar:** iscas digitais pressupõem alcance mínimo para gerar comentários. Configurar a automação já nas primeiras semanas, mas não esperar volume de DMs antes de atingir ~300 seguidores. Nas primeiras 4–6 semanas, foco em Reels para crescimento de audiência.
 
 ### 4.5 Execução Técnica e SEO (Copywriting)
 
@@ -313,7 +315,6 @@ Post com CTA "Comente X"
 | **Feed (Carrossel/Estático)** | Autoridade e educação — nutrir quem já me segue | "Comente [PALAVRA]" | Salvamentos + comentários qualificados |
 | **Stories** | Relacionamento e bastidores — manter proximidade com seguidores | Enquete / caixa de pergunta | Visualizações + respostas diretas |
 | **Direct (DM)** | Qualificação e conversão — transformar interesse em lead | "Me conta mais sobre o seu negócio" | DMs qualificadas + taxa de agendamento |
-| **LinkedIn** | Autoridade B2B — reforçar posicionamento para decisores | Artigos e cases com link para LP | Conexões qualificadas + cliques na LP |
 
 ---
 
@@ -402,17 +403,19 @@ Apontar para LP `www.eloscope.com` com foco no CTA de diagnóstico gratuito — 
 ### 8.2 Employee Advocacy & Omnicanalidade
 
 - **Employee Advocacy:** A Eloscope não é apenas uma marca corporativa. Victor e Lucas devem atuar ativamente compartilhando suas rotinas, aprendizados e falhas. Isso humaniza a marca B2B, gera um perfil mais "quente" e cria defensores da marca ("rostos" reais por trás da IA).
-- **Omnicanalidade:** Integrar o Instagram com as outras frentes de autoridade da Eloscope (como o LinkedIn do Victor). A experiência e o tom de voz B2B devem ser coesos.
+- **Omnicanalidade:** A experiência e o tom de voz devem ser coesos entre Instagram, WhatsApp e materiais comerciais.
 
 ### 8.2 Crescimento semana a semana
+
+**Baseline maio 2026:** 30 seguidores no perfil @eloscope.
 
 | Meta | Período | Como medir |
 |------|---------|------------|
 | +100 seguidores/mês | Mês 1–3 | Meta Business Suite |
 | Alcance médio > 500/post | Mês 1 | Meta Business Suite |
 | Engajamento > 3% | Mês 1 | (likes+comments) ÷ alcance |
-| 5 DMs qualificadas/mês via isca | Mês 1–2 | Lucas conta no CRM |
-| 1 lead convertido via conteúdo | Mês 2–3 | Pipeline rastreia origem |
+| 5 DMs qualificadas/mês via isca | Mês 3–4 (após ~300 seguidores) | Lucas conta no CRM |
+| 1 lead convertido via conteúdo | Mês 3–4 | Pipeline rastreia origem |
 
 ### 8.3 Reaproveitamento de conteúdo (criar 1, distribuir 5)
 

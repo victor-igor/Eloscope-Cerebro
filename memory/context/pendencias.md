@@ -52,7 +52,9 @@
 - [23/04/2026] **Morgana — inserir primeira lista do Matheus** · começar prospecções com os contatos recebidos
 - [21/04/2026] **Mentoria Agências — definir pricing final** · R$5.500 único ou R$1.500 + 3×R$1.300 parcelado · validar com Lucas antes de apresentar
 
-- [19/04/2026] **Slides Elo OS — validação visual pendente** — HTML redesenhado com referências premium, Victor ainda não confirmou aprovação do resultado final · arquivo: `04-apresentacao/slides-elo-os.html`
+- ✅ [19/04/2026] **Slides Elo OS — validação visual** — deck `slides-elo-os-v4.html` aprovado em sessão 06/05
+- [07/05/2026] **Inserir slide ROI no deck `slides-elo-os-v4.html`** · entre Slide 8 (garantia) e Slide 9 (investimento) · preview aprovado em `slide-roi-preview.html` · lógica: leads não atendidos × taxa recuperação · counter sobe de 11 → 12 · Victor
+- [07/05/2026] **Preencher WhatsApp do Lucas no Slide 11** · substituir `(19) 99XXX-XXXX` pelo número real · Lucas confirma número
 
 - [18/04/2026] **Hugo: Responder 7 perguntas técnicas** em `stack-tecnica.md` (VPS provider, LLM em uso, estabilidade QR, Openclaw→Paperclip, dashboard Fran, tempo de setup, CRMs testados)
 - [18/04/2026] **Lucas: Iniciar abordagem** — Morgana (esta semana), Denis e Matheus (semana que vem) · guia-comercial-lucas.md tem os scripts

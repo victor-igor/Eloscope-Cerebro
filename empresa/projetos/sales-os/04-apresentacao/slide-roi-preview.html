@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slide ROI ao Vivo — Elo OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+    .slide {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      background: #0A0A0A;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* Ambient glow */
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,212,255,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .slide::after {
+      content: '';
+      position: absolute;
+      bottom: -150px; right: -150px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(217,70,239,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* BG number */
+    .bg-num {
+      position: absolute;
+      top: -40px; right: -30px;
+      font-family: 'Syne', sans-serif;
+      font-size: 260px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.015);
+      user-select: none;
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    /* Eyebrow tag */
+    .eyebrow-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: #00D4FF;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 4px;
+      padding: 4px 12px;
+      display: inline-block;
+    }
+
+    /* Cenário buttons */
+    .scenario-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1.5px solid rgba(255,255,255,0.12);
+      background: transparent;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 150ms ease;
+      white-space: nowrap;
+    }
+    .scenario-btn:hover {
+      border-color: rgba(0,212,255,0.4);
+      color: rgba(255,255,255,0.8);
+    }
+    .scenario-btn.active {
+      background: #00D4FF;
+      border-color: #00D4FF;
+      color: #0A0A0A;
+    }
+
+    /* Input fields */
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .field-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.04em;
+    }
+    .field-box {
+      background: #0F1419;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: border-color 150ms;
+    }
+    .field-box:focus-within {
+      border-color: rgba(0,212,255,0.4);
+    }
+    .field-box.auto-calc {
+      border-color: rgba(0,212,255,0.25);
+      background: rgba(0,212,255,0.04);
+    }
+    .field-prefix-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.3);
+    }
+    .field-suffix-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.3);
+    }
+    [contenteditable] {
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #FFFFFF;
+      background: transparent;
+      border: none;
+      outline: none;
+      min-width: 60px;
+      max-width: 160px;
+      caret-color: #00D4FF;
+    }
+    [contenteditable]:empty::before {
+      content: attr(data-placeholder);
+      color: rgba(255,255,255,0.2);
+      pointer-events: none;
+    }
+    .auto-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #00D4FF;
+    }
+
+    /* Right panel */
+    .result-panel {
+      background: #0F1419;
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 12px;
+      padding: 28px 32px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .result-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 12px;
+      background: radial-gradient(ellipse at top left, rgba(0,212,255,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .result-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .result-value-primary {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 58px;
+      color: #00D4FF;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .result-value-secondary {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 34px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1;
+    }
+
+    /* Summary rows */
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .summary-row:last-child { border-bottom: none; }
+    .summary-key {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+    .summary-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+    }
+
+    /* Footer */
+    .footer-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+    }
+    .footer-note {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      color: rgba(255,255,255,0.25);
+      font-style: italic;
+    }
+
+    /* Divider vertical */
+    .v-divider {
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.08), transparent);
+      align-self: stretch;
+      margin: 0 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slide">
+  <div class="bg-num">09</div>
+
+  <!-- TOP -->
+  <div style="padding: 32px 52px 0 52px; position: relative; z-index: 2;">
+    <div style="margin-bottom: 10px;">
+      <span class="eyebrow-tag">[ ROI AO VIVO ]</span>
+    </div>
+    <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 26px; color: #FFFFFF; line-height: 1.2;">
+      Antes de falar de investimento — vamos calcular o que você está perdendo hoje.
+    </div>
+  </div>
+
+  <!-- BODY: 2 painéis -->
+  <div style="display: flex; gap: 24px; margin: 20px 52px 0 52px; height: 486px; position: relative; z-index: 2;">
+
+    <!-- LEFT — inputs -->
+    <div style="flex: 1.1; display: flex; flex-direction: column; gap: 16px;">
+
+      <!-- Cenário -->
+      <div>
+        <div class="field-label" style="margin-bottom: 8px;">Cenário de recuperação</div>
+        <div style="display: flex; gap: 8px;">
+          <button class="scenario-btn" data-rate="10" onclick="setScenario(this, 10)">Conservador (10%)</button>
+          <button class="scenario-btn active" data-rate="20" onclick="setScenario(this, 20)">Realista (20%)</button>
+          <button class="scenario-btn" data-rate="40" onclick="setScenario(this, 40)">Agressivo (40%)</button>
+        </div>
+      </div>
+
+      <!-- Grid 2x2 inputs -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; flex: 1;">
+
+        <!-- Leads por mês -->
+        <div class="field-group">
+          <div class="field-label">Leads por mês</div>
+          <div class="field-box">
+            <div id="input-leads" contenteditable="true" data-placeholder="300" inputmode="numeric"></div>
+          </div>
+        </div>
+
+        <!-- Leads não atendidos % -->
+        <div class="field-group">
+          <div class="field-label">Leads não atendidos (%)</div>
+          <div class="field-box">
+            <div id="input-nao-atendidos" contenteditable="true" data-placeholder="40" inputmode="decimal"></div>
+            <span class="field-suffix-text">%</span>
+          </div>
+        </div>
+
+        <!-- Ticket médio -->
+        <div class="field-group">
+          <div class="field-label">Ticket médio (R$)</div>
+          <div class="field-box">
+            <span class="field-prefix-text">R$</span>
+            <div id="input-ticket" contenteditable="true" data-placeholder="800" inputmode="numeric"></div>
+          </div>
+        </div>
+
+        <!-- Leads perdidos/mês (auto) -->
+        <div class="field-group">
+          <div class="field-label">Leads perdidos / mês</div>
+          <div class="field-box auto-calc">
+            <span class="auto-value" id="calc-leads-perdidos">—</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slider recuperação -->
+      <div style="margin-top: 4px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+          <span class="field-label">% de recuperação com IA</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #00D4FF;" id="slider-label">20%</span>
+        </div>
+        <input
+          type="range" id="slider-recovery"
+          min="5" max="50" step="5" value="20"
+          style="
+            width: 100%;
+            height: 4px;
+            -webkit-appearance: none;
+            background: linear-gradient(to right, #00D4FF 40%, rgba(255,255,255,0.12) 40%);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+          "
+          oninput="onSlider(this)"
+        />
+        <p style="font-family: 'Inter', sans-serif; font-size: 10px; color: rgba(255,255,255,0.3); line-height: 1.5; margin-top: 6px;">
+          Para empresas com demanda ativa, 10–25% de recuperação é um range realista quando existe triagem, follow-up e confirmação automatizados.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="v-divider"></div>
+
+    <!-- RIGHT — resultado -->
+    <div style="flex: 0.9; display: flex; flex-direction: column; gap: 0; position: relative;">
+      <div class="result-panel">
+
+        <!-- Receita/mês -->
+        <div>
+          <div class="result-label">Receita recuperada / mês</div>
+          <div class="result-value-primary" id="result-mes">—</div>
+        </div>
+
+        <!-- Divider -->
+        <div style="height: 1px; background: rgba(255,255,255,0.07); margin: 16px 0;"></div>
+
+        <!-- Receita/ano -->
+        <div>
+          <div class="result-label">Receita recuperada / ano</div>
+          <div class="result-value-secondary" id="result-ano">—</div>
+        </div>
+
+        <!-- Divider -->
+        <div style="height: 1px; background: rgba(255,255,255,0.07); margin: 16px 0;"></div>
+
+        <!-- Summary -->
+        <div style="flex: 1;">
+          <div class="summary-row">
+            <span class="summary-key">Leads por mês</span>
+            <span class="summary-val" id="sum-leads">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-key">Leads perdidos/mês</span>
+            <span class="summary-val" id="sum-perdidos">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-key">Taxa de recuperação</span>
+            <span class="summary-val" id="sum-taxa">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-key">Ticket médio</span>
+            <span class="summary-val" id="sum-ticket">—</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;">
+    <div class="footer-divider"></div>
+    <div style="padding: 10px 52px;">
+      <span class="footer-note">* Estimativa. O ganho real depende de volume, ticket e aderência do time ao processo.</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let recoveryRate = 20;
+
+  const fmtBRL = (v) => {
+    if (!v || isNaN(v) || v <= 0) return '—';
+    return 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+  };
+
+  const getNum = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return 0;
+    const raw = el.innerText.replace(/[^\d,\.]/g, '').replace(',', '.');
+    const v = parseFloat(raw);
+    return isNaN(v) ? 0 : v;
+  };
+
+  const recalc = () => {
+    const leads       = getNum('input-leads');
+    const naoAten     = getNum('input-nao-atendidos');
+    const ticket      = getNum('input-ticket');
+
+    const leadsPerdidos = leads > 0 && naoAten > 0
+      ? Math.round(leads * (naoAten / 100))
+      : 0;
+
+    const receitaMes = leadsPerdidos > 0 && ticket > 0
+      ? leadsPerdidos * (recoveryRate / 100) * ticket
+      : 0;
+
+    const receitaAno = receitaMes * 12;
+
+    // Update auto-calc box
+    document.getElementById('calc-leads-perdidos').textContent =
+      leadsPerdidos > 0 ? leadsPerdidos.toLocaleString('pt-BR') : '—';
+
+    // Update results
+    document.getElementById('result-mes').textContent = fmtBRL(receitaMes);
+    document.getElementById('result-ano').textContent = fmtBRL(receitaAno);
+
+    // Update summary
+    document.getElementById('sum-leads').textContent    = leads > 0 ? leads.toLocaleString('pt-BR') : '—';
+    document.getElementById('sum-perdidos').textContent = leadsPerdidos > 0 ? leadsPerdidos.toLocaleString('pt-BR') : '—';
+    document.getElementById('sum-taxa').textContent     = recoveryRate + '%';
+    document.getElementById('sum-ticket').textContent   = ticket > 0 ? 'R$ ' + ticket.toLocaleString('pt-BR') : '—';
+
+    // Update slider gradient
+    const slider = document.getElementById('slider-recovery');
+    const pct = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+    slider.style.background = `linear-gradient(to right, #00D4FF ${pct}%, rgba(255,255,255,0.12) ${pct}%)`;
+  };
+
+  const setScenario = (btn, rate) => {
+    recoveryRate = rate;
+    document.querySelectorAll('.scenario-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    // sync slider
+    const slider = document.getElementById('slider-recovery');
+    slider.value = rate;
+    document.getElementById('slider-label').textContent = rate + '%';
+    recalc();
+  };
+
+  const onSlider = (slider) => {
+    recoveryRate = parseInt(slider.value);
+    document.getElementById('slider-label').textContent = recoveryRate + '%';
+    // sync scenario buttons
+    document.querySelectorAll('.scenario-btn').forEach(b => {
+      b.classList.toggle('active', parseInt(b.dataset.rate) === recoveryRate);
+    });
+    recalc();
+  };
+
+  const restrictToNumbers = (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); return; }
+    const allowed = /[0-9\.,]/;
+    if (!allowed.test(e.key) && !['Backspace','Delete','ArrowLeft','ArrowRight','Tab'].includes(e.key)) {
+      e.preventDefault();
+    }
+  };
+
+  ['input-leads','input-nao-atendidos','input-ticket'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('keydown', restrictToNumbers);
+    el.addEventListener('input', recalc);
+  });
+
+  // Init
+  recalc();
+</script>
+
+</body>
+</html>
