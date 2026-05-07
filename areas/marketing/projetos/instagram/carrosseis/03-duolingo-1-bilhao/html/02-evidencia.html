@@ -32,17 +32,19 @@
 
   /* Coin 3D hero — preenche o espaço abaixo do callout */
   .coin-wrap {
-    position: absolute; bottom: -100px; left: 50%; transform: translateX(-50%);
+    position: absolute; bottom: -140px; left: 50%; transform: translateX(-50%);
     width: 680px; height: 680px;
     z-index: 6; pointer-events: none;
     mix-blend-mode: screen;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 30%, black 60%);
+    mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 30%, black 60%);
   }
-  .coin-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .coin-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; opacity: 0.85; }
 
   /* Fade suave no topo da moeda */
   .coin-fade {
     position: absolute; bottom: 0; left: 0; right: 0; height: 580px;
-    background: linear-gradient(to bottom, #080808 0%, transparent 22%);
+    background: linear-gradient(to bottom, #080808 0%, transparent 28%);
     z-index: 7; pointer-events: none;
   }
 
@@ -107,14 +109,14 @@
 
   /* Divider */
   .divider {
-    position: absolute; top: 490px; left: 56px; right: 56px;
+    position: absolute; top: 570px; left: 56px; right: 56px;
     height: 1px; background: linear-gradient(90deg, transparent, rgba(0,212,255,0.25) 30%, rgba(0,212,255,0.25) 70%, transparent);
     z-index: 15;
   }
 
   /* 3-column stats */
   .stats-row {
-    position: absolute; top: 520px; left: 56px; right: 56px;
+    position: absolute; top: 600px; left: 56px; right: 56px;
     display: flex; gap: 0; z-index: 15;
   }
   .stat-col {
@@ -135,7 +137,7 @@
 
   /* Bottom callout */
   .callout {
-    position: absolute; top: 690px; left: 56px; right: 56px; z-index: 15;
+    position: absolute; top: 790px; left: 56px; right: 56px; z-index: 15;
     border: 1px solid rgba(0,212,255,0.18);
     border-radius: 16px;
     padding: 28px 32px;
