@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playbook Comercial — Elo OS · Eloscope</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:            #08090d;
+      --surface:       #0f1117;
+      --surface-2:     #161820;
+      --border:        rgba(255,255,255,0.08);
+      --border-accent: rgba(0,212,255,0.25);
+      --cyan:          #00d4ff;
+      --purple:        #7c3aed;
+      --amber:         #f59e0b;
+      --danger:        #f87171;
+      --success:       #4ade80;
+      --text:          #f8fafc;
+      --text-muted:    rgba(248,250,252,0.6);
+      --text-dim:      rgba(248,250,252,0.35);
+      --font:          'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 13px;
+      line-height: 1.6;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Page ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--bg);
+      margin: 0 auto;
+      padding: 14mm 14mm 12mm;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    @media print {
+      @page { size: A4; margin: 0; }
+      html, body { width: 210mm; background: #08090d; }
+      .page { page-break-after: always; break-after: page; margin: 0; }
+      .page:last-child { page-break-after: avoid; break-after: avoid; }
+    }
+
+    /* ── Typography ── */
+    .label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 10px;
+    }
+    h1 { font-size: 28px; font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; }
+    h2 { font-size: 17px; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 8px; }
+    h3 { font-size: 13px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+    h4 { font-size: 11.5px; font-weight: 600; color: var(--cyan); margin-bottom: 4px; }
+    p  { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+    .cyan   { color: var(--cyan); }
+    .purple { color: var(--purple); }
+    .amber  { color: var(--amber); }
+    .danger { color: var(--danger); }
+    .success{ color: var(--success); }
+    .muted  { color: var(--text-muted); }
+    .dim    { color: var(--text-dim); }
+    strong  { color: var(--text); font-weight: 600; }
+
+    /* ── Dividers ── */
+    .divider        { height: 1px; background: var(--border); margin: 10px 0; }
+    .divider-accent { height: 1px; background: linear-gradient(90deg,var(--cyan),transparent); margin: 10px 0; }
+    .divider-sm     { height: 1px; background: var(--border); margin: 6px 0; }
+
+    /* ── Logo ── */
+    .logo {
+      font-size: 16px; font-weight: 700; color: var(--cyan);
+      letter-spacing: -0.02em; display: flex; align-items: center; gap: 6px;
+    }
+    .logo-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--cyan); box-shadow: 0 0 8px var(--cyan); flex-shrink: 0;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .card-accent {
+      background: var(--surface);
+      border: 1px solid var(--border-accent);
+      border-radius: 8px;
+      padding: 12px 14px;
+      position: relative;
+    }
+    .card-accent::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      border-radius: 8px 8px 0 0;
+    }
+    .card-danger  { border-color: rgba(248,113,113,0.35); background: rgba(248,113,113,0.05); }
+    .card-success { border-color: rgba(74,222,128,0.35);  background: rgba(74,222,128,0.05);  }
+    .card-amber   { border-color: rgba(245,158,11,0.35);  background: rgba(245,158,11,0.05);  }
+    .card-purple  { border-color: rgba(124,58,237,0.35);  background: rgba(124,58,237,0.05);  }
+
+    /* ── Badges ── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 8px; border-radius: 20px;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+    }
+    .badge-cyan   { background: rgba(0,212,255,0.12); color: var(--cyan);   border: 1px solid rgba(0,212,255,0.2); }
+    .badge-purple { background: rgba(124,58,237,0.15); color: #a78bfa;      border: 1px solid rgba(124,58,237,0.25); }
+    .badge-amber  { background: rgba(245,158,11,0.15); color: var(--amber); border: 1px solid rgba(245,158,11,0.25); }
+    .badge-danger { background: rgba(248,113,113,0.15); color: var(--danger); border: 1px solid rgba(248,113,113,0.25); }
+    .badge-success{ background: rgba(74,222,128,0.15); color: var(--success); border: 1px solid rgba(74,222,128,0.25); }
+    .badge-dim    { background: rgba(255,255,255,0.06); color: var(--text-muted); border: 1px solid var(--border); }
+
+    /* ── Tables ── */
+    table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+    th {
+      text-align: left; font-weight: 600; font-size: 10px;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-dim); padding: 6px 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+    td:first-child { color: var(--text); font-weight: 500; }
+    tr:last-child td { border-bottom: none; }
+
+    /* ── Code / Script blocks ── */
+    .script-block {
+      background: var(--surface-2);
+      border: 1px solid rgba(0,212,255,0.12);
+      border-left: 3px solid var(--cyan);
+      border-radius: 0 6px 6px 0;
+      padding: 10px 12px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      white-space: pre-wrap;
+      font-style: italic;
+    }
+    .script-block strong { color: var(--cyan); font-style: normal; }
+
+    .quote-block {
+      background: rgba(0,212,255,0.04);
+      border-left: 3px solid var(--cyan);
+      padding: 8px 12px;
+      border-radius: 0 6px 6px 0;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin: 6px 0;
+    }
+    .quote-block.purple { border-left-color: var(--purple); background: rgba(124,58,237,0.04); }
+    .quote-block.amber  { border-left-color: var(--amber);  background: rgba(245,158,11,0.04);  }
+    .quote-block.danger { border-left-color: var(--danger); background: rgba(248,113,113,0.04);}
+
+    /* ── Warning / Tip pills ── */
+    .alert {
+      display: flex; gap: 8px; align-items: flex-start;
+      padding: 7px 10px; border-radius: 6px;
+      font-size: 11px;
+      margin: 6px 0;
+    }
+    .alert-icon { font-size: 12px; flex-shrink: 0; line-height: 1.6; }
+    .alert-warn  { background: rgba(245,158,11,0.1);  border: 1px solid rgba(245,158,11,0.25);  color: #fcd34d; }
+    .alert-info  { background: rgba(0,212,255,0.08);  border: 1px solid rgba(0,212,255,0.2);    color: #7dd3fc; }
+    .alert-danger{ background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.25); color: #fca5a5; }
+    .alert-success{background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.25);  color: #86efac; }
+
+    /* ── List ── */
+    ul.clean { list-style: none; padding: 0; }
+    ul.clean li { padding: 3px 0; font-size: 12px; color: var(--text-muted); display: flex; align-items: flex-start; gap: 6px; }
+    ul.clean li::before { content: '—'; color: var(--cyan); font-weight: 700; flex-shrink: 0; }
+    ul.go li::before   { content: '✓'; color: var(--success); }
+    ul.nogo li::before { content: '✗'; color: var(--danger); }
+
+    /* ── Grid helpers ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .flex-row { display: flex; gap: 8px; }
+    .flex-col { display: flex; flex-direction: column; gap: 8px; }
+    .flex-1   { flex: 1; }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-left  { display: flex; flex-direction: column; gap: 1px; }
+    .footer-right { display: flex; align-items: center; gap: 10px; }
+    .page-num {
+      font-size: 9px; font-weight: 600; letter-spacing: 0.08em;
+      color: var(--text-dim); text-transform: uppercase;
+    }
+
+    /* ── Cover specific ── */
+    .cover-eyebrow { font-size: 11px; color: var(--cyan); font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; margin-bottom: 12px; }
+    .cover-subtitle { font-size: 14px; color: var(--text-muted); margin-top: 10px; max-width: 380px; }
+    .cover-version { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; padding: 4px 12px; border-radius: 20px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); font-size: 11px; font-weight: 600; color: var(--cyan); }
+    .cover-meta { margin-top: 8px; font-size: 11px; color: var(--text-dim); }
+
+    .spin-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .spin-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .spin-s { background: rgba(0,212,255,0.15); color: var(--cyan); }
+    .spin-p { background: rgba(124,58,237,0.15); color: #a78bfa; }
+    .spin-i { background: rgba(245,158,11,0.15); color: var(--amber); }
+    .spin-n { background: rgba(74,222,128,0.15); color: var(--success); }
+
+    .obj-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .obj-id {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+
+    .funnel-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 7px 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      position: relative;
+    }
+    .funnel-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(0,212,255,0.12);
+      color: var(--cyan);
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .anchor-phrase {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 14px;
+      background: rgba(0,212,255,0.04);
+      border: 1px solid rgba(0,212,255,0.15);
+      border-radius: 6px;
+    }
+    .anchor-num {
+      font-size: 18px;
+      font-weight: 800;
+      color: rgba(0,212,255,0.3);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .case-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--purple), transparent);
+    }
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 11.5px;
+    }
+    .metric-row:last-child { border-bottom: none; }
+    .metric-val { color: var(--cyan); font-weight: 700; font-size: 13px; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 1 — CAPA
+════════════════════════════════════════ -->
+<div class="page">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:30mm;">
+    <div class="logo"><div class="logo-dot"></div>Eloscope</div>
+    <span class="badge badge-dim">Confidencial · Uso Interno</span>
+  </div>
+
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+    <div class="cover-eyebrow">Sales OS · Elo OS</div>
+    <h1 style="font-size:36px;max-width:420px;line-height:1.1;">
+      Playbook<br><span class="cyan">Comercial</span>
+    </h1>
+    <p class="cover-subtitle">
+      Guia completo para qualificação, discovery SPIN, tratamento de objeções e cadências — para o time comercial da Eloscope.
+    </p>
+    <div style="margin-top:20px;display:flex;gap:8px;flex-wrap:wrap;">
+      <span class="cover-version"><span class="logo-dot"></span>v0.4 · Mai/2026</span>
+      <span class="badge badge-amber">Revisado @cso + @copy-chief</span>
+    </div>
+    <p class="cover-meta">Construído das calls reais · SPIN · Hormozi Value Stack · Tom Lucas/Sooray</p>
+  </div>
+
+  <div style="margin-top:auto;margin-bottom:16px;">
+    <div class="card-accent" style="max-width:440px;">
+      <p style="font-size:11.5px;color:var(--text-muted);margin:0;font-style:italic;">
+        "Isso foi construído das suas calls reais. Os gaps marcados com ⚠️ são onde a maioria perde — você já sabe onde são. O norte está aqui. Vai chegando call a call."
+      </p>
+    </div>
+  </div>
+
+  <div style="margin-bottom:10px;">
+    <div class="label" style="margin-bottom:8px;">Índice</div>
+    <div class="grid-2" style="gap:4px;">
+      <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--text-muted);padding:4px 0;">
+        <span class="badge badge-cyan" style="min-width:22px;justify-content:center;">1</span> Qualificação — ICP e GO/NO-GO
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--text-muted);padding:4px 0;">
+        <span class="badge badge-cyan" style="min-width:22px;justify-content:center;">2</span> Funil de Vendas
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--text-muted);padding:4px 0;">
+        <span class="badge badge-purple" style="min-width:22px;justify-content:center;">3</span> Reunião SPIN Completo
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--text-muted);padding:4px 0;">
+        <span class="badge badge-amber" style="min-width:22px;justify-content:center;">4</span> Scripts e Cadências
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--text-muted);padding:4px 0;">
+        <span class="badge badge-danger" style="min-width:22px;justify-content:center;">5</span> Mapa de Objeções
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--text-muted);padding:4px 0;">
+        <span class="badge badge-success" style="min-width:22px;justify-content:center;">6</span> Micro-Cases por Segmento
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--text-muted);padding:4px 0;">
+        <span class="badge badge-dim" style="min-width:22px;justify-content:center;">7</span> Frases-Âncora
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--text-muted);padding:4px 0;">
+        <span class="badge badge-dim" style="min-width:22px;justify-content:center;">8</span> Handoff · KPIs · IA/Humano
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <div class="logo" style="font-size:12px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Eloscope</div>
+      <span class="dim" style="font-size:9px;">eloscope.com.br</span>
+    </div>
+    <span class="page-num">01 / 10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 2 — QUALIFICAÇÃO + FUNIL
+════════════════════════════════════════ -->
+<div class="page">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div class="logo" style="font-size:13px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Elo OS · Playbook Comercial</div>
+    <span class="badge badge-cyan">01 · Qualificação</span>
+  </div>
+  <div class="divider-accent"></div>
+
+  <div class="section-label">ICP Q2 — Perfil Ideal</div>
+  <div class="grid-2" style="margin-bottom:10px;gap:8px;">
+    <div class="card">
+      <h4 style="margin-bottom:6px;">Empresa ideal</h4>
+      <ul class="clean">
+        <li>PME faturando R$80k+/mês</li>
+        <li>1–10 vendedores ativos</li>
+        <li>Vende serviço (imobiliária, solar, clínica, consultoria)</li>
+        <li>Tem leads chegando mas não converte tudo</li>
+        <li>Dono ou gestor sente que "dá pra converter mais"</li>
+      </ul>
+      <div class="alert alert-info" style="margin-top:8px;">
+        <span class="alert-icon">ℹ</span>
+        <span><strong>Educação:</strong> incluir só se escola tem 2+ vendedores e R$80k+/mês. Ciclo mais longo — não é foco Q2.</span>
+      </div>
+    </div>
+    <div class="flex-col">
+      <div class="card card-success">
+        <h4 style="color:var(--success);margin-bottom:5px;">Sinais GO imediato</h4>
+        <ul class="clean go" style="font-size:11px;">
+          <li>"Meu time não faz follow-up"</li>
+          <li>"Cada vendedor faz do seu jeito"</li>
+          <li>"Tenho base parada que não trabalhamos"</li>
+          <li>"Não sei quem tá performando"</li>
+          <li>"Já tentei consultoria e não funcionou"</li>
+        </ul>
+      </div>
+      <div class="card card-danger">
+        <h4 style="color:var(--danger);margin-bottom:5px;">Descarte NO-GO</h4>
+        <ul class="clean nogo" style="font-size:11px;">
+          <li>Sem vendedor (dono faz tudo sozinho)</li>
+          <li>Sem leads — precisa tráfego do zero</li>
+          <li>Quer só chatbot (produto: AI Squads)</li>
+          <li>Fatura abaixo de R$50k/mês</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">BANT — Checklist pré-reunião</div>
+  <table style="margin-bottom:10px;">
+    <thead>
+      <tr>
+        <th>Critério</th>
+        <th>Pergunta</th>
+        <th>GO</th>
+        <th>NO-GO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge badge-cyan">Budget</span></td>
+        <td>Tem orçamento para R$1.500–3.500/mês?</td>
+        <td class="success">Sim / "invisto em marketing"</td>
+        <td class="danger">"Sem budget" sem abertura</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-purple">Authority</span></td>
+        <td>Você é quem decide?</td>
+        <td class="success">Decisor direto</td>
+        <td class="danger">"Preciso falar com 3 sócios" sem prazo</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-amber">Need</span></td>
+        <td>Qual sua maior dor no comercial hoje?</td>
+        <td class="success">Dor declarada claramente</td>
+        <td class="danger">"Tá tudo bem" / sem dor</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-success">Timeline</span></td>
+        <td>Quando precisa resolver isso?</td>
+        <td class="success">Próximos 1–3 meses</td>
+        <td class="danger">"Talvez no segundo semestre"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="grid-2" style="gap:8px;margin-bottom:10px;">
+    <div>
+      <div class="section-label">Qualificação rápida no WhatsApp</div>
+      <div class="card-accent" style="padding:10px 12px;">
+        <p style="font-size:11px;margin-bottom:6px;color:var(--text-dim);">3 perguntas antes de marcar reunião:</p>
+        <div style="font-size:11.5px;color:var(--text-muted);">
+          <div style="padding:3px 0;"><span class="cyan">1.</span> "Quantos vendedores você tem ativos hoje?"</div>
+          <div style="padding:3px 0;"><span class="cyan">2.</span> "Leads chegam por qual canal — Instagram, indicação, tráfego?"</div>
+          <div style="padding:3px 0;"><span class="cyan">3.</span> "Você usa CRM ou gerencia tudo no WhatsApp?"</div>
+        </div>
+        <div class="divider-sm"></div>
+        <p style="font-size:11px;margin:0;"><span class="success">GO:</span> tem 1+ vendedor + leads chegando → agendar<br><span class="danger">NO-GO:</span> sem vendedor ou sem leads → não forçar</p>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">02 · Funil de Vendas</div>
+      <div class="flex-col" style="gap:5px;">
+        <div class="funnel-step"><div class="funnel-num">1</div><div><strong>Abordagem</strong> <span class="dim" style="font-size:10px;">· SLA 2h</span></div></div>
+        <div class="funnel-step"><div class="funnel-num">2</div><div><strong>Qualificação</strong> <span class="dim" style="font-size:10px;">· 3 perguntas WPP · 24h</span></div></div>
+        <div class="funnel-step"><div class="funnel-num">3</div><div><strong>Reunião diagnóstico/venda</strong> <span class="dim" style="font-size:10px;">· 45 min · até 48h</span></div></div>
+        <div class="funnel-step"><div class="funnel-num">4</div><div><strong>Proposta enviada</strong> <span class="dim" style="font-size:10px;">· até 24h após reunião</span></div></div>
+        <div class="funnel-step"><div class="funnel-num">5</div><div><strong>Follow-up</strong> <span class="dim" style="font-size:10px;">· D+1 / D+3 / D+7</span></div></div>
+        <div class="funnel-step" style="border-color:rgba(74,222,128,0.3);"><div class="funnel-num" style="background:rgba(74,222,128,0.12);color:var(--success);">6</div><div><strong>Fechamento</strong> <span class="dim" style="font-size:10px;">· Contrato + setup pago</span></div></div>
+        <div class="funnel-step"><div class="funnel-num">7</div><div><strong>Handoff → Victor</strong> <span class="dim" style="font-size:10px;">· briefing até 48h</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-warn">
+    <span class="alert-icon">⚠</span>
+    <span><strong>Alertas de deal em risco:</strong> +14 dias no mesmo estágio → escalar para Victor · Proposta +7 dias sem resposta → Victor entra · Objeção sem resposta → Victor entra na call</span>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <div class="logo" style="font-size:12px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Eloscope</div>
+    </div>
+    <span class="page-num">02 / 10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 3 — SPIN: ABERTURA + S + P
+════════════════════════════════════════ -->
+<div class="page">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div class="logo" style="font-size:13px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Elo OS · Playbook Comercial</div>
+    <span class="badge badge-purple">03 · SPIN — Reunião de Diagnóstico</span>
+  </div>
+  <div class="divider-accent"></div>
+
+  <div style="margin-bottom:10px;">
+    <div class="card-accent" style="padding:10px 14px;">
+      <div style="display:flex;gap:6px;flex-wrap:wrap;">
+        <div style="text-align:center;padding:6px 10px;background:rgba(0,212,255,0.06);border-radius:6px;flex:1;min-width:70px;">
+          <div style="font-size:10px;color:var(--text-dim);">Abertura</div><div class="cyan" style="font-weight:700;">3 min</div>
+        </div>
+        <div style="text-align:center;padding:6px 10px;background:rgba(0,212,255,0.06);border-radius:6px;flex:1;min-width:70px;">
+          <div style="font-size:10px;color:var(--text-dim);">S — Situação</div><div class="cyan" style="font-weight:700;">7 min</div>
+        </div>
+        <div style="text-align:center;padding:6px 10px;background:rgba(124,58,237,0.06);border-radius:6px;flex:1;min-width:70px;">
+          <div style="font-size:10px;color:var(--text-dim);">P — Problema</div><div style="color:#a78bfa;font-weight:700;">7 min</div>
+        </div>
+        <div style="text-align:center;padding:6px 10px;background:rgba(245,158,11,0.06);border-radius:6px;flex:1;min-width:70px;">
+          <div style="font-size:10px;color:var(--text-dim);">I — Implicação</div><div class="amber" style="font-weight:700;">8 min</div>
+        </div>
+        <div style="text-align:center;padding:6px 10px;background:rgba(74,222,128,0.06);border-radius:6px;flex:1;min-width:70px;">
+          <div style="font-size:10px;color:var(--text-dim);">N — Need-Payoff</div><div class="success" style="font-weight:700;">5 min</div>
+        </div>
+        <div style="text-align:center;padding:6px 10px;background:rgba(255,255,255,0.04);border-radius:6px;flex:1;min-width:70px;">
+          <div style="font-size:10px;color:var(--text-dim);">Apresentação</div><div class="muted" style="font-weight:700;">10 min</div>
+        </div>
+        <div style="text-align:center;padding:6px 10px;background:rgba(248,113,113,0.06);border-radius:6px;flex:1;min-width:70px;">
+          <div style="font-size:10px;color:var(--text-dim);">Objeções</div><div class="danger" style="font-weight:700;">5 min</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:10px;">
+    <div class="section-label">Abertura — 3 min</div>
+    <div class="quote-block">
+      "Antes de começar — te conto como penso em usar nossos 45 minutos. Primeiro quero te ouvir bastante — entender como tá o comercial hoje. Depois, se fizer sentido pro que você me contar, te mostro o que a gente faz em uns 10 minutos. E aí a gente vê se tem algo aqui que se encaixa. Combinado assim?"
+    </div>
+    <div class="grid-2" style="gap:6px;margin-top:5px;">
+      <div class="alert alert-info" style="font-size:11px;">
+        <span class="alert-icon">💬</span>
+        <div><strong>Se vier de indicação:</strong> "O [nome] me falou um pouco sobre você. Prefiro ouvir de você — o que ele me contou pode estar desatualizado."</div>
+      </div>
+      <div class="alert alert-info" style="font-size:11px;">
+        <span class="alert-icon">🖥</span>
+        <div><strong>Se pedir demo antes do SPIN:</strong> "Vou te mostrar sim — mas quero garantir que você veja o que resolve o seu caso específico. Me dá 10 minutos antes?"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="gap:8px;">
+    <div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <div class="spin-letter spin-s">S</div>
+        <div>
+          <div class="section-label" style="margin:0;">Situação — 7 min</div>
+          <p style="font-size:10.5px;margin:0;">Mapear contexto. Dados, não opinião.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:10px 12px;">
+        <div style="font-size:11.5px;color:var(--text-muted);">
+          <div style="padding:3px 0;display:flex;gap:6px;"><span class="cyan">1.</span> "Como funciona o processo de vendas hoje — do lead chegar até fechar?"</div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span class="cyan">2.</span> "Quantos leads chegam por mês e de onde vêm?"</div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span class="cyan">3.</span> "Você usa CRM ou gerencia no WhatsApp?"</div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span class="cyan">4.</span> "Quantos vendedores ativos e como é a divisão de trabalho?"</div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span class="cyan">5.</span> "Quanto investe em tráfego pago por mês, mais ou menos?"</div>
+        </div>
+      </div>
+      <div class="alert alert-warn" style="margin-top:6px;">
+        <span class="alert-icon">⚠</span>
+        <span>5 perguntas S é o suficiente. Não mapeie tudo agora — avance para P.</span>
+      </div>
+    </div>
+    <div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <div class="spin-letter spin-p">P</div>
+        <div>
+          <div class="section-label" style="margin:0;color:#a78bfa;">Problema — 7 min</div>
+          <p style="font-size:10.5px;margin:0;">Descobrir onde dói. Deixar o prospect autodeclarar.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:10px 12px;">
+        <div style="font-size:11.5px;color:var(--text-muted);">
+          <div style="padding:3px 0;display:flex;gap:6px;"><span style="color:#a78bfa;">1.</span> "Qual a maior dificuldade do time — onde você acha que perde mais?"</div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span style="color:#a78bfa;">2.</span> "O time faz follow-up com todos os leads ou só os que respondem?"</div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span style="color:#a78bfa;">3.</span> "Você tem base de leads antigos que não fecharam — sabe o tamanho?"</div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span style="color:#a78bfa;">4.</span> "Quando um lead some sem resposta, o que acontece?"</div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span style="color:#a78bfa;">5.</span> "Se pudesse apontar 1 coisa que impede de converter mais — o que seria?"</div>
+        </div>
+      </div>
+      <div class="quote-block purple" style="margin-top:6px;font-size:10.5px;">
+        <strong style="color:#a78bfa;">Padrão validado:</strong> SPIN P bem feito → prospect autodeclara a dor sem ser perguntado diretamente. "Nosso follow-up é péssimo." Esse é o sinal.
+      </div>
+      <div class="alert alert-warn" style="margin-top:4px;">
+        <span class="alert-icon">⚠</span>
+        <span>Ao ouvir a primeira dor, não vá para a solução. Continue investigando.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <div class="logo" style="font-size:12px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Eloscope</div>
+    </div>
+    <span class="page-num">03 / 10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 4 — SPIN: I + N + APRESENTAÇÃO
+════════════════════════════════════════ -->
+<div class="page">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div class="logo" style="font-size:13px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Elo OS · Playbook Comercial</div>
+    <span class="badge badge-amber">03 · SPIN — I, N e Apresentação</span>
+  </div>
+  <div class="divider-accent"></div>
+
+  <div class="grid-2" style="gap:8px;margin-bottom:10px;">
+    <div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <div class="spin-letter spin-i">I</div>
+        <div>
+          <div class="section-label" style="margin:0;color:var(--amber);">Implicação — 8 min</div>
+          <p style="font-size:10.5px;margin:0;">Calcular JUNTO. Nunca apresentar o número pronto.</p>
+        </div>
+      </div>
+      <div class="card" style="padding:10px 12px;">
+        <div style="font-size:11.5px;color:var(--text-muted);">
+          <div style="padding:3px 0;display:flex;gap:6px;"><span class="amber">1.</span> "Quantos leads você recebe por mês, mais ou menos?"</div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span class="amber">2.</span> "Qual é a taxa de conversão hoje — de 10 leads, quantos fecham?"</div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span class="amber">3.</span> <em>"Me deixa calcular com você. Se a taxa subir [X]pp — [pausa] — quanto representa em R$ no fim do mês?"</em></div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span class="amber">4.</span> "Se seu melhor vendedor saísse hoje — impacto no faturamento nos próximos 3 meses?"</div>
+          <div style="padding:3px 0;display:flex;gap:6px;"><span class="amber">5.</span> "Essa base de leads antigos — se 5% respondessem a uma reativação, quantas vendas extras?"</div>
+        </div>
+      </div>
+      <div class="card card-amber" style="margin-top:6px;padding:10px 12px;">
+        <div class="label" style="margin-bottom:4px;">Técnica de cálculo ao vivo</div>
+        <div class="script-block" style="border-left-color:var(--amber);font-size:10.5px;">Lucas: "Me diz — quantos leads por mês?"
+Prospect: "Uns 50."
+Lucas: "E quantos fecham?"
+Prospect: "7, 8."
+Lucas: "Você tá em uns 15%. Se subir pra 20% — são 3 vendas extras. Qual seu ticket médio?"
+Prospect: "R$4.000."
+Lucas: "R$12.000 a mais por mês. Setup se paga em menos de 1 mês."
+[<strong>pausa — não preencha o silêncio</strong>]</div>
+      </div>
+    </div>
+    <div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <div class="spin-letter spin-n">N</div>
+        <div>
+          <div class="section-label" style="margin:0;color:var(--success);">Need-Payoff — 5 min</div>
+          <p style="font-size:10.5px;margin:0;">Fazer o prospect DECLARAR que precisa da solução.</p>
+        </div>
+      </div>
+      <div class="alert alert-danger" style="margin-bottom:6px;">
+        <span class="alert-icon">🔥</span>
+        <span><strong>É aqui que mais perde a venda.</strong> A tentação é ir para a apresentação depois da Implicação. Resista. N faz o prospect se comprometer emocionalmente.</span>
+      </div>
+      <div class="card" style="padding:10px 12px;">
+        <div style="font-size:11.5px;color:var(--text-muted);">
+          <div style="padding:4px 0;display:flex;gap:6px;"><span class="success">1.</span> "Se tivesse visibilidade em tempo real do que cada vendedor faz com os leads — como mudaria sua gestão?"</div>
+          <div style="padding:4px 0;display:flex;gap:6px;"><span class="success">2.</span> "Se o time tivesse script claro e cadência configurada — o que você faria diferente se não precisasse cobrar todo dia?"</div>
+          <div style="padding:4px 0;display:flex;gap:6px;"><span class="success">3.</span> "Se a taxa subisse [X]pp em 60 dias — o que mudaria concretamente no negócio?"</div>
+          <div style="padding:4px 0;display:flex;gap:6px;"><span class="success">4.</span> "O que seu time precisaria ter hoje pra você confiar neles quando não está presente?"</div>
+          <div style="padding:4px 0;display:flex;gap:6px;"><span class="success">5.</span> "Se o playbook estivesse pronto amanhã — qual seria a primeira coisa que seu melhor vendedor faria diferente?"</div>
+        </div>
+      </div>
+      <div class="alert alert-warn" style="margin-top:6px;">
+        <span class="alert-icon">⚠</span>
+        <span><strong>Sinal de alerta:</strong> prospect responde "não sei" ou "talvez" nas perguntas N. Significa que a Implicação não foi suficiente. Volte para I antes de avançar.</span>
+      </div>
+      <div class="alert alert-success" style="margin-top:4px;">
+        <span class="alert-icon">✓</span>
+        <span><strong>Sinal de sucesso:</strong> o prospect começa a descrever a solução com as próprias palavras. Quando ouvir isso, pode ir para a apresentação.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">Apresentação — 10 min · Conectar o que ELE disse com o que o Elo OS faz</div>
+
+  <div class="grid-2" style="gap:8px;">
+    <div>
+      <div class="quote-block" style="margin-bottom:6px;font-size:11.5px;">
+        "O Elo OS não é consultoria que orienta e vai embora. Não é CRM que você alimenta. É infraestrutura que fica operando — mais parecido com ter um gerente comercial de plantão por R$1.500/mês do que qualquer coisa que você já contratou."
+      </div>
+      <div class="quote-block" style="font-size:11.5px;margin-bottom:6px;">
+        "A gente implementa enquanto a operação tá rodando. Mês 1 é diagnóstico e playbook — o time não precisa parar nada."
+      </div>
+      <table style="font-size:11px;">
+        <thead><tr><th>Dor declarada</th><th>O que o Elo OS entrega</th></tr></thead>
+        <tbody>
+          <tr><td>"Follow-up inconsistente"</td><td>Cadências + IA Copiloto alerta quando lead esfria</td></tr>
+          <tr><td>"Cada um faz do seu jeito"</td><td>Playbook documentado + scripts padronizados</td></tr>
+          <tr><td>"Não sei quem está performando"</td><td>Dashboard métricas por vendedor em tempo real</td></tr>
+          <tr><td>"Tenho base parada"</td><td>Campanha reativação + lead scoring automático</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="card-accent" style="padding:10px 12px;margin-bottom:6px;">
+        <div class="label" style="margin-bottom:6px;">Stack de valor — Starter (1–2 vendedores)</div>
+        <div style="font-size:11px;color:var(--text-muted);">
+          <div style="display:flex;justify-content:space-between;padding:2px 0;"><span>✓ Diagnóstico Comercial</span><span class="muted">R$2.500</span></div>
+          <div style="display:flex;justify-content:space-between;padding:2px 0;"><span>✓ Playbook personalizado</span><span class="muted">R$4.000</span></div>
+          <div style="display:flex;justify-content:space-between;padding:2px 0;"><span>✓ IA Copiloto WhatsApp</span><span class="muted">R$600/mês</span></div>
+          <div style="display:flex;justify-content:space-between;padding:2px 0;"><span>✓ Treinamento do time</span><span class="muted">R$1.200</span></div>
+          <div style="display:flex;justify-content:space-between;padding:2px 0;"><span>✓ Reunião mensal de revisão</span><span class="muted">R$800/mês</span></div>
+          <div class="divider-sm"></div>
+          <div style="display:flex;justify-content:space-between;"><span class="muted">Valor separado</span><span style="text-decoration:line-through;color:var(--text-dim);">R$7.700+</span></div>
+          <div style="display:flex;justify-content:space-between;margin-top:2px;"><span style="font-weight:700;color:var(--text);">Você investe</span><span class="cyan" style="font-weight:700;">R$3.000 setup + R$1.500/mês</span></div>
+        </div>
+      </div>
+      <div class="card card-success" style="padding:10px 12px;margin-bottom:6px;">
+        <div class="label" style="margin-bottom:4px;color:var(--success);">Garantia — específica, não genérica</div>
+        <p style="font-size:11px;margin:0;">
+          "Antes de começar, a gente define junto o que 'funcionou' significa pra você. Quais 3 números precisam mudar em 60 dias. Se não mudar nenhum, devolvo o setup. Não precisa nem explicar — o critério já está combinado desde o dia 1."
+        </p>
+      </div>
+      <div class="alert alert-info">
+        <span class="alert-icon">💡</span>
+        <span><strong>Ancoragem por venda:</strong> "R$1.500/mês = R$50/dia. 1 venda extra paga o setup. A partir do mês 2, é lucro."</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <div class="logo" style="font-size:12px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Eloscope</div>
+    </div>
+    <span class="page-num">04 / 10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 5 — SCRIPTS E CADÊNCIAS
+════════════════════════════════════════ -->
+<div class="page">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div class="logo" style="font-size:13px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Elo OS · Playbook Comercial</div>
+    <span class="badge badge-amber">04 · Scripts e Cadências</span>
+  </div>
+  <div class="divider-accent"></div>
+
+  <div class="section-label">Abordagem Inicial — WhatsApp / DM</div>
+  <div class="grid-2" style="gap:8px;margin-bottom:10px;">
+    <div>
+      <div class="label" style="margin-bottom:4px;">Versão 1 — Dor direta</div>
+      <div class="script-block">[Nome], vi que a [empresa] tem time de vendas ativo.
+
+Pergunta direta: seus vendedores têm processo de follow-up padronizado, ou cada um faz do jeito que acha melhor?
+
+A maioria dos times perde lead na segunda tentativa — não por falta de produto, por falta de processo.
+
+É isso que a gente resolve. Vale 20 minutos essa semana?</div>
+    </div>
+    <div>
+      <div class="label" style="margin-bottom:4px;">Versão 3 — Indicação</div>
+      <div class="script-block">[Nome], o [indicador] me disse pra falar com você. Disse que você entende de vendas e não tem medo de experimentar o que funciona.
+
+A gente estrutura o processo comercial — playbook, cadência de follow-up, IA pra o time não deixar lead esfriar.
+
+Você teria 20 minutos essa semana pra eu entender como tá o seu comercial?</div>
+    </div>
+  </div>
+
+  <div class="section-label">Versão 2 — Ganchos por segmento</div>
+  <div class="grid-2" style="gap:6px;margin-bottom:10px;">
+    <div class="quote-block" style="font-size:11px;">
+      <strong style="color:var(--cyan);">Imobiliária:</strong> "Quando um cliente some depois do 'vou pensar' — seu time tem processo de recuperação ou depende do corretor lembrar de ligar?"
+    </div>
+    <div class="quote-block" style="font-size:11px;">
+      <strong style="color:var(--cyan);">Energia Solar:</strong> "Lead que chega no fim de semana e não recebe resposta até segunda — o que acontece com ele no seu processo hoje?"
+    </div>
+    <div class="quote-block" style="font-size:11px;">
+      <strong style="color:var(--cyan);">Clínica:</strong> "Paciente que consultou uma vez e sumiu — você tem processo sistemático de reativação ou depende de cada profissional fazer por conta?"
+    </div>
+    <div class="card" style="padding:8px 12px;font-size:11px;">
+      <p style="margin:0;"><em>Após resposta:</em> "É exatamente isso que a gente resolve. Vale 20 minutos essa semana?"</p>
+    </div>
+  </div>
+
+  <div class="section-label">Cadência Pós-Proposta</div>
+  <div class="grid-2" style="gap:6px;margin-bottom:8px;">
+    <div>
+      <div class="label" style="margin-bottom:4px;">Dia 0 — Mesmo dia</div>
+      <div class="script-block" style="font-size:11px;">[Nome], proposta aqui. Qualquer ponto pra alinhar, é só chamar. Tenho 15 min disponível essa semana se precisar.</div>
+
+      <div class="label" style="margin-top:8px;margin-bottom:4px;">Dia 1 — 24h após</div>
+      <div class="script-block" style="font-size:11px;">[Nome], uma coisa que esqueço de falar na call:
+
+Mês 1 é diagnóstico e playbook — você não precisa do time inteiro pra começar. A gente constrói enquanto a operação segue normal.
+
+Proposta chegou certinho?</div>
+
+      <div class="label" style="margin-top:8px;margin-bottom:4px;">Dia 3 — 72h após</div>
+      <div class="script-block" style="font-size:11px;">[Nome], enquanto você analisa — pergunta que aparece bastante:
+
+"Meu time vai usar isso?"
+
+O padrão de falha mais comum é ferramenta sem processo. A gente começa pelo processo. IA entra depois que o time entende o que ganha com ela.
+
+Isso respondeu alguma dúvida que ficou?</div>
+    </div>
+    <div>
+      <div class="label" style="margin-bottom:4px;">Dia 7 — Última mensagem ativa</div>
+      <div class="script-block" style="font-size:11px;margin-bottom:8px;">[Nome], última mensagem ativa por agora.
+
+Não precisa de resposta sobre a proposta. Mas uma coisa me ajuda: o que travou — foi o investimento, o timing, ou ficou alguma dúvida sobre como funciona na prática?
+
+Pode ser honesto. Ajuda mais do que um 'não'.
+
+Fico aqui quando o momento mudar.</div>
+
+      <div class="section-label" style="margin-top:6px;">Reativação (30 / 60 / 90 dias)</div>
+      <div class="flex-col" style="gap:5px;">
+        <div class="card" style="padding:8px 12px;">
+          <div class="label" style="margin-bottom:3px;color:var(--cyan);">30 dias</div>
+          <div style="font-size:11px;color:var(--text-muted);">"[Nome], faz um mês. Como tá o comercial? [Dor específica] — isso mudou ou ainda tá pesando?"</div>
+        </div>
+        <div class="card" style="padding:8px 12px;">
+          <div class="label" style="margin-bottom:3px;color:var(--amber);">60 dias</div>
+          <div style="font-size:11px;color:var(--text-muted);">"[Nome], tenho um caso de [segmento] que resolveu [dor específica] em 60 dias. Vale 15 min?"</div>
+        </div>
+        <div class="card" style="padding:8px 12px;">
+          <div class="label" style="margin-bottom:3px;color:var(--text-dim);">90 dias</div>
+          <div style="font-size:11px;color:var(--text-muted);">"[Nome], último contato ativo. Fico disponível quando o momento mudar."</div>
+        </div>
+      </div>
+      <div class="alert alert-info" style="margin-top:6px;">
+        <span class="alert-icon">📌</span>
+        <span><strong>Reativação de base fria:</strong> âncora sempre em dor específica ou resultado real de segmento similar. Nunca "vagas restantes".</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <div class="logo" style="font-size:12px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Eloscope</div>
+    </div>
+    <span class="page-num">05 / 10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 6 — OBJEÇÕES PREÇO + TIMING
+════════════════════════════════════════ -->
+<div class="page">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div class="logo" style="font-size:13px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Elo OS · Playbook Comercial</div>
+    <span class="badge badge-danger">05 · Mapa de Objeções</span>
+  </div>
+  <div class="divider-accent"></div>
+
+  <div class="alert alert-info" style="margin-bottom:8px;">
+    <span class="alert-icon">💡</span>
+    <span><strong>Princípio:</strong> responda objeção com pergunta, não com argumento. SPIN bem feito elimina a maioria das objeções antes da apresentação. Prospect que calculou o próprio problema não consegue dizer "tá caro" com convicção.</span>
+  </div>
+
+  <div class="section-label" style="color:var(--danger);">Categoria 1 — Preço e ROI</div>
+  <div class="flex-col" style="gap:6px;margin-bottom:10px;">
+    <div class="card">
+      <div class="obj-header">
+        <span class="obj-id">OBJ-01</span>
+        <h4 style="margin:0;">"Não sei se vai trazer resultado"</h4>
+        <span class="badge badge-dim" style="margin-left:auto;">Incerteza / ceticismo</span>
+      </div>
+      <div class="grid-2" style="gap:6px;">
+        <div class="quote-block" style="font-size:11px;">"Entendo. O que precisaria acontecer nos primeiros 30 dias pra você ter certeza que valeu?"<br><br><em>Deixe ele definir o critério. Depois valide: "isso está dentro do que a gente entrega."</em></div>
+        <div class="alert alert-danger"><span class="alert-icon">✗</span><span>Convencer com argumentos sobre o produto. O prospect precisa definir o critério — você só confirma se entrega.</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="obj-header">
+        <span class="obj-id">OBJ-02</span>
+        <h4 style="margin:0;">"Tá caro / não tenho budget"</h4>
+        <span class="badge badge-dim" style="margin-left:auto;">Compara com nada</span>
+      </div>
+      <div class="grid-2" style="gap:6px;">
+        <div>
+          <div class="quote-block" style="font-size:11px;margin-bottom:4px;">"Caro em relação ao quê — ao orçamento disponível ou ao retorno que você espera?"<br><br><em>Se retorno:</em> "Quanto você calcula que esse problema custa por mês em vendas perdidas?"<br><em>Se orçamento:</em> "Você investe quanto em marketing? O Elo OS é infraestrutura, não anúncio."</div>
+          <div class="alert alert-info" style="font-size:11px;">
+            <span class="alert-icon">⚓</span>
+            <span><strong>R$1.500/mês = R$50/dia.</strong> "1 venda extra paga o setup."</span>
+          </div>
+        </div>
+        <div class="alert alert-danger"><span class="alert-icon">✗</span><span><strong>Nunca dar desconto imediato</strong> — sinaliza que o preço original era artificial. Destrói percepção de valor para todo o contrato.</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="obj-header">
+        <span class="obj-id">OBJ-04</span>
+        <h4 style="margin:0;">"Recebi proposta mais barata / estou cotando outro"</h4>
+      </div>
+      <div style="font-size:11.5px;color:var(--text-muted);">
+        <em>Não atacar. Educar com 3 perguntas:</em>
+        <div style="padding:3px 6px;"><span class="amber">P1:</span> "Inclui playbook aprovado por você antes da IA rodar?"</div>
+        <div style="padding:3px 6px;"><span class="amber">P2:</span> "Tem revisão mensal com account dedicado ou é self-service?"</div>
+        <div style="padding:3px 6px;"><span class="amber">P3:</span> "Tem plano de adoção do time ou só entrega a ferramenta?"</div>
+        <div style="padding:3px 6px;color:var(--text-dim);font-size:10.5px;"><em>Se ponto fraco específico não estiver coberto: "Me chama em 4 meses."</em></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label" style="color:var(--amber);">Categoria 2 — Timing</div>
+  <div class="flex-col" style="gap:6px;">
+    <div class="card card-amber">
+      <div class="obj-header">
+        <span class="obj-id">OBJ-05</span>
+        <h4 style="margin:0;">"Equipe reduzida / não é o momento"</h4>
+        <span class="badge badge-danger" style="margin-left:auto;">⭐ Bloqueio mais comum</span>
+      </div>
+      <div class="grid-2" style="gap:6px;">
+        <div>
+          <p style="font-size:11px;margin-bottom:4px;"><strong>Como qualificar:</strong> objeção real tem evento concreto e data. Pseudo não tem nada específico.</p>
+          <div class="quote-block amber" style="font-size:11px;">Se timing de equipe: "Faz sentido. Mas deixa eu virar a lógica: mês 1 é diagnóstico e playbook — a gente não envolve o time ainda. Quando sua equipe voltar, ela entra com script, cadência e processo pronto. É como reformar a cozinha enquanto o restaurante tá fechado."<br><br>Se prioridade: "O problema que você descreveu vai desaparecer enquanto vocês se organizam?"</div>
+        </div>
+        <div>
+          <div class="alert alert-warn">
+            <span class="alert-icon">⚠</span>
+            <span><strong>Aprendizado real das calls:</strong> esta objeção impediu um fechamento. O reframe "construir durante o vazio" entra PROATIVO na apresentação — antes do prospect declarar timing ruim.</span>
+          </div>
+          <div class="alert alert-danger" style="margin-top:4px;">
+            <span class="alert-icon">✗</span>
+            <span>Aceitar e agendar follow-up pro próximo semestre sem compromisso = negócio morto.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="obj-header">
+        <span class="obj-id">OBJ-06</span>
+        <h4 style="margin:0;">"Vou pensar e te falo"</h4>
+        <span class="badge badge-dim" style="margin-left:auto;">Dúvida não verbalizada</span>
+      </div>
+      <div class="grid-2" style="gap:6px;">
+        <div class="quote-block" style="font-size:11px;">"Claro. O que especificamente você precisa refletir — é o investimento, o timing, ou tem alguma dúvida técnica em aberto?"<br><br>Sempre fechar com próximo passo: "Que tal marcar 15 minutos na [data]?"</div>
+        <div class="alert alert-danger"><span class="alert-icon">✗</span><span>"Claro, sem problema" + esperar retorno que nunca vem. "Vou pensar" sem próximo passo = negócio morto.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <div class="logo" style="font-size:12px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Eloscope</div>
+    </div>
+    <span class="page-num">06 / 10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 7 — OBJEÇÕES: CRENÇA, ADOÇÃO, DECISÃO + ÁRVORE
+════════════════════════════════════════ -->
+<div class="page">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div class="logo" style="font-size:13px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Elo OS · Playbook Comercial</div>
+    <span class="badge badge-danger">05 · Mapa de Objeções (cont.)</span>
+  </div>
+  <div class="divider-accent"></div>
+
+  <div class="grid-2" style="gap:8px;margin-bottom:8px;">
+    <div>
+      <div class="section-label" style="color:#a78bfa;">Categoria 3 — Crença e Experiência Anterior</div>
+      <div class="flex-col" style="gap:6px;">
+        <div class="card">
+          <div class="obj-header"><span class="obj-id">OBJ-07</span><h4 style="margin:0;">"Já tentei, não funcionou"</h4></div>
+          <div class="quote-block purple" style="font-size:11px;margin-bottom:4px;">"Faz todo sentido ser mais exigente. Me conta: o que especificamente não funcionou — foi a ferramenta, a implementação, o suporte, ou o engajamento do time?"<br><br><em>Após ouvir:</em> "O que você descreveu é onde a gente faz diferente: implementamos e ficamos — não orientamos e saímos. Playbook aprovado por você antes da IA entrar."</div>
+          <div class="alert alert-danger"><span class="alert-icon">✗</span><span>Minimizar a experiência anterior. Nunca dizer "nosso produto é diferente" sem ouvir o que travou antes.</span></div>
+        </div>
+        <div class="card">
+          <div class="obj-header"><span class="obj-id">OBJ-08</span><h4 style="margin:0;">"Meu negócio é diferente"</h4></div>
+          <div class="quote-block purple" style="font-size:11px;">"O que especificamente você acha que é diferente?"<br><br><em>Após ouvir:</em> "Quer que a gente faça um diagnóstico de 30 min só pra ver se faz sentido pro seu contexto — sem compromisso?"</div>
+          <div class="alert alert-danger"><span class="alert-icon">✗</span><span>"Funciona para todo tipo de empresa" — confirma exatamente o medo de que é solução genérica.</span></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label" style="color:var(--cyan);">Categoria 4 — Adoção do Time</div>
+      <div class="card" style="margin-bottom:6px;">
+        <div class="obj-header"><span class="obj-id">OBJ-09</span><h4 style="margin:0;">"Meu time não vai usar"</h4></div>
+        <div class="quote-block" style="font-size:11px;margin-bottom:4px;">"Isso acontece muito. Como foi a implantação quando tentaram antes? Teve treinamento? O gestor usava junto?"<br><br><em>Após ouvir:</em> "O padrão de falha é ferramenta sem processo. A gente começa pelos 2-3 pontos que mais doem no dia a dia do vendedor. Eles usam porque resolve um problema deles — não porque foram obrigados."</div>
+        <div class="alert alert-danger"><span class="alert-icon">✗</span><span>"É muito fácil de usar" — prospect não quer saber sobre a ferramenta. Quer saber sobre o processo de adoção.</span></div>
+      </div>
+      <div class="section-label" style="color:var(--success);margin-top:6px;">Categoria 5 — Autoridade</div>
+      <div class="card">
+        <div class="obj-header"><span class="obj-id">OBJ-10</span><h4 style="margin:0;">"Preciso falar com meu sócio"</h4></div>
+        <p style="font-size:10.5px;color:var(--text-dim);margin-bottom:4px;"><strong>Real:</strong> sabe o que vai apresentar e tem data. <strong>Pseudo:</strong> não sabe quando conversa.</p>
+        <div class="quote-block" style="font-size:11px;margin-bottom:4px;"><em>Resposta real:</em> "Faz sentido. O que o seu sócio vai querer saber antes de aprovar?"<br><br><em>Após ouvir:</em> "Que tal marcar 20 minutos com vocês dois? Assim eu apresento direto pra ele os números que a gente calculou — sem ele ter que ouvir pela sua boca."</div>
+        <div class="quote-block purple" style="font-size:11px;margin-bottom:4px;"><em>Resposta pseudo:</em> "Se o seu sócio topasse, você estaria pronto pra avançar? O que ainda tá em aberto pra você?"</div>
+        <div class="alert alert-danger"><span class="alert-icon">✗</span><span>Enviar proposta por e-mail "para o sócio analisar" sem próximo passo. Perde controle do processo.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">Árvore de Diagnóstico Rápido</div>
+  <div class="card-accent" style="padding:12px 14px;">
+    <div class="grid-2" style="gap:8px;">
+      <div class="card card-danger" style="padding:10px 12px;">
+        <h4 style="color:var(--danger);margin-bottom:4px;">Objeção sobre PREÇO/VALOR</h4>
+        <div style="font-size:11px;color:var(--text-muted);">
+          <div style="padding:2px 0;">→ Não calculou o custo do problema? <strong>Voltar para I</strong></div>
+          <div style="padding:2px 0;">→ Não declarou que precisa resolver? <strong>Voltar para N</strong></div>
+        </div>
+      </div>
+      <div class="card card-amber" style="padding:10px 12px;">
+        <h4 style="color:var(--amber);margin-bottom:4px;">Objeção sobre TIMING</h4>
+        <div style="font-size:11px;color:var(--text-muted);">
+          <div style="padding:2px 0;">→ Tem evento concreto? <strong>Reframe "construir durante o vazio"</strong></div>
+          <div style="padding:2px 0;">→ Nada específico? <strong>Criar custo de adiamento</strong></div>
+        </div>
+      </div>
+      <div class="card card-purple" style="padding:10px 12px;">
+        <h4 style="color:#a78bfa;margin-bottom:4px;">Objeção sobre CRENÇA</h4>
+        <div style="font-size:11px;color:var(--text-muted);">
+          <div style="padding:2px 0;">→ Primeiro ouvir a experiência anterior</div>
+          <div style="padding:2px 0;">→ Depois diferenciar com especificidade</div>
+        </div>
+      </div>
+      <div class="card card-success" style="padding:10px 12px;">
+        <h4 style="color:var(--success);margin-bottom:4px;">Objeção sobre DECISÃO</h4>
+        <div style="font-size:11px;color:var(--text-muted);">
+          <div style="padding:2px 0;">→ Identificar se é real ou pseudo</div>
+          <div style="padding:2px 0;">→ Sempre fechar com próximo passo concreto</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <div class="logo" style="font-size:12px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Eloscope</div>
+    </div>
+    <span class="page-num">07 / 10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 8 — MICRO-CASES PT.1
+════════════════════════════════════════ -->
+<div class="page">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div class="logo" style="font-size:13px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Elo OS · Playbook Comercial</div>
+    <span class="badge badge-success">06 · Micro-Cases por Segmento</span>
+  </div>
+  <div class="divider-accent"></div>
+
+  <div class="alert alert-info" style="margin-bottom:10px;">
+    <span class="alert-icon">📋</span>
+    <span><strong>Como usar:</strong> prospect declara a dor → Lucas valida em uma linha → conta o case → <strong>silêncio de 3 segundos</strong> → pergunta de avanço: "Quanto você acha que está deixando na mesa por isso?"</span>
+  </div>
+
+  <div class="grid-2" style="gap:8px;">
+    <div class="case-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span class="badge badge-cyan">Imobiliária</span>
+        <span class="dim" style="font-size:10px;">Interior SP</span>
+      </div>
+      <div class="grid-2" style="gap:6px;font-size:11px;margin-bottom:8px;">
+        <div class="card" style="padding:7px 10px;">
+          <div class="label" style="margin-bottom:3px;">Situação</div>
+          <span class="muted">4 corretores · 80 leads/mês · sem script · conversão 4%</span>
+        </div>
+        <div class="card card-success" style="padding:7px 10px;">
+          <div class="label" style="margin-bottom:3px;color:var(--success);">Resultado (60 dias)</div>
+          <span class="muted">4% → <strong class="success">7%</strong> · 3 → <strong class="success">6</strong> vendas/mês · sem contratar corretor</span>
+        </div>
+      </div>
+      <div class="quote-block" style="font-size:11px;">"Tinha uma imobiliária no interior que recebia 80 leads por mês e fechava 3. A gente não trouxe mais lead — só organizou o que já existia. Em 60 dias tava fechando 6. O problema não era a quantidade de lead, era o que acontecia depois."</div>
+      <div style="margin-top:6px;font-size:10.5px;color:var(--text-dim);"><em>Derruba: "já tenho leads" · "minha equipe já sabe vender"</em></div>
+    </div>
+
+    <div class="case-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span class="badge badge-amber">Energia Solar</span>
+        <span class="dim" style="font-size:10px;">Sul MG</span>
+      </div>
+      <div class="grid-2" style="gap:6px;font-size:11px;margin-bottom:8px;">
+        <div class="card" style="padding:7px 10px;">
+          <div class="label" style="margin-bottom:3px;">Situação</div>
+          <span class="muted">8 vendedores · 340 clientes instalados · zero pós-venda ou indicação</span>
+        </div>
+        <div class="card card-success" style="padding:7px 10px;">
+          <div class="label" style="margin-bottom:3px;color:var(--success);">Resultado (60 dias)</div>
+          <span class="muted">11 indicações · 4 propostas · <strong class="success">2 fechamentos · R$47k</strong> sem lead novo pago</span>
+        </div>
+      </div>
+      <div class="quote-block" style="font-size:11px;">"Empresa de solar com 340 clientes instalados. Nunca tinham ligado pra nenhum depois da instalação. A gente criou uma régua simples — satisfação, indicação, ampliação. Em 60 dias vieram 11 indicações. Quase 50 mil de receita de gente que já confiava na empresa."</div>
+      <div style="margin-top:6px;font-size:10.5px;color:var(--text-dim);"><em>Derruba: "meu time não tem tempo" · "indicação é aleatória"</em></div>
+    </div>
+
+    <div class="case-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span class="badge badge-purple">Clínica Multi</span>
+        <span class="dim" style="font-size:10px;">Grande SP</span>
+      </div>
+      <div class="grid-2" style="gap:6px;font-size:11px;margin-bottom:8px;">
+        <div class="card" style="padding:7px 10px;">
+          <div class="label" style="margin-bottom:3px;">Situação</div>
+          <span class="muted">Psicólogo + nutricionista + fisio · 60–70 consultas/mês · no-show 22%</span>
+        </div>
+        <div class="card card-success" style="padding:7px 10px;">
+          <div class="label" style="margin-bottom:3px;color:var(--success);">Resultado (60 dias)</div>
+          <span class="muted">No-show 22% → <strong class="success">9%</strong> · 18 inativos reagendaram · <strong class="success">+R$8.400</strong> sem nova agenda</span>
+        </div>
+      </div>
+      <div class="quote-block" style="font-size:11px;">"Clínica em SP com três profissionais. 22% de no-show numa agenda lotada é dinheiro jogado fora todo dia. Criamos confirmação automática e reativação de quem sumiu. Em dois meses, 18 pacientes inativos voltaram. Faturamento subiu mais de 8 mil sem abrir agenda nova."</div>
+      <div style="margin-top:6px;font-size:10.5px;color:var(--text-dim);"><em>Derruba: "somos pequenos" · "não quero parecer vendedor"</em></div>
+    </div>
+
+    <div class="case-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span class="badge badge-dim">Consultoria B2B</span>
+        <span class="dim" style="font-size:10px;">Interior RS</span>
+      </div>
+      <div class="grid-2" style="gap:6px;font-size:11px;margin-bottom:8px;">
+        <div class="card" style="padding:7px 10px;">
+          <div class="label" style="margin-bottom:3px;">Situação</div>
+          <span class="muted">Consultor tributário solo · 14 anos mercado · pipeline na cabeça · perdia por esquecimento</span>
+        </div>
+        <div class="card card-success" style="padding:7px 10px;">
+          <div class="label" style="margin-bottom:3px;color:var(--success);">Resultado (60 dias)</div>
+          <span class="muted">Fechamento 35% → <strong class="success">52%</strong> · 2 negócios recuperados · <strong class="success">1 era R$18k</strong></span>
+        </div>
+      </div>
+      <div class="quote-block" style="font-size:11px;">"Consultor tributário, 14 anos de mercado, excelente tecnicamente — mas toda venda era na memória dele. A gente não inventou nada novo. Pegou o que ele já sabia, colocou no papel e criou um aviso pra quando o cliente sumia. Taxa de fechamento saiu de 35% pra 52%."</div>
+      <div style="margin-top:6px;font-size:10.5px;color:var(--text-dim);"><em>Derruba: "conheço meus clientes, não preciso de CRM" · "processo engessa"</em></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <div class="logo" style="font-size:12px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Eloscope</div>
+    </div>
+    <span class="page-num">08 / 10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 9 — CASE REATIVAÇÃO + FRASES-ÂNCORA
+════════════════════════════════════════ -->
+<div class="page">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div class="logo" style="font-size:13px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Elo OS · Playbook Comercial</div>
+    <span class="badge badge-cyan">07 · Frases-Âncora</span>
+  </div>
+  <div class="divider-accent"></div>
+
+  <div class="section-label" style="margin-bottom:6px;">Micro-Case — Reativação de Base (qualquer segmento)</div>
+  <div class="card-accent" style="margin-bottom:12px;padding:12px 14px;">
+    <div class="grid-2" style="gap:8px;">
+      <div class="grid-2" style="gap:6px;font-size:11px;align-content:start;">
+        <div class="card" style="padding:7px 10px;">
+          <div class="label" style="margin-bottom:3px;">Situação</div>
+          <span class="muted">200+ contatos na base · nenhum ativo há 6+ meses · time focado 100% em lead novo · CAC subindo</span>
+        </div>
+        <div class="card card-success" style="padding:7px 10px;">
+          <div class="label" style="margin-bottom:3px;color:var(--success);">Resultado (30 dias)</div>
+          <span class="muted">12% da base reagiu · <strong class="success">8 negócios reabertos · 3 fechamentos</strong> · custo adicional: zero</span>
+        </div>
+      </div>
+      <div>
+        <div class="quote-block" style="font-size:11.5px;margin-bottom:6px;">"A gente fez um exercício com uma empresa — pegou 200 contatos antigos, esquecidos. Classificou por situação, mandou mensagem certa pra cada grupo. Em 30 dias, 12% reagiu. Três fecharam. Nenhum real investido em mídia. Base parada é dinheiro que a empresa já gastou pra gerar e não aproveitou."</div>
+        <div style="font-size:10.5px;color:var(--text-dim);font-style:italic;">Derruba: "lead antigo não volta" · "preciso de mais lead, não de organização"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">5 Frases-Âncora — Memorizar · Usar em qualquer momento</div>
+  <div class="flex-col" style="gap:8px;margin-bottom:12px;">
+    <div class="anchor-phrase">
+      <div class="anchor-num">1</div>
+      <div>
+        <p style="font-size:13px;font-weight:700;color:var(--text);margin:0;">"Você não precisa de mais lead. Precisa converter mais os que já chegam."</p>
+        <p style="font-size:10.5px;color:var(--text-dim);margin:0;margin-top:2px;">Usa quando: prospect diz "preciso de tráfego" ou "preciso de mais lead"</p>
+      </div>
+    </div>
+    <div class="anchor-phrase">
+      <div class="anchor-num">2</div>
+      <div>
+        <p style="font-size:13px;font-weight:700;color:var(--text);margin:0;">"É como ter um gerente comercial de plantão por R$50 por dia — sem encargo, sem férias."</p>
+        <p style="font-size:10.5px;color:var(--text-dim);margin:0;margin-top:2px;">Usa quando: prospect compara com custo de contratar pessoa</p>
+      </div>
+    </div>
+    <div class="anchor-phrase">
+      <div class="anchor-num">3</div>
+      <div>
+        <p style="font-size:13px;font-weight:700;color:var(--text);margin:0;">"O problema não é o vendedor. Sem processo, até o melhor improvisa."</p>
+        <p style="font-size:10.5px;color:var(--text-dim);margin:0;margin-top:2px;">Usa quando: prospect defende a equipe ("meu time é bom")</p>
+      </div>
+    </div>
+    <div class="anchor-phrase">
+      <div class="anchor-num">4</div>
+      <div>
+        <p style="font-size:13px;font-weight:700;color:var(--text);margin:0;">"A IA não fecha venda. Ela faz o vendedor aparecer na hora certa, com a mensagem certa."</p>
+        <p style="font-size:10.5px;color:var(--text-dim);margin:0;margin-top:2px;">Usa quando: prospect tem ceticismo sobre IA ou acha que vai substituir o time</p>
+      </div>
+    </div>
+    <div class="anchor-phrase">
+      <div class="anchor-num">5</div>
+      <div>
+        <p style="font-size:13px;font-weight:700;color:var(--text);margin:0;">"60 dias sem resultado, devolvo o setup. Sem burocracia."</p>
+        <p style="font-size:10.5px;color:var(--text-dim);margin:0;margin-top:2px;">Usa quando: prospect tem ceticismo sobre resultado ou pede garantia</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Apêndice — Perguntas de Reforço por Segmento</div>
+  <div class="grid-2" style="gap:6px;">
+    <div class="card" style="padding:8px 12px;">
+      <h4 style="margin-bottom:4px;">Imobiliária</h4>
+      <ul class="clean" style="font-size:11px;">
+        <li>"Como funciona quando um cliente diz 'vou pensar' e some — tem processo de recuperação?"</li>
+        <li>"Seus corretores têm script de primeiro contato ou cada um aborda do seu jeito?"</li>
+      </ul>
+    </div>
+    <div class="card" style="padding:8px 12px;">
+      <h4 style="margin-bottom:4px;">Energia Solar</h4>
+      <ul class="clean" style="font-size:11px;">
+        <li>"Você tem base de clientes instalados — já tentou indicação de forma sistemática?"</li>
+        <li>"Leads que chegam mas não respondem no fim de semana — o que acontece na segunda?"</li>
+      </ul>
+    </div>
+    <div class="card" style="padding:8px 12px;">
+      <h4 style="margin-bottom:4px;">Clínica Multi-profissional</h4>
+      <ul class="clean" style="font-size:11px;">
+        <li>"Paciente que veio uma vez e não voltou — tem algum processo de reativação?"</li>
+        <li>"A equipe de agendamento tem script padronizado ou cada um agenda do seu jeito?"</li>
+      </ul>
+    </div>
+    <div class="card" style="padding:8px 12px;">
+      <h4 style="margin-bottom:4px;">Consultoria / Educação</h4>
+      <ul class="clean" style="font-size:11px;">
+        <li>"Quando um lead pede proposta mas some depois — qual o processo de follow-up hoje?"</li>
+        <li>"Seus consultores têm roteiro de discovery ou vão de improviso nas primeiras reuniões?"</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <div class="logo" style="font-size:12px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Eloscope</div>
+    </div>
+    <span class="page-num">09 / 10</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PÁGINA 10 — HANDOFF + KPIs + IA/HUMANO
+════════════════════════════════════════ -->
+<div class="page">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div class="logo" style="font-size:13px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Elo OS · Playbook Comercial</div>
+    <span class="badge badge-dim">08 · Handoff · KPIs · IA/Humano</span>
+  </div>
+  <div class="divider-accent"></div>
+
+  <div class="grid-2" style="gap:8px;margin-bottom:10px;">
+    <div>
+      <div class="section-label">06 · Handoff Interno — Lucas → Victor → Hugo</div>
+      <div class="card-accent" style="padding:10px 12px;margin-bottom:6px;">
+        <h4 style="margin-bottom:6px;">Lucas → Victor (no fechamento)</h4>
+        <div style="font-size:11px;color:var(--text-muted);">
+          <div style="display:flex;gap:6px;padding:2px 0;"><span class="cyan">·</span> Nome, empresa, segmento, cidade</div>
+          <div style="display:flex;gap:6px;padding:2px 0;"><span class="cyan">·</span> Tamanho do time e plano contratado</div>
+          <div style="display:flex;gap:6px;padding:2px 0;"><span class="cyan">·</span> Dores principais declaradas na call (top 3)</div>
+          <div style="display:flex;gap:6px;padding:2px 0;"><span class="cyan">·</span> CRM: tem ou não; qual</div>
+          <div style="display:flex;gap:6px;padding:2px 0;"><span class="cyan">·</span> Canal principal de leads</div>
+          <div style="display:flex;gap:6px;padding:2px 0;"><span class="cyan">·</span> Base parada? Leads antigos?</div>
+          <div style="display:flex;gap:6px;padding:2px 0;"><span class="cyan">·</span> O que o cliente quer ver nos primeiros 30 dias</div>
+        </div>
+        <div class="divider-sm"></div>
+        <div class="quote-block" style="font-size:11px;margin:0;">"Oi [nome], muito bem-vindo! Já passei seu briefing pro Victor. Ele entra em contato hoje/amanhã. Qualquer coisa me fala."</div>
+      </div>
+      <div class="card" style="padding:10px 12px;">
+        <h4 style="margin-bottom:5px;">Victor → Hugo (início do onboarding técnico)</h4>
+        <ul class="clean" style="font-size:11px;">
+          <li>Decisão de CRM (integrar qual? novo ou existente?)</li>
+          <li>Stack técnica do cliente (WhatsApp Business, Instagram...)</li>
+          <li>Prioridade 1 da Fase 2 (Copiloto ou Assistida primeiro?)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">07 · KPIs Semanais — Lucas</div>
+      <div class="card" style="padding:10px 12px;margin-bottom:6px;">
+        <div class="metric-row"><span>Leads prospectados/semana</span><span class="metric-val">10–15</span></div>
+        <div class="metric-row"><span>Taxa de resposta (outbound)</span><span class="metric-val">&gt;20%</span></div>
+        <div class="metric-row"><span>Taxa de qualificação</span><span class="metric-val">&gt;60%</span></div>
+        <div class="metric-row"><span>Qualificados → reunião</span><span class="metric-val">&gt;70%</span></div>
+        <div class="metric-row"><span>Proposta → fechamento</span><span class="metric-val">&gt;30%</span></div>
+        <div class="metric-row"><span>Tempo médio do ciclo</span><span class="metric-val">&lt;14 dias</span></div>
+      </div>
+      <div class="card card-danger" style="padding:10px 12px;">
+        <h4 style="color:var(--danger);margin-bottom:5px;">Alertas de deal em risco</h4>
+        <table style="font-size:11px;">
+          <tbody>
+            <tr><td>+14 dias no mesmo estágio</td><td>Lucas escala → Victor</td></tr>
+            <tr><td>Proposta +7 dias sem resposta</td><td>Victor entra na conversa</td></tr>
+            <tr><td>Objeção sem resposta</td><td>Victor entra na call</td></tr>
+            <tr><td>Prospect quer negociar abaixo do mínimo</td><td>Victor decide</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">08 · Regras IA / Humano</div>
+  <div class="grid-2" style="gap:8px;">
+    <div class="card" style="padding:10px 12px;">
+      <h4 style="margin-bottom:6px;">IA Copiloto <span class="dim" style="font-size:10px;">(com o vendedor · tempo real)</span></h4>
+      <table style="font-size:11px;">
+        <thead><tr><th>A IA faz</th><th>O humano decide</th></tr></thead>
+        <tbody>
+          <tr><td>Alerta quando lead não respondeu há X dias</td><td>Se e quando retomar</td></tr>
+          <tr><td>Sugere follow-up com base no histórico</td><td>Se manda e como adapta o tom</td></tr>
+          <tr><td>Identifica sinal de esfriamento</td><td>Estratégia de reativação</td></tr>
+          <tr><td>Entrega script pro próximo passo</td><td>Se usa, adapta ou descarta</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="padding:10px 12px;">
+      <h4 style="margin-bottom:6px;">IA Assistida <span class="dim" style="font-size:10px;">(para o gestor)</span></h4>
+      <table style="font-size:11px;">
+        <thead><tr><th>A IA faz</th><th>O humano decide</th></tr></thead>
+        <tbody>
+          <tr><td>Calcula lead scoring (quem priorizar)</td><td>Quem o vendedor aborda primeiro</td></tr>
+          <tr><td>Gera relatório de performance por vendedor</td><td>Ação de gestão (feedback, treinamento)</td></tr>
+          <tr><td>Mapeia base para reativação</td><td>Quais segmentos priorizar</td></tr>
+          <tr><td>Aponta gargalo do funil por semana</td><td>Qual ajuste de processo fazer</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="alert alert-success" style="margin-top:8px;">
+    <span class="alert-icon">🤖</span>
+    <span><strong>Princípio:</strong> IA não fecha venda. IA faz o vendedor chegar mais preparado e mais frequente. O fechamento é sempre humano.</span>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <div class="logo" style="font-size:12px;"><div class="logo-dot" style="width:5px;height:5px;"></div>Eloscope</div>
+      <span class="dim" style="font-size:9px;">v0.4 · Mai/2026 · @cso + @copy-chief</span>
+    </div>
+    <div class="footer-right">
+      <span class="dim" style="font-size:9px;">Para o time comercial da Eloscope · Confidencial</span>
+      <span class="page-num">10 / 10</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

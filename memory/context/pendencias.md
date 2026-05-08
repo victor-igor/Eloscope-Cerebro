@@ -11,6 +11,8 @@
 - [08/05/2026] 🔥 **Morgana — André (Autem) gerar Usuário de Sistema + token na Meta** · single point of failure para API oficial · replanejado para hoje · contato: WhatsApp `+55 17 98814-5147` · se não resolver hoje escalar para Matheus · tarefa ClickUp `86e19hpd6`
 - [08/05/2026] 🔥 **Morgana — morganasales_core atualizar para API oficial** · módulo de campanhas (`eloscope-ai/mod-campaigns`) só suporta API não-oficial · Grupo 1 bloqueia ativação da campanha · Lucas implementa · tarefa ClickUp `86e19hqg5`
 - [08/05/2026] **Morgana — confirmar cartão em dólar com Matheus** · sem cartão internacional o número da API oficial não envia nada · Lucas confirma com Matheus (`+5517981280789`) hoje · tarefa ClickUp `86e19hpeb`
+- [08/05/2026] 🔥 **Bravo — OpenClaw onboarding incompleto** · instalação travou no onboarding · próximo passo: concluir onboarding → instalar Nginx → passar para Hugo · Lucas
+- [08/05/2026] 🔥 **Bravo — acesso Gemini Code/Codex pendente** · sem acesso não dá para configurar ambiente de IA · Lucas cobrar Gustavo
 - [06/05/2026] 🔥 **Bravo — 4 bloqueantes vermelhos travam Sprint 2** · Gustavo precisa responder até 08/05: (1) acesso Hostinger, (2) nome assistente IA, (3) cliente-piloto Skill 1, (4) prazo SLA 48h ou 72h. Lucas dispara mensagem-modelo HOJE (vide `areas/vendas/clientes/bravo-agencia/operacional/apis-credenciais.md` §4). Critério NO-GO: 12/05 sem resposta = pausar e renegociar.
 - [06/05/2026] **Bravo — Hugo submete templates WhatsApp + App Review Meta dia 1 do Sprint 2** · 24-48h aprovação template + 3-7 dias App Review = se atrasar, Sprint 3 desliza
 - ✅ [06/05/2026] **Bravo — sync ClickUp ↔ Notion Sprint Board** · concluído: 55 tasks antigas renomeadas [ARQUIVADO], 6 tasks pai + 29 subtasks criadas com descrição executável completa (passos, inputs, DoD, dependências)
@@ -45,6 +47,8 @@
 - [25/04/2026] **Morgana — desbloquear ou substituir número** (bloqueado nos testes de disparo de imagem) · task `86e13a62g` no ClickUp (urgent)
 - [25/04/2026] ✅ **Maqlam — IA BDR (Bumble) ativação cadastrada** (27/04) · task `86e13a62b` urgent · Victor cadastra script Bumble + ativa MAC1 · Denis confirmou multi-persona
 - [27/04/2026] **Maqlam — pedir autorização ao Denis** pra usar cortes 4 e 6 da call de 24/04 como conteúdo público · cortes 1, 2, 5, 7 podem rodar sem identificação · ver `areas/marketing/cortes-conteudo/2026-04-24-maqlam-checklist-review.md`
+- [08/05/2026] **Maqlam × Olist — validar ideia Denis com Victor** · Denis sugeriu sincronizar memória da IA com produtos da Olist · verificar se faz sentido técnico e de negócio antes de qualquer avanço · Lucas + Victor
+- [08/05/2026] **Contabilidade não respondeu** · Lucas ligar de volta amanhã (09/05)
 - [27/04/2026] **Maqlam — agendar call de follow-up** ~08-09/05 (sexta 01/05 é feriado, Marcella viaja na seguinte) · task `86e13a64a`
 - [02/05/2026] ✅ **Maqlam — pipeline "Retenção de Clientes" criado no Supabase Elosystem** · migration `add_retencao_churn_pipeline` · 6 stages: Ativo/Atenção/Risco de Churn/Engajando/Recuperado/Churn Confirmado · Denis e equipe populam durante CS meeting 08-09/05
 - [25/04/2026] **Revisar definição de ticket por produto + ICP** (insight palestra Verhaw/ACIRP) · possível espelho do modelo Verhaw
@@ -104,6 +108,7 @@
 - [02/05/2026] **Confirmar status oportunidade vs cliente: Jean Imobiliária** · proposta atual: manter em clientes mesmo com cobrança 2ª parcela pendente (fronteira) · Lucas
 - [02/05/2026] **Mover pastas para `oportunidades/`** após confirmação · Enertelles, Daniel Queiroz, Marcos Consultrain · `git mv` pra preservar histórico · Claude na próxima sessão
 - [02/05/2026] ✅ **Enertelles — call 01/05 transcrita e analisada** · Fireflies `01KQN35F64MHZ63N5KET1PY0A3` · resultado: não fechou · follow-up site 08/05 + Bloco A 1ª semana junho · meeting notes em `areas/vendas/oportunidades/enertelles/meeting-notes/call-2026-05-01.md`
+- [08/05/2026] **Enertelles — enviar portfólio para Telles amanhã (09/05)** · ligou hoje, não atendeu · Alex (gestor tráfego) também não respondeu · Lucas
 - [02/05/2026] 🔥 **Enertelles — follow-up site (Bloco B)** · Telles decide sobre concorrentes · evento no Calendar 08/05 10h · Lucas
 - [02/05/2026] **Enertelles — follow-up Bloco A** · equipe volta de férias/licença · evento no Calendar 02/06 10h · Lucas
 - [02/05/2026] ⚪ **[DÉBITO TÉCNICO] Skill `/analisar-call`** · squad sales-call-analyzer (spin-coach/objection-curator/seller-profiler/call-orchestrator) + workflow + skill · invocar @aiox-master → @sm → @dev · baixa prioridade, desbloqueado após N≥10 calls reais

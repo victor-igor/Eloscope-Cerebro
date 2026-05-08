@@ -21,6 +21,9 @@
 ### Skills (comandos slash)
 - [skills/](skills/README.md) — Índice de todas as skills disponíveis no cerebro
 
+### Time
+- [time/](time/_index.md) — Diário e contexto individual de cada membro (Lucas, Victor, Hugo)
+
 ### Segurança
 - [seguranca/](seguranca/permissoes.md) — Permissões e políticas de acesso
 

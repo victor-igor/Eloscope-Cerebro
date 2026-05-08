@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enertelles — Resumo Pós-Call · Eloscope</title>
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg:           #08090d;
+      --surface:      #0f1117;
+      --surface-2:    #161820;
+      --border:       rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(0, 212, 255, 0.25);
+      --cyan:         #00d4ff;
+      --purple:       #7c3aed;
+      --text:         #f8fafc;
+      --text-muted:   rgba(248, 250, 252, 0.6);
+      --text-dim:     rgba(248, 250, 252, 0.35);
+      --danger:       #f87171;
+      --success:      #4ade80;
+      --font:         'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.6;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ─── Page Layout ─── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--bg);
+      margin: 0 auto;
+      padding: 14mm 14mm 12mm;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle grid texture */
+    .page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    /* ─── Print Rules ─── */
+    @media print {
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      html, body {
+        width: 210mm;
+        background: #08090d;
+      }
+
+      .page {
+        page-break-after: always;
+        break-after: page;
+        margin: 0;
+      }
+
+      .page:last-child {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+    }
+
+    /* ─── Typography ─── */
+    .label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .cyan { color: var(--cyan); }
+    .purple { color: var(--purple); }
+    .muted { color: var(--text-muted); }
+
+    /* ─── Logo / Brand ─── */
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
+      flex-shrink: 0;
+    }
+
+    /* ─── Divider ─── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 10px 0;
+    }
+
+    .divider-accent {
+      height: 1px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      margin: 10px 0;
+    }
+
+    /* ─── Glass Card ─── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .card-accent {
+      background: var(--surface);
+      border: 1px solid var(--border-accent);
+      border-radius: 8px;
+      padding: 14px 16px;
+      position: relative;
+    }
+
+    .card-accent::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      border-radius: 8px 8px 0 0;
+    }
+
+    /* ─── Badge ─── */
+    .badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .badge-cyan {
+      background: rgba(0, 212, 255, 0.12);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+    }
+
+    .badge-purple {
+      background: rgba(124, 58, 237, 0.15);
+      color: #a78bfa;
+      border: 1px solid rgba(124, 58, 237, 0.3);
+    }
+
+    /* ─── Section Header ─── */
+    .section-header {
+      margin-bottom: 14px;
+    }
+
+    .section-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-text {
+      font-size: 9px;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-brand {
+      font-size: 9px;
+      color: var(--cyan);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    /* ────────────────────────────────────
+       PAGE 1 — CAPA
+    ──────────────────────────────────── */
+
+    .cover-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: auto;
+    }
+
+    .cover-tagline {
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
+
+    .cover-stamp {
+      font-size: 9px;
+      color: var(--text-dim);
+      text-align: right;
+    }
+
+    .cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 0 30px;
+    }
+
+    .cover-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cover-eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--cyan);
+      box-shadow: 0 0 6px var(--cyan);
+    }
+
+    .cover-title {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .cover-title span {
+      color: var(--cyan);
+    }
+
+    .cover-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .cover-client-card {
+      background: var(--surface);
+      border: 1px solid var(--border-accent);
+      border-radius: 8px;
+      padding: 14px 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 340px;
+    }
+
+    .cover-client-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .cover-client-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .cover-client-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .cover-decoration {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover-decoration-2 {
+      position: absolute;
+      bottom: 60px;
+      right: 30px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ────────────────────────────────────
+       PAGE 2 — DIAGNÓSTICO
+    ──────────────────────────────────── */
+
+    .diag-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .diag-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: border-color 0.2s;
+    }
+
+    .diag-card:hover {
+      border-color: var(--border-accent);
+    }
+
+    .diag-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .diag-num {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .diag-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .diag-quote {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      border-left: 2px solid var(--border-accent);
+      padding-left: 10px;
+      font-style: italic;
+    }
+
+    .diag-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ────────────────────────────────────
+       PAGE 3 — CUSTO DA INAÇÃO
+    ──────────────────────────────────── */
+
+    .cost-hero {
+      background: var(--surface);
+      border: 1px solid var(--border-accent);
+      border-radius: 10px;
+      padding: 22px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    .cost-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    }
+
+    .cost-hero-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,212,255,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cost-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 10px;
+    }
+
+    .cost-number {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--cyan);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 4px;
+      text-shadow: 0 0 40px rgba(0,212,255,0.4);
+    }
+
+    .cost-unit {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+
+    .cost-row {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .cost-item {
+      text-align: center;
+    }
+
+    .cost-item-num {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .cost-item-label {
+      font-size: 9px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .cost-sep {
+      width: 1px;
+      background: var(--border);
+      align-self: stretch;
+    }
+
+    .cost-text {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 14px;
+      padding: 0 4px;
+    }
+
+    .cost-text strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .cost-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+
+    .cost-col {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .cost-col:nth-child(2) {
+      border-color: rgba(0,212,255,0.2);
+    }
+
+    .cost-col:nth-child(3) {
+      border-color: rgba(124,58,237,0.25);
+    }
+
+    .cost-col-header {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cost-col:nth-child(1) .cost-col-header { color: var(--text-dim); }
+    .cost-col:nth-child(2) .cost-col-header { color: var(--cyan); }
+    .cost-col:nth-child(3) .cost-col-header { color: #a78bfa; }
+
+    .cost-col-item {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+
+    .cost-col-item::before {
+      content: '·';
+      color: var(--text-dim);
+      flex-shrink: 0;
+      margin-top: 0px;
+    }
+
+    /* ────────────────────────────────────
+       PAGE 4 — PROPOSTA
+    ──────────────────────────────────── */
+
+    .prop-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .prop-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prop-block-a {
+      border-color: var(--border-accent);
+    }
+
+    .prop-block-a::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), rgba(0,212,255,0.2));
+    }
+
+    .prop-block-b::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--purple), rgba(124,58,237,0.2));
+    }
+
+    .prop-block-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .prop-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .prop-item-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .dot-cyan { background: var(--cyan); box-shadow: 0 0 4px var(--cyan); }
+    .dot-purple { background: var(--purple); }
+
+    .prop-price {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    .prop-price-main {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .prop-price-alt {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .prop-footnote {
+      font-size: 10px;
+      color: var(--text-dim);
+      text-align: center;
+      padding: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .prop-footnote strong {
+      color: var(--cyan);
+    }
+
+    .prop-quote {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      font-style: italic;
+      padding: 10px 20px;
+      border-left: none;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .prop-quote strong {
+      color: var(--text);
+    }
+
+    .prop-next {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 0;
+    }
+
+    .prop-next-title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .next-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    .next-item:last-child { margin-bottom: 0; }
+
+    .next-check {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      background: rgba(0,212,255,0.1);
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 9px;
+      color: var(--cyan);
+    }
+
+    .next-date {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       PÁGINA 1 — CAPA
+  ═══════════════════════════════════════ -->
+  <section class="page">
+    <div class="cover-decoration"></div>
+    <div class="cover-decoration-2"></div>
+
+    <!-- Top bar -->
+    <div class="cover-top">
+      <div>
+        <div class="logo">
+          <span class="logo-dot"></span>
+          Eloscope
+        </div>
+        <div class="cover-tagline">Seu negócio operado por IA</div>
+      </div>
+      <div class="cover-stamp">
+        <div class="label">Documento confidencial</div>
+        <div style="color: var(--text-dim); font-size: 10px; margin-top: 3px;">01 de maio de 2026</div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="cover-body">
+      <div class="cover-eyebrow">Resumo Pós-Call</div>
+
+      <h1 class="cover-title">
+        Enertelles —<br>
+        O que descobrimos<br>
+        <span>juntos</span>
+      </h1>
+
+      <p class="cover-subtitle">Resumo da conversa de 01 de maio de 2026 · 165 minutos</p>
+
+      <div style="margin-top: 28px; padding: 16px 20px; border-left: 3px solid var(--cyan); background: rgba(0,212,255,0.05); border-radius: 0 8px 8px 0;">
+        <div style="font-size: 11px; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px;">Suas palavras, ao final da call</div>
+        <p style="font-size: 13px; color: var(--text-muted); font-style: italic; line-height: 1.6;">"Não sei se você vai mandar algum documento, se você mandar, talvez eu se leia. Vou estar analisando, estudando, para internalizar um pouco na cabeça da gente."</p>
+        <p style="font-size: 11px; color: var(--text-dim); margin-top: 8px;">— Telles, 01/05/2026 · Mandamos.</p>
+      </div>
+
+      <div class="cover-client-card">
+        <div class="cover-client-icon">⚡</div>
+        <div>
+          <div class="cover-client-name">Telles (Otélio)</div>
+          <div class="cover-client-sub">Enertelles Energia Solar</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="footer-brand">eloscope.com.br</span>
+      <span class="footer-text">Lucas · 17 9 2000-8791</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PÁGINA 2 — DIAGNÓSTICO
+  ═══════════════════════════════════════ -->
+  <section class="page">
+
+    <!-- Header -->
+    <div class="section-header">
+      <div class="section-label">Diagnóstico</div>
+      <h2 class="section-title">Você já sabe o problema.<br>Agora tem um nome.</h2>
+      <div class="divider-accent" style="margin-top: 12px;"></div>
+    </div>
+
+    <!-- 4 Diagnostic Cards -->
+    <div class="diag-grid">
+
+      <div class="diag-card">
+        <div class="diag-icon">📭</div>
+        <div class="diag-num">Problema 01</div>
+        <div class="diag-title">Follow-up sem cadência</div>
+        <div class="diag-quote">"Nosso follow-up é péssimo. Eu tô falando isso por estudo mesmo." — suas palavras. E ainda: "É prospecção e follow-up, porque a gente tá pecando."</div>
+        <div class="diag-desc">Existe follow-up — mas sem cadência definida, sem script e sem IA para apoiar o vendedor, o interesse esfria e o concorrente fecha.</div>
+      </div>
+
+      <div class="diag-card">
+        <div class="diag-icon">🎯</div>
+        <div class="diag-num">Problema 02</div>
+        <div class="diag-title">90% dos leads fora do perfil</div>
+        <div class="diag-quote">Você investe R$2.000/mês em tráfego e a maioria dos leads são residenciais.</div>
+        <div class="diag-desc">Seu alvo é industrial, comercial e agro. O dinheiro gasto não está sendo convertido no público que gera as melhores margens.</div>
+      </div>
+
+      <div class="diag-card">
+        <div class="diag-icon">🔀</div>
+        <div class="diag-num">Problema 03</div>
+        <div class="diag-title">Vendedora acumula dois papéis</div>
+        <div class="diag-quote">SDR + Closer na mesma pessoa.</div>
+        <div class="diag-desc">Resultado: nenhuma das duas funções é feita com excelência. Quem prospecta precisa focar em volume. Quem fecha precisa focar em conversão.</div>
+      </div>
+
+      <div class="diag-card">
+        <div class="diag-icon">🗄️</div>
+        <div class="diag-num">Problema 04</div>
+        <div class="diag-title">500 clientes instalados dormindo</div>
+        <div class="diag-quote">Reativação zero.</div>
+        <div class="diag-desc">Base histórica que poderia gerar indicações e recompra — sem nenhum processo para ativar. É o ativo mais subestimado da Enertelles.</div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="footer-brand">eloscope.com.br</span>
+      <span class="footer-text">Enertelles · Diagnóstico · 01/05/2026</span>
+      <span class="footer-text">2 / 4</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PÁGINA 3 — CUSTO DA INAÇÃO
+  ═══════════════════════════════════════ -->
+  <section class="page">
+
+    <!-- Header -->
+    <div class="section-header">
+      <div class="section-label">Custo da Inação</div>
+      <h2 class="section-title">Cada dia sem processo é<br><span class="cyan">R$6.000 deixados na mesa.</span></h2>
+      <div class="divider-accent" style="margin-top: 12px; margin-bottom: 14px;"></div>
+    </div>
+
+    <!-- Cost Hero -->
+    <div class="cost-hero">
+      <div class="cost-hero-glow"></div>
+      <div class="cost-label">Receita não capturada · estimativa conservadora</div>
+      <div class="cost-number">R$ 6.000</div>
+      <div class="cost-unit">por dia</div>
+      <div class="cost-row">
+        <div class="cost-item">
+          <div class="cost-item-num">R$ 180.000</div>
+          <div class="cost-item-label">por mês</div>
+        </div>
+        <div class="cost-sep"></div>
+        <div class="cost-item">
+          <div class="cost-item-num">R$ 2.160.000</div>
+          <div class="cost-item-label">por ano</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explanation text -->
+    <p class="cost-text">
+      Você fecha hoje <strong>7–8 vendas por mês</strong>. Sua meta é <strong>20</strong>. São <strong>12 vendas faltando</strong> — cada uma valendo em média R$15.000. Não é culpa da sua equipe. É ausência de processo. Um vendedor sem playbook é como um bom motor sem combustível: o potencial está lá, mas não converte.
+    </p>
+
+    <!-- Comparison columns -->
+    <div style="font-size: 9px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;">O que muda com processo</div>
+    <div class="cost-compare">
+
+      <div class="cost-col">
+        <div class="cost-col-header">Hoje</div>
+        <div class="cost-col-item">7–8 vendas/mês</div>
+        <div class="cost-col-item">Follow-up manual</div>
+        <div class="cost-col-item">Lead sem qualificação</div>
+      </div>
+
+      <div class="cost-col">
+        <div class="cost-col-header">Com processo · 3 meses</div>
+        <div class="cost-col-item">12–15 vendas/mês</div>
+        <div class="cost-col-item">Cadência automática</div>
+        <div class="cost-col-item">SDR separado do Closer</div>
+      </div>
+
+      <div class="cost-col">
+        <div class="cost-col-header">Com processo · 6 meses</div>
+        <div class="cost-col-item">18–22 vendas/mês</div>
+        <div class="cost-col-item">Base de 500 clientes reativada</div>
+        <div class="cost-col-item">CRM operando sozinho</div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="footer-brand">eloscope.com.br</span>
+      <span class="footer-text">Enertelles · Custo da Inação · 01/05/2026</span>
+      <span class="footer-text">3 / 4</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PÁGINA 4 — DE ONDE VEM O NÚMERO
+  ═══════════════════════════════════════ -->
+  <section class="page" style="padding: 44px 52px; display: flex; flex-direction: column; gap: 0;">
+
+    <!-- Header -->
+    <div style="margin-bottom: 28px;">
+      <div style="font-size: 10px; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Transparência total</div>
+      <h2 style="font-size: 26px; font-weight: 800; color: var(--text); line-height: 1.2;">De onde tiramos o R$6.000 por dia.</h2>
+      <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">Cada número veio da nossa conversa de 165 minutos. Nenhum foi inventado.</p>
+    </div>
+
+    <!-- Cálculo passo a passo -->
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px;">
+      <div style="font-size: 10px; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;">O raciocínio, passo a passo</div>
+      <div style="display: flex; flex-direction: column; gap: 0;">
+
+        <div style="display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border);">
+          <div style="min-width: 24px; height: 24px; background: rgba(0,212,255,0.1); border: 1px solid var(--border-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--cyan); font-weight: 700;">1</div>
+          <div>
+            <div style="font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Você fecha hoje 7–8 vendas por mês</div>
+            <div style="font-size: 11px; color: var(--text-muted);">Dado que você confirmou na call. Histórico: 73 vendas em 2023, 90 em 2024 — crescimento real, mas aquém da meta.</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border);">
+          <div style="min-width: 24px; height: 24px; background: rgba(0,212,255,0.1); border: 1px solid var(--border-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--cyan); font-weight: 700;">2</div>
+          <div>
+            <div style="font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Sua meta é 20 vendas por mês</div>
+            <div style="font-size: 11px; color: var(--text-muted);">Também confirmado por você. Gap: <strong style="color: var(--text);">12 vendas por mês</strong> que existem como potencial e não estão sendo convertidas.</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border);">
+          <div style="min-width: 24px; height: 24px; background: rgba(0,212,255,0.1); border: 1px solid var(--border-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--cyan); font-weight: 700;">3</div>
+          <div>
+            <div style="font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Ticket médio residencial: R$15.000–17.000</div>
+            <div style="font-size: 11px; color: var(--text-muted);">Número que você citou. Usamos R$15.000 — o mais conservador — para não inflar o resultado.</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border);">
+          <div style="min-width: 24px; height: 24px; background: rgba(0,212,255,0.1); border: 1px solid var(--border-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--cyan); font-weight: 700;">4</div>
+          <div>
+            <div style="font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 2px;">12 vendas × R$15.000 = R$180.000/mês não realizados</div>
+            <div style="font-size: 11px; color: var(--text-muted);">Esse é o teto conservador do que fica na mesa todo mês. Dividindo por 30: <strong style="color: var(--cyan);">R$6.000/dia</strong>.</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 16px; padding: 12px 0;">
+          <div style="min-width: 24px; height: 24px; background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--purple); font-weight: 700;">!</div>
+          <div>
+            <div style="font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 2px;">O que não prometemos — e por quê isso é mais honesto</div>
+            <div style="font-size: 11px; color: var(--text-muted);">Não prometemos venda. Prometemos que nenhum lead some sem ter recebido as tentativas certas. Resultado depende de muita coisa. Processo depende de decisão. Isso aqui é a decisão.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- O que você mesmo concluiu -->
+    <div style="background: rgba(0,212,255,0.04); border: 1px solid rgba(0,212,255,0.15); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+      <div style="font-size: 10px; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;">O que você mesmo concluiu na call</div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; gap: 10px; align-items: flex-start;">
+          <span style="color: var(--cyan); font-size: 14px; margin-top: 1px;">›</span>
+          <p style="font-size: 12px; color: var(--text-muted); font-style: italic;">"Eu acho que a parte do fechamento a gente consegue fazer. É prospecção e follow-up, porque a gente tá pecando."</p>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: flex-start;">
+          <span style="color: var(--cyan); font-size: 14px; margin-top: 1px;">›</span>
+          <p style="font-size: 12px; color: var(--text-muted); font-style: italic;">"Hoje, nesse mundo moderno de tantas distrações, se não tiver um bom follow-up, o cara se perde muito ali."</p>
+        </div>
+      </div>
+      <div style="margin-top: 14px; border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 8px;">
+        <p style="font-size: 11px; color: var(--text-muted); line-height: 1.6;"><em>"Cada mês sem processo é um mês pagando tráfego para não fechar."</em></p>
+        <p style="font-size: 11px; color: var(--text-muted); line-height: 1.6;"><em>"O risco não é investir no processo. O risco é continuar sem ele enquanto seus concorrentes constroem o deles."</em></p>
+        <p style="font-size: 11px; color: var(--text-dim); margin-top: 2px;">Você já tem o diagnóstico. A única pergunta que sobrou é: por quanto tempo ainda?</p>
+      </div>
+    </div>
+
+    <!-- Linha do tempo do custo de espera -->
+    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px;">
+      <div style="font-size: 10px; color: #f87171; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px;">O custo de cada mês que passa</div>
+      <div style="display: flex; gap: 0; align-items: stretch;">
+
+        <div style="flex: 1; text-align: center; padding: 12px 8px; border-right: 1px solid var(--border);">
+          <div style="font-size: 10px; color: var(--text-dim); margin-bottom: 4px;">Já passou</div>
+          <div style="font-size: 13px; font-weight: 700; color: #f87171;">Maio</div>
+          <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">R$180k fora</div>
+        </div>
+
+        <div style="flex: 1; text-align: center; padding: 12px 8px; border-right: 1px solid var(--border); background: rgba(248,113,113,0.04);">
+          <div style="font-size: 10px; color: var(--text-dim); margin-bottom: 4px;">Decisão hoje</div>
+          <div style="font-size: 13px; font-weight: 700; color: var(--cyan);">Junho</div>
+          <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">Processo começa</div>
+        </div>
+
+        <div style="flex: 1; text-align: center; padding: 12px 8px; border-right: 1px solid var(--border);">
+          <div style="font-size: 10px; color: var(--text-dim); margin-bottom: 4px;">Mês 2</div>
+          <div style="font-size: 13px; font-weight: 700; color: var(--text);">Julho</div>
+          <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">Primeiros resultados</div>
+        </div>
+
+        <div style="flex: 1; text-align: center; padding: 12px 8px;">
+          <div style="font-size: 10px; color: var(--text-dim); margin-bottom: 4px;">Mês 3</div>
+          <div style="font-size: 13px; font-weight: 700; color: #4ade80;">Agosto</div>
+          <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">Processo rodando</div>
+        </div>
+
+      </div>
+      <p style="font-size: 10px; color: var(--text-dim); margin-top: 12px; text-align: center;">Cada mês de espera é mais R$180.000 que ficam na mesa. Não porque o tráfego é ruim — mas porque o processo não está lá para converter o que já chega.</p>
+    </div>
+
+    <!-- 3 parágrafos Hormozi — aprofundar a ferida -->
+    <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 10px;">
+
+      <div style="padding: 14px 16px; border-left: 3px solid rgba(248,113,113,0.5); background: rgba(248,113,113,0.04); border-radius: 0 8px 8px 0;">
+        <p style="font-size: 11px; color: var(--text-muted); line-height: 1.65;">Você disse numa frase o que muitas empresas levam anos para admitir: <em>"nosso follow-up é péssimo"</em>. Diagnóstico sem tratamento é só consciência do problema. Cada mês que passa com essa consciência, sem mudança, é um mês em que você sabe que está perdendo — e escolhe continuar perdendo. Não por falta de capacidade. Por falta de processo.</p>
+      </div>
+
+      <div style="padding: 14px 16px; border-left: 3px solid rgba(248,113,113,0.5); background: rgba(248,113,113,0.04); border-radius: 0 8px 8px 0;">
+        <p style="font-size: 11px; color: var(--text-muted); line-height: 1.65;">Você investe R$2.000 por mês para trazer leads. Cada lead que entra e não recebe follow-up estruturado não é lead perdido — é R$2.000 desperdiçado em fração. Você não perdeu uma venda. <strong style="color: var(--text);">Você pagou para perder uma venda.</strong> A conta não é "quanto deixei de ganhar". É "quanto gastei para não ganhar nada".</p>
+      </div>
+
+      <div style="padding: 14px 16px; border-left: 3px solid rgba(124,58,237,0.5); background: rgba(124,58,237,0.04); border-radius: 0 8px 8px 0;">
+        <p style="font-size: 11px; color: var(--text-muted); line-height: 1.65;">Junho não é grátis. É mais 30 dias com o mesmo follow-up que você mesmo classificou como péssimo, com os mesmos leads esfriando. Não estamos dizendo que você precisa decidir agora. Estamos dizendo que <strong style="color: var(--text);">cada semana de decisão pendente tem um preço — e você já sabe quanto ele custa.</strong></p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PÁGINA 5 — PROPOSTA
+  ═══════════════════════════════════════ -->
+  <section class="page">
+
+    <!-- Header -->
+    <div class="section-header">
+      <div class="section-label">Proposta</div>
+      <h2 class="section-title">Dois caminhos. Você escolhe o ritmo.</h2>
+      <div class="divider-accent" style="margin-top: 12px; margin-bottom: 14px;"></div>
+    </div>
+
+    <!-- Proposal blocks -->
+    <div class="prop-grid">
+
+      <!-- Block A -->
+      <div class="prop-block prop-block-a">
+        <div>
+          <span class="badge badge-cyan">Recomendado · Começa em 30 dias</span>
+          <div class="prop-block-title">Bloco A — Processo Comercial + IA</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div class="prop-item">
+            <span class="prop-item-dot dot-cyan"></span>
+            Playbook de vendas personalizado para energia solar
+          </div>
+          <div class="prop-item">
+            <span class="prop-item-dot dot-cyan"></span>
+            CRM configurado + treinamento da equipe
+          </div>
+          <div class="prop-item">
+            <span class="prop-item-dot dot-cyan"></span>
+            IA copiloto: cadência, follow-up e qualificação de lead
+          </div>
+          <div class="prop-item">
+            <span class="prop-item-dot dot-cyan"></span>
+            Meta progressiva com modelo de parceria (% sobre o excedente)
+          </div>
+        </div>
+
+        <div class="prop-price">
+          <div class="prop-price-main">R$ 8.000</div>
+          <div class="prop-price-alt">ou ~R$ 900/mês</div>
+        </div>
+      </div>
+
+      <!-- Block B -->
+      <div class="prop-block prop-block-b">
+        <div>
+          <span class="badge badge-purple">Independente · Entrega em 3 semanas</span>
+          <div class="prop-block-title">Bloco B — Site + Marca</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div class="prop-item">
+            <span class="prop-item-dot dot-purple"></span>
+            Site institucional + Landing Pages (residencial e comercial separadas)
+          </div>
+          <div class="prop-item">
+            <span class="prop-item-dot dot-purple"></span>
+            Blog automatizado (2 artigos/semana por IA)
+          </div>
+          <div class="prop-item">
+            <span class="prop-item-dot dot-purple"></span>
+            Calculadora de ROI solar interativa
+          </div>
+        </div>
+
+        <div class="prop-price">
+          <div class="prop-price-main">R$ 3.000</div>
+          <div class="prop-price-alt">12× R$ 322/mês</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bundle note -->
+    <div class="prop-footnote">
+      Os dois blocos juntos: <strong>12× R$ 699/mês</strong> — solução completa, menor custo mensal
+    </div>
+
+    <!-- Garantia de entrega -->
+    <div style="background: rgba(0,212,255,0.04); border: 1px solid rgba(0,212,255,0.2); border-radius: 10px; padding: 16px 20px; margin-bottom: 16px;">
+      <div style="font-size: 10px; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">O que garantimos — sem letra miúda</div>
+      <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px;">
+        <div style="font-size: 11px; color: var(--text-muted);">→ Playbook documentado e aprovado por você antes de virar rotina</div>
+        <div style="font-size: 11px; color: var(--text-muted);">→ Scripts escritos com a linguagem do seu mercado (energia solar)</div>
+        <div style="font-size: 11px; color: var(--text-muted);">→ Nenhum lead some sem ter recebido as tentativas certas</div>
+        <div style="font-size: 11px; color: var(--text-muted);">→ IA rodando e testada com seus vendedores antes do go-live</div>
+        <div style="font-size: 11px; color: var(--text-muted);">→ 30 dias de acompanhamento pós-implantação para ajuste fino</div>
+      </div>
+      <div style="font-size: 10px; color: var(--text-dim); border-top: 1px solid var(--border); padding-top: 8px;">Se ao final de 30 dias o playbook não estiver documentado e a IA não estiver rodando conforme acordado — devolvemos o valor integral. O que não prometemos: que seu vendedor vai fechar mais. Isso depende dele, do cliente e do mercado. <strong style="color: var(--text);">O que garantimos é que ele vai ter, pela primeira vez, uma estrutura.</strong></div>
+    </div>
+
+    <!-- Quote -->
+    <div class="prop-quote">
+      <strong>"É uma bazuca. É um comercial bem estruturadinho, sem ponta solta."</strong><br>
+      <span style="color: var(--text-muted);">"Vocês fazendo tudo que você comentou e a gente fazendo a nossa parte, é um negócio que vai ficar bem fechadinho."</span><br><br>
+      Suas palavras. A gente só precisa apertar o gatilho.
+    </div>
+
+    <!-- Next steps -->
+    <div class="prop-next">
+      <div class="prop-next-title">Próximos passos</div>
+      <div class="next-item">
+        <div class="next-check">✓</div>
+        <span>Site: decisão até <span class="next-date">quinta-feira, 08/05</span></span>
+      </div>
+      <div class="next-item">
+        <div class="next-check">✓</div>
+        <span>Processo comercial: reunião na <span class="next-date">primeira semana de junho</span></span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span class="footer-brand">eloscope.com.br</span>
+      <span class="footer-text">lucas@eloscope.com.br · 17 9 2000-8791</span>
+      <span class="footer-text">4 / 4</span>
+    </div>
+  </section>
+
+</body>
+</html>
