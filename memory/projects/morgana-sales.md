@@ -28,7 +28,8 @@ Treinamento presencial feito 28/04. Primeira campanha de ativação rodou 29/04 
 | Componente | Estado |
 |-----------|--------|
 | Sistema `elo.morgana.com.br` | 🟢 Produção |
-| Chips (3) não-oficiais | 🔥 Aquecendo — protocolo 10 dias (08–17/05) |
+| Chips (3) não-oficiais | 🟢 Reconectados 08/05 (todos reativados, J-01 manual hoje) — protocolo 10 dias (08–17/05) |
+| Novo número Maqlam | 🟢 Conectado ao sistema (08/05) |
 | API Oficial WhatsApp — app criado | 🟢 App criado, Chatwoot validado (07/05) |
 | API Oficial WhatsApp — token | 🔴 Bloqueada — Autem (André) precisa gerar hoje (08/05) |
 | Número API oficial | `55 17 98154-2837` — definido, com Lucas, aguardando token |

@@ -72,10 +72,20 @@ Primeiro cliente do modelo Mentoria Agências. Mapeamento de processos + infraes
 ## Insight de negócio (descoberto 26/04)
 Os 3 processos mais caros (criativo R$ 2.170, edição R$ 1.260, captação R$ 1.040) **não são automatizáveis** ou já estão (Content Machine). Os candidatos a skill (Aprovação R$ 260 + Agendador R$ 270) custam pouco em horas-Bravo, **mas consomem o Gustavo**, que é o único comercial. Liberar ~20h/mês do Gustavo = caminho pra fechar a meta R$ 20k → R$ 30k.
 
-## Pendências (06/05 — atualizado)
+## Pendências (08/05 — atualizado)
+
+### 🔴 Bloqueantes operacionais (Lucas — em execução)
+- [ ] **OpenClaw — concluir onboarding** (parou no meio em 08/05) → próximo passo: instalar Nginx → handover Hugo
+- [ ] **Acesso Gemini Code/Codex** — Lucas cobrar Gustavo (sem isso ambiente IA não configura)
+- [ ] **Número WhatsApp Bravo** — só resolvido após tempo perdido em 08/05; revalidar amanhã
+
+### 🟢 Concluído em 08/05
+- [x] Hostinger configurado e domínio apontado
+- [x] OpenClaw instalação iniciada (não finalizada)
+- [x] Acessos coletados aos poucos: Facebook, Hostinger, ClickUp
 
 ### 🔴 Bloqueantes vermelhos (travam Sprint 2 — destravar até 08/05)
-- [ ] Acesso Hostinger (Gustavo)
+- [ ] Acesso Hostinger (Gustavo) — ✅ resolvido 08/05
 - [ ] Nome do assistente IA (Gustavo)
 - [ ] Cliente-piloto Skill 1 definido (Gustavo)
 - [ ] Prazo SLA 48h ou 72h? (Gustavo + advogado)
