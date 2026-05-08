@@ -41,13 +41,37 @@ tags: [cliente/morgana, equipe]
 
 ---
 
-## Time de vendas — {TODO — nomes}
+## Time de atendimento
+
+| Nome | Papel | Notas |
+|------|-------|-------|
+| **Julia** | Atendente | Filha do Matheus |
+| **Jéssica** | Gestão geral + atendimento | — |
+| {possível 3ª} | — | A confirmar com Dra. Morgana |
 
 | Campo | Valor |
 |-------|-------|
 | **Modelo** | Meta coletiva — sem comissão individual |
-| **Volume** | {TODO — quantas vendedoras/atendentes?} |
-| **Acesso** | Operador |
+| **Acesso** | Operador no `elo.morgana.com.br` |
+| **Horário** | 9h–19h · parece rodar até sábado (confirmar) |
+| **Canal de trabalho** | WhatsApp comum (não Chatwoot) |
+
+---
+
+## André — Marketing / Atendmes (parceiro Morgana)
+
+| Campo | Valor |
+|-------|-------|
+| **Papel** | Contato de Marketing / Atendmes que opera a Morgana |
+| **WhatsApp** | +55 17 98814-5147 |
+| **Relevância** | Ponte para Business Manager Meta da Morgana — necessário para WABA + Instagram/FB no Chatwoot |
+
+---
+
+## Grupo de Notificação Morgana (WhatsApp)
+
+- **Link:** https://chat.whatsapp.com/GECojPfRGKd0kudjv78FoX
+- **Uso:** Receber alertas do Agente SDR (Morg) quando lead é qualificado — atendentes vêem e puxam o lead no número principal
 
 ---
 
@@ -66,6 +90,17 @@ tags: [cliente/morgana, equipe]
 |---------|-------------|---------|------|
 | elo.morgana.com.br | Admin ✅ | {TODO} | Operador ✅ |
 | IA ativação base | Sim | — | Via atendimento |
+
+---
+
+## Números importantes
+
+| Número | Uso |
+|--------|-----|
+| **+55 17 99633-2788** | **Número principal da clínica** — recebe leads qualificados pelo Morg (handoff IA → humano) |
+| +55 17 98154-2833 | Chip ativação (reaquecendo) |
+| +55 17 98126-7711 | Chip ativação (aquecendo) |
+| +55 17 98126-7748 | Chip ativação (aquecendo) |
 
 ---
 

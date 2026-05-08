@@ -31,6 +31,12 @@
 | 15/05/2026 | Bravo — 2ª parcela R$975 | Pendente | Lucas |
 | 15/06/2026 | Bravo — 3ª parcela R$975 | Pendente | Lucas |
 | 15/07/2026 | Bravo — 4ª parcela R$975 (final) | Pendente | Lucas |
+| 08/05/2026 | **Morgana — André (Autem) gerar token Meta** · API oficial bloqueada | Pendente | André (`+55 17 98814-5147`) — Lucas acompanha |
+| 08/05/2026 | **Morgana — confirmar cartão em dólar com Matheus** | Pendente | Lucas → Matheus (`+5517981280789`) |
+| 10/05/2026 | **Morgana — templates transacionais criados e submetidos** | Pendente | Lucas + Victor |
+| 11/05/2026 | **Morgana — primeira campanha de disparos ativa (API oficial)** | Pendente | Lucas + Hugo |
+| 12/05/2026 | **Morgana — morganasales_core atualizado** (API oficial + melhorias Maqlam) | Pendente | Lucas |
+| 17/05/2026 | **Morgana — avaliação final dos 3 números de aquecimento** | Pendente | Lucas → reportar Victor |
 | 08/05/2026 | Enertelles — follow-up site (Bloco B) · Telles decide sobre concorrentes | Pendente | Lucas · evento no Calendar |
 | 02/06/2026 | Enertelles — follow-up Bloco A (processo + IA) · equipe de volta | Pendente | Lucas · evento no Calendar |
 | 02/05/2026 | Bravo — documento de processo + infra pronta | Pendente | Lucas |

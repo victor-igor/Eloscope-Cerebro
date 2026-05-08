@@ -25,7 +25,7 @@
 | Eloscope Landing Page | 🔨 Em construção | Redesign radical + deploy Vercel | eloscope-lp.md |
 | Bravo Agency — Sistema Completo | 🟢 Ativo | Discovery 26/04, entrega ~09/05 | bravo-agency.md |
 | Mentoria Agências | 🔨 Em construção | Validar pricing para próximos leads | mentoria-agencias.md |
-| Morgana Sales | 🟢 Ativo (treinamento feito 28/04) | Cadastrar lista do Matheus + ativar IA de ativação | morgana-sales.md |
+| Morgana Sales | 🔥 Ativo — API oficial bloqueada por Autem | Token Autem hoje (08/05) → número `5517981542837` → cartão → templates → campanha 10–11/05 | morgana-sales.md |
 | Enertelles | 🔨 Lead em fechamento | Call Telles + Alex 30/04 — apresentar proposta v4 | enertelles.md |
 
 ---

@@ -8,6 +8,9 @@
 
 ## 🔴 Críticas (bloqueiam progresso)
 
+- [08/05/2026] 🔥 **Morgana — André (Autem) gerar Usuário de Sistema + token na Meta** · single point of failure para API oficial · replanejado para hoje · contato: WhatsApp `+55 17 98814-5147` · se não resolver hoje escalar para Matheus · tarefa ClickUp `86e19hpd6`
+- [08/05/2026] 🔥 **Morgana — morganasales_core atualizar para API oficial** · módulo de campanhas (`eloscope-ai/mod-campaigns`) só suporta API não-oficial · Grupo 1 bloqueia ativação da campanha · Lucas implementa · tarefa ClickUp `86e19hqg5`
+- [08/05/2026] **Morgana — confirmar cartão em dólar com Matheus** · sem cartão internacional o número da API oficial não envia nada · Lucas confirma com Matheus (`+5517981280789`) hoje · tarefa ClickUp `86e19hpeb`
 - [06/05/2026] 🔥 **Bravo — 4 bloqueantes vermelhos travam Sprint 2** · Gustavo precisa responder até 08/05: (1) acesso Hostinger, (2) nome assistente IA, (3) cliente-piloto Skill 1, (4) prazo SLA 48h ou 72h. Lucas dispara mensagem-modelo HOJE (vide `areas/vendas/clientes/bravo-agencia/operacional/apis-credenciais.md` §4). Critério NO-GO: 12/05 sem resposta = pausar e renegociar.
 - [06/05/2026] **Bravo — Hugo submete templates WhatsApp + App Review Meta dia 1 do Sprint 2** · 24-48h aprovação template + 3-7 dias App Review = se atrasar, Sprint 3 desliza
 - ✅ [06/05/2026] **Bravo — sync ClickUp ↔ Notion Sprint Board** · concluído: 55 tasks antigas renomeadas [ARQUIVADO], 6 tasks pai + 29 subtasks criadas com descrição executável completa (passos, inputs, DoD, dependências)

@@ -1,6 +1,10 @@
 # Bravo Agency — Sistema Completo
 
-> Status: 🟢 Ativo (discovery feito, reframe pendente de validação Gustavo)
+> Status: 🟡 Sprint 2 travado (06/05) — 4 bloqueantes vermelhos no Gustavo. Recomendação: GO COM AJUSTE (vide `[[../../areas/vendas/clientes/bravo-agencia/operacional/analise-sustentabilidade]]`)
+>
+> **Fonte única APIs/credenciais:** `[[../../areas/vendas/clientes/bravo-agencia/operacional/apis-credenciais]]`
+> **Plano oficial:** Notion Sprint Board (PDFs em `bravo-agencia/operacional/`)
+> **Sync ClickUp ↔ Notion:** `[[../../areas/vendas/clientes/bravo-agencia/operacional/clickup-sync-map]]` (execução pendente)
 
 ## O que é
 Primeiro cliente do modelo Mentoria Agências. Mapeamento de processos + infraestrutura IA + 3 skills + treinamento para a Bravo escalar de R$ 20k → R$ 30k de faturamento sem contratar.
@@ -27,19 +31,21 @@ Primeiro cliente do modelo Mentoria Agências. Mapeamento de processos + infraes
 - **Faturamento:** R$ 20k atual (meta R$ 30k), 99% mensalista, 300 estáticos + 60 vídeos/mês
 - **Custo/cliente:** ~R$ 468 · **Margem ~53%** antes pró-labore
 
-## Timeline
+## Timeline (atualizada 06/05 — alinhada ao Notion Sprint Board)
 | Data | Evento |
 |------|--------|
 | 20/04/2026 | Reunião exploratória (Google Meet, 73min) |
 | 23/04/2026 | Proposta apresentada, Gustavo fechou Opção B |
-| 24/04/2026 | Plano de execução + frameworks + ClickUp estruturado |
+| 24/04/2026 | Plano de execução + frameworks + ClickUp estruturado (plano antigo) |
 | 25/04/2026 | Discovery presencial (sábado) |
 | 26/04/2026 | Reframe + retrofit nomes + reorganização pasta + custos preenchidos |
-| 30/04/2026 | Deck pós-discovery gerado (HTML→PDF, 15 slides) — apresentação pro Gustavo |
-| 01/05/2026 | Pricing removido do deck (slide 14); `metodologia-custo-hora.html` criado (doc interno) |
-| 02/05/2026 | Documento de processo + infra prontos |
-| 09/05/2026 | Skills finalizadas + treinamento concluído |
-| 08/06/2026 | Fim do suporte pós-entrega |
+| 30/04/2026 | Deck pós-discovery gerado + Sprint Board novo no Notion |
+| 28/04→02/05 | **Sprint 1** — Setup + processo + escopo travado (parcial — bloqueantes Gustavo) |
+| 05/05→09/05 | **Sprint 2** — Skill 1 com piloto real (em curso, travado) |
+| 06/05/2026 | apis-credenciais.md + analise-sustentabilidade.md + clickup-sync-map.md criados |
+| 12/05→16/05 | **Sprint 3** — Skill 2 + Skill 3 operacionais |
+| 19/05→23/05 | **Sprint 4** — Treinamento + handoff final |
+| 24/05→23/06 | Suporte pós-entrega (30 dias) |
 
 ## Entregas
 1. Discovery presencial ✅
@@ -66,13 +72,29 @@ Primeiro cliente do modelo Mentoria Agências. Mapeamento de processos + infraes
 ## Insight de negócio (descoberto 26/04)
 Os 3 processos mais caros (criativo R$ 2.170, edição R$ 1.260, captação R$ 1.040) **não são automatizáveis** ou já estão (Content Machine). Os candidatos a skill (Aprovação R$ 260 + Agendador R$ 270) custam pouco em horas-Bravo, **mas consomem o Gustavo**, que é o único comercial. Liberar ~20h/mês do Gustavo = caminho pra fechar a meta R$ 20k → R$ 30k.
 
-## Pendências
-- [ ] Validar reframe das 3 skills com Gustavo
-- [ ] Cronometrar análise mensal (não foi cronometrada na sala)
+## Pendências (06/05 — atualizado)
+
+### 🔴 Bloqueantes vermelhos (travam Sprint 2 — destravar até 08/05)
+- [ ] Acesso Hostinger (Gustavo)
+- [ ] Nome do assistente IA (Gustavo)
+- [ ] Cliente-piloto Skill 1 definido (Gustavo)
+- [ ] Prazo SLA 48h ou 72h? (Gustavo + advogado)
+
+### 🟡 Sprint 2 (semana 05-09/05)
+- [ ] Disparar mensagem-modelo Gustavo HOJE (`apis-credenciais.md` §4)
+- [ ] Hugo redige + submete 3 templates utility WhatsApp (24-48h aprovação Meta)
+- [ ] Hugo submete App Review Meta `instagram_content_publish` + `pages_manage_posts` (3-7 dias)
+- [ ] Lucas executa sync ClickUp (vide `clickup-sync-map.md`) — 1h via MCP
+
+### 🟡 Sprint 3+ (semanas seguintes)
+- [ ] Cronometrar análise mensal real (1 cliente Bravo, dia 1-3 do mês)
+- [ ] Lista 20 clientes (Gustavo) — nome, segmento, link IG, link GA4
+- [ ] Coordenar acesso GA4 dos 20 clientes (Gustavo + tutorial 1-pager)
+
+### Decisões pendentes
+- [ ] Lucas aprova cortes de escopo: POC Premiere + NPS Day-1 → Backlog Fase 2
+- [ ] Decisão NO-GO ou continuar (12/05 — só se 4/4 bloqueantes ainda travados)
 - [ ] Pró-labore Gustavo (não divulgado — tratar como capacidade variável)
-- [ ] Redigir aditivo de SLA contratual (48h ou 72h?)
-- [ ] Atualizar `framework-processo.md` + `bpmn-basico.md` + `plano-execucao.md` pós-validação
-- [ ] Cliente-piloto a escolher
 
 ## Arquivos (estrutura nova 26/04)
 ```

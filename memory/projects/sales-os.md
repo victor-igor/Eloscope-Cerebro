@@ -225,9 +225,27 @@ Meta: 2-3 clientes beta. Zero custo de aquisição.
 **Decisão:** sem número específico — produto em primeira versão, sem validação ainda. Quando primeiros cases saírem, inserir número real.
 **Garantia:** devolução do setup (R$3.000) se nada melhorar em 60 dias.
 
+## Fluxo do Cliente (07/05/2026)
+
+6 fases end-to-end. Arquivos em `empresa/projetos/sales-os/00-fluxo-cliente/`.
+
+| Fase | Arquivo | Duração | Saída |
+|------|---------|---------|-------|
+| 0 — Pré-venda | fase-0-prevenda.md | 2–4 sem | Contrato + setup pago |
+| 1 — Kickoff & Diagnóstico | fase-1-kickoff-diagnostico.md | 1 sem | Relatório diagnóstico |
+| 2 — Estrutura de Processo | fase-2-estrutura-processo.md | 2–3 sem | Fluxograma + Playbook |
+| 3 — Gate | fase-3-gate.md | 2–5 dias | Go/No-Go + pacote |
+| 4 — Execução | fase-4-execucao.md | 1–4 sem | Sistema em produção |
+| 5 — Acompanhamento | fase-5-acompanhamento.md | contínuo | Renovação ou case |
+
+Template por cliente: `empresa/projetos/sales-os/docs/clientes/_template/`
+Mapa agentes/skills: `empresa/projetos/sales-os/00-fluxo-cliente/agents-skills-map.md`
+
 ## Arquivos
 - `cerebro/empresa/projetos/sales-os/slides.html` — **21 slides** (atualizado 18/04)
 - `cerebro/empresa/projetos/sales-os/ecossistema.html`
+- `cerebro/empresa/projetos/sales-os/00-fluxo-cliente/` — **fluxo end-to-end** (criado 07/05)
+- `cerebro/empresa/projetos/sales-os/docs/clientes/_template/` — **template por cliente** (criado 07/05)
 
 ## Timeline
 | Data | Evento |
@@ -238,8 +256,9 @@ Meta: 2-3 clientes beta. Zero custo de aquisição.
 | 18/04/2026 | Meta revisada: R$15k MRR (não R$1M) · Q2 escolhido · promessa mãe definida |
 | 18/04/2026 | Oferta híbrida C Q2 estruturada · Modelos A e B precificados |
 | 18/04/2026 | Funil de vendas criado — 3 funis (Outbound/Indicação/Inbound) com SLAs, métricas e alertas |
+| 07/05/2026 | Fluxo end-to-end 6 fases criado (00-fluxo-cliente/) + template por cliente (docs/clientes/_template/) |
 | Jun/2026 | Meta: 2-3 clientes beta fechados |
 | Abr/2027 | Meta: R$15k MRR · 10 clientes |
 
 ---
-*Atualizado: 19/04/2026*
+*Atualizado: 07/05/2026*
