@@ -29,7 +29,7 @@ Reunião recorrente de review de plataforma com Maqlam. Foco em apresentar novos
 - **Cashback program:** sistema manual construído porque o nativo do AllList é restritivo. Import por planilha; campanha pós-feira (02/05–02/06) com 5% cashback, resgate exige compra 3x o valor.
 - **Kanban centralizado:** novo board unifica tarefas de CRM, manuais e oportunidades. Context "CRM" linka task a contato.
 - **Contact profile 360°:** histórico de conversa, pedidos, saldo cashback, tarefas linkadas. Botão "Chatútil" será adicionado.
-- **MAC Memory:** admins podem gerenciar knowledge base da AI (horários, feriados, avisos temporários).
+- **MAQ Memory:** admins podem gerenciar knowledge base da AI (horários, feriados, avisos temporários).
 
 ## Métricas / Resultados apresentados
 

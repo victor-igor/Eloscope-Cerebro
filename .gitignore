@@ -1,5 +1,3 @@
-
-
 # Environment & Secrets (AIOX)
 .env
 .env.local
@@ -38,3 +36,7 @@ Thumbs.db
 
 # MCP local (contém tokens)
 .mcp.local.json
+
+# AIOS Local (AIOS)
+.aios-core/local/
+.aios/install-log.txt

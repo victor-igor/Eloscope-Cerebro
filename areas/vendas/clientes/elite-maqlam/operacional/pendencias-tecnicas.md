@@ -49,7 +49,7 @@ tags: [cliente/maqlam, tecnico, backlog]
 |------|-------------|------|
 | Asaas fatura ajustada para R$1.197 | 24/04/2026 | Lucas ajustou manualmente |
 | Acesso admin Marcella + Juliano | 24/04/2026 | Denis solicitou, confirmado na reunião |
-| Script Bumble (MAC1) cadastrado | abr/2026 | Victor cadastrou + ativou |
+| Script Bumble (MAQ1) cadastrado | abr/2026 | Victor cadastrou + ativou |
 
 ---
 

@@ -27,6 +27,7 @@
 | Mentoria Agências | 🔨 Em construção | Validar pricing para próximos leads | mentoria-agencias.md |
 | Morgana Sales | 🔥 Ativo — API oficial bloqueada por Autem | Token Autem hoje (08/05) → número `5517981542837` → cartão → templates → campanha 10–11/05 | morgana-sales.md |
 | Enertelles | 🔨 Lead em fechamento | Call Telles + Alex 30/04 — apresentar proposta v4 | enertelles.md |
+| PeleVet | 🔥 Lead quente — discovery feito | Reunião técnica 11/05 13h com Vítor (proposta) | pele-vet.md |
 
 ---
 
@@ -48,6 +49,7 @@
 
 ## Mudanças Recentes
 
+- [09/05] **PeleVet** — discovery 07/05 consolidado em `areas/vendas/oportunidades/pele_vet/`; análise de mercado SJRP feita (TAM 28.500 cães/ano dermato, <3% capturado); reunião técnica 11/05 13h com Vítor. Squad `discovery-analyzer` arquitetado pra reaproveitar fluxo (3 agents paralelos + Cassandra)
 - [03/05] **Elite Maqlam** — projeto documentado em `maqlam.md` (estrutura sistema, módulos, edge functions, chips); 11 tasks criadas no ClickUp (cashback, BDR, CS, aquecimento chips 04-08/05)
 - [02/05] **Vendas** — convenção CRM definida (oportunidades/ vs clientes/) + SPIN Playbook Eloscope v0.2 criado em `areas/vendas/metodologia/` (553 linhas) + plano do squad sales-call-analyzer (4 agentes + skill `/analisar-call`)
 - [01/05] **Cerebro** — rituais operacionais Semana 1 colados (filtro 3 perguntas + weekly review template + spec /triagem); SessionStart hook ativado; 3 routines remotas Anthropic Cloud com saída via WhatsApp uazapi (cockpit diário, prep weekly, revisão mensal)
@@ -63,6 +65,6 @@
 
 ---
 
-*Atualizado: 07/05/2026*
+*Atualizado: 09/05/2026*
 
 | ReabilitaCao | 🟢 Ativo | Sistema veterinário — Epic 28 (agendamento recorrente) aguarda implementação | reabilitacao.md |

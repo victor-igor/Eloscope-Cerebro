@@ -7,6 +7,7 @@
 
 | Prazo | Entrega | Status | Nota |
 |-------|---------|--------|------|
+| 11/05/2026 | PeleVet — reunião técnica 13h presencial com Vítor (proposta) | Pendente | Lucas — gancho: "operam em <16% do potencial" |
 | 22/04/2026 | Confirmar demo Franciele — ReabilitaCão (era WTACON) | ✅ No ClickUp | Victor — 3 features: recorrente, dieta, gravação |
 | 22/04/2026 | Cobrar Jean — Imobiliária Rodrigues | ✅ No ClickUp | Lucas — lista Cobranças |
 | 22/04/2026 | Cobrar R$6.000 — Samuel/Voltrucks (era FURA) | ✅ No ClickUp | Lucas — lista Cobranças |

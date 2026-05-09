@@ -8,6 +8,7 @@
 
 ## 🔴 Críticas (bloqueiam progresso)
 
+- [09/05/2026] 🔥 **PeleVet — montar proposta comercial** · reunião técnica 11/05 13h presencial com Vítor · escopo (financeiro por centro de custo + CRM/IA atendimento + plano crônico) + pricing + cronograma · Lucas
 - ✅ [09/05/2026] **Morgana — API oficial Meta destravada e configurada** · André (Autem) gerou Usuário de Sistema + token, cartão em dólar cadastrado, número oficial `55 17 98154-2837` configurado no sistema (não mais teste). Próximo: submeter templates + atualizar `mod-campaigns` (Lucas)
 - [09/05/2026] **Morgana — morganasales_core atualizar para API oficial** · módulo de campanhas (`eloscope-ai/mod-campaigns`) ainda em API não-oficial · Lucas implementa para abrir Grupo 1 · tarefa ClickUp `86e19hqg5`
 - [09/05/2026] **Morgana — submeter templates transacionais** · desbloqueado pelo cartão · 24-48h aprovação Meta · pré-requisito da campanha de ativação base ~9k leads
@@ -28,6 +29,8 @@
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
+- [09/05/2026] **PeleVet — validar antes da reunião 11/05:** CPL real (R$ 4 vs R$ 2,30), faturamento mensal real, recorrência média de paciente crônico (LTV), benchmark Zilda Mayer, apetite por telemedicina, faturamento isolado do banho, sobrenome da segunda Sílvia · Lucas
+- [09/05/2026] **Squad `discovery-analyzer` evoluir para v0.2** · stub criado em `squads/discovery-analyzer/` + `skills/discovery-analyze/SKILL.md` · próximo: parser + auto-dispatch dos 3 agents paralelos (Mapeador, SPIN Analyst, Quant) + orquestrador Cassandra · usar no próximo discovery
 - [07/05/2026] **Campos Joias — implementar módulo RAG** · nova sessão: rodar migrations (pgvector + 6 tabelas/funções) → deploy 4 Edge Functions → lib frontend `src/lib/rag/` → página `/base-conhecimento` · spec completa em `RAG_MODULO_EXPORTACAO.md` · Victor
 - [07/05/2026] **Campos Joias — habilitar RLS** em `documents` e `n8n_chat_histories` com policies adequadas antes de produção · Victor
 
@@ -174,4 +177,4 @@
 
 - [24/04/2026] **Bravo — ClickUp estruturado** · pasta "Bravo Agency" criada com 6 listas e 33 tarefas · workspace 90171169593 / Espaço da equipe
 
-*Atualizado: 02/05/2026*
+*Atualizado: 09/05/2026*

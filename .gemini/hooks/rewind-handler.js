@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * AIOX Rewind Handler
+ * AIOS Rewind Handler
  * Story GEMINI-INT.14 - /rewind Integration
  *
- * Syncs Gemini's /rewind command with AIOX state.
+ * Syncs Gemini's /rewind command with AIOS state.
  */
 
 const fs = require('fs');
@@ -26,9 +26,9 @@ async function handleRewind() {
   // Sanitize sessionId to prevent path traversal
   const sessionId = sanitizeSessionId(rawSessionId);
 
-  // Sync with AIOX memory layer
+  // Sync with AIOS memory layer
   try {
-    const memoryDir = path.join(projectDir, '.aiox', 'memory');
+    const memoryDir = path.join(projectDir, '.aios', 'memory');
 
     if (fs.existsSync(memoryDir) && sessionId) {
       // Clear session-specific memory (only if sessionId is valid)
@@ -42,7 +42,7 @@ async function handleRewind() {
     }
 
     // Log the rewind event
-    const logDir = path.join(projectDir, '.aiox', 'logs');
+    const logDir = path.join(projectDir, '.aios', 'logs');
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
     }
