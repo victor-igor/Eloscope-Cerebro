@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PeleVet — Simulação WhatsApp</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
+    background: #0A0A0A;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ===== PAGE HEADER ===== */
+  .page-header {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px 24px 28px;
+    text-align: center;
+  }
+
+  .page-header .day-badge {
+    display: inline-block;
+    background: #1A1A1A;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .page-header h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .page-header p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .page-header .stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12px;
+    color: #888;
+  }
+
+  .page-header .stat .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #FF4444;
+    animation: blink 1.5s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .arrow-down {
+    color: #444;
+    font-size: 20px;
+    margin: 8px 0 0;
+    display: block;
+  }
+
+  /* ===== WHATSAPP CONTAINER ===== */
+  .wa-wrapper {
+    width: 100%;
+    max-width: 480px;
+    padding: 0 12px;
+  }
+
+  .wa-phone {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px #222;
+    background: #ECE5DD;
+  }
+
+  /* Header */
+  .wa-header {
+    background: #128C7E;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .wa-back {
+    color: rgba(255,255,255,0.8);
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .wa-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0A6B5E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .wa-header-info {
+    flex: 1;
+  }
+
+  .wa-header-name {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .wa-header-status {
+    color: rgba(255,255,255,0.75);
+    font-size: 12px;
+  }
+
+  .wa-header-icons {
+    display: flex;
+    gap: 16px;
+    color: rgba(255,255,255,0.8);
+    font-size: 18px;
+  }
+
+  /* Background pattern */
+  .wa-body {
+    background-color: #ECE5DD;
+    background-image: radial-gradient(circle, #D4C5B0 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding: 12px 12px 8px;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  /* Date chip */
+  .wa-date-chip {
+    text-align: center;
+    margin: 4px 0 8px;
+  }
+
+  .wa-date-chip span {
+    background: rgba(255,255,255,0.75);
+    color: #666;
+    font-size: 11.5px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  /* Bubbles */
+  .wa-msg {
+    display: flex;
+    flex-direction: column;
+    max-width: 78%;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .wa-msg.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .wa-msg.from-lead {
+    align-self: flex-end;
+    align-items: flex-end;
+  }
+
+  .wa-msg.from-agent {
+    align-self: flex-start;
+    align-items: flex-start;
+  }
+
+  /* Sender name above first bubble in a group */
+  .wa-sender-name {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 2px;
+    padding-left: 2px;
+  }
+
+  .wa-bubble {
+    padding: 7px 10px 6px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #111;
+    position: relative;
+    word-break: break-word;
+  }
+
+  .from-lead .wa-bubble {
+    background: #DCF8C6;
+    border-bottom-right-radius: 2px;
+  }
+
+  .from-agent .wa-bubble {
+    background: #FFFFFF;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+  }
+
+  .wa-meta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+    padding: 0 4px;
+  }
+
+  .wa-time {
+    font-size: 11px;
+    color: #999;
+  }
+
+  .wa-ticks {
+    font-size: 13px;
+    color: #53BDEB;
+  }
+
+  /* Typing indicator */
+  .wa-typing {
+    align-self: flex-start;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    margin-bottom: 2px;
+  }
+
+  .wa-typing.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .wa-typing-bubble {
+    background: #FFFFFF;
+    border-radius: 8px;
+    border-bottom-left-radius: 2px;
+    padding: 10px 14px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .wa-typing-bubble span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #999;
+    animation: typingDot 1.2s infinite;
+  }
+
+  .wa-typing-bubble span:nth-child(2) { animation-delay: 0.2s; }
+  .wa-typing-bubble span:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes typingDot {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-4px); opacity: 1; }
+  }
+
+  /* Chatwoot notification */
+  .wa-notification {
+    align-self: center;
+    width: 94%;
+    background: #1A1A2E;
+    border: 1px solid #00D4FF;
+    border-radius: 10px;
+    padding: 12px 14px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 16px rgba(0,212,255,0.15);
+    margin-top: 8px;
+  }
+
+  .wa-notification.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .wa-notification-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .wa-notif-icon {
+    width: 24px;
+    height: 24px;
+    background: #00D4FF;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #0A0A1A;
+    font-weight: 700;
+  }
+
+  .wa-notif-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #00D4FF;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .wa-notification p {
+    font-size: 11.5px;
+    color: #CCC;
+    line-height: 1.6;
+  }
+
+  .wa-notification p strong {
+    color: #FFF;
+  }
+
+  .wa-notif-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .wa-notif-arrow {
+    color: #00D4FF;
+    font-size: 12px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  /* Footer input area */
+  .wa-footer {
+    background: #F0F0F0;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .wa-input {
+    flex: 1;
+    background: #fff;
+    border-radius: 24px;
+    padding: 9px 14px;
+    font-size: 14px;
+    color: #999;
+    border: none;
+    outline: none;
+    pointer-events: none;
+  }
+
+  .wa-send-btn {
+    width: 40px;
+    height: 40px;
+    background: #128C7E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .wa-footer-icon {
+    font-size: 22px;
+    color: #999;
+  }
+
+  /* ===== PAGE FOOTER ===== */
+  .page-footer {
+    width: 100%;
+    max-width: 480px;
+    padding: 28px 24px 48px;
+    text-align: center;
+  }
+
+  .page-footer .day-badge {
+    display: inline-block;
+    background: #0F2012;
+    border: 1px solid #1B4D2A;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 11px;
+    color: #4CAF50;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .page-footer h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #CCC;
+    margin-bottom: 14px;
+  }
+
+  .footer-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .footer-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #111;
+    border: 1px solid #1E3A1E;
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-align: left;
+  }
+
+  .check-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1B4D2A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #4CAF50;
+    flex-shrink: 0;
+  }
+
+  .footer-check span {
+    font-size: 13px;
+    color: #CCC;
+  }
+
+  .footer-punch {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  .footer-punch strong {
+    color: #FFF;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (min-width: 600px) {
+    .wa-wrapper { padding: 0 0; }
+    .wa-phone { border-radius: 32px; }
+  }
+
+  @media (max-width: 400px) {
+    .page-header h1 { font-size: 17px; }
+    .wa-bubble { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="day-badge">Sábado, 17h43</div>
+  <h1>Sem ninguém disponível na clínica</h1>
+  <p>60 leads chegam todo fim de semana nesse horário.</p>
+  <div class="stat">
+    <span class="dot"></span>
+    Equipe offline — o agente assume
+  </div>
+  <span class="arrow-down">↓</span>
+</div>
+
+<!-- WHATSAPP -->
+<div class="wa-wrapper">
+  <div class="wa-phone">
+
+    <!-- WA Header -->
+    <div class="wa-header">
+      <div class="wa-back">&#8249;</div>
+      <div class="wa-avatar">PV</div>
+      <div class="wa-header-info">
+        <div class="wa-header-name">PeleVet Cuidados Integrados</div>
+        <div class="wa-header-status">online</div>
+      </div>
+      <div class="wa-header-icons">
+        <span>&#9742;</span>
+        <span>&#8942;</span>
+      </div>
+    </div>
+
+    <!-- WA Body -->
+    <div class="wa-body" id="wa-body">
+
+      <div class="wa-date-chip"><span>HOJE</span></div>
+
+      <!-- MARIA 1 -->
+      <div class="wa-msg from-lead" id="m1">
+        <div class="wa-bubble">Oi boa tarde! Vi o instagram de vocês e queria saber se vocês atendem cachorro com problema de pele? meu dog tá coçando muito e apareceu umas manchas vermelhas no pescoço</div>
+        <div class="wa-meta"><span class="wa-time">17:43</span><span class="wa-ticks">✓✓</span></div>
+      </div>
+
+      <!-- TYPING 1 -->
+      <div class="wa-typing" id="t1">
+        <div class="wa-typing-bubble"><span></span><span></span><span></span></div>
+      </div>
+
+      <!-- BIA 1 -->
+      <div class="wa-msg from-agent" id="b1">
+        <div class="wa-sender-name">Bia</div>
+        <div class="wa-bubble">Oi Maria, boa tarde! 😊</div>
+        <div class="wa-meta"><span class="wa-time">17:43</span></div>
+      </div>
+
+      <!-- BIA 2 -->
+      <div class="wa-msg from-agent" id="b2">
+        <div class="wa-bubble">Sim, a gente atende sim!</div>
+        <div class="wa-meta"><span class="wa-time">17:43</span></div>
+      </div>
+
+      <!-- BIA 3 -->
+      <div class="wa-msg from-agent" id="b3">
+        <div class="wa-bubble">Aqui na PeleVet a gente é especializada em pele e endocrinologia vet</div>
+        <div class="wa-meta"><span class="wa-time">17:44</span></div>
+      </div>
+
+      <!-- BIA 4 -->
+      <div class="wa-msg from-agent" id="b4">
+        <div class="wa-bubble">Me conta mais sobre o seu pet</div>
+        <div class="wa-meta"><span class="wa-time">17:44</span></div>
+      </div>
+
+      <!-- MARIA 2 -->
+      <div class="wa-msg from-lead" id="m2">
+        <div class="wa-bubble">é uma golden retriever, 3 anos, chama Pipoca</div>
+        <div class="wa-meta"><span class="wa-time">17:44</span><span class="wa-ticks">✓✓</span></div>
+      </div>
+
+      <!-- TYPING 2 -->
+      <div class="wa-typing" id="t2">
+        <div class="wa-typing-bubble"><span></span><span></span><span></span></div>
+      </div>
+
+      <!-- BIA 5 -->
+      <div class="wa-msg from-agent" id="b5">
+        <div class="wa-sender-name">Bia</div>
+        <div class="wa-bubble">Ai que nome lindo 🐾</div>
+        <div class="wa-meta"><span class="wa-time">17:44</span></div>
+      </div>
+
+      <!-- BIA 6 -->
+      <div class="wa-msg from-agent" id="b6">
+        <div class="wa-bubble">Golden tem bastante predisposição a alergia de pele né</div>
+        <div class="wa-meta"><span class="wa-time">17:44</span></div>
+      </div>
+
+      <!-- BIA 7 -->
+      <div class="wa-msg from-agent" id="b7">
+        <div class="wa-bubble">Faz quanto tempo que ela tá assim?</div>
+        <div class="wa-meta"><span class="wa-time">17:44</span></div>
+      </div>
+
+      <!-- MARIA 3 -->
+      <div class="wa-msg from-lead" id="m3">
+        <div class="wa-bubble">umas 2 semanas, foi aparecendo devagar. ela coça mais à noite e tá caindo pelo no pescoço também</div>
+        <div class="wa-meta"><span class="wa-time">17:45</span><span class="wa-ticks">✓✓</span></div>
+      </div>
+
+      <!-- TYPING 3 -->
+      <div class="wa-typing" id="t3">
+        <div class="wa-typing-bubble"><span></span><span></span><span></span></div>
+      </div>
+
+      <!-- BIA 8 -->
+      <div class="wa-msg from-agent" id="b8">
+        <div class="wa-sender-name">Bia</div>
+        <div class="wa-bubble">Entendi</div>
+        <div class="wa-meta"><span class="wa-time">17:45</span></div>
+      </div>
+
+      <!-- BIA 9 -->
+      <div class="wa-msg from-agent" id="b9">
+        <div class="wa-bubble">Esse padrão de piorar à noite e perder pelo assim é bem característico de dermatite</div>
+        <div class="wa-meta"><span class="wa-time">17:45</span></div>
+      </div>
+
+      <!-- BIA 10 -->
+      <div class="wa-msg from-agent" id="b10">
+        <div class="wa-bubble">É exatamente o tipo de caso que a Dra. Sílvia vê aqui</div>
+        <div class="wa-meta"><span class="wa-time">17:45</span></div>
+      </div>
+
+      <!-- BIA 11 -->
+      <div class="wa-msg from-agent" id="b11">
+        <div class="wa-bubble">A Pipoca já foi em algum veterinário por esse problema?</div>
+        <div class="wa-meta"><span class="wa-time">17:46</span></div>
+      </div>
+
+      <!-- MARIA 4 -->
+      <div class="wa-msg from-lead" id="m4">
+        <div class="wa-bubble">fui num pet shop e deram um remedinho mas não melhorou nada</div>
+        <div class="wa-meta"><span class="wa-time">17:46</span><span class="wa-ticks">✓✓</span></div>
+      </div>
+
+      <!-- TYPING 4 -->
+      <div class="wa-typing" id="t4">
+        <div class="wa-typing-bubble"><span></span><span></span><span></span></div>
+      </div>
+
+      <!-- BIA 12 -->
+      <div class="wa-msg from-agent" id="b12">
+        <div class="wa-sender-name">Bia</div>
+        <div class="wa-bubble">Faz sentido não ter melhorado</div>
+        <div class="wa-meta"><span class="wa-time">17:46</span></div>
+      </div>
+
+      <!-- BIA 13 -->
+      <div class="wa-msg from-agent" id="b13">
+        <div class="wa-bubble">Esse tipo de coisa precisa de avaliação especializada mesmo pra identificar o que tá causando</div>
+        <div class="wa-meta"><span class="wa-time">17:46</span></div>
+      </div>
+
+      <!-- BIA 14 -->
+      <div class="wa-msg from-agent" id="b14">
+        <div class="wa-bubble">Você mora em SJRP?</div>
+        <div class="wa-meta"><span class="wa-time">17:47</span></div>
+      </div>
+
+      <!-- MARIA 5 -->
+      <div class="wa-msg from-lead" id="m5">
+        <div class="wa-bubble">sim, bairro Boa Vista</div>
+        <div class="wa-meta"><span class="wa-time">17:47</span><span class="wa-ticks">✓✓</span></div>
+      </div>
+
+      <!-- TYPING 5 -->
+      <div class="wa-typing" id="t5">
+        <div class="wa-typing-bubble"><span></span><span></span><span></span></div>
+      </div>
+
+      <!-- BIA 15 -->
+      <div class="wa-msg from-agent" id="b15">
+        <div class="wa-sender-name">Bia</div>
+        <div class="wa-bubble">Ótimo, a gente fica pertinho então!</div>
+        <div class="wa-meta"><span class="wa-time">17:47</span></div>
+      </div>
+
+      <!-- BIA 16 -->
+      <div class="wa-msg from-agent" id="b16">
+        <div class="wa-bubble">Você prefere atendimento de manhã ou tarde?</div>
+        <div class="wa-meta"><span class="wa-time">17:47</span></div>
+      </div>
+
+      <!-- MARIA 6 -->
+      <div class="wa-msg from-lead" id="m6">
+        <div class="wa-bubble">de manhã de preferência</div>
+        <div class="wa-meta"><span class="wa-time">17:47</span><span class="wa-ticks">✓✓</span></div>
+      </div>
+
+      <!-- TYPING 6 -->
+      <div class="wa-typing" id="t6">
+        <div class="wa-typing-bubble"><span></span><span></span><span></span></div>
+      </div>
+
+      <!-- BIA 17 -->
+      <div class="wa-msg from-agent" id="b17">
+        <div class="wa-sender-name">Bia</div>
+        <div class="wa-bubble">Perfeito</div>
+        <div class="wa-meta"><span class="wa-time">17:48</span></div>
+      </div>
+
+      <!-- BIA 18 -->
+      <div class="wa-msg from-agent" id="b18">
+        <div class="wa-bubble">Vou deixar o caso da Pipoca registrado aqui</div>
+        <div class="wa-meta"><span class="wa-time">17:48</span></div>
+      </div>
+
+      <!-- BIA 19 -->
+      <div class="wa-msg from-agent" id="b19">
+        <div class="wa-bubble">Na segunda de manhã nossa equipe entra em contato pra confirmar o horário disponível com a Dra. Sílvia tá bom?</div>
+        <div class="wa-meta"><span class="wa-time">17:48</span></div>
+      </div>
+
+      <!-- BIA 20 -->
+      <div class="wa-msg from-agent" id="b20">
+        <div class="wa-bubble">Enquanto isso não dá nenhum remédio novo pra ela não, especialmente corticoide, pode atrapalhar na consulta</div>
+        <div class="wa-meta"><span class="wa-time">17:48</span></div>
+      </div>
+
+      <!-- MARIA 7 -->
+      <div class="wa-msg from-lead" id="m7">
+        <div class="wa-bubble">perfeito! muito obrigada, tava com medo de não conseguir atendimento hoje</div>
+        <div class="wa-meta"><span class="wa-time">17:49</span><span class="wa-ticks">✓✓</span></div>
+      </div>
+
+      <!-- TYPING 7 -->
+      <div class="wa-typing" id="t7">
+        <div class="wa-typing-bubble"><span></span><span></span><span></span></div>
+      </div>
+
+      <!-- BIA 21 -->
+      <div class="wa-msg from-agent" id="b21">
+        <div class="wa-sender-name">Bia</div>
+        <div class="wa-bubble">Imagina! 😊</div>
+        <div class="wa-meta"><span class="wa-time">17:49</span></div>
+      </div>
+
+      <!-- BIA 22 -->
+      <div class="wa-msg from-agent" id="b22">
+        <div class="wa-bubble">A Pipoca tá em boas mãos</div>
+        <div class="wa-meta"><span class="wa-time">17:49</span></div>
+      </div>
+
+      <!-- BIA 23 -->
+      <div class="wa-msg from-agent" id="b23">
+        <div class="wa-bubble">Segunda de manhã a gente fala com você pra agendar</div>
+        <div class="wa-meta"><span class="wa-time">17:49</span></div>
+      </div>
+
+      <!-- BIA 24 -->
+      <div class="wa-msg from-agent" id="b24">
+        <div class="wa-bubble">Qualquer dúvida pode mandar mensagem aqui!</div>
+        <div class="wa-meta"><span class="wa-time">17:49</span></div>
+      </div>
+
+      <!-- Chatwoot notification -->
+      <div class="wa-notification" id="notif">
+        <div class="wa-notification-header">
+          <div class="wa-notif-icon">&#9889;</div>
+          <div class="wa-notif-title">CHATWOOT</div>
+        </div>
+        <p><strong>Lead qualificado</strong> — encaminhado para equipe</p>
+        <p><strong>Paciente:</strong> Pipoca · Golden · 3 anos</p>
+        <p><strong>Queixa:</strong> Dermatite provável · prurido noturno · alopecia cervical 2 sem</p>
+        <p><strong>Preferência:</strong> manhã · SJRP Boa Vista</p>
+        <div class="wa-notif-row">
+          <span class="wa-notif-arrow">→</span>
+          <p>Equipe agenda na segunda-feira</p>
+        </div>
+      </div>
+
+    </div><!-- /wa-body -->
+
+    <!-- WA Footer -->
+    <div class="wa-footer">
+      <span class="wa-footer-icon">&#128578;</span>
+      <div class="wa-input">Mensagem</div>
+      <span class="wa-footer-icon">&#128206;</span>
+      <div class="wa-send-btn">&#10148;</div>
+    </div>
+
+  </div><!-- /wa-phone -->
+</div><!-- /wa-wrapper -->
+
+<!-- PAGE FOOTER -->
+<div class="page-footer">
+  <div class="day-badge">Segunda-feira, 8h00</div>
+  <h2>A equipe chega e encontra:</h2>
+  <div class="footer-checks">
+    <div class="footer-check">
+      <div class="check-icon">&#10003;</div>
+      <span>Lead qualificado com histórico completo da Pipoca</span>
+    </div>
+    <div class="footer-check">
+      <div class="check-icon">&#10003;</div>
+      <span>Preferência de horário registrada (manhã)</span>
+    </div>
+    <div class="footer-check">
+      <div class="check-icon">&#10003;</div>
+      <span>Diagnóstico preliminar apontado — dermatite provável</span>
+    </div>
+  </div>
+  <p class="footer-punch"><strong>Thaísa não precisou fazer nada.</strong></p>
+</div>
+
+<script>
+  // Sequence definition:
+  // Each entry: { id, type: 'msg'|'typing'|'notif', delay (ms from previous) }
+  // delay = time to wait AFTER previous element was shown before showing this one
+
+  const sequence = [
+    // Maria abre
+    { id: 'm1',    type: 'msg',    delay: 400 },
+
+    // Bia typing + respostas
+    { id: 't1',    type: 'typing', delay: 900 },
+    { id: 'b1',    type: 'msg',    delay: 1100, hideTyping: 't1' },
+    { id: 'b2',    type: 'msg',    delay: 700 },
+    { id: 'b3',    type: 'msg',    delay: 800 },
+    { id: 'b4',    type: 'msg',    delay: 700 },
+
+    // Maria responde
+    { id: 'm2',    type: 'msg',    delay: 1300 },
+
+    // Bia typing + respostas
+    { id: 't2',    type: 'typing', delay: 900 },
+    { id: 'b5',    type: 'msg',    delay: 1000, hideTyping: 't2' },
+    { id: 'b6',    type: 'msg',    delay: 700 },
+    { id: 'b7',    type: 'msg',    delay: 650 },
+
+    // Maria responde
+    { id: 'm3',    type: 'msg',    delay: 1400 },
+
+    // Bia typing + respostas
+    { id: 't3',    type: 'typing', delay: 900 },
+    { id: 'b8',    type: 'msg',    delay: 1000, hideTyping: 't3' },
+    { id: 'b9',    type: 'msg',    delay: 750 },
+    { id: 'b10',   type: 'msg',    delay: 750 },
+    { id: 'b11',   type: 'msg',    delay: 700 },
+
+    // Maria responde
+    { id: 'm4',    type: 'msg',    delay: 1300 },
+
+    // Bia typing + respostas
+    { id: 't4',    type: 'typing', delay: 900 },
+    { id: 'b12',   type: 'msg',    delay: 1000, hideTyping: 't4' },
+    { id: 'b13',   type: 'msg',    delay: 750 },
+    { id: 'b14',   type: 'msg',    delay: 700 },
+
+    // Maria responde
+    { id: 'm5',    type: 'msg',    delay: 1200 },
+
+    // Bia typing + respostas
+    { id: 't5',    type: 'typing', delay: 850 },
+    { id: 'b15',   type: 'msg',    delay: 1000, hideTyping: 't5' },
+    { id: 'b16',   type: 'msg',    delay: 700 },
+
+    // Maria responde
+    { id: 'm6',    type: 'msg',    delay: 1200 },
+
+    // Bia typing + respostas
+    { id: 't6',    type: 'typing', delay: 900 },
+    { id: 'b17',   type: 'msg',    delay: 1000, hideTyping: 't6' },
+    { id: 'b18',   type: 'msg',    delay: 700 },
+    { id: 'b19',   type: 'msg',    delay: 800 },
+    { id: 'b20',   type: 'msg',    delay: 800 },
+
+    // Maria agradece
+    { id: 'm7',    type: 'msg',    delay: 1300 },
+
+    // Bia typing + fechamento
+    { id: 't7',    type: 'typing', delay: 900 },
+    { id: 'b21',   type: 'msg',    delay: 1000, hideTyping: 't7' },
+    { id: 'b22',   type: 'msg',    delay: 650 },
+    { id: 'b23',   type: 'msg',    delay: 700 },
+    { id: 'b24',   type: 'msg',    delay: 650 },
+
+    // Chatwoot
+    { id: 'notif', type: 'notif',  delay: 1200 },
+  ];
+
+  const waBody = document.getElementById('wa-body');
+
+  function scrollToBottom() {
+    waBody.scrollTop = waBody.scrollHeight;
+  }
+
+  function showElement(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.classList.add('visible');
+      scrollToBottom();
+    }
+  }
+
+  function hideElement(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.classList.remove('visible');
+    }
+  }
+
+  function runSequence() {
+    let accDelay = 0;
+    sequence.forEach((step) => {
+      accDelay += step.delay;
+      setTimeout(() => {
+        if (step.hideTyping) hideElement(step.hideTyping);
+        showElement(step.id);
+      }, accDelay);
+    });
+  }
+
+  // Start after a short pause
+  setTimeout(runSequence, 300);
+</script>
+</body>
+</html>

@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>PeleVet × Eloscope — Proposta Comercial | 11 de maio de 2026</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme" />
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg2: #161b22;
+      --bg3: #1a2332;
+      --accent: #00c896;
+      --accent2: #00e639;
+      --purple: #7c5cfc;
+      --red: #ff4d6d;
+      --orange: #ff8c42;
+      --text: #ffffff;
+      --text-muted: #c0c0cc;
+      --text-dim: #737373;
+      --border: rgba(0, 200, 150, 0.2);
+      --border-strong: rgba(0, 200, 150, 0.5);
+      --glow: rgba(0, 200, 150, 0.25);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); }
+
+    .reveal { font-family: 'Inter', system-ui, sans-serif; }
+
+    .reveal .slides section {
+      background:
+        radial-gradient(ellipse at 75% 25%, rgba(0, 200, 150, 0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(124, 92, 252, 0.06) 0%, transparent 55%),
+        var(--bg);
+      color: var(--text);
+      padding: 48px 80px !important;
+      height: 100vh;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    /* Textura de linhas verticais sutis */
+    .reveal .slides section::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 72px;
+      background-image: repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 18px
+      );
+      pointer-events: none;
+    }
+
+    /* Footer fixo */
+    .eloscope-footer {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    /* Slide number override */
+    .reveal .slide-number {
+      background: transparent;
+      color: var(--text-dim);
+      font-size: 11px;
+      font-family: 'Inter', sans-serif;
+      bottom: 20px;
+      right: 80px;
+      left: auto;
+    }
+
+    /* ===== TIPOGRAFIA ===== */
+    h1, h2, h3, h4 {
+      font-family: 'Inter', sans-serif !important;
+      color: var(--text) !important;
+      line-height: 1.1 !important;
+    }
+    .reveal h1 { font-size: 64px !important; font-weight: 800 !important; }
+    .reveal h2 { font-size: 48px !important; font-weight: 800 !important; }
+    .reveal h3 { font-size: 26px !important; font-weight: 700 !important; }
+    .reveal h4 { font-size: 18px !important; font-weight: 600 !important; }
+    .reveal p, .reveal li { font-size: 18px; line-height: 1.5; }
+
+    .label-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .accent { color: var(--accent); }
+    .accent2 { color: var(--accent2); }
+    .danger { color: var(--red); }
+    .muted { color: var(--text-muted); }
+    .dim { color: var(--text-dim); }
+    .bold { font-weight: 800; }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: rgba(22, 27, 34, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      backdrop-filter: blur(8px);
+    }
+    .card-green {
+      border-color: var(--border-strong);
+      box-shadow: 0 0 24px var(--glow);
+    }
+    .card-red {
+      border-color: rgba(255, 77, 109, 0.3);
+    }
+
+    /* ===== HEXÁGONOS ===== */
+    .hex-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .hex {
+      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+      background: linear-gradient(135deg, rgba(0, 200, 150, 0.15), rgba(0, 200, 150, 0.03));
+      border: none;
+      padding: 36px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-width: 160px;
+      min-height: 180px;
+      position: relative;
+    }
+    .hex::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+      box-shadow: inset 0 0 0 1px rgba(0, 200, 150, 0.35);
+    }
+
+    /* ===== NÚMERO GRANDE ===== */
+    .big-num {
+      font-size: 80px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--text);
+    }
+    .big-num.green { color: var(--accent2); text-shadow: 0 0 32px rgba(0, 230, 57, 0.35); }
+    .big-num.red { color: var(--red); text-shadow: 0 0 32px rgba(255, 77, 109, 0.35); }
+    .big-num.accent { color: var(--accent); text-shadow: 0 0 32px rgba(0, 200, 150, 0.35); }
+
+    /* ===== QUOTE CALLOUT ===== */
+    .quote-box {
+      background: rgba(0, 200, 150, 0.07);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 28px;
+      margin: 8px 0;
+    }
+    .quote-box p {
+      font-size: 17px;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .quote-box .quote-author {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 8px;
+      font-style: normal;
+    }
+
+    /* ===== GRID HELPERS ===== */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
+    .flex-row { display: flex; gap: 16px; align-items: center; }
+    .flex-center { display: flex; justify-content: center; align-items: center; }
+    .mt-4 { margin-top: 16px; }
+    .mt-6 { margin-top: 24px; }
+    .mt-8 { margin-top: 32px; }
+    .mt-12 { margin-top: 48px; }
+    .mb-2 { margin-bottom: 8px; }
+    .mb-4 { margin-bottom: 16px; }
+    .mb-6 { margin-bottom: 24px; }
+    .mb-8 { margin-bottom: 32px; }
+    .text-center { text-align: center; }
+    .text-sm { font-size: 14px !important; }
+    .text-xs { font-size: 12px !important; }
+    .w-full { width: 100%; }
+
+    /* ===== TABLE ===== */
+    table.roi-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 18px;
+    }
+    .roi-table th {
+      font-weight: 700;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(0, 200, 150, 0.3);
+      color: var(--text-muted);
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .roi-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+    }
+    .roi-table td:first-child { color: var(--text); font-weight: 600; }
+    .roi-table td.after { color: var(--accent2); font-weight: 700; }
+
+    /* ===== FASE/STEP INDICATOR ===== */
+    .step-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    /* ===== ARROW ===== */
+    .arrow {
+      font-size: 32px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ===== BADGE ===== */
+    .badge {
+      display: inline-block;
+      background: rgba(0, 200, 150, 0.15);
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+
+    /* ===== LOGO SIMULADO PELEEVET ===== */
+    .peleevet-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .peleevet-logo .logo-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #00c896, #00836b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+    .peleevet-logo .logo-text {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+    .peleevet-logo .logo-sub {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ===== ELOSCOPE LOGO SIMULADO ===== */
+    .eloscope-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .eloscope-logo .e-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #7c5cfc, #5a3fd4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      color: white;
+    }
+    .eloscope-logo .e-text {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ===== CROSS / CHECK ICONS ===== */
+    .icon-x { color: var(--red); font-size: 22px; flex-shrink: 0; }
+    .icon-check { color: var(--accent2); font-size: 22px; flex-shrink: 0; }
+
+    /* ===== TIMELINE ===== */
+    .timeline {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
+    .timeline-step {
+      flex: 1;
+      position: relative;
+    }
+    .timeline-step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: var(--accent);
+      z-index: 2;
+    }
+
+    /* ===== MODULO HEX GRID ===== */
+    .mod-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    .mod-pill {
+      background: rgba(0, 200, 150, 0.09);
+      border: 1px solid rgba(0, 200, 150, 0.25);
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mod-pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* Cenário box */
+    .scenario-box {
+      background: rgba(22, 27, 34, 0.9);
+      border: 1px solid rgba(0, 200, 150, 0.15);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .scenario-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .scenario-icon {
+      font-size: 22px;
+    }
+    .scenario-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .scenario-body {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Reveal customization */
+    .reveal .controls button { color: var(--accent) !important; }
+    .reveal .progress span { background: var(--accent) !important; }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 01 — CAPA                                                     -->
+    <!-- ================================================================== -->
+    <section>
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:32px; text-align:center;">
+
+        <!-- logos -->
+        <div style="display:flex; align-items:center; gap:32px; margin-bottom:8px;">
+          <div class="peleevet-logo" style="flex-direction:column; align-items:center; gap:8px;">
+            <div class="logo-mark">🐾</div>
+            <div>
+              <div class="logo-text">PeleVet</div>
+              <div class="logo-sub">Cuidados Integrados</div>
+            </div>
+          </div>
+          <div style="font-size:36px; color:var(--text-dim);">×</div>
+          <div class="eloscope-logo" style="flex-direction:column; align-items:center; gap:8px;">
+            <div class="e-mark">E</div>
+            <div>
+              <div class="e-text">Eloscope</div>
+              <div style="font-size:11px; color:var(--text-dim); letter-spacing:2px; text-transform:uppercase;">AI Systems</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h1 style="font-size:52px !important; line-height:1.2 !important; max-width:780px; margin:0 auto;">Uma proposta feita para o seu modelo de negócio.</h1>
+        </div>
+
+        <div style="margin-top:8px;">
+          <p style="font-size:18px; color:var(--text-muted);">Reunião de proposta · São José do Rio Preto · 11 de maio de 2026</p>
+          <p style="font-size:15px; color:var(--text-dim); margin-top:8px;">Apresentado por <strong style="color:var(--text);">Vítor</strong> · Eloscope AI Systems</p>
+        </div>
+
+      </div>
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 02 — O QUE OUVIMOS (empatia com quotes reais)                 -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">O que ouvimos</div>
+      <h2 class="mb-8">As próprias palavras de vocês</h2>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div class="quote-box">
+          <p>"A gente ri de nervoso agora, para não chorar. Histórico está tudo no celular. <strong style="color:var(--text);">Se roubarem o celular, lascou.</strong>"</p>
+          <div class="quote-author">— Thaísa, estrategista de marketing e operações</div>
+        </div>
+        <div class="quote-box">
+          <p>"A gente está parando muito no físico e está <strong style="color:var(--text);">deixando o online porque se trabalha no online, o pessoal chega e a gente não tem como receber.</strong>"</p>
+          <div class="quote-author">— Thaísa</div>
+        </div>
+        <div class="quote-box">
+          <p>"<strong style="color:var(--text);">Crescer organizado. Preciso de um financeiro organizado.</strong>"</p>
+          <div class="quote-author">— Sílvia de Paula, sócia-veterinária</div>
+        </div>
+        <div class="quote-box">
+          <p>"<strong style="color:var(--text);">Tirar a Thaísa do financeiro.</strong>"</p>
+          <div class="quote-author">— Sílvia de Paula</div>
+        </div>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 03 — O DIAGNÓSTICO (math da conversão)                        -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">O diagnóstico</div>
+      <h2 class="mb-6">O problema não é mercado, não é preço, não é tráfego.</h2>
+
+      <div class="grid-3 mt-6 mb-6">
+        <div class="card text-center">
+          <div class="step-label">Leads por mês</div>
+          <div class="big-num accent" style="font-size:64px;">250</div>
+          <p class="text-sm muted mt-4">R$ 1.000/mês em tráfego pago</p>
+        </div>
+        <div class="card text-center" style="border-color: rgba(255,77,109,0.35);">
+          <div class="step-label" style="color:var(--red);">Conversão atual</div>
+          <div class="big-num red" style="font-size:64px;">1,5%</div>
+          <p class="text-sm muted mt-4">3–4 clientes novos por mês</p>
+        </div>
+        <div class="card text-center card-green">
+          <div class="step-label">Oportunidade real</div>
+          <div class="big-num green" style="font-size:64px;">3%</div>
+          <p class="text-sm muted mt-4">+5–10 novos/mês <strong style="color:var(--accent2);">sem gastar 1 real a mais</strong></p>
+        </div>
+      </div>
+
+      <div class="card" style="background: rgba(0,200,150,0.06); border-color: var(--border-strong);">
+        <p style="font-size:17px; line-height:1.6; color:var(--text-muted);">
+          Vocês operam em <strong style="color:var(--text);">menos de 16% do potencial da própria cidade.</strong>
+          Cada novo cliente tem LTV estimado de <strong style="color:var(--accent2);">R$ 10K–30K.</strong>
+          Dobrar a conversão é o movimento mais rápido de crescimento disponível hoje para a PeleVet.
+        </p>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 04 — OCEANO AZUL (concorrência e posição de mercado)          -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Posição de mercado</div>
+      <h2 class="mb-8">Oceano azul em São José do Rio Preto</h2>
+
+      <div class="grid-2" style="gap:32px; align-items:start;">
+        <div>
+          <div class="card card-red mb-4">
+            <div style="display:flex; align-items:flex-start; gap:14px;">
+              <span style="font-size:28px;">🦈</span>
+              <div>
+                <h4 class="mb-2" style="color:var(--red);">Única concorrente direta</h4>
+                <p class="text-sm muted">Zilda Mayer · 35+ anos de mercado · generalista com dermato</p>
+                <p class="text-sm muted mt-2">Posicionamento difuso — não é especializada como vocês.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-green">
+            <div style="display:flex; align-items:flex-start; gap:14px;">
+              <span style="font-size:28px;">🐾</span>
+              <div>
+                <h4 class="mb-2" style="color:var(--accent);">PeleVet — especialização pura</h4>
+                <p class="text-sm muted">Dermato + Endocrinologia + Banho dermatoterapêutico</p>
+                <p class="text-sm muted mt-2">Ticket médio <strong style="color:var(--accent2);">R$ 700</strong> — topo nacional (média BR: R$ 200–500)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="hex-wrap" style="flex-direction:row; justify-content:center; gap:20px;">
+            <div class="hex-wrap">
+              <div class="hex" style="min-width:140px; min-height:155px;">
+                <div class="big-num accent" style="font-size:48px;">R$ 700</div>
+                <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); margin-top:8px;">Ticket médio</div>
+              </div>
+            </div>
+            <div class="hex-wrap">
+              <div class="hex" style="min-width:140px; min-height:155px;">
+                <div class="big-num accent" style="font-size:48px;">60</div>
+                <div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--text-dim); margin-top:8px;">Atend./mês</div>
+              </div>
+            </div>
+          </div>
+          <div class="card text-center">
+            <div class="step-label">Receita estimada atual</div>
+            <div class="big-num green" style="font-size:52px;">~R$ 42K/mês</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 05 — AS 3 DORES PRIORITÁRIAS                                  -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">As dores que vocês nos contaram</div>
+      <h2 class="mb-6">3 problemas que travam o crescimento</h2>
+
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div class="card" style="display:flex; align-items:flex-start; gap:18px;">
+          <div style="font-size:32px; flex-shrink:0;">🔴</div>
+          <div>
+            <h4 class="mb-1">Financeiro sem estrutura</h4>
+            <p class="text-sm muted">Centro de custo, bruto/líquido/recebido, dashboards por sócia — <strong style="color:var(--text);">não existe hoje.</strong> Thaísa acumula financeiro + marketing + operação. É humano demais para escalar.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; align-items:flex-start; gap:18px;">
+          <div style="font-size:32px; flex-shrink:0;">🟠</div>
+          <div>
+            <h4 class="mb-1">Leads que somem no fim de semana</h4>
+            <p class="text-sm muted"><strong style="color:var(--text);">~15 leads/fim de semana sem atendimento</strong> (~60/mês que evaporam). Histórico só no celular. Sem pipeline, sem CRM, sem automação de primeira resposta.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; align-items:flex-start; gap:18px;">
+          <div style="font-size:32px; flex-shrink:0;">🟡</div>
+          <div>
+            <h4 class="mb-1">Sistemas caros que não entregam</h4>
+            <p class="text-sm muted">SimplesVet R$ 389/mês com API fechada. VetSmart ~R$ 600/ano que transcreve 15 min de 1h de consulta — <em>"péssimo"</em>. Power BI que quebra toda hora e precisa de alguém atualizando.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 06 — QUANTO CUSTA NÃO RESOLVER                                -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Em 12 meses sem mudar</div>
+      <h2 class="mb-8">O custo invisível de continuar assim</h2>
+
+      <div class="grid-3">
+        <div class="card text-center card-red">
+          <div class="step-label" style="color:var(--red);">Leads perdidos/mês</div>
+          <div class="big-num red" style="font-size:56px;">~60</div>
+          <p class="text-sm muted mt-4">Leads no fim de semana sem 1ª resposta</p>
+        </div>
+        <div class="card text-center card-red">
+          <div class="step-label" style="color:var(--red);">Receita não capturada</div>
+          <div class="big-num red" style="font-size:56px;">R$ 42K+</div>
+          <p class="text-sm muted mt-4">Por mês em conversão que fica na mesa</p>
+        </div>
+        <div class="card text-center card-red">
+          <div class="step-label" style="color:var(--red);">Em 12 meses</div>
+          <div class="big-num red" style="font-size:56px;">R$ 504K</div>
+          <p class="text-sm muted mt-4">Receita possível que não vai existir</p>
+        </div>
+      </div>
+
+      <div class="quote-box mt-6">
+        <p>"Power BI super funciona, mas você tem que ter alguém atualizando, dá problema toda hora. <strong style="color:var(--text);">Não é funcional a médio e longo prazo.</strong>"</p>
+        <div class="quote-author">— Thaísa</div>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 07 — O QUE OUTROS TENTARAM (e por que falhou)                 -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Tentativas anteriores</div>
+      <h2 class="mb-8">O que outros sistemas prometeram (e não entregaram)</h2>
+
+      <div class="grid-3">
+        <div class="card card-red" style="opacity:0.85;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span class="icon-x">✕</span>
+            <h4>SimplesVet</h4>
+          </div>
+          <p class="text-sm muted">R$ 389/mês · API fechada · sem IA · financeiro raso · <strong style="color:var(--red);">preso no ecossistema deles</strong></p>
+        </div>
+        <div class="card card-red" style="opacity:0.85;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span class="icon-x">✕</span>
+            <h4>VetSmart</h4>
+          </div>
+          <p class="text-sm muted">~R$ 600/ano · transcreve 15 min de 1h de consulta · <strong style="color:var(--red);">"péssimo"</strong> · não integra nada</p>
+        </div>
+        <div class="card card-red" style="opacity:0.85;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span class="icon-x">✕</span>
+            <h4>Power BI manual</h4>
+          </div>
+          <p class="text-sm muted">Alguém atualizando todo dia · quebra toda hora · <strong style="color:var(--red);">não é funcional a médio prazo</strong></p>
+        </div>
+      </div>
+
+      <div class="card mt-6" style="background:rgba(0,200,150,0.06); border-color:var(--border-strong);">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span class="icon-check" style="font-size:28px;">✓</span>
+          <p style="font-size:16px; color:var(--text-muted);">
+            <strong style="color:var(--text);">A diferença que muda o jogo:</strong> sistema construído <em>para o modelo de negócio da PeleVet</em> — não SaaS genérico que tenta se encaixar. Com IA que aprende o tom de voz de vocês. No servidor de vocês.
+          </p>
+        </div>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 08 — A VIRADA: ELOSCOPE AI                                    -->
+    <!-- ================================================================== -->
+    <section>
+      <div style="text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:32px;">
+
+        <div class="label-tag">A virada</div>
+
+        <h1 style="font-size:72px !important; background: linear-gradient(135deg, #ffffff 30%, #00c896 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          Eloscope AI
+        </h1>
+
+        <p style="font-size:22px; color:var(--text-muted); max-width:680px; line-height:1.5;">
+          Sistema operacional com IA construído para clínicas veterinárias especializadas virarem <strong style="color:var(--text);">máquinas de aquisição e retenção</strong> — sem aumentar equipe, sem SaaS genérico, sem depender de terceiros.
+        </p>
+
+        <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+          <div class="badge">Financeiro estruturado</div>
+          <div class="badge">CRM com IA</div>
+          <div class="badge">Central de atendimento</div>
+          <div class="badge">No servidor de vocês</div>
+          <div class="badge">Construção contínua</div>
+        </div>
+
+      </div>
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 09 — O QUE VAMOS CONSTRUIR — FASE 1 (mapa de módulos)         -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Fase 1 — O Núcleo</div>
+      <h2 class="mb-6">O que vamos construir primeiro</h2>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+
+        <!-- Linha 1: 3 módulos -->
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
+          <div class="card card-green">
+            <div style="font-size:22px; margin-bottom:8px;">💰</div>
+            <h4 class="mb-1">Financeiro Inteligente</h4>
+            <p class="text-xs muted">Centros de custo por sócia · bruto/líquido/recebido · conciliação automática · dashboards sem Power BI</p>
+          </div>
+          <div class="card card-green">
+            <div style="font-size:22px; margin-bottom:8px;">📊</div>
+            <h4 class="mb-1">CRM com Pipeline Visual</h4>
+            <p class="text-xs muted">Kanban de leads · IA sugerindo próxima ação · rastreamento por fonte · sem planilha</p>
+          </div>
+          <div class="card card-green">
+            <div style="font-size:22px; margin-bottom:8px;">🤖</div>
+            <h4 class="mb-1">IA de Atendimento</h4>
+            <p class="text-xs muted">Pré-qualificação · agendamento · acesso ao prontuário · responde fins de semana · tom de voz PeleVet</p>
+          </div>
+        </div>
+
+        <!-- Linha 2: 4 módulos menores -->
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:14px;">
+          <div class="card">
+            <div style="font-size:18px; margin-bottom:6px;">💬</div>
+            <h4 style="font-size:15px !important;" class="mb-1">Central Chatwoot</h4>
+            <p class="text-xs muted">WhatsApp + Instagram numa tela</p>
+          </div>
+          <div class="card">
+            <div style="font-size:18px; margin-bottom:6px;">🎙️</div>
+            <h4 style="font-size:15px !important;" class="mb-1">Transcrição de Consulta</h4>
+            <p class="text-xs muted">Anamnese completa · PDF para o tutor</p>
+          </div>
+          <div class="card">
+            <div style="font-size:18px; margin-bottom:6px;">📋</div>
+            <h4 style="font-size:15px !important;" class="mb-1">Prontuário Completo</h4>
+            <p class="text-xs muted">Peso · patologia · fotos · exames · vacinas</p>
+          </div>
+          <div class="card">
+            <div style="font-size:18px; margin-bottom:6px;">🔔</div>
+            <h4 style="font-size:15px !important;" class="mb-1">Disparos Automáticos</h4>
+            <p class="text-xs muted">Confirmação · lembrete · aniversário do pet · NPS</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 10 — COMO FUNCIONA NA PRÁTICA (3 cenários do dia a dia)       -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Como funciona na prática</div>
+      <h2 class="mb-6">3 situações do dia a dia de vocês</h2>
+
+      <div style="display:flex; flex-direction:column; gap:14px;">
+
+        <div class="scenario-box">
+          <div class="scenario-header">
+            <span class="scenario-icon">🌙</span>
+            <span class="scenario-title">Cenário A — Lead chega no sábado às 22h</span>
+          </div>
+          <div class="scenario-body">
+            <strong style="color:var(--text);">Hoje:</strong> ninguém responde, lead some.<br/>
+            <strong style="color:var(--accent);">Com Eloscope:</strong> IA responde em segundos, coleta sintomas, qualifica, agenda. Segunda-feira a ficha já está no CRM com histórico completo. Thaísa não tocou em nada.
+          </div>
+        </div>
+
+        <div class="scenario-box">
+          <div class="scenario-header">
+            <span class="scenario-icon">📅</span>
+            <span class="scenario-title">Cenário B — Thaísa fecha o mês financeiro</span>
+          </div>
+          <div class="scenario-body">
+            <strong style="color:var(--text);">Hoje:</strong> horas de planilha, separar custo de cada sócia manualmente.<br/>
+            <strong style="color:var(--accent);">Com Eloscope:</strong> dashboard abre com tudo separado — receita bruta/líquida/recebida por centro de custo, por sócia, por serviço. Thaísa volta para o marketing.
+          </div>
+        </div>
+
+        <div class="scenario-box">
+          <div class="scenario-header">
+            <span class="scenario-icon">🐕</span>
+            <span class="scenario-title">Cenário C — Sílvia faz consulta de dermato</span>
+          </div>
+          <div class="scenario-body">
+            <strong style="color:var(--text);">Hoje:</strong> anota à mão ou no SimplesVet, tutor não recebe resumo.<br/>
+            <strong style="color:var(--accent);">Com Eloscope:</strong> consulta gravada + transcrita + resumo em PDF enviado para o tutor via WhatsApp. Prontuário atualizado automaticamente. Peso, fotos, prescrição — tudo no sistema.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 11 — INFRAESTRUTURA (VPS, open-source, autonomia)             -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Infraestrutura</div>
+      <h2 class="mb-8">Autonomia total. No servidor de vocês.</h2>
+
+      <div class="grid-3" style="align-items:start;">
+        <div class="card card-green">
+          <div style="font-size:36px; margin-bottom:12px;">🖥️</div>
+          <h4 class="mb-2">VPS da PeleVet</h4>
+          <p class="text-sm muted">O servidor é de vocês. Vocês pagam. A Eloscope configura e mantém. Nenhum dado fica em servidores de terceiros que vocês não controlam.</p>
+        </div>
+        <div class="card">
+          <div style="font-size:36px; margin-bottom:12px;">🔓</div>
+          <h4 class="mb-2">Stack open-source</h4>
+          <p class="text-sm muted">Chatwoot homologado pela Meta para WhatsApp Business. Sistema próprio Eloscope. Sem licença por usuário, sem surpresa no boleto.</p>
+        </div>
+        <div class="card">
+          <div style="font-size:36px; margin-bottom:12px;">🎯</div>
+          <h4 class="mb-2">IA com voz da PeleVet</h4>
+          <p class="text-sm muted">Personalizada com o tom de vocês. Entra área por área, sem gerar ruído. O paciente fala com a PeleVet — não com um robô genérico.</p>
+        </div>
+      </div>
+
+      <div class="card mt-6" style="background:rgba(0,200,150,0.06); border-color:var(--border-strong); display:flex; gap:16px; align-items:center;">
+        <span style="font-size:28px;">🔑</span>
+        <p style="font-size:16px; color:var(--text-muted);">
+          Vocês compram o <strong style="color:var(--text);">código do sistema</strong> — é de vocês. Optam pela manutenção mensal se quiserem a Eloscope ao lado. Não é SaaS com dependência eterna.
+        </p>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 12 — ROADMAP (Fase 1 → Fase 2)                               -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Roadmap</div>
+      <h2 class="mb-8">Fase 1 agora. Fase 2 quando vocês quiserem.</h2>
+
+      <div class="grid-2" style="align-items:start; gap:28px;">
+
+        <div>
+          <div class="badge mb-4" style="font-size:13px; padding:6px 18px;">Fase 1 — Núcleo</div>
+          <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span class="icon-check">✓</span>
+              <span style="font-size:15px; color:var(--text-muted);">Agenda multi-usuário com rastreamento</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span class="icon-check">✓</span>
+              <span style="font-size:15px; color:var(--text-muted);">Prontuário + ficha completa do pet</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span class="icon-check">✓</span>
+              <span style="font-size:15px; color:var(--text-muted);">Financeiro com centros de custo</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span class="icon-check">✓</span>
+              <span style="font-size:15px; color:var(--text-muted);">CRM + pipeline visual + IA</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span class="icon-check">✓</span>
+              <span style="font-size:15px; color:var(--text-muted);">Central de atendimento (WA + IG)</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span class="icon-check">✓</span>
+              <span style="font-size:15px; color:var(--text-muted);">Transcrição de consulta + PDF ao tutor</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span class="icon-check">✓</span>
+              <span style="font-size:15px; color:var(--text-muted);">Disparos automáticos (confirmação, NPS)</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="badge mb-4" style="font-size:13px; padding:6px 18px; opacity:0.7;">Fase 2 — Expansão</div>
+          <div style="display:flex; flex-direction:column; gap:10px; margin-top:12px; opacity:0.7;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="color:var(--accent); font-size:18px;">◦</span>
+              <span style="font-size:15px; color:var(--text-muted);">Teleconsulta com receita digital (CFMV permite)</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="color:var(--accent); font-size:18px;">◦</span>
+              <span style="font-size:15px; color:var(--text-muted);">Módulo de planos para doenças crônicas</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="color:var(--accent); font-size:18px;">◦</span>
+              <span style="font-size:15px; color:var(--text-muted);">Pacotes de serviço com baixa por item</span>
+            </div>
+          </div>
+
+          <div class="card mt-8" style="background:rgba(0,200,150,0.06); border-color:var(--border-strong);">
+            <div class="step-label">Teto de crescimento (conservador)</div>
+            <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px;">
+              <div style="display:flex; justify-content:space-between; font-size:14px;">
+                <span class="muted">Hoje</span>
+                <strong style="color:var(--text);">~R$ 42K/mês</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:14px;">
+                <span class="muted">Fase 1 (6–12 meses)</span>
+                <strong style="color:var(--accent2);">R$ 70–90K/mês</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:14px;">
+                <span class="muted">Fase 2 (18–24 meses)</span>
+                <strong style="color:var(--accent2);">R$ 120K+/mês</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 13 — STACK DE ENTREGAS (o que está incluído)                  -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">O que está incluído</div>
+      <h2 class="mb-8">Stack de entregas — Fase 1</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+        <div class="card" style="display:flex; gap:14px; align-items:flex-start;">
+          <span style="font-size:24px; flex-shrink:0;">🏗️</span>
+          <div>
+            <h4 class="mb-1">Sistema configurado</h4>
+            <p class="text-xs muted">Todos os módulos da Fase 1 implementados no servidor da PeleVet</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; gap:14px; align-items:flex-start;">
+          <span style="font-size:24px; flex-shrink:0;">💰</span>
+          <div>
+            <h4 class="mb-1">Financeiro estruturado</h4>
+            <p class="text-xs muted">Centros de custo, dashboards por sócia, conciliação automática</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; gap:14px; align-items:flex-start;">
+          <span style="font-size:24px; flex-shrink:0;">🤖</span>
+          <div>
+            <h4 class="mb-1">Agente IA com voz PeleVet</h4>
+            <p class="text-xs muted">Treinado com protocolo e tom da clínica — não responde como robô genérico</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; gap:14px; align-items:flex-start;">
+          <span style="font-size:24px; flex-shrink:0;">💬</span>
+          <div>
+            <h4 class="mb-1">Central Chatwoot integrada</h4>
+            <p class="text-xs muted">WhatsApp Business + Instagram numa única tela para a equipe</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; gap:14px; align-items:flex-start;">
+          <span style="font-size:24px; flex-shrink:0;">🎙️</span>
+          <div>
+            <h4 class="mb-1">Transcrição de consulta</h4>
+            <p class="text-xs muted">Anamnese completa em texto + PDF automático para o tutor</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; gap:14px; align-items:flex-start;">
+          <span style="font-size:24px; flex-shrink:0;">📈</span>
+          <div>
+            <h4 class="mb-1">Treinamento + documentação</h4>
+            <p class="text-xs muted">Equipe operando com autonomia · não dependem da Eloscope para o dia a dia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 14 — CRONOGRAMA DE IMPLEMENTAÇÃO                              -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Cronograma</div>
+      <h2 class="mb-8">Implementação em 4 fases</h2>
+
+      <div style="display:flex; align-items:stretch; gap:16px;">
+        <div class="card flex-1" style="border-top: 3px solid var(--accent);">
+          <div class="step-label">Semanas 1–2</div>
+          <h4 class="mb-3" style="color:var(--accent);">Diagnóstico</h4>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:6px;">
+            <li style="font-size:14px; color:var(--text-muted);">· Mapeamento de fluxos atuais</li>
+            <li style="font-size:14px; color:var(--text-muted);">· Estrutura financeira definida</li>
+            <li style="font-size:14px; color:var(--text-muted);">· Migração de dados do SimplesVet</li>
+          </ul>
+        </div>
+        <div class="card flex-1" style="border-top: 3px solid var(--accent);">
+          <div class="step-label">Semanas 3–4</div>
+          <h4 class="mb-3" style="color:var(--accent);">Estruturação</h4>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:6px;">
+            <li style="font-size:14px; color:var(--text-muted);">· VPS configurado</li>
+            <li style="font-size:14px; color:var(--text-muted);">· Chatwoot + canais ativos</li>
+            <li style="font-size:14px; color:var(--text-muted);">· Financeiro operando</li>
+          </ul>
+        </div>
+        <div class="card flex-1" style="border-top: 3px solid var(--accent);">
+          <div class="step-label">Semanas 5–12</div>
+          <h4 class="mb-3" style="color:var(--accent);">Execução</h4>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:6px;">
+            <li style="font-size:14px; color:var(--text-muted);">· IA de atendimento no ar</li>
+            <li style="font-size:14px; color:var(--text-muted);">· CRM + pipeline ativos</li>
+            <li style="font-size:14px; color:var(--text-muted);">· Transcrição de consultas</li>
+          </ul>
+        </div>
+        <div class="card flex-1" style="border-top: 3px solid var(--accent);">
+          <div class="step-label">Semanas 13+</div>
+          <h4 class="mb-3" style="color:var(--accent);">Padronização</h4>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:6px;">
+            <li style="font-size:14px; color:var(--text-muted);">· Treinamento da equipe</li>
+            <li style="font-size:14px; color:var(--text-muted);">· Ajustes finos com uso real</li>
+            <li style="font-size:14px; color:var(--text-muted);">· Autonomia operacional</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card mt-6" style="background:rgba(0,200,150,0.06);">
+        <p style="font-size:15px; color:var(--text-muted); text-align:center;">
+          A Eloscope está em <strong style="color:var(--text);">São José do Rio Preto</strong> — mesma cidade. Acompanhamento presencial sempre que precisar.
+        </p>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 15 — MÉTRICAS QUE VAMOS ACOMPANHAR                            -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Acompanhamento</div>
+      <h2 class="mb-8">Você não precisará adivinhar se está funcionando</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+        <div class="card text-center">
+          <div style="font-size:28px; font-weight:800; color:var(--accent); margin-bottom:8px;">Conversão</div>
+          <p class="text-xs muted">% de leads que viram clientes · meta: 1,5% → 3%+</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size:28px; font-weight:800; color:var(--accent); margin-bottom:8px;">CAC</div>
+          <p class="text-xs muted">Custo de aquisição por cliente novo</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size:28px; font-weight:800; color:var(--accent); margin-bottom:8px;">LTV</div>
+          <p class="text-xs muted">Valor vitalício por tutor · meta: R$ 10K–30K</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size:28px; font-weight:800; color:var(--accent); margin-bottom:8px;">Ticket médio</div>
+          <p class="text-xs muted">Por atendimento · separado por sócia</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size:28px; font-weight:800; color:var(--accent); margin-bottom:8px;">Retenção</div>
+          <p class="text-xs muted">% de tutores que retornam em 6 meses</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size:28px; font-weight:800; color:var(--accent); margin-bottom:8px;">NPS</div>
+          <p class="text-xs muted">Recomendação dos tutores · disparo automático pós-consulta</p>
+        </div>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 16 — ROI PROJETADO (antes / depois)                           -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">ROI projetado</div>
+      <h2 class="mb-6">O que os números mostram</h2>
+
+      <div class="card card-green">
+        <table class="roi-table">
+          <thead>
+            <tr>
+              <th>Métrica</th>
+              <th>Hoje</th>
+              <th style="color:var(--accent2);">Com Eloscope AI (6–12 meses)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Receita mensal</td>
+              <td>~R$ 42K</td>
+              <td class="after">R$ 70K–90K</td>
+            </tr>
+            <tr>
+              <td>Clientes novos / mês</td>
+              <td>3–4 (1,5% de 250 leads)</td>
+              <td class="after">8–12 (3%+ de 250 leads)</td>
+            </tr>
+            <tr>
+              <td>Leads perdidos no FDS</td>
+              <td>~60/mês sem resposta</td>
+              <td class="after">0 — IA responde 24/7</td>
+            </tr>
+            <tr>
+              <td>Tempo de Thaísa no financeiro</td>
+              <td>Horas por semana</td>
+              <td class="after">Dashboard automático</td>
+            </tr>
+            <tr>
+              <td>LTV por tutor</td>
+              <td>Não rastreado</td>
+              <td class="after">R$ 10K–30K monitorado</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-xs dim mt-4" style="text-align:center;">Projeção baseada nos dados de discovery e cenários similares — não é promessa individual de resultado.</p>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 17 — POR QUE A ELOSCOPE                                       -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Por que a Eloscope</div>
+      <h2 class="mb-8">Não é só sistema. É construção.</h2>
+
+      <div class="grid-2" style="align-items:start; gap:24px;">
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div class="card" style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="font-size:26px; flex-shrink:0;">📍</span>
+            <div>
+              <h4 class="mb-1">Mesma cidade</h4>
+              <p class="text-xs muted">São José do Rio Preto. Presencial sempre que precisar. Não é fornecedor remoto que some num ticket.</p>
+            </div>
+          </div>
+          <div class="card" style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="font-size:26px; flex-shrink:0;">🔧</span>
+            <div>
+              <h4 class="mb-1">Sistema personalizado</h4>
+              <p class="text-xs muted">Feito para o modelo da PeleVet — 2 sócias com receitas separadas, pet shop 50/50, banho 50/50. Nenhum SaaS genérico faz isso direito.</p>
+            </div>
+          </div>
+          <div class="card" style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="font-size:26px; flex-shrink:0;">🔄</span>
+            <div>
+              <h4 class="mb-1">Construção contínua</h4>
+              <p class="text-xs muted">IA entra área por área, sem ruído operacional. Adaptação ao crescimento da clínica — não é produto congelado.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div class="card" style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="font-size:26px; flex-shrink:0;">🔑</span>
+            <div>
+              <h4 class="mb-1">Vocês são donos do código</h4>
+              <p class="text-xs muted">Compram o sistema, não alugam. VPS de vocês. Sem dependência eterna de mensalidade de SaaS.</p>
+            </div>
+          </div>
+          <div class="card" style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="font-size:26px; flex-shrink:0;">🤝</span>
+            <div>
+              <h4 class="mb-1">Parceiro, não fornecedor</h4>
+              <p class="text-xs muted">Entendemos o modelo da PeleVet porque ouvimos. A proposta espelha as prioridades que vocês nos contaram — financeiro primeiro.</p>
+            </div>
+          </div>
+          <div class="quote-box" style="margin-top:0;">
+            <p>"Crescer organizado. Preciso de um financeiro organizado."</p>
+            <div class="quote-author">— Sílvia de Paula · É exatamente o que entregamos primeiro.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 18 — INVESTIMENTO                                             -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Investimento</div>
+      <h2 class="mb-8" style="text-align:center;">Para começar</h2>
+
+      <div style="display:flex; justify-content:center; align-items:center; flex-direction:column; gap:16px;">
+
+        <div class="card card-green" style="max-width:680px; width:100%; padding:40px; text-align:center;">
+          <div style="font-size:15px; color:var(--text-muted); margin-bottom:8px; letter-spacing:2px; text-transform:uppercase;">A ser definido na reunião de hoje</div>
+          <h3 style="font-size:24px !important; color:var(--text-muted); margin-bottom:16px;">Proposta personalizada PeleVet</h3>
+          <p style="font-size:16px; color:var(--text-muted); line-height:1.6; max-width:500px; margin:0 auto;">
+            O escopo, o cronograma e o investimento são apresentados e discutidos hoje — com base em tudo que nos contaram. Sem surpresa depois.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; max-width:680px; width:100%;">
+          <div class="card text-center">
+            <div style="font-size:28px; margin-bottom:6px;">🖥️</div>
+            <div style="font-size:13px; color:var(--text-muted);">VPS pago pela PeleVet</div>
+          </div>
+          <div class="card text-center">
+            <div style="font-size:28px; margin-bottom:6px;">📦</div>
+            <div style="font-size:13px; color:var(--text-muted);">Código é de vocês</div>
+          </div>
+          <div class="card text-center">
+            <div style="font-size:28px; margin-bottom:6px;">🔄</div>
+            <div style="font-size:13px; color:var(--text-muted);">Manutenção opcional</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 19 — PRÓXIMOS PASSOS                                          -->
+    <!-- ================================================================== -->
+    <section>
+      <div class="label-tag">Próximos passos</div>
+      <h2 class="mb-8">O que acontece depois de hoje</h2>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div class="card card-green" style="display:flex; gap:20px; align-items:flex-start;">
+          <div style="min-width:90px; font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:2px; padding-top:4px;">HOJE</div>
+          <div>
+            <h4 class="mb-1">Decisão sobre a proposta</h4>
+            <p class="text-sm muted">Apresentamos o escopo completo, tiramos dúvidas, ajustamos o que precisar. Saímos daqui com clareza — sim, não ou precisa refinar.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; gap:20px; align-items:flex-start;">
+          <div style="min-width:90px; font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:2px; padding-top:4px;">ESTA SEMANA</div>
+          <div>
+            <h4 class="mb-1">Contrato + início do setup</h4>
+            <p class="text-sm muted">Se decidir avançar, assinamos e já iniciamos o mapeamento do ambiente. VPS escolhido e configurado.</p>
+          </div>
+        </div>
+        <div class="card" style="display:flex; gap:20px; align-items:flex-start;">
+          <div style="min-width:90px; font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:2px; padding-top:4px;">2 SEMANAS</div>
+          <div>
+            <h4 class="mb-1">Kickoff e diagnóstico operacional</h4>
+            <p class="text-sm muted">Reunião presencial com toda a equipe. Mapeamos fluxos, definimos a estrutura financeira, planejamos a migração do SimplesVet.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+    <!-- ================================================================== -->
+    <!-- SLIDE 20 — CTA FINAL                                                -->
+    <!-- ================================================================== -->
+    <section>
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:28px; text-align:center;">
+
+        <div class="label-tag">Decisão</div>
+
+        <h1 style="font-size:48px !important; max-width:760px; line-height:1.2 !important;">
+          A PeleVet está pronta para <span class="accent">crescer organizada</span>?
+        </h1>
+
+        <p style="font-size:18px; color:var(--text-muted); max-width:600px; line-height:1.5;">
+          Vocês têm o nicho, o ticket médio, a especialização e o mercado.
+          O que falta é o sistema que faz a operação crescer sem quebrar.
+        </p>
+
+        <div style="display:flex; gap:20px; margin-top:8px;">
+          <div class="card card-green" style="padding:24px 32px; text-align:center; min-width:180px;">
+            <div style="font-size:28px; margin-bottom:8px;">✅</div>
+            <h4 style="color:var(--accent2);">Topa</h4>
+            <p class="text-xs muted mt-4">Vamos pro contrato</p>
+          </div>
+          <div class="card" style="padding:24px 32px; text-align:center; min-width:180px;">
+            <div style="font-size:28px; margin-bottom:8px;">🤔</div>
+            <h4>Precisa refinar</h4>
+            <p class="text-xs muted mt-4">Ajustamos agora mesmo</p>
+          </div>
+          <div class="card" style="padding:24px 32px; text-align:center; min-width:180px; opacity:0.7;">
+            <div style="font-size:28px; margin-bottom:8px;">📅</div>
+            <h4>Mais tempo</h4>
+            <p class="text-xs muted mt-4">Retomamos em 7 dias</p>
+          </div>
+        </div>
+
+        <div style="margin-top:8px; display:flex; gap:24px; align-items:center; color:var(--text-dim); font-size:14px;">
+          <span>📍 São José do Rio Preto</span>
+          <span>·</span>
+          <span>eloscope.ai</span>
+          <span>·</span>
+          <span>eloscope.coo@gmail.com</span>
+        </div>
+
+      </div>
+      <div class="eloscope-footer">Powered by Eloscope — eloscope.ai · growth-os-skills v0.3.0</div>
+    </section>
+
+  </div>
+</div>
+
+<!-- Reveal.js -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    controls: true,
+    progress: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    width: 1920,
+    height: 1080,
+    margin: 0,
+    minScale: 0.2,
+    maxScale: 2.0,
+  });
+</script>
+
+</body>
+</html>
