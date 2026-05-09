@@ -186,6 +186,83 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px; color: rgba(0,212,255,0.22); letter-spacing: 0.1em; z-index: 20;
   }
+
+  /* ── GHOST TEXT "US$1B" ── */
+  .ghost-text {
+    position: absolute;
+    top: 80px; left: 50%; transform: translateX(-50%);
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 340px; letter-spacing: -0.04em;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(0,212,255,0.10);
+    white-space: nowrap;
+    z-index: 2; pointer-events: none;
+    user-select: none;
+  }
+
+  /* ── STAT CARDS ── */
+  .stat-card {
+    position: absolute;
+    background: rgba(5,5,5,0.72);
+    border: 1px solid rgba(0,212,255,0.18);
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+    padding: 14px 18px;
+    z-index: 14;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase;
+    color: rgba(0,212,255,0.55);
+  }
+
+  .stat-value {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 26px; color: #F0FFFE; line-height: 1;
+    text-shadow: 0 0 20px rgba(0,212,255,0.30);
+  }
+
+  .stat-sub {
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    color: rgba(240,255,254,0.38); margin-top: 2px;
+  }
+
+  .stat-icon {
+    font-size: 14px; margin-bottom: 2px; opacity: 0.7;
+  }
+
+  /* card positions */
+  .card-receita {
+    top: 148px; left: 52px;
+    width: 200px;
+  }
+
+  .card-usuarios {
+    top: 180px; right: 52px;
+    width: 196px;
+  }
+
+  .card-crescimento {
+    top: 370px; left: 52px;
+    width: 188px;
+  }
+
+  .card-flumin {
+    top: 390px; right: 52px;
+    width: 180px;
+  }
+
+  /* ── HIGHLIGHT "ninguém" ── */
+  .highlight-cyan {
+    color: #00D4FF;
+    text-shadow: 0 0 16px rgba(0,212,255,0.60);
+    font-weight: 600;
+  }
 </style>
 </head>
 <body>
@@ -194,6 +271,7 @@
   <div class="dot-grid"></div>
   <div class="aurora"></div>
   <div class="hero-glow"></div>
+  <div class="ghost-text">US$1B</div>
 
   <div class="hero-img">
     <img src="../assets/duolingo-owl-3d.png" alt="Duolingo owl">
@@ -210,6 +288,33 @@
   <div class="corner corner-bl"></div>
   <div class="corner corner-br"></div>
 
+  <!-- Stat Cards -->
+  <div class="stat-card card-receita">
+    <span class="stat-icon">💰</span>
+    <span class="stat-label">Receita Anual</span>
+    <span class="stat-value">US$ 1B+</span>
+  </div>
+
+  <div class="stat-card card-usuarios">
+    <span class="stat-icon">👥</span>
+    <span class="stat-label">Usuários Ativos</span>
+    <span class="stat-value">+500M</span>
+  </div>
+
+  <div class="stat-card card-crescimento">
+    <span class="stat-icon">📈</span>
+    <span class="stat-label">Crescimento</span>
+    <span class="stat-value">Comercial</span>
+    <span class="stat-sub">sem equipe de vendas</span>
+  </div>
+
+  <div class="stat-card card-flumin">
+    <span class="stat-icon">🔥</span>
+    <span class="stat-label">Flumin Ativos</span>
+    <span class="stat-value">+500M</span>
+    <span class="stat-sub">streak diário</span>
+  </div>
+
   <div class="header">
     <div class="brand-mark">
       <img class="brand-icon-img" src="../../../../../../design/assets/logos/EloScope - Logo - transparente.png" alt="">
@@ -224,7 +329,7 @@
       <span class="hl-line hl-cyan">US$ 1 bilhão</span>
     </div>
 
-    <p class="sub">sem contratar ninguém.</p>
+    <p class="sub">sem contratar <span class="highlight-cyan">ninguém.</span></p>
 
     <span class="arraste-pill">
       arraste para o lado

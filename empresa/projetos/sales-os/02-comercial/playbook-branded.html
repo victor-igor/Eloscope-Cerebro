@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playbook de Vendas Eloscope — Elo OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-space: #0A0A0A;
+    --surface: #111111;
+    --surface-2: #1a1a1a;
+    --surface-3: #222222;
+    --cyan: #00D4FF;
+    --cyan-dim: rgba(0,212,255,0.12);
+    --cyan-border: rgba(0,212,255,0.3);
+    --magenta: #D946EF;
+    --magenta-dim: rgba(217,70,239,0.10);
+    --white: #F0FFFE;
+    --muted: #6B7280;
+    --emerald: #10B981;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { font-size: 16px; }
+
+  body {
+    background: var(--deep-space);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ===== COVER ===== */
+  .cover {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--deep-space);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 72px;
+    position: relative;
+    page-break-after: always;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -60px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(217,70,239,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover-logo {
+    width: 200px;
+    margin-bottom: 64px;
+  }
+
+  .cover-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--cyan);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+
+  .cover-title {
+    font-family: var(--font-display);
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 16px;
+    max-width: 640px;
+  }
+
+  .cover-title span {
+    color: var(--cyan);
+    display: block;
+  }
+
+  .cover-subtitle {
+    font-size: 18px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 48px;
+    max-width: 560px;
+  }
+
+  .cover-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cover-meta-line {
+    font-size: 13px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+
+  .cover-meta-line strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .cover-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--cyan);
+    margin-bottom: 40px;
+  }
+
+  /* ===== PAGE WRAPPER ===== */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 72px;
+  }
+
+  /* ===== SECTION HEADERS ===== */
+  .section {
+    margin-bottom: 56px;
+    page-break-inside: avoid;
+  }
+
+  .section-header {
+    page-break-after: avoid;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--cyan);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    padding-left: 16px;
+    border-left: 3px solid var(--cyan);
+    margin: 48px 0 24px;
+    line-height: 1.3;
+    page-break-after: avoid;
+  }
+
+  h2 .section-num {
+    color: var(--cyan);
+    font-size: 13px;
+    font-family: var(--font-mono);
+    font-weight: 400;
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: 0.08em;
+  }
+
+  h3 {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    margin: 32px 0 14px;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cyan);
+    margin: 24px 0 10px;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 12px;
+    page-break-after: avoid;
+  }
+
+  /* ===== BODY TEXT ===== */
+  p {
+    margin-bottom: 14px;
+    color: var(--white);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  strong { font-weight: 600; color: var(--white); }
+  em { font-style: italic; color: var(--muted); }
+
+  /* ===== SCRIPTS / BLOCKQUOTES ===== */
+  blockquote {
+    background: var(--surface);
+    border-left: 3px solid var(--cyan);
+    border-radius: 0 8px 8px 0;
+    padding: 18px 20px;
+    margin: 16px 0;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(240,255,254,0.88);
+    page-break-inside: avoid;
+  }
+
+  blockquote p { margin-bottom: 8px; font-size: 14px; }
+  blockquote p:last-child { margin-bottom: 0; }
+  blockquote strong { color: var(--cyan); }
+
+  /* ===== LISTS ===== */
+  ul, ol {
+    padding-left: 22px;
+    margin-bottom: 14px;
+  }
+
+  li {
+    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  li strong { color: var(--cyan); }
+
+  /* ===== TABLES ===== */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    border: 1px solid var(--surface-3);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  thead tr {
+    background: var(--surface-2);
+  }
+
+  th {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--cyan);
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--surface-3);
+  }
+
+  td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--surface-3);
+    vertical-align: top;
+    color: rgba(240,255,254,0.85);
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: rgba(255,255,255,0.018); }
+  td strong { color: var(--white); }
+  td em { color: rgba(240,255,254,0.65); font-style: italic; }
+
+  /* ===== CODE / TEMPLATES ===== */
+  pre {
+    background: var(--surface-2);
+    border: 1px solid var(--surface-3);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin: 16px 0;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.6;
+    font-family: var(--font-mono);
+    color: rgba(240,255,254,0.8);
+    page-break-inside: avoid;
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    background: var(--surface-2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--cyan);
+  }
+
+  pre code {
+    background: transparent;
+    padding: 0;
+    font-size: 13px;
+    color: rgba(240,255,254,0.8);
+  }
+
+  /* ===== RULE CALLOUT ===== */
+  .rule-box {
+    background: var(--cyan-dim);
+    border: 1px solid var(--cyan-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 14px;
+    page-break-inside: avoid;
+  }
+
+  .rule-box strong { color: var(--cyan); }
+
+  /* ===== CHECKLIST ===== */
+  .checklist {
+    list-style: none;
+    padding-left: 0;
+    margin: 16px 0;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 9px 14px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  .checklist li:nth-child(odd) { background: rgba(255,255,255,0.02); }
+
+  .checklist li::before {
+    content: '☐';
+    color: var(--cyan);
+    font-size: 16px;
+    line-height: 1.2;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ===== SPIN BLOCK ===== */
+  .spin-block {
+    background: var(--surface);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 20px 0;
+    border: 1px solid var(--surface-3);
+    page-break-inside: avoid;
+  }
+
+  .spin-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--magenta);
+    margin-bottom: 10px;
+  }
+
+  /* ===== BADGE ===== */
+  .badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--cyan-dim);
+    border: 1px solid var(--cyan-border);
+    color: var(--cyan);
+    padding: 3px 9px;
+    border-radius: 20px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  .badge-magenta {
+    background: var(--magenta-dim);
+    border-color: rgba(217,70,239,0.3);
+    color: var(--magenta);
+  }
+
+  .badge-emerald {
+    background: rgba(16,185,129,0.10);
+    border-color: rgba(16,185,129,0.3);
+    color: var(--emerald);
+  }
+
+  /* ===== DIVIDER ===== */
+  hr {
+    border: none;
+    border-top: 1px solid var(--surface-3);
+    margin: 36px 0;
+  }
+
+  /* ===== FOOTER ===== */
+  .doc-footer {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--surface-3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    page-break-inside: avoid;
+  }
+
+  .doc-footer img { height: 28px; opacity: 0.5; }
+
+  /* ===== PRINT ===== */
+  @media print {
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body { font-size: 13px; }
+
+    .cover {
+      min-height: 297mm;
+      padding: 60px 60px;
+      page-break-after: always;
+    }
+    .cover-title { font-size: 40px; }
+
+    .page { padding: 20mm 18mm; max-width: 100%; }
+
+    h2 { page-break-after: avoid; margin-top: 32px; }
+    h3 { page-break-after: avoid; }
+
+    blockquote, pre, .rule-box, .spin-block { page-break-inside: avoid; }
+    .table-wrap { page-break-inside: avoid; }
+    .spin-block + .spin-block { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== COVER PAGE ===== -->
+<div class="cover">
+  <img class="cover-logo" src="/Users/victorigor/Eloscope-IA/cerebro/areas/design/assets/logos/EloScope - Logo.png" alt="Eloscope">
+  <div class="cover-divider"></div>
+  <p class="cover-tag">elo os · documento interno · confidencial</p>
+  <h1 class="cover-title">Playbook de<br><span>Vendas</span></h1>
+  <p class="cover-subtitle">Agentes de IA como Sócios Silenciosos — roteiro completo do processo comercial, da qualificação ao fechamento.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-line"><strong>Produto:</strong> Elo OS — Agentes de IA como Sócios Silenciosos</div>
+    <div class="cover-meta-line"><strong>ICP:</strong> Dono de PME com operação comercial ativa (mín. 2 vendedores)</div>
+    <div class="cover-meta-line"><strong>Ticket estimado:</strong> acima de R$ 2.000/mês</div>
+    <div class="cover-meta-line"><strong>Canais:</strong> Indicação · Eventos (ACIRP, Verhaw) · LP eloscope.ai · Instagram</div>
+    <div class="cover-meta-line" style="margin-top:12px"><strong>Versão:</strong> 1.0 · Lucas + Victor · Maio 2026</div>
+  </div>
+</div>
+
+<!-- ===== CONTENT ===== -->
+<div class="page">
+
+<!-- ===== SEÇÃO 1 ===== -->
+<h2><span class="section-num">01</span>QUALIFICAÇÃO — primeiros 5 minutos</h2>
+
+<h3>BANT adaptado para PME</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Critério</th>
+      <th>Pergunta</th>
+      <th>GO ✓</th>
+      <th>NO-GO ✗</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Budget</strong></td>
+      <td><em>"Você já investe em alguma ferramenta de vendas hoje? Quanto mais ou menos?"</em></td>
+      <td>Ticket viável (&gt; R$&nbsp;2k/mês) ou dor clara que justifica</td>
+      <td>"Não tenho orçamento nenhum" sem dor articulada</td>
+    </tr>
+    <tr>
+      <td><strong>Authority</strong></td>
+      <td><em>"A decisão de implantar algo como isso passa por você?"</em></td>
+      <td>Decisor direto ou co-decisor</td>
+      <td>"Preciso de aprovação de N pessoas" sem influência real</td>
+    </tr>
+    <tr>
+      <td><strong>Need</strong></td>
+      <td><em>"Você está perdendo lead por falta de follow-up? O seu time fecha manual hoje?"</em></td>
+      <td>Dor operacional clara e ativa</td>
+      <td>Operação estruturada, sem gargalo real</td>
+    </tr>
+    <tr>
+      <td><strong>Timing</strong></td>
+      <td><em>"Se a solução fizer sentido, você consegue avaliar isso nos próximos 15 dias?"</em></td>
+      <td>Janela de 15 dias ou menos</td>
+      <td>"Só no segundo semestre" sem urgência</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="rule-box"><strong>Regra:</strong> 3+ GO → avança para Discovery. 2 ou menos GO → descarta educadamente.</div>
+
+<hr>
+
+<h3>Scripts de qualificação por canal</h3>
+
+<h4>Canal 1 — Inbound LP (tempo máximo: 30 min após formulário)</h4>
+<blockquote>
+  <p><em>"Oi {{nome}}, sou o Lucas da Eloscope. Vi que você preencheu o formulário do Elo OS — ótimo timing.</em></p>
+  <p><em>Posso te fazer 3 perguntas rápidas antes de marcar a call? Leva menos de 5 minutos e garante que o papo vai ser direto ao ponto pra você.</em></p>
+  <p><em>Quantas pessoas você tem no time comercial hoje? Você está perdendo negócio por falta de acompanhamento do lead? Se a conversa fizer sentido, você consegue avaliar isso nos próximos 7-10 dias?"</em></p>
+</blockquote>
+<p>— Se GO nos 3: <em>"Perfeito. Vou te mandar agora 2 opções de horário pra nossa call de diagnóstico de 30min. Qual funciona melhor?"</em></p>
+<p>— Se NO-GO claro: <em>"Entendo. Pelo que você me contou, talvez o momento certo não seja agora. Te mando um material da Eloscope — quando isso mudar, você me chama."</em></p>
+
+<h4>Canal 2 — Indicação (tempo máximo: 24h após receber o contato)</h4>
+<blockquote>
+  <p><em>"Oi {{nome}}, sou o Lucas da Eloscope. O {{indicador}} me passou seu contato e falou que você pode estar passando por um desafio parecido com o que a gente resolveu pra ele — operação comercial sobrecarregada, lead caindo no esquecimento.</em></p>
+  <p><em>Não vou tomar seu tempo agora. Tenho uma pergunta só: isso ressoa com a tua realidade hoje?"</em></p>
+</blockquote>
+<p>— Se SIM: <em>"Me passa 2 horários seus esta semana pra uma call de 30min. Vou te mostrar exatamente o que entregamos pro {{indicador}} e se faz sentido pro seu negócio."</em></p>
+<p>— Se NÃO: <em>"Tranquilo. Fico à disposição — quando o cenário mudar, você me procura."</em></p>
+
+<h4>Canal 3 — Pós-evento (ACIRP, Verhaw — tempo máximo: 24h)</h4>
+<blockquote>
+  <p><em>"Oi {{nome}}, sou o Lucas, da Eloscope — a gente se falou brevemente no {{evento}}.</em></p>
+  <p><em>Você comentou sobre {{algo_específico_que_ele_disse_no_evento}}. Isso ficou na minha cabeça porque é exatamente a dor que a gente resolve com o Elo OS.</em></p>
+  <p><em>Posso te mandar um resumo de 2 minutos sobre o que é? Se fizer sentido, a gente marca 30min essa semana."</em></p>
+</blockquote>
+<div class="rule-box"><strong>Regra de ouro pós-evento:</strong> sempre anotar 1 detalhe específico do papo presencial para usar no follow-up. Sem esse detalhe, a mensagem vira spam.</div>
+
+<hr>
+
+<h3>Critérios de GO vs. NO-GO (resumo)</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>GO ✓</th>
+      <th>NO-GO — descartar educadamente ✗</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Time de 2+ vendedores</td><td>Solo, sem operação comercial</td></tr>
+    <tr><td>Perde lead hoje (admite)</td><td>"Processo funciona bem"</td></tr>
+    <tr><td>Decisor na call</td><td>Intermediário sem autonomia</td></tr>
+    <tr><td>Horizonte de decisão ≤ 30 dias</td><td>"Só no ano que vem"</td></tr>
+    <tr><td>Ticket viável</td><td>Claramente fora do range</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Como descartar com classe:</strong></p>
+<blockquote>
+  <em>"Pelo que você me passou, acho que a gente não vai fazer jus ao seu tempo agora. Nosso produto é desenhado pra uma fase um pouco diferente da que você está. Posso te mandar um material da Eloscope — quando o cenário mudar, você me avisa?"</em>
+</blockquote>
+
+<!-- ===== SEÇÃO 2 ===== -->
+<h2><span class="section-num">02</span>REUNIÃO ÚNICA DE VENDAS — roteiro completo</h2>
+
+<p><strong>Objetivo:</strong> Em uma só reunião — mapear a dor, quantificar, apresentar o Elo OS, projetar ROI e fechar ou definir próximo passo.<br>
+<strong>Duração ideal:</strong> 45–60 minutos.<br>
+<strong>Estrutura:</strong> <span class="badge">D</span>iagnóstico <span class="badge">E</span>ducação <span class="badge">A</span>presentação <span class="badge">L</span>ock-in</p>
+
+<hr>
+
+<h3>ABERTURA (3 min)</h3>
+
+<p><strong>Quebra-gelo (1 min):</strong></p>
+<blockquote><em>"Oi {{nome}}, tudo bem? Antes de começar — como tá o movimento aí no negócio? Essa época tá boa pra vocês?"</em></blockquote>
+
+<p><strong>Pacto inicial (1 min):</strong></p>
+<blockquote>
+  <p><em>"Ó, pra gente aproveitar bem os 30 minutos, te proponho o seguinte:</em></p>
+  <p><em>(1) Eu vou te fazer perguntas — não pra vender, é pra entender se faz sentido a gente trabalhar junto.</em></p>
+  <p><em>(2) Se em algum momento você sentir que não faz sentido, me fala — economiza o nosso tempo.</em></p>
+  <p><em>(3) No fim, eu te apresento o que fazemos e você decide se quer dar o próximo passo. Funciona assim?"</em></p>
+</blockquote>
+
+<p><strong>Transição (1 min):</strong></p>
+<blockquote><em>"Me conta: o que te trouxe aqui hoje? O que tá acontecendo no seu negócio?"</em></blockquote>
+
+<hr>
+
+<h3>Como apresentar a Eloscope em 30 segundos (quando perguntado)</h3>
+<blockquote>
+  <p><em>"A Eloscope é uma assessoria estratégica de IA para PMEs. A gente não vende software — a gente implementa agentes de IA que operam como sócios silenciosos dentro do negócio: fazem follow-up, qualificam lead, automatizam processo comercial. O resultado: operação mais eficiente, sem precisar contratar.</em></p>
+  <p><em>A diferença é que antes de qualquer investimento, a gente projeta o ROI. Você vê o número antes de decidir."</em></p>
+</blockquote>
+
+<hr>
+
+<h3>SPIN ABREVIADO — Perguntas de diagnóstico (10 min)</h3>
+
+<div class="spin-block">
+  <p class="spin-label">S — Situação (2 min)</p>
+  <blockquote>
+    <p><em>"Quantas pessoas têm no time de vendas hoje?"</em></p>
+    <p><em>"Como funciona o processo comercial de vocês — do lead entrar até fechar?"</em></p>
+    <p><em>"Onde a maioria dos clientes vem? Indicação, Instagram, tráfego pago?"</em></p>
+  </blockquote>
+</div>
+
+<div class="spin-block">
+  <p class="spin-label">P — Problema (3 min) — fazer ele falar a dor</p>
+  <blockquote>
+    <p><em>"De forma geral, qual dessas situações acontece mais aí: o lead some depois da primeira conversa, o time não dá conta de fazer follow-up, ou o processo é manual e você não sabe onde cada oportunidade está?"</em></p>
+    <p><em>"Como você lida com isso hoje?"</em></p>
+    <p><em>"Você já tentou resolver isso? O que aconteceu?"</em></p>
+  </blockquote>
+</div>
+
+<div class="spin-block">
+  <p class="spin-label">I — Implicação (3 min) — fazer ele quantificar</p>
+  <blockquote>
+    <p><em>"Pensando no mês passado: quantos leads passaram por aqui e você acha que não foram acompanhados como deveriam?"</em></p>
+    <p><em>"Se você tivesse que colocar um número — quanto você acha que perde por mês em receita por causa disso?"</em></p>
+    <p><em>"Se isso continuar assim por mais 12 meses, onde você vê o negócio?"</em></p>
+  </blockquote>
+</div>
+
+<div class="spin-block">
+  <p class="spin-label">N — Necessidade (2 min) — fazer ele pintar a solução</p>
+  <blockquote>
+    <p><em>"Imagina que daqui 90 dias você tem um sistema que faz o follow-up automático, qualifica o lead antes de chegar no vendedor, e você tem visibilidade do pipeline em tempo real. Como isso muda a sua rotina?"</em></p>
+    <p><em>"Se eu te mostrar um sistema que tirou outros donos de PME dessa situação, você está aberto a ouvir?"</em></p>
+  </blockquote>
+</div>
+
+<hr>
+
+<h3>Como identificar o "momento de urgência"</h3>
+<p>Preste atenção nestas frases — são sinais de que ele está pronto pra decidir:</p>
+<ul>
+  <li><em>"Tô cansado de perder negócio por isso"</em></li>
+  <li><em>"Meu time não dá conta"</em></li>
+  <li><em>"Preciso resolver isso antes do {{trimestre/evento}}"</em></li>
+  <li><em>"Já tentei de tudo"</em></li>
+</ul>
+<p>Quando aparecer uma dessas, espelhar e ampliar:</p>
+<blockquote><em>"Você disse que está cansado de perder negócio por isso. Quanto tempo você ainda consegue absorver essa situação?"</em></blockquote>
+
+<hr>
+
+<h3>Como apresentar ROI projetado antes de falar de preço (10 min)</h3>
+
+<p><strong>Ponte diagnóstico → solução (1 min):</strong></p>
+<blockquote><em>"Beleza. Pelo que ouvi, você está perdendo lead por falta de follow-up e seu time passa uma parte relevante do tempo em tarefas manuais — e isso te custa em torno de R$ {{valor_que_ele_falou}} por mês. A boa notícia: isso tem solução, e é exatamente o que a gente faz."</em></blockquote>
+
+<p><strong>Apresentar o Elo OS — Sócios Silenciosos (4 min):</strong></p>
+<blockquote>
+  <p><em>"O Elo OS é um sistema de Agentes de IA que operam dentro do seu negócio como sócios silenciosos. Eles não substituem seu time — eles liberam o time pra focar no que importa.</em></p>
+  <p><em>Na prática, funciona em 3 frentes:<br>
+  (1) Qualificação automática — o agente recebe o lead, faz as perguntas certas e só entrega pro vendedor quando está quente.<br>
+  (2) Follow-up sem falha — nenhum lead some. O agente faz o contato no tempo certo, com a mensagem certa.<br>
+  (3) Visibilidade do pipeline — você sabe onde cada oportunidade está, sem depender do vendedor te contar."</em></p>
+</blockquote>
+
+<p><strong>ROI projetado (2 min):</strong></p>
+<blockquote>
+  <p><em>"Pra dar um número: clientes similares ao teu perfil, com {{N}} vendedores e operação parecida, reduziram o tempo de follow-up manual em torno de 70% e aumentaram a taxa de conversão entre 20% e 35% nos primeiros 90 dias.</em></p>
+  <p><em>Não garanto esses números pra você — depende da execução. Mas posso projetar o potencial antes de você decidir qualquer coisa. Antes de falar de investimento: faz sentido até aqui?"</em></p>
+</blockquote>
+
+<hr>
+
+<h3>Transição SPIN → Apresentação (mesma reunião)</h3>
+<p>Após confirmar a dor e o ROI estimado, fazer a ponte imediatamente — sem encerrar:</p>
+<blockquote><em>"Beleza. Com o que você me contou, fica claro o impacto que isso tem no seu negócio. A boa notícia: é exatamente isso que a gente resolve. Me dá mais 15 minutos pra te mostrar como funciona na prática e o que seria o investimento?"</em></blockquote>
+
+<!-- ===== SEÇÃO 3 ===== -->
+<h2><span class="section-num">03</span>APRESENTAÇÃO E PROPOSTA — segunda metade da reunião</h2>
+
+<p>Continua na mesma reunião, após a transição do SPIN. Não agendar segundo encontro.</p>
+
+<h3>Sequência de apresentação do Elo OS</h3>
+<p><strong>Estrutura em 5 movimentos (~20 min):</strong></p>
+
+<p><strong>Movimento 1 — O Problema (3 min)</strong></p>
+<blockquote><em>"O problema que você me descreveu é o mesmo que vejo em 80% das PMEs com time comercial: lead quente esfria por falta de follow-up, vendedor sobrecarregado com tarefas manuais, dono sem visibilidade do pipeline. No final do mês, tem dinheiro na mesa que não foi pego."</em></blockquote>
+
+<p><strong>Movimento 2 — Por que o problema persiste (2 min)</strong></p>
+<blockquote><em>"A maioria das empresas tenta resolver isso contratando mais vendedor, comprando CRM, ou tentando criar processo manual. Funciona por 3 meses. Depois volta ao mesmo problema — porque a causa raiz não foi resolvida: falta de sistema que opere sozinho."</em></blockquote>
+
+<p><strong>Movimento 3 — A solução: Elo OS (10 min)</strong><br>
+Apresentar as 3 frentes (qualificação, follow-up, visibilidade) com detalhes de como cada agente opera no dia a dia do negócio. Mostrar o fluxo: lead entra → agente qualifica → vendedor recebe só o que está quente → follow-up corre automático → dono vê o pipeline em tempo real.</p>
+
+<p><strong>Movimento 4 — ROI projetado + cases (5 min)</strong></p>
+<blockquote>
+  <p><em>"Um cliente nosso — escritório de saúde, operação de 3 vendedores — estava perdendo em torno de 30% dos leads na fase de follow-up. Depois de implantar o Elo OS, em 60 dias reduziram esse índice pra menos de 5% e o faturamento mensal subiu {{X}}%.</em></p>
+  <p><em>Outro cliente, no setor de serviços B2B, tinha o dono fazendo follow-up manualmente. Hoje o agente faz isso por ele. Ele ganhou de volta 12 horas por semana."</em></p>
+</blockquote>
+
+<p><strong>Diagnóstico gratuito como porta de entrada:</strong></p>
+<blockquote><em>"A gente não começa vendendo. A gente começa diagnosticando. O diagnóstico gratuito é uma sessão de 45 minutos onde a gente mapeia exatamente o que automatizar primeiro na sua operação e projeta o ROI. Você sai com um documento. Sem compromisso de compra. Se não fizer sentido, você ficou com o mapa de qualquer forma."</em></blockquote>
+
+<p><strong>Movimento 5 — Próximo passo (2 min)</strong></p>
+<blockquote><em>"A pergunta agora é direta: faz sentido pra você? Posso detalhar o investimento agora mesmo — leva 5 minutos — e a gente já sai daqui com um próximo passo claro."</em></blockquote>
+
+<hr>
+
+<h3>Como apresentar a proposta comercial</h3>
+<p><strong>Estrutura da proposta (enviar por escrito + apresentar em call de 20 min):</strong></p>
+<ol>
+  <li><strong>Resumo do diagnóstico</strong> — a dor do cliente nos próprios termos dele.</li>
+  <li><strong>O que será implementado</strong> — 3 agentes específicos para a operação dele.</li>
+  <li><strong>ROI projetado</strong> — baseline atual × projeção em 90 dias.</li>
+  <li><strong>Investimento</strong> — setup + mensalidade. Mostrar o custo de NÃO fazer.</li>
+  <li><strong>Próximo passo</strong> — data de kickoff, o que acontece na semana 1.</li>
+</ol>
+
+<!-- ===== SEÇÃO 4 ===== -->
+<h2><span class="section-num">04</span>MAPA DE OBJEÇÕES — respostas prontas</h2>
+
+<h3>Objeção 1 — "Tá caro"</h3>
+<p><span class="badge">L.A.E.R.</span></p>
+<blockquote>
+  <p><strong>Acknowledge:</strong> <em>"Faz sentido. Investimento acima de R$ 2 mil por mês é dinheiro — você tem razão em questionar."</em></p>
+  <p><strong>Explore:</strong> <em>"Me ajuda a entender: caro em relação a quê? Você tá comparando com outra solução, ou é o orçamento mesmo que aperta agora?"</em></p>
+  <p><strong>Respond (percepção de valor):</strong> <em>"Você me falou que perde em torno de R$ {{X}}/mês em lead que some. Em 12 meses, isso é R$ {{X*12}}. O Elo OS custa R$ {{preço_anual}} no ano. A pergunta certa não é 'tá caro?' — é 'quanto tô deixando de ganhar enquanto não resolvo isso?'"</em></p>
+  <p><strong>Respond (orçamento):</strong> <em>"Entendo. Nesse caso, posso montar uma proposta escalonada — a gente começa com o agente mais crítico pra sua operação e expande conforme você vê resultado. Faz sentido explorar isso?"</em></p>
+</blockquote>
+
+<h3>Objeção 2 — "Preciso pensar"</h3>
+<blockquote>
+  <p><strong>Acknowledge:</strong> <em>"Claro — é uma decisão importante, faz sentido pensar."</em></p>
+  <p><strong>Explore:</strong> <em>"Pra me ajudar a te ajudar: o que você ainda precisa ver pra se sentir seguro? É o preço, é a prova de resultado, é entender melhor como funciona?"</em></p>
+  <p><strong>Respond:</strong> <em>"Perfeito. Te mando hoje o resumo da nossa conversa com os números que a gente mapeou — custo atual da dor, ROI projetado, e o que está incluído. Isso ajuda a pensar com mais clareza. Quando você acha que vai ter uma resposta — 3 dias, 7 dias?"</em></p>
+</blockquote>
+<div class="rule-box"><strong>Regra:</strong> Conseguir uma data. Sem data, não existe "vai pensar".</div>
+
+<h3>Objeção 3 — "Meu time não vai usar"</h3>
+<blockquote>
+  <p><strong>Acknowledge:</strong> <em>"Essa é uma preocupação legítima — a maioria das ferramentas morrem porque o time não adota."</em></p>
+  <p><strong>Explore:</strong> <em>"Me conta um pouco: você já tentou implantar alguma ferramenta e o time resistiu? O que aconteceu?"</em></p>
+  <p><strong>Respond:</strong> <em>"A boa notícia do Elo OS é que o time não precisa 'usar' — o agente opera em paralelo. O vendedor continua fazendo o que faz. O que muda é que o follow-up acontece automaticamente, sem depender dele. Na verdade, o time acaba aliviado — menos tarefa chata, mais tempo pra fechar. O que costuma ter resistência é mudança de ferramenta. Aqui não tem mudança — tem adição."</em></p>
+</blockquote>
+
+<h3>Objeção 4 — "Já tenho CRM, não preciso de mais ferramenta"</h3>
+<blockquote>
+  <p><strong>Acknowledge:</strong> <em>"Ótimo que você tem CRM — isso facilita muito."</em></p>
+  <p><strong>Explore:</strong> <em>"Qual você usa? E o follow-up automático — você tem isso configurado nele?"</em></p>
+  <p><strong>Respond:</strong> <em>"O Elo OS não é concorrente do CRM. A gente integra com ele. O que o CRM não faz é operar — ele armazena. O agente de IA executa: manda mensagem, qualifica, agenda. É como se o CRM ganhasse um funcionário que nunca esquece de fazer o follow-up. Você continua com o CRM que tem, mais o agente operando por cima."</em></p>
+</blockquote>
+
+<h3>Objeção 5 — "IA é coisa de empresa grande"</h3>
+<blockquote>
+  <p><strong>Acknowledge:</strong> <em>"Essa percepção faz sentido — a maioria do que você ouve de IA vem de grandes empresas."</em></p>
+  <p><strong>Respond:</strong> <em>"Na prática, PME é quem mais se beneficia — porque não tem estrutura para contratar 2 ou 3 pessoas para fazer o que um agente faz. A grande empresa tem time. Você não. O Elo OS é o time que você não tem verba pra contratar. E o nosso modelo é desenhado pra PME: ticket acessível, implantação rápida, resultado nos primeiros 60 dias."</em></p>
+</blockquote>
+
+<h3>Objeção 6 — "Tenho medo de perder o contato humano com o cliente"</h3>
+<blockquote>
+  <p><strong>Acknowledge:</strong> <em>"Essa preocupação é real — e é a mais saudável que ouço."</em></p>
+  <p><strong>Respond:</strong> <em>"O agente não substitui a relação — ele protege ela. Pensa assim: hoje seu vendedor deixa de fazer follow-up porque está ocupado. O cliente sente que foi esquecido — isso é perder o contato humano. O agente garante que o contato aconteça no tempo certo, com a mensagem certa. Quando o cliente chega pro vendedor, está quente e valorizado. Aí sim o humano entra — no momento em que ele importa de verdade."</em></p>
+</blockquote>
+
+<h3>Objeção 7 — "Quero ver resultado antes de pagar"</h3>
+<blockquote>
+  <p><strong>Acknowledge:</strong> <em>"Faz sentido querer segurança antes de investir."</em></p>
+  <p><strong>Explore:</strong> <em>"Quando você fala 'resultado' — o que seria um resultado que te convenceria? Um número, um processo funcionando, um caso de outro cliente?"</em></p>
+  <p><strong>Respond:</strong> <em>"Aqui está o que posso fazer: o diagnóstico gratuito já entrega valor concreto — você sai com o mapa da sua operação e o ROI projetado. Isso não é promessa — é dado baseado na sua realidade. E a implantação tem monitoramento nos primeiros 30 dias: se o framework não fizer sentido pra sua operação, a gente para e devolvemos o setup. Não posso prometer resultado individual — depende de execução. Mas posso prometer que o método é o mesmo que funcionou pra outros clientes com operação parecida com a sua."</em></p>
+</blockquote>
+
+<!-- ===== SEÇÃO 5 ===== -->
+<h2><span class="section-num">05</span>FOLLOW-UP E REATIVAÇÃO</h2>
+
+<h3>Sequência pós-reunião sem resposta — 3 toques + prazo</h3>
+
+<p><span class="badge">D+1</span> <strong>Toque 1 — WhatsApp ou e-mail:</strong></p>
+<blockquote>
+  <p><em>"Oi {{nome}}, Lucas aqui da Eloscope. Obrigado pela conversa ontem. Conforme prometido, te mando o resumo:</em></p>
+  <p><em>- Sua dor principal: {{dor_consolidada}}<br>
+  - Custo estimado de não resolver: R$ {{X}}/mês<br>
+  - O que o Elo OS entrega: qualificação automática + follow-up sem falha + visibilidade de pipeline<br>
+  - Investimento: {{faixa}}</em></p>
+  <p><em>Quando você acha que vai ter uma resposta? Me dá um prazo pra eu não te encher de mensagem."</em></p>
+</blockquote>
+
+<p><span class="badge">D+4</span> <strong>Toque 2 — se sem resposta:</strong></p>
+<blockquote><em>"Oi {{nome}}, só passando pra ver se chegou o resumo que mandei. Alguma dúvida que posso responder rápido?"</em></blockquote>
+
+<p><span class="badge">D+8</span> <strong>Toque 3 — toque final:</strong></p>
+<blockquote><em>"Oi {{nome}}, último contato da minha parte por agora. Se em algum momento fizer sentido retomar a conversa sobre o Elo OS — especialmente quando o {{problema_específico}} estiver pesando mais — é só me chamar. Sucesso com o negócio."</em></blockquote>
+
+<div class="rule-box"><strong>Prazo de encerramento:</strong> D+10 sem resposta → move para "frio" no CRM. Sem mais contato ativo.</div>
+
+<hr>
+
+<h3>Sequência de reativação de lead frio</h3>
+
+<p><span class="badge">30 dias</span> <strong>Gatilho de conteúdo:</strong></p>
+<blockquote><em>"Oi {{nome}}, tudo bem? Lembrei de você porque publicamos um case de um cliente com operação parecida com a sua. Acho que faz sentido você ver — posso te mandar?"</em></blockquote>
+
+<p><span class="badge">60 dias</span> <strong>Mudança de contexto:</strong></p>
+<blockquote><em>"Oi {{nome}}, Lucas da Eloscope. Passaram 2 meses desde que a gente conversou. A pergunta que fica é: aquele problema que você me descreveu — ainda está travando o crescimento? Se sim, talvez seja o momento certo agora."</em></blockquote>
+
+<p><span class="badge">90 dias</span> <strong>Encerramento definitivo ou abertura nova:</strong></p>
+<blockquote><em>"Oi {{nome}}, última vez que entro em contato sobre esse assunto. Se em algum momento o Elo OS fizer sentido, me procura. Vou te manter na nossa lista de conteúdo — descadastra quando quiser."</em></blockquote>
+
+<hr>
+
+<h3>Quando desistir de um lead</h3>
+<p>Desistir quando:</p>
+<ul>
+  <li>3 toques sem resposta após D+8.</li>
+  <li>Respondeu "não é o momento" 2 vezes.</li>
+  <li>Não apareceu na call sem aviso e não reagendou.</li>
+  <li>Na call, ficou claro que não tem dor ou não tem budget.</li>
+</ul>
+<div class="rule-box"><strong>Regra:</strong> não confundir "sem resposta" com "não". Sem resposta = move pra frio e reativa em 30 dias. "Não" explícito = descarta com classe imediatamente.</div>
+
+<!-- ===== SEÇÃO 6 ===== -->
+<h2><span class="section-num">06</span>FECHAMENTO</h2>
+
+<h3>Como apresentar a proposta comercial</h3>
+<div class="rule-box"><strong>Regra:</strong> A proposta é apresentada ao vivo, na mesma reunião, após os 5 movimentos. Nunca enviar por WhatsApp sem ter passado pelo diagnóstico presencialmente.</div>
+
+<p><strong>Sequência (dentro da mesma reunião):</strong></p>
+<ol>
+  <li><em>"Antes de mostrar os números, me confirma: o que eu preciso mostrar aqui pra você dizer sim hoje?"</em> (Ouvir.)</li>
+  <li>Abrir proposta. Passar pelos pontos rapidamente — foco no ROI, não nas features.</li>
+  <li>Apresentar o preço em último lugar. Deixar o silêncio depois de falar o número.</li>
+  <li>Perguntar: <em>"O que você precisa pra dar o próximo passo?"</em></li>
+</ol>
+
+<hr>
+
+<h3>Gatilhos de urgência reais</h3>
+<div class="rule-box">Usar apenas gatilhos verdadeiros. Nunca inventar escassez.</div>
+
+<p><span class="badge">Gatilho 1</span> <strong>Onboarding do mês:</strong></p>
+<blockquote><em>"A gente faz o kickoff dos novos clientes toda primeira semana do mês. Se você fechar até {{data}}, entra no kickoff de {{mês}}. Se não, a próxima turma é {{mês+1}}."</em></blockquote>
+<p><em>Usar apenas se for real o limite de kickoff.</em></p>
+
+<p><span class="badge">Gatilho 2</span> <strong>Capacidade de onboarding:</strong></p>
+<blockquote><em>"O Hugo — nosso especialista de automação — está com capacidade limitada esse mês. Temos vaga pra {{N}} novos clientes em {{mês}}. Isso não é argumento de venda — é realidade operacional. Quando você acha que vai decidir?"</em></blockquote>
+
+<p><span class="badge">Gatilho 3</span> <strong>Custo de espera:</strong></p>
+<blockquote><em>"Você me disse que perde R$ {{X}}/mês com esse problema. Cada semana que passa sem resolver custa R$ {{X/4}}. Não estou pressionando — estou te devolvendo os dados que você mesmo me deu."</em></blockquote>
+
+<hr>
+
+<h3>O que fazer após o "sim"</h3>
+<ol>
+  <li><strong>Na hora:</strong> <em>"Ótimo. Vou te mandar o contrato agora pelo e-mail/WhatsApp. Você consegue assinar ainda hoje?"</em></li>
+  <li><strong>D+0:</strong> Enviar contrato + link de pagamento + confirmação do kickoff.</li>
+  <li><strong>D+1:</strong> Confirmar recebimento. Se não assinou, ligar — não deixar esfriar.</li>
+  <li><strong>Kickoff:</strong> Victor entra junto para o alinhamento estratégico. Hugo assume a implantação técnica.</li>
+  <li><strong>Handoff para onboarding:</strong> Passar para Victor o contexto da venda — a dor principal, o que foi prometido, o ROI projetado, expectativas do cliente.</li>
+</ol>
+
+<p><strong>Template de handoff Lucas → Victor/Hugo:</strong></p>
+<pre><code>Cliente: {{nome}} | {{empresa}}
+Dor principal: {{dor}}
+ROI prometido: {{número}}
+Expectativa no mês 1: {{o_que_ele_espera_ver}}
+Contato preferido: {{WhatsApp / e-mail}}
+Contrato assinado: {{data}}
+Kickoff: {{data e hora}}</code></pre>
+
+<!-- ===== SEÇÃO 7 ===== -->
+<h2><span class="section-num">07</span>MÉTRICAS DO PROCESSO COMERCIAL</h2>
+
+<h3>KPIs semanais — o que Lucas rastreia toda sexta-feira</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>KPI</th>
+      <th>Descrição</th>
+      <th>Meta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Leads novos</strong></td><td>Leads capturados na semana (LP + indicação + evento)</td><td>—</td></tr>
+    <tr><td><strong>Taxa de qualificação</strong></td><td>Leads que avançaram para discovery / total de leads</td><td><span class="badge-emerald" style="display:inline-block;font-family:var(--font-mono);font-size:11px;background:rgba(16,185,129,0.10);border:1px solid rgba(16,185,129,0.3);color:#10B981;padding:2px 8px;border-radius:12px;">≥ 40%</span></td></tr>
+    <tr><td><strong>Taxa de show</strong></td><td>Prospects que apareceram na call / total de calls agendadas</td><td><span class="badge-emerald" style="display:inline-block;font-family:var(--font-mono);font-size:11px;background:rgba(16,185,129,0.10);border:1px solid rgba(16,185,129,0.3);color:#10B981;padding:2px 8px;border-radius:12px;">≥ 70%</span></td></tr>
+    <tr><td><strong>Taxa de proposta</strong></td><td>Calls que geraram proposta / total de calls realizadas</td><td><span class="badge-emerald" style="display:inline-block;font-family:var(--font-mono);font-size:11px;background:rgba(16,185,129,0.10);border:1px solid rgba(16,185,129,0.3);color:#10B981;padding:2px 8px;border-radius:12px;">≥ 50%</span></td></tr>
+    <tr><td><strong>Taxa de fechamento</strong></td><td>Propostas aceitas / propostas enviadas</td><td><span class="badge-emerald" style="display:inline-block;font-family:var(--font-mono);font-size:11px;background:rgba(16,185,129,0.10);border:1px solid rgba(16,185,129,0.3);color:#10B981;padding:2px 8px;border-radius:12px;">≥ 30%</span></td></tr>
+    <tr><td><strong>Tempo médio de ciclo</strong></td><td>Do primeiro contato ao fechamento</td><td><span class="badge-emerald" style="display:inline-block;font-family:var(--font-mono);font-size:11px;background:rgba(16,185,129,0.10);border:1px solid rgba(16,185,129,0.3);color:#10B981;padding:2px 8px;border-radius:12px;">≤ 14 dias</span></td></tr>
+    <tr><td><strong>Follow-ups feitos</strong></td><td>Toques de follow-up enviados na semana</td><td><span class="badge-emerald" style="display:inline-block;font-family:var(--font-mono);font-size:11px;background:rgba(16,185,129,0.10);border:1px solid rgba(16,185,129,0.3);color:#10B981;padding:2px 8px;border-radius:12px;">100% dos D+1</span></td></tr>
+    <tr><td><strong>Leads frios reativados</strong></td><td>Reativações de 30/60/90 dias</td><td>—</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Review semanal (15 min — Lucas + Victor):</strong></p>
+<ul>
+  <li>O que fechou?</li>
+  <li>O que está parado e por quê?</li>
+  <li>Qual objeção apareceu mais essa semana?</li>
+  <li>O que mudar no script?</li>
+</ul>
+
+<hr>
+
+<h3>Pipeline — 5 estágios com definição de status no CRM</h3>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Estágio</th>
+      <th>Critério de entrada</th>
+      <th>Critério de saída</th>
+      <th>Próxima ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Lead</strong></td>
+      <td>Preencheu LP / indicação recebida / contato no evento</td>
+      <td>Qualificado pelo BANT (3+ GO)</td>
+      <td>Qualificação em até 30 min (LP) ou 24h (indicação/evento)</td>
+    </tr>
+    <tr>
+      <td><strong>2. MQL</strong></td>
+      <td>BANT confirmado</td>
+      <td>Confirmou agenda da call de discovery</td>
+      <td>Enviar confirmação + lembrete D-1</td>
+    </tr>
+    <tr>
+      <td><strong>3. SQL</strong></td>
+      <td>Apareceu na reunião</td>
+      <td>SPIN confirmou dor + budget + autoridade</td>
+      <td>Apresentar proposta na mesma reunião</td>
+    </tr>
+    <tr>
+      <td><strong>4. Proposta</strong></td>
+      <td>Recebeu proposta</td>
+      <td>Decidiu (sim, não, ou prazo)</td>
+      <td>Follow-up D+1, D+4, D+8</td>
+    </tr>
+    <tr>
+      <td><strong>5. Fechado</strong></td>
+      <td>Assinou contrato + pagamento</td>
+      <td>—</td>
+      <td>Handoff para onboarding</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Graveyard (fora do pipeline ativo):</strong></p>
+<ul>
+  <li><strong>Frio:</strong> sem resposta após D+8 → reativar em 30/60/90 dias.</li>
+  <li><strong>Descartado:</strong> NO-GO claro → arquivar, manter na newsletter.</li>
+</ul>
+
+<!-- ===== APÊNDICE ===== -->
+<h2><span class="section-num">08</span>APÊNDICE — Frases âncora da marca</h2>
+
+<p>Usar naturalmente ao longo da conversa — nunca de forma mecânica:</p>
+<ul>
+  <li><em>"Agentes de IA como sócios silenciosos"</em></li>
+  <li><em>"Projetamos seu ROI antes do investimento"</em></li>
+  <li><em>"A IA não substitui seu time — libera ele para o que importa"</em></li>
+  <li><em>"Operação Automatizada. Margem Preservada. Escala Sem Contratar."</em></li>
+</ul>
+
+<!-- ===== CHECKLIST ===== -->
+<h2><span class="section-num">09</span>CHECKLIST DE QUALIDADE DA CALL</h2>
+
+<p>Após cada call, autoavaliar em 1 minuto:</p>
+<ul class="checklist">
+  <li>Prospect falou ≥ 60% do tempo nos primeiros 15 min</li>
+  <li>Fiz pelo menos 5 perguntas SPIN diferentes</li>
+  <li>Prospect quantificou a dor em R$ ou tempo</li>
+  <li>Apresentei o Elo OS conectado à dor que ele descreveu</li>
+  <li>Mostrei ROI projetado antes de falar de preço</li>
+  <li>Pedi decisão clara no fim</li>
+  <li>Combinei próximo passo concreto (data + ação)</li>
+</ul>
+
+<div class="rule-box">
+  <strong>5+ checks:</strong> call bem conduzida. &nbsp;&nbsp;
+  <strong>Menos de 4:</strong> revisar antes da próxima.
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="doc-footer">
+  <div>
+    <img src="/Users/victorigor/Eloscope-IA/cerebro/areas/design/assets/logos/EloScope - Logo.png" alt="Eloscope">
+  </div>
+  <div>Playbook de Vendas Elo OS · v1.0 · Maio 2026 · Lucas + Victor</div>
+  <div>Confidencial — uso interno</div>
+</div>
+
+</div><!-- /page -->
+</body>
+</html>
