@@ -23,20 +23,20 @@ Treinamento presencial feito 28/04. Primeira campanha de ativação rodou 29/04 
 - **Matheus Campos** — sócio + marido + dono Campos Joia (cliente Eloscope ativo) → ponte estratégica
 - **Eloscope:** Lucas (CS/Produto) · Hugo (técnico)
 
-## Estado atual (08/05/2026)
+## Estado atual (09/05/2026)
 
 | Componente | Estado |
 |-----------|--------|
 | Sistema `elo.morgana.com.br` | 🟢 Produção |
-| Chips (3) não-oficiais | 🟢 Reconectados 08/05 (todos reativados, J-01 manual hoje) — protocolo 10 dias (08–17/05) |
+| Chips (3) não-oficiais | 🟢 Reconectados 08/05 (todos reativados) — protocolo 10 dias (08–17/05) |
 | Novo número Maqlam | 🟢 Conectado ao sistema (08/05) |
 | API Oficial WhatsApp — app criado | 🟢 App criado, Chatwoot validado (07/05) |
-| API Oficial WhatsApp — token | 🔴 Bloqueada — Autem (André) precisa gerar hoje (08/05) |
-| Número API oficial | `55 17 98154-2837` — definido, com Lucas, aguardando token |
-| Cartão em dólar (Meta) | 🔴 Não confirmado — Lucas confirmar com Matheus |
-| Templates transacionais | 🔴 Pendente — depende de cartão |
-| Ativação base (~9.000 leads) | 🔴 Pausada — alvo 10–11/05 via API oficial |
-| morganasales_core — API oficial | 🔴 Pendente — Lucas implementa |
+| API Oficial WhatsApp — token | 🟢 **Liberado e configurado 09/05** — Autem (André) gerou Usuário de Sistema + token |
+| Número API oficial | 🟢 `55 17 98154-2837` configurado **com número oficial (não teste)** após desbloqueio Meta |
+| Cartão em dólar (Meta) | 🟢 Confirmado e cadastrado |
+| Templates transacionais | 🟡 Submeter — desbloqueado pelo cartão |
+| Ativação base (~9.000 leads) | 🟡 Pronta para reabrir — falta templates aprovados |
+| morganasales_core — API oficial | 🟡 Lucas implementa (módulo `eloscope-ai/mod-campaigns`) |
 | Instagram + FB no Chatwoot | 🔴 Pendente |
 | Cadência Follow-up | 🔴 Pendente |
 
@@ -62,9 +62,9 @@ Treinamento presencial feito 28/04. Primeira campanha de ativação rodou 29/04 
 
 ## Próximos marcos
 
-- **08/05:** André (Autem) gera token → Lucas configura número → confirmar cartão Matheus
-- **09–10/05:** cartão cadastrado → templates criados e submetidos → morganasales_core Grupo 1 pronto
-- **10–11/05:** templates aprovados → ativar campanha de disparos
+- ✅ **09/05:** André (Autem) gerou token + cartão Meta cadastrado + número oficial configurado no sistema
+- **10–11/05:** templates submetidos → morganasales_core (mod-campaigns) atualizado para API oficial
+- **11–12/05:** templates aprovados → ativar campanha de disparos da base (~9k leads)
 - **17/05:** avaliação final dos 3 números de aquecimento (aptos para SDR/backup)
 
 ## Arquivos
@@ -80,4 +80,4 @@ Treinamento presencial feito 28/04. Primeira campanha de ativação rodou 29/04 
 
 ---
 
-*Atualizado: 2026-05-08*
+*Atualizado: 2026-05-09*

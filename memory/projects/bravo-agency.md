@@ -76,13 +76,12 @@ Os 3 processos mais caros (criativo R$ 2.170, edição R$ 1.260, captação R$ 1
 ## Pendências (09/05 — atualizado)
 
 ### 🔴 Bloqueantes operacionais (em execução)
-- [ ] **Pegar IP do VPS + liberar no painel OpenAI** (allowlist do token ChatGPT) — Lucas pega IP / Hugo libera
-- [ ] **Handover Hugo** — receber infra (OpenClaw + Nginx + Cloudflare + token OpenAI), validar fluxo end-to-end (envio + recebimento WhatsApp + chamada IA)
+- [ ] **Handover Hugo** — receber infra (OpenClaw + Nginx + Cloudflare + OpenAI Codex), validar fluxo end-to-end (envio + recebimento WhatsApp + chamada IA)
 - [ ] **Acesso Gemini Code/Codex** — Lucas cobrar Gustavo (sem isso ambiente IA complementar não configura)
 
 ### 🟢 Concluído em 09/05
 - [x] **OpenClaw onboarding finalizado** — call com Gustavo para clonar WhatsApp Business da Bravo
-- [x] **Token OpenAI/ChatGPT liberado** pelo Gustavo e configurado via Hostinger
+- [x] **Login OpenAI Codex/ChatGPT 100% configurado** — token + IP allowlist + integração com OpenClaw funcional
 - [x] **Nginx instalado no VPS** + HTTPS funcionando (decisão: substitui Tailscale → menos suporte pós-entrega ao cliente final)
 - [x] **Cloudflare nova conta criada para Gustavo Bravo** — mktbravo.com.br não estava no Cloudflare antes; precisou criar conta + adicionar domínio + alterar nameservers
 - [x] **DNS apontado:** `elo.mktbravo.com.br` → VPS Hostinger ✅ acessível via HTTPS

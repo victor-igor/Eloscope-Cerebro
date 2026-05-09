@@ -8,11 +8,11 @@
 
 ## 🔴 Críticas (bloqueiam progresso)
 
-- [08/05/2026] 🔥 **Morgana — André (Autem) gerar Usuário de Sistema + token na Meta** · single point of failure para API oficial · replanejado para hoje · contato: WhatsApp `+55 17 98814-5147` · se não resolver hoje escalar para Matheus · tarefa ClickUp `86e19hpd6`
-- [08/05/2026] 🔥 **Morgana — morganasales_core atualizar para API oficial** · módulo de campanhas (`eloscope-ai/mod-campaigns`) só suporta API não-oficial · Grupo 1 bloqueia ativação da campanha · Lucas implementa · tarefa ClickUp `86e19hqg5`
-- [08/05/2026] **Morgana — confirmar cartão em dólar com Matheus** · sem cartão internacional o número da API oficial não envia nada · Lucas confirma com Matheus (`+5517981280789`) hoje · tarefa ClickUp `86e19hpeb`
+- ✅ [09/05/2026] **Morgana — API oficial Meta destravada e configurada** · André (Autem) gerou Usuário de Sistema + token, cartão em dólar cadastrado, número oficial `55 17 98154-2837` configurado no sistema (não mais teste). Próximo: submeter templates + atualizar `mod-campaigns` (Lucas)
+- [09/05/2026] **Morgana — morganasales_core atualizar para API oficial** · módulo de campanhas (`eloscope-ai/mod-campaigns`) ainda em API não-oficial · Lucas implementa para abrir Grupo 1 · tarefa ClickUp `86e19hqg5`
+- [09/05/2026] **Morgana — submeter templates transacionais** · desbloqueado pelo cartão · 24-48h aprovação Meta · pré-requisito da campanha de ativação base ~9k leads
 - ✅ [09/05/2026] **Bravo — OpenClaw onboarding finalizado** · call com Gustavo p/ clonar WhatsApp Business + token OpenAI configurado + Nginx instalado (decisão: substitui Tailscale, menos suporte ao cliente) + Cloudflare nova conta criada para Gustavo + DNS `elo.mktbravo.com.br` apontado e acessível via HTTPS
-- [09/05/2026] 🔥 **Bravo — pegar IP do VPS + liberar no allowlist OpenAI** · sem isso o token ChatGPT não funciona full · Lucas pega IP / Hugo libera no painel OpenAI
+- ✅ [09/05/2026] **Bravo — login OpenAI Codex/ChatGPT concluído** · todo processo de login + IP allowlist resolvido pelo Lucas no mesmo dia
 - [09/05/2026] 🔥 **Bravo — handover Hugo** · receber infra (OpenClaw + Nginx + Cloudflare + token OpenAI), validar fluxo end-to-end (envio + recebimento WhatsApp + chamada IA) · checklist em ClickUp `86e18dtm5`
 - [08/05/2026] 🔥 **Bravo — acesso Gemini Code/Codex pendente** · sem acesso não dá para configurar ambiente de IA complementar · Lucas cobrar Gustavo
 - [06/05/2026] 🔥 **Bravo — 4 bloqueantes vermelhos travam Sprint 2** · Gustavo precisa responder até 08/05: (1) acesso Hostinger, (2) nome assistente IA, (3) cliente-piloto Skill 1, (4) prazo SLA 48h ou 72h. Lucas dispara mensagem-modelo HOJE (vide `areas/vendas/clientes/bravo-agencia/operacional/apis-credenciais.md` §4). Critério NO-GO: 12/05 sem resposta = pausar e renegociar.
