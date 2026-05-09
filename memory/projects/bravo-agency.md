@@ -43,6 +43,7 @@ Primeiro cliente do modelo Mentoria Agências. Mapeamento de processos + infraes
 | 28/04→02/05 | **Sprint 1** — Setup + processo + escopo travado (parcial — bloqueantes Gustavo) |
 | 05/05→09/05 | **Sprint 2** — Skill 1 com piloto real (em curso, travado) |
 | 06/05/2026 | apis-credenciais.md + analise-sustentabilidade.md + clickup-sync-map.md criados |
+| 09/05/2026 | OpenClaw onboarding ✅ + Nginx + Cloudflare conta nova + DNS `elo.mktbravo.com.br` + token OpenAI configurado · handover Hugo iniciado |
 | 12/05→16/05 | **Sprint 3** — Skill 2 + Skill 3 operacionais |
 | 19/05→23/05 | **Sprint 4** — Treinamento + handoff final |
 | 24/05→23/06 | Suporte pós-entrega (30 dias) |
@@ -72,16 +73,24 @@ Primeiro cliente do modelo Mentoria Agências. Mapeamento de processos + infraes
 ## Insight de negócio (descoberto 26/04)
 Os 3 processos mais caros (criativo R$ 2.170, edição R$ 1.260, captação R$ 1.040) **não são automatizáveis** ou já estão (Content Machine). Os candidatos a skill (Aprovação R$ 260 + Agendador R$ 270) custam pouco em horas-Bravo, **mas consomem o Gustavo**, que é o único comercial. Liberar ~20h/mês do Gustavo = caminho pra fechar a meta R$ 20k → R$ 30k.
 
-## Pendências (08/05 — atualizado)
+## Pendências (09/05 — atualizado)
 
-### 🔴 Bloqueantes operacionais (Lucas — em execução)
-- [ ] **OpenClaw — concluir onboarding** (parou no meio em 08/05) → próximo passo: instalar Nginx → handover Hugo
-- [ ] **Acesso Gemini Code/Codex** — Lucas cobrar Gustavo (sem isso ambiente IA não configura)
-- [ ] **Número WhatsApp Bravo** — só resolvido após tempo perdido em 08/05; revalidar amanhã
+### 🔴 Bloqueantes operacionais (em execução)
+- [ ] **Pegar IP do VPS + liberar no painel OpenAI** (allowlist do token ChatGPT) — Lucas pega IP / Hugo libera
+- [ ] **Handover Hugo** — receber infra (OpenClaw + Nginx + Cloudflare + token OpenAI), validar fluxo end-to-end (envio + recebimento WhatsApp + chamada IA)
+- [ ] **Acesso Gemini Code/Codex** — Lucas cobrar Gustavo (sem isso ambiente IA complementar não configura)
+
+### 🟢 Concluído em 09/05
+- [x] **OpenClaw onboarding finalizado** — call com Gustavo para clonar WhatsApp Business da Bravo
+- [x] **Token OpenAI/ChatGPT liberado** pelo Gustavo e configurado via Hostinger
+- [x] **Nginx instalado no VPS** + HTTPS funcionando (decisão: substitui Tailscale → menos suporte pós-entrega ao cliente final)
+- [x] **Cloudflare nova conta criada para Gustavo Bravo** — mktbravo.com.br não estava no Cloudflare antes; precisou criar conta + adicionar domínio + alterar nameservers
+- [x] **DNS apontado:** `elo.mktbravo.com.br` → VPS Hostinger ✅ acessível via HTTPS
+- [x] ClickUp atualizado: `86e18dtaa` (acesso Hostinger) concluído, comentários de handover em `86e18dtm5` (Hugo) e `86e18dtyc` (credenciais)
 
 ### 🟢 Concluído em 08/05
 - [x] Hostinger configurado e domínio apontado
-- [x] OpenClaw instalação iniciada (não finalizada)
+- [x] OpenClaw instalação iniciada
 - [x] Acessos coletados aos poucos: Facebook, Hostinger, ClickUp
 
 ### 🔴 Bloqueantes vermelhos (travam Sprint 2 — destravar até 08/05)
@@ -119,4 +128,4 @@ projeto/
 ```
 
 ---
-*Criado: 24/04/2026 · Atualizado: 26/04/2026*
+*Criado: 24/04/2026 · Atualizado: 09/05/2026*
