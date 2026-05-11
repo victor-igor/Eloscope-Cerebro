@@ -9,57 +9,17 @@
   html, body { background: #111; display: flex; justify-content: center; align-items: flex-start; padding: 20px; }
   .slide { position: relative; width: 1080px; height: 1350px; flex-shrink: 0; background: #080808; overflow: hidden; }
 
-  /* Gradiente diagonal cyan → dark no fundo */
-  .bg-gradient {
-    position: absolute; inset: 0; z-index: 1;
-    background:
-      linear-gradient(145deg, rgba(0,212,255,0.12) 0%, transparent 45%),
-      linear-gradient(315deg, rgba(217,70,239,0.08) 0%, transparent 45%);
-    pointer-events: none;
-  }
-
-  /* Dot grid */
   .dot-grid {
     position: absolute; inset: 0; z-index: 1;
     background-image: radial-gradient(circle, rgba(0,212,255,0.035) 1px, transparent 1px);
     background-size: 38px 38px; pointer-events: none;
   }
 
-  /* Watermark logo grande */
-  .bg-symbol {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -52%);
-    width: 1000px; height: 1000px;
-    z-index: 2; pointer-events: none; opacity: 0.045;
-  }
-  .bg-symbol img { width: 100%; height: auto; display: block; }
-
-  /* Spotlight radial forte do topo */
+  /* Spotlight cyan topo — único glow */
   .spotlight {
-    position: absolute; top: -150px; left: 50%; transform: translateX(-50%);
-    width: 1000px; height: 900px;
-    background: radial-gradient(ellipse at top, rgba(0,212,255,0.26) 0%, rgba(0,212,255,0.08) 38%, transparent 62%);
-    z-index: 3; pointer-events: none;
-  }
-
-  /* Faixa cyan no topo — linha de energia */
-  .cyan-bar {
-    position: absolute; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, transparent 5%, #00D4FF 40%, rgba(217,70,239,0.80) 60%, transparent 95%);
-    z-index: 20;
-  }
-
-  .glow-cyan {
-    position: absolute; top: 15%; left: 5%;
-    width: 650px; height: 650px;
-    background: radial-gradient(circle, rgba(0,212,255,0.13) 0%, transparent 65%);
-    z-index: 3; pointer-events: none;
-  }
-  .glow-magenta {
-    position: absolute; bottom: 8%; right: 2%;
-    width: 520px; height: 520px;
-    background: radial-gradient(circle, rgba(217,70,239,0.10) 0%, transparent 65%);
-    z-index: 3; pointer-events: none;
+    position: absolute; inset: 0; z-index: 2;
+    background: radial-gradient(ellipse 90% 58% at 50% -8%, rgba(0,212,255,0.28) 0%, rgba(0,212,255,0.08) 42%, transparent 65%);
+    pointer-events: none;
   }
 
   .line-top, .line-bottom { position: absolute; left: 0; right: 0; height: 2px; z-index: 20; }
@@ -72,47 +32,42 @@
   .corner-bl { bottom: 34px; left: 34px;  border-bottom: 1.5px solid #00D4FF; border-left:  1.5px solid #00D4FF; }
   .corner-br { bottom: 34px; right: 34px; border-bottom: 1.5px solid #00D4FF; border-right: 1.5px solid #00D4FF; }
 
-  .header { position: absolute; top: 52px; left: 56px; right: 56px; display: flex; justify-content: space-between; align-items: center; z-index: 20; }
-  .brand-mark { display: flex; align-items: center; gap: 10px; }
-  .brand-icon-img { height: 24px; width: auto; }
-  .brand-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.15em; color: #00D4FF; }
-  .handle { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: rgba(107,114,128,0.70); letter-spacing: 0.03em; }
+  .header { display: none; }
 
   .content {
-    position: absolute; top: 0; bottom: 0; left: 56px; right: 56px;
+    position: absolute; inset: 0;
     display: flex; flex-direction: column;
-    justify-content: center;
-    z-index: 15;
-    padding-top: 60px;
+    align-items: center; justify-content: center;
+    gap: 0; padding: 100px 80px;
+    z-index: 15; text-align: center;
   }
 
-  .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 44px; }
-  .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #00D4FF; box-shadow: 0 0 10px rgba(0,212,255,0.9); }
-  .eyebrow-text { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(0,212,255,0.65); letter-spacing: 0.20em; text-transform: uppercase; }
+  .logo { height: 54px; width: auto; object-fit: contain; margin-bottom: 48px; }
 
-  .headline { margin-bottom: 36px; line-height: 1.06; }
-  .hl-line { font-family: 'Syne', sans-serif; font-weight: 800; display: block; letter-spacing: -0.015em; }
-  .hl-white { font-size: 66px; color: rgba(240,255,254,0.95); }
-  .hl-dim   { font-size: 66px; color: rgba(240,255,254,0.40); }
-  .hl-cyan  { font-size: 70px; color: #00D4FF; text-shadow: 0 0 40px rgba(0,212,255,0.45); }
+  .headline {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 56px; line-height: 1.12; letter-spacing: -0.02em;
+    color: rgba(240,255,254,0.95);
+    margin-bottom: 20px;
+  }
+  .hl-cyan { color: #00D4FF; }
 
-  .divider { height: 1px; background: linear-gradient(90deg, rgba(0,212,255,0.22), rgba(255,255,255,0.04), transparent); margin-bottom: 36px; }
-
-  .body-text {
-    font-family: 'Inter', sans-serif; font-size: 21px; font-weight: 400;
-    color: rgba(240,255,254,0.48); line-height: 1.60;
+  .sub {
+    font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 400;
+    color: rgba(240,255,254,0.42); line-height: 1.5;
     margin-bottom: 52px;
   }
 
   .cta-btn {
+    width: 100%; border-radius: 100px;
+    padding: 32px 44px; background: #00D4FF;
     display: flex; align-items: center; justify-content: center;
-    background: #00D4FF; border-radius: 100px;
-    padding: 30px 44px; margin-bottom: 28px;
-    cursor: pointer;
+    margin-bottom: 32px;
   }
   .cta-text {
     font-family: 'Inter', sans-serif; font-weight: 700;
-    font-size: 24px; color: #0A0A0A; letter-spacing: -0.01em;
+    font-size: 24px; color: #080808; letter-spacing: -0.01em;
+    white-space: nowrap;
   }
 
   .social-proof {
@@ -120,10 +75,10 @@
     flex-wrap: wrap;
   }
   .proof-item {
-    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
     color: rgba(240,255,254,0.28); letter-spacing: 0.05em;
   }
-  .proof-sep { color: rgba(0,212,255,0.25); font-size: 10px; }
+  .proof-sep { color: rgba(0,212,255,0.25); font-size: 11px; }
 
   .page-count { position: absolute; bottom: 52px; right: 56px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(0,212,255,0.25); letter-spacing: 0.1em; z-index: 20; }
 </style>
@@ -131,16 +86,8 @@
 <body>
 <div class="slide">
 
-  <div class="bg-gradient"></div>
   <div class="dot-grid"></div>
-  <div class="bg-symbol">
-    <img src="../../../../../../design/assets/logos/EloScope - Logo - transparente.png" alt="">
-  </div>
-  <div class="cyan-bar"></div>
-
   <div class="spotlight"></div>
-  <div class="glow-cyan"></div>
-  <div class="glow-magenta"></div>
   <div class="line-top"></div>
   <div class="line-bottom"></div>
   <div class="corner corner-tl"></div>
@@ -148,32 +95,17 @@
   <div class="corner corner-bl"></div>
   <div class="corner corner-br"></div>
 
-  <div class="header">
-    <div class="brand-mark">
-      <img class="brand-icon-img" src="../../../../../../design/assets/logos/EloScope - Logo - transparente.png" alt="">
-      <span class="brand-name">eloscope</span>
-    </div>
-    <div class="handle">@eloscope.ai</div>
-  </div>
+  <div class="header"></div>
 
   <div class="content">
+    <img class="logo" src="../../../../../../design/assets/logos/EloScope - Logo.png" alt="Eloscope">
 
-    <div class="eyebrow">
-      <div class="eyebrow-dot"></div>
-      <span class="eyebrow-text">próximo passo</span>
-    </div>
+    <h1 class="headline">
+      Sua empresa pode fazer<br>
+      <span class="hl-cyan">o mesmo.</span>
+    </h1>
 
-    <div class="headline">
-      <span class="hl-line hl-white">O Duolingo multiplicou</span>
-      <span class="hl-line hl-dim">o que o time entrega.</span>
-      <span class="hl-line hl-cyan">Sua empresa pode fazer o mesmo.</span>
-    </div>
-
-    <div class="divider"></div>
-
-    <p class="body-text">
-      Começa com um diagnóstico.
-    </p>
+    <p class="sub">Começa com um diagnóstico.</p>
 
     <div class="cta-btn">
       <span class="cta-text">Comente DIAGNÓSTICO ↗</span>
@@ -186,7 +118,6 @@
       <span class="proof-sep">·</span>
       <span class="proof-item">Resultado antes do investimento</span>
     </div>
-
   </div>
 
   <div class="page-count">06 / 06</div>
