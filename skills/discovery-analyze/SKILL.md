@@ -103,13 +103,28 @@ Vendedor lê, ajusta divergências, muda `status: rascunho` → `status: validad
 
 ## 4. Saída esperada
 
-4 arquivos em `areas/vendas/oportunidades/{cliente}/`:
+4 arquivos do fluxo de discovery em `areas/vendas/oportunidades/{cliente}/`:
 - `analise-processo-{cliente}.md`
 - `analise-spin-{cliente}.md`
 - `analise-dimensionamento-{cliente}.md`
-- `analise-consolidada-{cliente}.md` ← entregável final
+- `analise-consolidada-{cliente}.md` ← entregável final do discovery
 
 Cada um com frontmatter Obsidian completo (tipo, status, cliente, agente, confiança, tags).
+
+### Outputs adicionais (utilities — invocáveis em separado)
+
+Os agentes utility geram artefatos sob demanda (não no fluxo paralelo):
+
+| Agente | Comando | Output | Quando usar |
+|--------|---------|--------|-------------|
+| [[squads/discovery-analyzer/agentes/04-mermaid-mapper\|@icarus]] | `*map {path}` | `processo-atual-{cliente}.md` (flowchart Mermaid + tabela gargalos) | Visualizar processo AS-IS pra reunião |
+| [[squads/discovery-analyzer/agentes/05-calculadora-asaas\|@tesouro]] | `*calc {liquido} {parcelas} --promo` | Tabela bruto/cartão/antecipação/líquido | Montar pricing da proposta com cálculo Asaas |
+
+Sequência típica pós-discovery → proposta:
+1. `/discovery-analyze {transcricao}` → 4 análises
+2. `@icarus *map {analise-processo}` → flowchart visual
+3. `@tesouro *calc {liquido} {parcelas} --promo` → pricing por cenário (Starter/Growth/Scale)
+4. Consolidar tudo em `proposta-entregaveis-{cliente}.md`
 
 ---
 
@@ -150,10 +165,17 @@ Cada um com frontmatter Obsidian completo (tipo, status, cliente, agente, confia
 ## 8. Referências
 
 - Squad: [[squads/discovery-analyzer/README]]
-- Agentes:
+- Agentes specialists (paralelo):
   - [[squads/discovery-analyzer/agentes/00-orquestrador]]
   - [[squads/discovery-analyzer/agentes/01-leitor-processo]]
   - [[squads/discovery-analyzer/agentes/02-spin-analyzer]]
   - [[squads/discovery-analyzer/agentes/03-dimensionamento]]
+- Agentes utility (standalone):
+  - [[squads/discovery-analyzer/agentes/04-mermaid-mapper]] — Icarus (flowchart visual)
+  - [[squads/discovery-analyzer/agentes/05-calculadora-asaas]] — Tesouro (pricing reverso)
 - Skill irmã: [[skills/reuniao/SKILL]] (captura/transcrição)
-- Caso real: [[areas/vendas/oportunidades/pele_vet/analise-discovery-pelevet]] (feito manual — esta squad sistematiza)
+- Caso real completo: PeleVet (2026-05-09)
+  - [[areas/vendas/oportunidades/pele_vet/analise-discovery-pelevet]] (discovery)
+  - [[areas/vendas/oportunidades/pele_vet/processo-atual-pelevet]] (Mermaid via Icarus)
+  - [[areas/vendas/oportunidades/pele_vet/pricing-pelevet-asaas]] (Asaas via Tesouro)
+  - [[areas/vendas/oportunidades/pele_vet/proposta-entregaveis-pelevet]] (sumário pra reunião)

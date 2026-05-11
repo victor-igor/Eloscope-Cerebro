@@ -122,12 +122,21 @@ flowchart TD
 
 ## 4. Especificação dos agentes
 
+### Specialists (rodam em paralelo no fluxo de discovery)
+
 | # | Arquivo | Persona | Input | Output | Tempo |
 |---|---------|---------|-------|--------|-------|
 | 00 | [[agentes/00-orquestrador]] | **Cassandra** — coordenadora analítica, sem opinião própria | Transcrição + 3 outputs | `analise-consolidada-{cliente}.md` | ~1 min |
 | 01 | [[agentes/01-leitor-processo]] | **Mapeador** — operacional, descritivo, anti-julgamento | Transcrição bruta | `analise-processo-{cliente}.md` | ~3 min |
 | 02 | [[agentes/02-spin-analyzer]] | **SPIN Analyst** — qualitativo, framework Rackham | Transcrição bruta | `analise-spin-{cliente}.md` | ~4 min |
 | 03 | [[agentes/03-dimensionamento]] | **Quant** — extrai e calcula com base em fontes | Transcrição bruta | `analise-dimensionamento-{cliente}.md` | ~5 min |
+
+### Utilities (invocáveis standalone, fora do fluxo paralelo)
+
+| # | Arquivo | Persona | Input | Output | Quando usar |
+|---|---------|---------|-------|--------|-------------|
+| 04 | [[agentes/04-mermaid-mapper]] | **Icarus** — engenheiro visual de processos (Icarus v3.1) | `analise-processo-*.md` ou `analise-discovery-*.md` | `processo-atual-{cliente}.md` (flowchart Mermaid + tabela de gargalos) | Visualizar o processo TO-BE/AS-IS pra apresentação |
+| 05 | [[agentes/05-calculadora-asaas]] | **Tesouro** — calculista financeiro (pricing reverso) | `liquido_desejado` + `parcelas` + `--promo` | Tabela de cobrança bruta por modalidade | Montar pricing de proposta com cálculo Asaas validado |
 
 Detalhes de persona e instruções vivem em cada arquivo individual em [[agentes/]].
 
@@ -289,7 +298,11 @@ squads/discovery-analyzer/
     ├── 00-orquestrador.md                 ← Cassandra (coordenadora)
     ├── 01-leitor-processo.md              ← Mapeador (descritivo)
     ├── 02-spin-analyzer.md                ← SPIN Analyst (qualitativo)
-    └── 03-dimensionamento.md              ← Quant (numérico)
+    ├── 03-dimensionamento.md              ← Quant (numérico)
+    ├── 04-mermaid-mapper.md               ← Icarus (visual, utility)
+    └── 05-calculadora-asaas.md            ← Tesouro (pricing reverso, utility)
 ```
 
 Skill associada: [[skills/discovery-analyze/SKILL]]
+
+Primeira aplicação completa (todos os agentes): cliente [[areas/vendas/oportunidades/pele_vet/analise-discovery-pelevet|PeleVet]] (2026-05-09).
