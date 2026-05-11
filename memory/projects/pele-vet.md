@@ -35,6 +35,7 @@ Clínica veterinária especializada (dermato + endocrino + banho dermatoterapêu
 | 09/05/2026 | Discovery consolidado + análise de mercado SJRP feita |
 | 09/05/2026 | Processo AS-IS mapeado (Mermaid via @icarus) + pricing Asaas calculado (via @tesouro) + sumário de entregáveis montado |
 | 11/05/2026 | **Reunião técnica presencial 13h com Vítor** |
+| 11/05/2026 | Deck HTML v2 finalizado — 23 slides, avatar Pele inserido, sinal R$487, pronto |
 
 ## Decisões Tomadas
 
@@ -61,6 +62,8 @@ Clínica veterinária especializada (dermato + endocrino + banho dermatoterapêu
 - `areas/vendas/oportunidades/pele_vet/proposta-entregaveis-pelevet.md` — sumário executivo para a reunião 11/05
 - `areas/vendas/oportunidades/pele_vet/transcricao-discovery-pelevet.md` — transcrição bruta
 - `areas/vendas/oportunidades/pele_vet/discobery-pele-vet.m4a` — áudio original
+- `areas/vendas/oportunidades/pele_vet/apresentação/apresentacao-pelevet-v2.html` — deck 23 slides (Plano A/B, avatar Pele, QR sinal R$487, FAQ)
+- `areas/vendas/oportunidades/pele_vet/apresentação/apresentacao-pelevet-v2.md` — estrutura Icarus v2.0 do deck
 
 ---
 *Criado: 09/05/2026*
