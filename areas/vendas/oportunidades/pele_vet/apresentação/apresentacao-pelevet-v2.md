@@ -659,119 +659,131 @@ Se 10% dos 240 leads mensais não atendidos fossem potenciais crônicos:
 
 ## SLIDE 20 — PREÇO E ENTREGÁVEIS
 
-**Título:** Investimento — Fase 1 completa
+**Título:** Escolha o plano certo para a PeleVet
 
 ---
 
-### IMPLEMENTAÇÃO (pagamento único)
+### DOIS PLANOS — mesma base, financeiro opcional
 
-**Valor: R$16.000**
+---
 
-O que está incluído:
+#### PLANO A — Sistema Completo sem Financeiro
 
-| Módulo | Descrição |
-|--------|-----------|
-| ✅ Base do sistema | Agenda, prontuário, estoque, cadastro de pacientes |
-| ✅ Transcrição ao vivo | Anamnese transcrita em tempo real durante a consulta |
-| ✅ IA de consulta | Ditado por voz + leitura de exames + cálculo de dose |
-| ✅ Módulo financeiro | Centros de custo + dashboards + conciliação automática |
-| ✅ Agente "Pele" (WhatsApp) | IA de atendimento 24/7 + qualificação + agendamento |
-| ✅ Playbook de atendimento | Mapeamento e documentação do jeito PeleVet de atender |
+**Implementação: R$12.000**
+
+| Módulo | |
+|--------|--|
+| ✅ Agente "Pele" (WhatsApp 24/7) | IA de atendimento, qualificação, agendamento automático |
+| ✅ CRM com pipeline visual | Lead → Qualificado → Agendado → Cliente |
 | ✅ Central Chatwoot | WhatsApp + Instagram num painel, histórico na nuvem |
-| ✅ Automações | Confirmação, lembrete de retorno, aniversário do pet, NPS |
-| ✅ Treinamento da equipe | Presencial/remoto com Thaísa + sócias + recepcionista |
-| ✅ 30 dias de suporte pós go-live | Suporte próximo no período crítico de operação |
-| ✅ Código-fonte | Propriedade integral do CNPJ da PeleVet |
+| ✅ Playbook de atendimento | Tom de voz da PeleVet mapeado e documentado |
+| ✅ Automações | Confirmação, lembrete retorno crônico, aniversário pet, NPS |
+| ✅ Prontuário + Agenda | Ficha completa, PDF tutor, sync Google Calendar |
+| ✅ Transcrição ao vivo | Anamnese durante consulta, sem VetSmart |
+| ✅ IA na consulta | Ditado por voz + leitura de exames + receituário com dose |
+| ✅ Estoque integrado | Baixa automática na prescrição |
+| ✅ Treinamento + 30 dias suporte | Equipe operando de forma autônoma |
+| ✅ Código-fonte da PeleVet | Propriedade integral do CNPJ |
+
+**Mensalidade: R$1.597/mês**
 
 ---
 
-> ⚠️ **Nota sobre o módulo financeiro:**
-> É o módulo de maior complexidade e maior valor para a PeleVet — resolve a dor número 1 da Sílvia (centros de custo por veterinária, visão bruto/líquido/recebido, conciliação automática). Em qualquer proposta de mercado standalone, esse módulo sozinho custaria R$8.000–R$15.000.
+#### PLANO B — Sistema Completo + Módulo Financeiro ⭐ RECOMENDADO
+
+**Implementação: R$16.000**
+
+> Tudo do Plano A, mais:
+
+| Módulo adicional | |
+|-----------------|--|
+| ✅ **Módulo financeiro completo** | Centro de custo por veterinária (Sílvia A / Sílvia B / Pet Shop 50-50 / Banho 50-50) |
+| | Bruto, líquido e recebido em tempo real |
+| | Conciliação automática com apoio de IA |
+| | Dashboards sem Power BI — abre, número está lá |
+| | Relatório por período, por procedimento, por profissional |
+
+**Mensalidade: R$2.197/mês**
+
+---
+
+> ⚠️ **Por que o Plano B é recomendado:**
+> O módulo financeiro resolve a **dor número 1 da Sílvia** — e é onde está o maior volume de adaptação custom para a PeleVet (estrutura societária com 4 centros de custo distintos). Standalone no mercado: R$8.000–R$15.000. Aqui é o incremento de R$4.000.
 
 ---
 
 ## SLIDE 21 — MENSALIDADE E OPERAÇÃO
 
-**Título:** Acompanhamento mensal — o que inclui e o que é custo direto
+**Título:** O que inclui a mensalidade — e o que é custo direto da operação
 
 ---
 
-### MENSALIDADE ELOSCOPE: R$2.500/mês
+### MENSALIDADE ELOSCOPE
 
-**O que cobre (10 horas/mês de dedicação ativa):**
-- Manutenção técnica e atualizações de segurança
-- Suporte estratégico: análise de dados de atendimento + performance da Pele
-- Evolução contínua: melhorias no sistema conforme a operação matura
-- Reunião mensal com Thaísa para análise de indicadores e próximos passos
+| | Plano A | Plano B |
+|-|---------|---------|
+| **Mensalidade** | **R$1.597/mês** | **R$2.197/mês** |
+| Manutenção técnica | ✅ | ✅ |
+| Suporte estratégico + análise Pele | ✅ | ✅ |
+| Evolução contínua do sistema | ✅ | ✅ |
+| Reunião mensal de indicadores | ✅ | ✅ |
+| Suporte ao módulo financeiro | — | ✅ |
 
-**Horas não utilizadas não acumulam** — a cadência de melhoria contínua é mais valiosa do que um banco de horas.
+**10 horas/mês de dedicação ativa.** Horas não acumulam — o foco é cadência de melhoria contínua.
 
 ---
 
-### CUSTOS DIRETOS DE OPERAÇÃO (pago pela PeleVet — não incluso na mensalidade)
+### CUSTOS DIRETOS DE OPERAÇÃO (pago pela PeleVet — separado da mensalidade)
 
-| Serviço | Estimativa mensal | Observação |
-|---------|------------------|------------|
-| VPS (servidor da clínica) | R$150–300 | DigitalOcean, Hetzner ou similar. A PeleVet contrata direto. |
-| API transcrição (Deepgram) | R$50–150 | Varia com volume de consultas transcritas/mês |
-| API IA (OpenAI) | R$50–200 | Varia com uso do agente e funcionalidades IA |
-| API WhatsApp (UAZAPI) | R$100–200 | WhatsApp Business para Pele + automações |
+| Serviço | Estimativa/mês | Observação |
+|---------|---------------|------------|
+| VPS (servidor da clínica) | R$150–300 | Contratado direto pela PeleVet |
+| API transcrição (Deepgram) | R$50–150 | Por volume de consultas |
+| API IA (OpenAI) | R$50–200 | Por uso do agente + IA |
+| API WhatsApp (UAZAPI) | R$100–200 | WhatsApp Business + automações |
 | **Total estimado** | **R$350–850/mês** | Primeiros meses tendem ao mínimo |
 
-> Eloscope monitora o consumo e alerta se algo sair fora do padrão esperado.
+> Eloscope monitora o consumo e alerta se algo sair fora do padrão.
 
 ---
 
 ## SLIDE 22 — FORMA DE PAGAMENTO
 
-**Título:** Como funciona o pagamento
+**Título:** Como funciona o pagamento — dois planos, duas opções
 
 ---
 
-### IMPLEMENTAÇÃO (R$16.000)
+### PLANO A — R$12.000 implementação
 
-**Opção 1 — Boleto/Pix 50/50 (sem taxas — recomendado):**
-- R$8.000 na assinatura do contrato
-- R$8.000 na entrega validada (todos os módulos em produção)
+| Opção | Como fica |
+|-------|-----------|
+| **Pix/Boleto 50/50** ✅ recomendado | R$6.000 na assinatura + R$6.000 na entrega validada |
+| **12× cartão** (promo Asaas) | 12× R$1.289,62 (bruto cobrado: R$15.475,44) |
+| **3× cartão** | 3× R$4.172,39 |
 
-**Opção 2 — 12× no cartão (taxa promocional Asaas):**
-- Bruto cobrado: R$20.633,76
-- Parcela: **12× R$1.719,48/mês**
-- Taxa cartão: R$411,10
-- Antecipação Asaas: R$4.222,65 (taxa 1,74%/mês × 12)
-- Líquido Eloscope: R$16.000,00 ✓
-
-**Opção 3 — 3× no cartão:**
-- Bruto cobrado: R$17.224,53
-- Parcela: **3× R$5.741,51**
-- Sem antecipação relevante (1.74% × 3 = 5.22%)
+**Compromisso mensal nos 12 primeiros meses (12× + mensalidade):**
+R$1.289,62 + R$1.597,00 = **R$2.886,62/mês**
+A partir do 13º mês: apenas **R$1.597/mês**
 
 ---
 
-### MENSALIDADE (R$2.500/mês — recorrente)
+### PLANO B — R$16.000 implementação ⭐
 
-| Cobrança | Valor ao cliente | Líquido Eloscope |
-|----------|-----------------|------------------|
-| Cartão 1× recorrente | **R$2.583,87/mês** | R$2.500,00 ✓ |
+| Opção | Como fica |
+|-------|-----------|
+| **Pix/Boleto 50/50** ✅ recomendado | R$8.000 na assinatura + R$8.000 na entrega validada |
+| **12× cartão** (promo Asaas) | 12× R$1.719,48 (bruto cobrado: R$20.633,76) |
+| **3× cartão** | 3× R$5.741,51 |
 
----
-
-### COMPROMISSO MENSAL REAL DO CLIENTE (12× setup + mensalidade):
-
-**Nos 12 primeiros meses:**
-R$1.719,48 (parcela setup) + R$2.583,87 (mensalidade) = **R$4.303,35/mês**
-
-**A partir do 13º mês:**
-Apenas **R$2.583,87/mês** (mensalidade recorrente)
+**Compromisso mensal nos 12 primeiros meses (12× + mensalidade):**
+R$1.719,48 + R$2.197,00 = **R$3.916,48/mês**
+A partir do 13º mês: apenas **R$2.197/mês**
 
 ---
 
-**Método:** Cartão de crédito via Asaas (link gerado no fechamento)
-**Proposta válida por:** 7 dias (taxa Asaas pode variar)
-
-**Atrelamento de pagamento à entrega:**
-- Opção 50/50: segundo pagamento só após validação completa com Thaísa
-- Opção cartão: cobrança recorrente — se algum módulo não for entregue, congela
+**Método:** Cartão via Asaas · Pix/Boleto direto
+**Proposta válida por:** 7 dias
+**Atrelamento à entrega:** segundo pagamento (50/50) só após validação com Thaísa
 
 ---
 
