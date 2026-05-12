@@ -104,7 +104,7 @@
 
 ### Como apresentar a Eloscope em 30 segundos (quando perguntado)
 
-> *"A Eloscope é uma assessoria estratégica de IA para PMEs. A gente não vende software — a gente implementa agentes de IA que operam como sócios silenciosos dentro do negócio: fazem follow-up, qualificam lead, automatizam processo comercial. O resultado: operação mais eficiente, sem precisar contratar.*
+> *"A Eloscope é uma assessoria estratégica de IA para empresas. A gente não vende software — a gente implementa agentes de IA que operam como sócios silenciosos dentro do negócio: fazem follow-up, qualificam lead, automatizam processo comercial. O resultado: operação mais eficiente, sem precisar contratar.*
 >
 > *A diferença é que antes de qualquer investimento, a gente projeta o ROI. Você vê o número antes de decidir."*
 
@@ -463,5 +463,4 @@ Após cada call, autoavaliar em 1 minuto:
 
 ---
 
-*Playbook gerado por `gos-mission-control` / `gos-playbook-vendas` — Eloscope, maio 2026.*
 *Versão: 1.0 — Lucas + Victor.*
