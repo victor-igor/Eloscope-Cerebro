@@ -2,6 +2,8 @@
 
 Repositório privado de contexto operacional da Eloscope. Sincronizado automaticamente com o Claude Code via hook `SessionStart`.
 
+> **🗺️ Mapa da stack (elobrain):** este repo é o *vault de dados*. O **código + arquitetura** ficam em [`victor-igor/elobrain`](https://github.com/victor-igor/elobrain) — ver [`docs/ARCHITECTURE.md`](https://github.com/victor-igor/elobrain/blob/main/docs/ARCHITECTURE.md) pra entender Coordinator `/elo`, Directors, MCP e multi-operador.
+
 ---
 
 ## Como funciona
