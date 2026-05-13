@@ -11,10 +11,14 @@
             "id": "9002d1d17c3bfc89",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "areas/vendas/contexto/personas.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nova aba"
+              "title": "personas"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#vendas/funil",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -181,6 +185,17 @@
   },
   "active": "9002d1d17c3bfc89",
   "lastOpenFiles": [
+    "squads/convert-to-native.mjs",
+    "areas/vendas/funil/etapas/_TEMPLATE-ETAPA.md",
+    "areas/vendas/funil/etapas/04-reuniao.md",
+    "areas/vendas/funil/etapas",
+    "areas/vendas/funil/MAPA-FUNIL.md",
+    "areas/vendas/funil",
+    "memory/sessions/2026-05-12.md",
+    "memory/sessions/2026-05-13.md",
+    "memory/projects/elobrain.md",
+    "areas/vendas/contexto/proposta-ref.md",
+    "areas/vendas/contexto/personas.md",
     "empresa/projetos/sales-os/03-entrega/onboarding-formulario.md",
     "empresa/projetos/sales-os/02-comercial/script-primeira-call-v1.md",
     "empresa/projetos/sales-os/04-apresentacao/slides-elo-os-v4.html",
@@ -200,23 +215,12 @@
     "empresa/projetos/sales-os/02-comercial/funil-vendas.md",
     "empresa/projetos/sales-os/02-comercial/copy-squad-output.md",
     "areas/vendas/clientes/gustavo-bravo/projeto/2-pos-discovery/causa-efeito.md",
-    "memory/projects/eloscope-lp.md",
-    "memory/sessions/2026-04-30.md",
     "areas/vendas/clientes/gustavo-bravo/projeto/2-pos-discovery/apresentacao-bravo-pos-discovery.html",
-    "areas/vendas/clientes/morgana-sales/agente-morg-mensagens-ativacao.md",
-    "areas/vendas/clientes/daniel-queiroz/historico/timeline.md",
-    "areas/vendas/clientes/daniel-queiroz/historico/entregas-realizadas.md",
-    "areas/vendas/clientes/daniel-queiroz/historico/dores-mapeadas.md",
-    "areas/vendas/clientes/daniel-queiroz/empresas/lavinte.md",
-    "areas/vendas/clientes/daniel-queiroz/empresas/fullfunnel.md",
-    "areas/vendas/clientes/daniel-queiroz/empresas/fac-maestria.md",
     "areas/vendas/clientes/daniel-queiroz/historico",
     "areas/vendas/clientes/daniel-queiroz/empresas",
     "areas/vendas/clientes/daniel-queiroz/apresentacao-sales-os",
     "areas/vendas/clientes/daniel-queiroz",
     "areas/reunioes/clientes/voltrucks",
-    "areas/reunioes/clientes/tripode",
-    "areas/reunioes/clientes/sertaozinho",
     "areas/design/assets/tipografia/image.png",
     "areas/design/assets/logos/monocromatico.png",
     "areas/design/assets/logos/monocro.png",
