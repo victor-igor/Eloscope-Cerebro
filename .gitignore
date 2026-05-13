@@ -40,3 +40,6 @@ Thumbs.db
 # AIOS Local (AIOS)
 .aios-core/local/
 .aios/install-log.txt
+
+# Python venv (local, never commit)
+.venv/
