@@ -148,7 +148,31 @@ git push origin main
 
 ---
 
-## Passo 6 — Confirmar
+## Passo 6 — Sincronizar elobrain (embeddings)
+
+Indexa as mudanças no banco vetorial (Supabase `brain` schema). Permite que `/buscar-memoria` retorne os arquivos atualizados via hybrid search.
+
+```bash
+# Só roda se o gbrain estiver instalado — não bloqueia o /salve se não estiver
+if command -v gbrain >/dev/null 2>&1; then
+  cd "$SECOND_BRAIN_PATH"
+  gbrain sync --source cerebro 2>&1 | tail -5
+else
+  echo "⚠️  gbrain não encontrado — sync de embeddings pulado (instalar: https://github.com/victor-igor/elobrain)"
+fi
+```
+
+**Comportamento:**
+- Detecta apenas arquivos `.md` modificados (delta sync — não reindexa o vault inteiro)
+- Gera embeddings via OpenAI (text-embedding-3-large) só para chunks novos/alterados
+- Atualiza `brain.pages`, `brain.content_chunks`, `brain.links` (grafo)
+- Tempo típico: 5-15s para uma sessão normal
+
+**Se falhar** (sem internet, OpenAI key inválida, etc.): apenas reportar o erro e seguir. O git push já foi feito, então os dados estão preservados — sync é só atualização de índice.
+
+---
+
+## Passo 7 — Confirmar
 
 ```
 ✓ Sessão salva — DD/MM/YYYY
@@ -162,6 +186,7 @@ Não precisou atualizar:
   [categorias sem mudanças]
 
 Pushed para origin/main.
+Embeddings sincronizados: [N pages, M chunks] (ou: gbrain não instalado)
 ```
 
 ---

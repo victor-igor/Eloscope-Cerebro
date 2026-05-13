@@ -28,6 +28,7 @@
 | Morgana Sales | 🔥 Ativo — API oficial bloqueada por Autem | Token Autem hoje (08/05) → número `5517981542837` → cartão → templates → campanha 10–11/05 | morgana-sales.md |
 | Enertelles | 🔨 Lead em fechamento | Call Telles + Alex 30/04 — apresentar proposta v4 | enertelles.md |
 | PeleVet | 🔥 Lead quente — discovery feito | Reunião técnica 11/05 13h com Vítor (proposta) | pele-vet.md |
+| elobrain (framework) | 🔨 Em construção | Instalar gbrain local + primeiro sync + runbook | elobrain.md |
 
 ---
 
@@ -49,6 +50,7 @@
 
 ## Mudanças Recentes
 
+- [13/05] **elobrain (framework)** — fork público `victor-igor/elobrain` adotado como framework instalável (não embedded). Schema `brain` aplicado no Supabase Elosystem (32 tabelas, pgvector HNSW, validado end-to-end com FTS + vector search). `.env` configurado, skills `/salve` e `/buscar-memoria` atualizadas com fallback defensivo. MCP server registrado. Vai virar produto vendido a clientes (Cerebro Claude Code by Eloscope). Pendente: instalar `gbrain` localmente + primeiro sync + runbook
 - [09/05] **PeleVet** — discovery 07/05 consolidado em `areas/vendas/oportunidades/pele_vet/`; análise de mercado SJRP feita (TAM 28.500 cães/ano dermato, <3% capturado); reunião técnica 11/05 13h com Vítor. Squad `discovery-analyzer` arquitetado pra reaproveitar fluxo (3 agents paralelos + Cassandra)
 - [03/05] **Elite Maqlam** — projeto documentado em `maqlam.md` (estrutura sistema, módulos, edge functions, chips); 11 tasks criadas no ClickUp (cashback, BDR, CS, aquecimento chips 04-08/05)
 - [02/05] **Vendas** — convenção CRM definida (oportunidades/ vs clientes/) + SPIN Playbook Eloscope v0.2 criado em `areas/vendas/metodologia/` (553 linhas) + plano do squad sales-call-analyzer (4 agentes + skill `/analisar-call`)

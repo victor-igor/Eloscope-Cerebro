@@ -125,6 +125,16 @@
 
 ---
 
+## 🟡 elobrain — framework instalável (criadas 13/05)
+
+- [13/05/2026] 🔥 **Instalar `gbrain` localmente na máquina Lucas** · clone `victor-igor/elobrain` + `bun install` + `bun link` + symlink `.env` · pré-requisito p/ tudo · Lucas
+- [13/05/2026] **Criar `INSTALL_ELOBRAIN.md` runbook reaproveitável** · vira parte do produto que vai ser vendido a clientes (Claude Code + segundo cérebro) · Lucas
+- [13/05/2026] **Primeira indexação `gbrain sync --source cerebro`** · gera embeddings do vault inteiro · custo ~$0.02 OpenAI · Lucas (após instalar gbrain)
+- [13/05/2026] **Reiniciar Claude Code após instalar gbrain** · carrega MCP server `elobrain` registrado em `.claude/settings.json` · Lucas
+- [13/05/2026] ⚪ **Empacotar produto "Cerebro Claude Code by Eloscope"** · template repo + runbook + migrations + `.env.example` + `.claude/settings.json` pré-configurado · backlog (depende de validação interna primeiro) · Lucas + Victor
+
+---
+
 ## 🟡 Operação interna — rituais e agentes (criadas 01/05)
 
 - [01/05/2026] **Validar routine #3 (Prep Weekly Review)** disparada às 15:18 — confirmar se chegou WhatsApp + se agente conseguiu clonar repo privado · Lucas
