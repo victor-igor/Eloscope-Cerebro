@@ -36,6 +36,7 @@ Skills principais. Vivem em `skills/` e são copiadas para `~/.claude/skills/` n
 | `/buscar-memoria` | `skills/buscar-memoria/SKILL.md` | Busca semântica no vault (decisões, sessões, projetos) com filtros por tipo/tag/cliente/data. Alternativa leve a sistemas tipo claude-mem. |
 | `/sync` | `skills/sync/SKILL.md` | Sincronização rápida com git (sem flush completo). |
 | `/reuniao` | `skills/reuniao/SKILL.md` | Captura/transcreve/processa reuniões (Fathom, Fireflies ou manual) — classifica tipo, extrai resumo + decisões + action items, propaga pra ClickUp/pendências. |
+| `/discovery-analyze` | `skills/discovery-analyze/SKILL.md` | Análise estratégica de transcrição de discovery comercial — dispara 3 agentes em paralelo (Leitor de Processo + SPIN Analyzer + Dimensionamento). |
 
 Skills auxiliares: `skills/carrossel-eloscope/` (carrosséis Instagram) e `skills/assinar/` (envio de contrato via Autentique).
 
@@ -63,6 +64,8 @@ areas/           ← vendas, marketing, design, atendimento, operacoes
 agentes/         ← _registry.md dos squads (índice) + COMO-CONECTAR.md
 squads/          ← 13+ squads de agentes IA (C-Level, Copy, Brand, Traffic...)
 seguranca/       ← permissoes.md (o que cada agente pode acessar)
+time/            ← perfis individuais do time (Lucas, Victor, Hugo) — diário + contexto pessoal
+scripts/         ← shell + python: brain-boot.sh, auto-sync.sh, migração ClickUp (setup/clickup_*.py)
 ```
 
 `lasted-entregas/` e `planejamento/` são pastas de trabalho (gitignored parcialmente — confirmar antes de commitar).
