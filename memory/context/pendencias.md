@@ -1,3 +1,8 @@
+---
+title: Pendências Ativas
+type: note
+---
+
 # Pendências Ativas
 
 > Formato: `[DATA] Aguardando [QUEM] sobre [O QUÊ]`
@@ -128,6 +133,14 @@
 - [02/05/2026] **Validar SPIN playbook contra N≥10 calls reais** · calibrar pesos por correlação real, não por benchmark Huthwaite/Gong
 - [02/05/2026] ⚪ **Conectar Supabase MCP (CRM fase 2)** · schema oportunidades/calls/objeções/scores SPIN + RLS · `NEXT_PUBLIC_SUPABASE_URL=https://jaygqiooeolzachevvfa.supabase.co` no `.env` · MCP a configurar · @gaia
 - [02/05/2026] **Daniel Queiroz — registrar resultado da call 29/04** · pendência herdada · Lucas
+
+---
+
+## 🟡 uazapi / WhatsApp toolkit (criadas 15/05)
+
+- [15/05/2026] 🔥 **Rotacionar token uazapi da instância `eloscope`** · token `0105a49e-da34-...` foi pasted em chat com Claude pra construir a skill `/uazapi`. Mesmo o `.env` estando gitignored, boa prática é rotacionar quando credencial trafega em canal não-controlado. Painel uazapi.dev → instância eloscope → regenerar token → rodar `/uazapi setup` pra atualizar `.env` · Lucas
+- [15/05/2026] **Construir skills derivadas em cima de `/uazapi`** · planos futuros mapeados: `/whatsapp-resumo` (últimas 24h), `/whatsapp-pendencias` (varre pendencias.md, classifica avanço por contato), `/whatsapp-projetos` (mapeia grupos a projetos). Cada uma é plano separado · Lucas (priorizar quando tiver tempo)
+- [15/05/2026] ⚪ **Empacotar `/uazapi` como produto plugin** · skill já é company-agnostic + tem INSTALL.md. Vira parte do produto "Cerebro Claude Code by Eloscope" quando vendido a cliente · backlog · Lucas + Victor
 
 ---
 

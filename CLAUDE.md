@@ -1,3 +1,8 @@
+---
+title: CLAUDE.md
+type: note
+---
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
@@ -41,6 +46,24 @@ Skills principais. Vivem em `skills/` e são copiadas para `~/.claude/skills/` n
 Skills auxiliares: `skills/carrossel-eloscope/` (carrosséis Instagram) e `skills/assinar/` (envio de contrato via Autentique).
 
 Skills em desenvolvimento: `skills/triagem/` ainda é stub (`SPEC.md` apenas, sem `SKILL.md` — não invocável).
+
+### Skills externas (plugins)
+
+Skills entregues como **plugin reusável** em repo separado. O cerebro consome via symlink em `.claude/skills/<nome>`.
+
+| Plugin | Repo | Symlink local |
+|---|---|---|
+| `/uazapi` (toolkit WhatsApp via uazapi.dev) | [`eloscopecoo-rgb/claude-uazapi-elo`](https://github.com/eloscopecoo-rgb/claude-uazapi-elo) | `.claude/skills/uazapi → ../../../claude-uazapi-elo/skills/uazapi` |
+
+**Pré-requisito de instalação:** clonar o plugin no mesmo dir-pai do cerebro:
+
+```bash
+cd "$(dirname "$SECOND_BRAIN_PATH")"
+git clone git@github-eloscope:eloscopecoo-rgb/claude-uazapi-elo.git
+# symlink já comitado no cerebro resolve automaticamente
+```
+
+Sem o clone do plugin, `.claude/skills/uazapi` fica dangling e `/uazapi` não carrega.
 
 ---
 
