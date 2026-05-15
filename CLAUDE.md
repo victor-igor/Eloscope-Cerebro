@@ -47,6 +47,23 @@ Skills auxiliares: `skills/carrossel-eloscope/` (carrosséis Instagram) e `skill
 
 Skills em desenvolvimento: `skills/triagem/` ainda é stub (`SPEC.md` apenas, sem `SKILL.md` — não invocável).
 
+### Convenção de skills — 3 camadas
+
+A partir de 15/05/2026, skills seguem a convenção formalizada no `/salve` do elobrain (Passo 4.6, commit `09c6344`):
+
+| Camada | Local | Papel |
+|---|---|---|
+| **Framework canônico** | `~/elobrain/skills/<name>/` | Skills **genéricas/replicáveis** (qualquer empresa usa: `/salve`, `/cerebro`, `/validar-sessao`). Lidas nativamente pelo OpenClaw. Vão pro cliente quando replicarmos Elo OS. Branch `main`. |
+| **Eloscope-only** | `$SECOND_BRAIN_PATH/skills/<name>/` | Skills que dependem dos **nossos clientes/dados/fluxos** (ex: `/carrossel-eloscope`). Não vão pro cliente. |
+| **Cache local** | `~/.claude/skills/<name>/` | Cache do Claude Code de cada membro. **Nunca editar direto.** O `/salve` sincroniza no Passo 4.6 (a–f). |
+
+**Regra de conflito** (mesma skill em elobrain E cerebro): **elobrain ganha**. Passo 4.6.c sinaliza pra decidir e limpar duplicata.
+
+**Skill nova framework:** criar em `~/elobrain/skills/<name>/` + adicionar no `manifest.json` do elobrain.
+**Skill nova Eloscope-only:** criar em `$SECOND_BRAIN_PATH/skills/<name>/`.
+
+`/salve` faz audit automático a cada fim de sessão: detecta órfãs, symlinks quebrados, plugins externos atrasados e duplicatas elobrain↔cerebro.
+
 ### Skills externas (plugins)
 
 Skills entregues como **plugin reusável** em repo separado. O cerebro consome via symlink em `.claude/skills/<nome>`.
