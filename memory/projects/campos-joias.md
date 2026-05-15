@@ -26,6 +26,7 @@ Dashboard AI para a joalheria Campos Joias, com agente de atendimento WhatsApp, 
 - ✅ Contatos (CRM básico)
 - ✅ Atendimentos encaminhados
 - ✅ Follow-up automático
+- ✅ Sistema de memória de agentes (ai_agents + ai_agent_memories + 3 RPCs)
 - 🔨 RAG / Base de Conhecimento (em planejamento)
 
 ## Timeline
@@ -33,6 +34,7 @@ Dashboard AI para a joalheria Campos Joias, com agente de atendimento WhatsApp, 
 |------|--------|
 | 07/05/2026 | Projeto documentado no cerebro |
 | 07/05/2026 | Planejamento do módulo RAG iniciado |
+| 15/05/2026 | Sistema de memória de agentes implementado (Jade BDR UUID 03438eb5-...) |
 
 ## Decisões Tomadas
 - [07/05/2026] **RAG — Opção A (implementação completa):** seguir spec do `RAG_MODULO_EXPORTACAO.md` integralmente — DB migrations + 4 Edge Functions + lib frontend + página `/base-conhecimento`
