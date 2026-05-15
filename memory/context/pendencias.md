@@ -139,8 +139,11 @@ type: note
 ## 🟡 uazapi / WhatsApp toolkit (criadas 15/05)
 
 - [15/05/2026] 🔥 **Rotacionar token uazapi da instância `eloscope`** · token `0105a49e-da34-...` foi pasted em chat com Claude pra construir a skill `/uazapi`. Mesmo o `.env` estando gitignored, boa prática é rotacionar quando credencial trafega em canal não-controlado. Painel uazapi.dev → instância eloscope → regenerar token → rodar `/uazapi setup` pra atualizar `.env` · Lucas
-- [15/05/2026] **Construir skills derivadas em cima de `/uazapi`** · planos futuros mapeados: `/whatsapp-resumo` (últimas 24h), `/whatsapp-pendencias` (varre pendencias.md, classifica avanço por contato), `/whatsapp-projetos` (mapeia grupos a projetos). Cada uma é plano separado · Lucas (priorizar quando tiver tempo)
-- [15/05/2026] ⚪ **Empacotar `/uazapi` como produto plugin** · skill já é company-agnostic + tem INSTALL.md. Vira parte do produto "Cerebro Claude Code by Eloscope" quando vendido a cliente · backlog · Lucas + Victor
+- ✅ [15/05/2026] **Empacotar `/uazapi` como produto plugin** · plugin `claude-uazapi-elo` v0.3.0 publicado em https://github.com/eloscopecoo-rgb/claude-uazapi-elo · 3 skills (/uazapi, /whatsapp-pendencias, /whatsapp-resumo) · INSTALL.md + plugin.json + symlinks no cerebro
+- ✅ [15/05/2026] **Skills derivadas v0.1** · `/whatsapp-pendencias` (classificação 🟢🟡🔴⚪❓) e `/whatsapp-resumo` (chats ativos no período) entregues e smoke-tested contra instância `eloscope`
+- [15/05/2026] 🔥 **Cadastrar instância uazapi com WhatsApp principal do Lucas** · instância `eloscope` (Luna J6 5517920002289) é número de automação interna, tem apenas 12 chats — pipeline comercial real (Daniel/Telles/Matheus/Gustavo) não está nela. Sem instância "certa", skills derivadas só dão `❓ não encontrado`. Após criar instância paga: `/uazapi setup` → `/uazapi switch <nova>` · Lucas
+- [15/05/2026] **Adicionar coluna WhatsApp em `people.md`** · skills derivadas tentam `people.md` primeiro pra resolver categoria→número, mas tabela atual só tem email. Falso positivo "Matheus Rocha" em vez de "Matheus Campos" caiu no fallback fuzzy. Adicionar `+55 17 9XXXX-XXXX` em coluna nova ou no campo Notas · Lucas
+- [15/05/2026] **Construir `/whatsapp-projetos`** (3ª skill derivada do plugin) · mapeia grupos a projetos ativos · backlog · esperar primeiro uso real de /pendencias e /resumo · Lucas
 
 ---
 
