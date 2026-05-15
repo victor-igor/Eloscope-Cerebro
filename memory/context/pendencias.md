@@ -188,3 +188,5 @@
 - [24/04/2026] **Bravo — ClickUp estruturado** · pasta "Bravo Agency" criada com 6 listas e 33 tarefas · workspace 90171169593 / Espaço da equipe
 
 *Atualizado: 09/05/2026*
+
+- [14/05/2026] **ReabilitaCao — Vercel Deployment Protection** · desativar "authorized users only" no painel do projeto Vercel para não bloquear deploys de `victor_igor7@hotmail.com` · Victor

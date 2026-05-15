@@ -3,64 +3,56 @@
 > Status: 🟢 Em desenvolvimento ativo
 
 ## O que é
-Sistema veterinário fullstack (React + Supabase) com módulos de agendamentos, receituários, exames, pacotes e integração Google Calendar. Projeto principal de produto.
+Sistema veterinário fullstack (React + Supabase) com módulos de agendamentos, receituários, exames, pacotes, dietas, automações pós-consulta e integração Google Calendar. Projeto principal de produto.
 
 ## Stack
 - Frontend: React + TypeScript + Tailwind + shadcn/ui
 - Backend: Supabase (Postgres + Edge Functions Deno)
-- Infra: Supabase branches para desenvolvimento isolado
+- Deploy: Vercel (plano Hobby, conta `eloscope.coo@gmail.com`)
 - Framework dev: Synkra AIOX (agentes @dev, @qa, @sm, @architect, etc.)
 
 ## Responsáveis
 - **Victor:** Product Owner / Dev Lead
 - **@dev (Dex):** Implementação
 - **@qa (Quinn):** Quality Gate
-- **@devops (Gage):** Git push / PRs
 
-## Branches Ativos
-| Branch Git | Branch Supabase | Épico |
-|------------|-----------------|-------|
-| `feat/agendamento-recorrente` | `feat/ajuste-agendamento` | Epic 28 |
-| `feat/transcricao-consultas` | — | Epic 27 |
+## Branch Atual
+- `feat/auto-save-gravacao-parcial` — pushed para main em 14/05/2026
 
-## Épicos em andamento
+## Épicos Concluídos (pushados para main em 14/05)
 | Epic | Título | Status |
 |------|--------|--------|
-| 27 | Transcrição de Consultas com Deepgram | Done (27.1–27.5) — redesign UX aprovado mas não implementado |
-| 28 | Agendamento Recorrente com Google Calendar | Em andamento — 28.1 Done, 28.2 Done, 28.3 Done, 28.4–28.9 Ready |
+| 27 | ConsultationRecorder: auto-save + histórico gravações | ✅ Done |
+| 28 | Google Calendar sync bugs (28.1–28.12) | ✅ Done |
+| 36 | Automações Pós-Consulta (36.1–36.8) | ✅ Done |
 
-## Epic 28 — Agendamento Recorrente
-- **Branch Git:** `feat/agendamento-recorrente`
-- **Branch Supabase:** `feat/ajuste-agendamento`
-- **Stories Done:** 28.1, 28.2, 28.3
-- **Próxima story:** 28.4 — Webhook inbound google-calendar-webhook
+## Epic 36 — Automações Pós-Consulta
+- Schema `automacoes` + `automacao_execucoes` com trigger_config, pg_cron
+- Edge Functions: `trigger-automacao`, `execute-automacao`, `process-birthday-triggers`
+- Builder v2 com trigger selector (pós-consulta / aniversário / datas fixas)
+- Lista com stats de envios/falhas, rota `/automacoes/metrics`
+- Integração com ConsultationForm (disparo automático ao concluir)
 
-### Progresso por story
-| Story | Título | Status | Commits |
-|-------|--------|--------|---------|
-| 28.1 | Migration: campos + indexes + constraint + trigger | ✅ Done | `a02234d`, `759df79` |
-| 28.2 | RPCs: create/edit/delete_recurring_appointment | ✅ Done | `ee7077c` |
-| 28.3 | Edge Function google-auth: actions recorrência | ✅ Done | `aec6884` |
-| 28.4–28.9 | — | Ready | — |
+## ConsultationRecorder — Auto-save & Histórico
+- Auto-save transcript a cada `is_final` do Deepgram
+- Banner de restauração de gravação parcial
+- Histórico de gravações com restore + audio player
 
-### Observações técnicas desta sessão
-- `recorrencia_regra` usa chave `frequencia` (legado) — constraint `NOT VALID` para não quebrar dados históricos
-- Supabase MCP troca de branch automaticamente — cuidado com cherry-pick sempre necessário após deploy
-- `feat/transcricao-consultas` tem commits extras (cherry-picks revertidos) — OK
+## Agendamentos Recorrentes — Bugs Resolvidos (14/05)
+- Fix: EditSeriesDialog ao editar PAI + scope=ALL deleta filhos corretamente
+- Fix: separação `canonicalPaiId` vs `seriesQueryId` — scope=ALL não cria PAI fantasma ao adicionar serviço
+- Fix: canonical PAI com deleted_at usa child.id como fallback para RPC
+- Fix: rrule_string, recorrencia_regra, deduplicação fingerprint
 
-## Decisões Tomadas
+## Decisões Técnicas
 - [20/04/2026] Banco local como fonte de verdade; Google Calendar como espelho
-- [20/04/2026] Google native recurrence (1 evento RRULE)
-- [20/04/2026] Eager expansion: série com fim → instâncias; infinita → 365 dias + cron
 - [20/04/2026] 3 scopes: THIS / THIS_AND_FOLLOWING / ALL
-- [20/04/2026] RRULE expansion no frontend (rrule.js)
-- [20/04/2026] `THIS_AND_FOLLOWING` no Google: modifica UNTIL no RRULE do pai
-- [20/04/2026] Constraint `chk_recorrencia_regra_freq` com `NOT VALID` (dados históricos incompatíveis)
+- [14/05/2026] Nunca usar Co-Authored-By nos commits — Vercel Hobby bloqueia deploy
 
 ## Pendências
-- [ ] QA gate Story 28.3 (não feito — contexto esgotado)
-- [ ] Revert do cherry-pick em `feat/transcricao-consultas` (Story 28.3)
-- [ ] Implementar Story 28.4 → 28.9 na próxima sessão
+- [ ] Vercel Deployment Protection: desativar "authorized users only" no painel
+- [ ] Módulo Dietas: DietaDetailsModal + DietasTab (prev/next) — ver epic 29
+- [ ] UI filter calendários virtuais em GoogleCalendarSelector.tsx (não-crítico)
 
 ---
-*Criado: 20/04/2026*
+*Atualizado: 14/05/2026*
