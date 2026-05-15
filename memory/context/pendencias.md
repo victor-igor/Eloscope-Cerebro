@@ -13,15 +13,11 @@ type: note
 
 ## 🔴 Críticas (bloqueiam progresso)
 
-- [15/05/2026] 🔥 **Morgana — conta WhatsApp banida (10/05)** · bloqueio ocorreu por uso de API não-oficial em mod-campaigns · resolver: migrar para API oficial completa · Lucas · 15–21/05
-- [15/05/2026] 🔴 **Jean Imobiliária — todos os números WhatsApp bloqueados** · projeto travado sem canais ativos · próximo passo: recuperar números ou migrar para API oficial · Lucas · 19–20/05
-- [15/05/2026] ⏸️ **Voltrucks — projeto pausado** · 2ª parcela não paga · manter relacionamento e aguardar regularização · Lucas · 19–23/05
-- [15/05/2026] 🔴 **Contabilidade — não responde para emissão de notas fiscais** · Lucas resolve · 15–16/05
-- [15/05/2026] **Pipeline Comercial / CRM (Lucas)** — em andamento, ajustando no Elosystem · semana 21: terminar CRM + funil (19–21/05), rotina comercial (21–23/05)
-- [15/05/2026] 🔴 **Victor tem 2 usuários ClickUp distintos** — `Eloscope` (id 87351862, eloscope.coo@gmail.com) + `Victor Igor` (id 156603223, victor.igr10@gmail.com). Todas as tasks são atribuídas ao Victor Igor, mas a view "atribuídas a mim" do email principal não mostra. Decidir: migrar tudo p/ 1 user, atribuir aos 2, ou Victor logar com victor.igr10@gmail.com · Victor
-- [15/05/2026] ⚠️ **Maya/WhatsApp (ReabilitaCão) — 8 subtasks atrasadas desde 13/05** ainda não bumpadas para semana 21 · pai `86e1b9ge8`, inclui alerta agendamentos sem vínculo, lembrete consultas, número Cris, roteamento Dieta/Cannabis/Biorressonância/Físio, transferência financeiro/agendamento · Victor
-- ✅ [15/05/2026] **PeleVet — resultado reunião 11/05** · follow-up realizado por Lucas após a reunião · próximo passo: validar resultado + definir caminho (Lucas 15–16/05)
-- ✅ [15/05/2026] **Jean — status e próximos passos** · discutido na weekly: reativação feita por Lucas, sem resposta até 15/05
+- [15/05/2026] 🔥 **Morgana — conta WhatsApp banida (10/05)** · bloqueio ocorreu por uso de API não-oficial em mod-campaigns · resolver: recuperar número OU migrar para API oficial completa · Lucas · urgente antes de retomar campanhas
+- [15/05/2026] **PeleVet — resultado reunião 11/05 desconhecido** · proposta foi apresentada mas sem registro do que aconteceu · Victor validar ainda hoje
+- ✅ [15/05/2026] **Pipeline Comercial / CRM (Lucas)** — RESOLVIDO 15/05 · `MAPA-FUNIL.md` bumped pra v0.2 com T4-T8 preenchidos (fluxograma Mermaid 3-raias · tabela operacional com SLA · régua D+1/D+4/D+8 · painel 4 métricas-cockpit · handover Lucas→Victor com 4 gates) · 6 etapas criadas (01, 02, 03, 05, 06, 07) replicando padrão `04-reuniao.md` · 12 subtarefas cobertas (ver MAPA-FUNIL v0.2)
+- ✅ [15/05/2026] **Rotina Comercial Diária (Lucas)** — RESOLVIDO 15/05 · `areas/vendas/rotinas/ROTINA-DIARIA.md` v0.2 criado com 13 seções cobrindo 13 subtarefas (blocos horário · checklist · SLA por canal · cadência microcopy · metas Q2 · análise sexta · recorrências · priorização P1-P5 · sprint recuperação · SLA pós-reunião). Piloto semana 21 (18-22/05), revisão na weekly 22/05
+- [15/05/2026] **Jean — status e próximos passos** · estava no planejamento da semana 20 sem registro de andamento · validar na weekly 15/05
 
 - ✅ [09/05/2026] **PeleVet — proposta comercial pronta para reunião 11/05** · sumário em `proposta-entregaveis-pelevet.md` (Cenário Growth R$ 21K/6m, payback 3º mês) + processo AS-IS Mermaid (@icarus) + pricing Asaas validado (@tesouro). Reunião 13h presencial com Vítor
 - ✅ [09/05/2026] **Morgana — API oficial Meta destravada e configurada** · André (Autem) gerou Usuário de Sistema + token, cartão em dólar cadastrado, número oficial `55 17 98154-2837` configurado no sistema (não mais teste). Próximo: submeter templates + atualizar `mod-campaigns` (Lucas)
@@ -142,10 +138,12 @@ type: note
 
 ## 🟡 uazapi / WhatsApp toolkit (criadas 15/05)
 
-- [15/05/2026] 🔥 **Rotacionar token uazapi da instância `eloscope`** · token `0105a49e-da34-...` foi pasted em chat com Claude pra construir a skill `/uazapi`. Mesmo o `.env` estando gitignored, boa prática é rotacionar quando credencial trafega em canal não-controlado. Painel uazapi.dev → instância eloscope → regenerar token → rodar `/uazapi setup` pra atualizar `.env` · Lucas
+- [15/05/2026] 🔥 **Rotacionar tokens uazapi de AMBAS as instâncias (`eloscope` + `lucas`)** · token `eloscope` (`0105a49e-...`) foi pasted em chat 1 + grupo Squad Eloscope 11:37; token `lucas` (`d10db1ea-...`) foi pasted em chat hoje pra cadastro. Painel uazapi.dev → cada instância → regenerar token → rodar `/uazapi setup` (ou editar `.env` direto) · Lucas
+- [15/05/2026] **Apontar MCP `mcp_whatsapp_uazapi` pra instância `lucas`** · MCP de envio hoje aponta pra Luna J6 (5517920002289 — bot, instância `eloscope`). Mensagens enviadas via MCP saem como Luna, não como Lucas. Pra mandar do número pessoal precisa atualizar credenciais do MCP (provavelmente em `~/.docker/mcp/catalogs/docker-mcp.yaml` ou config equivalente do MCP). Workaround atual: prefixar `[Recado do Lucas via Luna J6]` quando usar MCP pra grupo do squad · Lucas
+- [15/05/2026] **Reiniciar Claude Code pra registrar skills `/whatsapp-resumo` e `/whatsapp-pendencias`** · skills só são detectadas no SessionStart. Foram symlinkadas durante sessão anterior, CLI ainda não registrou como slash commands. Próxima sessão deve resolver automaticamente · trivial
 - ✅ [15/05/2026] **Empacotar `/uazapi` como produto plugin** · plugin `claude-uazapi-elo` v0.3.0 publicado em https://github.com/eloscopecoo-rgb/claude-uazapi-elo · 3 skills (/uazapi, /whatsapp-pendencias, /whatsapp-resumo) · INSTALL.md + plugin.json + symlinks no cerebro
 - ✅ [15/05/2026] **Skills derivadas v0.1** · `/whatsapp-pendencias` (classificação 🟢🟡🔴⚪❓) e `/whatsapp-resumo` (chats ativos no período) entregues e smoke-tested contra instância `eloscope`
-- [15/05/2026] 🔥 **Cadastrar instância uazapi com WhatsApp principal do Lucas** · instância `eloscope` (Luna J6 5517920002289) é número de automação interna, tem apenas 12 chats — pipeline comercial real (Daniel/Telles/Matheus/Gustavo) não está nela. Sem instância "certa", skills derivadas só dão `❓ não encontrado`. Após criar instância paga: `/uazapi setup` → `/uazapi switch <nova>` · Lucas
+- ✅ [15/05/2026] **Cadastrar instância uazapi com WhatsApp principal do Lucas** · slug `lucas` (5517920008791, perfil "Lucas Eloscope") cadastrado e ativo. Pipeline comercial real visível (Priorize, Maqlam, Facility, Squad Eloscope, ReabilitaCão). Skills derivadas (`/whatsapp-resumo`, `/whatsapp-pendencias`) agora rodam com dados reais.
 - [15/05/2026] **Adicionar coluna WhatsApp em `people.md`** · skills derivadas tentam `people.md` primeiro pra resolver categoria→número, mas tabela atual só tem email. Falso positivo "Matheus Rocha" em vez de "Matheus Campos" caiu no fallback fuzzy. Adicionar `+55 17 9XXXX-XXXX` em coluna nova ou no campo Notas · Lucas
 - [15/05/2026] **Construir `/whatsapp-projetos`** (3ª skill derivada do plugin) · mapeia grupos a projetos ativos · backlog · esperar primeiro uso real de /pendencias e /resumo · Lucas
 
