@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playbook de Atendimento — Maqlam Elite</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary: #0E0069;
+    --primary-dark: #080047;
+    --secondary: #0098F6;
+    --accent: #0DF259;
+    --gray-50: #F9FAFB;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-400: #94A3B8;
+    --gray-500: #64748B;
+    --gray-700: #334155;
+    --gray-900: #0F172A;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--gray-900);
+    background: white;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ══════════════════════════════════════
+     CAPA — Premium with geometry
+  ══════════════════════════════════════ */
+  .cover {
+    background: linear-gradient(145deg, #0E0069 0%, #070042 60%, #04002A 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 56px 64px;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Geometric accent — large circle bottom right */
+  .cover::before {
+    content: '';
+    position: absolute;
+    bottom: -120px; right: -80px;
+    width: 480px; height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,242,89,0.12) 0%, rgba(13,242,89,0) 70%);
+    pointer-events: none;
+  }
+  /* Thin accent line top */
+  .cover::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 50%, transparent 100%);
+  }
+  .cover-logo {
+    height: 48px;
+    object-fit: contain;
+    object-position: left;
+    filter: brightness(0) invert(1);
+    position: relative; z-index: 1;
+  }
+  .cover-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 28px;
+    position: relative; z-index: 1;
+  }
+  .cover-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .cover-tag::before {
+    content: '';
+    display: inline-block;
+    width: 24px; height: 1px;
+    background: var(--accent);
+  }
+  .cover-title {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1px;
+  }
+  .cover-title span { color: var(--accent); }
+  .cover-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    max-width: 440px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .cover-stats {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 28px;
+    margin-top: 8px;
+  }
+  .cover-stat {
+    flex: 1;
+    padding-right: 24px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    margin-right: 24px;
+  }
+  .cover-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+  .cover-stat-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .cover-stat-accent { color: var(--accent); }
+  .cover-stat-label {
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .cover-footer {
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    position: relative; z-index: 1;
+    letter-spacing: 0.5px;
+  }
+
+  /* ══════════════════════════════════════
+     LAYOUT
+  ══════════════════════════════════════ */
+  .page {
+    padding: 52px 64px 52px 68px;
+    max-width: 920px;
+    margin: 0 auto;
+    border-left: 4px solid var(--primary);
+    position: relative;
+  }
+  .page-alt { background: #F4F8FF; }
+  .page-break { page-break-before: always; }
+
+  /* ══════════════════════════════════════
+     SEPARADORA DE PARTE — Mini dark cover
+  ══════════════════════════════════════ */
+  .part-sep {
+    background: linear-gradient(145deg, #0E0069 0%, #07004A 55%, #04002A 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 72px 80px;
+    page-break-before: always;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+  .part-sep::before {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,242,89,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .part-sep::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--secondary), transparent);
+  }
+  .part-sep-ghost {
+    font-size: 140px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    letter-spacing: -6px;
+    margin-bottom: -16px;
+    position: relative; z-index: 1;
+    user-select: none;
+  }
+  .part-sep-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+    position: relative; z-index: 1;
+  }
+  .part-sep-label::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--accent);
+  }
+  .part-sep-title {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    position: relative; z-index: 1;
+  }
+  .part-sep-title span { color: var(--accent); }
+  .part-sep-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 20px;
+    font-weight: 300;
+    max-width: 420px;
+    line-height: 1.7;
+    position: relative; z-index: 1;
+  }
+
+  /* ══════════════════════════════════════
+     SECTION HEADER — Color wash strip
+  ══════════════════════════════════════ */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, rgba(14,0,105,0.05) 0%, rgba(14,0,105,0) 100%);
+    border-left: 3px solid var(--primary);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin-bottom: 28px;
+    margin-top: 44px;
+  }
+  .section-number {
+    background: var(--primary);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.3px;
+  }
+  .section-sub {
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  /* ══════════════════════════════════════
+     MÓDULO — White card with elevation
+  ══════════════════════════════════════ */
+  .module {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(14,0,105,0.05), 0 4px 12px rgba(14,0,105,0.04);
+    overflow: hidden;
+  }
+  .module-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: -16px -18px 14px -18px;
+    padding: 13px 18px;
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .module-tag {
+    background: var(--primary);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 9px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .module-tag.green { background: #059669; }
+  .module-tag.blue { background: var(--secondary); }
+  .module-tag.orange { background: #B45309; }
+  .module-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-900);
+    letter-spacing: -0.1px;
+  }
+  .module-volume {
+    font-size: 10px;
+    color: var(--gray-400);
+    font-style: italic;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  /* ══════════════════════════════════════
+     SCRIPT BOX — Distinct speech style
+  ══════════════════════════════════════ */
+  .script {
+    background: #F0F7FF;
+    border-left: 3px solid var(--secondary);
+    border-radius: 0 6px 6px 0;
+    padding: 11px 14px 11px 14px;
+    font-size: 12px;
+    color: var(--gray-700);
+    margin: 6px 0;
+    line-height: 1.55;
+    font-style: italic;
+  }
+  .script-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 12px 0 4px;
+  }
+  .script-label::before {
+    content: '';
+    display: inline-block;
+    width: 12px; height: 1.5px;
+    background: var(--secondary);
+    opacity: 0.5;
+  }
+
+  /* ══════════════════════════════════════
+     INSTRUÇÃO IA — Distinct identity
+  ══════════════════════════════════════ */
+  .ia-instruction {
+    background: rgba(14,0,105,0.04);
+    border-left: 3px solid var(--primary);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    font-size: 11.5px;
+    color: var(--primary);
+    margin-top: 10px;
+    line-height: 1.55;
+  }
+  .ia-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin: 12px 0 4px;
+    opacity: 0.7;
+  }
+  .ia-label::before {
+    content: '⬡';
+    font-style: normal;
+    opacity: 0.6;
+  }
+
+  /* ══════════════════════════════════════
+     TABELA
+  ══════════════════════════════════════ */
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; border-radius: 8px; overflow: hidden; }
+  th { background: var(--primary); color: white; padding: 9px 14px; text-align: left; font-weight: 600; font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; }
+  td { padding: 9px 14px; border-bottom: 1px solid var(--gray-200); vertical-align: top; color: var(--gray-700); }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: var(--gray-50); }
+
+  /* ══════════════════════════════════════
+     FLUXO — Styled pipeline steps
+  ══════════════════════════════════════ */
+  .flow { display: flex; flex-direction: column; align-items: flex-start; gap: 0; margin: 20px 0; }
+  .flow-step {
+    background: linear-gradient(135deg, var(--primary) 0%, #1a0080 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    min-width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(14,0,105,0.25);
+    letter-spacing: 0.1px;
+  }
+  .flow-arrow {
+    font-size: 16px;
+    color: var(--accent);
+    margin: 5px 0 5px 140px;
+    font-weight: 700;
+  }
+
+  /* ══════════════════════════════════════
+     TÉCNICA DE FECHAMENTO — Premium cards
+  ══════════════════════════════════════ */
+  .closing-card {
+    background: linear-gradient(135deg, #0E0069 0%, #070042 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 0;
+    margin-bottom: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(14,0,105,0.2);
+  }
+  .closing-card-top {
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--secondary));
+  }
+  .closing-card-body { padding: 16px 20px; }
+  .closing-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(13,242,89,0.15);
+    border: 1px solid rgba(13,242,89,0.3);
+    color: var(--accent);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .closing-title { font-size: 15px; font-weight: 700; margin-bottom: 7px; letter-spacing: -0.2px; }
+  .closing-desc { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+  /* ══════════════════════════════════════
+     FÓRMULA
+  ══════════════════════════════════════ */
+  .formula {
+    background: linear-gradient(135deg, rgba(13,242,89,0.05) 0%, rgba(13,242,89,0.02) 100%);
+    border: 1px solid rgba(13,242,89,0.25);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    font-size: 11.5px;
+    color: var(--gray-700);
+    margin: 8px 0;
+    font-family: 'Inter', monospace;
+    line-height: 1.8;
+  }
+
+  /* ══════════════════════════════════════
+     APÊNDICE
+  ══════════════════════════════════════ */
+  .quick-row {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1px;
+    font-size: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+    margin-bottom: 8px;
+  }
+  .quick-trigger {
+    background: var(--gray-50);
+    padding: 9px 14px;
+    font-weight: 600;
+    min-width: 230px;
+    color: var(--gray-700);
+    border-right: 1px solid var(--gray-200);
+    font-size: 11.5px;
+  }
+  .quick-response {
+    background: white;
+    padding: 9px 14px;
+    flex: 1;
+    color: var(--gray-500);
+    font-size: 11.5px;
+    font-style: italic;
+  }
+
+  /* ══════════════════════════════════════
+     RODAPÉ
+  ══════════════════════════════════════ */
+  .footer {
+    margin-top: 52px;
+    padding-top: 14px;
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: var(--gray-400);
+    letter-spacing: 0.3px;
+  }
+  .footer img { height: 18px; opacity: 0.3; filter: grayscale(1); }
+
+  /* ══════════════════════════════════════
+     INTRO BOX
+  ══════════════════════════════════════ */
+  .intro-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    color: var(--gray-500);
+    line-height: 1.7;
+  }
+  .intro-box strong { color: var(--gray-900); font-weight: 600; }
+
+  /* ══════════════════════════════════════
+     PRINT
+  ══════════════════════════════════════ */
+  @media print {
+    body { font-size: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cover { min-height: 100vh; }
+    .page-break { page-break-before: always; }
+    @page { size: A4; margin: 0; }
+    .page { padding: 44px 56px; }
+    a { text-decoration: none; color: inherit; }
+    .module { break-inside: avoid; }
+    .closing-card { break-inside: avoid; }
+  }
+
+  h3 { font-size: 13px; font-weight: 600; color: var(--gray-900); margin: 16px 0 8px; }
+  p, li { font-size: 12px; color: var(--gray-700); margin-bottom: 4px; }
+  ul { padding-left: 18px; margin-bottom: 8px; }
+  strong { font-weight: 600; color: var(--gray-900); }
+  code { font-family: monospace; background: var(--gray-100); padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+</style>
+</head>
+<body>
+
+<!-- ══ CAPA ══ -->
+<div class="cover">
+  <img class="cover-logo" src="identidade-visual/logo/image.png" alt="Maqlam Elite">
+  <div class="cover-body">
+    <div class="cover-tag">Documento Interno · Confidencial</div>
+    <div class="cover-title">Playbook de<br><span>Atendimento</span></div>
+    <div class="cover-sub">Manual operacional para vendedores e agente de IA — baseado em conversas reais de atendimento B2B.</div>
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <div class="cover-stat-value cover-stat-accent">16.719</div>
+        <div class="cover-stat-label">mensagens analisadas</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-value">5.861</div>
+        <div class="cover-stat-label">mensagens de entrada</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-value">527</div>
+        <div class="cover-stat-label">contatos únicos</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-value">21</div>
+        <div class="cover-stat-label">módulos de situação</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-value">11</div>
+        <div class="cover-stat-label">padrões de resposta</div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-footer">Maqlam Elite · Playbook de Atendimento · 2026 · Documento Confidencial</div>
+</div>
+
+<!-- ══ PARTE 1 — JORNADA ══ -->
+<div class="page">
+  <div class="section-header">
+    <span class="section-number">PARTE 1</span>
+    <span class="section-title">Jornada do Cliente</span>
+  </div>
+
+  <div class="intro-box">
+    <strong>Para quem é este documento:</strong><br>
+    <strong>Vendedor humano:</strong> leia as seções de jornada para entender o fluxo. Consulte os módulos de situação durante o atendimento para encontrar o script certo.<br>
+    <strong>IA / agente:</strong> cada módulo contém uma instrução direta de como responder. Siga a instrução e adapte o nome do cliente e os produtos conforme o contexto.
+  </div>
+
+  <div class="flow">
+    <div class="flow-step">1. Primeiro Contato</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">2. Identificação da Necessidade</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">3. Módulo de Situação (consultar Parte 3)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">4. Fechamento (consultar Parte 4)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-step">5. Pós-venda (consultar Parte 5)</div>
+  </div>
+
+  <!-- ══ PARTE 2 — PADRÕES ══ -->
+
+<div class="page page-break" style="padding: 48px 64px;">
+  <div style="max-width: 860px; margin: 0 auto;">
+    <h1>Playbook de Atendimento — Maqlam</h1>
+<blockquote>
+<p><strong>Para quem:</strong> Vendedores novos + treinamento do agente de IA<br />
+<strong>Base:</strong> Análise de 16.719 mensagens reais (5.861 clientes · 9.998 vendedores · 860 IA)<br />
+<strong>Atualizado em:</strong> 2026-05-12</p>
+</blockquote>
+<hr />
+<h2>Como usar este documento</h2>
+<ul>
+<li><strong>Vendedor humano:</strong> leia as seções de jornada para entender o fluxo. Consulte os módulos de situação durante o atendimento para encontrar o script certo.</li>
+<li><strong>IA / agente:</strong> cada módulo contém uma instrução direta de como responder. Siga a instrução e adapte o nome do cliente e os produtos conforme o contexto.</li>
+</ul>
+<hr />
+<h2>Parte 1 — Jornada do Cliente</h2>
+<pre><code>Primeiro Contato
+     ↓
+Identificação da Necessidade
+     ↓
+Módulo de Situação (consultar Parte 2)
+     ↓
+Fechamento
+     ↓
+Pós-venda
+</code></pre>
+<hr />
+<h2>Parte 2 — Padrões de Resposta dos Vendedores</h2>
+<p>Estes padrões foram extraídos de 9.998 mensagens reais dos vendedores. São os blocos que compõem qualquer bom atendimento.</p>
+<h3>P1 — Saudação Personalizada</h3>
+<p><em>Volume: 1.755 ocorrências — o padrão mais frequente de todos</em></p>
+<p><strong>Fórmula:</strong> <code>Oi [Nome]! [Período]! [Nome do vendedor] aqui do Time Comercial da Maqlam! [emoji] Muito bom ter você com a gente!</code></p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Oi Sandra, boa tarde! Tudo bem? Juliano Resende do Time Comercial da Maqlam! 😻🐶😃 Muito bom ter você com a gente novamente!"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Sempre inicie com o nome do cliente (se disponível), o período do dia, seu nome de apresentação e um emoji de pet. Nunca comece sem cumprimento. Se for cliente recorrente, adicione "Muito bom ter você com a gente novamente!"</p>
+</blockquote>
+<hr />
+<h3>P2 — Explicação Técnica com Recomendação Direta</h3>
+<p><em>Volume: 417 ocorrências</em></p>
+<p><strong>Princípio:</strong> Nunca apenas liste — explique a diferença e indique qual é a melhor para o caso do cliente.</p>
+<p><strong>Script vendedor (exemplo — lâminas):</strong></p>
+<blockquote>
+<p>"Neto, olha só: a Slim começa na 8 e vai até a 30. Essa Ultra Slim começa na 9 e vai até a 40 — você ganha a 40 mas perde a 8. Na prática são praticamente as mesmas alturas. Eu prefiro te vender a Ultra Slim porque você consegue uma altura mais baixa quando precisar. Fecha assim?"</p>
+</blockquote>
+<p><strong>Script vendedor (exemplo — desembolador):</strong></p>
+<blockquote>
+<p>"O de 12 lâminas é para pelo super longo e muito embolado. O de 9 lâminas é para pelo médio a longo normal. Para o porte que você descreveu, o de 9 já resolve com folga."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Quando o cliente pedir diferença entre modelos: (1) nomeie os dois modelos, (2) explique a diferença prática em uma frase curta, (3) faça uma recomendação direta com justificativa, (4) termine com uma pergunta de fechamento.</p>
+</blockquote>
+<hr />
+<h3>P3 — Parcelamento como Argumento de Venda</h3>
+<p><em>Volume: 440 ocorrências</em></p>
+<p><strong>Princípio:</strong> Use o parcelamento para reduzir a barreira de entrada, não como última opção.</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Se quiser, consigo fazer em até 10 vezes sem juros no cartão — fica R$X por mês e você já tem o equipamento trabalhando para você hoje."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Quando o cliente hesitar por valor, ofereça proativamente o parcelamento em 10x sem juros. Calcule o valor da parcela e apresente antes que o cliente peça.</p>
+</blockquote>
+<hr />
+<h3>P4 — Resumo de Pedido Formatado</h3>
+<p><em>Volume: 31 ocorrências (mas presente em quase todos os fechamentos)</em></p>
+<p><strong>Fórmula fixa:</strong></p>
+<pre><code>Olá [Nome]! [Período]! O seu pedido fica assim:
+
+*[QTD] [Produto] — R$[valor]*
+
+*🚀😃* Frete Transportadora — R$[valor] (entrega em até [X] dias úteis após a coleta aqui na loja)
+
+*TOTAL: R$[valor] (em até 10x no cartão ou PIX)*
+</code></pre>
+<p><strong>Cálculo do frete:</strong> o valor depende do produto (peso/dimensões), do valor total da compra e da região do cliente. Sempre calcular antes de enviar o resumo — nunca colocar valor fixo sem confirmar.</p>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Sempre que fechar um pedido, monte o resumo exatamente neste formato: produto em negrito com asterisco, frete com emoji de foguete, total em negrito com as opções de pagamento. Nunca envie valores soltos sem o resumo formatado. Para o frete, calcule sempre considerando produto + valor da compra + região do cliente.</p>
+</blockquote>
+<hr />
+<h3>P5 — Fechamento Direto</h3>
+<p><em>Volume: 148 ocorrências</em></p>
+<p><strong>Scripts mais usados:</strong>
+- "Vamos fechar?"
+- "Como prefere finalizar — cartão por link de pagamento ou PIX?"
+- "Qual que seria a dúvida? Eu já te ajudo a resolver e a gente finaliza."
+- "Só me diz: PIX ou cartão?"</p>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Após apresentar produto e preço, sempre termine com uma pergunta de fechamento binária: "PIX ou cartão?" Não espere o cliente perguntar como pagar.</p>
+</blockquote>
+<hr />
+<h3>P6 — Vantagens Maqlam (Venda Consultiva)</h3>
+<p><em>Usado quando o cliente está em dúvida, comparando preço ou postergando a compra.</em></p>
+<p><strong>Princípio:</strong> Nunca pressionar por reajuste ou aumento de preço. A barreira da decisão se quebra reforçando o que a Maqlam entrega de diferente — não o que o mercado vai fazer.</p>
+<p><strong>Pilares que sempre devem ser frisados:</strong>
+1. <strong>Venda consultiva</strong> — a Maqlam entende o uso real do cliente antes de indicar o equipamento certo (não empurra produto).
+2. <strong>Assistência técnica direto na loja</strong> — pós-venda real, máquina não fica órfã.
+3. <strong>16 anos de mercado</strong> trabalhando com equipamentos profissionais.
+4. <strong>Melhores marcas do mercado</strong> — curadoria, não catálogo genérico.</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Sandra, te ajudo a decidir com calma. O que a gente entrega aqui é diferente: a Maqlam está há 16 anos no mercado trabalhando só com equipamento profissional das melhores marcas, e a gente não vende sem entender o seu uso — é venda consultiva. E o melhor: a assistência técnica fica aqui dentro da loja, então depois da compra você continua com a gente. Quer que eu te mostre a opção que melhor encaixa no que você descreveu?"</p>
+</blockquote>
+<p><strong>Script vendedor (cliente pesquisando preço em concorrente):</strong></p>
+<blockquote>
+<p>"Entendo que dá pra achar mais barato em outros lugares. Aqui na Maqlam você está comprando com quem tem 16 anos de mercado, trabalha só com as melhores marcas e tem assistência técnica própria — se acontecer alguma coisa com o equipamento, você não fica na mão. Esse é o valor que está embutido."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>NUNCA mencionar reajuste, aumento de preço, "preço subindo", "tabela antiga", guerra, câmbio ou qualquer pressão temporal artificial. Quando o cliente hesitar, reforçar os 4 pilares (consultiva, assistência técnica na loja, 16 anos, melhores marcas). Posicionar a Maqlam pelo que ela entrega de diferente, não pelo medo de perder oportunidade.</p>
+</blockquote>
+<hr />
+<h3>P7 — [REMOVIDO]</h3>
+<p><em>Bloco descontinuado a pedido do cliente. Não usar.</em></p>
+<blockquote>
+<p>Não oferecer alternativa econômica como padrão de resposta. Quando o cliente pedir lâmina ou reclamar que a máquina não está cortando, seguir o fluxo de venda consultiva (P6) e qualificação técnica (S08), encaminhando para a assistência técnica se houver dúvida sobre conserto vs. troca.</p>
+</blockquote>
+<hr />
+<h3>P8 — Negociação e Desconto</h3>
+<p><em>Volume: 121 ocorrências</em></p>
+<p><strong>Princípio:</strong> Desconto é dado à vista no PIX, nunca sem condição.</p>
+<p><strong>Sobre frete grátis:</strong> depende do produto, do valor total da compra e da região do cliente. Nunca prometa frete grátis genericamente — só após calcular as três variáveis.</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"À vista no PIX consigo um descontinho para você. Me fala quanto você consegue e eu vejo o que dá para fazer aqui."</p>
+</blockquote>
+<p><strong>Script vendedor (pedido agressivo de desconto):</strong></p>
+<blockquote>
+<p>"Carlos, o mínimo que consigo nessa é R$[valor]. Me confirma sua região que eu já verifico se rola frete grátis nesse pedido — depende do produto, do valor da compra e de onde você está."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Nunca conceda desconto sem condição. Condicione sempre ao PIX à vista. Frete grátis NÃO é promessa padrão — só ofereça após confirmar produto + valor da compra + região do cliente. Se o cliente pedir valor absurdo, dê o piso com justificativa concreta (prazo garantido, condição comercial verificada).</p>
+</blockquote>
+<hr />
+<h3>P9 — Empatia e Relacionamento</h3>
+<p><em>Volume: presente em centenas de interações longas</em></p>
+<p><strong>Princípio:</strong> Os melhores vendedores respondem áudios longos, comentam situações pessoais dos clientes e tratam pelo nome sempre.</p>
+<p><strong>Script vendedor (cliente mencionou cirurgia):</strong></p>
+<blockquote>
+<p>"Fico feliz que esteja bem! Quando a gente tem a mente positiva, o corpo responde. No que a gente puder contribuir, pode contar sempre. Agora, sobre o pedido — vai ser à vista no PIX ou no cartão?"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Se o cliente mencionar situação pessoal (saúde, loja, família), reconheça com uma frase curta antes de voltar ao assunto comercial. Nunca ignore. Nunca se estenda demais — uma frase é suficiente.</p>
+</blockquote>
+<hr />
+<h3>P10 — Rastreio e Pós-venda</h3>
+<p><em>Volume: 67 ocorrências</em></p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Perfeito, [Nome]! Iremos dar andamento ao seu envio e em breve retorno aqui com as informações de rastreio."</p>
+</blockquote>
+<p><strong>Script após coleta:</strong></p>
+<blockquote>
+<p>"Boa tarde, [Nome]! Seu pedido foi coletado hoje. Segue o código de rastreio: [código]. A previsão de entrega é em até [X] dias úteis."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Assim que tiver o código de rastreio, envie proativamente — não espere o cliente perguntar. Sempre inclua a previsão de entrega em dias úteis.</p>
+</blockquote>
+<hr />
+<h3>P11 — Pós-atendimento</h3>
+<p><em>Volume: 53 ocorrências</em></p>
+<p><strong>Script padrão:</strong></p>
+<blockquote>
+<p>"Fico à disposição! Qualquer dúvida, pode chamar. 😃"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Sempre termine o atendimento com uma frase de disponibilidade. Nunca encerre sem isso.</p>
+</blockquote>
+<hr />
+<h2>Parte 3 — Módulos de Situação</h2>
+<p>Cada módulo responde à pergunta: <strong>o que o cliente disse → como responder.</strong></p>
+<hr />
+<h3>S01 — Disponibilidade de Produto</h3>
+<p><em>Volume: 534 mensagens — situação mais frequente</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Vocês têm X?"
+- "A pluma com fio vocês têm?"
+- "Tem mais dessa?"
+- "Tem a lâmina 10 e a 40 da Andis ACG?"</p>
+<p><strong>Script vendedor (tem em estoque):</strong></p>
+<blockquote>
+<p>"Temos sim! Veja: [enviar foto + descrição do produto]. Me conta um pouco como você pretende usar que eu te mostro a melhor opção e já passo as condições."</p>
+</blockquote>
+<p><strong>Script vendedor (sem estoque):</strong></p>
+<blockquote>
+<p>"No momento não tenho em estoque, mas já sinalizo assim que chegar. Posso te mostrar uma alternativa parecida enquanto isso?"</p>
+</blockquote>
+<p><strong>Script vendedor (produto descontinuado):</strong></p>
+<blockquote>
+<p>"Essa linha específica saiu, mas temos a [alternativa] que faz o mesmo. Posso te mandar foto e detalhes?"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Consulte o estoque. Se tiver: envie foto e descrição do produto. <strong>NÃO enviar preço logo de cara</strong> — primeiro qualifique a necessidade do cliente (uso, porte, frequência, modelo da máquina quando aplicável) e só então apresente preço e condições. Se não tiver: informe e ofereça alternativa imediatamente. Nunca diga só "não temos" sem oferecer substituto.</p>
+</blockquote>
+<hr />
+<h3>S02 — Preço e Valor</h3>
+<p><em>Volume: 475 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Qual o valor da máquina?"
+- "Quanto custa o condicionador?"
+- "Qual o preço dessa escova?"
+- "Quanto tá saindo uma dessa?"</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Olá [Nome]! O [produto] está R$[valor]. Posso fazer em até 10x sem juros no cartão ou com desconto à vista no PIX. Qual você prefere?"</p>
+</blockquote>
+<p><strong>Script vendedor (produto com variações):</strong></p>
+<blockquote>
+<p>"Temos três opções aqui: [Produto A] — R$X (diluição 1:5), [Produto B] — R$Y (diluição 1:10, rende mais). Qual encaixa melhor no seu volume de uso?"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Sempre que passar preço: (1) dê o valor, (2) mencione parcelamento, (3) termine com pergunta de escolha ou fechamento. Nunca passe preço sem pergunta de retorno.</p>
+</blockquote>
+<hr />
+<h3>S03 — Status do Pedido</h3>
+<p><em>Volume: 346 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Quero verificar meu pedido"
+- "Meu pedido já foi enviado?"
+- "Já foi enviado? Quando chega?"
+- "Meu pedido está atrasado, isso é absurdo"</p>
+<p><strong>Script vendedor (pedido em processamento):</strong></p>
+<blockquote>
+<p>"Oi [Nome]! Seu pedido está sendo preparado aqui. A coleta está agendada para [data/hoje/amanhã de manhã]. Assim que sair, te mando o rastreio."</p>
+</blockquote>
+<p><strong>Script vendedor (pedido enviado):</strong></p>
+<blockquote>
+<p>"Oi [Nome]! Seu pedido saiu em [data]. Segue o rastreio: [código] pela [transportadora]. A previsão é de até [X] dias úteis."</p>
+</blockquote>
+<p><strong>Script vendedor (pedido atrasado — com empatia):</strong></p>
+<blockquote>
+<p>"[Nome], me desculpe o transtorno. Vou verificar agora mesmo o que aconteceu com a transportadora e retorno em seguida com uma resposta concreta para você."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Consulte o sistema de pedidos com o contato ou CPF do cliente. Se houver atraso, reconheça o problema antes de investigar. Nunca peça para o cliente "aguardar" sem dar um prazo de retorno.</p>
+</blockquote>
+<hr />
+<h3>S04 — Rastreio</h3>
+<p><em>Volume: 23 mensagens (+ presente dentro de S03)</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Vc tem o rastreio para me mandar?"
+- "Já tem o rastreio?"
+- "Me manda o código de rastreio"</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Oi [Nome]! Segue o código de rastreio: [código] pela [transportadora]. Você acompanha em [site/app]. A previsão é [X] dias úteis a partir de [data da coleta]."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Sempre que enviar rastreio: código + transportadora + site para acompanhar + previsão em dias úteis. Nunca só o código.</p>
+</blockquote>
+<hr />
+<h3>S05 — Forma de Pagamento</h3>
+<p><em>Volume: 221 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Me passa o PIX"
+- "Vocês não fazem boleto?"
+- "Cartão não dá agora"
+- "Se fosse no PIX, qual o valor?"
+- "Qual a forma de pagamento?"</p>
+<p><strong>Script vendedor (padrão):</strong></p>
+<blockquote>
+<p>"Trabalhamos com PIX e cartão de crédito em até 10x sem juros por link de pagamento. Qual prefere?"</p>
+</blockquote>
+<p><strong>Script vendedor (desconto no PIX):</strong></p>
+<blockquote>
+<p>"No PIX à vista consigo um desconto. Quer que eu calcule como fica?"</p>
+</blockquote>
+<p><strong>Script vendedor (cartão com problema):</strong></p>
+<blockquote>
+<p>"Sem problema! Posso te enviar o link para pagamento por um cartão diferente, ou fazemos no PIX. Qual funciona melhor para você agora?"</p>
+</blockquote>
+<p><strong>Script vendedor (cliente pede boleto):</strong></p>
+<blockquote>
+<p>"Hoje a gente não trabalha com boleto. Mas consigo PIX (com desconto à vista) ou cartão em até 10x sem juros por link de pagamento. Qual fica melhor para você?"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Apresente apenas duas opções: PIX (com desconto à vista) e cartão em até 10x sem juros. <strong>NUNCA oferecer boleto</strong> — não trabalhamos com essa forma de pagamento. Se o cliente pedir boleto, recuse com cordialidade e ofereça PIX ou cartão imediatamente.</p>
+</blockquote>
+<hr />
+<h3>S06 — Entrega, Frete e Prazo</h3>
+<p><em>Volume: 142 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Quanto tempo demora para coletar?"
+- "Entrega hoje?"
+- "Tem previsão de quando chegaria?"
+- "Quanto é o frete?"</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"A coleta aqui na loja acontece [hoje/amanhã de manhã]. Após a coleta, a entrega leva até [X] dias úteis pela [transportadora]. Me confirma seu CEP/região que eu calculo o frete — o valor depende do produto, do total da compra e da sua região."</p>
+</blockquote>
+<p><strong>Script vendedor (urgência):</strong></p>
+<blockquote>
+<p>"Se fecharmos até às [hora], consigo incluir na coleta de hoje. Quer fechar agora?"</p>
+</blockquote>
+<p><strong>Script vendedor (retirada):</strong></p>
+<blockquote>
+<p>"Pode retirar aqui na loja! Endereço: [endereço]. Horário: [horário]. Quando você consegue vir?"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Sempre informe: data prevista de coleta + dias úteis de entrega + cálculo do frete. <strong>O frete depende sempre de três variáveis:</strong> produto (peso/dimensão), valor total da compra e região do cliente. Nunca dê valor de frete sem o CEP/região. Frete grátis também depende dessas três variáveis — nunca prometa de antemão.</p>
+</blockquote>
+<hr />
+<h3>S07 — Retirada na Loja</h3>
+<p><em>Volume: 101 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Posso retirar na loja?"
+- "Vou passar aí buscar"
+- "Tem como retirar?"</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Pode sim! Fica em [endereço]. Funcionamos [dias] das [horário]. É só separar o pedido antes — me confirma o que vai querer que já deixo no jeito para você."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Confirme que pode retirar, passe endereço e horário, e peça para o cliente confirmar o pedido antes de vir para garantir que estará separado.</p>
+</blockquote>
+<hr />
+<h3>S08 — Compatibilidade Técnica de Lâminas e Acessórios</h3>
+<p><em>Volume: 95 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Essa lâmina serve na minha máquina Andes?"
+- "As da Propetz são de cerâmica?"
+- "Serve na Pro 7 normal?"
+- "É o mesmo encaixe?"</p>
+<p><strong>Script vendedor (compatível):</strong></p>
+<blockquote>
+<p>"Sim, essa lâmina encaixa certinho na sua [modelo]. O encaixe é o mesmo e as alturas são as mesmas que você já usa."</p>
+</blockquote>
+<p><strong>Script vendedor (verificar modelo):</strong></p>
+<blockquote>
+<p>"Para confirmar a compatibilidade, me fala o modelo exato da sua máquina. Assim garanto que você não leva errado."</p>
+</blockquote>
+<p><strong>Script vendedor (cerâmica):</strong></p>
+<blockquote>
+<p>"As lâminas da Propetz são sim de cerâmica — esquentam bem menos que as de aço convencional, o que é ótimo para tosas longas."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Nunca confirme compatibilidade sem saber o modelo exato da máquina do cliente. Se não tiver certeza, peça o modelo antes de responder. Errar compatibilidade gera devolução e insatisfação.</p>
+</blockquote>
+<hr />
+<h3>S09 — Pedido de Foto, Catálogo ou Opções</h3>
+<p><em>Volume: 92 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Me manda as opções"
+- "Tem foto?"
+- "Me manda o catálogo"
+- "Quais vocês têm?"</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Claro! Veja as opções que temos: [enviar fotos/catálogo]. Qual delas se encaixa melhor no que você precisa?"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Envie as imagens ou o catálogo imediatamente. Após enviar, faça uma pergunta de qualificação (tamanho, raça do pet, volume de uso) para filtrar as opções e guiar o cliente.</p>
+</blockquote>
+<hr />
+<h3>S10 — Nota Fiscal</h3>
+<p><em>Volume: 105 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Consegue me passar a nota fiscal em PDF?"
+- "Me manda a NF da última compra"
+- "Preciso da nota fiscal para lançar no sistema"</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Claro! Me confirma o [CPF/CNPJ] que usou na compra que eu emito aqui e te mando o PDF."</p>
+</blockquote>
+<p><strong>Script vendedor (CNPJ):</strong></p>
+<blockquote>
+<p>"Para emitir em CNPJ, me passa: razão social, CNPJ, endereço completo com CEP e inscrição estadual (se tiver). Você quer a nota em CNPJ mesmo?"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Para emitir NF em CPF: peça apenas o CPF e confirme o pedido. Para CNPJ: solicite razão social, CNPJ, endereço completo e IE. Nunca emita sem confirmar os dados primeiro.</p>
+</blockquote>
+<hr />
+<h3>S11 — Peças de Reposição</h3>
+<p><em>Volume: 177 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Tem cabo de carregamento dessa máquina?"
+- "Vende a fonte da Propetz separado?"
+- "Tem a turbina da secadora Kyklon?"
+- "Vende mangueira e filtro do Kyklon Maxx?"</p>
+<p><strong>Script vendedor (tem):</strong></p>
+<blockquote>
+<p>"Temos sim! O [peça] da [marca/modelo] está R$[valor]. Quer que eu já reserve para você?"</p>
+</blockquote>
+<p><strong>Script vendedor (não tem):</strong></p>
+<blockquote>
+<p>"Essa peça específica não trabalhamos, mas posso verificar se consigo para você. Me passa o modelo exato da máquina que eu pesquiso aqui."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Peças de reposição exigem modelo exato da máquina. Sempre confirme o modelo antes de pesquisar. Se não tiver em estoque, comprometa-se a verificar e dê um prazo de retorno.</p>
+</blockquote>
+<hr />
+<h3>S12 — Trocas e Reclamações</h3>
+<p><em>Volume: 55 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Meu pedido veio com defeito"
+- "O produto não era o que eu esperava"
+- "A pedra não deu certo aqui"
+- "Produto errado"</p>
+<p><strong>Script vendedor (produto com defeito):</strong></p>
+<blockquote>
+<p>"[Nome], me desculpe o transtorno. Me manda uma foto/vídeo do defeito que eu já aciono a troca aqui para você. Qual o número do pedido?"</p>
+</blockquote>
+<p><strong>Script vendedor (produto não atendeu expectativa):</strong></p>
+<blockquote>
+<p>"Entendi, [Nome]. Me conta mais — o que aconteceu especificamente? Assim consigo verificar se é um problema do produto ou se posso indicar algo mais adequado para o que você precisa."</p>
+</blockquote>
+<p><strong>Script vendedor (produto errado enviado):</strong></p>
+<blockquote>
+<p>"Minha sincera desculpa, [Nome]. Erro nosso. Vou verificar o que aconteceu e já te informo como vamos resolver — troca imediata ou estorno, como você preferir."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Nunca questione o cliente em reclamação. Reconheça, peça evidência (foto/vídeo), e encaminhe para o vendedor humano se precisar de decisão sobre troca ou estorno. Sempre dê um prazo de retorno.</p>
+</blockquote>
+<hr />
+<h3>S13 — Negociação e Desconto</h3>
+<p><em>Volume: 52 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Consegue fechar por 250?"
+- "Dá um desconto?"
+- "Se for à vista, qual o valor?"
+- "Tem como melhorar?"</p>
+<p><strong>Script vendedor (desconto PIX):</strong></p>
+<blockquote>
+<p>"À vista no PIX consigo um desconto. Fica R$[valor com desconto]. Fechamos assim?"</p>
+</blockquote>
+<p><strong>Script vendedor (pedido abaixo do piso):</strong></p>
+<blockquote>
+<p>"[Nome], o mínimo que consigo é R$[valor]. Me confirma sua região que eu verifico se rola frete grátis nesse pedido — depende do produto, do valor da compra e de onde você está. É o melhor que tenho para te oferecer."</p>
+</blockquote>
+<p><strong>Script vendedor (pedido com múltiplos itens):</strong></p>
+<blockquote>
+<p>"Deixa eu somar aqui... São R$[total]. À vista no PIX consigo R$[com desconto]. Fecha assim?"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Não conceda desconto acima de [X]% sem aprovação do vendedor humano. Condicione sempre ao PIX à vista. Se o pedido for abaixo do piso, dê o piso com justificativa concreta (prazo garantido, condição comercial verificada). <strong>Nunca prometa frete grátis sem antes confirmar produto + valor da compra + região do cliente.</strong></p>
+</blockquote>
+<hr />
+<h3>S14 — Afiação</h3>
+<p><em>Volume: 28 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "A afiação é grátis?"
+- "Vocês fazem afiação? Faz na hora?"
+- "Qual o valor da afiação?"
+- "Conserta tesoura também?"</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Fazemos sim! A afiação de lâmina fica em torno de R$20 a R$30. Tesouras também afiamos. Se quiser trazer, já aproveita e retira na hora — normalmente fazemos no dia. Quer agendar?"</p>
+</blockquote>
+<p><strong>Script vendedor (cliente longe):</strong></p>
+<blockquote>
+<p>"Se não conseguir vir até a loja, pode enviar pelo Correios ou transportadora. A gente afia e devolve para você. Me manda o endereço que eu calculo o custo de ida e volta."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Confirme que faz afiação, passe o valor aproximado e ofereça as duas opções: trazer pessoalmente ou enviar. Se o cliente perguntar se é gratuita, responda que tem custo e informe o valor.</p>
+</blockquote>
+<hr />
+<h3>S15 — Manutenção e Conserto</h3>
+<p><em>Volume: 21 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Vocês consertam máquina de tosa?"
+- "A máquina está com problema, tem como consertar?"
+- "Teria que fazer adaptação na turbina"
+- "Quanto sai pra consertar?"</p>
+<p><strong>Script vendedor (encaminhamento padrão):</strong></p>
+<blockquote>
+<p>"Temos assistência técnica própria aqui na Maqlam! Para conserto, o atendimento é direto com a nossa equipe técnica. Segue o contato: [CONTATO ASSISTÊNCIA TÉCNICA]. Eles vão diagnosticar a máquina e te passar o que precisa."</p>
+</blockquote>
+<p><strong>Script vendedor (cliente insiste em saber valor antes):</strong></p>
+<blockquote>
+<p>"Sem ver a máquina não consigo te passar valor de conserto — depende do diagnóstico. Mas se for troca de peça, eu consigo te informar o valor da peça aqui. Você sabe qual peça precisa, ou prefere mandar para a assistência avaliar?"</p>
+</blockquote>
+<p><strong>Script vendedor (peça identificada):</strong></p>
+<blockquote>
+<p>"Essa peça [nome] está R$[valor]. Posso já reservar e a assistência técnica faz a troca quando você levar a máquina. Quer seguir assim?"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Para manutenção e conserto: <strong>encaminhar SEMPRE direto para o contato da assistência técnica</strong>. <strong>NUNCA passar valor de conserto</strong> (mão-de-obra, diagnóstico, serviço) antes — só a assistência avalia. <strong>APENAS valor de peça</strong> pode ser informado, e somente quando a peça estiver claramente identificada pelo cliente. Coletar modelo da máquina sempre que possível para repassar à assistência.</p>
+</blockquote>
+<hr />
+<h3>S16 — CNPJ / Preço Pessoa Jurídica</h3>
+<p><em>Volume: 49 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Preciso saber o valor para CNPJ"
+- "Vocês têm tabela PJ?"
+- "Fatura em CNPJ?"</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Emitimos nota em CNPJ sim! O valor é o mesmo da tabela padrão — não temos tabela diferenciada para PJ. Para emitir a nota, me passa: razão social, CNPJ, endereço completo com CEP e inscrição estadual (se tiver). Posso seguir?"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Confirme que emitem NF em CNPJ. <strong>NÃO existe tabela diferenciada para CNPJ</strong> — o valor é o mesmo da tabela padrão. Nunca prometa "preço PJ" nem "condição comercial diferenciada". Para a emissão, colete: razão social, CNPJ, endereço completo com CEP e IE (se tiver).</p>
+</blockquote>
+<hr />
+<h3>S17 — Transferência para Vendedor Humano</h3>
+<p><em>Volume: 40 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Quero falar com o Juliano"
+- "Me passa para um atendente"
+- "Transfere para humano"
+- "Gostaria de falar com atendente"</p>
+<p><strong>Script IA:</strong></p>
+<blockquote>
+<p>"Claro! Vou chamar um dos nossos especialistas agora mesmo. Em instantes alguém assume aqui para te ajudar!"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Sempre que o cliente pedir transferência para humano: confirme que vai transferir, acione o vendedor responsável, e nunca tente resolver a situação você mesmo após o pedido de transferência.</p>
+</blockquote>
+<hr />
+<h3>S18 — Voltagem / Bivolt</h3>
+<p><em>Volume: 18 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Essa máquina é 220V?"
+- "Tem em 110V?"
+- "É bivolt?"
+- "Tudo 220V"</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Essa [modelo] é [bivolt / 110V / 220V]. [Se bivolt]: funciona nas duas voltagens sem adaptador. [Se apenas 220V]: você vai precisar de um transformador se a sua rede for 110V."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Sempre confirme a voltagem do produto específico antes de responder. Nunca generalize. Se bivolt, informe que funciona em ambas. Se for de tensão única, alerte sobre necessidade de transformador.</p>
+</blockquote>
+<hr />
+<h3>S19 — Cashback</h3>
+<p><em>Volume: 11 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Tenho cashback, posso usar?"
+- "O cashback é para qual produto?"
+- "Posso usar o cashback nessa compra?"</p>
+<p><strong>Princípio:</strong> Cashback na Maqlam <strong>NÃO é programa contínuo</strong>. Roda apenas em eventos pontuais (campanhas específicas com início, fim e regras divulgadas).</p>
+<p><strong>Script vendedor (sem campanha ativa):</strong></p>
+<blockquote>
+<p>"Hoje a gente não está com cashback ativo — o nosso cashback roda só em eventos pontuais. Posso te avisar quando a próxima campanha começar? Enquanto isso, à vista no PIX consigo um desconto para você."</p>
+</blockquote>
+<p><strong>Script vendedor (com campanha ativa):</strong></p>
+<blockquote>
+<p>"Estamos com campanha de cashback ativa! O seu saldo é de R$[valor] e pode ser aplicado nessa compra. Quer usar agora?"</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Cashback <strong>NÃO é benefício permanente</strong> — só responder positivamente se houver campanha ativa no momento. Se não houver campanha, recusar com cordialidade, explicar que é evento pontual e redirecionar para o desconto à vista no PIX. Nunca prometer cashback futuro como gatilho de fechamento.</p>
+</blockquote>
+<hr />
+<h3>S20 — Suporte Técnico e Instalação</h3>
+<p><em>Volume: 10 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Vocês dão suporte para instalação?"
+- "Como eu instalo?"
+- "Tem assistência técnica?"</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"A instalação da [produto] não é bicho de sete cabeças — qualquer encanador/eletricista de confiança consegue fazer. Não temos instalação própria, mas posso te orientar no que precisar."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Para dúvidas de instalação: informe que não fazem instalação, oriente que qualquer profissional da área (encanador, eletricista) consegue fazer, e ofereça orientação técnica básica pelo chat se o cliente tiver dúvida específica.</p>
+</blockquote>
+<hr />
+<h3>S21 — Garantia</h3>
+<p><em>Volume: 5 mensagens</em></p>
+<p><strong>O que o cliente diz:</strong>
+- "Qual a garantia?"
+- "Tem garantia?"
+- "O produto tem garantia de quanto tempo?"</p>
+<p><strong>Script vendedor:</strong></p>
+<blockquote>
+<p>"Esse [produto] tem garantia de [X meses] contra defeito de fabricação. Qualquer problema dentro do prazo, a gente resolve — troca ou reparo sem custo para você."</p>
+</blockquote>
+<p><strong>Instrução IA:</strong></p>
+<blockquote>
+<p>Consulte a garantia do produto específico antes de informar. Nunca diga um prazo de garantia genérico. Após informar a garantia, reforce a confiança: "Qualquer problema, pode chamar a gente."</p>
+</blockquote>
+<hr />
+<h2>Parte 4 — Técnicas de Fechamento</h2>
+<h3>F1 — Pergunta Binária</h3>
+<p>Elimine ambiguidade: não pergunte "o que você prefere?", pergunte "PIX ou cartão?".</p>
+<h3>F2 — Resumo antes do fechamento</h3>
+<p>Sempre monte o resumo formatado (P4) antes de pedir a confirmação. Cliente que vê o resumo fecha mais.</p>
+<h3>F3 — Vantagens Maqlam + Parcelamento</h3>
+<p>Combine os pilares da Maqlam (P6 — venda consultiva, assistência técnica na loja, 16 anos, melhores marcas) com parcelamento (P3): <em>"A gente trabalha só com as melhores marcas, tem assistência técnica aqui na loja e está há 16 anos no mercado — e ainda consigo fazer em 10x sem juros, fica só R$X por mês."</em></p>
+<h3>F4 — Quebra de objeção por valor</h3>
+<p>Quando o cliente acha caro: <strong>não</strong> reduza o produto. Reforce o que está incluso na compra Maqlam (consultoria, assistência técnica própria, curadoria de marcas) e ofereça o parcelamento em 10x. Se ainda assim houver hesitação, condicione desconto ao PIX à vista.</p>
+<h3>F5 — Resolva a dúvida e feche na mesma mensagem</h3>
+<blockquote>
+<p>"Sim, essa lâmina encaixa certinho na Andes Pro 7. Quer que eu já separo uma aqui para você?"</p>
+</blockquote>
+<hr />
+<h2>Parte 5 — Pós-venda</h2>
+<h3>Fluxo padrão após o pedido</h3>
+<ol>
+<li><strong>Confirmação imediata:</strong> "Pedido confirmado! Vou dar andamento e te aviso assim que coletar."</li>
+<li><strong>Aviso de coleta:</strong> "Coletou hoje! Segue o rastreio: [código] — previsão de [X] dias úteis."</li>
+<li><strong>Follow-up de entrega (opcional):</strong> 1 dia após o prazo previsto, verificar se chegou.</li>
+<li><strong>Recompra:</strong> Se o produto tiver ciclo curto (shampoo, insumos), entrar em contato antes do prazo de esgotamento estimado.</li>
+</ol>
+<h3>Como abordar cliente inativo</h3>
+<blockquote>
+<p>"Oi [Nome], tudo bem? [Vendedor] aqui da Maqlam! Faz um tempo que a gente não se fala — achei que vale checar se você precisa repor [produto que comprou antes]. A gente tem novidades também. Quer dar uma olhada?"</p>
+</blockquote>
+<hr />
+<h2>Apêndice — Respostas Rápidas para a IA</h2>
+<table>
+<thead>
+<tr>
+<th>Situação</th>
+<th>Resposta padrão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cliente manda só "oi"</td>
+<td>"Oi! Tudo bem? Como posso te ajudar hoje?"</td>
+</tr>
+<tr>
+<td>Cliente manda foto de produto</td>
+<td>"Que produto bacana! Deixa eu ver aqui — você quer [comprar / saber o preço / tirar uma dúvida sobre] esse?"</td>
+</tr>
+<tr>
+<td>Cliente manda comprovante de pagamento</td>
+<td>"Pagamento recebido! Já estou separando seu pedido. Em breve te informo a data de coleta."</td>
+</tr>
+<tr>
+<td>Cliente manda mensagem automática de bot</td>
+<td>Ignorar — não é uma interação real do cliente.</td>
+</tr>
+<tr>
+<td>Cliente pede foto de produto</td>
+<td>Enviar foto + descrição do produto + pergunta de qualificação (uso/necessidade). <strong>NÃO enviar preço nessa etapa.</strong></td>
+</tr>
+<tr>
+<td>Cliente diz "obrigado" no final</td>
+<td>"Eu que agradeço! Qualquer coisa, pode chamar. 😃"</td>
+</tr>
+<tr>
+<td>Cliente diz que vai pensar</td>
+<td>"Sem problema! Fico à disposição. Só lembro que [mencione urgência relevante se houver]. Quando decidir, é só chamar."</td>
+</tr>
+</tbody>
+</table>
+  </div>
+</div>
+</body>
+</html>

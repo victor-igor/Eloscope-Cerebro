@@ -9,6 +9,7 @@ Dashboard AI para a joalheria Campos Joias, com agente de atendimento WhatsApp, 
 - Cliente: Matheus Campos (sócio Eloscope + marido Dra. Morgana)
 - Supabase project: `bshmmxcegwwppihlyyag`
 - Repo: `/Users/victorigor/Campos-Joias`
+- Artefatos do agente e campanhas: `cerebro/areas/vendas/clientes/campos-joias/`
 
 ## Responsáveis
 - **Victor:** tech lead + implementação
