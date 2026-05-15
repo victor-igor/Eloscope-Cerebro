@@ -146,10 +146,15 @@ type: note
 
 ## 🟡 elobrain — framework instalável (criadas 13/05)
 
-- [13/05/2026] 🔥 **Instalar `gbrain` localmente na máquina Lucas** · clone `victor-igor/elobrain` + `bun install` + `bun link` + symlink `.env` · pré-requisito p/ tudo · Lucas
+- ✅ [13/05/2026] **Instalar `gbrain` localmente na máquina Lucas** · `gbrain 0.33.0` em `/Users/lucasnegreiro/.bun/bin/gbrain`, funcional
 - [13/05/2026] **Criar `INSTALL_ELOBRAIN.md` runbook reaproveitável** · vira parte do produto que vai ser vendido a clientes (Claude Code + segundo cérebro) · Lucas
-- [13/05/2026] **Primeira indexação `gbrain sync --source cerebro`** · gera embeddings do vault inteiro · custo ~$0.02 OpenAI · Lucas (após instalar gbrain)
-- [13/05/2026] **Reiniciar Claude Code após instalar gbrain** · carrega MCP server `elobrain` registrado em `.claude/settings.json` · Lucas
+- ✅ [13/05/2026] **Primeira indexação `gbrain sync --source cerebro`** · confirmado em 15/05: 766 pages, 3372 chunks, last_commit `e4f5cf52` (HEAD) no schema `brain` do Supabase Elosystem
+- ✅ [13/05/2026] **MCP `elobrain` configurado e conectado** · registrado em 15/05 via `claude mcp add --scope local` em `~/.claude.json` (não `.mcp.local.json` — formato inexistente). `claude mcp list` mostra `elobrain: ✓ Connected`
+- [15/05/2026] **Reiniciar Claude Code novamente** · pra ativar tools `mcp__elobrain__*` no registry (registrado durante sessão; precisa reload) · Lucas
+- [15/05/2026] **Testar query MCP elobrain após restart** · ex. `mcp__elobrain__query "pendências críticas"` · Lucas
+- [15/05/2026] **Decidir 4 skillpacks recomendados** · article-enrichment, voice-note-ingest, perplexity-research, concept-synthesis · Lucas + Victor
+- [15/05/2026] **Localizar implementação skill `/elo` v0.4** · commit `6adfb20` (Victor) só menciona — não está em `~/elobrain/skills/` nem `~/.claude/skills/`; provavelmente em workspace `growth-os-skills` separado · Victor
+- [15/05/2026] ⚪ **Rodar `gbrain frontmatter generate --fix` com escopo correto** · só sobre vault (memory/, areas/, empresa/, squads/, skills/, time/, agentes/) — **nunca** sobre `.aios-core/` `.aiox-core/` `.claude/` (framework protegido). Próxima execução: especificar pasta-alvo, não a raiz do repo · Lucas
 - [13/05/2026] ⚪ **Empacotar produto "Cerebro Claude Code by Eloscope"** · template repo + runbook + migrations + `.env.example` + `.claude/settings.json` pré-configurado · backlog (depende de validação interna primeiro) · Lucas + Victor
 
 ---

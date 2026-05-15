@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Proposta Eloscope × PeleVet</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  @page :not(:first) {
+    margin: 26mm 16mm 26mm 16mm;
+    @bottom-left {
+      content: "ELOSCOPE LTDA · CNPJ 41.684.837/0001-84 · contato@eloscope.com";
+      font-family: 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 7.5pt;
+      letter-spacing: 0.08em;
+      color: #64748B;
+      vertical-align: top;
+      padding-top: 6pt;
+    }
+    @bottom-center {
+      content: "PROPOSTA COMERCIAL · PELEVET";
+      font-family: 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 7.5pt;
+      letter-spacing: 0.14em;
+      color: #94A3B8;
+      vertical-align: top;
+      padding-top: 6pt;
+    }
+    @bottom-right {
+      content: counter(page) " / " counter(pages);
+      font-family: 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 7.5pt;
+      color: #64748B;
+      vertical-align: top;
+      padding-top: 6pt;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* Brand Eloscope */
+    --deep-space: #0A0A0A;
+    --neural-white: #FFFFFF;
+    --quantum-cyan: #00FFFF;
+    --fusion-magenta: #FF00FF;
+    --data-green: #00FF00;
+
+    /* Document palette (claro pra legibilidade) */
+    --ink: #0A0A0A;
+    --ink-2: #1F2937;
+    --muted: #64748B;
+    --line: #E2E8F0;
+    --line-soft: #F1F5F9;
+    --bg-soft: #FAFBFC;
+    --cyan-ink: #00B8B8;
+    --cyan-soft: #ECFEFE;
+    --magenta-ink: #C026A8;
+    --magenta-soft: #FDF4FD;
+  }
+
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: var(--ink);
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .mono { font-family: 'SF Mono', Menlo, Consolas, 'Courier New', monospace; }
+
+  /* ========== CAPA ========== */
+  .cover {
+    position: relative;
+    width: 210mm;
+    height: 297mm;
+    background: var(--deep-space);
+    color: var(--neural-white);
+    padding: 32mm 22mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    page-break-after: always;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4pt;
+    background: linear-gradient(90deg, var(--quantum-cyan), var(--fusion-magenta));
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    bottom: -100mm; right: -50mm;
+    width: 220mm; height: 220mm;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,255,255,0.10) 0%, rgba(255,0,255,0.05) 40%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+  }
+  .cover-logo {
+    width: 56mm;
+    height: auto;
+  }
+  .cover-doc-meta {
+    text-align: right;
+    font-size: 9pt;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.04em;
+    font-family: 'SF Mono', Menlo, monospace;
+    line-height: 1.6;
+  }
+  .cover-doc-meta strong {
+    color: var(--quantum-cyan);
+    font-weight: 600;
+  }
+  .cover-body { position: relative; z-index: 2; }
+  .cover-eyebrow {
+    font-family: 'SF Mono', Menlo, monospace;
+    font-size: 10pt;
+    letter-spacing: 0.18em;
+    color: var(--quantum-cyan);
+    text-transform: uppercase;
+    margin-bottom: 16pt;
+  }
+  .cover-title {
+    font-size: 38pt;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 18pt;
+  }
+  .cover-title .accent {
+    color: var(--quantum-cyan);
+    text-shadow: 0 0 18pt rgba(0, 255, 255, 0.25);
+  }
+  .cover-sub {
+    font-size: 12pt;
+    color: rgba(255,255,255,0.7);
+    max-width: 140mm;
+    line-height: 1.55;
+  }
+  .cover-footer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 18pt;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .cover-recipient {
+    font-size: 10pt;
+    line-height: 1.6;
+  }
+  .cover-recipient .lbl {
+    font-family: 'SF Mono', monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    margin-bottom: 4pt;
+  }
+  .cover-recipient strong {
+    color: var(--neural-white);
+    font-weight: 600;
+  }
+  .cover-tags {
+    text-align: right;
+    font-family: 'SF Mono', monospace;
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.9;
+  }
+  .cover-tags span {
+    display: inline-block;
+    padding: 3pt 8pt;
+    margin-left: 4pt;
+    border: 1px solid rgba(0,255,255,0.25);
+    border-radius: 999pt;
+    color: var(--quantum-cyan);
+    letter-spacing: 0.08em;
+  }
+
+  /* ========== PÁGINAS INTERNAS ========== */
+  .page {
+    max-width: 178mm;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 22pt; font-weight: 700;
+    letter-spacing: -0.025em; line-height: 1.15;
+    color: var(--ink);
+  }
+  h2 {
+    font-size: 13pt;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-top: 22pt;
+    margin-bottom: 10pt;
+    padding-bottom: 6pt;
+    position: relative;
+  }
+  h2::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--ink) 0, var(--ink) 24pt, var(--line) 24pt);
+  }
+  h3 {
+    font-size: 11pt; font-weight: 600; color: var(--ink);
+    margin-top: 14pt; margin-bottom: 6pt;
+  }
+  h4 {
+    font-family: 'SF Mono', Menlo, monospace;
+    font-size: 9pt; font-weight: 600; color: var(--cyan-ink);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 5pt;
+  }
+  p { margin-bottom: 8pt; color: var(--ink-2); }
+  strong { color: var(--ink); font-weight: 600; }
+
+  ul, ol { margin: 0 0 10pt 16pt; }
+  li { margin-bottom: 4pt; color: var(--ink-2); }
+
+  /* Headers de página interna */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12pt 0 14pt;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 22pt;
+  }
+  .page-header .brand {
+    display: flex;
+    align-items: center;
+    gap: 8pt;
+  }
+  .page-header .brand-mark {
+    width: 22pt; height: 22pt;
+  }
+  .page-header .brand-text {
+    font-family: 'SF Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .page-header .brand-text .dot {
+    color: var(--magenta-ink);
+    margin: 0 4pt;
+  }
+  .page-header .doc-label {
+    font-family: 'SF Mono', monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ========== HERO ========== */
+  .hero { margin-bottom: 18pt; }
+  .hero .tag {
+    display: inline-block;
+    font-family: 'SF Mono', monospace;
+    font-size: 8.5pt; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--cyan-ink);
+    border: 1px solid var(--cyan-ink);
+    padding: 3pt 9pt; border-radius: 999pt;
+    margin-bottom: 12pt;
+  }
+  .hero p.lead {
+    font-size: 11pt; color: var(--ink-2);
+    margin-top: 8pt; line-height: 1.6;
+  }
+
+  /* ========== CARDS ========== */
+  .card {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 6pt;
+    padding: 13pt 15pt;
+    margin: 10pt 0;
+  }
+  .card.accent-cyan {
+    border-left: 3pt solid var(--cyan-ink);
+  }
+  .card.accent-magenta {
+    border-left: 3pt solid var(--magenta-ink);
+    background: var(--magenta-soft);
+  }
+  .card.accent-emerald {
+    border-left: 3pt solid #047857;
+    background: #ECFDF5;
+  }
+  .card.accent-amber {
+    border-left: 3pt solid #D97706;
+    background: #FFFBEB;
+  }
+  .card h3 { margin-top: 0; }
+  .card p:last-child { margin-bottom: 0; }
+
+  .grid-2 {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; margin: 10pt 0;
+  }
+  .grid-3 {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10pt; margin: 10pt 0;
+  }
+
+  /* ========== KV ========== */
+  .kv {
+    display: grid; grid-template-columns: 180pt 1fr;
+    border-top: 1px solid var(--line);
+  }
+  .kv > div {
+    padding: 8pt 12pt; border-bottom: 1px solid var(--line);
+    font-size: 10pt;
+  }
+  .kv > div:nth-child(odd) {
+    color: var(--muted); background: var(--line-soft);
+    font-family: 'SF Mono', monospace;
+    font-size: 9pt;
+  }
+  .kv > div:nth-child(even) {
+    color: var(--ink); font-weight: 500;
+  }
+
+  /* ========== FASE ========== */
+  .fase { margin-bottom: 16pt; page-break-inside: avoid; }
+  .fase-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-bottom: 5pt; margin-bottom: 8pt;
+    border-bottom: 1px solid var(--ink);
+  }
+  .fase-head .label {
+    font-family: 'SF Mono', monospace;
+    font-size: 9pt; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--cyan-ink);
+  }
+  .fase-head .title { font-size: 12pt; font-weight: 600; color: var(--ink); }
+  .fase-head .span {
+    font-family: 'SF Mono', monospace;
+    font-size: 9pt; color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+  .fase .objetivo {
+    font-size: 10pt; color: var(--ink-2);
+    margin-bottom: 8pt; font-style: italic;
+    padding-left: 10pt; border-left: 2pt solid var(--magenta-ink);
+  }
+  .fase ul { margin-left: 16pt; }
+  .fase ul li { font-size: 10pt; margin-bottom: 4pt; }
+
+  .fase .deliverable {
+    font-size: 10pt; margin-top: 10pt;
+    background: var(--cyan-soft);
+    padding: 8pt 12pt; border-radius: 4pt;
+    color: var(--ink-2);
+  }
+  .fase .deliverable strong { color: var(--cyan-ink); }
+
+  /* ========== INVESTIMENTO ========== */
+  .invest-box {
+    border: 1.5pt solid var(--ink);
+    border-radius: 8pt; padding: 18pt 20pt; margin: 14pt 0;
+    background: linear-gradient(180deg, #fff 0%, var(--bg-soft) 100%);
+  }
+  .invest-box .total {
+    font-size: 26pt; font-weight: 700; letter-spacing: -0.025em;
+    color: var(--ink); margin-bottom: 2pt;
+    line-height: 1.1;
+  }
+  .invest-box .total small {
+    font-size: 11pt; font-weight: 500; color: var(--muted); letter-spacing: 0;
+  }
+  .invest-box .breakdown {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 0; margin-top: 14pt;
+    border-top: 1px solid var(--line); padding-top: 14pt;
+  }
+  .invest-box .breakdown > div { padding: 0 14pt 0 0; }
+  .invest-box .breakdown > div + div {
+    border-left: 1px solid var(--line); padding-left: 14pt;
+  }
+  .invest-box .breakdown .lbl {
+    font-family: 'SF Mono', monospace;
+    font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--muted); margin-bottom: 5pt;
+  }
+  .invest-box .breakdown .val {
+    font-size: 14pt; font-weight: 600; color: var(--ink);
+  }
+  .invest-box .breakdown .sub {
+    font-size: 9pt; color: var(--muted); margin-top: 3pt;
+  }
+
+  /* ========== PAYMENT ========== */
+  .pay-opts {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8pt; margin-top: 10pt;
+  }
+  .pay-opt {
+    background: var(--bg-soft); border: 1px solid var(--line);
+    border-radius: 5pt; padding: 11pt 13pt;
+  }
+  .pay-opt .lbl {
+    font-family: 'SF Mono', monospace;
+    font-size: 8.5pt; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 5pt;
+  }
+  .pay-opt .val {
+    font-size: 12pt; font-weight: 600; color: var(--ink);
+  }
+  .pay-opt .sub {
+    font-size: 9pt; color: var(--muted); margin-top: 3pt;
+  }
+  .pay-opt.highlight {
+    background: linear-gradient(135deg, var(--cyan-soft), var(--magenta-soft));
+    border-color: var(--cyan-ink);
+  }
+  .pay-opt.highlight .val { color: var(--cyan-ink); }
+  .pay-opt.highlight .lbl { color: var(--cyan-ink); }
+
+  /* ========== TABELA TERCEIROS ========== */
+  .terc-table {
+    width: 100%; border-collapse: collapse; margin-top: 8pt;
+    font-size: 10pt;
+  }
+  .terc-table th, .terc-table td {
+    padding: 7pt 10pt; text-align: left;
+    border-bottom: 1px solid var(--line);
+  }
+  .terc-table th {
+    font-family: 'SF Mono', monospace;
+    font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; background: var(--line-soft);
+  }
+  .terc-table td:last-child {
+    text-align: right; font-variant-numeric: tabular-nums; color: var(--ink);
+    font-weight: 500;
+  }
+  .terc-table tr.total td {
+    font-weight: 700; color: var(--ink);
+    border-top: 1.5px solid var(--ink); border-bottom: none;
+  }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    margin-top: 32pt; padding-top: 14pt;
+    border-top: 1px solid var(--line);
+    font-size: 8.5pt; color: var(--muted); line-height: 1.55;
+  }
+  .footer strong { color: var(--ink-2); }
+  .footer .mono { font-size: 8pt; letter-spacing: 0.04em; }
+
+  /* ========== CTA ========== */
+  .cta {
+    background: var(--deep-space); color: var(--neural-white);
+    border-radius: 8pt; padding: 22pt 24pt;
+    margin: 22pt 0 8pt;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    height: 2pt;
+    background: linear-gradient(90deg, var(--quantum-cyan), var(--fusion-magenta));
+  }
+  .cta h3 { color: var(--neural-white); margin-top: 0; font-size: 13pt; }
+  .cta p {
+    color: rgba(255,255,255,0.75); margin-bottom: 8pt; font-size: 10pt;
+  }
+  .cta .signature {
+    margin-top: 16pt; padding-top: 14pt;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 10pt; color: var(--neural-white);
+  }
+  .cta .signature strong {
+    color: var(--quantum-cyan); font-weight: 600;
+  }
+  .cta .signature .mono {
+    font-family: 'SF Mono', monospace;
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2pt;
+    letter-spacing: 0.08em;
+  }
+
+  .break { page-break-before: always; }
+  .avoid-break { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<!-- =============================================================
+     CAPA
+============================================================= -->
+<div class="cover">
+
+  <div class="cover-header">
+    <img class="cover-logo" src="logotipo-eloscope.png" alt="Eloscope">
+    <div class="cover-doc-meta">
+      &lt;proposal.id&gt; <strong>2026-PV-001</strong><br>
+      &lt;date&gt; 13.05.2026<br>
+      &lt;valid.until&gt; <strong>18.05.2026</strong>
+    </div>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-eyebrow">&lt;proposta.comercial&gt;</div>
+    <div class="cover-title">
+      Um sistema construído<br>
+      <span class="accent">sob medida</span> para a PeleVet.
+    </div>
+    <div class="cover-sub">
+      Personalização profunda, IA por cima da rotina, processo orquestrado.<br>
+      O contrário de operar dentro do que um sistema fechado permite.
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-recipient">
+      <div class="lbl">Para</div>
+      <strong>Sílvia de Paula · Sílvia · Thaísa</strong><br>
+      Clínica PeleVet — São José do Rio Preto/SP
+    </div>
+    <div class="cover-tags">
+      <span>plano completo</span><br>
+      <span>3 meses · implantação</span>
+    </div>
+  </div>
+
+  <div style="position: absolute; bottom: 10mm; left: 22mm; right: 22mm; z-index: 2; font-family: 'SF Mono', Menlo, monospace; font-size: 7.5pt; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); text-align: center; line-height: 1.6;">
+    ELOSCOPE LTDA &nbsp;·&nbsp; CNPJ 41.684.837/0001-84 &nbsp;·&nbsp; AV. INDEPENDÊNCIA, 546 · SALA 93 · CIDADE ALTA · PIRACICABA/SP · CEP 13.419-160<br>
+    contato@eloscope.com &nbsp;·&nbsp; (17) 92000-8791
+  </div>
+
+</div>
+
+<!-- =============================================================
+     CONTEÚDO
+============================================================= -->
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="page-header">
+    <div class="brand">
+      <img class="brand-mark" src="logo-eloscope.png" alt="">
+      <div class="brand-text">ELOSCOPE<span class="dot">·</span>PROPOSTA</div>
+    </div>
+    <div class="doc-label">&lt;pelevet / plano-completo&gt;</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="tag">3 meses · implantação · ia + processo</div>
+    <h1>Liberdade para operar do jeito da PeleVet —<br>com IA por cima da rotina.</h1>
+    <p class="lead">
+      Esta proposta consolida o que conversamos na reunião de segunda-feira (13h30): construir o ecossistema Eloscope sob medida para a clínica — financeiro, CRM com pipeline visual, IA Pele 24/7, módulo de plano crônico recorrente e infraestrutura própria — em três fases ao longo de três meses de implantação, com mensalidade opcional que começa só depois do go-live validado em conjunto.
+    </p>
+  </div>
+
+  <!-- ABERTURA -->
+  <div class="card accent-cyan">
+    <h3>Por que isto faz sentido pra vocês</h3>
+    <p>
+      Vocês comentaram na reunião que o <strong>SimplesVet é um sistema fechado</strong> — funciona, mas amarra a clínica ao que ele permite fazer. E o que vocês precisam vai além: tom de voz próprio, fluxos adaptados à dinâmica do consultório, plano crônico construído do jeito de vocês, financeiro com os centros de custo que fazem sentido para o negócio.
+    </p>
+    <p>
+      A Eloscope é exatamente o contrário disso. <strong>Construímos software sob medida</strong>, com alta personalização em cada módulo, e adicionamos camada de IA por cima do que hoje sobra para a equipe fazer manualmente. O resultado não é uma ferramenta para vocês se encaixarem — é um sistema que se encaixa em vocês.
+    </p>
+    <p>
+      Os números citados nas próximas páginas (conversão, ticket, faturamento, LTV crônico) são <strong>inferências baseadas no discovery e validadas verbalmente por vocês durante a reunião</strong>. Não são promessa de resultado: são modelagens. A partir do mês 1 de implantação, esses números deixam de ser estimativa e passam a ser dado real, medido direto no sistema.
+    </p>
+  </div>
+
+  <!-- O QUE A PROPOSTA ENDEREÇA -->
+  <h2>O que esta proposta endereça</h2>
+  <p>Cinco pontos foram mapeados no discovery. O plano completo trabalha os cinco em paralelo:</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>Ponto 1 · Fechamento financeiro manual</h4>
+      <p style="font-size:10pt"><strong>Hoje:</strong> a conciliação consome muitos dias da Thaísa todo mês.<br><strong>Caminho:</strong> conciliação assistida por IA, centros de custo configurados conforme o jeito da clínica (consultório A, B, pet shop, banho) e dashboards casados de bruto, líquido e recebido.</p>
+    </div>
+    <div class="card">
+      <h4>Ponto 2 · Conversão sem instrumentação</h4>
+      <p style="font-size:10pt"><strong>Hoje:</strong> ~1,5% de conversão de lead em paciente, sem CRM nem visibilidade do funil.<br><strong>Caminho:</strong> CRM com pipeline visual, IA Pele qualificando antes de chegar no humano, agendamento em horários reservados e medição da origem de cada lead.</p>
+    </div>
+    <div class="card">
+      <h4>Ponto 3 · Fim de semana sem atendimento</h4>
+      <p style="font-size:10pt"><strong>Hoje:</strong> leads que chegam sáb/dom ficam parados até segunda.<br><strong>Caminho:</strong> IA Pele respondendo 24/7, agendando direto na agenda da clínica e fazendo handoff humano na segunda às 8h.</p>
+    </div>
+    <div class="card">
+      <h4>Ponto 4 · Rotina da anamnese</h4>
+      <p style="font-size:10pt"><strong>Hoje:</strong> a anamnese exige tempo manual durante e depois da consulta; o tutor raramente recebe um resumo formatado.<br><strong>Caminho:</strong> gravação + transcrição automática (Whisper) durante a consulta, registro estruturado e envio do resumo em PDF para o tutor — sem trabalho extra do veterinário.</p>
+    </div>
+    <div class="card" style="grid-column: span 2">
+      <h4>Ponto 5 · Crônico sem produto recorrente</h4>
+      <p style="font-size:10pt"><strong>Hoje:</strong> o paciente crônico volta de forma reativa, sem cobrança recorrente nem cronograma estruturado.<br><strong>Caminho:</strong> módulo de plano crônico próprio da PeleVet com cobrança recorrente, cronograma automatizado de retornos, disparos de aniversário do pet e NPS. Receita passa a ser previsível em vez de transacional.</p>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 2: ESCOPO + FASES
+  ========================================================= -->
+  <div class="break"></div>
+
+  <div class="page-header">
+    <div class="brand">
+      <img class="brand-mark" src="logo-eloscope.png" alt="">
+      <div class="brand-text">ELOSCOPE<span class="dot">·</span>PROPOSTA</div>
+    </div>
+    <div class="doc-label">&lt;escopo / 3-fases&gt;</div>
+  </div>
+
+  <h2 style="margin-top:0">Escopo entregue · três fases em três meses</h2>
+
+  <p style="margin-bottom: 14pt">
+    A entrega é faseada propositalmente — IA e mudança de processo entram aos poucos, área por área, para não gerar ruído operacional. A Fase 1 destrava o financeiro e o atendimento 24/7. A Fase 2 instrumenta a conversão. A Fase 3 instala a recorrência crônica.
+  </p>
+
+  <!-- FASE 1 -->
+  <div class="fase">
+    <div class="fase-head">
+      <div>
+        <span class="label">Fase 1</span>
+        <span class="title">&nbsp;Fundação</span>
+      </div>
+      <span class="span">Mês 1</span>
+    </div>
+    <div class="objetivo">Objetivo: destravar o financeiro e abrir o atendimento 24/7.</div>
+    <ul>
+      <li><strong>Infraestrutura própria:</strong> VPS dedicado da PeleVet + Nginx + ambiente Eloscope. Código e dados ficam com a clínica.</li>
+      <li><strong>Implantação do núcleo:</strong> migração da base de clientes e pets do SimplesVet (export + dedupe + import) para o ambiente Eloscope.</li>
+      <li><strong>Módulo Financeiro sob medida:</strong> centros de custo conforme a operação da clínica (consultório A, consultório B, pet shop, banho), conta bancária integrada, importação automática de extrato e IA assistente de conciliação.</li>
+      <li><strong>Central de atendimento Chatwoot:</strong> Instagram e WhatsApp Business unificados em uma só caixa.</li>
+      <li><strong>IA Pele no WhatsApp (v1):</strong> qualifica o lead, agenda em horários reservados e faz handoff humano em horário comercial. Tom de voz treinado com a equipe.</li>
+      <li><strong>Treinamento presencial</strong> da equipe (Sílvias, Thaísa, recepcionista).</li>
+    </ul>
+    <div class="deliverable">
+      <strong>Entrega ao fim da fase:</strong> ambiente Eloscope ativo, atendimento 24/7 ligado, fluxo financeiro automatizado em operação.
+    </div>
+  </div>
+
+  <!-- FASE 2 -->
+  <div class="fase">
+    <div class="fase-head">
+      <div>
+        <span class="label">Fase 2</span>
+        <span class="title">&nbsp;Conversão</span>
+      </div>
+      <span class="span">Mês 2</span>
+    </div>
+    <div class="objetivo">Objetivo: instrumentar e organizar o funil de conversão.</div>
+    <ul>
+      <li><strong>CRM com pipeline visual</strong> em cards, com IA sugerindo movimentação de oportunidades pelas etapas do funil.</li>
+      <li><strong>Disparos automatizados:</strong> confirmação de consulta, lembretes, aniversário do pet e NPS pós-atendimento.</li>
+      <li><strong>Programa de indicação mensurado:</strong> cada lead com origem rastreável e dashboard de quem trouxe quem.</li>
+      <li><strong>Dashboards inteligentes v1:</strong> consultas por especialidade × vendas × banho × por sócia, com filtros por período.</li>
+      <li><strong>IA Pele v2:</strong> agora com acesso ao prontuário para responder dúvidas de tutores já existentes (sob regras de privacidade definidas com vocês).</li>
+    </ul>
+    <div class="deliverable">
+      <strong>Entrega ao fim da fase:</strong> funil visível em tempo real, origem de cada paciente rastreada, disparos rodando, dashboards no ar.
+    </div>
+  </div>
+
+  <!-- FASE 3 -->
+  <div class="fase">
+    <div class="fase-head">
+      <div>
+        <span class="label">Fase 3</span>
+        <span class="title">&nbsp;Recorrência crônica</span>
+      </div>
+      <span class="span">Mês 3</span>
+    </div>
+    <div class="objetivo">Objetivo: transformar o paciente crônico em receita previsível.</div>
+    <ul>
+      <li><strong>Módulo de plano crônico recorrente:</strong> cobrança mensal automática, cronograma de visitas e alertas de retorno.</li>
+      <li><strong>Pacotes e combos de serviço:</strong> gestão de baixa por item consumido (banho dermatoterapêutico, pacote de retornos, etc.).</li>
+      <li><strong>Gravação + transcrição de anamnese:</strong> Whisper local + envio automático do resumo em PDF para o tutor após a consulta.</li>
+      <li><strong>Teleconsulta com receita digital:</strong> fluxo desenhado para suportar os requisitos vigentes do CFMV à data desta proposta. Adequações a novas resoluções regulatórias após o go-live são tratadas como evolução, sob mensalidade ativa ou orçamento à parte.</li>
+      <li><strong>Dashboards v2 + relatórios customizados:</strong> por sócia, por unidade, por especialidade, com exportação.</li>
+      <li><strong>Go-live validado em conjunto</strong> + acionamento da mensalidade opcional.</li>
+    </ul>
+    <div class="deliverable">
+      <strong>Entrega ao fim da fase:</strong> PeleVet operando com produto recorrente próprio, anamnese automatizada, teleconsulta ativa, dashboards consolidados.
+    </div>
+  </div>
+
+  <div class="card accent-amber">
+    <p style="font-size:10pt">
+      <strong>Sobre o faseamento:</strong> a sequência acima é a recomendação técnica, mas pode ser reorganizada conforme a prioridade que vocês quiserem dar. Sugiro fixar a Fase 1 (porque destrava o operacional) e tratar Fase 2 e Fase 3 como menu — vocês escolhem qual entra antes.
+    </p>
+  </div>
+
+  <!-- =========================================================
+       PAGE 3: INVESTIMENTO
+  ========================================================= -->
+  <div class="break"></div>
+
+  <div class="page-header">
+    <div class="brand">
+      <img class="brand-mark" src="logo-eloscope.png" alt="">
+      <div class="brand-text">ELOSCOPE<span class="dot">·</span>PROPOSTA</div>
+    </div>
+    <div class="doc-label">&lt;investimento&gt;</div>
+  </div>
+
+  <h2 style="margin-top:0">Investimento — Plano Completo</h2>
+
+  <div class="invest-box">
+    <div class="total">R$ 16.000<small> &nbsp;· implementação única</small></div>
+    <p style="color:var(--muted); font-size:10pt; margin-bottom:0">
+      Cobre integralmente o escopo das três fases — setup, implantação, IA, Chatwoot, financeiro sob medida, CRM, módulo crônico, treinamento da equipe e suporte ao longo dos 3 meses de implantação.
+    </p>
+
+    <div class="breakdown">
+      <div>
+        <div class="lbl">Implementação (única)</div>
+        <div class="val">R$ 16.000</div>
+        <div class="sub">Diluível conforme as 4 opções de pagamento abaixo</div>
+      </div>
+      <div>
+        <div class="lbl">Mensalidade pós go-live</div>
+        <div class="val">R$ 2.197/mês</div>
+        <div class="sub">Opcional · inicia somente após go-live validado<br>Pode ser interrompida a qualquer momento</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Opções de pagamento da implementação</h3>
+
+  <div class="pay-opts">
+    <div class="pay-opt highlight">
+      <div class="lbl">À vista no Pix · 10% off</div>
+      <div class="val">R$ 14.400</div>
+      <div class="sub">Economia de R$ 1.600 sobre o valor cheio</div>
+    </div>
+    <div class="pay-opt">
+      <div class="lbl">50% sinal + 50% no go-live</div>
+      <div class="val">R$ 8.000 + R$ 8.000</div>
+      <div class="sub">Sinal na assinatura, segunda parcela ao final do mês 3</div>
+    </div>
+    <div class="pay-opt">
+      <div class="lbl">50% sinal + 50% em 12× no cartão</div>
+      <div class="val">R$ 8.000 + 12× R$ 666,67</div>
+      <div class="sub">Sinal na assinatura, 12 parcelas no cartão via Asaas</div>
+    </div>
+    <div class="pay-opt">
+      <div class="lbl">12× no cartão (Asaas)</div>
+      <div class="val">12× R$ 1.719,48</div>
+      <div class="sub">Sem juros via Asaas, cobrança recorrente</div>
+    </div>
+  </div>
+
+  <!-- MENSALIDADE -->
+  <h3>O que inclui a mensalidade de R$ 2.197 (opcional, pós go-live)</h3>
+  <ul>
+    <li><strong>10 horas mensais dedicadas</strong> à PeleVet — manutenção, ajustes de fluxo, evoluções, reuniões estratégicas. <em>Por se tratar de um projeto de escopo maior, depositamos 10h em vez das 5h padrão.</em></li>
+    <li>Ajustes de fluxos e <strong>atualizações de APIs</strong> (Google, WhatsApp, OpenAI etc.) à medida que as plataformas evoluem</li>
+    <li><strong>Segurança e backup monitorados</strong> ativamente</li>
+    <li><strong>95% de uptime mensurado em base mensal</strong>, excluídas janelas de manutenção programada (avisadas com 48h de antecedência) e indisponibilidades de terceiros (VPS, WhatsApp API, OpenAI). Descumprimento gera <strong>crédito proporcional</strong> na mensalidade seguinte, limitado ao valor mensal.</li>
+    <li><strong>Gestão centralizada dos custos de APIs</strong> com repasse 1:1 transparente (exclusivo para mensalidade ativa)</li>
+  </ul>
+
+  <p style="font-size:10pt">
+    <strong>Sem mensalidade:</strong> o sistema continua sendo de vocês e segue rodando. O suporte passa a ser sob demanda (R$ 100–200/h, sujeito à disponibilidade) e a correção de bugs ou adaptações a mudanças de plataforma (Meta, OpenAI, Google) ficam por conta da clínica. Em sistemas com IA, a estimativa razoável de incompatibilidades sem manutenção contínua é de 3 a 6 meses.
+  </p>
+
+  <!-- CUSTOS DE TERCEIROS -->
+  <h2>Custos diretos de operação (terceiros)</h2>
+
+  <p>
+    Esses são os custos pagos <strong>diretamente pela PeleVet</strong> aos fornecedores de infraestrutura e IA — separados da nossa implementação e da mensalidade. Listamos com transparência total para vocês entrarem com olhos abertos. Com mensalidade ativa, podemos centralizar tudo na nossa fatura (repasse 1:1, sem markup).
+  </p>
+
+  <h3>VPS e infraestrutura</h3>
+  <table class="terc-table">
+    <thead><tr><th>Item</th><th>Estimativa mensal</th></tr></thead>
+    <tbody>
+      <tr><td>VPS dedicado (DigitalOcean / Hetzner)</td><td>R$ 150 – R$ 300</td></tr>
+      <tr><td>WhatsApp Business API (variável por volume de mensagens)</td><td>R$ 50 – R$ 200</td></tr>
+    </tbody>
+  </table>
+
+  <h3>APIs de IA — estimativa cenário médio</h3>
+  <p style="font-size:9.5pt; color:var(--muted)">
+    Base de cálculo: 20 dias úteis × 8 consultas/dia = 160 consultas/mês. Valores em dólar convertidos a R$ 5,20.
+  </p>
+  <table class="terc-table">
+    <thead><tr><th>Feature</th><th>Volume/mês</th><th>Custo/mês</th></tr></thead>
+    <tbody>
+      <tr><td>Gravação de consultas (30 min médio)</td><td style="text-align:left">160</td><td>~R$ 150</td></tr>
+      <tr><td>Ditados de evolução (2× por consulta)</td><td style="text-align:left">320</td><td>~R$ 17</td></tr>
+      <tr><td>Receituários gerados</td><td style="text-align:left">80</td><td>~R$ 0,40</td></tr>
+      <tr><td>Análise de exames laboratoriais</td><td style="text-align:left">40</td><td>~R$ 1,70</td></tr>
+      <tr><td>Análise de exames de imagem</td><td style="text-align:left">10</td><td>~R$ 2,10</td></tr>
+      <tr><td>Processamento de dietas (PDF)</td><td style="text-align:left">20</td><td>~R$ 1,05</td></tr>
+      <tr><td>Embeddings (base de conhecimento)</td><td style="text-align:left">50 docs</td><td>~R$ 0,05</td></tr>
+      <tr class="total"><td colspan="2">Total estimado APIs de IA</td><td>~R$ 172/mês</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card accent-cyan" style="margin-top:14pt">
+    <h3 style="margin-top:0">Faixa total de custos de terceiros</h3>
+    <p style="font-size:10pt; margin-bottom:6pt">
+      Somando VPS + WhatsApp + IA, a faixa esperada é de <strong>R$ 350 a R$ 700 por mês</strong> em custos diretos pagos pela PeleVet. Volume real pode subir ou descer conforme número de consultas, uso de transcrição e mensagens no WhatsApp — por isso preferimos mostrar a estimativa em vez de um número fechado.
+    </p>
+    <p style="font-size:9pt; margin-bottom:0; color: var(--muted)">
+      Indisponibilidades decorrentes de inadimplência da PeleVet junto a fornecedores diretos (VPS, WhatsApp API, OpenAI) não computam para fins de SLA.
+    </p>
+  </div>
+
+  <!-- =========================================================
+       PAGE 4: GARANTIA + CRONO + OBSERVAÇÕES + CTA
+  ========================================================= -->
+  <div class="break"></div>
+
+  <div class="page-header">
+    <div class="brand">
+      <img class="brand-mark" src="logo-eloscope.png" alt="">
+      <div class="brand-text">ELOSCOPE<span class="dot">·</span>PROPOSTA</div>
+    </div>
+    <div class="doc-label">&lt;garantia / cronograma / observações&gt;</div>
+  </div>
+
+  <!-- GARANTIA -->
+  <h2 style="margin-top:0">Garantia de entrega</h2>
+  <div class="card accent-emerald">
+    <h3 style="color: #047857; margin-top:0">Devolução integral ao fim dos 3 meses de implantação</h3>
+    <p style="font-size:10pt; margin-bottom:6pt">
+      Se ao final dos 3 meses de implantação o escopo das três fases não estiver entregue e funcionando conforme combinado nesta proposta, devolvemos <strong>100% do valor pago</strong>. Sem burocracia.
+    </p>
+    <p style="font-size:9.5pt; margin-bottom:6pt; color: var(--muted)">
+      <strong>Como aferimos:</strong> ao final de cada fase, as sócias assinam um <strong>termo de aceite</strong> após demonstração funcional dos itens listados no deliverable correspondente. Itens aceitos por fase não retroagem ao pedido de devolução. Atrasos causados por dependências da PeleVet (acessos, conta bancária, validações, decisões pendentes) suspendem a contagem dos 90 dias pelo período correspondente.
+    </p>
+    <p style="font-size:9.5pt; margin-bottom:0; color: var(--muted)">
+      <strong>O que cobre:</strong> entrega do escopo técnico (módulos, automações e integrações descritos). <strong>Não cobre — nem prometemos —</strong> resultados de negócio como aumento de conversão, leads, ticket médio ou faturamento, que dependem de variáveis externas à nossa entrega (mercado, equipe, sazonalidade, mídia).
+    </p>
+  </div>
+
+  <!-- CRONOGRAMA -->
+  <h2>Cronograma operacional</h2>
+  <div class="kv">
+    <div>D+0 · assinatura</div>
+    <div>Contrato + 1ª cobrança via Asaas (sinal ou 1ª parcela)</div>
+    <div>D+1 → D+7</div>
+    <div>Acesso ao VPS + setup do ambiente + Cloudflare/DNS</div>
+    <div>D+7 → D+20</div>
+    <div>Implantação do núcleo + import da base SimplesVet + mapeamento de fluxos de processo</div>
+    <div>D+20 → D+30 · fim do Mês 1</div>
+    <div>Treinamento + go-live do Financeiro + IA Pele 24/7</div>
+    <div>D+30 → D+60 · Mês 2</div>
+    <div>CRM, disparos automatizados, dashboards, IA Pele v2</div>
+    <div>D+60 → D+90 · Mês 3</div>
+    <div>Plano crônico recorrente, anamnese, teleconsulta, dashboards v2</div>
+    <div>D+90 · go-live</div>
+    <div>Validação em conjunto + acionamento opcional da mensalidade</div>
+  </div>
+
+  <!-- OBSERVAÇÕES -->
+  <h2>Observações finais</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>Código é da PeleVet</h4>
+      <p style="font-size:10pt; margin-bottom:0">
+        As <strong>customizações específicas da PeleVet</strong> (regras de negócio, fluxos, layouts, integrações sob medida) ficam de titularidade exclusiva da clínica. Componentes de uso geral da Eloscope (frameworks, conectores, bibliotecas internas pré-existentes ou desenvolvidos para reuso) permanecem de titularidade da Eloscope, <strong>licenciados à PeleVet de forma perpétua, irrevogável e não-exclusiva</strong> — o sistema continua rodando no VPS de vocês mesmo após o encerramento do contrato.
+      </p>
+    </div>
+    <div class="card">
+      <h4>Mensalidade é opcional</h4>
+      <p style="font-size:10pt; margin-bottom:0">
+        Começa apenas após o go-live validado e pode ser interrompida a qualquer momento. Sem mensalidade, o suporte vira sob demanda (R$ 100–200/h) e adaptações a mudanças de API ficam por conta da clínica.
+      </p>
+    </div>
+    <div class="card">
+      <h4>Governança das decisões</h4>
+      <p style="font-size:10pt; margin-bottom:0">
+        Toda mudança de escopo ou decisão estratégica é <strong>documentada oficialmente</strong> após as reuniões quinzenais de acompanhamento. Isso protege o foco do projeto e evita combinados verbais que se perdem.
+      </p>
+    </div>
+    <div class="card">
+      <h4>Custos de terceiros transparentes</h4>
+      <p style="font-size:10pt; margin-bottom:0">
+        VPS, WhatsApp API e APIs de IA podem ser pagos direto por vocês <em>ou</em> centralizados na fatura da Eloscope (repasse 1:1, sem markup). A gestão centralizada é exclusiva para clientes com mensalidade ativa.
+      </p>
+    </div>
+    <div class="card accent-magenta" style="grid-column: span 2">
+      <h4>Tratamento de dados · LGPD</h4>
+      <p style="font-size:10pt; margin-bottom:0">
+        A PeleVet atua como <strong>controladora</strong> dos dados de tutores, pacientes e financeiros; a Eloscope atua como <strong>operadora</strong>, tratando dados exclusivamente conforme instruções da clínica e para as finalidades descritas neste escopo. Gravações de consulta, transcrições, prontuário e dados financeiros são processados em infraestrutura dedicada da PeleVet, com retenção e eliminação definidas em contrato. O <strong>DPA (acordo de processamento de dados)</strong>, junto com as cláusulas de confidencialidade, rescisão, SLA detalhado e portabilidade na saída, integra o contrato definitivo que acompanha esta proposta.
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="cta avoid-break">
+    <h3>Próximo passo</h3>
+    <p>
+      Esta proposta tem validade até <strong style="color:#fff">segunda-feira, 18 de maio de 2026</strong>. Não há pressa nem urgência fabricada — esse prazo só existe para que possamos travar agenda de início e a janela de fala dos primeiros profissionais alocados. Vencido esse prazo, valores e condições podem ser revistos.
+    </p>
+    <p>
+      Se algo aqui ficou nebuloso — escopo, números, cronograma, qualquer coisa — fico à disposição para <strong style="color:#fff">uma call rápida de 15 a 20 minutos</strong> ao longo da semana. É só me chamar no WhatsApp e marcamos.
+    </p>
+    <p>
+      Se já estiver claro, posso enviar o contrato e a primeira cobrança via Asaas no mesmo dia em que vocês confirmarem.
+    </p>
+    <p style="font-size:9.5pt; color: rgba(255,255,255,0.55); margin-top: 12pt; padding-top: 12pt; border-top: 1px dashed rgba(255,255,255,0.15);">
+      Detalhe operacional: a sede da Eloscope é em Piracicaba/SP (CNPJ), mas eu atendo <strong style="color:#fff">presencialmente em São José do Rio Preto</strong> — encontros, marcos do projeto e suporte em mãos seguem locais.
+    </p>
+    <div class="signature">
+      <strong>Lucas Negreiro</strong> · Eloscope<br>
+      <div class="mono">&lt;system.connect&gt; intelligence.amplify()</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <strong>Nota metodológica.</strong> Os indicadores quantitativos citados nesta proposta (conversão, ticket médio, LTV crônico, faturamento estimado e CPL) foram coletados no discovery de 9 de maio e validados verbalmente pelas sócias durante a reunião presencial de 11 de maio. São modelagens para ilustrar contexto, não promessas contratuais — nenhum resultado de negócio é garantido por esta proposta. A partir do mês 1 de implantação, esses números passam a ser medidos diretamente no sistema, substituindo a estimativa por dado real. Os custos de terceiros (VPS, WhatsApp API, APIs de IA) são estimativas baseadas no cenário médio de 160 consultas/mês — variações de volume real impactam diretamente o total mensal.<br><br>
+    <span class="mono">ELOSCOPE LTDA · CNPJ 41.684.837/0001-84<br>
+    Av. Independência, 546 · Sala 93, Andar 9 · Cidade Alta · Piracicaba/SP · CEP 13.419-160<br>
+    contato@eloscope.com · (17) 92000-8791</span>
+  </div>
+
+</div>
+
+</body>
+</html>

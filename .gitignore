@@ -43,3 +43,6 @@ Thumbs.db
 
 # Python venv (local, never commit)
 .venv/
+
+# gbrain frontmatter generate backups (mantidos local, fora do git)
+*.bak
