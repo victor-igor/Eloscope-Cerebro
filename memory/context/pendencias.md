@@ -13,11 +13,13 @@ type: note
 
 ## 🔴 Críticas (bloqueiam progresso)
 
-- [15/05/2026] 🔥 **Morgana — conta WhatsApp banida (10/05)** · bloqueio ocorreu por uso de API não-oficial em mod-campaigns · resolver: recuperar número OU migrar para API oficial completa · Lucas · urgente antes de retomar campanhas
-- [15/05/2026] **PeleVet — resultado reunião 11/05 desconhecido** · proposta foi apresentada mas sem registro do que aconteceu · Victor validar ainda hoje
-- [15/05/2026] **Pipeline Comercial / CRM (Lucas)** — planejado para semana 20, não executado · 12 subtarefas pendentes (funil, qualificação, rotina CRM, bastão operação) · discutir priorização na weekly 15/05
-- [15/05/2026] **Rotina Comercial Diária (Lucas)** — planejada para semana 20, sem data definida, não executada · 13 subtarefas pendentes · discutir na weekly 15/05
-- [15/05/2026] **Jean — status e próximos passos** · estava no planejamento da semana 20 sem registro de andamento · validar na weekly 15/05
+- [15/05/2026] 🔥 **Morgana — conta WhatsApp banida (10/05)** · bloqueio ocorreu por uso de API não-oficial em mod-campaigns · resolver: migrar para API oficial completa · Lucas · 15–21/05
+- [15/05/2026] 🔴 **Jean Imobiliária — todos os números WhatsApp bloqueados** · projeto travado sem canais ativos · próximo passo: recuperar números ou migrar para API oficial · Lucas · 19–20/05
+- [15/05/2026] ⏸️ **Voltrucks — projeto pausado** · 2ª parcela não paga · manter relacionamento e aguardar regularização · Lucas · 19–23/05
+- [15/05/2026] 🔴 **Contabilidade — não responde para emissão de notas fiscais** · Lucas resolve · 15–16/05
+- [15/05/2026] **Pipeline Comercial / CRM (Lucas)** — em andamento, ajustando no Elosystem · semana 21: terminar CRM + funil (19–21/05), rotina comercial (21–23/05)
+- ✅ [15/05/2026] **PeleVet — resultado reunião 11/05** · follow-up realizado por Lucas após a reunião · próximo passo: validar resultado + definir caminho (Lucas 15–16/05)
+- ✅ [15/05/2026] **Jean — status e próximos passos** · discutido na weekly: reativação feita por Lucas, sem resposta até 15/05
 
 - ✅ [09/05/2026] **PeleVet — proposta comercial pronta para reunião 11/05** · sumário em `proposta-entregaveis-pelevet.md` (Cenário Growth R$ 21K/6m, payback 3º mês) + processo AS-IS Mermaid (@icarus) + pricing Asaas validado (@tesouro). Reunião 13h presencial com Vítor
 - ✅ [09/05/2026] **Morgana — API oficial Meta destravada e configurada** · André (Autem) gerou Usuário de Sistema + token, cartão em dólar cadastrado, número oficial `55 17 98154-2837` configurado no sistema (não mais teste). Próximo: submeter templates + atualizar `mod-campaigns` (Lucas)

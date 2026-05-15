@@ -7,7 +7,11 @@
 
 | Prazo | Entrega | Status | Nota |
 |-------|---------|--------|------|
-| 11/05/2026 | PeleVet — reunião técnica 13h presencial com Vítor (proposta) | Pendente | Lucas — gancho: "operam em <16% do potencial" |
+| 16/06/2026 | Maqlam — campanha SDR finalizada (prazo combinado com Denis) | Em andamento | travada: API não-oficial + aguardando marketing ajustar site para API oficial |
+| 22/05/2026 | Weekly Semana 21 — 8h30 | Agendado | Facilitador: Hugo |
+| 16/05/2026 | Morgana — aquecimento Dia 9 | Pendente | Lucas |
+| 17/05/2026 | Morgana — aquecimento Dia 10 (último) | Pendente | Lucas |
+| ✅ 11/05/2026 | PeleVet — reunião técnica 13h presencial com Vítor (proposta) | ✅ Realizada | follow-up feito por Lucas em 15/05 |
 | 22/04/2026 | Confirmar demo Franciele — ReabilitaCão (era WTACON) | ✅ No ClickUp | Victor — 3 features: recorrente, dieta, gravação |
 | 22/04/2026 | Cobrar Jean — Imobiliária Rodrigues | ✅ No ClickUp | Lucas — lista Cobranças |
 | 22/04/2026 | Cobrar R$6.000 — Samuel/Voltrucks (era FURA) | ✅ No ClickUp | Lucas — lista Cobranças |
