@@ -8,6 +8,12 @@
 
 ## 🔴 Críticas (bloqueiam progresso)
 
+- [15/05/2026] 🔥 **Morgana — conta WhatsApp banida (10/05)** · bloqueio ocorreu por uso de API não-oficial em mod-campaigns · resolver: recuperar número OU migrar para API oficial completa · Lucas · urgente antes de retomar campanhas
+- [15/05/2026] **PeleVet — resultado reunião 11/05 desconhecido** · proposta foi apresentada mas sem registro do que aconteceu · Victor validar ainda hoje
+- [15/05/2026] **Pipeline Comercial / CRM (Lucas)** — planejado para semana 20, não executado · 12 subtarefas pendentes (funil, qualificação, rotina CRM, bastão operação) · discutir priorização na weekly 15/05
+- [15/05/2026] **Rotina Comercial Diária (Lucas)** — planejada para semana 20, sem data definida, não executada · 13 subtarefas pendentes · discutir na weekly 15/05
+- [15/05/2026] **Jean — status e próximos passos** · estava no planejamento da semana 20 sem registro de andamento · validar na weekly 15/05
+
 - ✅ [09/05/2026] **PeleVet — proposta comercial pronta para reunião 11/05** · sumário em `proposta-entregaveis-pelevet.md` (Cenário Growth R$ 21K/6m, payback 3º mês) + processo AS-IS Mermaid (@icarus) + pricing Asaas validado (@tesouro). Reunião 13h presencial com Vítor
 - ✅ [09/05/2026] **Morgana — API oficial Meta destravada e configurada** · André (Autem) gerou Usuário de Sistema + token, cartão em dólar cadastrado, número oficial `55 17 98154-2837` configurado no sistema (não mais teste). Próximo: submeter templates + atualizar `mod-campaigns` (Lucas)
 - [09/05/2026] **Morgana — morganasales_core atualizar para API oficial** · módulo de campanhas (`eloscope-ai/mod-campaigns`) ainda em API não-oficial · Lucas implementa para abrir Grupo 1 · tarefa ClickUp `86e19hqg5`
