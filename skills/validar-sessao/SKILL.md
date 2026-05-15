@@ -91,28 +91,46 @@ Agrupar por dimensão:
 
 ## Passo 3 — Buscar no ClickUp
 
-Para cada ação extraída, buscar no ClickUp usando:
+### 3a — OBRIGATÓRIO: listar TODAS as tarefas das listas dos clientes mencionados
+
+**Sempre fazer ANTES de buscar por nome.** O `clickup_search` é fuzzy, retorna no máximo ~18 resultados e pode esconder tasks concluídas há tempo. O `filter_tasks` mostra tudo.
+
+```
+mcp__claude_ai_ClickUp__clickup_filter_tasks
+  list_id: <id_da_lista_do_cliente>
+  subtasks: true
+  include_closed: true
+```
+
+Para cada cliente mencionado na sessão, listar a lista correspondente. Construir um mapa mental: *"essas são TODAS as tasks que existem para esse cliente"*.
+
+**Listas conhecidas (Eloscope workspace):**
+| Cliente | List ID | Folder ID |
+|---|---|---|
+| Elite Maqlam — Denis | `901713180067` | `90178371123` |
+| Campos Joia — Matheus | `901713180081` | `90178371131` |
+| ReabilitaCão — Franciele | `901713180071` | `90178371124` |
+| Gestão Interna / Geral | `901713180052` | — |
+| Pipeline | `901713180050` | — |
+| Redes Sociais | `901713531658` | — |
+| Financeiro | `901713180286` | — |
+| Bravo Agency | `901713503273` | — |
+| Morgana | `901713294075` | — |
+
+Se cliente não está no mapeamento → perguntar ao usuário antes de prosseguir.
+
+### 3b — Buscar por nome (complementar, opcional)
+
+Depois de ter o universo completo, pode usar `clickup_search` como complemento. Mas é **complemento, não substituto** — search nunca é a fonte primária.
 
 ```
 mcp__claude_ai_ClickUp__clickup_search
   query: "<nome da ação ou cliente>"
-  assignee: <ClickUp user ID>
-  status: any
 ```
 
 Buscar também:
 - **Tasks pai** (epic/macro) que podem ter subtasks relacionadas
 - **Tasks vencidas** do mesmo cliente — podem ser o que a ação concluiu
-
-**Listas conhecidas (Eloscope workspace):**
-| Cliente | List ID | Folder ID |
-|---|---|---|
-| Maqlam | (consultar workspace) | — |
-| Campos Joia (Tarefas) | `901713180081` | `90178371131` |
-| ReabilitaCão (Tarefas) | `901713180071` | `90178371124` |
-| Bravo | (consultar workspace) | — |
-
-Se não encontrar lista correspondente → marcar como "lista a definir" no Passo 4.
 
 ---
 
@@ -124,6 +142,18 @@ Se não encontrar lista correspondente → marcar como "lista a definir" no Pass
 | 🟡 **Parcial** | Task existe mas só parte foi feita | Atualizar status (in progress) + comentário com avanço |
 | 🆕 **Nova** | Ação foi feita sem task — gap no ClickUp | Criar task (status: done se já concluída, ou aberta com prazo) |
 | ⏭️ **Operacional** | Commit menor, fix pontual, exploração | Pular — não cria task |
+
+**Antes de classificar como 🆕 Nova, perguntar 3 coisas:**
+
+1. **A ação é um refinamento de uma task já existente** (mesmo concluída)? → ✅ adicionar comentário na task original, NÃO criar nova.
+2. **A ação é output derivado de uma task pai** (PDF, HTML, regeneração, análise interna de algo já entregue)? → ✅ adicionar comentário na pai.
+3. **A ação tem PAI semântico** (mesmo cliente + mesmo escopo)? → criar como **subtask** da pai, não como task standalone.
+
+**Só classificar como 🆕 Nova se NENHUMA das 3 condições for verdadeira.**
+
+**Exemplo prático (lição aprendida 15/05):**
+- Regerar PDF do playbook Maqlam → output derivado de "Playbook comercial Maqlam criado" (concluído) → **comentário**, não task nova.
+- Refinar prompt Campos com FAQ gate → refinamento de "Prompt agente Campos Joia criado e testado" (concluído) → **comentário**, não task nova.
 
 **Casos especiais:**
 
@@ -255,7 +285,10 @@ Se o usuário rodar `/salve` em seguida, a seção da sessão deve mencionar os 
 ## Regras
 
 - **Nunca executar sem aprovação** — sempre mostrar lista no Passo 5 e esperar `s` antes de tocar no ClickUp
-- **Nunca criar duplicata** — se houver subtasks existentes que cobrem a ação, atualizá-las em vez de criar nova macro (regra confirmada na sessão 15/05)
+- **Sempre `filter_tasks` antes de `search`** — filter mostra TUDO da lista, search é fuzzy e pode esconder tasks concluídas relevantes. Search é complementar, não substituto (regra confirmada 15/05).
+- **Refinamento ≠ task nova** — se ação aprimora algo já entregue, é comentário na task original, não task separada (regra confirmada 15/05).
+- **Output derivado ≠ task nova** — PDF/HTML regenerado, análise interna de algo já feito, são comentários na task pai (regra confirmada 15/05).
+- **Nunca criar duplicata** — se houver subtasks existentes que cobrem a ação, atualizá-las em vez de criar nova macro (regra confirmada 15/05)
 - **Sempre mencionar commit/arquivo no comentário** — facilita auditoria futura
 - **Membros com múltiplas contas ClickUp:** consultar `people.md` — usar a marcada como `primary: true`. Nunca chutar.
 - **Lista desconhecida:** se cliente não está no mapeamento, perguntar — nunca criar task em lista aleatória
