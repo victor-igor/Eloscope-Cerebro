@@ -9,7 +9,7 @@
 
 | Nome | Função | Contato | Notas |
 |------|--------|---------|-------|
-| Victor Igor | Produto / Elo OS / IA | victor.igr10@gmail.com | Criação e gestão do Elo OS, reuniões com clientes, estratégia de produto e IA · ClickUp ID: 156603223 (workspace 90171169593) · WhatsApp confirmado via uazapi |
+| Victor Igor | Produto / Elo OS / IA | victor.igr10@gmail.com | Criação e gestão do Elo OS, reuniões com clientes, estratégia de produto e IA · ClickUp ID: 156603223 (workspace 90171169593) · WhatsApp confirmado via uazapi · track_time: true |
 | Lucas | Comercial / Financeiro | lucas.ns63@gmail.com | Fechamento de vendas, prospecção, relacionamento com clientes, financeiro · ClickUp ID: 82167120 (workspace 90171169593) |
 | Hugo | Operacional / Entrega Técnica | hugo.deoliveira.legacy@gmail.com | Automações n8n, implementação técnica, entrega de projetos de clientes · ClickUp ID: 170669569 |
 
