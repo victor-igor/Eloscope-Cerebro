@@ -18,6 +18,8 @@ type: note
 - [15/05/2026] ⏸️ **Voltrucks — projeto pausado** · 2ª parcela não paga · manter relacionamento e aguardar regularização · Lucas · 19–23/05
 - [15/05/2026] 🔴 **Contabilidade — não responde para emissão de notas fiscais** · Lucas resolve · 15–16/05
 - [15/05/2026] **Pipeline Comercial / CRM (Lucas)** — em andamento, ajustando no Elosystem · semana 21: terminar CRM + funil (19–21/05), rotina comercial (21–23/05)
+- [15/05/2026] 🔴 **Victor tem 2 usuários ClickUp distintos** — `Eloscope` (id 87351862, eloscope.coo@gmail.com) + `Victor Igor` (id 156603223, victor.igr10@gmail.com). Todas as tasks são atribuídas ao Victor Igor, mas a view "atribuídas a mim" do email principal não mostra. Decidir: migrar tudo p/ 1 user, atribuir aos 2, ou Victor logar com victor.igr10@gmail.com · Victor
+- [15/05/2026] ⚠️ **Maya/WhatsApp (ReabilitaCão) — 8 subtasks atrasadas desde 13/05** ainda não bumpadas para semana 21 · pai `86e1b9ge8`, inclui alerta agendamentos sem vínculo, lembrete consultas, número Cris, roteamento Dieta/Cannabis/Biorressonância/Físio, transferência financeiro/agendamento · Victor
 - ✅ [15/05/2026] **PeleVet — resultado reunião 11/05** · follow-up realizado por Lucas após a reunião · próximo passo: validar resultado + definir caminho (Lucas 15–16/05)
 - ✅ [15/05/2026] **Jean — status e próximos passos** · discutido na weekly: reativação feita por Lucas, sem resposta até 15/05
 
