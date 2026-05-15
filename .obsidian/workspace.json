@@ -184,8 +184,11 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "9002d1d17c3bfc89",
+  "active": "fa715ac874c80d94",
   "lastOpenFiles": [
+    "areas/vendas/rotinas/ROTINA-DIARIA.md",
+    "areas/vendas/rotinas",
+    "areas/vendas/funil/etapas/01-prospect-recebimento.md",
     "areas/vendas/oportunidades/pele_vet/proposta-final/proposta-pelevet.pdf",
     "areas/vendas/oportunidades/pele_vet/proposta-final/proposta-pelevet.html",
     "areas/vendas/oportunidades/pele_vet/proposta-final/logotipo-eloscope.png",
@@ -199,7 +202,6 @@
     "squads/traffic-masters/agents/tom-breeze.md.bak",
     "squads/traffic-masters/agents/scale-optimizer.md.bak",
     "squads/traffic-masters/agents/ralph-burns.md.bak",
-    "squads/traffic-masters/agents/pixel-specialist.md.bak",
     "areas/atendimento/whatsapp/_README.md",
     "memory/sessions/2026-05-15.md",
     "areas/reunioes/semanais/2026-05-15-semanal.md",
@@ -221,8 +223,6 @@
     "elobrain/test/fixtures/openclaw-reference-minimal/skills/context-now/SKILL.md",
     "elobrain/test/fixtures/openclaw-reference-minimal/skills/brain-ops/SKILL.md",
     "elobrain/test/fixtures/claw-test-scenarios/upgrade-from-v0.18/seed/README.md",
-    "elobrain/test/fixtures/claw-test-scenarios/upgrade-from-v0.18/BRIEF.md",
-    "elobrain/test/fixtures/claw-test-scenarios/fresh-install/BRIEF.md",
     "elobrain/test/fixtures/images/tiny.avif",
     "elobrain/docs/images/voice-client.png",
     "areas/design/assets/tipografia/image.png",

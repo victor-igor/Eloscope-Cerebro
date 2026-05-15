@@ -46,3 +46,6 @@ Thumbs.db
 
 # gbrain frontmatter generate backups (mantidos local, fora do git)
 *.bak
+
+# Worktrees git temporários do Claude Code
+.claude/worktrees/
