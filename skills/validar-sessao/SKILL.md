@@ -49,10 +49,19 @@ Carregar o `clickup_id` do membro em `memory/context/people.md`:
 
 1. Buscar entrada onde `slug == $ELOBRAIN_USER`
 2. Ler campo `clickup_id` (ou variantes: `clickup_user_id`, `clickup`)
-3. Se houver **múltiplos IDs** registrados para o mesmo membro (caso de conta duplicada): usar o marcado como `primary: true`, ou perguntar qual usar
-4. Se o campo não existir: pedir ao usuário e oferecer salvar em `people.md` para sessões futuras
+3. **Em qualquer caso de dúvida, PERGUNTAR ao usuário antes de seguir.** Cenários:
+   - `$ELOBRAIN_USER` vazio ou ausente → perguntar quem está operando, listar os membros conhecidos do `people.md`
+   - Membro não encontrado em `people.md` → perguntar nome e oferecer cadastrar
+   - Múltiplos IDs registrados (conta duplicada) → mostrar as opções com contexto (qual conta tem mais tasks, qual está marcada como primary) e pedir confirmação
+   - Match fuzzy ambíguo (ex: dois membros com slugs parecidos) → mostrar candidatos e pedir confirmação
+   - ID encontrado mas não usado há muito tempo → confirmar se ainda está correto
+4. Confirmar com o usuário em uma mensagem clara:
+   ```
+   Detectei que você é [Nome] (ClickUp #[id]). Confirma? [s/n]
+   ```
+5. Salvar a escolha em `people.md` se foi novo cadastro ou se houve resolução de ambiguidade
 
-**Regra:** todo membro do time tem que estar em `people.md` com `clickup_id`. Se faltar, a skill bloqueia e pede para preencher antes — não chuta usuário.
+**Regra:** nunca chutar. Na menor dúvida, pergunte. Vale mais 1 pergunta extra do que executar ações no ClickUp em conta errada.
 
 ---
 
