@@ -177,6 +177,24 @@ type: note
 
 ---
 
+## 🟡 Pipeline comercial — cruzamento Drive × WhatsApp × Pipeline (criadas 16/05)
+
+> Origem: `_status-atual.md` v0.2 (`areas/vendas/oportunidades/_status-atual.md`) — audit completo 16/05.
+
+- [16/05/2026] 🔥 **Alex Automação — silêncio 499d + Drive mais recente** · proposta abandonada · 🚨 sinal cruzado "Drive > WhatsApp" — Lucas decidir reativar (parceria white-label) ou arquivar
+- [16/05/2026] 🔥 **Morgana Sales — 🔴 silêncio 18d** · Q2 alvo-6OS travado · última nossa 28/04 sem retorno · Lucas precisa retomar comunicação com Dra. Morgana / Matheus Campos
+- [16/05/2026] **ReabilitaCão — 🟡 11d sem retorno** · cliente ativo merece check-in semanal · última nossa 05/05 16:18 · Lucas
+- [16/05/2026] **Adv. Leonardo Lopes — ⚪ respondeu 31/10 (197d aguardando ação nossa)** · ⚠️ Drive mais recente · proposta esquecida — Lucas decidir reativar
+- [16/05/2026] **Eduarda Satisfact — ⚪ respondeu 06/11 (191d aguardando)** · ⚠️ Drive mais recente · mesma situação acima
+- [16/05/2026] **Leandro Telecom — ⚪ respondeu 11/02 (94d aguardando)** · ⚠️ Drive mais recente · qualificar time comercial (Hugo) antes de retomar
+- [16/05/2026] **Eduardo Nabuco — 🔴 silêncio 192d** · pipeline ativo, sem follow-up · Lucas
+- [16/05/2026] **Marcos Consultrain — ⚪ respondeu 30/01 (106d)** · agendar discovery · Lucas
+- [16/05/2026] **Atualizar `pipeline.md` v0.3** · 6 leads "desconhecidos" agora identificados via match WhatsApp+Drive: `joao` (Joao), `simone` (Simone), `perossi` (Escritorio Perossi), `elielton` (Elielton Souza), `kaua` (Kaua), `agradare` (Agradare). Renomear + qualificar setor · Lucas
+- [16/05/2026] **6 folders Drive sem match no pipeline — qualificar e adicionar** · Voltrucks (cliente ativo, já mapeado em outro lugar), HandsCustom (já no pipeline, alias falhou), Juliano Fotografia, Magazine Borelo - Heitor, Guilherme Marchione, Paula Análise de Desempenho · Lucas
+- [16/05/2026] ⚪ **Investigar API uazapi `/message/find` filtragem por chatid** · endpoint retorna 200 OK mas ignora `where:{chatid:X}`, `wa_chatid`, `chat_id`, `jid`, `sender`. Sem isso, perdemos preview de texto das últimas mensagens. Procurar doc oficial ou contactar suporte uazapi.dev · Lucas
+
+---
+
 ## ✅ Resolvidas
 
 - [22/04/2026] **ClickUp setup completo** — 32 tarefas inseridas via Python script (ClickUp API direta). Nomes corrigidos: FURA→Samuel/Voltrucks, WTACON→Franciele/ReabilitaCão, Maquilão→Denis/Elite Maqlam. "Cobranças" separado de projetos (Gestão Interna > Cobranças). Projetos Internos recriado do zero (pasta deletada anteriormente). Script: `scripts/clickup_setup.py`

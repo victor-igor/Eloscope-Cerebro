@@ -11,10 +11,14 @@
             "id": "9002d1d17c3bfc89",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Visualização em gráfico"
+              "type": "markdown",
+              "state": {
+                "file": "node_modules/aiox-core/docs/zh/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -70,13 +74,11 @@
               "title": "Marcadores"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "f428b08ad691ecb8",
@@ -181,8 +183,9 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "9002d1d17c3bfc89",
+  "active": "06c537f47b3de311",
   "lastOpenFiles": [
+    "memory/sessions/2026-05-16.md",
     "areas/vendas/clientes/bravo-agencia/meeting-notes/_index.md",
     "areas/vendas/funil/etapas/07-fechamento-handover.md",
     "areas/vendas/funil/etapas/06-follow-up-negociacao.md",
@@ -219,7 +222,6 @@
     "areas/vendas/clientes/campos-joias/agente/bdr/playbook-atendimento.md",
     "areas/vendas/clientes/campos-joias/agente/bdr/rag-playbook-grau-10k.md",
     "areas/vendas/clientes/campos-joias/agente/bdr/rag-base-grau-10k.md",
-    "areas/vendas/clientes/campos-joias/agente/bdr/promptv1.md",
     "areas/vendas/clientes/campos-joias/campanha-7-04/EXPLICATIVO GRAU 10K.png",
     "areas/vendas/clientes/campos-joias/campanha-7-04/CATALOGO SÓ FOTOS GRAU CAMPOS 10K.png",
     "areas/vendas/oportunidades/pele_vet/proposta-final/logotipo-eloscope.png",
