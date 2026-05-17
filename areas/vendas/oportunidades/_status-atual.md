@@ -17,6 +17,30 @@ relacionados:
 > **Fonte WhatsApp:** instância `lucas` (5517920008791, pessoal) — onde acontece a conversa comercial real.
 > **Limitação técnica:** uazapi `/message/find` não filtra por `chatid` → classificação derivada de metadados do chat (último timestamp + sender + unread). Preview de texto não disponível.
 
+---
+
+## 🎙️ Notas direto do Lucas — overlay sobre o audit automático (16/05)
+
+> Essas notas são a leitura humana ao vivo do Lucas em cima do audit acima. Quando rerodar o script, os dados auto-gerados atualizam; estas notas ficam aqui.
+
+### Clientes/leads com status corrigido manualmente
+
+| Lead | Auto-classificou como | Status real (Lucas) | Ação |
+|---|---|---|---|
+| **ReabilitaCão (Fran)** | 🟡 11d sem retorno | ✅ **Cliente ativo funcionando bem** · retorno positivo · existe grupo WhatsApp ativo (não foi pego pelo audit porque o filtro ignora grupos). Continuar com check-ins normais; sem urgência | Manter cadência atual |
+| **Enertelles (Telles)** | 🟡 3d sem retorno | ⚠️ **Duro na venda direta** · pivot: focar geração de demanda **na venda do site (Bloco B)** primeiro · Bloco A (processo+IA) fica em segundo plano até site fechar | Próximo touchpoint: empurrar Bloco B (site standalone), gerar demanda real, deixar Bloco A pra depois |
+| **PeleVet (Vítor + Sílvias)** | (não está no pipeline.md ainda) | 🔴 **Sem retorno após reunião 11/05** · vai precisar **se disponibilizar OU ligar diretamente** (não esperar resposta passiva) | Ligar pra Vítor ou pras Sílvias pra tentar fechar algo concreto |
+
+### Indicações que não prosseguiram (fora do pipeline canônico)
+
+> Lucas chamou diretamente (via indicação/contato pessoal), mas o lead não avançou. Não estavam no `pipeline.md` (base 02/04).
+
+| Nome | Origem | Por que parou | Decisão |
+|---|---|---|---|
+| _(a preencher na sessão)_ | _(indicação de quem?)_ | _(silêncio / não-fit / preço / timing?)_ | _(arquivar / reativar daqui X meses / virar caso de aprendizado?)_ |
+
+---
+
 ## 📊 Resumo executivo
 
 - **Total leads pipeline:** 46

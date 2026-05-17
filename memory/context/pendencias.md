@@ -185,7 +185,9 @@ type: note
 
 - [16/05/2026] 🔥 **Alex Automação — silêncio 499d + Drive mais recente** · proposta abandonada · 🚨 sinal cruzado "Drive > WhatsApp" — Lucas decidir reativar (parceria white-label) ou arquivar
 - [16/05/2026] 🔥 **Morgana Sales — 🔴 silêncio 18d** · Q2 alvo-6OS travado · última nossa 28/04 sem retorno · Lucas precisa retomar comunicação com Dra. Morgana / Matheus Campos
-- [16/05/2026] **ReabilitaCão — 🟡 11d sem retorno** · cliente ativo merece check-in semanal · última nossa 05/05 16:18 · Lucas
+- ✅ [16/05/2026] **ReabilitaCão — falso alarme do audit** · audit marcou 🟡 11d sem retorno, mas confirmação Lucas: cliente ativo funcionando bem, retorno positivo, conversa flui pelo grupo WhatsApp (audit filtrou grupos fora). Sem urgência.
+- [16/05/2026] **Enertelles — pivot: focar venda do Site (Bloco B)** · Telles é duro na venda direta · estratégia nova: gerar demanda real pelo Bloco B (site standalone) primeiro · Bloco A (processo+IA) fica em segundo plano até Site fechar · Lucas
+- [16/05/2026] 🔥 **PeleVet — ligar pra Vítor / Sílvias** · sem retorno após reunião 11/05 · resposta passiva não vem · ação proativa: ligar direto OU se disponibilizar pra reunião extra · Lucas
 - [16/05/2026] **Adv. Leonardo Lopes — ⚪ respondeu 31/10 (197d aguardando ação nossa)** · ⚠️ Drive mais recente · proposta esquecida — Lucas decidir reativar
 - [16/05/2026] **Eduarda Satisfact — ⚪ respondeu 06/11 (191d aguardando)** · ⚠️ Drive mais recente · mesma situação acima
 - [16/05/2026] **Leandro Telecom — ⚪ respondeu 11/02 (94d aguardando)** · ⚠️ Drive mais recente · qualificar time comercial (Hugo) antes de retomar
