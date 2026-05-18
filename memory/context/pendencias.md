@@ -14,7 +14,7 @@ type: note
 ## 🔴 Críticas (bloqueiam progresso)
 
 - [15/05/2026] 🔥 **Morgana — conta WhatsApp banida (10/05)** · bloqueio ocorreu por uso de API não-oficial em mod-campaigns · resolver: recuperar número OU migrar para API oficial completa · Lucas · urgente antes de retomar campanhas
-- [15/05/2026] **PeleVet — resultado reunião 11/05 desconhecido** · proposta foi apresentada mas sem registro do que aconteceu · Victor validar ainda hoje
+- [18/05/2026] **PeleVet — ligação na semana de 02/06** · Thaísa retornou 18/05 pedindo mais tempo (Sílvias viajam 18-22/05 e 25-29/05); proposta Growth R$ 21K/6m sem objeção, só falta as sócias sentarem juntas · ligar terça 02/06 · ver `areas/vendas/oportunidades/pele_vet/follow-up-thaisa-2026-05-18.md`
 - ✅ [15/05/2026] **Pipeline Comercial / CRM (Lucas)** — RESOLVIDO 15/05 · `MAPA-FUNIL.md` bumped pra v0.2 com T4-T8 preenchidos (fluxograma Mermaid 3-raias · tabela operacional com SLA · régua D+1/D+4/D+8 · painel 4 métricas-cockpit · handover Lucas→Victor com 4 gates) · 6 etapas criadas (01, 02, 03, 05, 06, 07) replicando padrão `04-reuniao.md` · 12 subtarefas cobertas (ver MAPA-FUNIL v0.2)
 - ✅ [15/05/2026] **Rotina Comercial Diária (Lucas)** — RESOLVIDO 15/05 · `areas/vendas/rotinas/ROTINA-DIARIA.md` v0.2 criado com 13 seções cobrindo 13 subtarefas (blocos horário · checklist · SLA por canal · cadência microcopy · metas Q2 · análise sexta · recorrências · priorização P1-P5 · sprint recuperação · SLA pós-reunião). Piloto semana 21 (18-22/05), revisão na weekly 22/05
 - [15/05/2026] **Jean — status e próximos passos** · estava no planejamento da semana 20 sem registro de andamento · validar na weekly 15/05
@@ -40,6 +40,8 @@ type: note
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
+- [18/05/2026] **uazapi — MCP precisa apontar pra linha Lucas principal (5517920008791)** · hoje MCP `claude-uazapi-elo` está conectado só na LunaJ6 v2 · Lucas tem instância pessoal conectada em `https://eloscope.uazapi.com` · trocar/expandir tokens na config local do MCP (tokens NÃO ficam no git — ver `seguranca/uazapi-instancias.md` pra metadados) · ideal: MCP suportar AS DUAS pra escolher por contexto (BDR Luna / comercial Lucas) · @devops
+- [18/05/2026] **uazapi — MCP sem tools de leitura de conversa** · tools atuais só enviam (não leem histórico) · precisa expor `get_messages` / `get_chat_history` no plugin `claude-uazapi-elo` pra Claude consumir conversas · @devops
 - [17/05/2026] **Elo OS / Content Studio — resolver UX confusa "Imagem de Fundo vs Grade"** · 2 painéis editam coisas diferentes da mesma imagem (`slide.image_url` vs `slide.grid_images[0]`), usuário não sabe qual usar quando ambos coexistem · 3 opções: esconder Imagem de Fundo quando grade ativa / aviso amarelo / unificar painéis em 1 · pergunta foi feita ao Victor, ele interrompeu — pendente decisão · Victor
 - [17/05/2026] **Elo OS / Content Studio — commit das mudanças sessão 17/05** · sessão massiva no `elosystem-v2` branch `feature/12.24-import-fatura-conta-cartao`: ~15 arquivos modificados + 2 migrations + 2 componentes novos no ui-kit (ColorPickerPopover + PromptDialog) ainda **não commitada**. Aguardando confirmação do Victor pra commit atômico após teste visual · Victor
 - [09/05/2026] **PeleVet — validar antes da reunião 11/05:** CPL real (R$ 4 vs R$ 2,30), faturamento mensal real, recorrência média de paciente crônico (LTV), benchmark Zilda Mayer, apetite por telemedicina, faturamento isolado do banho, sobrenome da segunda Sílvia · Lucas

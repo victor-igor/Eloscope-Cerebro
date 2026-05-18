@@ -1,9 +1,17 @@
-# Environment & Secrets (AIOX)
+# Environment & Secrets (AIOX) — ver seguranca/credenciais-locais.md
 .env
 .env.local
 .env.*.local
 *.key
 *.pem
+*.token
+*.secret
+credenciais-*.local.md
+secrets/
+.secrets/
+
+# MCP — config local com paths absolutos e refs a env vars sensiveis
+.mcp.json
 
 # Dependencies (AIOX)
 node_modules/

@@ -1,6 +1,6 @@
 # PeleVet Cuidados Integrados
 
-> Status: 🔥 Lead em qualificação — proposta marcada para 11/05
+> Status: 🟡 Proposta entregue 11/05 — aguardando análise interna das sócias — próximo touch janela 02/06 (ligação)
 
 ## O que é
 
@@ -36,6 +36,9 @@ Clínica veterinária especializada (dermato + endocrino + banho dermatoterapêu
 | 09/05/2026 | Processo AS-IS mapeado (Mermaid via @icarus) + pricing Asaas calculado (via @tesouro) + sumário de entregáveis montado |
 | 11/05/2026 | **Reunião técnica presencial 13h com Vítor** |
 | 11/05/2026 | Deck HTML v2 finalizado — 23 slides, avatar Pele inserido, sinal R$487, pronto |
+| 17/05/2026 | Decisão: parar follow-up assíncrono, próximo touch é ligação direta (Vítor ou Sílvias) |
+| 18/05/2026 | Thaísa retorna por WhatsApp pedindo mais tempo — Sílvias viajam 18-22/05 e 25-29/05 |
+| 18/05/2026 | Follow-up registrado em `follow-up-thaisa-2026-05-18.md` — próxima janela 02/06 |
 
 ## Decisões Tomadas
 
@@ -64,6 +67,7 @@ Clínica veterinária especializada (dermato + endocrino + banho dermatoterapêu
 - `areas/vendas/oportunidades/pele_vet/discobery-pele-vet.m4a` — áudio original
 - `areas/vendas/oportunidades/pele_vet/apresentação/apresentacao-pelevet-v2.html` — deck 23 slides (Plano A/B, avatar Pele, QR sinal R$487, FAQ)
 - `areas/vendas/oportunidades/pele_vet/apresentação/apresentacao-pelevet-v2.md` — estrutura Icarus v2.0 do deck
+- `areas/vendas/oportunidades/pele_vet/follow-up-thaisa-2026-05-18.md` — registro do retorno da Thaísa + plano de próximo touch 02/06
 
 ---
 *Criado: 09/05/2026*
