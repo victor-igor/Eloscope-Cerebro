@@ -48,11 +48,24 @@ Sistema veterinário fullstack (React + Supabase) com módulos de agendamentos, 
 - [20/04/2026] Banco local como fonte de verdade; Google Calendar como espelho
 - [20/04/2026] 3 scopes: THIS / THIS_AND_FOLLOWING / ALL
 - [14/05/2026] Nunca usar Co-Authored-By nos commits — Vercel Hobby bloqueia deploy
+- [19/05/2026] Sync GC omite `colorId` quando inválido (fora de `'1'..'11'`) — evento herda cor do calendário do vet (paridade com `google-auth/index.ts`)
+
+## Phase 2 — Fix Sync Color ID Validation (19/05)
+- Helper `sanitizeColorId()` + 5 callsites refatorados em `process-calendar-queue/index.ts`
+- Deploy Supabase MCP versão 31 ACTIVE (versão 30 saiu com `verify_jwt: true` por engano, redeploy corrigiu)
+- Cleanup backlog: 1.531 jobs antigos marcados completed (Danila 15/05 + Angélica 18/05)
+- Reset Hugo+Nino: 20 jobs failed→pending, séries quinzenais sex 29/05→02/10/2026 criadas no Google
+- Validação produção: agendamento "teste" Francine 23/05 sincronizado ✓
+- Commits: `ffce852` (fix) + `a56ae5f` (artefatos Phase 2) merged em main
+- Artefatos: `.planning/phases/02-fix-sync-color-id-validation/` (CONTEXT + PLAN + SUMMARY)
 
 ## Pendências
 - [ ] Vercel Deployment Protection: desativar "authorized users only" no painel
 - [ ] Módulo Dietas: DietaDetailsModal + DietasTab (prev/next) — ver epic 29
 - [ ] UI filter calendários virtuais em GoogleCalendarSelector.tsx (não-crítico)
+- [ ] Bug trigger `tr_enqueue_calendar_sync` pula INSERT quando pai foi soft-deletado (caso Ivy/Camila 456936) — investigar afetação histórica
+- [ ] Fix frontend: parar de salvar cor customizada/hex em `agendamentos.cor` (backlog não-crítico, fix de boundary cobre o sync)
+- [ ] CHECK constraint Postgres em `agendamentos.cor` restringindo a `NULL OR '1'..'11' OR hex` (backlog opcional)
 
 ---
-*Atualizado: 14/05/2026*
+*Atualizado: 19/05/2026*
