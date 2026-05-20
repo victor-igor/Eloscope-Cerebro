@@ -39,6 +39,38 @@ relacionados:
 |---|---|---|---|
 | _(a preencher na sessão)_ | _(indicação de quem?)_ | _(silêncio / não-fit / preço / timing?)_ | _(arquivar / reativar daqui X meses / virar caso de aprendizado?)_ |
 
+### 📇 Contatos coletados direto do Lucas (16/05) — números reais
+
+> Lucas passou de cabeça. **Importante:** parte das conversas comerciais aconteceu nos **números pessoais** dele — `17920008344` e o pessoal — não na instância `lucas` (5517920008791) auditada. Isso explica vários ❓ do audit automático. Ao reauditar, incluir esses números como instâncias/origens.
+
+| Lead | Contato (E.164) | Quem é / dono | Canal origem | Status real + nota do Lucas |
+|------|----------------:|---------------|--------------|------------------------------|
+| **Caio Altfy (Altify Assessoria)** | `5517988215876` | Caio | — | pipeline; análise+orçamento out/25 |
+| **Marcos (advogado)** | `5517992792044` | Marcos advogado | — | (confirmar se é o `adv-leonardo` ou Marcos distinto) |
+| **Eduardo Nabucco (Zuvia)** | `5517988073950` | Eduardo Nabucco | — | ⚠️ Lucas não achou as conversas — número é esse |
+| **Edmilson (Molecaggio)** | `5517991252989` | Edmilson Silva Molegacio | indicação **Elielton** (presencial) | conversado 18/set/25 via `17920008344`; ficou de passar dados e **nunca passou**; sem follow-up |
+| **Alex do Ads** | _(parceiro)_ | Alex | — | **parceiro que sempre indica** — não é cliente direto, é fonte de indicação |
+| **GT Dustato** | `5517981946729` | **Evandro Gimenez** (sócio, amigo do Lucas) | relacionamento | muito potencial mas focam só na meta semanal; usar o que já tem nos orçamentos |
+| **(lead fechado que sumiu)** | `5511998057965` | "ela" (nome?) | — | ⚠️ **tínhamos fechado, ela nunca pagou e nunca mais demos follow-up** — recuperar nome |
+| **Levi Netto (Levy Impermeabilização)** | `5516981110457` | Levi Netto, representante comercial | — | queria muita coisa, sem noção da ferramenta — baixa prioridade |
+| **Lifeskill Levy** | `5517991403978` | Levy (Lifeskill+, Jardim Bordon SJRP) | — | conversa 17/11/25: combinou retomar **17/01/2026**; reativar |
+| **Agradare** | `5517997410427` | **Rodolfo Basconi** (amigo) | relacionamento | "enrolado pra colocar projeto, falando há 6 anos"; conversa via `17920008344` |
+| **Frango Lando** | _(via nº pessoal Lucas)_ | **Joan Antonieto** (filho; pais tocam o restaurante) | relacionamento | último contato 12/nov/25; ficou de **alinhar reunião com os pais** pra apresentar solução |
+| **Innover** | `5511959968683` | **Fagno** | — | a-classificar Q2; agendar demo |
+| **Kaua Imobiliária** | `5517981280789` | empresa onde **Matheus Campos** é sócio | — | grupo montado mas **projeto em stand-by** · grupo: https://chat.whatsapp.com/E575mXXKDcnFvNeTG8SWyX |
+| **Natural Vita** | `5517991513523` | **José Carlos de Paiva** (dono) | — | quer baixar demais o valor mesmo entendendo — segurar preço |
+| **Petmania** | `5517981158196` | **Thiago** (vendeu seguro de vida pra gente) | relacionamento | (confirmar dígito do número) |
+| **Philip (Funil de Vendas)** | `5516996518282` | Philip | — | a-classificar: cliente ou parceiro |
+| **ReabilitaCão (Fran)** | `5517992548693` | Fran | — | ✅ **já é cliente ativo** (confirma número anterior) |
+
+> **Pendências de limpeza pra próxima sessão:**
+> 1. `5511998057965` — recuperar **nome do lead fechado que nunca pagou** (achar no Drive/WhatsApp).
+> 2. **Marcos advogado** (`5517992792044`) vs `adv-leonardo` no pipeline — desambiguar.
+> 3. **Petmania** — confirmar dígito do número (`5517981158196`?).
+> 4. **Frango Lando** — pegar número direto do Joan Antonieto.
+> 5. Reauditar incluindo os números pessoais `17920008344` + pessoal do Lucas (várias conversas vivem lá).
+> 6. **Alex do Ads** e **Evandro (GT Dustato)** e **Rodolfo (Agradare)** → marcar como canal **relacionamento/indicação**, não outbound frio.
+
 ---
 
 ## 📊 Resumo executivo
