@@ -24,7 +24,7 @@
 | Jean | Imobiliária Rodrigues | Ativo — pagamento pendente | Lucas cobrar |
 | Matheus Campos | Campos Joia + sócio Morgana Sales (marido da Dra. Morgana) | Ativo — multi-relação | Foi quem levou Eloscope pra dentro da Morgana Sales · forneceu celular + 2 chips novos para projeto Morgana (28/04) |
 | Dra. Morgana Sales | Morgana Sales Estética (proprietária) | Ativo — em treinamento | Esposa do Matheus Campos · time sem comissão individual, meta da equipe |
-| Gustavo Bravo | Agência Bravo — Sistema Completo (Opção B, R$3.900) | Ativo — 1ª parcela R$975 paga (29/04) · discovery 25/04 feito | Reframe pós-discovery: validar 3 skills novas (Aprovação/Agendamento/Análise) · 4× R$975 (15/05, 15/06, 15/07) |
+| Gustavo Bravo | Agência Bravo — Sistema Completo (Opção B, R$3.900) | Ativo — 1ª parcela R$975 paga (29/04) · discovery 25/04 feito | Reframe pós-discovery: validar 3 skills novas (Aprovação/Agendamento/Análise) · 4× R$975 (15/05, 15/06, 15/07) · ⚠️ **enrolado com pagamentos** — 2ª parcela (15/05) atrasada; cobrança se arrasta, calibrar prazo/antecipação |
 | Denis | Elite Maqlam | Ativo — Top das Galáxias R$1.197 (3 meses), depois R$2.197 | Cashback 02/05, BDR Bumble ativo, próx. follow-up ~08-09/05 |
 
 ---

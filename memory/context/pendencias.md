@@ -127,6 +127,7 @@ type: note
 - [30/04/2026] ✅ **Bravo — recalcular horas estáticos vs vídeo no deck** · vídeo confirmado maior (R$1.932 vs R$930 estáticos) · top 3 reordenado: vídeo>captação>estático · deck atualizado (commit d5c8dac)
 - [29/04/2026] **Morgana — cadastrar lista do Matheus + ativar IA de ativação** · 2 chips novos já recebidos · script da IA + modelo de incentivo coletivo documentado no sistema · ClickUp tasks `86e150f6z`, `86e150f7n`, `86e150f7z`
 - [27/04/2026] **Gustavo Bravo — pagamento 4× boleto** · 1ª paga 29/04 ✅ · acompanhar 15/05, 15/06, 15/07
+- [20/05/2026] 🔴 **Bravo — 2ª parcela R$975 ATRASADA (venceu 15/05)** · Gustavo é historicamente enrolado com pagamentos (baixa expectativa de pontualidade) — cobrança tende a se arrastar · evento criado na agenda "Lucas Calls Estratégicas" 20/05 09h pra disparar lembrete (WhatsApp + PIX/boleto em mãos) · avaliar se vale exigir antecipação ou ajustar prazo contratual nas próximas · Lucas
 - [27/04/2026] **Financeiro — extratos pendentes** · subir últimos extratos antes de fechar 100% · prazo 28/04 · Victor (task `86e13dfum`)
 
 ## ⚪ Backlog (sem urgência imediata)
@@ -145,6 +146,7 @@ type: note
 - [08/05/2026] **Enertelles — enviar portfólio para Telles amanhã (09/05)** · ligou hoje, não atendeu · Alex (gestor tráfego) também não respondeu · Lucas
 - [02/05/2026] 🔥 **Enertelles — follow-up site (Bloco B)** · Telles decide sobre concorrentes · evento no Calendar 08/05 10h · Lucas
 - [02/05/2026] **Enertelles — follow-up Bloco A** · equipe volta de férias/licença · evento no Calendar 02/06 10h · Lucas
+- [20/05/2026] **Enertelles — nutrição esporádica (manter contato vivo)** · estratégia: toques tipo "olha isso, lembrei daquilo que conversamos" — não cobrança, não pitch · algo genuinamente útil (insight/case/link/ferramenta) · evento recorrente quinzenal na agenda "Lucas Calls Estratégicas" a partir de 02/06 (6 ocorrências) · Lucas
 - [02/05/2026] ⚪ **[DÉBITO TÉCNICO] Skill `/analisar-call`** · squad sales-call-analyzer (spin-coach/objection-curator/seller-profiler/call-orchestrator) + workflow + skill · invocar @aiox-master → @sm → @dev · baixa prioridade, desbloqueado após N≥10 calls reais
 - [02/05/2026] **Consolidar `objecoes-biblioteca.md`** · 8 objeções Enertelles + objeções Reabilita/Bravo espalhadas · categorizadas (preço/timing/autoridade/concorrência/risco-tech/ceticismo-IA)
 - [02/05/2026] **Coaching loop** · tabela "se eixo X < target → ação Y" pra coaching pós-call
@@ -157,7 +159,7 @@ type: note
 ## 🟡 uazapi / WhatsApp toolkit (criadas 15/05)
 
 - [15/05/2026] 🔥 **Rotacionar tokens uazapi de AMBAS as instâncias (`eloscope` + `lucas`)** · token `eloscope` (`0105a49e-...`) foi pasted em chat 1 + grupo Squad Eloscope 11:37; token `lucas` (`d10db1ea-...`) foi pasted em chat hoje pra cadastro. Painel uazapi.dev → cada instância → regenerar token → rodar `/uazapi setup` (ou editar `.env` direto) · Lucas
-- [15/05/2026] **Apontar MCP `mcp_whatsapp_uazapi` pra instância `lucas`** · MCP de envio hoje aponta pra Luna J6 (5517920002289 — bot, instância `eloscope`). Mensagens enviadas via MCP saem como Luna, não como Lucas. Pra mandar do número pessoal precisa atualizar credenciais do MCP (provavelmente em `~/.docker/mcp/catalogs/docker-mcp.yaml` ou config equivalente do MCP). Workaround atual: prefixar `[Recado do Lucas via Luna J6]` quando usar MCP pra grupo do squad · Lucas
+- ✅ [15/05/2026] **Apontar MCP `mcp_whatsapp_uazapi` pra instância `lucas`** — RESOLVIDO/DECIDIDO 20/05: **mantém MCP na Luna J6 mesmo** (instância `eloscope`, 5517920002289). Não trocar pra linha pessoal do Lucas. Workaround do prefixo `[Recado do Lucas via Luna J6]` segue válido quando precisar mandar do número pessoal via MCP.
 - [15/05/2026] **Reiniciar Claude Code pra registrar skills `/whatsapp-resumo` e `/whatsapp-pendencias`** · skills só são detectadas no SessionStart. Foram symlinkadas durante sessão anterior, CLI ainda não registrou como slash commands. Próxima sessão deve resolver automaticamente · trivial
 - ✅ [15/05/2026] **Empacotar `/uazapi` como produto plugin** · plugin `claude-uazapi-elo` v0.3.0 publicado em https://github.com/eloscopecoo-rgb/claude-uazapi-elo · 3 skills (/uazapi, /whatsapp-pendencias, /whatsapp-resumo) · INSTALL.md + plugin.json + symlinks no cerebro
 - ✅ [15/05/2026] **Skills derivadas v0.1** · `/whatsapp-pendencias` (classificação 🟢🟡🔴⚪❓) e `/whatsapp-resumo` (chats ativos no período) entregues e smoke-tested contra instância `eloscope`
