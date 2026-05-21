@@ -144,6 +144,72 @@ Referência atual dos submódulos do elosystem-v2 (validar sempre via `.gitmodul
 
 ---
 
+## Passo 2.5 — Módulo fora do `.gitmodules` (criado do zero)
+
+Pela arquitetura (`75-module-migration-ownership.md`), **todo módulo deve ser um
+submódulo próprio** `eloscope-ai/mod-<nome>`. Um módulo recém-criado pode ainda
+não estar registrado. Detectar pastas com mudanças em `packages/modules/*`,
+`packages/ui-kit`, `packages/core-logic` que **não** aparecem no `.gitmodules`:
+
+```bash
+# Paths já registrados como submódulo
+registered=$(git config --file .gitmodules --get-regexp '\.path$' | awk '{print $2}')
+# Pastas de módulo presentes no working tree
+for d in packages/ui-kit packages/core-logic packages/modules/*; do
+  [ -d "$d" ] || continue
+  echo "$registered" | grep -qx "$d" && continue
+  if [ -e "$d/.git" ]; then echo "ÓRFÃO(repo próprio): $d"; else echo "SOLTO(no pai): $d"; fi
+done
+```
+
+Classificar e **PARAR para confirmar com o usuário** antes de agir:
+
+### Caso A — Pasta solta no pai (sem `.git` próprio)
+Arquivos rastreados direto pelo shell. Viola a arquitetura (módulo tem que ser
+submódulo). Perguntar a intenção:
+- **Promover a submódulo** (recomendado) → fluxo de promoção abaixo.
+- **Commitar no pai mesmo** (só se for intencional/temporário) → segue no Passo 4
+  como arquivo do shell, com aviso de que fere o padrão de módulos.
+
+### Caso B — Pasta com `.git` próprio mas não no `.gitmodules`
+Repo aninhado órfão (git avisa *embedded repository*; o pai não rastreia o
+conteúdo). **Sempre** formalizar como submódulo antes de prosseguir.
+
+### Fluxo de promoção a submódulo (convenção Eloscope)
+Confirmar nome do repo (`mod-<nome>`) e executar:
+```bash
+# 1. Criar repo remoto na org (pular se já existe)
+gh repo create eloscope-ai/mod-<nome> --private
+
+# 2. Inicializar o módulo (se não tem .git), commit inicial e push
+git -C packages/modules/<nome> init -q
+git -C packages/modules/<nome> add -A
+git -C packages/modules/<nome> commit -q -m "feat(mod-<nome>): estrutura inicial do módulo"
+git -C packages/modules/<nome> branch -M main
+git -C packages/modules/<nome> remote add origin git@github.com:eloscope-ai/mod-<nome>.git
+git -C packages/modules/<nome> push -u origin main
+
+# 3. No pai: remover do tracking direto e registrar como submódulo
+git rm -r --cached packages/modules/<nome>
+git submodule add git@github.com:eloscope-ai/mod-<nome>.git packages/modules/<nome>
+```
+
+### Estrutura obrigatória do módulo (validar antes do commit inicial)
+```
+packages/modules/<nome>/
+├── migrations/            ← 001_initial_schema.sql, ...
+├── module.manifest.json   ← contrato de versão + migrations (name, version, migrations[])
+├── src/
+└── index.ts
+```
+Se faltar `module.manifest.json` ou `migrations/`, avisar — o `provision.sh`
+depende deles para aplicar o schema em novos clientes.
+
+Depois da promoção, o módulo entra no `.gitmodules` e segue normalmente pelo
+Passo 3. O registro do submódulo + `.gitmodules` é commitado no pai no Passo 4.
+
+---
+
 ## Passo 3 — Por submódulo: PAUSAR, confirmar, commit + push
 
 Para **cada** submódulo modificado, na ordem do mapa, executar este ciclo e
@@ -245,6 +311,10 @@ gh pr create --base main --head <branch> --title "<tipo>(<escopo>): <título>" -
 - ❌ `git add -A` no pai sem revisar → arrasta ruído de working tree e ponteiros
   de submódulos que você não pushou.
 - ❌ Commit direto em `main` (pai ou submódulo).
+- ❌ Commitar um módulo novo (`packages/modules/<nome>`) direto no pai como pasta
+  solta em vez de promover a submódulo `eloscope-ai/mod-<nome>` (viola a arquitetura).
+- ❌ Deixar um repo aninhado órfão (`.git` próprio sem entry no `.gitmodules`) —
+  o pai não rastreia o conteúdo e o próximo clone vem vazio.
 - ❌ Abrir/mergear PR aqui — isso é do `@devops` (Gage).
 
 ---
@@ -252,6 +322,8 @@ gh pr create --base main --head <branch> --title "<tipo>(<escopo>): <título>" -
 ## Regras
 
 - ✅ Submódulo **sempre antes** do pai. Push do submódulo **antes** do bump do ponteiro.
+- ✅ Módulo fora do `.gitmodules` → classificar (solto / órfão) e promover a
+  submódulo antes de commitar, salvo decisão explícita do usuário (Passo 2.5).
 - ✅ **Pausar e confirmar por submódulo** — nunca commitar/pushar todos em lote silencioso.
 - ✅ Garantir branch (não-detached, não-`main`) em cada repo antes de commitar.
 - ✅ Mostrar o **mapa de destinos** (qual arquivo → qual repo) antes de agir.
