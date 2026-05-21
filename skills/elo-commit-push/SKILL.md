@@ -43,6 +43,8 @@ Erros recorrentes que esta skill previne:
 - Não saber em qual repositório cada arquivo vai parar.
 - Commit direto em `main` (proibido pela doc — sempre branch + PR).
 - Mensagem de commit fora do padrão semântico PT imperativo.
+- Pushar sobre **base desatualizada** — push rejeitado no meio da coreografia
+  (submódulo já foi, pai não) ou ponteiro sobre commit que outro dev sobrescreveu.
 
 ---
 
@@ -73,8 +75,14 @@ um mapa de "o que foi pra qual repo"; o checklist de prontidão preenchido.
 **Guarantees:**
 - Nunca commita em `main` — se a branch atual for `main`, para e pede branch.
 - Nunca commita submódulo em detached HEAD — checa e resolve antes.
+- **Sempre faz `fetch` e compara local × remoto (ahead/behind) antes de commitar
+  cada repo** — integra o que falta antes de pushar; nunca pusha sobre base
+  desatualizada e nunca usa `--force`.
 - Sempre pausa e pede confirmação **por submódulo** antes de commit+push.
-- Sempre pusha o submódulo **antes** de bumpar o ponteiro no pai.
+- Sempre pusha o submódulo **antes** de bumpar o ponteiro no pai, e **verifica
+  que o commit existe no remoto** antes do bump (nunca cria ponteiro órfão).
+- Em conflito de rebase, **PARA** e devolve pro usuário — nunca resolve sozinho
+  nem segue a coreografia num estado meio-feito.
 - Idempotente: rodar de novo com nada mudado não cria commits vazios.
 
 ---
@@ -82,10 +90,47 @@ um mapa de "o que foi pra qual repo"; o checklist de prontidão preenchido.
 ## Tools Used
 
 - **External / shell:** `git` (status, diff, branch, checkout, add, commit,
-  push, submodule), `gh` (apenas para sugerir o comando de PR no fim).
+  push, submodule, **fetch**, **rev-list**, **rev-parse**), `gh` (criar repo de
+  módulo novo no Passo 2.5; sugerir comando de PR no fim).
 - **Files:** lê `.gitmodules` (mapa path→repo), `docs/arquitetura/15-*` quando
   disponível localmente.
 - **MCP:** nenhum.
+
+---
+
+## Sincronia com o remoto (regra que vale para TODO repo)
+
+Antes de commitar/pushar **qualquer** repositório (o pai e cada submódulo),
+checar se o local tem tudo que o remoto já tem. É isso que evita push rejeitado
+no meio da coreografia, perda de trabalho e ponteiro apontando pra commit que
+outro dev sobrescreveu. Aplicar este helper em cada repo:
+
+```bash
+# sync_check <repo_dir>  →  imprime "no-upstream" | "behind=<n> ahead=<n>"
+d="<repo_dir>"
+branch=$(git -C "$d" rev-parse --abbrev-ref HEAD)
+# fetch falhou (rede/auth)? PARAR — não dá pra garantir base atualizada
+git -C "$d" fetch origin "$branch" --quiet 2>/dev/null || git -C "$d" fetch --quiet || { echo "FETCH-FAIL"; exit 1; }
+if git -C "$d" rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
+  set -- $(git -C "$d" rev-list --left-right --count @{u}...HEAD)   # "$1"=behind  "$2"=ahead
+  echo "behind=$1 ahead=$2"
+else
+  echo "no-upstream"   # branch nova — push -u depois
+fi
+```
+
+### Matriz de decisão
+
+| Resultado | Significado | Ação |
+|---|---|---|
+| `no-upstream` | Branch nova, sem rastreamento remoto | Seguir; no push usar `git push -u origin <branch>` |
+| `behind=0 ahead=*` | Local tem tudo do remoto | Seguir — push será fast-forward |
+| `behind>0 ahead=0` | Faltam commits do remoto, nenhum local | `git -C <d> pull --rebase` e reavaliar (em geral nada a pushar) |
+| `behind>0 ahead>0` | **Divergiu** | **PAUSAR**. `git -C <d> -c rebase.autostash=true pull --rebase origin <branch>`. Conflito → PARAR e devolver pro usuário. Sem conflito → reavaliar e seguir |
+
+- **Nunca** `git push --force` / `--force-with-lease` aqui (fora de escopo —
+  divergência se resolve por rebase, com confirmação).
+- `FETCH-FAIL` (rede/auth/`gh`) → **PARAR** com mensagem clara; não commitar às cegas.
 
 ---
 
@@ -107,6 +152,8 @@ um mapa de "o que foi pra qual repo"; o checklist de prontidão preenchido.
    O **prefixo da branch deve casar com o tipo do commit** que será feito.
 4. Validar o prefixo da branch atual contra a tabela (Convenções). Se não bater,
    avisar mas deixar o usuário decidir.
+5. **Rodar o `sync_check` no repo pai** (ver "Sincronia com o remoto"). Se
+   `behind>0`, integrar antes de seguir; se divergiu ou `FETCH-FAIL`, PARAR.
 
 ---
 
@@ -234,7 +281,12 @@ Se `DETACHED`:
   ```
 - Nunca commitar submódulo em `main` direto (mesma regra do pai).
 
-### 3.c — Propor mensagem semântica e confirmar
+### 3.c — Sincronizar com o remoto (antes de commitar)
+Rodar o `sync_check` neste submódulo (ver "Sincronia com o remoto"). Tratar o
+resultado pela matriz de decisão — integrar se `behind>0`, PAUSAR se divergiu,
+PARAR se `FETCH-FAIL`. Só prosseguir com a base atualizada.
+
+### 3.d — Propor mensagem semântica e confirmar
 Sugerir `<tipo>(<escopo>): <descrição PT imperativo>` com o escopo do módulo
 (`mod-fin`, `ui-kit`, `core`, etc.). **PAUSAR** e mostrar:
 ```
@@ -245,12 +297,14 @@ Push: git@github.com:eloscope-ai/mod-finance.git → <branch>
 Confirmar? [s / editar mensagem / pular este submódulo]
 ```
 
-### 3.d — Executar (só após "s")
+### 3.e — Executar (só após "s")
 ```bash
 git -C <path> add -A
 git -C <path> commit -m "<tipo>(<escopo>): <descrição>"
-git -C <path> push origin <branch>      # cria upstream com -u se for branch nova
+git -C <path> push origin <branch>      # use -u se a branch for nova (no-upstream)
 ```
+Se o push for **rejeitado** (alguém pushou entre o `sync_check` e agora):
+voltar ao 3.c (re-sincronizar) e re-pushar — nunca `--force`.
 Registrar o hash + repo no resumo final. Repetir para o próximo submódulo.
 
 ---
@@ -260,20 +314,29 @@ Registrar o hash + repo no resumo final. Repetir para o próximo submódulo.
 Só depois que **todos os submódulos confirmados foram pushados** (ponteiros já
 existem no remoto). No pai:
 
-1. Revisar o que entra:
+1. **Guard anti-ponteiro-órfão** — para cada submódulo bumpado, confirmar que o
+   commit apontado existe no remoto **antes** de stageá-lo:
+   ```bash
+   sha=$(git -C <path> rev-parse HEAD)
+   git -C <path> branch -r --contains "$sha" | grep -q . || echo "ÓRFÃO: $path ($sha) não está em nenhum remoto"
+   ```
+   Se aparecer `ÓRFÃO`, voltar e pushar o submódulo antes de prosseguir.
+2. **Re-sincronizar o pai** com `sync_check` (alguém pode ter pushado no shell
+   enquanto você mexia nos submódulos). Integrar/parar conforme a matriz.
+3. Revisar o que entra:
    ```bash
    git status --short        # ' M packages/...' = ponteiro movido; demais = arquivos do shell
    ```
-2. Stage dos ponteiros dos submódulos pushados + arquivos do shell relevantes
+4. Stage dos ponteiros dos submódulos pushados + arquivos do shell relevantes
    (`supabase/`, `docs/`, `.planning/`, configs). **Confirmar com o usuário** o
    conjunto, não dar `add -A` cego (o working tree costuma ter ruído).
-3. Commit semântico no pai. Quando o commit é só bump de ponteiros, deixar claro:
+5. Commit semântico no pai. Quando o commit é só bump de ponteiros, deixar claro:
    ```bash
    git commit -m "chore(shell): atualizar ponteiros de submódulos (mod-finance, ui-kit)"
    # ou, se o pai também tem mudança funcional:
    git commit -m "feat(shell): integrar nova tela X + bump mod-finance"
    ```
-4. Push da branch do pai:
+6. Push da branch do pai (se rejeitado → re-sincronizar e re-pushar, nunca `--force`):
    ```bash
    git push origin <branch>     # -u na primeira vez
    ```
@@ -297,6 +360,27 @@ Encerrar com o comando de PR sugerido (execução fica a cargo do `@devops`):
 ```bash
 gh pr create --base main --head <branch> --title "<tipo>(<escopo>): <título>" --body "..."
 ```
+
+---
+
+## Tratamento de falhas
+
+| Situação | Sinal | Resposta da skill |
+|---|---|---|
+| Remoto à frente (local desatualizado) | `sync_check` → `behind>0 ahead=0` | `pull --rebase` no repo, reavaliar; em geral nada a pushar |
+| Histórico divergiu | `sync_check` → `behind>0 ahead>0` | PAUSA → `pull --rebase` (autostash); conflito → PARA e devolve |
+| Conflito de rebase/merge | `CONFLICT (...)` no rebase | PARA tudo, lista os arquivos em conflito, devolve pro usuário; **não** segue a coreografia |
+| Fetch falhou (rede / auth / `gh`) | `FETCH-FAIL` | PARA antes de commitar — não dá pra garantir base atualizada |
+| Push rejeitado (corrida entre devs) | `! [rejected]` / `non-fast-forward` | Re-sincroniza (sync_check) e re-pusha; **nunca** `--force` |
+| Ponteiro do pai aponta pra commit sem remoto | guard `branch -r --contains` vazio | Volta, pusha o submódulo, só então bumpa no pai |
+| Submódulo em detached HEAD | `symbolic-ref` falha | Cria/entra em branch antes de commitar |
+| Nada mudou | working tree limpo no repo | Pula o repo — não cria commit vazio |
+| Branch sem upstream | `sync_check` → `no-upstream` | `git push -u origin <branch>` |
+| Módulo novo fora do `.gitmodules` | Passo 2.5 (solto/órfão) | Promove a submódulo (ou commita no pai por decisão explícita) |
+
+Princípio geral: **em qualquer dúvida ou falha, PARAR e devolver pro usuário com
+o estado exato** — nunca deixar a coreografia num estado meio-feito (submódulo
+pushado + pai não, ou vice-versa).
 
 ---
 
