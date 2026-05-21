@@ -94,7 +94,7 @@ Plataforma SaaS customizada hospedada em `https://elo.elitemaqlam.com.br`.
 | ID | Descrição | Responsável |
 |----|-----------|-------------|
 | B-1.5-A / B-1.6-A | Credenciais Olist/Tiny não fornecidas → integração catálogo (Story 1.6) bloqueada | Denis Maqlam fornecer |
-| B-1.4-A | Token Chatwoot ausente — validação real dos endpoints bloqueada | DevOps |
+| ~~B-1.4-A~~ | ✅ RESOLVIDO 21/05 — Token Chatwoot presente e endpoints validados (`integration_status.status=ok`, inbox 5 conectada na Maq Assistente) | DevOps |
 
 ---
 
@@ -175,4 +175,11 @@ Plataforma SaaS customizada hospedada em `https://elo.elitemaqlam.com.br`.
 
 ---
 
-*Atualizado: 2026-05-03*
+## Integração Chatwoot (painel)
+
+- **21/05/2026** — Corrigida a integração Chatwoot na tela de Instâncias do painel. Dois fixes: (1) banco — row `integration_settings` estava com `organization_id` placeholder errado, escondida pela RLS → erro "Configuração não encontrada"; (2) frontend — status lia `status.enabled` mas a API uazapi retorna `chatwoot_enabled` → sempre "Desconectado". Agora exibe o nome da inbox conectada e reconecta na mesma inbox da instância. Commit `bb0bed3` no `origin/main` (deploy Vercel automático). Maq Assistente conectada na inbox 5.
+- ⚠️ Auditar: outras tabelas multi-tenant podem ter `organization_id` placeholder `0000...0001` órfão (invisíveis via RLS).
+
+---
+
+*Atualizado: 2026-05-21*
