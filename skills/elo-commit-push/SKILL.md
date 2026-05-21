@@ -1,0 +1,294 @@
+---
+name: elo-commit-push
+description: >
+  Padroniza o fluxo de commit e push no monorepo elosystem-v2, que usa git
+  submodules (core-logic, ui-kit e os mod-*). Detecta submódulos modificados,
+  mapeia em qual repositório cada push vai cair, pausa e confirma cada submódulo,
+  gera commits semânticos em PT imperativo e bumpa os ponteiros no repo pai —
+  seguindo a doc de arquitetura 15-documentation-and-deploy.md.
+  Triggers: "commit e push", "faz commit e push", "/elo-commit-push",
+  "commitar e pushar", "subir as mudanças", "push das mudanças", "sobe pro git".
+---
+
+# /elo-commit-push
+
+Fluxo guiado de commit + push para o monorepo **elosystem-v2**. O repo é um
+shell com **git submodules** — cada módulo (`packages/modules/*`), o `ui-kit` e
+o `core-logic` vivem em repositórios git separados na org `eloscope-ai`. Um
+commit "simples" quase sempre toca 2+ repositórios, e a ordem importa:
+**primeiro commit+push dentro de cada submódulo, depois bumpa o ponteiro no
+repo pai**. Esta skill executa essa coreografia pausando em cada repositório.
+
+**Pré-requisito:** estar dentro de `~/elosystem-v2` (ou outro shell Elo OS com
+`.gitmodules`), `gh`/`git` autenticados, acesso de push aos repos `eloscope-ai/*`.
+
+**Fonte da verdade:** `docs/arquitetura/15-documentation-and-deploy.md` do repo
+`eloscope-ai/elo-system-prompts` (padrão de branches, commits semânticos e
+checklist de prontidão de deploy).
+
+---
+
+## Por que existe
+
+No elosystem-v2 uma mudança em `packages/modules/finance/...` **não** vai pro
+repo pai quando você dá `git add`/`commit` na raiz — ela mora no repo
+`eloscope-ai/mod-finance`. Se você commitar só no pai, o ponteiro do submódulo
+aponta pra um commit que **não existe no remoto**, e o próximo dev (ou a CI/CD)
+quebra com "fatal: reference is not a tree".
+
+Erros recorrentes que esta skill previne:
+- Commitar no pai sem ter pushado o submódulo (ponteiro órfão).
+- Commitar dentro do submódulo em **detached HEAD** (commit perdido, não vai
+  pra branch nenhuma).
+- Não saber em qual repositório cada arquivo vai parar.
+- Commit direto em `main` (proibido pela doc — sempre branch + PR).
+- Mensagem de commit fora do padrão semântico PT imperativo.
+
+---
+
+## Quando rodar
+
+- Terminou uma feature/fix que tocou módulos (submódulos) + shell e quer subir.
+- "Faz commit e push", "sobe isso pro git", "commita e pusha as mudanças".
+- Antes de abrir PR (a skill roda o checklist de prontidão, mas **não abre o PR**).
+
+Não rodar:
+- Quando só quer ver o que mudou → use `git status` / `git diff` direto.
+- Para abrir/mergear PR → isso é exclusividade do `@devops` (Gage); a skill
+  para no push da branch e te entrega o checklist + comando sugerido de PR.
+- Para reverter submódulo a versão anterior → fluxo diferente
+  (`git submodule update`).
+
+---
+
+## Contract
+
+**Input:** intenção em linguagem natural ("commita e pusha"), opcionalmente
+um tipo/escopo de commit sugerido. Estado atual do working tree.
+**Output:** commits semânticos em cada repositório afetado + push das branches;
+um mapa de "o que foi pra qual repo"; o checklist de prontidão preenchido.
+**Side effects:** escreve no histórico git e faz `git push` para os remotos
+`eloscope-ai/*` (submódulos) e para o remoto do repo pai. **Não** abre PR,
+**não** mergeia, **não** mexe em `main` diretamente.
+**Guarantees:**
+- Nunca commita em `main` — se a branch atual for `main`, para e pede branch.
+- Nunca commita submódulo em detached HEAD — checa e resolve antes.
+- Sempre pausa e pede confirmação **por submódulo** antes de commit+push.
+- Sempre pusha o submódulo **antes** de bumpar o ponteiro no pai.
+- Idempotente: rodar de novo com nada mudado não cria commits vazios.
+
+---
+
+## Tools Used
+
+- **External / shell:** `git` (status, diff, branch, checkout, add, commit,
+  push, submodule), `gh` (apenas para sugerir o comando de PR no fim).
+- **Files:** lê `.gitmodules` (mapa path→repo), `docs/arquitetura/15-*` quando
+  disponível localmente.
+- **MCP:** nenhum.
+
+---
+
+## Passo 1 — Pré-flight (branch e localização)
+
+1. Confirmar que está na raiz de um shell com `.gitmodules`:
+   ```bash
+   git rev-parse --show-toplevel && test -f .gitmodules
+   ```
+2. Ler a branch atual do **pai**:
+   ```bash
+   git -C . rev-parse --abbrev-ref HEAD
+   ```
+3. **Se a branch for `main` (ou `master`/`develop` protegida):** PARAR.
+   A doc proíbe commit direto em `main`. Perguntar o nome da branch e o tipo:
+   ```bash
+   git checkout -b <prefixo>/<descricao-curta>   # feat/, fix/, refactor/, chore/, docs/, test/, hotfix/, release/
+   ```
+   O **prefixo da branch deve casar com o tipo do commit** que será feito.
+4. Validar o prefixo da branch atual contra a tabela (Convenções). Se não bater,
+   avisar mas deixar o usuário decidir.
+
+---
+
+## Passo 2 — Mapear o que mudou e em qual repositório
+
+Construir o **mapa de destinos** dinamicamente a partir de `.gitmodules`
+(nunca hardcodar — novos módulos entram sozinhos):
+
+```bash
+# Submódulos com mudanças (working tree sujo OU ponteiro/branch movido)
+git submodule foreach --quiet 'test -n "$(git status --porcelain)" && echo "DIRTY  $sm_path" || true'
+git status --porcelain | grep -E "^.M packages/" || true   # ponteiros já movidos
+# Mapa path -> url
+git config --file .gitmodules --get-regexp '^submodule\..*\.(path|url)$'
+```
+
+Apresentar uma tabela clara ANTES de tocar em qualquer coisa:
+
+```
+📍 Mapa de push — o que vai pra onde:
+
+REPOSITÓRIO (submódulo)                        BRANCH      ARQUIVOS MUDADOS
+eloscope-ai/mod-finance   (packages/modules/finance)   <branch>    N arquivos
+eloscope-ai/ui-kit        (packages/ui-kit)            <branch>    N arquivos
+...
+eloscope-ai/<repo-pai>    (raiz / shell)               <branch>    ponteiros + M arquivos do shell
+
+Ordem de execução: submódulos primeiro (um a um, com confirmação) → repo pai por último.
+```
+
+Referência atual dos submódulos do elosystem-v2 (validar sempre via `.gitmodules`):
+`core-logic`, `ui-kit`, `mod-crm`, `mod-tasks`, `mod-scheduling`, `mod-finance`,
+`mod-agents`, `mod-projects`, `mod-contacts`, `mod-campaigns`, `mod-catalog`,
+`mod-real-estate` — todos em `git@github.com:eloscope-ai/*`.
+
+---
+
+## Passo 3 — Por submódulo: PAUSAR, confirmar, commit + push
+
+Para **cada** submódulo modificado, na ordem do mapa, executar este ciclo e
+**aguardar confirmação do usuário antes de commitar/pushar**:
+
+### 3.a — Mostrar contexto do submódulo
+```bash
+git -C <path> status --short
+git -C <path> --no-pager diff --stat
+```
+
+### 3.b — Garantir que NÃO está em detached HEAD
+```bash
+git -C <path> symbolic-ref -q HEAD || echo "DETACHED"
+```
+Se `DETACHED`:
+- Criar/entrar numa branch antes de commitar (commit em detached vira órfão):
+  ```bash
+  git -C <path> checkout -b <prefixo>/<descricao>     # nova branch de trabalho
+  # ou, se a mudança deve ir pra uma branch já existente:
+  git -C <path> checkout <branch> && git -C <path> stash pop   # se necessário
+  ```
+- Nunca commitar submódulo em `main` direto (mesma regra do pai).
+
+### 3.c — Propor mensagem semântica e confirmar
+Sugerir `<tipo>(<escopo>): <descrição PT imperativo>` com o escopo do módulo
+(`mod-fin`, `ui-kit`, `core`, etc.). **PAUSAR** e mostrar:
+```
+Submódulo: eloscope-ai/mod-finance  (branch <branch>)
+Commit sugerido: fix(mod-fin): corrigir conciliação de installments importados
+Push: git@github.com:eloscope-ai/mod-finance.git → <branch>
+
+Confirmar? [s / editar mensagem / pular este submódulo]
+```
+
+### 3.d — Executar (só após "s")
+```bash
+git -C <path> add -A
+git -C <path> commit -m "<tipo>(<escopo>): <descrição>"
+git -C <path> push origin <branch>      # cria upstream com -u se for branch nova
+```
+Registrar o hash + repo no resumo final. Repetir para o próximo submódulo.
+
+---
+
+## Passo 4 — Repo pai: bumpar ponteiros + mudanças do shell
+
+Só depois que **todos os submódulos confirmados foram pushados** (ponteiros já
+existem no remoto). No pai:
+
+1. Revisar o que entra:
+   ```bash
+   git status --short        # ' M packages/...' = ponteiro movido; demais = arquivos do shell
+   ```
+2. Stage dos ponteiros dos submódulos pushados + arquivos do shell relevantes
+   (`supabase/`, `docs/`, `.planning/`, configs). **Confirmar com o usuário** o
+   conjunto, não dar `add -A` cego (o working tree costuma ter ruído).
+3. Commit semântico no pai. Quando o commit é só bump de ponteiros, deixar claro:
+   ```bash
+   git commit -m "chore(shell): atualizar ponteiros de submódulos (mod-finance, ui-kit)"
+   # ou, se o pai também tem mudança funcional:
+   git commit -m "feat(shell): integrar nova tela X + bump mod-finance"
+   ```
+4. Push da branch do pai:
+   ```bash
+   git push origin <branch>     # -u na primeira vez
+   ```
+
+---
+
+## Passo 5 — Checklist de prontidão (antes de sugerir PR)
+
+Rodar o checklist da doc `15-documentation-and-deploy.md` e marcar o que se
+aplica. **Não abrir PR** — apenas reportar e entregar o comando sugerido:
+
+- [ ] Comentários `⚠ CONFIGURAÇÃO MANUAL` documentados em `docs/guides/`.
+- [ ] `docs/PRD.md` / `docs/sessoes/<domínio>.md` atualizados se o escopo mudou.
+- [ ] `packages/<módulo>/docs/CHANGELOG.md` atualizado (Regra 16).
+- [ ] Se bump no `module.manifest.json`: versão do CHANGELOG local bate.
+- [ ] Migrations SQL nomeadas `YYYYMMDDHHMMSS_<zona>_<módulo>_<descrição>.sql`.
+- [ ] Testes E2E criados/atualizados em `docs/tests-e2e.md`.
+- [ ] Branch e commits seguem o padrão semântico.
+
+Encerrar com o comando de PR sugerido (execução fica a cargo do `@devops`):
+```bash
+gh pr create --base main --head <branch> --title "<tipo>(<escopo>): <título>" --body "..."
+```
+
+---
+
+## Anti-Patterns
+
+- ❌ Commitar/`add` na raiz achando que pega mudança do submódulo — não pega;
+  ela vai pro repo do submódulo, a raiz só guarda o ponteiro.
+- ❌ Commitar o ponteiro do pai **antes** de pushar o submódulo → ponteiro órfão,
+  CI/CD e outros devs quebram.
+- ❌ Commitar dentro de um submódulo em **detached HEAD** → commit órfão, perdido
+  no próximo `submodule update`.
+- ❌ `git add -A` no pai sem revisar → arrasta ruído de working tree e ponteiros
+  de submódulos que você não pushou.
+- ❌ Commit direto em `main` (pai ou submódulo).
+- ❌ Abrir/mergear PR aqui — isso é do `@devops` (Gage).
+
+---
+
+## Regras
+
+- ✅ Submódulo **sempre antes** do pai. Push do submódulo **antes** do bump do ponteiro.
+- ✅ **Pausar e confirmar por submódulo** — nunca commitar/pushar todos em lote silencioso.
+- ✅ Garantir branch (não-detached, não-`main`) em cada repo antes de commitar.
+- ✅ Mostrar o **mapa de destinos** (qual arquivo → qual repo) antes de agir.
+- ✅ Mensagem semântica em **PT imperativo**, minúscula inicial, sem ponto final,
+  com escopo do módulo.
+- ✅ Prefixo da branch casa com o tipo do commit.
+- ✅ Parar no push — entregar checklist + comando de PR, sem abrir PR.
+
+---
+
+## Convenções
+
+### Tipos de commit / prefixo de branch
+| Tipo | Quando | Branch |
+|---|---|---|
+| `feat` | Nova funcionalidade | `feat/` |
+| `fix` | Correção de bug | `fix/` |
+| `refactor` | Refatoração sem mudar comportamento | `refactor/` |
+| `chore` | Manutenção (deps, config, CI, bump de ponteiros) | `chore/` |
+| `docs` | Só documentação | `docs/` |
+| `test` | Só testes | `test/` |
+| `style` | Formatação sem lógica | — |
+| `perf` | Performance | — |
+| `ci` | Pipelines CI/CD | — |
+| `hotfix` | Correção emergencial em produção | `hotfix/` |
+| `release` | Preparar versão | `release/` |
+
+### Escopos recomendados
+`core`, `mod-crm`, `mod-fin`, `mod-campaigns`, `mod-channels`, `ext-olist`,
+`supabase`, `shell`, `ui-kit`, `infra`, `docs`.
+
+### Formato da mensagem
+```
+<tipo>(<escopo>): <descrição em PT, imperativo>
+
+[corpo opcional: contexto, motivação, breaking changes]
+
+[rodapé opcional: ⚠ CONFIGURAÇÃO MANUAL: ...; Closes #issue]
+```
+Breaking change → `!` após o escopo: `feat(mod-crm)!: remover campo legado`.
