@@ -44,6 +44,7 @@ type: note
 
 ## 🟡 Importantes (não bloqueiam mas precisam de ação)
 
+- [21/05/2026] **Morgana — agente Morg prompt v2 (secretária, grau-10k)** · v2 criado em `Agentes/BDR/prompt-v2.md`. Faltam 3 coisas: (1) decidir se a secretária orienta sobre disponibilidade/horários antes do transbordo (hoje "nunca confirma data"); (2) criar tríade própria `rag-base-estetica` + `rag-playbook-estetica` (conteúdo hoje espalhado em `comercial/agente-morg-mensagens-ativacao` + `lead-profile`); (3) deploy do v2 no n8n · Victor
 - [18/05/2026] 🔴 **Pacote financeiro Eloscope — auditoria receita + custos fixos (v3 CANÔNICO — pronto pra lançar)** (Victor lançar no Elosystem-v2) · 2 arquivos prontos:
   - `areas/operacoes/auditoria-assinaturas-site-2026-05-18.md` — **14 assinaturas de site, MRR R$ 1.071,40** (regra <R$ 200/mês = fixo). Custo direto R$ 19 × 14 = R$ 266 (margem ~75%)
   - `areas/operacoes/custos-fixos-2026-05-18.md` — **custos fixos consolidados ~R$ 5.600-6.300/mês** baseado em cartão Sicredi •••1842 (jan-mai/26) + extrato CC #126356084 (jan-mai/26) + HCA + INSS
