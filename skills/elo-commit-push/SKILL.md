@@ -257,6 +257,38 @@ Passo 3. O registro do submódulo + `.gitmodules` é commitado no pai no Passo 4
 
 ---
 
+## Passo 2.6 — Dependências cross-submódulo (`@repo/*`)
+
+**O erro mais traiçoeiro do monorepo:** um submódulo (ex: `finance`) importa um
+símbolo **novo** de outro (`@repo/ui-kit` → `AccountBadge`). Se você commitar só o
+`finance` e **pular o `ui-kit`**, o pai passa a apontar pra um `ui-kit` que **não
+exporta** aquele símbolo → o build do Vercel/rollup quebra com
+*"X is not exported by @repo/ui-kit"* (mesmo com todos os ponteiros válidos).
+
+Antes de pushar um **subconjunto** de submódulos, checar se algum submódulo do
+escopo importa de outro que tem mudanças **não incluídas** neste run:
+
+```bash
+# Pacotes workspace e seus aliases
+# @repo/ui-kit → packages/ui-kit ; @repo/core-logic → packages/core-logic ; etc.
+# Para cada submódulo que VOU commitar, ver de quais @repo/* ele importa:
+git -C <path-do-submodulo-no-escopo> grep -hoE "@repo/[a-z-]+" -- 'src/**/*.ts' 'src/**/*.tsx' | sort -u
+```
+
+Para cada `@repo/<x>` consumido:
+- Se `packages/<x>` (ou o pacote correspondente) tem **mudanças não-commitadas ou
+  ponteiro não-bumpado** e **não está no escopo deste push** → **PAUSAR e avisar**:
+  > ⚠️ `finance` importa de `@repo/ui-kit`, mas o `ui-kit` tem mudanças que não
+  > vão neste push. Se um símbolo novo (ex: componente recém-criado) for usado, o
+  > build quebra. Incluir o `ui-kit` no escopo ou confirmar que nenhum símbolo novo é usado.
+
+Regra prática: **commite junto os submódulos que se consomem.** Provedor de
+símbolos (`ui-kit`, `core-logic`) **antes ou junto** com quem consome (`finance`,
+módulos). Nunca pushe o consumidor apontando pra uma versão do provedor que ainda
+não tem o export.
+
+---
+
 ## Passo 3 — Por submódulo: PAUSAR, confirmar, commit + push
 
 Para **cada** submódulo modificado, na ordem do mapa, executar este ciclo e
@@ -377,6 +409,7 @@ gh pr create --base main --head <branch> --title "<tipo>(<escopo>): <título>" -
 | Nada mudou | working tree limpo no repo | Pula o repo — não cria commit vazio |
 | Branch sem upstream | `sync_check` → `no-upstream` | `git push -u origin <branch>` |
 | Módulo novo fora do `.gitmodules` | Passo 2.5 (solto/órfão) | Promove a submódulo (ou commita no pai por decisão explícita) |
+| Build quebra: `X is not exported by @repo/...` | rollup/vite no deploy | Dependência cross-submódulo (Passo 2.6): provedor não bumpado. Commitar+pushar o submódulo provedor + bumpar ponteiro |
 
 Princípio geral: **em qualquer dúvida ou falha, PARAR e devolver pro usuário com
 o estado exato** — nunca deixar a coreografia num estado meio-feito (submódulo
@@ -399,6 +432,9 @@ pushado + pai não, ou vice-versa).
   solta em vez de promover a submódulo `eloscope-ai/mod-<nome>` (viola a arquitetura).
 - ❌ Deixar um repo aninhado órfão (`.git` próprio sem entry no `.gitmodules`) —
   o pai não rastreia o conteúdo e o próximo clone vem vazio.
+- ❌ Pushar um submódulo consumidor (`finance`) apontando pra uma versão do
+  provedor (`ui-kit`) que ainda não tem o export usado → build quebra com
+  *"X is not exported by @repo/..."* (ver Passo 2.6).
 - ❌ Abrir/mergear PR aqui — isso é do `@devops` (Gage).
 
 ---
