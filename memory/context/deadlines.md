@@ -9,6 +9,10 @@
 |-------|---------|--------|------|
 | 16/06/2026 | Maqlam — campanha SDR finalizada (prazo combinado com Denis) | Em andamento | travada: API não-oficial + aguardando marketing ajustar site para API oficial |
 | 22/05/2026 | Weekly Semana 21 — 8h30 | Agendado | Facilitador: Hugo |
+| 22/05/2026 | Abrir PR `feat/meta-channel-setup` (Meta WhatsApp fase 1) | Pendente | Lucas — ClickUp `86e1gwd6v` (urgent) |
+| 22/05/2026 | Validar Chatwoot recebendo WhatsApp pós-Rails (Maqlam + Morgana) | Pendente | Lucas — ClickUp `86e1gwd7v` |
+| 22/05/2026 | Conferir possível número Maqlam não anotado (audit 6 pagos / 9 verificados) | Pendente | Lucas — ClickUp `86e1gwd8k` |
+| 22/05/2026 | Sites Evoled — postar e-mails Câmara Urupês + atualizar página ACEU Uchoa | Pendente | Lucas — ClickUp `86e1gwdan` + `86e1gwdb1` |
 | 16/05/2026 | Morgana — aquecimento Dia 9 | Pendente | Lucas |
 | 17/05/2026 | Morgana — aquecimento Dia 10 (último) | Pendente | Lucas |
 | ✅ 11/05/2026 | PeleVet — reunião técnica 13h presencial com Vítor (proposta) | ✅ Realizada | follow-up feito por Lucas em 15/05 |

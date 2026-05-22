@@ -36,7 +36,8 @@ Treinamento presencial feito 28/04. Primeira campanha de ativação rodou 29/04 
 | Cartão em dólar (Meta) | 🟢 Confirmado e cadastrado |
 | Templates transacionais | 🟡 Submeter — desbloqueado pelo cartão |
 | Ativação base (~9.000 leads) | 🟡 Pronta para reabrir — falta templates aprovados |
-| morganasales_core — API oficial | 🟡 Lucas implementa (módulo `eloscope-ai/mod-campaigns`) |
+| morganasales_core — API oficial | 🟡 Lucas implementa (módulo `eloscope-ai/mod-campaigns`) — base entregue em 21/05 (canal Meta cadastrado, templates sincronizados, integração na campanha); falta envio real + replicação Chatwoot via Dualhook→n8n |
+| Canal de envio Meta (decisão 22/05) | 🟢 **Modelo coexistência confirmado:** envio passa por **Dualhook → n8n → replicação no Chatwoot** (não usa Cloud API direto, ao contrário da Maqlam) — ClickUp `86e1gwda3` |
 | Instagram + FB no Chatwoot | 🔴 Pendente |
 | Cadência Follow-up | 🔴 Pendente |
 
@@ -80,4 +81,4 @@ Treinamento presencial feito 28/04. Primeira campanha de ativação rodou 29/04 
 
 ---
 
-*Atualizado: 2026-05-09*
+*Atualizado: 2026-05-22*
