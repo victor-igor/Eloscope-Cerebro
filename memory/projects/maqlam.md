@@ -175,6 +175,19 @@ Plataforma SaaS customizada hospedada em `https://elo.elitemaqlam.com.br`.
 
 ---
 
+## RAG Pipeline (agente Maq)
+
+- **27/05/2026** — Waves 1–5 do RAG refactor aplicadas (baseado em arquitetura referencial ReabilitaCão):
+  - `embedding_queue` + trigger de enfileiramento + `process-embeddings` deployada (v1 — nunca havia sido deployada, causava 404 nos crons)
+  - HNSW índices Inner Product + `hybrid_search` refatorado (`websearch_to_tsquery`, `p_min_similarity 0.5`)
+  - RPCs atômicas (`sync_knowledge_chunk`, `match_agent_documents`)
+  - `search-knowledge` simplificada para retornar apenas `{results, mode}` (sem prompt)
+  - 5 novos registros RAG inseridos (ids 146–150): fluxo geral, consumíveis, re-engajamento, alternativa econômica cortante, respostas rápidas
+  - `agent_ids` atualizados em todos os 38 playbooks para incluir `767e8044-0856-4430-832f-8950b4c0da15`
+- **Bloqueio ativo:** N8N não envia `agentId` na chamada search-knowledge → playbooks `private` (44 registros) invisíveis. Fix pendente em `86e1k160z`.
+
+---
+
 ## Integração Chatwoot (painel)
 
 - **21/05/2026** — Corrigida a integração Chatwoot na tela de Instâncias do painel. Dois fixes: (1) banco — row `integration_settings` estava com `organization_id` placeholder errado, escondida pela RLS → erro "Configuração não encontrada"; (2) frontend — status lia `status.enabled` mas a API uazapi retorna `chatwoot_enabled` → sempre "Desconectado". Agora exibe o nome da inbox conectada e reconecta na mesma inbox da instância. Commit `bb0bed3` no `origin/main` (deploy Vercel automático). Maq Assistente conectada na inbox 5.
