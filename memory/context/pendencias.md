@@ -98,7 +98,7 @@ type: note
 - [25/04/2026] **Morgana — desbloquear ou substituir número** (bloqueado nos testes de disparo de imagem) · task `86e13a62g` no ClickUp (urgent)
 - [25/04/2026] ✅ **Maqlam — IA BDR (Bumble) ativação cadastrada** (27/04) · task `86e13a62b` urgent · Victor cadastra script Bumble + ativa MAC1 · Denis confirmou multi-persona
 - [27/04/2026] **Maqlam — pedir autorização ao Denis** pra usar cortes 4 e 6 da call de 24/04 como conteúdo público · cortes 1, 2, 5, 7 podem rodar sem identificação · ver `areas/marketing/cortes-conteudo/2026-04-24-maqlam-checklist-review.md`
-- [08/05/2026] **Maqlam × Olist — validar ideia Denis com Victor** · Denis sugeriu sincronizar memória da IA com produtos da Olist · verificar se faz sentido técnico e de negócio antes de qualquer avanço · Lucas + Victor
+- [08/05/2026] ✅ **Maqlam × Olist — sincronizar memória da IA com produtos da Olist** (entregue 27/05) · ideia do Denis virou feature: catálogo `ai_products` sincronizado do Tiny ERP + pipeline RAG (produtos viram embeddings na memória da IA) + tela `/catalogo` · task `86e1k40vw`
 - [08/05/2026] **Contabilidade não respondeu** · Lucas ligar de volta amanhã (09/05)
 - [27/04/2026] **Maqlam — agendar call de follow-up** ~08-09/05 (sexta 01/05 é feriado, Marcella viaja na seguinte) · task `86e13a64a`
 - [02/05/2026] ✅ **Maqlam — pipeline "Retenção de Clientes" criado no Supabase Elosystem** · migration `add_retencao_churn_pipeline` · 6 stages: Ativo/Atenção/Risco de Churn/Engajando/Recuperado/Churn Confirmado · Denis e equipe populam durante CS meeting 08-09/05

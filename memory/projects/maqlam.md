@@ -49,6 +49,7 @@ Plataforma SaaS customizada hospedada em `https://elo.elitemaqlam.com.br`.
 | **Financeiro** | `src/features/financial` | Lançamentos, contas a receber, DRE, parcelamento |
 | **Goals** | `src/features/goals` | Metas comerciais da equipe |
 | **AI / MAC** | `src/features/ai` | Agente de IA (MAC = Multi-Agent Core): responde WhatsApp, RAG na knowledge base, admin de memória (feriados, horários, produtos) |
+| **Catálogo** | `src/features/catalogo` | Catálogo de produtos sincronizado do Tiny ERP — cards, filtros (categoria/situação/preço/busca), drawer de detalhe, indicador de sync. Acesso admin/gestor/vendedor |
 | **Usuários** | `src/features/users` | Gestão de equipe e permissões |
 | **Settings** | `src/features/settings` | Integração Meta (tokens), WhatsApp, API keys |
 
@@ -74,6 +75,8 @@ Plataforma SaaS customizada hospedada em `https://elo.elitemaqlam.com.br`.
 | `extract-deal-info` | IA extrai informações de oportunidade |
 | `extract-faqs-from-file` | IA extrai FAQs de arquivo para knowledge base |
 | `pdv-webhook` / `tiny-produtos` | Integração Tiny ERP (produtos, pedidos Olist) |
+| `sync-tiny-products` | Sync de catálogo Tiny → tabela `ai_products` (full + delta via pg_cron 30min) |
+| `process-embeddings` | Drainer da `embedding_queue` — gera embeddings 1536d (cron 2min) |
 
 ---
 
@@ -93,7 +96,7 @@ Plataforma SaaS customizada hospedada em `https://elo.elitemaqlam.com.br`.
 
 | ID | Descrição | Responsável |
 |----|-----------|-------------|
-| B-1.5-A / B-1.6-A | Credenciais Olist/Tiny não fornecidas → integração catálogo (Story 1.6) bloqueada | Denis Maqlam fornecer |
+| ~~B-1.5-A / B-1.6-A~~ | ✅ RESOLVIDO 27/05 — Token Tiny fornecido (secret `TINY_API_TOKEN`) + catálogo completo implementado (tabela `ai_products` + `sync-tiny-products` + tela `/catalogo`). 266 produtos sincronizados | — |
 | ~~B-1.4-A~~ | ✅ RESOLVIDO 21/05 — Token Chatwoot presente e endpoints validados (`integration_status.status=ok`, inbox 5 conectada na Maq Assistente) | DevOps |
 
 ---
@@ -188,6 +191,24 @@ Plataforma SaaS customizada hospedada em `https://elo.elitemaqlam.com.br`.
 
 ---
 
+## Catálogo de Produtos × Tiny ERP
+
+- **27/05/2026** — Feature completa entregue (branch `feat/catalogo-tiny` → `main`). Task ClickUp `86e1k40vw`.
+  - Tabela `ai_products` (tiny_id, nome, SKU, preço, estoque, descrição HTML, categoria, situação, imagens jsonb, embedding) + RLS `org_id` + bucket Storage `product-images`
+  - Edge function `sync-tiny-products`: full sync (`produtos.pesquisa.php` paginado 100/pág) + delta sync (`lista.atualizacoes.produtos`) via pg_cron 30min
+  - Trigger `ai_products` → `embedding_queue` → `process-embeddings` (mesmo pipeline RAG Wave 1)
+  - Tela React `/catalogo` (cards, filtros, drawer, indicador de sync) + RBAC `VIEW_CATALOGO` (admin/gestor/vendedor)
+- **Aprendizados da API Tiny v2** (custaram 3 rounds de debug):
+  - Endpoint de busca é `produtos.pesquisa.php` (SEM o "r" — `pesquisar` retorna 404 "File not found")
+  - Token vai no body POST; `produto.obter.php` retorna `{status:"Erro", erros:[{erro:"token invalido"}]}` se inválido
+  - **Imagens** vêm em `produto.anexos[].anexo` (URLs em `s3.amazonaws.com/tiny-anexos-us/`), NÃO em `produto.imagens`
+  - **Estoque** NÃO vem em `produto.obter.php` — precisa de chamada separada a `produto.obter.estoque.php` → campo `saldo`
+  - `dataAlteracao` (delta) precisa formato `DD/MM/YYYY HH:MM:SS`, não ISO
+  - Descrição (`descricao_complementar`) vem como HTML → renderizar com `dangerouslySetInnerHTML`
+- ⚠️ Função temporária `tiny-debug` ficou deployada no Supabase — remover quando o catálogo estiver 100%.
+
+---
+
 ## Integração Chatwoot (painel)
 
 - **21/05/2026** — Corrigida a integração Chatwoot na tela de Instâncias do painel. Dois fixes: (1) banco — row `integration_settings` estava com `organization_id` placeholder errado, escondida pela RLS → erro "Configuração não encontrada"; (2) frontend — status lia `status.enabled` mas a API uazapi retorna `chatwoot_enabled` → sempre "Desconectado". Agora exibe o nome da inbox conectada e reconecta na mesma inbox da instância. Commit `bb0bed3` no `origin/main` (deploy Vercel automático). Maq Assistente conectada na inbox 5.
@@ -195,4 +216,4 @@ Plataforma SaaS customizada hospedada em `https://elo.elitemaqlam.com.br`.
 
 ---
 
-*Atualizado: 2026-05-21*
+*Atualizado: 2026-05-27*
