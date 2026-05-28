@@ -49,6 +49,16 @@ Sistema veterinário fullstack (React + Supabase) com módulos de agendamentos, 
 - [20/04/2026] 3 scopes: THIS / THIS_AND_FOLLOWING / ALL
 - [14/05/2026] Nunca usar Co-Authored-By nos commits — Vercel Hobby bloqueia deploy
 - [19/05/2026] Sync GC omite `colorId` quando inválido (fora de `'1'..'11'`) — evento herda cor do calendário do vet (paridade com `google-auth/index.ts`)
+- [28/05/2026] Sobreposição de transcrição IA × anotação manual resolvida com **diálogo de escolha** (Substituir / Adicionar ao final / Cancelar) — nunca auto-substituir, anotação manual jamais perdida silenciosamente
+
+## Phase 3 — Fix Sobreposição Transcrição IA (28/05)
+- `ConsultationForm.tsx`: transcrição da IA não reseta tela nem apaga anotações digitadas
+- Dialog inline de conflito quando editor já tem conteúdo (`onTranscriptReady` + `onRestoreTranscript`); editor vazio recebe direto
+- Helper `applyTranscriptToContent` + `pendingTranscriptRef` + `showTranscriptConflictDialog`
+- Verifier GSD 6/6 must-haves ✓, build OK; 5 cenários runtime em `03-HUMAN-UAT.md`
+- Commits `3e679a2` (feat) + `a1ac586` (docs); artefatos `.planning/phases/03-fix-transcript-overwrite-consultation-form/`
+- ClickUp: `86e1kxx4v` (concluído)
+- Diagnóstico paralelo: rascunho órfão de gravação aparecendo em "Nova Consulta" — causa é `handleSilentSave` (cria consulta + troca URL silenciosa, título não muda). NÃO é bug de delete (CASCADE OK). Fix recomendado pendente: banner "Retomar rascunho"
 
 ## Phase 2 — Fix Sync Color ID Validation (19/05)
 - Helper `sanitizeColorId()` + 5 callsites refatorados em `process-calendar-queue/index.ts`
@@ -66,6 +76,8 @@ Sistema veterinário fullstack (React + Supabase) com módulos de agendamentos, 
 - [ ] Bug trigger `tr_enqueue_calendar_sync` pula INSERT quando pai foi soft-deletado (caso Ivy/Camila 456936) — investigar afetação histórica
 - [ ] Fix frontend: parar de salvar cor customizada/hex em `agendamentos.cor` (backlog não-crítico, fix de boundary cobre o sync)
 - [ ] CHECK constraint Postgres em `agendamentos.cor` restringindo a `NULL OR '1'..'11' OR hex` (backlog opcional)
+- [ ] Validação manual 5 cenários Phase 3 transcrição (`03-HUMAN-UAT.md`)
+- [ ] Rascunho órfão de gravação em "Nova Consulta" — banner "Retomar rascunho" / descartar órfão (diagnóstico no GSD, sem task ClickUp)
 
 ---
-*Atualizado: 19/05/2026*
+*Atualizado: 28/05/2026*
