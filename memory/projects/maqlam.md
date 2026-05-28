@@ -49,7 +49,7 @@ Plataforma SaaS customizada hospedada em `https://elo.elitemaqlam.com.br`.
 | **Financeiro** | `src/features/financial` | Lançamentos, contas a receber, DRE, parcelamento |
 | **Goals** | `src/features/goals` | Metas comerciais da equipe |
 | **AI / MAC** | `src/features/ai` | Agente de IA (MAC = Multi-Agent Core): responde WhatsApp, RAG na knowledge base, admin de memória (feriados, horários, produtos) |
-| **Catálogo** | `src/features/catalogo` | Catálogo de produtos sincronizado do Tiny ERP — cards, filtros (categoria/situação/preço/busca), drawer de detalhe, indicador de sync. Acesso admin/gestor/vendedor |
+| **Catálogo** | `src/features/catalogo` | Catálogo de produtos sincronizado do Tiny ERP — cards, filtros (categoria/situação/preço/busca), drawer de detalhe, indicador de sync. Acesso admin/gestor/vendedor. **Envio via WhatsApp** (uazapi `/send/media`+`/send/text`): carrinho de envio, preview editável por produto, reescrita de descrição com IA (GPT-4o-mini, edge fn `rewrite-product-caption`), campo `descricao_whatsapp` persistente (não sobrescrito pela sync do Tiny) |
 | **Usuários** | `src/features/users` | Gestão de equipe e permissões |
 | **Settings** | `src/features/settings` | Integração Meta (tokens), WhatsApp, API keys |
 
@@ -61,8 +61,8 @@ Plataforma SaaS customizada hospedada em `https://elo.elitemaqlam.com.br`.
 |--------|-----------|
 | `ai-agent-respond` | MAC responde contatos via WhatsApp em tempo real |
 | `ai-process-document` | Processa documentos para a knowledge base (RAG) |
-| `embed-knowledge` | Gera embeddings para busca semântica |
-| `search-knowledge` | Busca RAG na knowledge base da MAC |
+| `embed-knowledge` | Gera embeddings para busca semântica (KB, FAQs, horários, feriados, **produtos**) |
+| `search-knowledge` | Busca RAG via `hybrid_search` (RRF FTS+semântico) sobre KB + FAQs + horários + feriados + **catálogo de produtos** (`ai_products`, desde 28/05) |
 | `campaign-executor` | Executa disparos de campanha (chamado via pg_net trigger) |
 | `get-campaign-audience` | Calcula audiência de campanha com filtros e deduplicação |
 | `recompra-sender` | Dispara mensagens de ciclo de recompra |
