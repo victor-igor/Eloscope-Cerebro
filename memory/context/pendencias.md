@@ -15,18 +15,19 @@ type: note
 
 - ✅ [21/05/2026] **Maqlam — integração Chatwoot no painel** — RESOLVIDO 21/05 · erro "Configuração não encontrada" era RLS escondendo row `integration_settings` com `organization_id` placeholder errado (fix no banco) + status sempre "Desconectado" por ler `status.enabled` em vez de `chatwoot_enabled` (fix `InstancesManager.tsx`, commit `bb0bed3`). Agora mostra inbox conectada e reconecta na mesma. Resolve bloqueador B-1.4-A. ⚠️ Auditar outras tabelas multi-tenant com org_id placeholder `0000...0001`. · Victor
 - [22/05/2026] 🔥 **Abrir PR `feat/meta-channel-setup`** · branch da integração Meta WhatsApp fase 1 (canal + templates + campanha) está em produção no Supabase mas PR não foi aberto por falta de `gh auth login` · ClickUp `86e1gwd6v` (urgent, due 22/05) · Lucas
-- [22/05/2026] 🔥 **Validar Chatwoot recebendo WhatsApp pós-update de Rails** · Maqlam e Morgana — verificar se mensagens entram corretamente depois do ajuste de versão feito em 21/05 (~1h de trabalho com Victor) · ClickUp `86e1gwd7v` (high, due 22/05) · Lucas
+- ✅ [29/05/2026] **Validar Chatwoot recebendo WhatsApp pós-update de Rails** — RESOLVIDO 29/05 (confirmado na weekly S22) · Maqlam + Morgana operacionais · ClickUp `86e1gwd7v` done · Lucas
 - [22/05/2026] **Conferir possível número Maqlam não anotado** · audit de 21/05 mostrou 6 pagos / 9 verificados — sobra dúvida se um número Maqlam ficou de fora · ClickUp `86e1gwd8k` (high, due 22/05) · Lucas
 - [22/05/2026] **Próxima etapa Meta — desdobrada por canal** (coexistência ≠ direto):
   - **Maqlam — envio via WhatsApp Cloud API oficial direto + replicação Chatwoot** · ClickUp `86e1gwd9t` (high, Elite Maqlam)
   - **Morgana — envio via Dualhook (coexistência) → n8n → replicação Chatwoot** · ClickUp `86e1gwda3` (high, Morgana)
 - [22/05/2026] **Story 8.2 — Reorganizar wizard de campanha (separar etapa canal/agentes)** · projeto Morgana · ClickUp `86e1gwd96` (high) · Lucas
 - [22/05/2026] **Story 8.3 — Agendamento de campanha em ondas (lotes + horário por lote)** · projeto Morgana · ClickUp `86e1gwd9e` (high) · Lucas
-- [22/05/2026] **Sites Evoled — Câmara de Urupês + ACEU Uchoa** · postar e-mails/docs Urupês + atualizar página ACEU Uchoa · ClickUp `86e1gwdan` e `86e1gwdb1` (normal, due 22/05) · Lucas
+- [29/05/2026] **Sites Evoled — Câmara de Urupês + ACEU Uchoa** · postar e-mails/docs Urupês `86e1gwdan` ✅ concluído · **ajustes adicionais do site Urupês iniciados mas não finalizados** (`86e1m3hug` due 06/06) · atualizar página ACEU Uchoa `86e1gwdb1` (pendente) · Lucas
+- [29/05/2026] 💰 **Cobranças urgentes vencidas — Jean + Voltrucks** · Jean/Imobiliária Rodrigues `86e11fy81` + Samuel/Voltrucks R$6.000 `86e11fy7y` (ambas urgent, bumpadas due 30/05). Bravo R$975 ✅ já cobrado · Lucas
 - [19/05/2026] **ReabilitaCão — bug trigger sync_queue pula INSERT quando pai foi soft-deletado** · descoberto investigando agendamento Ivy/Camila (456936) que sumiu do Google Calendar da Francine · pai 456825 foi soft-deletado e o substituto 456936 nunca entrou na sync_queue · padrão "delete velho + insert novo apontando pro velho via `recorrencia_pai_id`" usado pelo sistema em edições · `tr_enqueue_calendar_sync` provavelmente pula o INSERT quando pai existe deletado (lógica "edição já tratada pelo pai", mas pai foi deletado, deixando órfão) · Victor · pode afetar outros casos no histórico
 - ✅ [15/05/2026] 🔥 **Morgana — conta WhatsApp banida (10/05)** — RESOLVIDO via migração API oficial · 22/05: API oficial + dualhook via N8N configurados, templates habilitados, **campanhas iniciando hoje no número secundário**. Próximo: ativar API no número principal (tráfego real) + alinhar horários de atendimento com a IA (Lucas, semana 22, task `86e1d9hmk`)
-- [22/05/2026] 🔴 **Bravo — projeto atrasado 2-3 sprints** · entrega final era 23/05 mas ainda na Skill 1 (API configurada por Hugo, falta validar). Gargalo: cliente (Gustavo) lento para validar e liberar acessos. Reunião de validação Skill 1 hoje + renegociar prazo/escopo (Hugo + Lucas, tasks `86e1d9uzf` `86e18dt45`). 2ª parcela R$975 vence 25/05 (Lucas, task `86e1gx7je`)
-- [22/05/2026] 🔴 **Comercial parado 2 semanas** · sem prospecção ativa, sem reunião marcada, R$0 venda nova. Prioridade #1 semana 22: retomar prospecção + marcar ≥1 reunião (Lucas, task `86e1gx7md`)
+- [29/05/2026] 🔴 **Bravo — Skill 1 + Skill 2 travadas (weekly S22)** · Sprint 1 com teste alfa/beta feito, NÃO em produção. Skill 1 falta validação final (Hugo, ClickUp `86e1m3hvn`, due 02/06). **Skill 2 bloqueada por DOIS motivos:** (1) 🔥 **limite de créditos OpenAI da conta Bravo atingido** (trava `86e18dtpr` `86e18dtp3` `86e18dtne`, due 06/06); (2) bloqueantes do Gustavo ainda pendentes — nome assistente, cliente-piloto, SLA (`86e18dt1b` + subtasks, due 30/05). Victor marca reunião com Gustavo (créditos OpenAI + número WhatsApp), ClickUp `86e1m3hkg` due 02/06. ✅ 2ª parcela R$975 **cobrada** (`86e1gx7je` done)
+- [29/05/2026] 🔴 **Comercial parado 3ª semana (weekly S22)** · R$0 venda nova. Causa raiz confirmada: (1) entregas urgentes Maqlam (API oficial) consumiram o tempo do Lucas; (2) ferramentas comerciais travadas aguardando API ChatGPT. **Solução decidida: usar tokens de API próprios do ChatGPT** (Lucas, ClickUp `86e1m3j69` urgent due 30/05). Prospecção + ≥2 reuniões com tempo blindado (`86e1gx7md` due 06/06)
 - [18/05/2026] **PeleVet — ligação na semana de 02/06** · Thaísa retornou 18/05 pedindo mais tempo (Sílvias viajam 18-22/05 e 25-29/05); proposta Growth R$ 21K/6m sem objeção, só falta as sócias sentarem juntas · ligar terça 02/06 · ver `areas/vendas/oportunidades/pele_vet/follow-up-thaisa-2026-05-18.md`
 - ✅ [15/05/2026] **Pipeline Comercial / CRM (Lucas)** — RESOLVIDO 15/05 · `MAPA-FUNIL.md` bumped pra v0.2 com T4-T8 preenchidos (fluxograma Mermaid 3-raias · tabela operacional com SLA · régua D+1/D+4/D+8 · painel 4 métricas-cockpit · handover Lucas→Victor com 4 gates) · 6 etapas criadas (01, 02, 03, 05, 06, 07) replicando padrão `04-reuniao.md` · 12 subtarefas cobertas (ver MAPA-FUNIL v0.2)
 - ✅ [15/05/2026] **Rotina Comercial Diária (Lucas)** — RESOLVIDO 15/05 · `areas/vendas/rotinas/ROTINA-DIARIA.md` v0.2 criado com 13 seções cobrindo 13 subtarefas (blocos horário · checklist · SLA por canal · cadência microcopy · metas Q2 · análise sexta · recorrências · priorização P1-P5 · sprint recuperação · SLA pós-reunião). Piloto semana 21 (18-22/05), revisão na weekly 22/05
@@ -145,7 +146,7 @@ type: note
 - [30/04/2026] ✅ **Bravo — recalcular horas estáticos vs vídeo no deck** · vídeo confirmado maior (R$1.932 vs R$930 estáticos) · top 3 reordenado: vídeo>captação>estático · deck atualizado (commit d5c8dac)
 - [29/04/2026] **Morgana — cadastrar lista do Matheus + ativar IA de ativação** · 2 chips novos já recebidos · script da IA + modelo de incentivo coletivo documentado no sistema · ClickUp tasks `86e150f6z`, `86e150f7n`, `86e150f7z`
 - [27/04/2026] **Gustavo Bravo — pagamento 4× boleto** · 1ª paga 29/04 ✅ · acompanhar 15/05, 15/06, 15/07
-- [20/05/2026] 🔴 **Bravo — 2ª parcela R$975 ATRASADA (venceu 15/05)** · Gustavo é historicamente enrolado com pagamentos (baixa expectativa de pontualidade) — cobrança tende a se arrastar · evento criado na agenda "Lucas Calls Estratégicas" 20/05 09h pra disparar lembrete (WhatsApp + PIX/boleto em mãos) · avaliar se vale exigir antecipação ou ajustar prazo contratual nas próximas · Lucas
+- ✅ [29/05/2026] **Bravo — 2ª parcela R$975** — COBRADA 29/05 (confirmado weekly S22) · ClickUp `86e1gx7je` done · Lucas
 - [27/04/2026] **Financeiro — extratos pendentes** · subir últimos extratos antes de fechar 100% · prazo 28/04 · Victor (task `86e13dfum`)
 
 ## ⚪ Backlog (sem urgência imediata)
@@ -220,7 +221,7 @@ type: note
 > Origem: `_status-atual.md` v0.2 (`areas/vendas/oportunidades/_status-atual.md`) — audit completo 16/05.
 
 - [16/05/2026] 🔥 **Alex Automação — silêncio 499d + Drive mais recente** · proposta abandonada · 🚨 sinal cruzado "Drive > WhatsApp" — Lucas decidir reativar (parceria white-label) ou arquivar
-- [16/05/2026] 🔥 **Morgana Sales — 🔴 silêncio 18d** · Q2 alvo-6OS travado · última nossa 28/04 sem retorno · Lucas precisa retomar comunicação com Dra. Morgana / Matheus Campos
+- [29/05/2026] **Morgana Sales — 🟢 EM PRODUÇÃO (weekly S22)** · API oficial ativa, campanhas rodando, ajustes de fluxo feitos (Victor 29/05). Risco remanescente é só relacionamento/expansão: reunião de alinhamento com Matheus/Dra. Morgana para liberar número principal (Victor, `86e1m3hjt` due 02/06) + acompanhar agente de prospecção (`86e1m3hha`)
 - ✅ [16/05/2026] **ReabilitaCão — falso alarme do audit** · audit marcou 🟡 11d sem retorno, mas confirmação Lucas: cliente ativo funcionando bem, retorno positivo, conversa flui pelo grupo WhatsApp (audit filtrou grupos fora). Sem urgência.
 - [16/05/2026] **Enertelles — pivot: focar venda do Site (Bloco B)** · Telles é duro na venda direta · estratégia nova: gerar demanda real pelo Bloco B (site standalone) primeiro · Bloco A (processo+IA) fica em segundo plano até Site fechar · Lucas
 - [16/05/2026] 🔥 **PeleVet — ligar pra Vítor / Sílvias** · sem retorno após reunião 11/05 · resposta passiva não vem · ação proativa: ligar direto OU se disponibilizar pra reunião extra · Lucas
@@ -274,6 +275,6 @@ type: note
 
 - [24/04/2026] **Bravo — ClickUp estruturado** · pasta "Bravo Agency" criada com 6 listas e 33 tarefas · workspace 90171169593 / Espaço da equipe
 
-*Atualizado: 09/05/2026*
+*Atualizado: 29/05/2026*
 
 - [14/05/2026] **ReabilitaCao — Vercel Deployment Protection** · desativar "authorized users only" no painel do projeto Vercel para não bloquear deploys de `victor_igor7@hotmail.com` · Victor

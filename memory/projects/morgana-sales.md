@@ -2,9 +2,9 @@
 tipo: projeto
 empresa: Morgana Sales Estética Avançada
 slug: morgana-sales
-status: ativo
+status: producao
 caminho: 6OS Beta (case oficial vertical estética Q2)
-tags: [cliente/morgana-sales, ativo, vertical/estetica, elo-os]
+tags: [cliente/morgana-sales, producao, vertical/estetica, elo-os]
 ---
 
 # Projeto Morgana Sales — Snapshot
@@ -23,11 +23,16 @@ Treinamento presencial feito 28/04. Primeira campanha de ativação rodou 29/04 
 - **Matheus Campos** — sócio + marido + dono Campos Joia (cliente Eloscope ativo) → ponte estratégica
 - **Eloscope:** Lucas (CS/Produto) · Hugo (técnico)
 
-## Estado atual (09/05/2026)
+## Estado atual (29/05/2026)
+
+> **🟢 EM PRODUÇÃO** — API oficial configurada e ativa, **campanhas rodando**. Ajustes nos fluxos Morgana + Maqlam para adaptação com a API oficial feitos por Victor (29/05). Risco remanescente é só a expansão (número principal do Matheus, dependente de retorno do cliente) — não mais de produto.
 
 | Componente | Estado |
 |-----------|--------|
 | Sistema `elo.morgana.com.br` | 🟢 Produção |
+| API Oficial WhatsApp | 🟢 **Em produção · campanhas ativas (29/05)** |
+| Agente de prospecção ativa | 🟢 Em produção — Victor acompanha para possíveis correções (ClickUp `86e1m3hha`) |
+| Reunião de alinhamento Matheus/Dra. Morgana | 🔴 A marcar — romper silêncio + liberar número principal (ClickUp `86e1m3hjt`) |
 | Chips (3) não-oficiais | 🟢 Reconectados 08/05 (todos reativados) — protocolo 10 dias (08–17/05) |
 | Novo número Maqlam | 🟢 Conectado ao sistema (08/05) |
 | API Oficial WhatsApp — app criado | 🟢 App criado, Chatwoot validado (07/05) |
@@ -81,4 +86,4 @@ Treinamento presencial feito 28/04. Primeira campanha de ativação rodou 29/04 
 
 ---
 
-*Atualizado: 2026-05-22*
+*Atualizado: 2026-05-29*

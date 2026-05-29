@@ -7,7 +7,17 @@
 
 | Prazo | Entrega | Status | Nota |
 |-------|---------|--------|------|
-| 16/06/2026 | Maqlam — campanha SDR finalizada (prazo combinado com Denis) | Em andamento | travada: API não-oficial + aguardando marketing ajustar site para API oficial |
+| 30/05/2026 | Lucas — conectar tokens API ChatGPT (desbloquear ferramentas comerciais) | Pendente | ClickUp `86e1m3j69` (urgent) |
+| 30/05/2026 | Lucas — cobrar Jean `86e11fy81` + Samuel/Voltrucks R$6k `86e11fy7y` | Pendente | Bravo R$975 ✅ já cobrado |
+| 30/05/2026 | Bravo — destravar bloqueantes do Gustavo (nome assistente + cliente-piloto + SLA) | Pendente | `86e18dt1b` + subtasks · Hugo bloqueado por eles |
+| 02/06/2026 | Maqlam — reunião alinhamento + apresentação novas funcionalidades (10h) | Agendado | Victor — ClickUp `86e1m3j5t` · voltar projeto à produção |
+| 02/06/2026 | Morgana — reunião alinhamento Matheus/Dra. Morgana (liberar número principal) | Pendente | Victor — ClickUp `86e1m3hjt` |
+| 02/06/2026 | Bravo — reunião alinhamento Gustavo (créditos OpenAI + número WhatsApp) | Pendente | Victor — ClickUp `86e1m3hkg` |
+| 02/06/2026 | Bravo — Skill 1 validação final | Pendente | Hugo — ClickUp `86e1m3hvn` |
+| 02/06/2026 | PeleVet — ligar Sílvias (voltam de viagem 30/05) | Pendente | Lucas — proposta Growth R$21K/6m sem objeção |
+| 06/06/2026 | Comercial — prospecção + ≥2 reuniões de venda (tempo blindado) | Pendente | Lucas — `86e1gx7md` |
+| 06/06/2026 | Skill 2 Bravo — destravar créditos OpenAI + Meta Graph API | Bloqueado | Hugo — `86e18dtpr/p3/ne` |
+| 16/06/2026 | Maqlam — campanha SDR finalizada (prazo combinado com Denis) | Em andamento | RAG 100% · falta e2e SDR + agentId N8N + validar produção |
 | 22/05/2026 | Weekly Semana 21 — 8h30 | Agendado | Facilitador: Hugo |
 | 22/05/2026 | Abrir PR `feat/meta-channel-setup` (Meta WhatsApp fase 1) | Pendente | Lucas — ClickUp `86e1gwd6v` (urgent) |
 | 22/05/2026 | Validar Chatwoot recebendo WhatsApp pós-Rails (Maqlam + Morgana) | Pendente | Lucas — ClickUp `86e1gwd7v` |
@@ -80,4 +90,4 @@
 | DD/MM/YYYY | [descrição] | ✅ [resultado] |
 
 ---
-*Atualizado: 29/04/2026*
+*Atualizado: 29/05/2026*

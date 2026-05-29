@@ -12,7 +12,8 @@
 |---------|--------|---------------|---------|
 | Eloscope (estúdio) | 🟢 Ativo | — | — |
 | Cerebro / Segundo Cérebro | 🟢 Ativo | rituais operacionais + 3 agentes remotos (cockpit, prep weekly, revisão maio) | — |
-| Elite Maqlam | 🟢 Ativo | R$1.197/mês trial (3 meses) · cashback rodando 04/05 · BDR Bumble ativado · 2 chips aquecendo | maqlam.md |
+| Elite Maqlam | 🟢 Ativo — quase produção | RAG 100% · catálogo Tiny (266) · envio WhatsApp · fix SDR. Falta e2e SDR + reunião alinhamento 02/06 10h. Prazo produção: 16/06 | maqlam.md |
+| Morgana Sales | 🟢 Em produção — API oficial ativa | Campanhas rodando. Próximo: reunião alinhamento Matheus + liberar número principal | morgana-sales.md |
 
 ---
 
@@ -25,7 +26,6 @@
 | Eloscope Landing Page | 🔨 Em construção | Redesign radical + deploy Vercel | eloscope-lp.md |
 | Bravo Agency — Sistema Completo | 🟢 Ativo | Discovery 26/04, entrega ~09/05 | bravo-agency.md |
 | Mentoria Agências | 🔨 Em construção | Validar pricing para próximos leads | mentoria-agencias.md |
-| Morgana Sales | 🔥 Ativo — API oficial bloqueada por Autem | Token Autem hoje (08/05) → número `5517981542837` → cartão → templates → campanha 10–11/05 | morgana-sales.md |
 | Enertelles | 🔨 Lead em fechamento | Call Telles + Alex 30/04 — apresentar proposta v4 | enertelles.md |
 | PeleVet | 🟡 Proposta entregue — aguardando sócias | Ligação semana 02/06 (Sílvias voltam de viagem 30/05) | pele-vet.md |
 | elobrain (framework) | 🔨 Em construção | Instalar gbrain local + primeiro sync + runbook | elobrain.md |
@@ -50,6 +50,7 @@
 
 ## Mudanças Recentes
 
+- [29/05] **Weekly S22** — Morgana → **EM PRODUÇÃO** (API oficial ativa, campanhas rodando); Maqlam → quase produção (reunião alinhamento 02/06 10h, prazo 16/06); comercial 3ª semana sem venda (bloqueio: Maqlam urgente + API ChatGPT → solução tokens próprios); Bravo travado (créditos OpenAI esgotados + bloqueantes Gustavo). Ata em `areas/reunioes/semanais/2026-05-29-semanal.md`. ClickUp: 5 done + 12 prazos S23 + 12 tasks novas
 - [13/05] **elobrain (framework)** — fork público `victor-igor/elobrain` adotado como framework instalável (não embedded). Schema `brain` aplicado no Supabase Elosystem (32 tabelas, pgvector HNSW, validado end-to-end com FTS + vector search). `.env` configurado, skills `/salve` e `/buscar-memoria` atualizadas com fallback defensivo. MCP server registrado. Vai virar produto vendido a clientes (Cerebro Claude Code by Eloscope). Pendente: instalar `gbrain` localmente + primeiro sync + runbook
 - [09/05] **PeleVet** — discovery 07/05 consolidado em `areas/vendas/oportunidades/pele_vet/`; análise de mercado SJRP feita (TAM 28.500 cães/ano dermato, <3% capturado); reunião técnica 11/05 13h com Vítor. Squad `discovery-analyzer` arquitetado pra reaproveitar fluxo (3 agents paralelos + Cassandra)
 - [03/05] **Elite Maqlam** — projeto documentado em `maqlam.md` (estrutura sistema, módulos, edge functions, chips); 11 tasks criadas no ClickUp (cashback, BDR, CS, aquecimento chips 04-08/05)
@@ -67,6 +68,6 @@
 
 ---
 
-*Atualizado: 09/05/2026*
+*Atualizado: 29/05/2026*
 
 | ReabilitaCao | 🟢 Ativo | Sistema veterinário — Epic 28 (agendamento recorrente) aguarda implementação | reabilitacao.md |
