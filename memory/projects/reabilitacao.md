@@ -51,6 +51,16 @@ Sistema veterinário fullstack (React + Supabase) com módulos de agendamentos, 
 - [19/05/2026] Sync GC omite `colorId` quando inválido (fora de `'1'..'11'`) — evento herda cor do calendário do vet (paridade com `google-auth/index.ts`)
 - [28/05/2026] Sobreposição de transcrição IA × anotação manual resolvida com **diálogo de escolha** (Substituir / Adicionar ao final / Cancelar) — nunca auto-substituir, anotação manual jamais perdida silenciosamente
 
+## Phase 4 — UI/UX ExameDetailModal Responsivo (29/05)
+- Modal vira bottom-sheet em mobile (`h-[95dvh]`, `rounded-t-xl sm:rounded-xl`)
+- Header compacto: `text-base sm:text-xl`, botão Editar icon-only em mobile
+- Tabs de arquivo com fade gradient indicador de scroll
+- Barra de ações `flex-col sm:flex-row` em mobile
+- iframe PDF `h-[50vh] sm:h-96`
+- ParametrosTable `overflow-x-auto`
+- Padding `p-4 sm:p-6`
+- Commit `b087cfa` · ClickUp `86e1mdyqa`
+
 ## Phase 3 — Fix Sobreposição Transcrição IA (28/05)
 - `ConsultationForm.tsx`: transcrição da IA não reseta tela nem apaga anotações digitadas
 - Dialog inline de conflito quando editor já tem conteúdo (`onTranscriptReady` + `onRestoreTranscript`); editor vazio recebe direto
