@@ -79,6 +79,12 @@ Sistema veterinário fullstack (React + Supabase) com módulos de agendamentos, 
 - Commits: `ffce852` (fix) + `a56ae5f` (artefatos Phase 2) merged em main
 - Artefatos: `.planning/phases/02-fix-sync-color-id-validation/` (CONTEXT + PLAN + SUMMARY)
 
+## Phase 5 — Fix: Bugs de Rascunho no Calendário (30/05)
+- `AppointmentDetailsModal`: ao clicar "Salvar" num rascunho, `statusToSave` agora promove 'Rascunho' → 'Agendado' (antes ficava preso no status carregado do formData)
+- UX: ao editar rascunho existente, exibe botões separados "Manter Rascunho" + "Agendar" em vez de só "Salvar Alterações"
+- Fix crítico: rascunho sendo convertido para "Evento recorrente" ao trocar serviço — `refIsCanonical` agora exige `recorrencia_regra != null`, evitando que agendamentos avulsos sejam tratados como PAI de série
+- Commit `8853784` · ClickUp `86e1mmy5z`
+
 ## Pendências
 - [ ] Vercel Deployment Protection: desativar "authorized users only" no painel
 - [ ] Módulo Dietas: DietaDetailsModal + DietasTab (prev/next) — ver epic 29
